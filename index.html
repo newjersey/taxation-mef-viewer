@@ -32,11 +32,13 @@
             <!-- Font Awesome arrow-circle-right -->
             <svg width="3em" height="3em" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                 <title>Submit</title>
-                <path d="M1413 896q0-27-18-45l-91-91-362-362q-18-18-45-18t-45 18l-91 91q-18 18-18 45t18 45l189 189h-502q-26 0-45 19t-19 45v128q0 26 19 45t45 19h502l-189 189q-19 19-19 45t19 45l91 91q18 18 45 18t45-18l362-362 91-91q18-18 18-45zm251 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
+                <path
+                    d="M1413 896q0-27-18-45l-91-91-362-362q-18-18-45-18t-45 18l-91 91q-18 18-18 45t18 45l189 189h-502q-26 0-45 19t-19 45v128q0 26 19 45t45 19h502l-189 189q-19 19-19 45t19 45l91 91q18 18 45 18t45-18l362-362 91-91q18-18 18-45zm251 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z" />
             </svg>
         </button>
         <p id="url-error"></p>
-        <p>Demo URL: <a href="{{ site.github.url }}/201541349349307794_public.xml">{{ site.github.url }}/201541349349307794_public.xml</a></p>
+        <p>Demo URL: <a href="{{ site.bucket_url }}/Sample990.xml">{{ site.bucket_url
+                }}/Sample990.xml</a></p>
     </form>
     <div class="file-upload">
         <h2>OR</h2>
@@ -53,10 +55,14 @@
             <img src="{{ site.github.url }}/img/xml_snap.png">
             <img src="{{ site.github.url }}/img/form_render.png">
         </div>
-        <p>The IRS has released over a million electronic 990 filings (nonprofit annual tax filings) as XML documents. Accessible on <a href="https://aws.amazon.com/public-datasets/irs-990/">Amazon Web Services</a> and at <a href="https://www.irs.gov/charities-non-profits/tax-exempt-organization-search">IRS.gov</a>, these filings are perfect for researchers, developers, and data scientists. But sometimes it helps to turn the data back into what it came from: a paper form.</p>
+        <p>The IRS' Modern E-File (MEF) program uses XML files as the standard file format for tax return data.
+            This tool allows users to transform XML into a human-readable, printable format, using the <a
+                href="https://www.irs.gov/e-file-providers/modernized-e-file-mef-stylesheets">IRS' own stylesheets</a>.
+        </p>
     </div>
 
-    <footer>Stylesheets and code are availabe open-source on <a href="{{ site.github.repository_url }}">GitHub</a>.</footer>
+    <footer>Stylesheets and code are availabe open-source on <a href="{{ site.github.repository_url }}">GitHub</a>.
+    </footer>
 </body>
 
 </html>

@@ -8,3 +8,10 @@ exclude: [
   'script',
   'vendor'
 ]
+
+github:
+  url: https://github.com/betson/irs-efile-viewer/tree/master
+  repository_url: https://github.com/newjersey/taxation-mef-viewer
+
+bucket_url: https://jachan-test-cors-public.s3.amazonaws.com
+
