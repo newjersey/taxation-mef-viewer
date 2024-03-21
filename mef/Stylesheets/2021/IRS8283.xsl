@@ -604,7 +604,7 @@
 											<xsl:when test="($Print = $Separated)
 											 and (count($Form8283Data/InformationOnDonatedProperty) &gt; 5)">
 												<td class="styTableCell" style="width:26mm;text-align:left;font-size: 7pt;font-weight:normal;border-color:black;">
-													<span class="styTableCellPad" style="width:26mm">
+													<span class="styTableCellPad" style="width:26mm;">
 														<xsl:call-template name="PopulateAdditionalDataTableMessage">
 															<xsl:with-param name="TargetNode" select="$Form8283Data/InformationOnDonatedProperty"/>
 															<xsl:with-param name="ShortMessage" select="'true'"/>
@@ -755,7 +755,7 @@
 					</xsl:call-template>
 					
 		<!-- Page Break and Footer-->
-			<div class="pageEnd" style="width:187mm;padding-top:1mm;">
+			<div class="pageEnd" style="width:187mm;padding-top:2.5mm;">
 				<div style="float:left;">
 					<span class="styBoldText">
 						For Paperwork Reduction Act Notice, see separate instructions.</span>
@@ -1499,6 +1499,7 @@ qualified appraisal is generally required for items reportable in Section B. See
 															 &gt; 5) and ($Print = $Separated))">
 																<xsl:call-template name="PopulateAdditionalDataTableMessage">
 																	<xsl:with-param name="TargetNode" select="$Form8283Data/InformationOnDonatedProperty"/>
+																	<xsl:with-param name="ShortMessage" select="'true'"/>
 																</xsl:call-template>
 															</xsl:when>
 															<xsl:otherwise>
@@ -1737,7 +1738,7 @@ checked automatically on line 5a, the reference linking needs to be removed. Thi
 											<div style="font-family:verdana;font-size:8pt;font-weight:normal;width:171mm;padding-left:3mm;">
 											<b>Partial Interests and Restricted Use Property (Other Than Qualified Conservation Contributions) &#8212;</b>
 											Complete lines 4a through 4e if you gave less than an entire interest in a property listed in Section B, Part I.  Complete lines 5a through 5c if conditions were placed on a contribution listed in Section B, Part I; also attach the required statement. See instructions.
-										</div>
+											</div>
 											</div>
 										</th>
 									</tr>

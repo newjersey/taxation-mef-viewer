@@ -322,9 +322,9 @@
 										<br/><br/>
 										<span style="width: 68; padding-left:8mm;float:left: clear: none;">Beginning of tax year 
 									   <!--Dotted Line-->
-											<span class="styDotLn" style="float:right;padding-left:2mm;">.....</span>											
+											<span class="styDotLn" style="float:right;padding-left:2mm;">....</span>											
 										</span>
-										<span style="width: 32mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
+										<span style="width: 36mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="$FormData/CorpTotBeginTaxYearSharesCnt"/>
 											</xsl:call-template>
@@ -332,9 +332,9 @@
 										<br/><br/>
 										<span style="width: 68; padding-left:8mm;float:left: clear: none;">End of tax year
 									   <!--Dotted Line-->
-											<span class="styDotLn" style="float:right;padding-left:2mm;">.......</span>
+											<span class="styDotLn" style="float:right;padding-left:2mm;">......</span>
 										</span>
-										<span style="width: 32mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
+										<span style="width: 36mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="$FormData/CorpTotEndTaxYearSharesCnt"/>
 											</xsl:call-template>
@@ -441,9 +441,9 @@
 										<br/><br/>
 										<span style="width: 68; padding-left:8mm;float:left: clear: none;">Beginning of tax year 
 									   <!--Dotted Line-->
-											<span class="styDotLn" style="float:right;padding-left:2mm;">.....</span>											
+											<span class="styDotLn" style="float:right;padding-left:2mm;">....</span>											
 										</span>
-										<span style="width: 32mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
+										<span style="width: 36mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="$FormData/BeginTaxYearSharesCnt"/>
 											</xsl:call-template>
@@ -451,9 +451,9 @@
 										<br/><br/>
 										<span style="width: 68; padding-left:8mm;float:left: clear: none;">End of tax year
 									   <!--Dotted Line-->
-											<span class="styDotLn" style="float:right;padding-left:2mm;">.......</span>
+											<span class="styDotLn" style="float:right;padding-left:2mm;">......</span>
 										</span>
-										<span style="width: 32mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
+										<span style="width: 36mm; border-bottom: 1px solid black; text-align: right; float: right; clear: none;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="$FormData/EndTaxYearSharesCnt"/>
 											</xsl:call-template>

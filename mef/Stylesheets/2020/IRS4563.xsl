@@ -31,10 +31,10 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
 				<xsl:call-template name="InitJS"/>
 				<style type="text/css">
-					<!--<xsl:if test="not($Print) or $Print=''">-->
+					<xsl:if test="not($Print) or $Print=''">
 					<xsl:call-template name="IRS4563Style"/>
 					<xsl:call-template name="AddOnStyle"/>
-					<!--</xsl:if>-->
+					</xsl:if>
 				</style>
 				<!--
 				<link rel="stylesheet" type="text/css" name="HeaderStyleSheet" href="{$CSSPath}/header.css"/>
@@ -69,13 +69,13 @@
 									<div style="width:100%;height:5mm;padding-right:3mm;">
 										<div style="width:60mm;height:4mm;">
 											<br/>
-											<img src="{$ImagePath}/4563_Bullet_Sm.gif" alt="SmallBullet"/> 
+											<img src="{$ImagePath}/4563_Bullet_Sm.gif" alt="Small Right Arrow"/> 
 											Attach to Form 1040 or 1040-SR
 										</div>
 										<br/>
 										<div style="width:100mm;height:5mm;padding-left:2mm;">
 											<br/>
-											<img src="{$ImagePath}/4563_Bullet_Sm.gif" alt="SmallBullet"/> 
+											<img src="{$ImagePath}/4563_Bullet_Sm.gif" alt="Small Right Arrow"/> 
 											Go to <i>www.irs.gov/Form4563</i> for the latest information.
 										</div>
 									</div>
@@ -123,7 +123,7 @@
 							<div class="styIRS4563LNDesc" style="width:100mm;">
 								Date bona fide residence began
 								<span style="width:3px;"/>
-								<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Bullet Image" style="padding-left:1mm"/>
+								<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Right Arrow Image" style="padding-left:1mm"/>
 								<span style="width:4px;"> </span>
 								<span style="border-bottom: 1px solid black;width:51.5mm">
 									<xsl:call-template name="PopulateMonthDayYear">
@@ -134,7 +134,7 @@
 							<div class="styIRS4563LNDesc" style="width:79mm;">
 								, and ended
 								<span style="width:3px;"/>
-								<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Right Arrow Image"/>
 								<span style="width:4px;"> </span>
 								<span style="border-bottom: 1px solid black;width:56mm;">
 									<xsl:choose>
@@ -162,7 +162,7 @@
 								Type of living quarters in<br/>American Samoa
 							</div>
 							<div class="styIRS4563LNDesc" style="width:10mm;padding-left:0mm;">
-								<img src="{$ImagePath}/4563_Bullet_Lg.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/4563_Bullet_Lg.gif" alt="Right Arrow Image"/>
 							</div>
 							<div class="styIRS4563LNDesc" style="width:124mm;height:auto;">
 								<div class="styIRS4563LNDesc" style="width:54mm;padding-top:0mm;padding-left:0mm;">
@@ -291,7 +291,7 @@
 								<div class="styIRS4563LNDesc" style="width:160mm;padding-top:0mm;padding-left:1px;">
 									If &#8220;Yes,&#8221; who and for what period?
 									<span style="width:3px;"/>
-									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Right Arrow Image"/>
 									<span style="width:4px;"> </span>
 								</div>
 							</div>
@@ -479,11 +479,11 @@
 						<div class="styIRS4563LineItem" style="height:auto;">
 							<div class="styIRS4563LNLeftLtrBox">b</div>
 							<!--+++++++++++++++++++ Text +++++++++++++++++++-->
-							<div class="styIRS4563LNDesc" style="width:160mm;">
-								<div class="styIRS4563LNDesc" style="width:160mm;padding-top:0mm;padding-left:1px;">
-									If &#8220;Yes,&#8221; show address of your home(s), whether it was rented, the name of each occupant, and his or her relationship to<br/>you.
+							<div class="styIRS4563LNDesc" style="width:170mm;">
+								<div class="styIRS4563LNDesc" style="width:170mm;padding-top:0mm;padding-left:1px;">
+									If "Yes", show address of your home(s), whether it was rented, the name of each occupant, and his or her relationship to you.
 									<span style="width:3px;"/>
-									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Right Arrow Image"/>
 									<span style="width:4px;"> </span>
 								</div>
 							</div>
@@ -508,7 +508,7 @@
 								<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 								<!--													Table Start																	-->
 								<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-								<xsl:call-template name="SetInitialState"/>
+								<!--<xsl:call-template name="SetInitialState"/> ss 2020.06.25 -->
 								<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 								<table class="styTable" cellspacing="0">
 									<!-- ++++++++++++++++++++++++ Start: Table Headers ++++++++++++++++++++++ -->
@@ -675,7 +675,7 @@
 							<div class="styIRS4563LNDesc" style="height:auto;padding-top:2mm;">
 								Name and address of employer (state if self-employed)
 								<span style="width:3px;"/>
-								<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Right Arrow Image"/>
 								<span style="width:4px;"> </span>
 								<span style="1mm"/>
 								<span style="border-bottom:1px solid black;display:inline;">
@@ -1046,7 +1046,7 @@
 									<!-- Text and image -->
 									Other income. List type and amount
 									<span style="width:3mm;"/>
-									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Right Arrow Image"/>
 									<span style="width:3mm;"/>
 									<span style="width:75mm;border-bottom:1px dashed black;"/>
 								</div>
@@ -1111,7 +1111,7 @@
 									<!--Dotted Line-->
 									<span class="styDotLn" style="float:left;padding-left:1mm;padding-right:1mm;">..............................</span>
 									<span style="width:3mm;"/>
-									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/4563_Bullet_Md.gif" alt="Right Arrow Image"/>
 									<span style="width:1mm;"> </span>
 								</div>
 								<div style="float:right;">

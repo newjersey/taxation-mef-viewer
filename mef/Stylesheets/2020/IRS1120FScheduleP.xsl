@@ -282,33 +282,33 @@
 								  <xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
 								</xsl:call-template>
 								<!-- per IBM to add PopulateSpan to boolean (yes/no) checkbox -->								
-								<input type="checkbox" class="styCkbox" alt="DistributiveShareTreatedAsECIYes" name="DistributiveShareTreatedAsECIcheckbox">
+								<input type="checkbox" class="styCkbox" alt="Distributive Share Treated As ECI Yes Box" name="DistributiveShareTreatedAsECIcheckbox">
 								  <xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECIYes<xsl:value-of select="position()"/></xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI Yes Box<xsl:value-of select="position()"/></xsl:with-param>
 								  </xsl:call-template>
 								  <!--  <xsl:attribute name="id"><xsl:value-of select="concat($DistributiveShareTreatedAsECIID, 'Yes[1]')"/></xsl:attribute>-->
 								</input>
 								<label>
 								  <xsl:call-template name="PopulateLabelYes">
 									<xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECIYes<xsl:value-of select="position()"/></xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI Yes Label<xsl:value-of select="position()"/></xsl:with-param>
 								  </xsl:call-template>								
 								  <!--xsl:attribute name="for"><xsl:value-of select="concat($DistributiveShareTreatedAsECIID, 'Yes[1]')"/></xsl:attribute>-->
 								</label>
 								<span style="width:2mm;"/><b>Yes</b> 
 								<span style="width:5mm"/>
-								<input type="checkbox" class="styCkbox" alt="DistributiveShareTreatedAsECINo" name="DistributiveShareTreatedAsECIcheckbox">
+								<input type="checkbox" class="styCkbox" alt="Distributive Share Treated As ECI No Box" name="DistributiveShareTreatedAsECIcheckbox">
 								  <xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECINo<xsl:value-of select="position()"/></xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI No Box<xsl:value-of select="position()"/></xsl:with-param>
 								  </xsl:call-template>
 								  <!--<xsl:attribute name="id"><xsl:value-of select="concat($DistributiveShareTreatedAsECIID, 'No[1]')"/></xsl:attribute>-->
 								</input>
 								<label>
 								  <xsl:call-template name="PopulateLabelNo">
 									<xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECINo<xsl:value-of select="position()"/></xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI No Label<xsl:value-of select="position()"/></xsl:with-param>
 								  </xsl:call-template>
 								  <!--<xsl:attribute name="for"><xsl:value-of select="concat($DistributiveShareTreatedAsECIID, 'No[1]')"/></xsl:attribute>-->
 								  <span style="width:2mm"/><b>No</b>
@@ -346,25 +346,25 @@
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI1</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI1 Yes Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:2mm"/><label>
 								  <xsl:call-template name="PopulateLabelYes">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI1</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI1 Yes Label</xsl:with-param>
 								  </xsl:call-template><b>Yes</b></label>   
 							  <span style="width:7mm"/>
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI1</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI1 No Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:1mm"/><label>
 								  <xsl:call-template name="PopulateLabelNo">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI1</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI1 No Label</xsl:with-param>
 								  </xsl:call-template><b>No</b></label>   
 							</td>
 						  </tr>
@@ -381,25 +381,25 @@
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI2</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI2 Yes Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:2mm"/><label>
 								  <xsl:call-template name="PopulateLabelYes">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI2</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI2 Yes Label</xsl:with-param>
 								  </xsl:call-template><b>Yes</b></label>   
 							  <span style="width:7mm"/>
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI2</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI2 No Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:1mm"/><label>
 								  <xsl:call-template name="PopulateLabelNo">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI2</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI2 No Label</xsl:with-param>
 								  </xsl:call-template><b>No</b></label>   
                             </td>
 						  </tr>
@@ -416,25 +416,25 @@
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI3</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI3 Yes Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:2mm"/><label>
 								  <xsl:call-template name="PopulateLabelYes">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI3</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI3 Yes Label</xsl:with-param>
 								  </xsl:call-template><b>Yes</b></label>   
 							  <span style="width:7mm"/>
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI3</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI3 No Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:1mm"/><label>
 								  <xsl:call-template name="PopulateLabelNo">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI3</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI3 No Label</xsl:with-param>
 								  </xsl:call-template><b>No</b></label>   
                             </td>
 						  </tr>
@@ -451,25 +451,25 @@
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI4</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI4 Yes Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:2mm"/><label>
 								  <xsl:call-template name="PopulateLabelYes">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI4</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI4 Yes Label</xsl:with-param>
 								  </xsl:call-template><b>Yes</b></label>   
 							  <span style="width:7mm"/>
 							  <input type="checkbox" class="styCkbox">
 								  <xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI4</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI4 No Box</xsl:with-param>
 								  </xsl:call-template>
 							  </input>
 							  <span style="width:1mm"/><label>
 								  <xsl:call-template name="PopulateLabelNo">
 									<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnerInformationGrp/None"/>
-									<xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedECI4</xsl:with-param>
+									<xsl:with-param name="BackupName">Distributive Share Treated As ECI4 No Label</xsl:with-param>
 								  </xsl:call-template><b>No</b></label>   
                             </td>
 						  </tr>
@@ -1880,10 +1880,10 @@
 								  <xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
 								  </xsl:call-template>
-								  <input type="checkbox" class="styCkbox" alt="DistributiveShareTreatedAsECI" name="Part I, column d">
+								  <input type="checkbox" class="styCkbox" alt="Distributive Share Treated As ECI Yes Box" name="Part I, column d">
 								    <xsl:call-template name="PopulateYesCheckbox">
 									  <xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									  <xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECIYes<xsl:number value="position()"/></xsl:with-param>
+									  <xsl:with-param name="BackupName">Distributive Share Treated As ECI Yes Box<xsl:number value="position()"/></xsl:with-param>
 									</xsl:call-template>
 								  </input>
 								  <xsl:call-template name="PopulateSpan">
@@ -1892,7 +1892,7 @@
 								  <label>
 									<xsl:call-template name="PopulateLabelYes">
 									  <xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									  <xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECIYes<xsl:number value="position()"/></xsl:with-param>
+									  <xsl:with-param name="BackupName">Distributive Share Treated As ECI Yes Label<xsl:number value="position()"/></xsl:with-param>
 									</xsl:call-template>
 									<span style="width:2mm;"/><b>Yes</b> 
 	                              </label>
@@ -1901,10 +1901,10 @@
 								  <xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
 								  </xsl:call-template>
-								  <input type="checkbox" class="styCkbox" alt="DistributiveShareTreatedAsECI" name="Part I, column d">
+								  <input type="checkbox" class="styCkbox" alt="Distributive Share Treated As ECI No Box" name="Part I, column d">
 									<xsl:call-template name="PopulateNoCheckbox">
 									  <xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									  <xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECINo<xsl:number value="position()"/></xsl:with-param>
+									  <xsl:with-param name="BackupName">Distributive Share Treated As ECI No Box<xsl:number value="position()"/></xsl:with-param>
 									</xsl:call-template>
 								  </input>
 								  <xsl:call-template name="PopulateSpan">
@@ -1913,7 +1913,7 @@
 								  <label>
 									<xsl:call-template name="PopulateLabelNo">
 									  <xsl:with-param name="TargetNode" select="DistributiveShareTreatedECIInd"/>
-									  <xsl:with-param name="BackupName">IRS1120FSchPDistributiveShareTreatedAsECINo<xsl:number value="position()"/></xsl:with-param>
+									  <xsl:with-param name="BackupName">Distributive Share Treated As ECI No Label<xsl:number value="position()"/></xsl:with-param>
 									</xsl:call-template>
 									<span style="width:1mm"/><b>No</b>
 	                              </label>

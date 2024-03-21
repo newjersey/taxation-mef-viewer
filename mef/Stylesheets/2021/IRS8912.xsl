@@ -2425,7 +2425,7 @@ b</div>
 <div class="styLNDesc" style="width:144mm;height:5mm;padding-top:.8mm">
 Add the amounts on line 18, column (f)
 <!--Dotted Line-->
-<span style="letter-spacing:3.8mm;font-weight:bold;padding-top:.8mm"> ....................</span>
+<span style="letter-spacing:3.7mm;font-weight:bold;padding-top:.8mm"> ....................</span>
 </div>
 <div class="styLNRightNumBox" style="width:6mm;height:5mm;border-bottom-width:0px;padding-top:1.5mm">
 19	

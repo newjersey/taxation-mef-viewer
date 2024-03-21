@@ -36,12 +36,12 @@
 							</xsl:call-template>
 						</td>
 						<td class="styDepTblCell" style="text-align:left;">
-							<xsl:call-template name="PopulateText">
+							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="BeginningAdjustedBasisAmt"/>
 							</xsl:call-template>
 						</td>
 						<td class="styDepTblCell" style="text-align:left;">
-							<xsl:call-template name="PopulateText">
+							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="EndingAdjustedBasisAmt"/>
 							</xsl:call-template>
 						</td>

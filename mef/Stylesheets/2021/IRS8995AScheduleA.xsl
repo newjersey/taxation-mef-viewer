@@ -107,7 +107,7 @@
 						($164,925 if married filing separately; $329,800 if married filing jointly) and you’re not a patron of an agricultural or horticultural cooperative, don’t file this form; instead, file Form 8995, 
 						Qualified Business Income Deduction Simplified Computation. Otherwise, complete Schedule D (Form 8995-A) before beginning Schedule A.
 						If your taxable income is more than $214,900 ($214,925 if married filing separately; $429,800 if married filing jointly), your specified service trade or business doesn’t qualify for the deduction.
-						If you have more than three trades or businesses, attach 	as many Schedules A as needed. See instructions before completing Parts I and II.
+						If you have more than three trades or businesses, attach 	as many Schedules A as needed. See instructions.
 					</div>
 					<div class="sty8995ASALineDiv" style="border-top:1px solid black;">
 						<div class="styPartName">Part I</div>
@@ -118,16 +118,16 @@
 							<xsl:variable name="pos" select="position()"/>
 							<!-- Column Headers -->
 							<div class="sty8995ASALineDiv" style="border-top:1px solid black;">
-								<div class="styLNLeftNumBox">&nbsp;</div>
-								<div class="sty8995ASADesc">&nbsp;</div>
-								<div class="styLNRightNumBox" style="height:7mm;border-left-width:0px;">&nbsp;</div>
-								<div class="sty8995ASAAmtBox" style="height:7mm;padding-top:2mm;text-align:center;font-weight:bold;">
+								<div class="styLNLeftNumBox" style="font-weight:normal;padding-left:5px;">See</div>
+								<div class="sty8995ASADesc">instructions before completing Parts I and II.</div>
+								<div class="styLNRightNumBox" style="height:4mm;border-left-width:0px;">&nbsp;</div>
+								<div class="sty8995ASAAmtBox" style="height:4mm;text-align:center;font-weight:bold;">
 									<xsl:number value="$pos" format="A"/>
 								</div>
-								<div class="sty8995ASAAmtBox" style="height:7mm;padding-top:2mm;text-align:center;font-weight:bold;">
+								<div class="sty8995ASAAmtBox" style="height:4mm;text-align:center;font-weight:bold;">
 									<xsl:number value="$pos + 1" format="A"/>
 								</div>
-								<div class="sty8995ASAAmtBox" style="height:7mm;padding-top:2mm;text-align:center;font-weight:bold;">
+								<div class="sty8995ASAAmtBox" style="height:4mm;text-align:center;font-weight:bold;">
 									<xsl:number value="$pos + 2" format="A"/>
 								</div>
 							</div>
@@ -323,23 +323,23 @@
 							</div>
 							<!-- Line 4 -->
 							<div class="sty8995ASALineDiv">
-								<div class="styLNLeftNumBoxSD">4</div>
-								<div class="sty8995ASADesc">
-									Allocable share of the UBIA of all qualified property
-									<span class="sty8995ASchADotLn">....</span>
+								<div class="styLNLeftNumBoxSD" style="height:7mm;">4</div>
+								<div class="sty8995ASADesc" style="height:7mm;">
+									Allocable share of the unadjusted basis immediately after acquisition (UBIA) off all qualified property
+									<span class="sty8995ASchADotLn">......</span>
 								</div>
-								<div class="styLNRightNumBox">4</div>
-								<div class="sty8995ASAAmtBox">
+								<div class="styLNRightNumBox" style="height:7mm;padding-top:3.5mm;">4</div>
+								<div class="sty8995ASAAmtBox" style="height:7mm;padding-top:3.5mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="AllocableShareUBIAQlfyPropAmt"/>
 									</xsl:call-template>
 								</div>
-								<div class="sty8995ASAAmtBox">
+								<div class="sty8995ASAAmtBox" style="height:7mm;padding-top:3.5mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/NonPTPSSTBGrp/NonPTPSSTBDtlGrp[$pos + 1]/AllocableShareUBIAQlfyPropAmt"/>
 									</xsl:call-template>
 								</div>
-								<div class="sty8995ASAAmtBox">
+								<div class="sty8995ASAAmtBox" style="height:7mm;padding-top:3.5mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/NonPTPSSTBGrp/NonPTPSSTBDtlGrp[$pos + 2]/AllocableShareUBIAQlfyPropAmt"/>
 									</xsl:call-template>
@@ -469,8 +469,8 @@
 								<div class="sty8995ASADesc" style="height:13mm;">
 									Applicable percentage of qualified business income or (loss). Multiply line 2 by line 10. 
 									Enter this amount on Schedule C (Form 8995-A) or on Form 8995-A, line 2, for the 
-									corresponding trade or business, as appropriate. See instructions
-									<span class="sty8995ASchADotLn">....</span>
+									corresponding trade or business, as appropriate
+									<span class="sty8995ASchADotLn">.........</span>
 								</div>
 								<div class="styLNRightNumBox" style="height:13mm;">
 									<br/>
@@ -507,8 +507,8 @@
 								<div class="sty8995ASADesc" style="height:10mm;">
 									Applicable percentage of W-2 wages. Multiply line 3 by line 10. 
 									Enter this amount on Form 8995-A, line 4, for the corresponding 
-									trade or business, as appropriate. See instructions
-									<span class="sty8995ASchADotLn">....</span>
+									trade or business, as appropriate
+									<span class="sty8995ASchADotLn">.........</span>
 								</div>
 								<div class="styLNRightNumBox" style="height:10mm;">
 									<br/>
@@ -538,34 +538,30 @@
 							<!-- Line 13 -->
 							<div class="sty8995ASALineDiv">
 								<div class="styLNLeftNumBox">13</div>
-								<div class="sty8995ASADesc" style="height:13mm;">
+								<div class="sty8995ASADesc" style="height:10mm;">
 									Applicable percentage of the UBIA of qualified property. <br/> Multiply line 4 by line 10. 
 									Enter this amount on Form 8995-A, line 7, for the corresponding 
-									trade or business, as appropriate. See instructions
-									<span class="sty8995ASchADotLn">..............</span>
+									trade or business, as appropriate
+									<!--<span class="sty8995ASchADotLn">...</span>-->
 								</div>
-								<div class="styLNRightNumBoxNBB" style="height:13mm;">
-									<br/>
+								<div class="styLNRightNumBoxNBB" style="height:10mm;">
 									<br/>
 									<br/>13</div>
-								<div class="sty8995ASAAmtBox" style="height:13mm;border-bottom-width:0px;">
-									<br/>
+								<div class="sty8995ASAAmtBox" style="height:10mm;border-bottom-width:0px;">
 									<br/>
 									<br/>
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="ApplicablePctUBIAQlfyPropAmt"/>
 									</xsl:call-template>
 								</div>
-								<div class="sty8995ASAAmtBox" style="height:13mm;border-bottom-width:0px;">
-									<br/>
+								<div class="sty8995ASAAmtBox" style="height:10mm;border-bottom-width:0px;">
 									<br/>
 									<br/>
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/NonPTPSSTBGrp/NonPTPSSTBDtlGrp[$pos + 1]/ApplicablePctUBIAQlfyPropAmt"/>
 									</xsl:call-template>
 								</div>
-								<div class="sty8995ASAAmtBox" style="height:13mm;border-bottom-width:0px;">
-									<br/>
+								<div class="sty8995ASAAmtBox" style="height:10mm;border-bottom-width:0px;">
 									<br/>
 									<br/>
 									<xsl:call-template name="PopulateAmount">
@@ -1142,8 +1138,8 @@
 					<div class="sty8995ASALineDiv" style="">
 						<div class="styLNLeftNumBox">17</div>
 						<div class="styLNDesc" style="width:141mm;">
-							Total PTP SSTB income or (loss). Combine all amounts on line 16
-							<span class="sty8995ASchADotLn">..............</span>
+							Total PTP specified service trade or business (SSTB) income or (loss). Combine all amounts on line 16
+							<span class="sty8995ASchADotLn">...</span>
 						</div>
 						<div class="styLNRightNumBox">17</div>
 						<div class="sty8995ASAAmtBox">

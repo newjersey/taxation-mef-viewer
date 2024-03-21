@@ -55,10 +55,10 @@
 						<div class="styFTBox" style="width:128mm;height:20mm; ">
 							<div class="styMainTitle" style="height:4mm;padding-top:3mm;">Annual Return of Withheld Federal Income Tax</div>
 							<div class="styFBT" style="width:128mm;height:auto;padding-top:3mm;font:size:6pt;">
-								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/> For withholding reported on Forms 1099 and W-2G.<br/>
-								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/> For more information on income tax withholding, see Pub. 15 
+								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/> For withholding reported on Forms 1099 and W-2G.<br/>
+								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/> For more information on income tax withholding, see Pub. 15 
 									and Pub. 15-A.<br/>
-								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/> Go to
+								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/> Go to
 								<a style="text-decoration:none;color:black;" href="http://www.irs.gov/form945" title="Link to IRS.gov"><i>www.irs.gov/Form945</i> for instructions and the latest information.</a>
 								<br/>
 							</div>
@@ -145,7 +145,7 @@
 						<!-- 4/7/2015 AM: Hairline between form title and filer information is at maximum width to align (width 29.5 to 29.7) -->
 						<div class="styGenericDiv" style="width:29.7mm;height:30mm;padding-left:3mm;padding-top:14mm;">
 							<span class="styBoldText">If address is<br/>different<br/>from prior<br/>return, check<br/>here. 
-							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/>
 							<span style="width:3mm;"/>
 							<input type="checkbox" alt="PriorAddress" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
@@ -167,7 +167,7 @@
 						<div class="styLNLeftNumBoxSD" style="padding-top:1.5mm;">A</div>
 						<div class="styLNDesc" style="width:142.8mm;">
 							<span style="padding-right:.5mm">If you don't have to file returns in the future, check here </span>
-							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/>
 							<span style="width:3mm;"/>
 							<input type="checkbox" alt="FutureFilingNotRequired" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
@@ -183,7 +183,7 @@
 							</label>
 							<span style="width:3mm;"/>
 							<span style="padding-right:.5mm">and enter date final payments made. </span>
-							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/>
 						</div>
 						<div class="styGenericDiv" style="width:35mm;border-bottom:1px dashed black;float:right;">
 							<span style="width:2mm;"/>
@@ -317,7 +317,7 @@
 						<div class="styLNDesc" style="width:98.8mm;">
 							<span style="float:left;">
 								<b>Overpayment.</b> If line 4 is more than line 3, enter the difference 
-								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/>
 							</span>
 							<span style="float:right;">$</span>
 						</div>
@@ -383,7 +383,7 @@
 								<b>• Semiweekly schedule depositors:</b> Complete Form 945-A and check here </span>
 							<!--Dotted Line-->
 							<span class="styDotLn" style="float:left;padding-left:2mm;padding-right:1mm;">.................</span>
-							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/>
 							<div class="styGenericDiv" style="float:right;">
 								<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
 									<xsl:call-template name="PopulateCheckbox">
@@ -404,7 +404,7 @@
 								<b>• Monthly schedule depositors:</b> Complete line 7, entries A through M, and check here</span>
 							<!--Dotted Line-->
 							<span class="styDotLn" style="float:left;padding-left:2mm;padding-right:1mm;">.............</span>
-							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/>
 							<div class="styGenericDiv" style="float:right;">
 								<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
 									<xsl:call-template name="PopulateCheckbox">
@@ -657,7 +657,7 @@
 							<div style="float:left;clear:none;padding-left:8mm;font-size:6pt;">
 								<!-- Checkbox -->
 								<input type="Checkbox" alt="DiscussWithThirdPartyYes" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/DiscussWithThirdPartyYesInd"/>
 										<xsl:with-param name="BackupName">IRS945DiscussWithThirdPartyYesInd</xsl:with-param>
 									</xsl:call-template>
@@ -673,7 +673,7 @@
 							<div style="float:left;clear:none;padding-left:5mm;font-size:6pt;">
 								<!-- Checkbox -->
 								<input type="Checkbox" alt="DiscussWithThirdPartyNo" class="styCkbox">
-								<xsl:call-template name="PopulateNoCheckbox">
+								<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyNoInd"/>
 										<xsl:with-param name="BackupName">IRS945DiscussWithThirdPartyNoInd</xsl:with-param>
 									</xsl:call-template>
@@ -702,7 +702,7 @@
 								<span style="width:2px;"/>
 								<img src="{$ImagePath}/1040_Bullet.gif" alt="Right pointing arrowhead image"/>
 							</div>
-							<div style="float:left;clear:none;width:29mm;padding-top:3mm;">
+							<div style="float:left;clear:none;width:34mm;padding-top:3mm;">
 								<xsl:if test="$RtnHdrData/DiscussWithThirdPartyYesGrp/ThirdPartyDesigneePhoneNum">
 									<xsl:call-template name="PopulatePhoneNumber">
 										<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/ThirdPartyDesigneePhoneNum"/>
@@ -718,6 +718,10 @@
 									</span>
 								</xsl:if>
 							</div>
+							<div style="float:left;clear:none;width:32mm;padding-left:.5mm;font-weight:bold;font-size:6pt;">Personal identification<br/>number (PIN)
+								<span style="width:8mm;"/>
+								<img src="{$ImagePath}/1040_Bullet.gif" alt="Right pointing arrowhead image"/>
+							</div>
 							<div style="height:5mm;width:24mm;padding-top:1.5mm;float:right;clear:none;">
 								<div class="styLNCtrNumBox" style="float:right;width:23mm;border-top-width:1px;padding-top:1mm;">
 									<xsl:call-template name="PopulatePin">
@@ -725,10 +729,6 @@
 										<xsl:with-param name="BackupName">IRS945ThirdPartyDesigneePIN</xsl:with-param>
 									</xsl:call-template>
 								</div>
-							</div>
-							<div style="float:right;clear:none;width:32mm;padding-left:.5mm;font-weight:bold;font-size:6pt;">Personal identification<br/>number (PIN)
-								<span style="width:8mm;"/>
-								<img src="{$ImagePath}/1040_Bullet.gif" alt="Right pointing arrowhead image"/>
 							</div>
 						</div>
 					</div>
@@ -888,7 +888,7 @@
 							<div style="width:164mm;float:left;clear:none;border-style:solid;border-color:black;border-width:0px 0px 1px 0px;">
 								<div class="styLNDesc" style="width:126.2mm;height:6mm;border-right:1px solid black;border-left:1px solid black;padding-left:1mm;">
 									<span class="styGenericDiv" style="">Firm's name
-										<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="SmallBullet"/>
+										<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="Small Right pointing arrowhead image"/>
 										<span style="width:4px;"/>
 									</span>
 									<div class="styGenericDiv" style="padding-right:.5mm;">
@@ -902,7 +902,7 @@
 									</div>
 								</div>
 								<div class="styLNDesc" style="height:6mm;width:32mm;padding-left:1mm;">Firm's EIN 
-									<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="SmallBullet"/>
+									<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="Small Right pointing arrowhead image"/>
 									<span style="width:5px;"/>
 									<xsl:if test="$RtnHdrData/PaidPreparerInformationGrp/PreparerFirmEIN">
 										<xsl:call-template name="PopulateEIN">
@@ -920,7 +920,7 @@
 							<div style="width:164mm;float:left;clear:none;">
 								<div class="styLNDesc" style="width:126.2mm;height:auto;border-right:1px solid black;border-left:1px solid black;padding-left:1mm;">
 									<div class="styGenericDiv" style="padding-right:.5mm;">Firm's address 
-										<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="SmallBullet"/>
+										<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="Small Right pointing arrowhead image"/>
 									</div>
 									<div class="styGenericDiv" style="padding-right:.5mm;">
 										<xsl:if test="$RtnHdrData/PaidPreparerInformationGrp/PreparerUSAddress">

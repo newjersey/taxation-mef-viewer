@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 04/11/2022 -->
+<!-- Last Modified by Eugenia McDonald on 05/27/2022 -->
 <!DOCTYPE xsl:stylesheet [
   <!ENTITY nbsp "&#160;">
   <!ENTITY mdash "&#8212;">
@@ -1693,8 +1693,8 @@
 									</span>
 									Date
 								</div>
-								<div class="styGenericDiv" style="width:48mm;font-size:8pt">
-									<span style="width:100%;border-bottom:1px solid black;">
+								<div class="styGenericDiv" style="width:48mm;font-size:8pt;">
+									<span style="width:100%;border-bottom:1px solid black;margin-top:-3.5mm">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/PrimaryOccupationTxt"/>
 										</xsl:call-template>
@@ -1734,7 +1734,7 @@
 								Date
 							</div>
 							<div class="styGenericDiv" style="width:48mm;font-size:8pt">
-								<span style="width:100%;border-bottom:1px solid black;">
+								<span style="width:100%;border-bottom:1px solid black;margin-top:-3.5mm;">
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$FormData/SpouseOccupationTxt"/>
 									</xsl:call-template>

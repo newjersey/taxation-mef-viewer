@@ -9,6 +9,8 @@
 <!-- 12/13/2018 - Additional changes made per defect 126818 - Jeremy Nichols -->
 <!-- 12/13/2018 - Additional changes made per defect 126819 - Jeremy Nichols -->
 <!-- 01/22/2019 - Additional changes made per defect 126838 - Jeremy Nichols -->
+<!-- 03/15/2022 - Made changes per UWR 379587 - Jeremy Nichols -->
+<!-- 06/15/2022 - Made changes per KISAM IM01960184 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="CommonPathRef.xsl"/>
   <xsl:include href="PopulateTemplate.xsl"/>
@@ -58,7 +60,7 @@
               <span class="styFormText" style="font-size:7pt;width:1mm;"></span>      
               <span class="styFormNumber" style="font-size:20pt;font-weight:bold;">6627</span>      
               <br/>      
-              <span class="styAgency" style="font-weight:normal;">(Rev. January 2019)</span><br/> 
+              <span class="styAgency" style="font-weight:normal;">(Rev. July 2022)</span><br/> 
               <span class="styAgency" style="font-weight:normal;padding-top:0.5mm;">Department of the Treasury</span><br />
               <span class="styAgency" style="font-weight:normal;">Internal Revenue Service</span>
             </div>
@@ -74,7 +76,7 @@
               <div class="styFST" style="height:5mm;font-size:7pt;margin-left:2mm;text-align:center;">
                 <span style="text-align:center;font-weight:bold">
                   <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
-                  Go to <i>www.irs.gov/Form6627</i> for the latest information.
+                  Go to <i>www.irs.gov/Form6627</i> for the instructions and the latest information.
                 </span>
               </div>
             </div>
@@ -210,11 +212,1252 @@
           <div class="styBB" style="width:187mm;border-top:1px black;height=8mm;">
             <div class="styLNDesc" style="width:187mm;height:8mm;font-size:8pt;font-weight:bold;padding-top:2mm;">
               <span style="height:4.5mm;width:14mm;padding-top:0.5mm;padding-right:1.5mm;color:white;background-color:black;text-align:right;float:inherit;margin:0;">Part II</span>
+              <span style="width:160mm ;font-size:8pt;;"><span style="width:4mm;"/>Tax on Chemicals (Other Than Ozone-Depleting Chemicals (ODCs)), IRS No. 54</span>
+            </div>      
+          </div>
+          
+			<!--Part II Table-->
+			<table style="height:auto;width:187mm;font-size:6pt;border-collapse:collapse;">
+			  <tbody>
+				<tr>
+					<th colspan= "2" style="width:41.5mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						Chemical<br/>
+						(General formula or symbol)
+				    </th>
+				    <th style="width:11mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						(a)<br/>
+						Tons
+				    </th>
+				    <th style="width:11mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						(b)<br/>
+						Rate
+				    </th>
+				    <th style="width:30mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						(c) Tax<br/>
+						(multiply column (a)<br/>
+						by column (b))
+				    </th>
+					<th colspan= "2" style="width:41.5mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						Chemical<br/>
+						(General formula or symbol)
+				    </th>
+				    <th style="width:11mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						(a)<br/>
+						Tons
+				    </th>
+				    <th style="width:11mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						(b)<br/>
+						Rate
+				    </th>
+				    <th style="width:30mm;height:12mm;text-align:center;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						(c) Tax<br/>
+						(multiply column (a)<br/>
+						by column (b))
+				    </th>
+				</tr>
+				<tr>
+					<td style="width:4mm;text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						1
+				    </td>
+					<td style="width:37.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Acetylene (C2H2)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="width:11mm;text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AcetyleneC2H2Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="width:11mm;text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<span style="float:left;">$</span>
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/AcetyleneC2H2Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="width:30mm;text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AcetyleneC2H2Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="width:4mm;text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						22
+				    </td>
+					<td style="width:37.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Hydrochloric acid (HCl)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="width:11mm;text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/HydrochloricAcidHClGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="width:11mm;text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<span style="float:left;">$</span>
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/HydrochloricAcidHClGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="width:30mm;text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/HydrochloricAcidHClGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						2
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Ammonia (NH3)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AmmoniaNH3Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/AmmoniaNH3Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AmmoniaNH3Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						23
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Hydrogen fluoride (HF)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/HydrogenFluorideHFGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/HydrogenFluorideHFGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/HydrogenFluorideHFGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						3
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Antimony (Sb)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AntimonySbGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/AntimonySbGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AntimonySbGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						24
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Lead oxide (PbO)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/LeadOxidePbOGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/LeadOxidePbOGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/LeadOxidePbOGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						4
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Antimony trioxide (Sb2O3)
+						<div class="styDotLn" style="float:right;">..</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AntimonyTrioxideSb2O3Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/AntimonyTrioxideSb2O3Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/AntimonyTrioxideSb2O3Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						25
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Mercury (Hg)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/MercuryHgGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/MercuryHgGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/MercuryHgGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						5
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Arsenic (As)
+						<div class="styDotLn" style="float:right;">......</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ArsenicAsGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ArsenicAsGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ArsenicAsGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						26
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Methane (CH4)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/MethaneCH4Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/MethaneCH4Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/MethaneCH4Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						6
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Arsenic trioxide (As2O3)
+						<div class="styDotLn" style="float:right;">..</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ArsenicTrioxideAs2O3Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ArsenicTrioxideAs2O3Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ArsenicTrioxideAs2O3Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						27
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Naphthalene (C10H8)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/NaphthaleneC10H8Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/NaphthaleneC10H8Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/NaphthaleneC10H8Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						7
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Barium sulfide (BaS)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/BariumSulfideBaSGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/BariumSulfideBaSGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/BariumSulfideBaSGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						28
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Nickel (Ni)
+						<div class="styDotLn" style="float:right;">......</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/NickelNiGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/NickelNiGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/NickelNiGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						8
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Benzene (C6H6)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/BenzeneC6H6Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/BenzeneC6H6Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/BenzeneC6H6Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						29
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Nitric acid (HNO3)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/NitricAcidHNO3Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/NitricAcidHNO3Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/NitricAcidHNO3Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						9
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Bromine (Br)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/BromineBrGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/BromineBrGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/BromineBrGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						30
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Phosphorus (P)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PhosphorusPGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/PhosphorusPGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PhosphorusPGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						10
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Butadiene (C4H6)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ButadieneC4H6Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ButadieneC4H6Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ButadieneC4H6Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						31
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Potassium dichromate (K2Cr2O7)
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PotassiumDichromateK2Cr2O7Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/PotassiumDichromateK2Cr2O7Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PotassiumDichromateK2Cr2O7Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						11
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Butane (C4H10)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ButaneC4H10Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ButaneC4H10Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ButaneC4H10Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						32
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Potassium hydroxide (KOH)
+						<div class="styDotLn" style="float:right;">.</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PotassiumHydroxideKOHGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/PotassiumHydroxideKOHGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PotassiumHydroxideKOHGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						12
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Butylene (C3H8)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ButyleneC4H8Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ButyleneC4H8Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ButyleneC4H8Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						33
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Propylene (C3H6)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PropyleneC3H6Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/PropyleneC3H6Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/PropyleneC3H6Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						13
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Cadmium (Cd)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CadmiumCdGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/CadmiumCdGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CadmiumCdGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						34
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Sodium dichromate (NaCr2O7)
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/SodiumDichromateNaCr2O7Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/SodiumDichromateNaCr2O7Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/SodiumDichromateNaCr2O7Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						14
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Chlorine (Cl)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ChlorineClGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ChlorineClGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ChlorineClGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						35
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Sodium hydroxide (NaOH)
+						<div class="styDotLn" style="float:right;">..</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/SodiumHydroxideNaOHGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/SodiumHydroxideNaOHGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/SodiumHydroxideNaOHGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						15
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Chromite (FeCr2O4)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ChromiteFeCr2O4Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ChromiteFeCr2O4Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ChromiteFeCr2O4Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						36
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Stannic chloride (SnCl4)
+						<div class="styDotLn" style="float:right;">..</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/StannicChlorideSnCl4Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/StannicChlorideSnCl4Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/StannicChlorideSnCl4Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						16
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Chromium (Cr)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ChromiumCrGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ChromiumCrGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ChromiumCrGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						37
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Stannous chloride (SnCl2)
+						<div class="styDotLn" style="float:right;">..</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/StannousChlorideSnCl2Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/StannousChlorideSnCl2Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/StannousChlorideSnCl2Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						17
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Cobalt (Co)
+						<div class="styDotLn" style="float:right;">......</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CobaltCoGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/CobaltCoGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CobaltCoGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						38
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Sulfuric acid (H2SO4)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/SulfuricAcidH2SO4Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/SulfuricAcidH2SO4Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/SulfuricAcidH2SO4Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						18
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Cupric oxide (CuO)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CupricOxideCuOGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/CupricOxideCuOGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CupricOxideCuOGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						39
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Toluene (C7H8)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/TolueneC7H8Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/TolueneC7H8Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/TolueneC7H8Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						19
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Cupric sulfate (CuSO4)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CupricSulfateCuSO4Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/CupricSulfateCuSO4Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CupricSulfateCuSO4Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						40
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Xylene (C8H10)
+						<div class="styDotLn" style="float:right;">.....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/XyleneC8H10Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/XyleneC8H10Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/XyleneC8H10Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						20
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Cuprous oxide (Cu2O)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CuprousOxideCu2OGrp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/CuprousOxideCu2OGrp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/CuprousOxideCu2OGrp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:0px black solid;border-right:0px black solid;">
+						41
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:0px black solid;border-right:1px black solid;">
+						Zinc chloride (ZnCl2)
+						<div class="styDotLn" style="float:right;">...</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ZincChlorideZnCl2Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:0px black dotted;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ZincChlorideZnCl2Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ZincChlorideZnCl2Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+				<tr>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						21
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						Ethylene (C2H4)
+						<div class="styDotLn" style="float:right;">....</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/EthyleneC2H4Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/EthyleneC2H4Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/EthyleneC2H4Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+					<td style="text-align:right;font-weight:bold;padding-right:0.5mm;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						42
+				    </td>
+					<td style="border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						Zinc sulfate (ZnSO4)
+						<div class="styDotLn" style="float:right;">..</div>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ZincSulfateZnSO4Grp/TonQty"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:1px black solid;">
+						<xsl:call-template name="PopulateText">
+							<xsl:with-param name="TargetNode" select="$FormData/ZincSulfateZnSO4Grp/Rt"/>
+						</xsl:call-template>
+				    </td>
+				    <td style="text-align:right;border-top:0px black solid;border-bottom:1px black solid;border-right:0px black solid;">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/ZincSulfateZnSO4Grp/TaxAmt"/>
+						</xsl:call-template>
+				    </td>
+				</tr>
+              </tbody>
+            </table>    
+            
+          <!--Begin Page 1 Footer-->
+          <div  style="width:187mm">
+            <span style="width:100mm;font-weight:bold;text-align:left;font-size:6pt;"> 
+              For Privacy Act and Paperwork Reduction Act Notice, see Form 720 instructions.
+            </span>
+            <span style="width:10mm;"></span>  
+            <span style="width:19mm;font-weight:normal;font-size:6pt;">
+            Cat. No. 43490I</span> 
+            <span style="width:19mm;"></span>  
+            <span style="text-align:right;width:7mm;font-weight:normal;font-size:6pt;">
+            Form</span> 
+            <span style="width:1mm;"></span>  
+            <span style="text-align:center;width:6mm;font-weight:bold;font-size:7pt;">
+            6627</span> 
+            <span style="text-align:right;width:18.5mm;font-weight:normal;font-size:6pt;padding-right:1mm;">
+            (Rev. 1-2022)</span> 
+          </div>
+          <div class="pageEnd"/>
+  
+          <!--Begin Page 2-->
+  
+          <!--Page to Header-->
+          <div  style="width:187mm;border-bottom:1px black solid;">
+            <span style="width:140mm;font-weight:normal;text-align:left;font-size:7pt;display:inline;"> 
+              Form 6627 (Rev. 1-2022)<span style="width:140mm;"/>
+            </span>
+            <span style="text-align:right;width:40mm;font-weight:normal;font-size:7pt;display:inline;">
+              Page
+            </span> 
+            <span style="width:4px"></span> 
+            <span style="text-align:right;width:1mm;font-weight:bold;font-size:7pt;display:inline;">
+              2
+            </span> 
+          </div>
+      
+                
+           
+           
+           
+          <!--Begin Part III-->
+          <div class="styBB" style="width:187mm;height:8mm;padding-top:1mm;">
+            <div class="styPartName" style="height:4.5mm;width:14mm;padding-top:0.5mm;">Part III</div>
+            <div class="styPartDesc" style="padding-top:1mm"><span style="width:4mm;"/>
+              Tax on Imported Chemical Substances, IRS No. 17
+            <div style="float:right;clear:none;padding-top:2mm">
+              <!-- button display logic -->
+              <xsl:call-template name="SetDynamicTableToggleButton" >
+              <xsl:with-param name="TargetNode" select="$FormData/TaxImpChemicalSubstancesGrp"/>
+              <xsl:with-param name="containerHeight" select="3"/>
+              <xsl:with-param name="containerID" select=" 'TICSctn' "/>
+              </xsl:call-template>
+              <!-- end button display logic -->
+            </div>
+            </div>
+          </div>
+          
+          <!--Part III Table-->
+          <div class="styTableContainer" style="height:auto;display:block;" id="TICSctn">
+            <!-- print logic -->
+            <xsl:call-template name="SetInitialState"/>
+            <table class="styTable" cellspacing="0" cellpadding="0" style="height:auto;width:187mm;">
+              <tbody>
+                <tr style="height:12mm">
+                  <th class="styTableCellHeader" style="width:45mm;font-weight:bold;border-color:black" scope="col" colspan="2">
+					  (a)<br />
+					  Imported chemical substance
+				  </th>
+                  <th class="styTableCellHeader" style="width:11mm;font-weight:bold;border-color:black" scope="col">
+					  (b)<br />
+					  Tons
+				  </th>
+                  <th class="styTableCellHeader" style="width:40mm;font-weight:bold;border-color:black" scope="col">
+					  (c)<br />
+					  Taxable chemical used in manufacture of substance
+				  </th>
+                  <th class="styTableCellHeader" style="width:40mm;font-weight:bold;border-color:black" scope="col">
+					  (d)<br />
+					  Conversion factor, percentage of metal, or entry value
+				  </th>
+                  <th class="styTableCellHeader" style="width:11mm;font-weight:bold;border-color:black" scope="col">
+					  (e)<br />
+					  Rate
+				  </th>
+                  <th class="styTableCellHeader" style="width:40mm;font-weight:bold;border-color:black;border-right:0px;" scope="col">
+					  (f)<br />
+					  Tax<br />
+					  (see instructions)
+				  </th>
+                </tr>
+                <!--If inline print or if there is 3 or less rows of data-->
+                <xsl:if test="($Print != $Separated) or (count($FormData/TaxImpChemicalSubstancesGrp) &lt;= 3)">
+                  <xsl:for-each select="$FormData/TaxImpChemicalSubstancesGrp">
+                    <tr style="height:8mm">
+                      <td class="styTableCellText" style="width:5mm;font-size:7pt;font-weight:bold;border-color:black;border-right-width:0px;">
+                          <xsl:value-of select="position()"></xsl:value-of>
+                      </td>
+                      <td class="styTableCellText" style="width:40mm;border-color:black">
+                          <xsl:call-template name="PopulateText">
+                            <xsl:with-param name="TargetNode" select="ChemicalSubstanceDesc"></xsl:with-param>
+                          </xsl:call-template>
+                      </td>
+                      <td class="styTableCell" style="width:11mm;border-color:black;padding-right:1mm;padding-top:4mm">
+                        <xsl:call-template name="PopulateAmount">
+                          <xsl:with-param name="TargetNode" select="TonQty"></xsl:with-param>
+                        </xsl:call-template>
+                      </td>
+                      <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm;padding-top:4mm">
+                        <xsl:call-template name="PopulateText">
+                          <xsl:with-param name="TargetNode" select="TaxableChemicalDesc"></xsl:with-param>
+                        </xsl:call-template>
+                      </td>
+                      <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm;padding-top:4mm">
+                        <xsl:call-template name="PopulateText">
+                          <xsl:with-param name="TargetNode" select="CvrtFctrPctMetalEntryVlPct"></xsl:with-param>
+                        </xsl:call-template>
+                      </td>
+                      <td class="styTableCell" style="width:11mm;border-color:black;padding-right:1mm;padding-top:4mm">
+                        <xsl:call-template name="PopulateText">
+                          <xsl:with-param name="TargetNode" select="Rt"></xsl:with-param>
+                        </xsl:call-template>
+                      </td>
+                      <td class="styTableCell" style="width:40mm;border-color:black;border-right-width:0px;padding-right:1mm;padding-top:4mm">
+                        <xsl:call-template name="PopulateAmount">
+                          <xsl:with-param name="TargetNode" select="TaxAmt"></xsl:with-param>
+                        </xsl:call-template>
+                      </td>
+                    </tr>
+                  </xsl:for-each>
+                </xsl:if>
+                <!--Print blank row or see additional data message-->
+                <xsl:if test="(count($FormData/TaxImpChemicalSubstancesGrp) = 0) or ( (count($FormData/TaxImpChemicalSubstancesGrp) &gt; 3) and ($Print = $Separated) )">
+                  <tr style="height:8mm">
+                    <td class="styTableCellText" style="width:5mm;font-size:7pt;font-weight:bold;border-color:black;border-right-width:0px;">
+                      1
+                    </td>
+                    <td class="styTableCellText" style="width:40mm;border-color:black">
+                        <xsl:if test="((count($FormData/ODCTaxOnImportedProductsGrp) &gt;3) and ($Print = $Separated))">
+                          <span style="font-size:7pt">
+                            <xsl:call-template name="PopulateAdditionalDataTableMessage">
+                              <xsl:with-param name="TargetNode" select="$FormData/TaxImpChemicalSubstancesGrp"/>
+                            </xsl:call-template>
+                          </span>
+                        </xsl:if>
+                        <span style="width:1px" />
+                    </td>
+                    <td class="styTableCell" style="width:11mm;font-weight:bold;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:11mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;border-right-width:0px;padding-right:1mm"><span style="width:1px" /></td>
+                  </tr>
+                </xsl:if>
+                <xsl:if test="(count($FormData/TaxImpChemicalSubstancesGrp) &lt; 2) or ( (count($FormData/TaxImpChemicalSubstancesGrp) &gt; 3) and ($Print = $Separated) )">
+                  <tr style="height:8mm">
+                    <td class="styTableCellText" style="width:5mm;font-size:7pt;font-weight:bold;border-color:black;border-right-width:0px;">
+                      2
+                    </td>
+                    <td class="styTableCellText" style="width:40mm;border-color:black">
+                      <span style="width:1px" />
+                    </td>
+                    <td class="styTableCell" style="width:11mm;font-weight:bold;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:11mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;border-right-width:0px;padding-right:1mm"><span style="width:1px" /></td>
+                  </tr>
+                </xsl:if>
+                <xsl:if test="(count($FormData/TaxImpChemicalSubstancesGrp) &lt; 3) or ( (count($FormData/TaxImpChemicalSubstancesGrp) &gt; 3) and ($Print = $Separated) )">
+                  <tr style="height:8mm">
+                    <td class="styTableCellText" style="width:5mm;font-size:7pt;font-weight:bold;border-color:black;border-bottom-width:1px;border-right-width:0px;">
+                      3
+                    </td>
+                    <td class="styTableCellText" style="width:40mm;border-color:black;border-bottom-width:1px;">
+                      <span style="width:1px" />
+                    </td>
+                    <td class="styTableCell" style="width:11mm;font-weight:bold;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:11mm;border-color:black;padding-right:1mm"><span style="width:1px" /></td>
+                    <td class="styTableCell" style="width:40mm;border-color:black;border-right-width:0px;padding-right:1mm"><span style="width:1px" /></td>
+                  </tr>
+                </xsl:if>
+                <tr>
+                  <td class="styTableCellText" style="width:5mm;font-size:7pt;font-weight:bold;vertical-align:top;padding-top:1mm;border-color:black;border-top-width:0;border-bottom-width:0;border-right-width:0px;">
+                    <xsl:choose>
+                      <xsl:when test="($Print != $Separated) and (count($FormData/TaxImpChemicalSubstancesGrp) &gt; 3)">
+                        <xsl:value-of select="(count($FormData/TaxImpChemicalSubstancesGrp) + 1)"></xsl:value-of>
+                      </xsl:when>
+                      <xsl:otherwise>
+                        4
+                      </xsl:otherwise>
+                    </xsl:choose>
+                  </td>
+                  <td class="styTableCellText" colspan="5" style="width:142mm;font-size:7pt;border-color:black;border-top-width:0;border-bottom-width:0">
+                      <b>Total Imported Chemical Substances Tax.</b> Add all amounts in column (f). Enter here and on Form 720 on the line for <b>IRS No. 17</b>
+                      <span class="styDotLn" style="float:none;padding-left:2mm;padding-right:0.5mm">............................</span>
+                      <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/>
+                  </td>
+                  <td class="styTableCell" style="height:8mm;width:40mm;vertical-align:bottom;padding-bottom:1mm;border-color:black;border-right-width:0;border-top-width:0;border-bottom-width:0;padding-top:3.5mm;">
+                    <div style="width:2mm;float:left;clear:none;font-size:7pt;display:inline;">$</div>
+                    <div style="width:26mm;font-size:7pt;display:inline;">
+                      <xsl:choose>
+                        <xsl:when test="(count($FormData/TaxImpChemicalSubstancesGrp) = 0) or (($Print = $Separated) and (count($FormData/TaxImpChemicalSubstancesGrp) &gt; 3))">
+                          <span style="width:1px" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:call-template name="PopulateAmount">
+                            <xsl:with-param name="TargetNode" select="$FormData/TotalChemicalTaxAmt"></xsl:with-param>
+                          </xsl:call-template>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- Set Initial Height of Above Table -->
+            <xsl:call-template name="SetInitialDynamicTableHeight">
+              <xsl:with-param name="TargetNode" select="$FormData/TaxImpChemicalSubstancesGrp"/>
+              <xsl:with-param name="containerHeight" select="3"/>
+              <xsl:with-param name="containerID" select=" 'TICSctn' "/>
+            </xsl:call-template>
+            <!-- End Set Initial Height of Above Table -->
+          </div>
+                    
+          <!--Part IV Title-->
+          <div class="styBB" style="width:187mm;border-top:1px black;height=8mm;">
+            <div class="styLNDesc" style="width:187mm;height:8mm;font-size:8pt;font-weight:bold;padding-top:2mm;">
+              <span style="height:4.5mm;width:14mm;padding-top:0.5mm;padding-right:1.5mm;color:white;background-color:black;text-align:right;float:inherit;margin:0;">Part IV</span>
               <span style="width:160mm ;font-size:8pt;;"><span style="width:4mm;"/>Tax on Ozone-Depleting Chemicals (ODCs), IRS No. 98</span>
             </div>      
           </div>
           
-          <!--Part II Elections Instructions-->
+          <!--Part IV Elections Instructions-->
           <div class="styLNDesc" style="width:187mm;height:9mm;font-size:7pt">
             <span class="styText" style="font-weight:bold;" >
               Elections. 
@@ -294,7 +1537,7 @@
                 <xsl:with-param name="BackupName">IRS6627Election1991Ind</xsl:with-param>
               </xsl:call-template>
             </input>
-            <span style="width:1mm;clear:none"></span>
+            <span style="width:6mm;clear:none"></span>
             <!-- button display logic -->
             <xsl:call-template name="SetDynamicTableToggleButton" >
               <xsl:with-param name="TargetNode" select="$FormData/TxOnOzoneDepletingChemicalsGrp"/>
@@ -304,7 +1547,7 @@
             <!-- end button display logic -->
           </div>
           
-          <!--Part II Table-->
+          <!--Part IV Table-->
           <div class="styTableContainer" style="height:auto;width:187mm;border-bottom-width:0px;display:block;" id="PSOctn">
             <xsl:call-template name="SetInitialState"/>
             <table style="height:auto;width:187mm;font-size:7pt;border-collapse:collapse;">
@@ -462,51 +1705,16 @@
 			<span style="height:10mm;"/>
 		  </xsl:if>
 		  
-          <!--Begin Page 1 Footer-->
-          <div  style="width:187mm">
-            <span style="width:100mm;font-weight:bold;text-align:left;font-size:6pt;"> 
-              For Privacy Act and Paperwork Reduction Act Notice, see Form 720 instructions.
-            </span>
-            <span style="width:10mm;"></span>  
-            <span style="width:19mm;font-weight:normal;font-size:6pt;">
-            Cat. No. 43490I</span> 
-            <span style="width:19mm;"></span>  
-            <span style="text-align:right;width:7mm;font-weight:normal;font-size:6pt;">
-            Form</span> 
-            <span style="width:1mm;"></span>  
-            <span style="text-align:center;width:6mm;font-weight:bold;font-size:7pt;">
-            6627</span> 
-            <span style="text-align:right;width:18.5mm;font-weight:normal;font-size:6pt;padding-right:1mm;">
-            (Rev. 1-2019)</span> 
-          </div>
-          <div class="pageEnd"/>
   
-          <!--Begin Page 2-->
-  
-          <!--Page to Header-->
-          <div  style="width:187mm;border-bottom:1px black solid;">
-            <span style="width:140mm;font-weight:normal;text-align:left;font-size:7pt;display:inline;"> 
-              Form 6627 (Rev. 1-2019)<span style="width:140mm;"/>
-            </span>
-            <span style="text-align:right;width:40mm;font-weight:normal;font-size:7pt;display:inline;">
-              Page
-            </span> 
-            <span style="width:4px"></span> 
-            <span style="text-align:right;width:1mm;font-weight:bold;font-size:7pt;display:inline;">
-              2
-            </span> 
-          </div>
-  
-  
-          <!--Begin Part III-->
+          <!--Begin Part V-->
           <div class="styBB" style="width:187mm;height:8mm;padding-top:1mm;">
-            <div class="styPartName" style="height:4.5mm;width:14mm;padding-top:0.5mm;">Part III</div>
+            <div class="styPartName" style="height:4.5mm;width:14mm;padding-top:0.5mm;">Part V</div>
             <div class="styPartDesc" style="padding-top:1mm"><span style="width:4mm;"/>
               ODC Tax on Imported Products, IRS No. 19
             </div>
           </div>
           
-          <!--Part III Explanation-->
+          <!--Part V Explanation-->
           <div class="styBB" style="width:187mm">
             <div style="float:right;clear:none;padding-top:2mm">
               <!-- button display logic -->
@@ -535,7 +1743,7 @@
            </input>
           </div>
           
-          <!--Part III Table-->
+          <!--Part V Table-->
           <div class="styTableContainer" style="height:auto;display:block;" id="ODC19ctn">
             <!-- print logic -->
             <xsl:call-template name="SetInitialState"/>
@@ -691,12 +1899,12 @@
 				<span style="height:8mm;"></span>
 		  </xsl:if>
   
-          <!--BEGIN PART IV-->
+          <!--BEGIN PART VI-->
 	
-          <!--Part IV Header-->
+          <!--Part VI Header-->
           <div style="width:187mm;border-top:1px solid black;border-bottom-width:0px;height:8mm;">
             <div class="styLNDesc" style="width:187mm;height:8mm;font-size:8pt;font-weight:bold;padding-top:1mm;">
-              <span style="height:4.5mm;width:14mm;color:white;background-color:black;text-align:right;float:inherit;padding-top:1mm;padding-left:0.5mm;padding-right:1mm;margin:0;display:inline;">Part IV </span>
+              <span style="height:4.5mm;width:14mm;color:white;background-color:black;text-align:right;float:inherit;padding-top:1mm;padding-left:0.5mm;padding-right:1mm;margin:0;display:inline;">Part VI </span>
               <span style="width:155mm ;padding-top:1mm;font-size:8pt;float:inherit;display:inline;"><span style="width:4mm;"/>Tax on Floor Stocks of  ODCs, IRS No. 20</span>
               <span style="width:13mm;clear:none;"></span>
               <span style="display:inline;">
@@ -711,7 +1919,7 @@
             </div>      
           </div>
               
-          <!--Part IV Table-->
+          <!--Part VI Table-->
           <div class="styTableContainer" id="PSOctn3" style="border-bottom-width:1px;display:block;">
             <xsl:call-template name="SetInitialState"/>
             <table style="font-size:7pt;border-collapse:collapse;">
@@ -861,7 +2069,7 @@
 				<span style="height:9mm;"></span>
 		  </xsl:if>
 					
-          <!--END Part IVTable-->
+          <!--END Part VI Table-->
        
           <div  style="width:187mm">  
             <span style="width:104mm;font-weight:bold;text-align:left;font-size:6pt;">   
@@ -875,7 +2083,7 @@
             <span style="text-align:center;width:7mm;font-weight:bold;font-size:7pt;">
             6627</span> 
             <span style="text-align:right;width:18mm;font-weight:normal;font-size:6pt;padding-right:1mm;">
-            (Rev. 1-2019)</span>       
+            (Rev. 1-2022)</span>       
           </div>
           <div class="pageEnd"/>
             

@@ -100,12 +100,24 @@
 					<!-- Begin Who Must File section -->
 					<div class="styBB" style="width:187mm;">
 						<div class="styWhoMustFileBox" style="width:171mm;height:auto;font-size:7pt;">
-							<b>Who Must File.</b> You must file Form 8919 if <b>all</b> of the following apply.			                <span style="width:5mm;"/>
+							<b>Who Must File. </b><span style="width:1mm;"/>You must file Form 8919 if <b>all</b> of the following apply.			                <!--<span style="width:5mm;"/>-->
 							<span style="font-size:7pt;">
-								<li style="margin-left:25mm;">You performed services for a firm.</li>
-								<li style="margin-left:25mm;">You believe your pay from the firm wasn't for services as an independent contractor.</li>
-								<li style="margin-left:25mm;">The firm didn't withhold your share of social security and Medicare taxes from your pay.</li>
-								<li style="margin-left:25mm;">One of the reasons listed below under <i>Reason codes</i> applies to you.</li>
+								<span style="margin-left:22.5mm;">
+									<img src="{$ImagePath}/8919_Bullet_round.gif" alt="SmallBullet"/>
+									You performed services for a firm.
+								</span>
+								<span style="margin-left:22.5mm;">
+									<img src="{$ImagePath}/8919_Bullet_round.gif" alt="SmallBullet"/>
+									You believe your pay from the firm wasn't for services as an independent contractor.
+								</span>
+								<span style="margin-left:22.5mm;">
+									<img src="{$ImagePath}/8919_Bullet_round.gif" alt="SmallBullet"/>
+									The firm didn't withhold your share of social security and Medicare taxes from your pay.
+								</span>
+								<span style="margin-left:22.5mm;">
+									<img src="{$ImagePath}/8919_Bullet_round.gif" alt="SmallBullet"/>
+									One of the reasons listed below under <i>Reason codes</i> applies to you.
+								</span>
 							</span>
 						</div>
 					</div>
@@ -113,18 +125,18 @@
 					<!-- Begin Reason Code section -->
 					<div style="width:187mm;border-bottom:none;">
 						<div class="styReasonCodeBox" style="width:187mm;height:auto;font-size:7pt;">
-							<b>Reason codes:  </b>
+							<b>Reason codes.      </b><span style="width:1.5mm;"/>
 							<span style="font-size:7pt;">
 										For each firm listed below, enter in column (c) the applicable reason code for filing this form. If none of the</span>
 							<br/>
-							<span style="margin-left:21mm;font-size:7pt;">reason codes apply to you, but you believe you should have been treated as an employee, enter reason</span>
+							<span style="margin-left:22mm;font-size:7pt;">reason codes apply to you, but you believe you should have been treated as an employee, enter reason</span>
 							<br/>
-							<span style="margin-left:21mm;font-size:7pt;">code G, and <b>file Form SS-8 on or before the date you file your tax return.</b>
+							<span style="margin-left:22mm;font-size:7pt;">code G, and <b>file Form SS-8 on or before the date you file your tax return.</b>
 							</span>
 							<br/>
 							<br/>
 						</div>
-						<div class="styCodes" style="width:187mm; height:auto;font-size:7.5pt;padding-left:20mm;border-style:solid;border-color:black;border-width:0px 0px 1px 0px;">
+						<div class="styCodes" style="width:187mm; height:auto;font-size:7.5pt;padding-left:17mm;border-style:solid;border-color:black;border-width:0px 0px 1px 0px;">
 							<span style="width:5.2mm;font-weight:bold;float:left;">A</span>
 							<span style="width:161mm;float:left;">
 									I filed Form SS-8 and received a determination letter stating that I am an employee of this firm.
@@ -528,7 +540,7 @@
 								border-bottom-width:0px;
 							</xsl:if></xsl:attribute>
 				<span>
-					<input class="styCkbox" type="checkbox" alt="Form 1099">
+					<input class="styCkbox" type="checkbox"  alt="(e) Form 1099 Received Indicator">
 						<xsl:call-template name="PopulateCheckbox">
 							<xsl:with-param name="TargetNode" select="Form1099ReceivedInd"/>
 							<xsl:with-param name="BackupName">Firm<xsl:value-of select="position()"/>Form1099ReceivedInd</xsl:with-param>
@@ -714,7 +726,7 @@
 								border-bottom-width:0px;
 							</xsl:if></xsl:attribute>
 				<span>
-					<input class="styCkbox" id="receivedInd" type="checkbox" alt="Form 1099">
+					<input class="styCkbox" id="receivedInd" type="checkbox"  alt="(e) Form 1099 Received Indicator">
 						<xsl:call-template name="PopulateCheckbox">
 							<xsl:with-param name="TargetNode" select="Form1099ReceivedInd"/>
 							<xsl:with-param name="BackupName">Firm<xsl:value-of select="position()"/>Form1099ReceivedInd</xsl:with-param>

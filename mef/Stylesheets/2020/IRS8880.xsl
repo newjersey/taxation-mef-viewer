@@ -177,8 +177,8 @@ Elective deferrals to a 401(k) or other qualified employer plan, voluntary emplo
 <xsl:with-param name="TargetNode" select="$Form8880Data/PrimaryContributionsAmt"/>
 </xsl:call-template>
 </div>
-<div class="styLNRightNumBox" style="height:10.6mm;border-left-width:1px;border-right-width:0px;border-top-width:0px;background:#B8B8B8;border-bottom-width:0px;"/>
-<div class="styLNAmountBox" style="height:10.6mm;border-left-width:1px;border-top-width:0px;padding-top:4mm;border-bottom-width:1px;">
+<div class="styLNRightNumBox" style="height:10.7mm;border-left-width:1px;border-right-width:0px;border-top-width:0px;background:#B8B8B8;border-bottom-width:0px;"/>
+<div class="styLNAmountBox" style="height:10.7mm;border-left-width:1px;border-top-width:0px;padding-top:4mm;border-bottom-width:1px;">
 <br/>
 <xsl:call-template name="PopulateAmount">
 <xsl:with-param name="TargetNode" select="$Form8880Data/SpouseContributionsAmt"/>
@@ -311,17 +311,17 @@ See instructions for an exception
 <div style="width:187mm;clear:all">
 <div class="styLNLeftNumBoxSD" style="width:8mm;font-size:8pt;">8
 </div>
-<div class="styLNDesc" style=" width:93.2mm;font-size:8pt;font-family:Arial;">Enter the amount from Form 1040, 1040-SR, or 1040-NR line 11* or Form 1040-NR, line 35 
+<div class="styLNDesc" style=" width:93.2mm;font-size:8pt;font-family:Arial;">Enter the amount from Form 1040, 1040-SR, or 1040-NR line 11* 
 <!--Dotted Line-->
-<span class="styDotLn" style="float:right;">.................. </span>
+<span class="styDotLn" style="float:right;">... </span>
 </div>
 <!-- Container -->
-<div class="styLNRightNumBoxNBB" style="height:7.5mm;padding-top:0mm;width:2mm; border-left-width:0px;">
+<div class="styLNRightNumBoxNBB" style="height:5.5mm;padding-top:0mm;width:2mm; border-left-width:0px;">
 </div>
-<div class="styLNAmountBoxNB" style="height:7.5mm;width:0mm;border-left-width:0px;padding-top:0mm;clear:right;"/>
-<div class="styLNRightNumBox" style="height:7.5mm;font-size:8pt;border-right-width:1px;border-top-width:0px;padding-top:4mm;">8
+<div class="styLNAmountBoxNB" style="height:5.5mm;width:0mm;border-left-width:0px;padding-top:0mm;clear:right;"/>
+<div class="styLNRightNumBox" style="height:5.5mm;font-size:8pt;border-right-width:1px;border-top-width:0px;padding-top:2mm;">8
 </div>
-<div class="styLNAmountBox" style="height:7.5mm;border-left-width:0px;border-top-width:0px;padding-top:4mm;">
+<div class="styLNAmountBox" style="height:5.5mm;border-left-width:0px;border-top-width:0px;padding-top:2mm;">
 <xsl:call-template name="PopulateAmount">
 <xsl:with-param name="TargetNode" select="$Form8880Data/ TaxReturnAGIAmt"/>
 </xsl:call-template>

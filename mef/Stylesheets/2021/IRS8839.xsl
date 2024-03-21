@@ -65,10 +65,10 @@
                   <div style="width:100%;height:5mm;padding-left:0px;">
                     <div style="width:110mm;height:5mm;padding-top:1mm;">
                       <br/>  
-                      <img src="{$ImagePath}/8839_Bullet_Sm.gif" alt="SmallBullet"/> 
+                      <!--<img src="{$ImagePath}/8839_Bullet_Sm.gif" alt="SmallBullet"/>--> 
                       Attach to Form 1040, 1040-SR,  or 1040NR.
                       <br/>
-                      <img src="{$ImagePath}/8839_Bullet_Sm.gif" alt="SmallBullet"/> 
+                      <!--<img src="{$ImagePath}/8839_Bullet_Sm.gif" alt="SmallBullet"/>--> 
                       Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/form8839"  title="Link to IRS.gov"> <i>www.irs.gov/form8839</i></a> for instructions and the latest information.
                     </div>
                   </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="styTYBox" style="height:22mm;width:30mm;border-left-width:2px;">
               <div class="styOMB" style="height:4mm;font-size:7pt;">OMB No. 1545-0074</div>
-              <div class="styTY">20<span class="styTYColor">21</span>
+              <div class="styTY">20<span class="styTYColor">22</span>
               </div>
               <div style="margin-left:3mm;text-align:left;font-size:7pt;">
                 Attachment<br/>Sequence No. 
@@ -293,7 +293,7 @@
               <div class="styIRS8839LNLeftNumBox">8</div>
               <div class="styIRS8839LNDesc" style="width:105mm;height:100%;padding:0px 0px 0px 0px;">
                 <div class="styIRS8839LNDesc" style="width:auto;height:100%;">
-                  Is line 7 more than $216,660<br/>
+                  Is line 7 more than $223,410<br/>
                   <!-- ++++++++++++++ No Checkbox +++++++++++++ -->
                   <span>
                     <xsl:call-template name="PopulateSpan">
@@ -343,7 +343,7 @@
                       </xsl:call-template>
                     </xsl:if>
                     <span class="styBoldText">Yes.</span>
-                    <span style="width:5px;"/>Subtract $216,660 from line 7
+                    <span style="width:5px;"/>Subtract $223,410 from line 7
 					<!--Dotted Line-->
 					<span class="styDotLn" style="float:right;padding-left:3mm;padding-right:1mm;padding-top:1mm">...........</span>	
                   </label>
@@ -631,7 +631,7 @@
               <div class="styIRS8839LNLeftNumBox">13</div>
               <div class="styIRS8839LNDesc" style="width:144mm;height:100%;padding:0px 0px 0px 0px;">
                 <div class="styIRS8839LNDesc" style="width:auto;height:100%;">
-                  Credit carryforward, if any, from prior years. See your Adoption Credit Carryforward Worksheet in the<br/>2020 Form 8839 instructions
+                  Credit carryforward, if any, from prior years. See your Adoption Credit Carryforward Worksheet in the<br/>2021 Form 8839 instructions
                   <!--Dotted Line-->
                   <span class="styDotLn" style="float:right;padding-right:1mm;">..........................</span>	
                 </div>
@@ -731,7 +731,7 @@
                
                 <span style="width:75px;"/>  
                 <span style="font-size:7pt;">			   Cat. No. 22843L					</span>
-                 <span style="width:24mm;"/>   Form <span class="styBoldText" style="font-size:8pt;">8839</span> (2021)
+                 <span style="width:24mm;"/>   Form <span class="styBoldText" style="font-size:8pt;">8839</span> (2022)
             </div>
           </div>
           <!-- END Page Break and Footer-->
@@ -739,7 +739,7 @@
           <!-- BEGIN Page Header -->
           <div class="styTBB" style="width:187mm;padding-top:5mm;clear:all;">
             <div style="float:left;clear:all;">
-              Form 8839 (2021)
+              Form 8839 (2022)
             </div>
             <div style="float:right;">
               Page <span style="font-weight:bold;font-size:8pt;">2</span>
@@ -852,7 +852,7 @@
                  Enter the <b>smaller</b> of line 19 or<br/>
                  line 20. But if the child was a<br/>
                  child with special needs and the<br/>
-                  adoption became final in 2021,<br/>
+                  adoption became final in 2022,<br/>
                  enter the amount from line 19<br/>
              </div>
              </div>
@@ -914,7 +914,7 @@
               <div class="styIRS8839LNLeftNumBox" style="padding-top:3mm;">24</div>
               <div class="styIRS8839LNDesc" style="width:auto;height:100%;padding:0px 0px 0px 0px;padding-top:3mm;">
                 <div class="styIRS8839LNDesc" style="width:auto;height:100%;">
-                  Is line 23 more than $216,660<br/>
+                  Is line 23 more than $223,410<br/>
                   <!-- ++++++++++++++ No Checkbox +++++++++++++ -->
                   <span style="width:1mm;"/>
                   <span>
@@ -966,7 +966,7 @@
                       </xsl:call-template>
                     </xsl:if>
                     <span class="styBoldText">Yes.</span>
-                    <span style="width:4px;"/>Subtract 216,660 from line
+                    <span style="width:4px;"/>Subtract $223,410 from line
                     23             
                   </label>
                 </div>
@@ -1331,15 +1331,15 @@
                   You may be able to claim the adoption credit in Part II on the front of this form if any of the following apply.
                 </div>
                 <div class="styIRS8839LNDesc" style="width:100%;height:auto;padding:5px 0px 0px 5px;">
-                  <img src="{$ImagePath}/8839_Bullet_Round.gif" alt="RoundBullet"/><span style="width:4px;"/>You paid adoption expenses in 2020, those expenses were not fully reimbursed by your employer or otherwise, <br/>
-                  <span style="width:10px;"/>and the adoption was not final by the end of 2020.
+                  <img src="{$ImagePath}/8839_Bullet_Round.gif" alt="RoundBullet"/><span style="width:4px;"/>You paid adoption expenses in 2021, those expenses were not fully reimbursed by your employer or otherwise, <br/>
+                  <span style="width:10px;"/>and the adoption was not final by the end of 2021.
                 </div>
                 <div class="styIRS8839LNDesc" style="width:100%;height:auto;padding:5px 0px 0px 5px;">
-                  <img src="{$ImagePath}/8839_Bullet_Round.gif" alt="RoundBullet"/><span style="width:4px;"/>The total adoption expenses you paid in 2021 were not fully reimbursed by your employer or otherwise, <br/>
-                  <span style="width:10px;"/>and the adoption became final in 2021 or earlier.
+                  <img src="{$ImagePath}/8839_Bullet_Round.gif" alt="RoundBullet"/><span style="width:4px;"/>The total adoption expenses you paid in 2022 were not fully reimbursed by your employer or otherwise, <br/>
+                  <span style="width:10px;"/>and the adoption became final in 2022 or earlier.
                 </div>
                 <div class="styIRS8839LNDesc" style="width:100%;height:auto;padding:5px 0px 5px 5px;">
-                  <img src="{$ImagePath}/8839_Bullet_Round.gif" alt="RoundBullet"/><span style="width:4px;"/>You adopted a child with special needs and the adoption became final in 2021.
+                  <img src="{$ImagePath}/8839_Bullet_Round.gif" alt="RoundBullet"/><span style="width:4px;"/>You adopted a child with special needs and the adoption became final in 2022.
                 </div>
               </div>
             </div>
@@ -1349,7 +1349,7 @@
           <div class="pageEnd" style="width:187mm;padding-top:1mm;clear:all;">
             <div style="float:right;">
               <span style="width:20px;"/>
-              Form  <span class="styBoldText" style="font-size:7pt;">  8839 </span> (2021)
+              Form  <span class="styBoldText" style="font-size:7pt;">  8839 </span> (2022)
             </div>
           </div>
           <!-- END Page Break and Footer-->          
@@ -1591,7 +1591,7 @@
           </xsl:if>
         </xsl:attribute>
         <span style="font-weight:bold;">(g)</span>
-        <br/>Check if<br/>adoption<br/>became final in 2021 or earlier</th>
+        <br/>Check if<br/>adoption<br/>became final in 2022 or earlier</th>
     </tr>
     <tr>
       <xsl:if test="$AddColoredHeaders">
@@ -1605,7 +1605,7 @@
           </xsl:if>
         </xsl:attribute>
         <span class="styBoldText">(c)</span>
-        <br/>born <b>before<br/>2004</b> and<br/>disabled</th>
+        <br/>born <b>before<br/>2005</b> and<br/>disabled</th>
       <th class="styTableCellHeader" scope="col" rowspan="2">
         <xsl:attribute name="style">
           border-color:black;width:8mm;font-weight:normal;
@@ -2038,7 +2038,7 @@
       <div class="styIRS8839LNDesc" style="width:48mm;height:100%;padding:0px 0px 0px 0px;border-color:black;">
         <div class="styIRS8839LNDesc" style="width:auto;height:100%;">
          <span style="float:left;padding-right:6mm;">Maximum adoption credit per</span>
-          <span style="float:left;">child.  Enter $14,440 (see instructions)
+          <span style="float:left;">child.  Enter $14,890 (see instructions)
           <!--Dotted Line-->
 		  <span class="styDotLn" style="float:right;padding-right:1mm;">......</span></span>
         </div>
@@ -2231,7 +2231,7 @@
           <span style="width:15px;"/>Your<span style="width:15px;"/>qualified<br/>
           adoption expenses may not be<br/>
           equal to the adoption expenses<br/>
-          you paid in 2021.
+          you paid in 2022.
         </div>
       </div>
       <div class="styIRS8839LNDesc" style="height:100%;width:132mm;float:right;padding:0px 0px 0px 0px;">
@@ -2307,7 +2307,7 @@
       <div class="styIRS8839LNDesc" style="width:48mm;height:100%;padding:0px 0px 0px 0px;border-color:blue;">
         <div class="styIRS8839LNDesc" style="width:auto;height:100%;">
          <span style="float:left;padding-right:6mm;">Maximum exclusion per</span>
-          <span style="float:left;">child.  Enter $14,440 (see instructions)
+          <span style="float:left;">child.  Enter $14,890 (see instructions)
           <!--Dotted Line-->
 		  <span class="styDotLn" style="float:right;padding-right:1mm;">......</span></span>
         </div>
@@ -2490,9 +2490,9 @@
       <div class="styIRS8839LNDesc" style="width:48.5mm;height:100%;padding:0px 0px 0px 0px;">
         <div class="styIRS8839LNDesc" style="width:auto;height:auto;">
           Employer-provided adoption<br/>
-          benefits you received in 2021.<br/>
+          benefits you received in 2022.<br/>
           This amount should be shown<br/>
-          in box 12 of your 2021 Form(s)<br/>
+          in box 12 of your 2022 Form(s)<br/>
           W-2 with code <b>T</b>
           <!--Dotted Line-->
          <span class="styDotLn" style="float:right;padding-right:1mm;padding-left:3mm;">.....</span>

@@ -3368,7 +3368,7 @@ the fourth quarter &lt;/span&gt;</xsl:otherwise>
 									<span style="width:9px;"/>
 									<img src="{$ImagePath}/1040_Bullet.gif" alt="Right pointing arrowhead image"/>
 								</div>
-								<div style="float:left;clear:none;width:57mm;padding-top:{$SignHere2Padding}mm;">
+								<div style="float:left;clear:none;width:60mm;padding-top:{$SignHere2Padding}mm;">
 									<xsl:if test="$RtnHdrData/SignatureDocumentGrp/PersonNm">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$RtnHdrData/SignatureDocumentGrp/PersonNm"/>

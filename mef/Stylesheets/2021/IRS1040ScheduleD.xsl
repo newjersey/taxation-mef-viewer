@@ -141,7 +141,7 @@
 										<xsl:with-param name="TargetNode" select="$FormData/DisposeInvestmentQOFInd"/>
 										<xsl:with-param name="BackupName">IRSFormData/DisposeInvestmentQOFInd.</xsl:with-param>
 									</xsl:call-template>
-									  Yes
+									  <b>Yes</b>
 								</label>
 								<span style="width:1mm;"/>
                                </span>
@@ -162,7 +162,7 @@
 										<xsl:with-param name="TargetNode" select="$FormData/DisposeInvestmentQOFInd"/>
 										<xsl:with-param name="BackupName">IRSDisposeInvestmentQOFInd</xsl:with-param>
 									</xsl:call-template>
-										  No
+										  <b>No</b>
 								</label>
 								
 								</div>

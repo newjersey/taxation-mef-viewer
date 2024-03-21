@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Jermaine Merchant on 08/24/2021 -->
+<!-- Last Modified by Jermaine Merchant on 11/24/2021 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -447,30 +447,31 @@
 						<!-- Begin (Line) 13 -->
 						<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
 						<div class="styIRS8889LineItem" style="height:auto;">
-							<div class="styIRS8889LNLeftNumBox" style="padding-left:2mm;padding-top:1.5mm">13</div>
-							<div class="styIRS8889LNDesc" style="height:auto;padding-top:1mm;width:137mm">
+							<div class="styIRS8889LNLeftNumBox" style="Padding-top:0mm;padding-left:2mm;">13</div>
+							<div class="styIRS8889LNDesc" style="height:auto;padding-top:0mm;width:137mm">
 								<span class="styBoldText">HSA deduction.</span> Enter the <span class="styBoldText">smaller</span> 
 								 of line 2 or line 12 here and on Schedule 1 (Form 1040), Part II, line 13
+								 <span class="styDotLn" style="float:right;padding-right:2mm;">................................</span>
 							</div>
-								<div class="styLNRightNumBox" style="height:0mm;border-bottom-width:0px;"/>
-								<div class="styLNAmountBox" style="height:0mm;width:33mm;border-bottom-width:0px;"/>
-								<div class="styLNRightNumBox" style="height:auto;">13</div>
-								<div class="styLNAmountBox" style="width:33mm;height:auto;">
+								<div class="styLNRightNumBox" style="height:auto;border-bottom-width:0px;"/>
+								<div class="styLNAmountBox" style="height:auto;width:33mm;border-bottom-width:0px;"/>
+								<div class="styLNRightNumBox" style="height:5.5mm;padding-top:2mm;">13</div>
+								<div class="styLNAmountBox" style="width:33mm;height:5.5mm;padding-top:2mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$Form8889Data/TotalHSADeductionAmt"/>
 									</xsl:call-template>
 								</div>
 						</div>
-						<div class="styIRS8889LineItem" style="height:4mm;">
+						<div class="styIRS8889LineItem" style="height:auto;">
 							<div class="styIRS8889LNLeftNumBox">
-								<span style="width:4mm"/>
+								<span style="width:4.5mm"/>
 							</div>
-							<div class="styIRS8889LNDesc" style="height:4mm;width:137mm">
+							<div class="styIRS8889LNDesc" style="height:auto;width:137mm">
 								<span class="styBoldText">Caution: </span> If line 2 is more than line 13, you may have to 
 								  pay an additional tax. See instructions.
-								<span style="width:3px;"/>
+								<span style="width:4px;"/>
 							</div>
-							<span style="height:4mm;">
+							<span style="height:3.5mm;">
 							<div class="styLNRightNumBox" style="background-color:lightgrey;height:4mm;border-bottom-width:0px;"/>
 								<div class="styLNAmountBox" style="background-color:lightgrey;height:4mm;width:33mm;border-bottom-width:0px;"/>
 							</span>
@@ -574,9 +575,9 @@
 						<!-- End (Line) 15-->
 						<!-- Begin (Line) 16 -->
 						<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-						<div class="styIRS8889LineItem" style="height:10.5mm;">
+						<div class="styIRS8889LineItem" style="height:7mm;">
 							<div class="styIRS8889LNLeftNumBox" style="padding-left:2.5mm;">16</div>
-							<div class="styIRS8889LNDesc" style="height:auto;width:137mm">
+							<div class="styIRS8889LNDesc" style="height:auto;width:137mm;">
 								<span class="styBoldText">Taxable HSA distributions.</span> Subtract line 15 from line 14c. If zero or less, enter -0-.
 								    Also, include this<br/>amount in the total on Schedule 1 (Form 1040), Part I, line 8e 
 								<span style="width:5px;"/>
@@ -584,8 +585,8 @@
 								<span class="styDotLn" style="float:right;padding-right:2mm;">.............</span>	
 							</div>
 							<span style="width:42mm;">
-								<div class="styLNRightNumBox" style="height:6.5mm;border-bottom-width:0px;"/>
-								<div class="styLNAmountBox" style="height:6.5mm;width:33mm;border-bottom-width:0px;"/>
+								<div class="styLNRightNumBox" style="height:3.5mm;border-bottom-width:0px;"/>
+								<div class="styLNAmountBox" style="height:3.5mm;width:33mm;border-bottom-width:0px;"/>
 								<div class="styLNRightNumBox" style="height:4mm;">16</div>
 								<div class="styLNAmountBox" style="width:33mm;">
 									<xsl:call-template name="PopulateAmount">
@@ -598,7 +599,7 @@
 						<!-- End (Line) 16-->
 						<!-- Begin (Line) 17a -->
 						<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-						<div class="styIRS8889LineItem" style="height:9mm;">
+						<div class="styIRS8889LineItem" style="height:7mm;">
 							<div class="styIRS8889LNLeftNumBox" style="padding-left:2.5mm;">17a</div>
 							<div class="styIRS8889LNDesc" style="height:auto;width:137mm;">							   										
 								<span style="float:left;">If any of the distributions included on line 16 meet any of the 
@@ -681,7 +682,7 @@
 						<!-- Begin Part III (Header)-->							
 						<div style="width:187mm;height:11mm;border-top-width:0px;" class="styBB">
 							<div class="styPartName" style="width:15mm;height:auto;">Part III</div>
-							<div style="padding-left:5mm;padding-top:0mm;padding-bottom:2mm;width:171mm;height:auto;font-size:8pt;">
+							<div style="padding-left:5mm;padding-top:0mm;padding-bottom:2mm;width:171mm;height:11mm;font-size:8pt;">
 								<b>Income and Additional Tax for Failure To Maintain HDHP Coverage.</b> See the instructions 
 								before completing this part. If you are filing jointly and both you and your spouse each have separate HSAs,
 								complete a separate Part III for each spouse.
@@ -689,26 +690,26 @@
 						</div>
 						<!-- End Part II (Header)-->
 						<!-- Part II (Body) -->
-						<div class="styBB" style="width:187mm;height:auto;border-bottom-width:1px">
+						<div class="styBB" style="width:187mm;height:auto;border-bottom-width:1px;">
 							<!-- Begin (Line) 18 -->
 							<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-							<div class="styIRS8889LineItem" style="height:4mm;">
-								<div class="styIRS8889LNDesc" style="height:4mm;width:145mm;"/>
+							<!--<div class="styIRS8889LineItem" style="height:4mm;background-color:yellow;">
+								<div class="styIRS8889LNDesc" style="height:4mm;width:145mm;background-color:orange;"/>
 								<span>
 									<div class="styLNRightNumBox" style="height:4mm;border-bottom-width:0px;"/>
 									<div class="styLNAmountBox" style="width:33mm;border-bottom-width:0px;"/>
 								</span>
-							</div>
+							</div>-->
 							<div class="styIRS8889LineItem">
-								<div class="styIRS8889LNLeftNumBox" style="padding-left:3.5mm;">18</div>
-								<div class="styIRS8889LNDesc" style="width:137mm;">
+								<div class="styIRS8889LNLeftNumBox" style="padding-left:3.5mm;height:5mm;">18</div>
+								<div class="styIRS8889LNDesc" style="width:137mm;height:5mm;">
 										Last-month rule
 										<span style="width:9px;"/>
 									<!--Dotted Line-->
 									<span class="styDotLn" style="float:right;padding-right:2mm;">...........................</span>
 								</div>
-								<div class="styLNRightNumBox" style="height:4mm;">18</div>
-								<div class="styLNAmountBox" style="width:33mm;">
+								<div class="styLNRightNumBox" style="height:5mm;padding-top:1.5mm">18</div>
+								<div class="styLNAmountBox" style="width:33mm;height:5mm;padding-top:1.5mm">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$Form8889Data/HDHPCoverageFailPartialYrAmt"/>
 									</xsl:call-template>
@@ -718,23 +719,23 @@
 							<!-- End (Line) 18-->
 							<!-- Begin (Line) 19 -->
 							<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
-							<div class="styIRS8889LineItem" style="height:5mm;">
+							<!--<div class="styIRS8889LineItem" style="height:5mm;">
 								<div class="styIRS8889LNDesc" style="height:5mm;width:145mm;"/>
-								<span style="padding-top:1px;">
+								<span style="padding-top:0px;">
 									<div class="styLNRightNumBox" style="height:5mm;border-bottom-width:0px;"/>
 									<div class="styLNAmountBox" style="width:33mm;height:5mm;border-bottom-width:0px;"/>
 								</span>
-							</div>
-							<div class="styIRS8889LineItem"  style="height:5mm;">
-								<div class="styIRS8889LNLeftNumBox" style="padding-left:3.5mm;">19</div>
-								<div class="styIRS8889LNDesc" style="height:auto;width:137mm;">
+							--><!--</div>-->
+							<div class="styIRS8889LineItem"  style="height:7mm;">
+								<div class="styIRS8889LNLeftNumBox" style="padding-left:3.5mm;height:7mm;padding-top:2.5mm">19</div>
+								<div class="styIRS8889LNDesc" style="height:5mm;width:137mm;padding-top:2.5mm">
 										Qualified HSA funding distribution
 										<span style="width:5px;"/>
 									<!--Dotted Line-->
 									<span class="styDotLn" style="float:right;padding-right:2mm;">.....................</span>
 								</div>
-								<div class="styLNRightNumBox" style="height:5mm;padding-top:1.6mm">19</div>
-								<div class="styLNAmountBox" style="width:33mm;height:5mm;padding-top:1.6mm">
+								<div class="styLNRightNumBox" style="height:7mm;padding-top:3.5mm;">19</div>
+								<div class="styLNAmountBox" style="width:33mm;height:7mm;padding-top:3.5mm">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$Form8889Data/HDHPCoverageFailFundDistriAmt"/>
 									</xsl:call-template>

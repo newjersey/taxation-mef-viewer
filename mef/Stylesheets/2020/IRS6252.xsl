@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Updated by Iskilu Lawal 08/31/2020 UWR  #  238979-->
+<!-- Updated by Iskilu Lawal 11/19/2020 UWR  #  238979-->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="AddHeader.xsl"/>
@@ -687,7 +687,7 @@ agreement.
 								<div class="styLNRightNumBox" style="height:8mm;padding-top:4mm;">23</div>
 								<div class="styLNAmountBox" style="height:8mm;padding-top:4mm;">
 									<xsl:call-template name="PopulateAmount">
-										<xsl:with-param name="TargetNode" select="$Form6252Data/PaymentsReceivedPriorYearAmt"/>
+										<xsl:with-param name="TargetNode" select="$Form6252Data/PaymentsReceivedPriorYearsAmt"/>
 									</xsl:call-template>
 								</div>
 								<div class="styLNRightNumBoxNBB" style="width:8mm;background-color:lightgrey;height:8mm;padding-top:4mm;"/>

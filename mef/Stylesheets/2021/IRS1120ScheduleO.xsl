@@ -40,7 +40,7 @@
       <body class="styBodyClass" style="width:187mm;">
         <form name="Form1120ScheduleO">
           <xsl:call-template name="DocumentHeader"/>
-          <!-- Header - Form1120SchO Number, Title, and Year -->
+          <!--  Header - Form1120SchO Number, Title, and Year  -->
           <div class="styTBB" style="width:187mm;">
             <div class="styFNBox" style="width:31mm;height:21mm;border-right-width:2px;">
               <span class="styFormNumber" style="font-size:10pt;">SCHEDULE O<br/>(Form 1120)</span> 
@@ -48,7 +48,7 @@
                  (Rev. December 2018)
               </div>
               <br/>
-              <!-- Form to Form Link (Push Pin plus pen and ink) -->
+              <!--  Form to Form Link (Push Pin plus pen and ink)  -->
               <xsl:call-template name="SetFormLinkInline">
                 <xsl:with-param name="TargetNode" select="$Form1120ScheduleO"/>
               </xsl:call-template>
@@ -63,9 +63,9 @@
               <div class="styMainTitle" style="width:125mm;height:13mm;">Consent Plan and Apportionment Schedule<br/>
                     for a Controlled Group</div>
               <div class="styFST" style="font-size:6.6pt;">
-                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt="Bullet"/>Attach to Form 1120, 1120-C, 1120-F, 1120-FSC, 1120-L, 1120-PC, 1120-REIT, or 1120-RIC.<br/>
+                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt="right arrow graphic"/> Attach to Form 1120, 1120-C, 1120-F, 1120-FSC, 1120-L, 1120-PC, 1120-REIT, or 1120-RIC.<br/>
                 <div class="styFST" style="font-size:7pt;">
-                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt="bullet image" style="padding-right:1mm;"/>
+                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt="right arrow graphic" style="padding-right:1mm;"/>
 					Go to 
 					<a style="text-decoration:none;color:black;" href="http://www.irs.gov/form1120" title="Link to irs.gov">
 						<i>www.irs.gov/Form1120 </i>
@@ -257,7 +257,7 @@
 			  For the entire year.
         </div>
           </div>
-          <!-- Line 2b -->
+          <!-- Line 2b  -->
           <div style="width:187mm;">
             <div class="styLNLeftNumBoxSD" style="padding-left:4mm;font-size:8.5pt;">b</div>
             <div class="styLNDesc" style="width:179mm;">
@@ -266,17 +266,17 @@
                 <xsl:call-template name="PopulateSpan">
                   <xsl:with-param name="TargetNode" select="$Form1120ScheduleO/CorporateGroupMemberInd"/>
                 </xsl:call-template>
-                <input type="checkbox" alt="CorpMemberForEntireYear" class="styCkbox">
+                <input type="checkbox" alt="corp member for specific period" class="styCkbox">
                   <xsl:call-template name="PopulateYesCheckbox">
                     <xsl:with-param name="TargetNode" select="$Form1120ScheduleO/CorporateGroupMemberInd"/>
-                    <xsl:with-param name="BackupName">CorpMemberForEntireYear</xsl:with-param>
+                    <xsl:with-param name="BackupName">corp member for specific period</xsl:with-param>
                   </xsl:call-template>
                 </input>
               </span>
               <label>
                 <xsl:call-template name="PopulateLabelYes">
                   <xsl:with-param name="TargetNode" select="$Form1120ScheduleO/CorporateGroupMemberInd"/>
-                  <xsl:with-param name="BackupName">CorpMemberForEntireYear</xsl:with-param>
+                  <xsl:with-param name="BackupName">corp member for specific period</xsl:with-param>
                 </xsl:call-template>
               </label>       
 				From <span style="width:25mm;border-bottom:solid 1px;text-align:center;">

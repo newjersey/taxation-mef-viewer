@@ -55,7 +55,7 @@
             <div class="styMainTitle" style="padding-left:2mm;">Authorization and Consent of Subsidiary Corporation </div>
             <div class="styMainTitle" style="padding-left:2mm;">To Be Included in a Consolidated Income Tax Return </div>
             <div class="styFBT">
-              <img src="{$ImagePath}/1122_Bullet_Sm.gif" alt="bullet image"/> 
+              <img src="{$ImagePath}/1122_Bullet_Sm.gif" alt="Right Pointing Arrow"/> 
               Attach to the consolidated income tax return.
             </div>
         </div>
@@ -279,7 +279,7 @@ form and the information contained herein, and to the best of my knowledge and b
             <div class="styGenericDiv" style="width:150mm;height:4mm;padding-left:2mm;">
               <div class="styGenericDiv" style="width:1mm;height:4mm;padding-bottom:0mm;">
                 <span style="padding-left:0mm;">
-                  <img src="{$ImagePath}/1122_Bullet_Lg.gif" style="width:2mm;" alt="bullet image"/>
+                  <img src="{$ImagePath}/1122_Bullet_Lg.gif" style="width:2mm;" alt="Right Pointing Arrow"/>
                 </span>
               </div>
               <div class="styGenericDiv" style="width:100mm;height:12mm;padding-left:2mm;">
@@ -300,7 +300,7 @@ form and the information contained herein, and to the best of my knowledge and b
                 </div>
               </div>
               <div class="styGenericDiv" style="width:3mm;height:4mm;">
-                <img src="{$ImagePath}/1122_Bullet_Lg.gif" style="width:2mm;" alt="bullet image"/>
+                <img src="{$ImagePath}/1122_Bullet_Lg.gif" style="width:2mm;" alt="Right Pointing Arrow"/>
               </div>
               <div class="styGenericDiv" style="width:42mm;height:4mm;">
                 <div class="styIRS1122SignatureBox" style="width:71mm;height:4mm;border-right-width: 0px;padding-right:0mm;">
@@ -341,7 +341,8 @@ form and the information contained herein, and to the best of my knowledge and b
             <div style="float:right;padding-bottom:2mm;" class="styGenericDiv">Form 
             <span class="styBoldText">1122</span> (Rev. 12-2003)</div>
           </div>
-      <p class="pageend"/>
+		  <div class="pageEnd"/>
+			<p style="page-break-before:always"/>
 <!-- Begininning of write-in data -->
    <div class="styLeftOverTitleLine" id="LeftoverData">
       <div class="styLeftOverTitle">

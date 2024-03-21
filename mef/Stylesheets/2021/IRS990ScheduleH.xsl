@@ -12,6 +12,7 @@
 <!-- 09/16/2020 - Changes made for 2020 pdf review - Jeremy Nichols -->
 <!-- 12/01/2020 - Changes made for defect 129683 - Jeremy Nichols -->
 <!-- 07/20/2021 - Changes made for UWR 368250 - Jeremy Nichols -->
+<!-- 10/20/2021 - Changes made for defect 68070 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="PopulateTemplate.xsl"/>
   <xsl:include href="CommonPathRef.xsl"/>
@@ -316,13 +317,13 @@
             <div class="styLNLeftNumBox" style="height:5mm;"/>
             <div class="styLNDesc" style="width:155mm;height:5mm;">
               <span style="width:14.5mm;">
-                <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Free care 100%" style="height:3mm;width:3mm;">
                   <xsl:call-template name="PopulateCheckbox">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/Percent100Ind"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHPcent100</xsl:with-param>
                   </xsl:call-template>
                 </input>
-                <label>
+                <label alt="Free care 100%">
                   <xsl:call-template name="PopulateLabel">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/Percent100Ind"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHPcent100</xsl:with-param>
@@ -332,13 +333,13 @@
                 </label>
               </span>
               <span style="width:14.5mm;">
-                <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Free care 150%" style="height:3mm;width:3mm;">
                   <xsl:call-template name="PopulateCheckbox">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/Percent150Ind"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHPcent150</xsl:with-param>
                   </xsl:call-template>
                 </input>
-                <label>
+                <label alt="Free care 150%">
                   <xsl:call-template name="PopulateLabel">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/Percent150Ind"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHPcent150</xsl:with-param>
@@ -348,13 +349,13 @@
                 </label>
               </span>
               <span style="width:14.5mm;">
-                <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Free care 200%" style="height:3mm;width:3mm;">
                   <xsl:call-template name="PopulateCheckbox">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/Percent200Ind"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHPcent200</xsl:with-param>
                   </xsl:call-template>
                 </input>
-                <label>
+                <label alt="Free care 200%">
                   <xsl:call-template name="PopulateLabel">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/Percent200Ind"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHPcent200</xsl:with-param>
@@ -364,13 +365,13 @@
                 </label>
               </span>
               <span style="width:82mm;">
-                <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Free care other %" style="height:3mm;width:3mm;">
                   <xsl:call-template name="PopulateCheckbox">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FreeCareOthPercentageGrp/OtherInd"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHOtherPercentage</xsl:with-param>
                   </xsl:call-template>
                 </input>
-                <label>
+                <label alt="Free care other %">
                   <xsl:call-template name="PopulateLabel">
                     <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FreeCareOthPercentageGrp/OtherInd"/>
                     <xsl:with-param name="BackupName">Form990ScheduleHOtherPercentage</xsl:with-param>
@@ -2420,7 +2421,7 @@
                     <img src="{$ImagePath}/990SchH_LicHosp.gif" alt="Licensed Hospital"/>
                   </th>
                   <th class="styIRS990SchHVTImageBox" style="height:44mm;vertical-align:top; padding-top:.5mm;width:7mm;border-style:solid; border-color:black;border-left-width:0px; border-right-width:1px;border-top-width:0px;border-bottom-width:1px;display:inline; " scope="col">
-                    <img src="{$ImagePath}/990SchH_GenMedSurg.gif" alt="General-Medical-Surgical"/>
+                    <img src="{$ImagePath}/990SchH_GenMedSurg.gif" alt="General Medical and Surgical"/>
                   </th>
                   <th class="styIRS990SchHVTImageBox" style="height:44mm;vertical-align:top;padding-top:.5mm;width:7mm;border-style:solid;border-color:black; border-left-width:0px;border-right-width:1px;border-top-width:0px;border-bottom-width:1px;display:inline; " scope="col">
                     <img src="{$ImagePath}/990SchH_ChildHosp.gif" alt="Children's Hospital"/>
@@ -2429,10 +2430,10 @@
                     <img src="{$ImagePath}/990SchH_TeachHosp.gif" alt="Teaching Hospital"/>
                   </th>
                   <th class="styIRS990SchHVTImageBox" style="height:44mm;vertical-align:top;width:7mm;border-style:solid;border-color:black;border-left-width:0px;border-right-width:1px;border-top-width:0px;border-bottom-width:1px;display:inline;" scope="col">
-                    <img src="{$ImagePath}/990SchH_CriticalHosp.gif" alt="Critical Hospital"/>
+                    <img src="{$ImagePath}/990SchH_CriticalHosp.gif" alt="Critical Access Hospital"/>
                   </th>
                   <th class="styIRS990SchHVTImageBox" style="height:44mm;vertical-align:top;padding-top:.5mm;width:7mm;border-style:solid; border-color:black;border-left-width:0px;border-right-width:1px;border-top-width:0px;border-bottom-width:1px;display:inline; " scope="col">
-                    <img src="{$ImagePath}/990SchH_ResearchFac.gif" alt="ResearchGrp Facility"/>
+                    <img src="{$ImagePath}/990SchH_ResearchFac.gif" alt="Research Facility"/>
                   </th>
                   <th class="styIRS990SchHVTImageBox" style="height:44mm;vertical-align:top;padding-top:.5mm;width:7mm;border-style:solid;border-color:black; border-left-width:0px;border-right-width:1px;border-top-width:0px;border-bottom-width:1px;display:inline; " scope="col">
                     <img src="{$ImagePath}/990SchH_ER-24hrs.gif" alt="ER-24Hours"/>
@@ -4777,7 +4778,7 @@
                     a
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:4mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="hospital facility's policies reporting to credit agency(ies)" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="PermitReportToCreditAgencyInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHPermitReportToCreditAgency</xsl:with-param>
@@ -4806,7 +4807,7 @@
                     b
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:4mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="hospital facility's policies selling an individual’s debt to another party" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="PermitSellingDebtInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHPermitSellingDebtInd</xsl:with-param>
@@ -4835,7 +4836,7 @@
                     c
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:7mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="hospital facility's policies deferring, denying, or requiring a payment" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="PermitDeferDenyRqrPaymentInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHPermitDeferDenyRqrPaymentInd</xsl:with-param>
@@ -4865,7 +4866,7 @@
                     d
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:4mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="hospital facility's policies actions that require a legal or judicial process" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="PermitLegalJudicialProcessInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHPermitLegalJudicialProcessInd</xsl:with-param>
@@ -4894,7 +4895,7 @@
                     e
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:4mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="hospital facility's policies other similar actions (describe in Section C)" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="PermitOtherActionsInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHPermitOtherActionsInd</xsl:with-param>
@@ -4923,7 +4924,7 @@
                     f
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:5mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="hospital facility's policies none of these actions or other similar actions were permitted" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="PermitNoActionsInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHPermitNoActionsInd</xsl:with-param>
@@ -4997,7 +4998,7 @@
                     a
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:4mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Hospital facility or authorized third party reporting to credit agency(ies)" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="ReportingToCreditAgencyInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHReportToCreditAgency</xsl:with-param>
@@ -5026,7 +5027,7 @@
                     b
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:4mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Hospital facility or authorized third party selling an individual’s debt to another party" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="EngagedSellingDebtInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHEngagedSellingDebtInd</xsl:with-param>
@@ -5055,7 +5056,7 @@
                     c
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:7mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Hospital facility or authorized third party deferring , denying, or requiring a payment" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="EngageDeferDenyRqrPaymentInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHEngageDeferDenyRqrPaymentInd</xsl:with-param>
@@ -5085,7 +5086,7 @@
                     d
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:4mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Hospital facility or authorized third party actions that require a legal or judicial process" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="EngagedLegalJudicialProcessInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHEngagedLegalJudicialProcessInd</xsl:with-param>
@@ -5114,7 +5115,7 @@
                     e
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:5mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-weight:normal;">
-                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" style="height:3mm;width:3mm;">
+                    <input type="checkbox" class="IRS990ScheduleH_Checkbox" alt="Hospital facility or authorized third party other similar actions (describe in Section C)" style="height:3mm;width:3mm;">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="OtherActionsInd"/>
 						<xsl:with-param name="BackupName">Form990ScheduleHOtherActionsInd</xsl:with-param>

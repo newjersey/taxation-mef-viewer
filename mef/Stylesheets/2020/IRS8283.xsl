@@ -755,7 +755,7 @@
 					</xsl:call-template>
 					
 		<!-- Page Break and Footer-->
-			<div class="pageEnd" style="width:187mm;padding-top:1mm;">
+			<div class="pageEnd" style="width:187mm;padding-top:2.5mm;">
 				<div style="float:left;">
 					<span class="styBoldText">
 						For Paperwork Reduction Act Notice, see separate instructions.</span>
@@ -1499,6 +1499,7 @@ qualified appraisal is generally required for items reportable in Section B. See
 															 &gt; 5) and ($Print = $Separated))">
 																<xsl:call-template name="PopulateAdditionalDataTableMessage">
 																	<xsl:with-param name="TargetNode" select="$Form8283Data/InformationOnDonatedProperty"/>
+																	<xsl:with-param name="ShortMessage" select="'true'"/>
 																</xsl:call-template>
 															</xsl:when>
 															<xsl:otherwise>
@@ -1585,7 +1586,10 @@ qualified appraisal is generally required for items reportable in Section B. See
 											</div>
 										</div>
 										<div class="styBB" style="width:183mm;margin-left:4mm;float:left;"/>
+										
 										<!--<xsl:choose>
+
+
 											<xsl:when 
 											test="$Form8283Data/InformationOnDonatedProperty/DonatedPropertyRestrictionInd=1">
 												<div style="width:186mm;float:left;">
@@ -1640,6 +1644,7 @@ qualified appraisal is generally required for items reportable in Section B. See
 												</div>
 											</xsl:otherwise>
 										</xsl:choose>-->
+										
 										<div style="width:187mm;">
 											<div class="styLNLeftLtrBox" style="height:4mm;padding-bottom:0mm;padding-top:0mm">b</div>
 											<div class="styLNDesc" style="width:166mm;height:4mm;font-weight:normal;padding-bottom:0mm;padding-top:0mm">
@@ -1705,11 +1710,9 @@ qualified appraisal is generally required for items reportable in Section B. See
 											<div style="width:187mm;border-top-width:0px">
 											<div class="styPartName" style="width:16mm;">Part II</div>
 											<div style="font-family:verdana;font-size:8pt;font-weight:normal;width:171mm;padding-left:3mm;">
-											<b>Partial Interests and Restricted Use Property&#8212;</b>
-                                            Complete lines 4a through 4e if you gave less than an entire interest in
-											 a property listed in Section A, Part I.  Complete lines 5a through 5c if conditions were 
-											 placed on a contribution listed in Section A, Part I; also attach the required statement (see instructions).
-										</div>
+											<b>Partial Interests and Restricted Use Property (Other Than Qualified Conservation Contributions) &#8212;</b>
+											Complete lines 4a through 4e if you gave less than an entire interest in a property listed in Section B, Part I.  Complete lines 5a through 5c if conditions were placed on a contribution listed in Section B, Part I; also attach the required statement. See instructions.
+											</div>
 											</div>
 										</th>
 									</tr>

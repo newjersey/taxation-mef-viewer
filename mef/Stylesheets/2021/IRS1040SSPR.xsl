@@ -28,16 +28,16 @@
 				</xsl:call-template>
 			</input>
 		</span>
-		<label>
+		<!--<label>
 			<xsl:call-template name="PopulateSpan">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 			</xsl:call-template>
 			<xsl:call-template name="PopulateLabelYes">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 				<xsl:with-param name="BackupName" select="$BackupName"/>
-			</xsl:call-template>
+			</xsl:call-template>-->
 			<span class="styBoldText">Yes</span>
-		</label>
+		<!--</label>-->
 		<span style="width: 2mm;"/>
 		<!-- ++++++++++++++ No Checkbox +++++++++++++ -->
 		<span>
@@ -52,16 +52,16 @@
 				</xsl:call-template>
 			</input>
 		</span>
-		<label>
+		<!--<label>
 			<xsl:call-template name="PopulateSpan">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 			</xsl:call-template>
 			<xsl:call-template name="PopulateLabelNo">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 				<xsl:with-param name="BackupName" select="$BackupName"/>
-			</xsl:call-template>
+			</xsl:call-template>-->
 			<span class="styBoldText">No</span>
-		</label>
+		<!--</label>-->
 	</xsl:template>
 	<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	<xsl:template name="PopulateYesNoGroup_PR">
@@ -81,16 +81,16 @@
 				</xsl:call-template>
 			</input>
 		</span>
-		<label>
+		<!--<label>
 			<xsl:call-template name="PopulateSpan">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 			</xsl:call-template>
 			<xsl:call-template name="PopulateLabelYes">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 				<xsl:with-param name="BackupName" select="$BackupName"/>
-			</xsl:call-template>
+			</xsl:call-template>-->
 			<span class="styBoldText">Si</span>
-		</label>
+		<!--</label>-->
 		<span style="width: 2mm;"/>
 		<!-- ++++++++++++++ No Checkbox +++++++++++++ -->
 		<span>
@@ -105,16 +105,16 @@
 				</xsl:call-template>
 			</input>
 		</span>
-		<label>
+		<!--<label>
 			<xsl:call-template name="PopulateSpan">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 			</xsl:call-template>
 			<xsl:call-template name="PopulateLabelNo">
 				<xsl:with-param name="TargetNode" select="$TargetNode"/>
 				<xsl:with-param name="BackupName" select="$BackupName"/>
-			</xsl:call-template>
+			</xsl:call-template>-->
 			<span class="styBoldText">No</span>
-		</label>
+		<!--</label>-->
 	</xsl:template>
 	<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	<xsl:template match="/">
@@ -157,6 +157,19 @@
 			</head>
 			<body class="styBodyClass" style="width:187mm;">
 				<form name="IRS1040SSPR" style="font-family:arial;">
+					<xsl:if test="$Form1040SSPRData/CorrectedReturnInd='X'">
+						<span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> CORRECTED </span>
+					</xsl:if>
+					<xsl:if test="$Form1040SSPRData/SupersededReturnInd='X'">
+						<span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> SUPERSEDED </span>
+					</xsl:if>
+					<xsl:if test="$Form1040SSPRData/ChangeDt != '' ">
+						<span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> Date of Change: <xsl:value-of select="$Form1040SSPRData/ChangeDt"/> </span>
+					</xsl:if>
+				    <xsl:if test="$Form1040SSPRData/AddressChangeInd='X'">
+						<span style="color:red; font-size:10pt;font-weight:bold;"> ADDRESS CHANGE </span>
+					</xsl:if>
+
 					<!--  Begin Header section 1 -->
 					<xsl:call-template name="DocumentHeader"/>
 					<div class="styBB" style="width:187mm;border-bottom-width:2px;">
@@ -455,7 +468,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label style="padding-right:2mm">
+								<!--<label style="padding-right:2mm">
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -463,9 +476,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'1'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[1]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 									  Single
-								</label>
+								<!--</label>-->
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 								</xsl:call-template>
@@ -477,7 +490,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label style="padding-right:2mm">
+								<!--<label style="padding-right:2mm">
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -485,9 +498,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'2'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[2]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 								Married filing jointly
-								</label>
+								<!--</label>-->
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 								</xsl:call-template>
@@ -499,7 +512,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label>
+								<!--<label>
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -507,9 +520,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'3'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[3]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 									  Married filing separately. 
-									</label>
+									<!--</label>-->
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 								</xsl:call-template>
@@ -521,7 +534,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label style="padding-right:2mm">
+								<!--<label style="padding-right:2mm">
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -529,9 +542,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'2'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[4]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 									  Head of household
-								</label>
+								<!--</label>-->
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 								</xsl:call-template>
@@ -543,7 +556,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label style="padding-right:2mm">
+								<!--<label style="padding-right:2mm">
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -551,9 +564,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'2'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[5]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 									  Qualifying Widow(er) 
-									</label>
+									<!--</label>-->
 								<br/>
                 
 				Enter spouse's social security no. above and full name here. 
@@ -921,19 +934,19 @@
                    <!--Dotted Line-->
 								<span class="styDotLn" style="float:none;clear:none;padding-left:1mm;">................</span>
 								<xsl:call-template name="LinkToLeftoverDataTableInline">
-									<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Code</xsl:with-param>
+									<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Code</xsl:with-param>
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionCd"/>
 								</xsl:call-template>
 								<xsl:call-template name="LinkToLeftoverDataTableInline">
-									<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Amount</xsl:with-param>
+									<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Amount</xsl:with-param>
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionAmt"/>
 								</xsl:call-template>
 								<xsl:call-template name="LinkToLeftoverDataTableInline">
-									<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Tax Code</xsl:with-param>
+									<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Tax Code</xsl:with-param>
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AdditionalMedicareTaxCd"/>
 								</xsl:call-template>
 								<xsl:call-template name="LinkToLeftoverDataTableInline">
-									<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Withholding Amount</xsl:with-param>
+									<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Withholding Amount</xsl:with-param>
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AddlMedcrRRTTaxWithholdingAmt"/>
 								</xsl:call-template>
 							</div>
@@ -1041,7 +1054,7 @@
 									<xsl:with-param name="BackupName">Form1040SSPRDataBankAccountTypeCd</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<label>
+							<!--<label>
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/BankAccountTypeCd"/>
 								</xsl:call-template>
@@ -1049,9 +1062,9 @@
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/BankAccountTypeCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select="'1'"/>
 									<xsl:with-param name="BackupName">Form1040SSPRDataBankAccountTypeCd</xsl:with-param>
-								</xsl:call-template>
+								</xsl:call-template>-->
                   Checking
-                </label>
+							<!--</label>-->
 							<span style="width:.5mm;"/>
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$Form1040SSPRData/BankAccountTypeCd"/>
@@ -1063,7 +1076,7 @@
 									<xsl:with-param name="BackupName">Form1040SSPRDataBankAccountTypeCd</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<label>
+							<!--<label>
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/BankAccountTypeCd"/>
 								</xsl:call-template>
@@ -1071,9 +1084,9 @@
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/BankAccountTypeCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select="'2'"/>
 									<xsl:with-param name="BackupName">Form1040SSPRDataBankAccountTypeCd</xsl:with-param>
-								</xsl:call-template>
+								</xsl:call-template>-->
                   Savings
-                </label>
+                <!--</label>-->
 							<div class="styIRS1040SSPRCleanDiv" style="width:37mm;height:4mm;padding:0px 0px 0px 0px;float:right;">
 								<div class="styIRS1040SSPRCleanDiv" style="width:100%;height:4mm;float:right;">
 									<xsl:call-template name="CreateBox_1040SS">
@@ -1188,15 +1201,15 @@
 											</xsl:call-template>
 										<!--</xsl:if>-->
 									</input>
-									<label>
-										<!--<xsl:if test="$Form1040SSPRData/ThirdPartyDesigneeInd">-->
+									<!--<label>
+										<!-<xsl:if test="$Form1040SSPRData/ThirdPartyDesigneeInd">->
 											<xsl:call-template name="PopulateLabelYes">
 												<xsl:with-param name="TargetNode" select="$Form1040SSPRData/ThirdPartyDesigneeInd"/>
 												<xsl:with-param name="BackupName">IRS1040SSThirdPartyDesigneeInd</xsl:with-param>
-											</xsl:call-template>
-										<!--</xsl:if>-->
+											</xsl:call-template>->
+										<!-</xsl:if>-->
 										<b>Yes.</b> Complete the following.
-                    </label>
+									<!--</label>-->
 								</div>
 								<div style="float:left;padding-left:1.5mm;">
 									<!-- ++++++++++++++ No Checkbox +++++++++++++ -->
@@ -1211,15 +1224,15 @@
 											</xsl:call-template>
 										<!--</xsl:if>-->
 									</input>
-									<label>
-										<!--<xsl:if test="$Form1040SSPRData/ThirdPartyDesigneeInd">-->
+									<!--<label>
+										<!-<xsl:if test="$Form1040SSPRData/ThirdPartyDesigneeInd">->
 											<xsl:call-template name="PopulateLabelNo">
 												<xsl:with-param name="TargetNode" select="$Form1040SSPRData/ThirdPartyDesigneeInd"/>
 												<xsl:with-param name="BackupName">IRS1040SSThirdPartyDesigneeInd</xsl:with-param>
-											</xsl:call-template>
-										<!--</xsl:if>-->
+											</xsl:call-template>->
+										<!-</xsl:if>-->
 										<span class="styBoldText">No</span>
-									</label>
+									<!--</label>-->
 								</div>
 								<div style="height:2mm;float:left;width:165mm;">
 									<div style="height:10mm;float:left;clear:none;width:22mm;font-size:7pt;padding:0mm 0mm 4mm 3mm;">Designee's<br/>
@@ -1284,7 +1297,7 @@
 								<!-- Container -->
 								<div class="styIRS1040SSPRCleanDiv" style="width:100%;">
 									<!-- Line 1 -->
-									<img src="{$ImagePath}/1040SS_Bullet_Lg.gif" alt="Large Bullet" width="19" height="49" style="float:left;margin:3.25mm -4mm;padding-left:2mm;"/>
+									<img src="{$ImagePath}/1040SS_Bullet_Lg.gif" alt="Large right arrow" width="19" height="49" style="float:left;margin:3.25mm -4mm;padding-left:2mm;"/>
 									<div class="styIRS1040SSPRCleanDiv" style="width:162mm;margin-left:3mm;height:10mm;border-bottom-width:1px;border-color:black;">
 										<!-- Your Signature -->
 										<div class="styIRS1040SSPRLNDesc" style="width:48mm;height:9.5mm;border-right-width:1px;border-color:black;padding-left:0mm;font-size:7pt;">
@@ -1849,22 +1862,22 @@
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-							<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Code</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionCd"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRowAmount">
-							<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Amount</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Amount</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionAmt"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-							<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Tax Code</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Tax Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AdditionalMedicareTaxCd"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRowAmount">
-							<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Withholding Amount</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Withholding Amount</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AddlMedcrRRTTaxWithholdingAmt"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
@@ -6768,6 +6781,20 @@
 			</head>
 			<body class="styBodyClass" style="width:187mm;">
 				<form name="IRS1040PR" style="font-family:arial;">
+				    
+				    <xsl:if test="$Form1040SSPRData/CorrectedReturnInd='X'">
+						<span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> CORRECTED </span>
+					</xsl:if>
+					<xsl:if test="$Form1040SSPRData/SupersededReturnInd='X'">
+						<span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> SUPERSEDED </span>
+					</xsl:if>
+					<xsl:if test="$Form1040SSPRData/ChangeDt != '' ">
+						<span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> Date of Change: <xsl:value-of select="$Form1040SSPRData/ChangeDt"/> </span>
+					</xsl:if>
+				    <xsl:if test="$Form1040SSPRData/AddressChangeInd='X'">
+						<span style="color:red; font-size:10pt;font-weight:bold;"> ADDRESS CHANGE </span>
+					</xsl:if>
+					
 					<!--  Begin Header section 1 -->
 					<xsl:call-template name="DocumentHeader"/>
 					<div class="styBB" style="width:187mm;border-bottom-width:2px;">
@@ -7030,7 +7057,7 @@
 							<div class="styIRS1040SSPRCleanDiv" style="width:100%;height:16%;">
 								<div class="styIRS1040SSPRCleanDiv" style="width:187mm;height:100%;">
 									<div class="styIRS1040SSPRLNDesc" style="width:100%;height:auto;font-size:7pt;padding:.5mm 0mm 0mm 1mm;">
-								¿En cualquier momento durante 2021, ¿recibió, vendió, envió, intercambió, o de otra manera enajenó algún interés financiero en alguna <br/> moneda  virtual? 
+								En cualquier momento durante 2021, ¿recibió, vendió, envió, intercambió, o de otra manera enajenó algún interés financiero en alguna <br/> moneda  virtual? 
 							<xsl:call-template name="PopulateYesNoGroup_PR">
 											<xsl:with-param name="TargetNode" select="$Form1040SSPRData/VirtualCurAcquiredDurTYInd"/>
 											<xsl:with-param name="BackupName">Form1040SSPRData/VirtualCurAcquiredDurTYInd</xsl:with-param>
@@ -7070,7 +7097,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label style="padding-right:2mm">
+								<!--<label style="padding-right:2mm">
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -7078,9 +7105,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'1'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[1]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 									  Soltero
-								</label>
+								<!--</label>-->
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 								</xsl:call-template>
@@ -7092,7 +7119,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label style="padding-right:2mm">
+								<!--<label style="padding-right:2mm">
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -7100,9 +7127,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'2'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[2]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 								Casado que radica una planilla conjunta
-								</label>
+								<!--</label>-->
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 								</xsl:call-template>
@@ -7114,7 +7141,7 @@
 									</xsl:call-template>
 								</input>
 								<span style="width:.25mm;"/>
-								<label>
+								<!--<label>
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 									</xsl:call-template>
@@ -7122,9 +7149,9 @@
 										<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 										<xsl:with-param name="DisplayedCheckboxValue" select="'3'"/>
 										<xsl:with-param name="BackupName">Form1040SSPRDataIndividualReturnFilingStatusCd[3]</xsl:with-param>
-									</xsl:call-template>
+									</xsl:call-template>-->
 									  Casado que radica una planilla por separado. 
-									</label>
+									<!--</label>-->
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040SSPRData/IndividualReturnFilingStatusCd"/>
 								</xsl:call-template>
@@ -8009,7 +8036,7 @@
 									<xsl:with-param name="BackupName">Form1040PRDataBankAccountTypeCd</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<label>
+							<!--<label>
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040PRData/BankAccountTypeCd"/>
 								</xsl:call-template>
@@ -8018,9 +8045,9 @@
 									<xsl:with-param name="DisplayedCheckboxValue" select="'1'"/>
 									<xsl:with-param name="BackupName">Form1040PRDataBankAccountTypeCd</xsl:with-param>
 								</xsl:call-template>
-								<span style="width:.25mm;"/>									
+								<span style="width:.25mm;"/>-->									
 									Corriente
-								</label>
+								<!--</label>-->
 							<span style="width:1mm;"/>
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$Form1040PRData/BankAccountTypeCd"/>
@@ -8032,7 +8059,7 @@
 									<xsl:with-param name="BackupName">Form1040PRDataBankAccountTypeCd</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<label>
+							<!--<label>
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form1040PRData/BankAccountTypeCd"/>
 								</xsl:call-template>
@@ -8041,9 +8068,9 @@
 									<xsl:with-param name="DisplayedCheckboxValue" select="'2'"/>
 									<xsl:with-param name="BackupName">Form1040PRDataBankAccountTypeCd</xsl:with-param>
 								</xsl:call-template>
-								<span style="width:.25mm;"/>												
+								<span style="width:.25mm;"/>-->												
 									Ahorros
-								</label>
+								<!--</label>-->
 							<div class="styIRS1040PRCleanDiv" style="width:37mm;height:4mm;padding:0px 0px 0px 0px;float:right;">
 								<div class="styIRS1040PRCleanDiv" style="width:100%;height:4mm;float:right;">
 									<xsl:call-template name="CreateBox_1040PR">
@@ -8158,16 +8185,16 @@
 											</xsl:call-template>
 										</xsl:if>
 									</input>
-									<label>
+									<!--<label>
 										<xsl:if test="$Form1040PRData/ThirdPartyDesigneeInd">
 											<xsl:call-template name="PopulateLabelYes">
 												<xsl:with-param name="TargetNode" select="$Form1040PRData/ThirdPartyDesigneeInd"/>
 												<xsl:with-param name="BackupName">IRS1040PRThirdPartyDesigneeInd</xsl:with-param>
 											</xsl:call-template>
-										</xsl:if>
+										</xsl:if>-->
 										<span style="width:.1mm;"/>
 										<b>Sí.</b> Complete lo siguiente.
-									</label>
+									<!--</label>-->
 								</div>
 								<div style="float:left;clear:none;padding-left:7mm;">
 									<!-- ++++++++++++++ No Checkbox +++++++++++++ -->
@@ -8182,15 +8209,15 @@
 											</xsl:call-template>
 										</xsl:if>
 									</input>
-									<label>
+									<!--<label>
 										<xsl:if test="$Form1040PRData/ThirdPartyDesigneeInd">
 											<xsl:call-template name="PopulateLabelNo">
 												<xsl:with-param name="TargetNode" select="$Form1040PRData/ThirdPartyDesigneeInd"/>
 												<xsl:with-param name="BackupName">IRS1040PRThirdPartyDesigneeInd</xsl:with-param>
 											</xsl:call-template>
-										</xsl:if>
+										</xsl:if>-->
 										<span class="styBoldText">No</span>
-									</label>
+									<!--</label>-->
 								</div>
 								<div style="height:2mm;float:left;clear:none;width:165mm;">
 									<!-- Designee’s name-->
@@ -8261,7 +8288,7 @@
 								<!-- Container -->
 								<div class="styIRS1040PRCleanDiv" style="width:100%;height:27mm;margin-left:6mm;">
 									<!-- Line 1 -->
-									<img src="{$ImagePath}/1040PR_Bullet_Lg.gif" alt="Large Bullet" width="21" height="49" style="float:left;margin:2.5mm -4mm;padding-left:1.5mm;"/>
+									<img src="{$ImagePath}/1040PR_Bullet_Lg.gif" alt="Large right arrow" width="21" height="49" style="float:left;margin:2.5mm -4mm;padding-left:1.5mm;"/>
 									<div class="styIRS1040PRCleanDiv" style="width:160mm;height:8mm;margin-left:3mm;border-bottom-width:1px;border-color:black;">
 										<!-- Your Signature -->
 										<div class="styIRS1040PRLNDesc" style="width:48mm;height:8mm;border-right-width:1px;border-color:black;padding-left:0mm;font-size:7pt;">
@@ -8570,7 +8597,7 @@
 						<!-- Content -->
 						<div class="styPartName" style="width:14mm;height:4mm;padding-top:.25mm;font-size:9pt">Parte II</div>
 						<div class="styPartDesc" style="height:7mm;padding:.25mm 0mm 0mm 4mm;font-size:8.5pt;">
-							Residentes <i>Bona Fide</i> de Puerto Rico que reclaman el Crédito Tributario Adicional por Hijos Reembolsable.<br/>
+							Residentes <i>Bona Fide</i> de Puerto Rico que reclaman el Crédito Tributario por Hijos Reembolsable.<br/>
 							<span class="styNormalText" style="padding-left:.5mm;">Vea las instrucciones.</span>
 						</div>
 					</div>
@@ -8815,22 +8842,22 @@
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-							<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Code</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/TotalPaymentsAmt/@requestForExtensionCd"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRowAmount">
-							<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Amount</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Amount</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/TotalPaymentsAmt/@requestForExtensionAmt"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-							<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Tax Code</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Tax Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/AddnlMedicareTaxWithheldGrp/AdditionalMedicareTaxCd"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRowAmount">
-							<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Withholding Amount</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Withholding Amount</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/AddnlMedicareTaxWithheldGrp/AddlMedcrRRTTaxWithholdingAmt"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>

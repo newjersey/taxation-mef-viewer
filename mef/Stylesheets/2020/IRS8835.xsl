@@ -737,7 +737,7 @@
 						</span>
 					</div>
 						<div style="width187mm;height:auto;">
-						<div class="styLNDesc" style="font-weight:bold; width:145mm; padding-left:9mm; ">Indian coal produced at a qualified coal production facility
+						<div class="styLNDesc" style="font-weight:bold; width:145mm; padding-left:9mm; ">Indian coal produced at a qualified Indian coal production facility
 						</div>
 						<div class="styLNRightNumBoxNBB" style="background-color:lightgrey;padding-left:4mm;"/>
 						<div class="styLNAmountBoxNBB"/>

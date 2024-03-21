@@ -130,7 +130,7 @@
 						</div>
 					</div>
 					<div class="styStdDivLS" style="border-top:1px solid black;">
-						<div class="styNameBox" style="width:154mm;height:7.75mm;">
+						<div class="styNameBox" style="width:154mm;height:8mm;"> 
 							Name of partnership<br />
 							<xsl:call-template name="PopulateText">
 								<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipName/BusinessNameLine1Txt" />
@@ -252,7 +252,7 @@
 					<div class="styStdDivLS" style="border-top:1px solid black;border-bottom:1px solid black;">
 						<div class="styPartName">Part I</div>
 						<div class="styPartDesc" style="width:167mm;">Section 721(c) Property <span style="font-weight:normal;">(see instructions)</span></div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:5mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/Section721CPropertyGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchGTable1' "/>
@@ -780,7 +780,7 @@
 					<div class="styStdDivLS" style="border-bottom:1px solid black;border-top:1px solid black;">
 						<div class="styPartName">Part II</div>
 						<div class="styPartDesc" style="width:230mm;">Remaining Built-in Gain, Remedial Income, and Gain Recognition <span style="font-weight:normal;">(see instructions)</span></div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:5mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/Section721CPropertyGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchGTable2' "/>
@@ -957,7 +957,7 @@
 							Allocation Percentages of Partnership Items With Respect to Section 721(c) Property
 							<span style="font-weight:normal;">(see instructions)</span>
 						</div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:5mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/Section721CPropertyGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchGTable3' "/>
@@ -1190,7 +1190,7 @@
 							Allocation of Items to U.S. Transferor With Respect to Section 721(c) Property
 							<span style="font-weight:normal;">(see instructions)</span>
 						</div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:5mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/Section721CPropertyGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchGTable4' "/>

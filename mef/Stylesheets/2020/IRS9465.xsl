@@ -120,11 +120,12 @@
 								<span style="text-align:center;font-weight:bold;">
 									<div style="width:100%;height:5mm;padding-left:5px;">
 										<div style="width:120mm;height:5mm;">
-											<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/> 
-											Go to <i>www.irs.gov/Form9465</i> for instructions and the latest information. <br/>
-											<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/> 
+											<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/> 
+											Go to <a href="http://www.irs.gov/form9465" title="Link to IRS.gov"><i>www.irs.gov/Form9465</i></a>
+											 for instructions and the latest information. <br/>
+											<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/> 
 											If you are filing this form with your tax return, attach it to the front of the return.<br/>
-											<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/>
+											<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/>
 											See separate instructions.
 										</div>
 									</div>
@@ -154,7 +155,7 @@
 					<div  style="width:187mm;">
 						<div class="styLNDesc" style="width:65mm;font-family:Arial Narrow;">This request is for Form(s) (for example, Form 1040 or Form 941)
 							<span style="width:4px;"/>
-							<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/>
+							<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/>
 						</div>
 						<div class="styFixedUnderline" style="height:4mm;width:122mm;padding-left:0px;font-family:Arial Narrow;   
 							     padding-left:1mm;">
@@ -175,7 +176,7 @@
 					<div class="styBB" style="width:187mm;">	
 						<div class="styLNDesc" style="width:100mm;padding-right:0mm;font-family:Arial Narrow;">Enter tax year(s) or period(s) involved (for example, 2018 and 2019, or January 1, 2019 to June 30, 2019)
 								<span style="width:4px;"/>
-							<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/>
+							<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/>
 						</div>	
 						<div style="width:87mm;height:4mm;font-family:Verdana;padding-left:1mm;padding-top:.5mm;padding-bottom:.5mm;float:left; clear: none;">
 								<xsl:call-template name="PopulateText">
@@ -455,7 +456,7 @@
 						<div class="styIRS9465LNDesc" style="width:181mm;height:6mm">If this address is new since you filed your last tax return, check here
 						<!--Dotted Line-->
 							<span class="styDotLn" style="float:none;clear:none;padding-right:1mm;">...................</span>
-							<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/>
+							<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/>
 							<span style="width:2mm;"/>
 							<label>
 								<xsl:call-template name="PopulateLabel">
@@ -877,7 +878,7 @@
 						<div class="styIRS9465LineItem" style="height:8mm;padding-top:2mm;">
 							<div class="styLNLeftLtrBoxDD" style="padding-left:0px;">
 							
-								<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/><span style="width:3mm;"/>a
+								<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/><span style="width:3mm;"/>a
 							</div>
 							<div  style="padding-bottom:1 mm;padding-top:1mm;">
 								<div class="styIRS9465LNDesc" style="width:33mm;height:auto;padding-left:.5mm;">
@@ -891,7 +892,7 @@
 									</xsl:call-template>
 								</div>
 								<div class="styIRS9465LNLeftNumBox" style="padding-right:0px;">
-									<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="SmallBullet"/>
+									<img src="{$ImagePath}/9465_Bullet_Sm.gif" alt="Right Arrow Image"/>
 								</div>
 								<div class="styIRS9465LNDesc" style="width:33mm;height:auto;padding-left:0mm;">
 									<span class="styBoldText" style="width:6mm;text-align:center;height:100%;">b</span>
@@ -1087,7 +1088,7 @@
 							Marital Status:
 							<br/>
 							<span style="width:75mm;float:left;">
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Marital Status Single Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/MaritalStatusSingleInd"/>
 										<xsl:with-param name="BackupName">IRS9465MaritalStatusSingleInd</xsl:with-param>
@@ -1098,9 +1099,8 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/MaritalStatusSingleInd"/>
 										<xsl:with-param name="BackupName">IRS9465MaritalStatusSingleInd</xsl:with-param>
 									</xsl:call-template>
-									Single. Skip question 16b and go to question 17.
-								</label>
-								<input type="checkbox" class="styCkbox">
+								</label>Single. Skip question 16b and go to question 17.
+								<input type="checkbox" class="styCkbox" alt="Marital Status Married Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/MaritalStatusMarriedInd"/>
 										<xsl:with-param name="BackupName">IRS9465MaritalStatusMarriedInd</xsl:with-param>
@@ -1111,8 +1111,7 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/MaritalStatusMarriedInd"/>
 										<xsl:with-param name="BackupName">IRS9465MaritalStatusMarriedInd</xsl:with-param>
 									</xsl:call-template>
-									Married. Go to question 16b.
-								</label>
+								</label>Married. Go to question 16b.
 							</span>
 						</div>
 					</div>
@@ -1124,7 +1123,7 @@
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form9465Data/ShareHouseholdExpnsWithSpsInd"/>
 								</xsl:call-template>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Yes Share Household Expenses  With Spouse Indictor">
 									<xsl:call-template name="PopulateYesCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/ShareHouseholdExpnsWithSpsInd"/>
 										<xsl:with-param name="BackupName">IRS9465ShareHouseholdExpnsWithSpsInd</xsl:with-param>
@@ -1135,9 +1134,8 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/ShareHouseholdExpnsWithSpsInd"/>
 										<xsl:with-param name="BackupName">IRS9465ShareHouseholdExpnsWithSpsInd</xsl:with-param>
 									</xsl:call-template>
-									Yes.
-								</label>
-								<input type="checkbox" class="styCkbox">
+								</label>Yes.
+								<input type="checkbox" class="styCkbox" alt="No Share Household Expenses  With Spouse Indictor">
 									<xsl:call-template name="PopulateNoCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/ShareHouseholdExpnsWithSpsInd"/>
 										<xsl:with-param name="BackupName">IRS9465ShareHouseholdExpnsWithSpsInd</xsl:with-param>
@@ -1148,8 +1146,7 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/ShareHouseholdExpnsWithSpsInd"/>
 										<xsl:with-param name="BackupName">IRS9465ShareHouseholdExpnsWithSpsInd</xsl:with-param>
 									</xsl:call-template>
-									No.
-								</label>
+								</label>No.
 							</span>
 						</div>
 					</div>
@@ -1195,7 +1192,7 @@
 						<div class="styIRS9465LNDesc" style="height:4mm;">
 							How often are you paid?<br/>
 							<span style="width:40mm;float:left;">
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Primary Paid Once A Week Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdOnceAWeekInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdOnceAWeekInd</xsl:with-param>
@@ -1206,10 +1203,9 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdOnceAWeekInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdOnceAWeekInd</xsl:with-param>
 									</xsl:call-template>
-									Once a week.
-								</label>
+								</label>Once a week.
 								<br/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Primary Paid Once Every Two Weeks Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdOnceEveryTwoWeeksInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdOnceEveryTwoWeeksInd</xsl:with-param>
@@ -1220,9 +1216,8 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdOnceEveryTwoWeeksInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdOnceEveryTwoWeeksInd</xsl:with-param>
 									</xsl:call-template>
-									Once every two weeks.
-								</label>
-								<input type="checkbox" class="styCkbox">
+								</label>Once every two weeks.
+								<input type="checkbox" class="styCkbox" alt="Primary Paid Once A Month Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdOnceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdOnceAMonthInd</xsl:with-param>
@@ -1233,10 +1228,9 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdOnceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdOnceAMonthInd</xsl:with-param>
 									</xsl:call-template>
-									Once a month.
-								</label>
+								</label>Once a month.
 								<br/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Primary Paid Twice A Month Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdTwiceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdTwiceAMonthInd</xsl:with-param>
@@ -1247,8 +1241,7 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/PrimaryPdTwiceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465PrimaryPdTwiceAMonthInd</xsl:with-param>
 									</xsl:call-template>
-									Twice a month.
-								</label>
+								</label>Twice a month.
 							</span>
 						</div>
 					</div>
@@ -1281,7 +1274,7 @@
 						<div class="styIRS9465LNDesc" style="height:auto;">
 							How often is your spouse paid?<br/>
 							<span style="width:40mm;float:left;">
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Spouse Paid Once A Week Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdOnceAWeekInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdOnceAWeekInd</xsl:with-param>
@@ -1292,10 +1285,9 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdOnceAWeekInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdOnceAWeekInd</xsl:with-param>
 									</xsl:call-template>
-									Once a week.
-								</label>
+								</label>Once a week.
 								<br/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Spouse Paid Once Every Two Weeks Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdOnceEveryTwoWeeksInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdOnceEveryTwoWeeksInd</xsl:with-param>
@@ -1306,10 +1298,9 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdOnceEveryTwoWeeksInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdOnceEveryTwoWeeksInd</xsl:with-param>
 									</xsl:call-template>
-									Once every two weeks.
-								</label>
+								</label>Once every two weeks.
 								<br/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Spouse Paid Once A Month Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdOnceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdOnceAMonthInd</xsl:with-param>
@@ -1320,10 +1311,9 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdOnceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdOnceAMonthInd</xsl:with-param>
 									</xsl:call-template>
-									Once a month.
-								</label>
+								</label>Once a month.
 								<br/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Spouse Paid Twice A Month Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdTwiceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdTwiceAMonthInd</xsl:with-param>
@@ -1334,8 +1324,7 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/SpousePdTwiceAMonthInd"/>
 										<xsl:with-param name="BackupName">IRS9465SpousePdTwiceAMonthInd</xsl:with-param>
 									</xsl:call-template>
-									Twice a month.
-								</label>
+								</label>Twice a month.
 							</span>
 						</div>
 					</div>
@@ -1403,7 +1392,7 @@
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsuranceInd"/>
 								</xsl:call-template>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Health Insurance Indicator Yes">
 									<xsl:call-template name="PopulateYesCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsuranceInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsuranceInd</xsl:with-param>
@@ -1414,10 +1403,10 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsuranceInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsuranceInd</xsl:with-param>
 									</xsl:call-template>
-									Yes. Go to question 25b.
-								</label>
+									<!--Yes. Go to question 25b.-->
+								</label>Yes. Go to question 25b.
 								<span style="width:32mm;"/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Health Insurance Indicator No">
 									<xsl:call-template name="PopulateNoCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsuranceInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsuranceInd</xsl:with-param>
@@ -1428,8 +1417,8 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsuranceInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsuranceInd</xsl:with-param>
 									</xsl:call-template>
-									No. Skip question 25b and go to question 26a.
-								</label>
+									<!--No. Skip question 25b and go to question 26a.-->
+								</label>No. Skip question 25b and go to question 26a.
 							</span>
 						</div>
 					</div>
@@ -1441,7 +1430,7 @@
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsurancePremiumDedInd"/>
 								</xsl:call-template>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Health Insurance Premium Deducted Indicator Yes">
 									<xsl:call-template name="PopulateYesCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsurancePremiumDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsurancePremiumDedInd</xsl:with-param>
@@ -1452,10 +1441,10 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsurancePremiumDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsurancePremiumDedInd</xsl:with-param>
 									</xsl:call-template>
-									Yes. Skip question 25c and go to question 26a.
-								</label>
+									<!--Yes. Skip question 25c and go to question 26a.-->
+								</label>Yes. Skip question 25c and go to question 26a.
 								<span style="width:2mm;"/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Health Insurance Premium Deducted Indicator No">
 									<xsl:call-template name="PopulateNoCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsurancePremiumDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsurancePremiumDedInd</xsl:with-param>
@@ -1466,8 +1455,8 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/HealthInsurancePremiumDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465HealthInsurancePremiumDedInd</xsl:with-param>
 									</xsl:call-template>
-									No. Go to question 25c.
-								</label>
+									<!--No. Go to question 25c.-->
+								</label>No. Go to question 25c.
 							</span>
 						</div>
 					</div>
@@ -1496,7 +1485,7 @@
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentInd"/>
 								</xsl:call-template>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Court Ordered Payment Indicator Yes">
 									<xsl:call-template name="PopulateYesCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentInd</xsl:with-param>
@@ -1507,10 +1496,10 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentInd</xsl:with-param>
 									</xsl:call-template>
-									Yes. Go to question 26b.
-								</label>
+									<!--Yes. Go to question 26b.-->
+								</label>Yes. Go to question 26b.
 								<span style="width:32mm;"/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Court Ordered Payment Indicator No">
 									<xsl:call-template name="PopulateNoCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentInd</xsl:with-param>
@@ -1521,8 +1510,8 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentInd</xsl:with-param>
 									</xsl:call-template>
-									No. Go to question 27.
-								</label>
+									<!--No. Go to question 27.-->
+								</label>No. Go to question 27.
 							</span>
 						</div>
 					</div>
@@ -1534,7 +1523,7 @@
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentDedInd"/>
 								</xsl:call-template>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Court Ordered Payment Deducted Indicator Yes">
 									<xsl:call-template name="PopulateYesCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentDedInd</xsl:with-param>
@@ -1545,10 +1534,10 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentDedInd</xsl:with-param>
 									</xsl:call-template>
-									Yes. Go to question 27.
-								</label>
+									<!--Yes. Go to question 27.-->
+								</label>Yes. Go to question 27.
 								<span style="width:33.5mm;"/>
-								<input type="checkbox" class="styCkbox">
+								<input type="checkbox" class="styCkbox" alt="Court Ordered Payment Deducted Indicator No">
 									<xsl:call-template name="PopulateNoCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentDedInd</xsl:with-param>
@@ -1559,8 +1548,8 @@
 										<xsl:with-param name="TargetNode" select="$Form9465Data/CourtOrderedPaymentDedInd"/>
 										<xsl:with-param name="BackupName">IRS9465CourtOrderedPaymentDedInd</xsl:with-param>
 									</xsl:call-template>
-									No. Go to question 26c.
-								</label>
+									<!--No. Go to question 26c.-->
+								</label>No. Go to question 26c.
 							</span>
 						</div>
 					</div>

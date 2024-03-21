@@ -19,7 +19,7 @@
 						<xsl:with-param name="RootElement" select="local-name($Form8824Data)"/>
 					</xsl:call-template>
 				</title>
-				<!-- No Browser Caching  -->
+				<!-- No Browser Caching -->
 				<meta http-equiv="Pragma" content="no-cache"/>
 				<meta http-equiv="Cache-Control" content="no-cache"/>
 				<meta http-equiv="Expires" content="0"/>
@@ -1098,12 +1098,12 @@ the exchange), did the related party sell or dispose of any part of the like-kin
 						</div>
 					</div>
 					<!-- Introducing page end -->
-					<p style="page-break-before: always"/>
+					<!--<p style="page-break-before: always"/>-->
+					<p style="page-break-after: always"/>
 					<!-- Begininning of write-in data -->
 					<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 						<div class="styLeftOverTitleLine" id="LeftoverData">
-							<div class="styLeftOverTitle">Additional Data        
-			</div>
+							<div class="styLeftOverTitle">Additional Data </div>
 							<div class="styLeftOverButtonContainer">
 								<input class="styLeftoverTableBtn" tabindex="1" type="button" value="Return to Form" onclick="javascript:returnToWriteInImage();"/>
 							</div>

@@ -73,6 +73,8 @@ Log:
   <xsl:include href="IRS1065ScheduleCStyle.xsl"/>
   <xsl:include href="IRS1065ScheduleDStyle.xsl"/>
   <xsl:include href="IRS1065ScheduleK1Style.xsl"/>
+  <xsl:include href="IRS1065ScheduleK2Style.xsl"/>
+  <xsl:include href="IRS1065ScheduleK3Style.xsl"/>
   <xsl:include href="IRS1065ScheduleM3Style.xsl"/>
   <xsl:include href="IRS1065Style.xsl"/>
   <xsl:include href="IRS1099RStyle.xsl"/>
@@ -112,6 +114,8 @@ Log:
   <xsl:include href="IRS1120SchM3EliminationsOrAdjStyle.xsl"/>
   <xsl:include href="IRS1120SScheduleDStyle.xsl"/>
   <xsl:include href="IRS1120SScheduleK1Style.xsl"/>
+  <xsl:include href="IRS1120SScheduleK2Style.xsl"/>
+  <xsl:include href="IRS1120SScheduleK3Style.xsl"/>
   <xsl:include href="IRS1120SScheduleM3Style.xsl"/>
   <xsl:include href="IRS1120SStyle.xsl"/>
   <xsl:include href="IRS1120Style.xsl"/>
@@ -156,6 +160,7 @@ Log:
   <xsl:include href="IRS499W2PRStyle.xsl"/>
   <xsl:include href="IRS5074Style.xsl"/>
   <xsl:include href="IRS5329Style.xsl"/>
+  <xsl:include href="IRS5330Style.xsl"/>
   <xsl:include href="IRS5405Style.xsl"/>
   <xsl:include href="IRS5452Style.xsl"/>
   <xsl:include href="IRS5471ScheduleEStyle.xsl"/>
@@ -165,6 +170,8 @@ Log:
   <xsl:include href="IRS5471ScheduleMStyle.xsl"/>
   <xsl:include href="IRS5471ScheduleOStyle.xsl"/>
   <xsl:include href="IRS5471SchedulePStyle.xsl"/>
+  <xsl:include href="IRS5471ScheduleQStyle.xsl"/>
+  <xsl:include href="IRS5471ScheduleRStyle.xsl"/>
   <xsl:include href="IRS5471Style.xsl"/>
   <xsl:include href="IRS5472Style.xsl"/>
   <xsl:include href="IRS5695Style.xsl"/>
@@ -305,6 +312,7 @@ Log:
   <xsl:include href="IRS8978Style.xsl"/>
   <xsl:include href="IRS8990Style.xsl"/>
   <xsl:include href="IRS8991Style.xsl"/>
+  <xsl:include href="IRS8992ScheduleAStyle.xsl"/>
   <xsl:include href="IRS8992ScheduleBStyle.xsl"/>
   <xsl:include href="IRS8992Style.xsl"/>
   <xsl:include href="IRS8993Style.xsl"/>
@@ -508,6 +516,12 @@ all PDF stylesheets that are selected for print. -->
               <xsl:when test="@documentName='IRS1065ScheduleK1'">
                 <xsl:call-template name="IRS1065ScheduleK1Style"/>
               </xsl:when>
+              <xsl:when test="@documentName='IRS1065ScheduleK2'">
+                <xsl:call-template name="IRS1065ScheduleK2Style"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS1065ScheduleK3'">
+                <xsl:call-template name="IRS1065ScheduleK3Style"/>
+              </xsl:when>
               <xsl:when test="@documentName='IRS1065ScheduleM3'">
                 <xsl:call-template name="IRS1065ScheduleM3Style"/>
               </xsl:when>
@@ -624,6 +638,12 @@ all PDF stylesheets that are selected for print. -->
               </xsl:when>
               <xsl:when test="@documentName='IRS1120SScheduleK1'">
                 <xsl:call-template name="IRS1120SScheduleK1Style"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS1120SScheduleK2'">
+                <xsl:call-template name="IRS1120SScheduleK2Style"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS1120SScheduleK3'">
+                <xsl:call-template name="IRS1120SScheduleK3Style"/>
               </xsl:when>
               <xsl:when test="@documentName='IRS1120SScheduleM3'">
                 <xsl:call-template name="IRS1120SScheduleM3Style"/>
@@ -757,6 +777,9 @@ all PDF stylesheets that are selected for print. -->
               <xsl:when test="@documentName='IRS5329'">
                 <xsl:call-template name="IRS5329Style"/>
               </xsl:when>
+              <xsl:when test="@documentName='IRS5330'">
+                <xsl:call-template name="IRS5330Style"/>
+              </xsl:when>
               <xsl:when test="@documentName='IRS5405'">
                 <xsl:call-template name="IRS5405Style"/>
               </xsl:when>
@@ -783,6 +806,12 @@ all PDF stylesheets that are selected for print. -->
               </xsl:when>
               <xsl:when test="@documentName='IRS5471ScheduleP'">
                 <xsl:call-template name="IRS5471SchedulePStyle"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS5471ScheduleQ'">
+                <xsl:call-template name="IRS5471ScheduleQStyle"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS5471ScheduleR'">
+                <xsl:call-template name="IRS5471ScheduleRStyle"/>
               </xsl:when>
               <xsl:when test="@documentName='IRS5471'">
                 <xsl:call-template name="IRS5471Style"/>
@@ -1203,6 +1232,9 @@ all PDF stylesheets that are selected for print. -->
               </xsl:when>
               <xsl:when test="@documentName='IRS8991'">
                 <xsl:call-template name="IRS8991Style"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS8992ScheduleA'">
+                <xsl:call-template name="IRS8992ScheduleAStyle"/>
               </xsl:when>
               <xsl:when test="@documentName='IRS8992ScheduleB'">
                 <xsl:call-template name="IRS8992ScheduleBStyle"/>

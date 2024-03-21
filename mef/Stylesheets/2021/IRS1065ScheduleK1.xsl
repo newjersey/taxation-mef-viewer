@@ -2581,9 +2581,12 @@
 																	<span style="width:8px;"/>.
 																	<span style="width:8px;"/>.
 																	<span style="width:8px;"/>.
-																	<span style="width:8px;"/>. 
 																	<span style="width:8px;"/>.
-																	<span style="width:.2mm;"/>
+																	<span style="width:1mm"/>
+																		<xsl:call-template name="SetFormLinkInline">
+																			<xsl:with-param name="TargetNode" select="$FormData/ScheduleK3AttachedInd"/>
+																		</xsl:call-template>
+																	<span style="width:1mm"/>
 																		<img src="{$ImagePath}/1065_Bullet_Sm.gif" alt="MidSizeBullet"/>
 																	<span style="width:.2mm"/>
 																	<input type="checkbox" class="styCkbox">
@@ -3880,10 +3883,10 @@
 															<!-- Display a blank line if there are no data elements -->
 															<xsl:if test="count($FormData/TotalForeignTaxesPaidOrAccrAmt) = 0 ">
 																<tr>
-																	<td class="IRS1065ScheduleK1_codeBox" style="height:4.6mm;border-top:0px solid;font-size:7pt;">
+																	<td class="IRS1065ScheduleK1_codeBox" style="height:4.6mm;border-top:0px solid;border-bottom:1px solid black;font-size:7pt;">
 																		<span style="vertical-align:baseline;height:100%;"/>
 																	</td>
-																	<td class="IRS1065ScheduleK1_amountBox" style="height:4.6mm;border-top:0px solid;width:41.40mm;font-size:7pt;">
+																	<td class="IRS1065ScheduleK1_amountBox" style="height:4.6mm;border-top:0px solid;border-bottom:1px solid black;width:41.40mm;font-size:7pt;">
 																		<span style="vertical-align:baseline;height:100%;"/>
 																	</td>
 																</tr>
@@ -3891,12 +3894,12 @@
 															<xsl:for-each select="$FormData/TotalForeignTaxesPaidOrAccrAmt">
 																<xsl:if test="($Print != $Separated) or                  (count($FormData/TotalForeignTaxesPaidOrAccrAmt) =1)">
 																	<tr>
-																		<td class="IRS1065ScheduleK1_codeBox" style="height:4.6mm;border-top:0px solid;font-size:7pt;" valign="bottom">
+																		<td class="IRS1065ScheduleK1_codeBox" style="height:4.6mm;border-top:0px solid;border-bottom:1px solid black;font-size:7pt;" valign="bottom">
 																			<xsl:call-template name="PopulateText">
 																				<xsl:with-param name="TargetNode" select="SchK1OtherInformationCd"/>
 																			</xsl:call-template>
 																		</td>
-																		<td class="IRS1065ScheduleK1_amountBox" style="height:4.6mm;border-top:0px solid;width:41.40mm;font-size:7pt;" valign="bottom">
+																		<td class="IRS1065ScheduleK1_amountBox" style="height:4.6mm;border-top:0px solid;border-bottom:1px solid black;width:41.40mm;font-size:7pt;" valign="bottom">
 																			<span style="float:right;">
 																				<xsl:call-template name="PopulateAmount">
 																					<xsl:with-param name="TargetNode" select="$FormData/TotalForeignTaxesPaidOrAccrAmt"/>

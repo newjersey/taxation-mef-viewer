@@ -34,10 +34,10 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript" />
 				<xsl:call-template name="InitJS" />
 				<style type="text/css">
-					<!--<xsl:if test="not($Print) or $Print=''">-->
+					<xsl:if test="not($Print) or $Print=''">
 						<xsl:call-template name="AddOnStyle" />
 						<xsl:call-template name="IRS8038CPScheduleAStyle" />
-					<!--</xsl:if>-->
+					</xsl:if>
 				</style>
 				<xsl:call-template name="GlobalStylesForm" />
 			</head>
@@ -55,7 +55,7 @@
 								<xsl:with-param name="TargetNode" select="$FormData" />
 							</xsl:call-template>
 							<br />
-							(January 2022)
+							(Rev. December 2022)
 							<br />
 							<span class="styAgency">
 								Department of the Treasury
@@ -64,10 +64,10 @@
 							</span>
 						</div>
 						<div class="styFTBox" style="width:127mm;height:22.5mm;">
-							<span class="styFMT" style="font-size:12pt;padding-top:0.5mm;padding-bottom:2mm;">Specified Tax Credit Bonds Interest Limit Computation</span>
+							<span class="styFMT" style="font-size:12pt;padding-top:0.5mm;padding-bottom:2mm;">Specified Tax Credit Bonds Credit Computation</span>
 							<br />
 							<span style="font-weight:bold;">
-								&#9658;Complete for Form 8038-CP, Line 17c Bond Types 102, 103, 104 and 105.
+								&#9658;Complete for Form 8038-CP, line 17c Bond Types 102, 103, 104 and 105.
 							</span>
 							<br />
 							<span style="font-weight:bold;">
@@ -104,14 +104,14 @@
 						</div>
 					</div>
 					<div class="styStdDiv" style="border-top:1px solid black;border-bottom:1px solid black;">
-						<div class="styNameBox" style="width:135mm;min-height:7mm;">Date of issue (MM/DD/YYYY)
+						<div class="styNameBox" style="width:135mm;min-height:7mm;">Interest payment date (MM/DD/YYYY)
 							<br />
 							<xsl:call-template name="PopulateMonthDayYear">
 								<xsl:with-param name="TargetNode" select="$FormData/BondIssueDt"/>
 							</xsl:call-template> 
 						</div>
 						<div class="styEINBox" style="width:52mm;padding-left:0.5mm;font-weight:normal;">
-							&nbsp;Report number (from line 10 of Form 8038-CP)
+							&nbsp;Report number (from Form 8038-CP, line 10)
 							<br />
 							<span style="border:1px solid black;width:16mm;text-align:center;margin-left:16mm;margin-top:1px;border-bottom-width:0px;font-size:7pt;padding:0.5mm;">
 								<xsl:call-template name="PopulateText">
@@ -121,12 +121,7 @@
 						</div>
 					</div>
 					<div class="styStdDiv" style="padding:1mm;">
-						Complete the eligible interest computation using the table below. Complete the following table 
-						for each maturity of bonds outstanding on the Line 18 interest payment date. 
-						If more lines are needed, use the additional table on the back. This schedule is to be used when 
-						claiming a credit under section 6431 for specified tax credit bonds (new clean renewable energy bonds, 
-						qualified energy conservation bonds, qualified zone academy bonds 
-						and qualified school construction bonds).
+						Complete the eligible interest computation using the table below. Complete the following table 	for each maturity of bonds outstanding line 18 interest payment date. This schedule is to be used when claiming a credit under section 6431 for specified tax credit bonds(new clean renewable energy bonds (NCREBs), qualified energy conservation bonds (QECBs), qualified zone academy bonds (QZABs), and qualified school construction bonds (QSCBs)). If more lines are needed, use additional table on the back.
 					</div>
 					<xsl:variable name="shouldSeparate" select="($Print = $Separated) and (count($FormData/EligibleInterestComputationGrp) &gt; 25)"/>
 					
@@ -150,18 +145,18 @@
 										<span style="font-weight:bold;">(a)</span><br /> Bond Maturity Date
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:38mm;font-weight:normal;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(b)</span><br /> Interest paid on bond maturity on Line 18 interest payment date
+										<span style="font-weight:bold;">(b)</span><br /> Interest payable on bond maturity line 18 interest payment date
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:38mm;font-weight:normal;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(c)</span><br /> Interest paid on bond maturity on Line 18 interest payment date calculated using the Line 19b applicable credit rate
+										<span style="font-weight:bold;">(c)</span><br /> Interest payable on bond maturity line 18 interest payment date calculated using Form 8038-CP, line 19b applicable credit rate
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:38mm;font-weight:normal;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(d)</span><br /> For new clean renewable energy bonds and qualfied energy conservation bonds, multiply column (c) by 70% (0.70) 
-										<br />(Skip this column for qualified zone academy bonds and qualified school construction bonds)
+										<span style="font-weight:bold;">(d)</span><br /> For NCREBs and QECBs, multiply column (c) by 70% (0.70) 
+										<br />(Skip this column for QZABs and QSCBs)
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:38mm;font-weight:normal;border-right-width:0px;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(e)</span><br /> For new clean renewable energy bonds and qualified energy conservation bonds, enter the smaller of column (b) or (d). 
-										For qualified zone academy bonds and qualified school construction bonds, enter the smaller of column (b) or (c).
+										<span style="font-weight:bold;">(e)</span><br /> For NCREBs and QECBs, enter the smaller of column (b) or (d). 
+										For QZABs and QSCBs, enter the smaller of column (b) or (c).
 									</th>
 								</tr>
 							</thead>
@@ -256,7 +251,7 @@
 					<div class="styStdDiv pageEnd" style="border-top:1px solid black;">
 						<span style="font-weight:bold;font-family:Arial;">For Paperwork Reduction Act Notice, see separate instructions.</span>
 						<span style="margin-left:17mm;">Cat. No. 74912N</span>
-						<span style="float:right;font-weight:bold;">Schedule A (Form 8038-CP) (1-2022)</span>
+						<span style="float:right;font-weight:bold;">Schedule A (Form 8038-CP) (Rev. 12-2022)</span>
 					</div>
 					<!-- Additional Data title bar and button -->
 					<div class="styLeftOverTitleLine" id="LeftoverData">
@@ -284,18 +279,18 @@
 										<span style="font-weight:bold;">(a)</span><br /> Bond Maturity Date
 									</th>
 									<th class="styDepTblCell" scope="col" style="width:38mm;font-weight:normal;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(b)</span><br /> Interest paid on bond maturity on Line 18 interest payment date
+										<span style="font-weight:bold;">(b)</span><br /> Interest payable on bond maturity Form 8038-CP, line 18 interest payment date
 									</th>
 									<th class="styDepTblCell" scope="col" style="width:38mm;font-weight:normal;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(c)</span><br /> Interest paid on bond maturity on Line 18 interest payment date calculated using the Line 19b applicable credit rate
+										<span style="font-weight:bold;">(c)</span><br /> Interest payable on bond maturity Form 8038-CP, line 18 interest payment date calculated using Form 8038-CP, line 19b applicable credit rate
 									</th>
 									<th class="styDepTblCell" scope="col" style="width:38mm;font-weight:normal;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(d)</span><br /> For new clean renewable energy bonds and qualfied energy conservation bonds, multiply column (c) by 70% (0.70) 
-										<br />(Skip this column for qualified zone academy bonds and qualified school construction bonds)
+										<span style="font-weight:bold;">(d)</span><br /> For NCREBs and QECBs, multiply column (c) by 70% (0.70) 
+										<br />(Skip this column for QZABs and QSCBs)
 									</th>
 									<th class="styDepTblCell" scope="col" style="width:38mm;font-weight:normal;border-right-width:0px;padding-top:0.5mm;">
-										<span style="font-weight:bold;">(e)</span><br /> For new clean renewable energy bonds and qualified energy conservation bonds, enter the smaller of column (b) or (d). 
-										For qualified zone academy bonds and qualified school construction bonds, enter the smaller of column (b) or (c).
+										<span style="font-weight:bold;">(e)</span><br /> For NCREBs and QECBs, enter the smaller of column (b) or (d). 
+										For QZABs and QSCBs, enter the smaller of column (b) or (c).
 									</th>
 								</tr>
 							</thead>

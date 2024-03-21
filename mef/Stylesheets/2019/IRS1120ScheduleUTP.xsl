@@ -62,9 +62,9 @@
 							<div class="styMainTitle" style="font-weight:bold;">Uncertain Tax Position Statement</div>
 							<div class="styFST" style="font-size:7pt;margin-left:3mm;font-weight:bold;">
 								<div style="margin-left: 1.5mm;padding-top:6mm;">
-									<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Pointer"/>
+									<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Right Pointing Arrowhead"/>
 				  File with Form 1120, 1120-F, 1120-L, or 1120-PC.<br/>
-									<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Pointer"/>
+									<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Right Pointing Arrowhead"/>
 									Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/scheduleUTP" title="Link to www.irs.gov/scheduleUTP">
 										<i>www.irs.gov/ScheduleUTP</i> for instructions and the latest information.
 									</a>
@@ -128,18 +128,21 @@
 							<br/>
 			 					Check this box if the corporation was unable to obtain information from related parties sufficient to
 			 					determine whether a tax position is a UTP.  See instructions. 
-			 					<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Pointer"/>
+			 					<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Right Pointing Arrowhead"/>
 							<span style="height:16px;font-weight:normal;vertical-align:top;padding-left:1mm;">
-								<input alt="PartICheckBox" type="checkbox" class="styCkbox" name="UnableObtainRelatedPartyInfoI">
+								<input alt="Part I - unable to obtain information from related parties sufficient to
+			 					determine whether a tax position is a UTP" type="checkbox" class="styCkbox" name="UnableObtainRelatedPartyInfoI">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$FormData/UnableObtainRltdPrtyInfoCYInd"/>
-										<xsl:with-param name="BackupName">UnableObtainRelatedPartyInfoI</xsl:with-param>
+										<xsl:with-param name="BackupName">Part I - unable to obtain information from related parties sufficient to
+			 					determine whether a tax position is a UTP</xsl:with-param>
 									</xsl:call-template>
 								</input>
 								<label>
 									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$FormData/UnableObtainRltdPrtyInfoCYInd"/>
-										<xsl:with-param name="BackupName">UnableObtainRelatedPartyInfoI</xsl:with-param>
+										<xsl:with-param name="BackupName">Part I - unable to obtain information from related parties sufficient to
+			 					determine whether a tax position is a UTP</xsl:with-param>
 									</xsl:call-template>
 								</label>
 							</span>
@@ -639,18 +642,21 @@
 							<br/>
 			 					Check this box if the corporation was unable to obtain information from related parties sufficient to determine
 			 					 whether a tax position is a UTP.  See instructions. 
-			 					<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Pointer"/>
+			 					<img src="{$ImagePath}/1120SchUTP_Bullet.gif" alt="Right Pointing Arrowhead"/>
 							<span style="height:16px;padding-left:2mm;font-weight:normal;vertical-align:middle;">
-								<input alt="PartIICheckBox" type="checkbox" class="styCkbox" name="PartIICheckBox">
+								<input alt="Part II - unable to obtain information from related parties sufficient to
+			 					determine whether a tax position is a UTP" type="checkbox" class="styCkbox" name="PartIICheckBox">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$FormData/UnableObtainRltdPrtyInfoPYInd"/>
-										<xsl:with-param name="BackupName">UnableObtainRelatedPartyInfoII</xsl:with-param>
+										<xsl:with-param name="BackupName">Part II -  unable to obtain information from related parties sufficient to determine
+			 					 whether a tax position is a UTP</xsl:with-param>
 									</xsl:call-template>
 								</input>
 								<label>
 									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$FormData/UnableObtainRltdPrtyInfoPYInd"/>
-										<xsl:with-param name="BackupName">UnableObtainRelatedPartyInfoII</xsl:with-param>
+										<xsl:with-param name="BackupName">Part II -  unable to obtain information from related parties sufficient to determine
+			 					 whether a tax position is a UTP</xsl:with-param>
 									</xsl:call-template>
 								</label>
 							</span>

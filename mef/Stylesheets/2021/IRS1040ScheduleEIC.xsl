@@ -34,11 +34,11 @@
     <script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
     <xsl:call-template name="InitJS"/>
  <style type="text/css"> 
- <xsl:if test="not($Print) or $Print=''">  
+ <xsl:if test="not($Print) or $Print=''">
         <!-- Form 1040ScheduleEIC CSS Styles are located in the template called below -->
         <xsl:call-template name="IRS1040ScheduleEICStyle"/>
         <xsl:call-template name="AddOnStyle"/>
-  </xsl:if>   
+  </xsl:if>
   </style>  
   <xsl:call-template name="GlobalStylesForm"/>
 </head>
@@ -56,7 +56,7 @@
           <span class="styFormNumber" style="font-size:7pt;">(Form 1040)</span>
           <br/>
         </div>
-        <div style="padding-top:8mm;">
+        <div style="padding-top:8mm;"> 
           <span class="styAgency">Department of the Treasury</span><br/>
           <span class="styAgency">Internal Revenue Service <span style="width:3mm"/> (99)</span> 
         </div>
@@ -65,7 +65,7 @@
         <div class="styMainTitle" style="height:5mm;margin-top:0mm;padding-left:3px;">
           <div style="width:70mm;float:left;clear:none;vertical-align:top;padding-top:1mm;padding-left:20mm;"> Earned Income Credit  </div> 
           <div style="float:right;text-align:right;width:19mm;padding-top:2mm;padding-right:13mm;">
-             <img src="{$ImagePath}/1040SchEIC_Form.gif" alt="Attach to Form 1040 or 1040-SR icon" border="darkgray" width="56" height="57"/>
+             <img src="{$ImagePath}/1040SchEIC_Form_small.gif" alt="Attach to Form 1040 or 1040-SR icon" border="darkgray" width="56" height="57"/>
           </div>
           <div style="width:69.5mm;font-size:9pt;margin-top:0mm;font-weight:normal;vertical-align:top;float:left;clear:none;padding-left:16mm;padding-bottom:2mm;">
           Qualifying Child Information</div>
@@ -108,28 +108,29 @@
 		</div>
 		</div>
 			<div style="height:5mm; width:187mm; float:left; padding-left:3mm; border-color:black; border-style:solid; border-right-width:0px; border-top:0px; border-bottom-width:1px; border-left:0px;">
-				<label>
 					<span style="vertical-align:top; padding-top:1px;">
 					If you are separated from your spouse, filing a separate return and meet the requirements to claim the EIC (see inscturctions), check here 
-					</span>
-					<xsl:call-template name="PopulateLabel">
-						<xsl:with-param name="TargetNode" select="$Form1040ScheduleEICData/SepdSpsFilingSepRetMeetsRqrInd"/>
-						<xsl:with-param name="BackupName">SepdSpsFilingSepRetMeetsRqrInd</xsl:with-param>
-					</xsl:call-template>
+					</span>					
 						<input type="checkbox" alt="Separated Spouse and Separate Return Indicator" class="styCkbox">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$Form1040ScheduleEICData/SepdSpsFilingSepRetMeetsRqrInd"/>
 								<xsl:with-param name="BackupName">SepdSpsFilingSepRetMeetsRqrInd</xsl:with-param>
 							</xsl:call-template>
 						</input>
+				<label>
+					<xsl:call-template name="PopulateLabel">
+						<xsl:with-param name="TargetNode" select="$Form1040ScheduleEICData/SepdSpsFilingSepRetMeetsRqrInd"/>
+						<xsl:with-param name="BackupName">SepdSpsFilingSepRetMeetsRqrInd</xsl:with-param>
+					</xsl:call-template>
 				</label>
+				
 			</div>
     <!--Note-->
      <div class="styBB" style="width:187mm;">
      <div class="styGenericDiv" style="width:37mm; height:4.5mm;padding-left: 0px;font-size: 13pt;font-family: Arial;">
      <i><b>Before you begin:</b></i>
 </div>
-<div class="styLNDesc" style="width:149mm;height:16mm;">
+<div class="styLNDesc" style="width:149mm;height:23mm;">
          <span style="width:149mm;"><img src="{$ImagePath}/1040_EIC_Bullet_Round.gif" alt="Round Bullet"/>
 			See the instructions for Form 1040 lines 27a, 27b, and 27c, to make sure that <b>(a) </b>you can take the EIC, and <b>(b) </b>you have a qualifying child.
 		</span>         
@@ -137,6 +138,9 @@
 			Be sure the child's name on line 1 and social security number (SSN) on line 2 agree with the child's social security card. 
           Otherwise, at the time we process your return, we may reduce your EIC. If the name or SSN on the child's social security card is not correct, call the Social Security Administration at 1-800-772-1213.
          </span> 
+        <span style="width:149mm;"><img src="{$ImagePath}/1040_EIC_Bullet_Round.gif" alt="Round Bullet"/>
+			If you have a child who meets the conditions to be your qualifying child for purposes of claiming the EIC, but that child doesn't have an SSN as defined in the instructions for Form 1040, lines 27a, 27b, and 27c, see the instructions.
+         </span>
 </div>
      </div>
      <!--Caution-->
@@ -145,7 +149,8 @@
 		<img src="{$ImagePath}/1040SchEIC2_Caution.gif" alt="Caution icon"/>
 		</div>   
 		<div class="styLNDesc" style="width:172mm;height:20mm;padding-top:3mm;">       
-			<span style="width:172mm;"><img src="{$ImagePath}/1040_EIC_Bullet_Round.gif" alt="Round Bullet"/> You can't claim the EIC for a child who didn't live with you for more than half of the year. </span>         
+			<span style="width:172mm;"><img src="{$ImagePath}/1040_EIC_Bullet_Round.gif" alt="Round Bullet"/> You can't claim the EIC for a child who didn't live with you for more than half of the year. </span>
+			<span style="width:172mm;"><img src="{$ImagePath}/1040_EIC_Bullet_Round.gif" alt="Round Bullet"/> If your child doesn't have an SSN as defined in the instructions for Form 1040, lines 27a, 27b, and 27c, see the instructions. </span>         
 			<span style="width:172mm;"><img src="{$ImagePath}/1040_EIC_Bullet_Round.gif" alt="Round Bullet"/> If you take the EIC even though you are not eligible, you may not be allowed to take the credit for up to 10 years. 
 			See the instructions for details.</span> 
 			<span style="width:172mm;"><img src="{$ImagePath}/1040_EIC_Bullet_Round.gif" alt="Round Bullet"/> It will take us longer to process your return and issue your refund if you do not fill in all lines that apply for each qualifying child.</span> 
@@ -217,9 +222,9 @@
 				<span style="font-size:9pt;"><b>Child's SSN</b></span><br/>
 				<span style="font-weight:normal;"> The child must have an SSN as defined in the 
 					instructions for Form 1040 lines 27a, 27b, and 27c, unless the child was 
-					born and died in 2021. If your child was born and died 
-					in 2021 and did not have an SSN, enter "Died" on this 
-					line and attach a copy of the child's birth certificate, 
+					born and died in 2021 or you are claiming the self-only EIC (see instructions). 
+					If your child was born and died in 2021 and did not have an SSN, enter 
+					"Died" on this line and attach a copy of the child's birth certificate, 
 					death certificate, or hospital medical records showing a live birth.
 				</span>
             </td>   

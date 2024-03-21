@@ -11,6 +11,7 @@
 	<!-- Updated 5/03/2016 per UWR 177702 Tax Year by Robert L Jones -->
 	<!-- Updated 06/17/2016 per IBM Defect 46041 Part III Col K not wide enough for 5 digits plus percent sign by Robert L Jones -->
 	<!-- Updated per UWR 195015 5/19/17 by Robert L Jones -->
+	<!-- Updated per TEGE review and IM01231603 - 12/01/2020 - AJH -->
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
 	<xsl:include href="AddHeader.xsl"/>
@@ -46,7 +47,7 @@
 			<xsl:if test="not($Print) or $Print=''">
 					<xsl:call-template name="IRS990ScheduleRStyle"/>
 					<xsl:call-template name="AddOnStyle"/>
-		</xsl:if>
+			</xsl:if>
 				</style>
 				<xsl:call-template name="GlobalStylesForm"/>
 			</head>
@@ -149,7 +150,7 @@
 						<table class="styTable" cellspacing="0">
 							<thead class="styTableThead">
 								<tr>
-								<!-- a -->
+									<!-- a -->
 									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:340mm;padding-right:10mm;vertical-align:top;text-align:center;">
               (a)      
                <!-- Solid line  -->
@@ -342,12 +343,12 @@
 								</xsl:for-each>
 								<xsl:if test="count($Form990ScheduleRData/IdDisregardedEntitiesGrp) &lt; 1 or ((count($Form990ScheduleRData/IdDisregardedEntitiesGrp) &gt; 6) and ($Print = $Separated)) ">
 									<tr>
-										<!--<td class="styTableCellText" style="height:auto;border-style: solid; border-color: black;width:60mm;">-->
+										<td class="styTableCellText" style="height:9mm;border-style: solid; border-color: black;width:60mm;">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$Form990ScheduleRData/IdDisregardedEntitiesGrp"/>
 											</xsl:call-template>
 											<span style="width:4px"/>
-									<!--	</td>
+										</td>
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:56mm;">
 											<span style="width:4px"/>
 										</td>
@@ -363,7 +364,7 @@
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:25mm;border-right-width:0px;">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:55mm;border-right-width:0px;">
+										<!--<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:55mm;border-right-width:0px;">
 											<span style="width:4px"/>
 										</td>
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:25mm;border-right-width:0px">
@@ -635,15 +636,15 @@
 								</xsl:for-each>
 								<xsl:if test="count($Form990ScheduleRData/IdRelatedTaxExemptOrgGrp) &lt; 1 or ((count($Form990ScheduleRData/IdRelatedTaxExemptOrgGrp) &gt; 7) and ($Print = $Separated)) ">
 									<tr>
-										<!--<td class="styTableCellText" style="height:auto;border-style: solid; border-color: black;width:60mm;">-->
+										<td class="styTableCellText" style="height:9mm;border-style: solid; border-color: black;width:60mm;">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$Form990ScheduleRData/IdRelatedTaxExemptOrgGrp"/>
 											</xsl:call-template>
 											<span style="width:4px"/>
-										<!--</td>-->
-										<!--<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:56mm;">
+										</td>
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:56mm;">
 											<span style="width:4px"/>
-									</td>
+										</td>
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:33mm;">
 											<span style="width:4px"/>
 										</td>
@@ -653,15 +654,15 @@
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:25mm;">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:25mm;border-right-width:0px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:25mm;">
+											<span style="width:4px"/>
+										</td>
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:10mm;">
 											<span style="width:4px"/>
 										</td>
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:0px;">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:0px;">
-											<span style="width:4px"/>
-										</td>-->
 									</tr>
 								</xsl:if>
 								<xsl:if test="count($Form990ScheduleRData/IdRelatedTaxExemptOrgGrp) &lt; 2 or ((count($Form990ScheduleRData/IdRelatedTaxExemptOrgGrp) &gt; 7) and ($Print = $Separated))">
@@ -811,7 +812,7 @@
 											<br/>
 										</span>
 									</th>
-									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:22mm;border-right-width:0px;vertical-align:top;text-align:center;border-bottom-width:0px;">
+									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:22mm;border-right-width:0px;vertical-align:top;text-align:center;" rowspan="2">
                 (k)<br/>
 										<span class="styNormalText">Percentage<br/>ownership<br/>
 											<br/>
@@ -995,45 +996,48 @@
 								</xsl:if>
 								<xsl:if test="count($Form990ScheduleRData/IdRelatedOrgTxblPartnershipGrp) &lt; 1 or ((count($Form990ScheduleRData/IdRelatedOrgTxblPartnershipGrp) &gt; 7) and ($Print = $Separated)) ">
 									<tr>
-									<!--	<td class="styTableCellText" style="height:auto;border-style: solid; border-color: black;width:60mm;">-->
+									<td class="styTableCellText" style="height:9mm;border-style: solid; border-color: black;width:60mm;">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$Form990ScheduleRData/IdRelatedOrgTxblPartnershipGrp"/>
 											</xsl:call-template>
 											<span style="width:4px"/>
-									<!--	</td>
+									</td>
 										<td class="styTableCell">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;width:10mm">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;width:30mm">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;width:7mm">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;width:7mm">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;width:8mm">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:0px;width:8mm">
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
-										</td>-->
+										</td>
+										<td class="styTableCell" style="border-style: solid; border-color: black;border-right-width:0px">
+											<span style="width:4px"/>
+										</td>
 									</tr>
 								</xsl:if>
 								<xsl:if test="count($Form990ScheduleRData/IdRelatedOrgTxblPartnershipGrp) &lt; 2 or ((count($Form990ScheduleRData/IdRelatedOrgTxblPartnershipGrp) &gt; 7) and ($Print = $Separated))">
@@ -1142,15 +1146,16 @@
 										</span>
 									</th>
 									
-									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:21mm;border-right-width:1px;vertical-align:top;text-align:center;border-bottom-width:0px;">
+									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:21mm;border-right-width:1px;vertical-align:top;text-align:center;" rowspan="2">
                 (h)<br/>
 										<span class="styNormalText">Percentage<br/>ownership<br/>
 											
 										</span>
 									</th>
+									
 									<!-- i -->
-						<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:15mm;border-right-width:0px;border-left-width:0px;vertical-align:top;text-align:center;" colspan="2">
-										(i)<br/>
+									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:21mm;border-right-width:0px;vertical-align:top;text-align:center;" colspan="2">
+				(i)<br/>
 									<span class="styNormalText">Section 512(b)(13) controlled entity?
 											<br/>
 											</span>
@@ -1158,8 +1163,8 @@
 					<tr>
 						
 								<!-- This extra th with no entry pushes the yes box over into the controlled entity column -->		
-					<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:0px;text-align:center;border-left-width:1px;"/>
-							<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:1px;text-align:center;border-left-width:1px;">Yes</th>
+					<!--<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:0px;text-align:center;border-left-width:px;"/>-->
+							<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:1px;text-align:center;">Yes</th>
 							<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:0px;text-align:center;">No</th>
 					</tr>
 							</tr>				
@@ -1322,12 +1327,12 @@
 								
 								<xsl:if test="count($Form990ScheduleRData/IdRelatedOrgTxblCorpTrGrp) &lt; 1 or ((count($Form990ScheduleRData/IdRelatedOrgTxblCorpTrGrp) &gt; 7) and ($Print = $Separated)) ">
 									<tr>
-										<!--<td class="styTableCellText" style="height:auto;border-style: solid; border-color: black;width:60mm;">-->
+										<td class="styTableCellText" style="height:9mm;border-style: solid; border-color: black;width:60mm;">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$Form990ScheduleRData/IdRelatedOrgTxblCorpTrGrp"/>
 											</xsl:call-template>
 											<span style="width:4px"/>
-									<!--	</td>
+									</td>
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:40mm;">
 											<span style="width:4px"/>
 										</td>
@@ -1352,10 +1357,10 @@
 										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:21mm">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:0px;">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:20mm;border-right-width:0px;">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:10mm;border-right-width:0px;">
+										<!--<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:20mm;border-right-width:0px;">
 											<span style="width:4px"/>
 										</td>-->
 									
@@ -2036,21 +2041,21 @@
 								</xsl:if>
 								<xsl:if test="count($Form990ScheduleRData/TransactionsRelatedOrgGrp) &lt; 2 or ((count($Form990ScheduleRData/TransactionsRelatedOrgGrp) &gt; 6) and ($Print = $Separated)) ">
 									<tr>
-									<!--	<td class="styTableCellText" style="border-style: solid; border-color: black;width:60mm;border-right-width:1px;">-->
+									<td class="styTableCellText" style="border-style: solid;height: 6mm; border-color: black;width:60mm;border-right-width:1px;">
 											<span style="font-weight:bold;"> <!--(<xsl:number value="position()" format="1"/>)-->    </span>
 												<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$Form990ScheduleRData/TransactionsRelatedOrgGrp"/>
 											</xsl:call-template>
-										<!--</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;width:30mm;border-bottom-width:1px;">
+										</td>
+										<td class="styTableCell" style="border-style: solid; border-color: black;width:30mm;border-bottom-width:1px;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="border-style: solid; border-color: black;width:30mm;border-bottom-width:1px;border-right-width:0px">
+										<td class="styTableCell" style="border-style: solid; border-color: black;width:30mm;border-bottom-width:1px;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
 										<td class="styTableCell" style="border-style: solid; border-color: black;width:79mm;border-bottom-width:1px;border-right-width:0px">
 											<span style="width:4px"/>
-										</td>-->
+										</td>
 									</tr>
 								</xsl:if>
 								<xsl:if test="count($Form990ScheduleRData/TransactionsRelatedOrgGrp) &lt; 2 or ((count($Form990ScheduleRData/TransactionsRelatedOrgGrp) &gt; 6) and ($Print = $Separated))">
@@ -2182,7 +2187,7 @@ or gross revenue) that was not a related organization. See instructions regardin
 										<span class="styNormalText">General or <br/>managing<br/> partner?</span>
 									</th>
 									
-									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:22mm;border-right-width:0px;vertical-align:top;text-align:center;border-bottom-width:0px;">
+									<th class="styTableCellHeader" scope="col" style="height:auto;border-style: solid; border-color: black;width:22mm;border-right-width:0px;vertical-align:top;text-align:center;border-bottom-width:1px;" rowspan="2">
                 (k)<br/>
 										<span class="styNormalText">Percentage<br/>ownership<br/>
 											<br/>
@@ -2351,45 +2356,51 @@ or gross revenue) that was not a related organization. See instructions regardin
 								</xsl:if>
 								<xsl:if test="count($Form990ScheduleRData/UnrelatedOrgTxblPartnershipGrp) &lt; 1 or ((count($Form990ScheduleRData/UnrelatedOrgTxblPartnershipGrp) &gt; 16) and ($Print = $Separated)) ">
 									<tr>
-								<!--		<td class="styTableCellText" style="height:auto;border-style: solid; border-color: black;width:60mm;">-->
+								<td class="styTableCellText" style="height: 8mm;border-style: solid; border-color: black;width:60mm;">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$Form990ScheduleRData/UnrelatedOrgTxblPartnershipGrp"/>
 											</xsl:call-template>
 											<span style="width:4px"/>
-										<!--</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:40mm;">
+										</td>
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:25mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:7mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:7mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:40mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:7mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:7mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:35mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:7mm;border-right-width:1px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;width:7mm;border-right-width:0px">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
 										</td>
-										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:0px;width:8mm">
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
 											<span style="width:4px"/>
-										</td>-->
+										</td>
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:1px">
+											<span style="width:4px"/>
+										</td>
+										<td class="styTableCell" style="height:auto;border-style: solid; border-color: black;border-right-width:0px">
+											<span style="width:4px"/>
+										</td>
 										
 									</tr>
 								</xsl:if>
@@ -2471,7 +2482,7 @@ or gross revenue) that was not a related organization. See instructions regardin
 Supplemental Information
 </div>
 						<div class="IRS990ScheduleRLineDesc" style="height:auto;width:256mm;height:4.5mm; border-top-width:0px;padding-top:1mm;border-bottom-width:0px;border-right-width:0px;padding-left:21mm">
-Provide additional information for responses to questions on Schedule R. (see instructions).
+Provide additional information for responses to questions on Schedule R. See instructions.
 <!--<span style="float:right;clear:none">
 								<xsl:call-template name="SetDynamicTableToggleButton">
 									<xsl:with-param name="TargetNode" select="$Form990ScheduleRData/Form990ScheduleRPartVII"/>

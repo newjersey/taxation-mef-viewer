@@ -257,20 +257,22 @@
 								 A medical research organization operated in conjunction with a hospital described in
 								<span style="font-weight:bold;">
 								section 170(b)(1)(A)(iii).</span>
-     Enter the hospital's name, city, and state:<br/>
+								Enter the hospital's name, city, and state:<br/>
 							<xsl:choose>
 								<xsl:when test="($Print != $Separated) or count($FormData/HospitalNameAndAddressGrp) &lt;= 2">
 									<xsl:for-each select="$FormData/HospitalNameAndAddressGrp">
-					<div style="font-family:verdana;font-size:7pt;">
+										<div style="font-family:verdana;font-size:7pt;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="SupportedOrganizationName/BusinessNameLine1Txt"/>
 											</xsl:call-template>
 										</div>
-										<div style="font-family:verdana;font-size:7pt;">
-											<xsl:call-template name="PopulateText">
-												<xsl:with-param name="TargetNode" select="SupportedOrganizationName/BusinessNameLine2Txt"/>
-											</xsl:call-template>
-										</div>
+										<xsl:if test="SupportedOrganizationName/BusinessNameLine2Txt !=''">
+											<div style="font-family:verdana;font-size:7pt;">
+												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="SupportedOrganizationName/BusinessNameLine2Txt"/>
+												</xsl:call-template>
+											</div>
+										</xsl:if>
 										<span>,</span>
 										<div style="font-family:verdana;font-size:7pt;padding-left:1mm;">
 											<xsl:call-template name="PopulateText">
@@ -278,22 +280,18 @@
 											</xsl:call-template>
 										</div>
 										<span>,</span>
-					<xsl:if test="StateAbbreviationCd">
-										<div style="font-family:verdana;font-size:7pt;padding-left:1mm;">
-											<xsl:call-template name="PopulateText">
-												<xsl:with-param name="TargetNode" select="StateAbbreviationCd"/>
-											</xsl:call-template>
-										</div>
-					 </xsl:if>
-					
-					
+										<xsl:if test="StateAbbreviationCd">
+											<div style="font-family:verdana;font-size:7pt;padding-left:1mm;">
+												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="StateAbbreviationCd"/>
+												</xsl:call-template>
+											</div>
+										</xsl:if>
 										<div style="font-family:verdana;font-size:7pt;padding-left:1mm;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="CountryCd"/>
 											</xsl:call-template>
 										</div>
-					
-					<span class="styFixedUnderline" style="width:171mm; float:right; padding-top:0;padding-bottom:0;"/>
 									</xsl:for-each>
 								</xsl:when>
 								<xsl:otherwise>
@@ -302,6 +300,7 @@
 									</xsl:call-template>
 								</xsl:otherwise>
 							</xsl:choose>
+							<span class="styFixedUnderline" style="width:172mm; float:right; padding-top:0;padding-bottom:0;"/>
 							<br/>
 						</label>
 					</div>
@@ -430,11 +429,13 @@
 									<xsl:with-param name="TargetNode" select="CollegeUniversityName/BusinessNameLine1Txt"/>
 								</xsl:call-template>,
 							</div>
-							<div style="font-family:verdana;font-size:7pt;padding-left:16mm;">
-								<xsl:call-template name="PopulateText">
-									<xsl:with-param name="TargetNode" select="CollegeUniversityName/BusinessNameLine2Txt"/>
-								</xsl:call-template>,           
-							</div>
+							<xsl:if test="CollegeUniversityName/BusinessNameLine2Txt !=''">
+								<div style="font-family:verdana;font-size:7pt;padding-left:16mm;">
+									<xsl:call-template name="PopulateText">
+										<xsl:with-param name="TargetNode" select="CollegeUniversityName/BusinessNameLine2Txt"/>
+									</xsl:call-template>,           
+								</div>
+							</xsl:if>
 							<br/>
 							<div style="font-family:verdana;font-size:7pt;padding-left:16mm;">
 							<xsl:call-template name="PopulateText">
@@ -3500,8 +3501,8 @@ supporting organization was vested in the same persons that controlled or manage
 				<div style="width: 187mm">
 					<div class="styLNLeftNumBox" style="padding-left:5mm;">b</div>
 					<div class="styLNDesc" style="width: 155mm;height:10mm;">
-						Did the activities described in line 2a constitute activities that, but for the organization’s involvement, one or more of the
-						organization’s supported organization(s) would have been engaged in?
+						Did the activities described in line 2a, above constitute activities that, but for the organization’s involvement, one 
+						or more of the	organization’s supported organization(s) would have been engaged in?
 						<i>If "Yes," explain in <b>Part VI </b>the reasons for the
 						organization’s position that its supported organization(s) would have engaged in these activities but for the organization’s
 						involvement.</i>
@@ -3544,7 +3545,7 @@ supporting organization was vested in the same persons that controlled or manage
 					<div class="styLNLeftNumBox" style="height:7.5mm;padding-left:5mm;">a</div>
 					<div class="styLNDesc" style="width:155mm;height:7.5mm;">
 						Did the organization have the power to regularly appoint or elect a majority of the officers, directors, or trustees of each of
-						the supported organizations?<i>If "Yes" or "No" provide details in <b>Part VI.</b>
+						the supported organizations?<i>If "Yes" or "No", provide details in <b>Part VI.</b>
 						</i>
 					</div>
 					<div class="styLNRightNumBox" style="height:7.5mm;">3a</div>
@@ -4605,7 +4606,7 @@ line 8, Column A)
 							<td class="styTableCell" style="text-align:left; border-bottom-width: 1px; border-left-width: 0px; border-top-width: 0px; width: 76mm" colspan="2">
 								<span class="styBoldText" style="padding-left: 1.5mm">2</span>
 								<span style="width: 1mm"/>
-									 Underdistributions, if any, for years prior to 2020 <span style="padding-left: 7mm"/><span style="width:5mm;">
+									 Underdistributions, if any, for years prior to 2019 <span style="padding-left: 7mm"/><span style="width:5mm;">
 								</span>(reasonable cause required-- <i>explain in <span style="font-weight: bold;">Part VI</span></i>). <br/>
 								<span style="padding-left: 5mm;"/>See instructions.</td>
 							<td class="styTableCellSmall" style="width: 37mm; background-color:lightgrey; border-bottom-width: 1px">

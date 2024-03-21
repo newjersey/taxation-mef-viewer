@@ -130,10 +130,10 @@
 								<span style="font-weight:bold;padding-right:2mm;">C</span>
                 Parent’s filing status (check one):                 
 							</div>
-							<xsl:call-template name="LinkToLeftoverDataTableInline">
-									<xsl:with-param name="Desc">IndividualReturnFilingStatusCd</xsl:with-param>
-									<xsl:with-param name="TargetNode" select="$FormData/IndividualReturnFilingStatusCd"/>
-							</xsl:call-template>
+							<!--xsl:call-template name="LinkToLeftoverDataTableInline">
+									<xsl:with-param name="Desc">Line C-FilingStatusEstimatedCode</xsl:with-param>
+									<xsl:with-param name="TargetNode" select="$FormData/IndividualReturnFilingStatusCd/@filingStatusEstimatedCd"/>
+							</xsl:call-template>-->
 					<!--	</div>-->
 						<div style="width:162mm;min-height:5mm;padding-top:1mm;float:left;">
 							<span style="display:inline;font-family:Arial;">
@@ -325,10 +325,10 @@
                 Enter the parent's <b>taxable income</b> from Form 1040 or 1040-NR, line 15. If zero or less, 
                 enter -0-.  If the parent files Form 2555, see the instructions
                 <span style="letter-spacing:2.8mm;">.....................</span>
-							<xsl:call-template name="LinkToLeftoverDataTableInline">
-									<xsl:with-param name="Desc">ParentTaxableIncomeAmt</xsl:with-param>
-									<xsl:with-param name="TargetNode" select="$FormData/ParentTaxableIncomeAmt"/>
-							</xsl:call-template>
+							<!--xsl:call-template name="LinkToLeftoverDataTableInline">
+									<xsl:with-param name="Desc">ParentTaxableIncomeEstimatedCode</xsl:with-param>
+									<xsl:with-param name="TargetNode" select="$FormData/ParentTaxableIncomeAmt/@parentTaxableIncomeEstimatedCd"/>
+							</xsl:call-template>-->
 							</div>
 									
 							<div class="styLNRightNumBox" style="height:8mm;position:relative">
@@ -347,10 +347,10 @@
 							<div class="styLNDesc" style="padding-left:1.5mm;width:141mm;height:8mm;">
                 Enter the total, if any, from Forms 8615, line 5, of <b>all other</b> children of the parent named above.<b> Do not </b>include the amount from line 5 above
                 <span style="letter-spacing:2.8mm;">.......................</span>
-							<xsl:call-template name="LinkToLeftoverDataTableInline">
-									<xsl:with-param name="Desc">OtherChildrenInvestmentIncmAmt</xsl:with-param>
-									<xsl:with-param name="TargetNode" select="$FormData/OtherChildrenInvestmentIncmAmt"/>
-							</xsl:call-template>
+							<!--xsl:call-template name="LinkToLeftoverDataTableInline">
+									<xsl:with-param name="Desc">OtherChildrenInvestmentIncomeEstimatedCode</xsl:with-param>
+									<xsl:with-param name="TargetNode" select="$FormData/OtherChildrenInvestmentIncmAmt/@othChildrenInvestmentIncmEstCd"/>
+							</xsl:call-template>-->
 							</div>
 							<div class="styLNRightNumBox" style="height:8mm;position:relative">
 								<span style="padding-top:3.5mm;bottom:0">7</span>
@@ -381,18 +381,18 @@
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBox" style="height:11mm;width:5mm;padding-left:2.5mm;">9</div>
 						<div class="styLNDesc" style="padding-left:1.5mm;height:11mm;width:141mm;position:relative;">
-							<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$FormData/FamilyCapitalGainsTaxInd"/>
-									<xsl:with-param name="BackupName">FormDataFamilyCapitalGainsTaxInd</xsl:with-param>
-								</xsl:call-template>
 							Enter the tax on the amount on line 8 based on the <b>parent's</b>
 							filing status above. See instructions. If the Qualified Dividends and Capital Gain Tax Worksheet, Schedule D Tax Worksheet, or Schedule J (Form 1040) <br/>is used to figure the tax, check here
-							</label>
 							<span style="letter-spacing:2.45mm;">.........................</span>
 							<div style="width:20mm;position:absolute;bottom:0;right:4;">
-								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="bullet image"/>
-								<input type="checkbox">
+								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="pointer image"/>
+								<label>
+									<xsl:call-template name="PopulateLabel">
+										<xsl:with-param name="TargetNode" select="$FormData/FamilyCapitalGainsTaxInd"/>
+										<xsl:with-param name="BackupName">FormDataFamilyCapitalGainsTaxInd</xsl:with-param>
+									</xsl:call-template>
+								</label>	
+								<input type="checkbox" alt="Family Capital Gains Tax Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$FormData/FamilyCapitalGainsTaxInd"/>
 										<xsl:with-param name="BackupName">FormDataFamilyCapitalGainsTaxInd</xsl:with-param>
@@ -412,22 +412,22 @@
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBox" style="height:14mm;width:5mm;">10</div>
 						<div class="styLNDesc" style="padding-left:1.5mm;height:14mm;width:141mm;position:relative;">
-							<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$FormData/ParentCapitalGainsTaxInd"/>
-									<xsl:with-param name="BackupName">FormDataParentCapitalGainsTaxInd</xsl:with-param>
-								</xsl:call-template>
 							Enter the parent’s tax from Form 1040 or 1040-NR, line 16, minus any alternative minimum tax.
 							<b>Do not</b> <br/> include any tax from <b>Form 4972, 8814, or 8885</b>
 							or any tax from recapture of an education credit. If the parent files Form 2555,
 							 see the instructions. If the Qualified Dividends and Capital Gain Tax Worksheet,
 							  Schedule D Tax Worksheet, or Schedule J (Form 1040) was used to figure
 							  the tax, check here
-							</label>
 							<span style="letter-spacing:3mm;">...</span>
 							<div style="width:20mm;position:absolute;bottom:0;right:4;">
-								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="bullet image"/>
-								<input type="checkbox">
+								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="pointer image"/>
+								<label>
+									<xsl:call-template name="PopulateLabel">
+										<xsl:with-param name="TargetNode" select="$FormData/ParentCapitalGainsTaxInd"/>
+										<xsl:with-param name="BackupName">FormDataParentCapitalGainsTaxInd</xsl:with-param>
+									</xsl:call-template>
+								</label>	
+								<input type="checkbox" alt="Parent Capital Gains Tax Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$FormData/ParentCapitalGainsTaxInd"/>
 										<xsl:with-param name="BackupName">FormDataParentCapitalGainsTaxInd</xsl:with-param>
@@ -549,19 +549,19 @@
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBox" style="height:11mm;width:5mm;padding-left:1mm;">15</div>
 						<div class="styLNDesc" style="padding-left:1.5mm;height:11mm;width:141mm;position:relative;">
-							<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$FormData/ChildUnearnedIncomeInd"/>
-									<xsl:with-param name="BackupName">FormDataChildUnearnedIncomeInd</xsl:with-param>
-								</xsl:call-template>
 							Enter the tax on the amount on line 14 based on the <b>child’s</b> filing status. See 
 							instructions.<br/>If the Qualified Dividends and Capital Gain Tax Worksheet, Schedule D
 							 Tax Worksheet, or Schedule J (Form 1040) is used to figure the tax, check here
-							</label>
 							<span style="letter-spacing:3mm;">...................</span>
 							<div style="width:20mm;position:absolute;bottom:0;right:4;">
-								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="bullet image"/>
-								<input type="checkbox">
+								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="pointer image"/>
+								<label>
+									<xsl:call-template name="PopulateLabel">
+										<xsl:with-param name="TargetNode" select="$FormData/ChildUnearnedIncomeInd"/>
+										<xsl:with-param name="BackupName">FormDataChildUnearnedIncomeInd</xsl:with-param>
+									</xsl:call-template>
+								</label>	
+								<input type="checkbox" alt="Child Unearned Income Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$FormData/ChildUnearnedIncomeInd"/>
 										<xsl:with-param name="BackupName">FormDataChildUnearnedIncomeInd</xsl:with-param>
@@ -569,9 +569,9 @@
 								</input>
 							</div>
 						</div>
-						<div class="styLNRightNumBox" style="height:11mm;padding-top:5mm;">15
+						<div class="styLNRightNumBox" style="height:11mm;padding-top:7mm;">15
                          </div>
-						<div class="styLNAmountBox" style="height:11mm;padding-top:5mm;">
+						<div class="styLNAmountBox" style="height:11mm;padding-top:7mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/ChildNetIncomeTaxAmt"/>
 							</xsl:call-template>
@@ -604,19 +604,19 @@
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBox" style="height:11mm;width:5mm;padding-left:1.5mm;">17</div>
 						<div class="styLNDesc" style="padding-left:1.5mm;height:11mm;width:141mm;position:relative;">
-							<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$FormData/ChildCapitalGainInd"/>
-									<xsl:with-param name="BackupName">FormDataChildCapitalGainInd</xsl:with-param>
-								</xsl:call-template>
 							Enter the tax on the amount on line 4 based on the <b>child’s</b> filing status. See
 							instructions.<br/>If the Qualified Dividends and Capital Gain Tax Worksheet, 
 							Schedule D Tax Worksheet, or Schedule J (Form 1040) is used to figure the tax, check here
-							</label>
 							<span style="letter-spacing:3mm;">...................</span>
 							<div style="width:20mm;position:absolute;bottom:0;right:4;">
-								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="bullet image"/>
-								<input type="checkbox">
+								<img src="{$ImagePath}/8615_Bullet.gif" width="9" height="9" alt="pointer image"/>
+								<label>
+									<xsl:call-template name="PopulateLabel">
+										<xsl:with-param name="TargetNode" select="$FormData/ChildCapitalGainInd"/>
+										<xsl:with-param name="BackupName">FormDataChildCapitalGainInd</xsl:with-param>
+									</xsl:call-template>
+								</label>	
+								<input type="checkbox" alt="Child Capital Gain Indicator">
 									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$FormData/ChildCapitalGainInd"/>
 										<xsl:with-param name="BackupName">FormDataChildCapitalGainInd</xsl:with-param>
@@ -624,9 +624,9 @@
 								</input>
 							</div>
 						</div>
-						<div class="styLNRightNumBox" style="height:11mm;padding-top:5mm;">17
+						<div class="styLNRightNumBox" style="height:11mm;padding-top:7mm;">17
                          </div>
-						<div class="styLNAmountBox" style="height:11mm;padding-top:5mm;">
+						<div class="styLNAmountBox" style="height:11mm;padding-top:7mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/TaxOnChildTaxableIncomeAmt"/>
 							</xsl:call-template>
@@ -682,7 +682,7 @@
 							<xsl:with-param name="TargetNode" select="$FormData/ParentNameControlTxt"/>
 							<xsl:with-param name="DescWidth" select="100"/>
 						</xsl:call-template>
-						<xsl:call-template name="PopulateLeftoverRow">
+						<!--xsl:call-template name="PopulateLeftoverRow">
 							<xsl:with-param name="Desc">Line C - Filing Status Estimated Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$FormData/IndividualReturnFilingStatusCd/@filingStatusEstimatedCd"/>
 							<xsl:with-param name="DescWidth" select="100"/>
@@ -696,7 +696,7 @@
 							<xsl:with-param name="Desc">Part II, Line 7 - Other Children Investment Income Estimated Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$FormData/OtherChildrenInvestmentIncmAmt/@othChildrenInvestmentIncmEstCd"/>
 							<xsl:with-param name="DescWidth" select="100"/>
-						</xsl:call-template>
+						</xsl:call-template>-->
 					</table>
 				</form>
 			</body>

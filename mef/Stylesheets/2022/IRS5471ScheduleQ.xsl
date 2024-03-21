@@ -34,10 +34,10 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript" />
 				<xsl:call-template name="InitJS" />
 				<style type="text/css">
-					<xsl:if test="not($Print) or $Print=''">
+					<!--<xsl:if test="not($Print) or $Print=''">-->
 						<xsl:call-template name="IRS5471ScheduleQStyle" />
 						<xsl:call-template name="AddOnStyle" />
-					</xsl:if>
+					<!--</xsl:if>-->
 				</style>
 				<xsl:call-template name="GlobalStylesForm" />
 			</head>
@@ -53,7 +53,7 @@
 								<xsl:with-param name="TargetNode" select="$FormData" />
 							</xsl:call-template>
 							<br />
-							(December 2020)<br />
+							(Rev. December 2022)<br />
 							<span class="styAgency" style="padding-top:1mm;">
 								Department of the Treasury
 								<br />
@@ -83,56 +83,58 @@
 					<div class="styStdDivLS" style="border-top:1px solid black;border-bottom:1px solid black;">
 						<div class="styNameBox" style="width:209.2mm;">
 							Name of person filing Form 5471 <br />
-							<xsl:call-template name="PopulateReturnHeaderFiler">
-								<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
-							</xsl:call-template><br />
-							<xsl:call-template name="PopulateReturnHeaderFiler">
-								<xsl:with-param name="TargetNode">BusinessNameLine2Txt</xsl:with-param>
-							</xsl:call-template>
-						</div>
-						<div class="styEINBox" style="width:46mm;padding-left:1mm;font-weight:normal;">
-							<strong>Identifying number</strong> <br />
-							<xsl:call-template name="PopulateReturnHeaderFilerTIN"/>
-						</div>
-					</div>
-					<div class="styStdDivLS" style="border-bottom:1px solid black;">
-						<div class="styNameBox" style="width:163.2mm;height:9mm;">
-							Name of foreign corporation <br />
 							<xsl:choose>
-								<xsl:when test="$FormData/PersonNm">
-									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$FormData/PersonNm"/>
-									</xsl:call-template>
-								</xsl:when>
-								<xsl:otherwise>
+								<xsl:when test="$FormData/BusinessName">
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$FormData/BusinessName/BusinessNameLine1Txt"/>
 									</xsl:call-template><br />
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$FormData/BusinessName/BusinessNameLine2Txt"/>
 									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:call-template name="PopulateText">
+										<xsl:with-param name="TargetNode" select="$FormData/PersonNm"/>
+									</xsl:call-template>
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div class="styNameBox" style="width:46mm;height:9mm;padding-left:2px;">
-							EIN (if any) <br />
+						<div class="styEINBox" style="width:46mm;padding-left:1mm;font-weight:normal;">
+							<strong>Identifying number</strong> <br />
 							<xsl:choose>
+								<xsl:when test="$FormData/EIN">
+									<xsl:call-template name="PopulateEIN">
+										<xsl:with-param name="TargetNode" select="$FormData/EIN"/>
+									</xsl:call-template>
+								</xsl:when>
 								<xsl:when test="$FormData/MissingEINReasonCd">
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$FormData/MissingEINReasonCd"/>
 									</xsl:call-template>
 								</xsl:when>
-								<xsl:when test="$FormData/SSN">
+								<xsl:otherwise>
 									<xsl:call-template name="PopulateSSN">
 										<xsl:with-param name="TargetNode" select="$FormData/SSN"/>
 									</xsl:call-template>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:call-template name="PopulateEIN">
-										<xsl:with-param name="TargetNode" select="$FormData/EIN"/>
-									</xsl:call-template>
 								</xsl:otherwise>
 							</xsl:choose>
+						</div>
+					</div>
+					<div class="styStdDivLS" style="border-bottom:1px solid black;">
+						<div class="styNameBox" style="width:163.2mm;height:9mm;">
+							Name of foreign corporation <br />
+							<xsl:call-template name="PopulateText">
+								<xsl:with-param name="TargetNode" select="$FormData/ForeignCorporationName/BusinessNameLine1Txt"/>
+							</xsl:call-template><br />
+							<xsl:call-template name="PopulateText">
+								<xsl:with-param name="TargetNode" select="$FormData/ForeignCorporationName/BusinessNameLine2Txt"/>
+							</xsl:call-template>
+						</div>
+						<div class="styNameBox" style="width:46mm;height:9mm;padding-left:2px;">
+							EIN (if any) <br />
+							<xsl:call-template name="PopulateEIN">
+								<xsl:with-param name="TargetNode" select="$FormData/ForeignCorporationEIN"/>
+							</xsl:call-template>
 						</div>
 						<div class="styEINBox" style="width:46mm;height:9mm;padding-left:1mm;font-weight:normal;word-wrap:break-all">
 							<strong>Reference ID number</strong> (see instructions)<br />
@@ -182,14 +184,29 @@
 							</xsl:call-template>
 						</div>
 					</div>
+					
 					<!-- Line C -->
 					<div class="styStdDivLS">
+						<div class="styLNLeftLtrBox">C</div>
+						<div class="styLNDesc" style="width:216mm;">
+							If code 901j is entered on line A, enter the country code for the sanctioned country (see instructions)
+							<span class="sty5471SQDotLn">....................&#9658;</span>
+						</div>
+						<div class="styLNAmountBox" style="border-left-width:0px;align:center;">
+							<xsl:call-template name="PopulateText">
+								<xsl:with-param name="TargetNode" select="$FormData/SanctionedCountryCd"/>
+							</xsl:call-template>
+						</div>
+					</div>
+					
+					<!-- Line D -->
+					<div class="styStdDivLS">
 						<div class="styLNDesc" style="width:100%">
-							Complete a separate Schedule Q for U.S. source income and foreign source income.
+							Complete a separate Schedule Q for U.S. source income and foreign source income (see instructions for an exception).
 						</div>
 					</div>
 					<div class="styStdDivLS">
-						<div class="styLNLeftLtrBox">C</div>
+						<div class="styLNLeftLtrBox">D</div>
 						<div class="styLNDesc" style="width:90mm;">
 							Indicate whether this Schedule Q is being completed for:
 						</div>
@@ -219,14 +236,14 @@
 								</xsl:call-template>Foreign source income</label>
 						</div>
 					</div>
-					<!-- Line D -->
+					<!-- Line E -->
 					<div class="styStdDivLS">
 						<div class="styLNDesc" style="width:100%">
 							Complete a separate Schedule Q for FOGEI or FORI income.
 						</div>
 					</div>
 					<div class="styStdDivLS">
-						<div class="styLNLeftLtrBox">D</div>
+						<div class="styLNLeftLtrBox">E</div>
 						<div class="styLNDesc" style="width:240mm;">
 							If this Schedule Q is being completed for FOGEI or FORI income, check this box
 							<span class="sty5471SQDotLn">.................................&#9658;</span>
@@ -246,7 +263,8 @@
 					<xsl:variable name="sep1c" select="($Print = $Separated) and (count($FormData/NetGainCommoditiesTranGrp) &gt; 2)"/>
 					<xsl:variable name="sep1d" select="($Print = $Separated) and (count($FormData/NetFrgnCurrencyGainGrp) &gt; 2)"/>
 					<xsl:variable name="sep1e" select="($Print = $Separated) and (count($FormData/IncmEquivalentToIntGrp) &gt; 2)"/>
-					<xsl:variable name="sep1f" select="($Print = $Separated) and (count($FormData/FrgnBaseCoSalesIncmGrp) &gt; 2)"/>
+					<xsl:variable name="sep1f" select="($Print = $Separated) and (count($FormData/OtherSubpartFIncomeGrp) &gt; 2)"/>
+					<xsl:variable name="sep1g" select="($Print = $Separated) and (count($FormData/FrgnBaseCoSalesIncmGrp) &gt; 2)"/>
 					<div class="styTableContainerLandscapeNBB" id="Page1Table">
 						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="border-collapse:collapse;font-size:7pt;">
@@ -367,10 +385,27 @@
 									<xsl:with-param name="TargetNode" select="$FormData/IncmEquivalentToIntGrp"/>
 									<xsl:with-param name="Sep" select="$sep1e"/>
 								</xsl:call-template>
+								
 								<!-- Line 1f total -->
 								<tr>
 									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
 										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">f</span>
+										Other
+										<span class="sty5471SQDotLn">............</span>
+									</td>
+									<xsl:call-template name="TotCellsSchQ">
+										<xsl:with-param name="TargetNode" select="$FormData/TotalOtherSubpartFIncomeGrp"/>
+									</xsl:call-template>
+								</tr>
+								<xsl:call-template name="UnitLineSchQ">
+									<xsl:with-param name="TargetNode" select="$FormData/OtherSubpartFIncomeGrp"/>
+									<xsl:with-param name="Sep" select="$sep1e"/>
+								</xsl:call-template>
+								
+								<!-- Line 1g total -->
+								<tr>
+									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
+										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">g</span>
 										Foreign Base Company Sales Income (Total)
 										<span class="sty5471SQDotLn">..</span>
 									</td>
@@ -380,7 +415,7 @@
 								</tr>
 								<xsl:call-template name="UnitLineSchQ">
 									<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCoSalesIncmGrp"/>
-									<xsl:with-param name="Sep" select="$sep1f"/>
+									<xsl:with-param name="Sep" select="$sep1g"/>
 								</xsl:call-template>
 							</tbody>
 						</table>
@@ -391,11 +426,11 @@
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;font-weight:bold;">
 						For Paperwork Reduction Act Notice, see instructions. 
 						<span style="margin-left:50mm;font-weight:normal;">Cat. No. 73414U</span>
-						<span style="float:right;">Schedule Q (Form 5471) (12-2020)</span>
+						<span style="float:right;">Schedule Q (Form 5471) (Rev. 12-2022)</span>
 					</div>
 					<!-- Page 2 -->
 					<div class="styStdDivLS">
-						Schedule Q (Form 5471) (12-2020)
+						Schedule Q (Form 5471) (Rev. 12-2022)
 						<span style="float:right;">Page <span style="font-weight:bold;font-size:8pt;">2</span></span>
 					</div>
 					<div class="styTableContainerLandscapeNBB" id="Page2Table">
@@ -426,10 +461,10 @@
 										<strong>(xiv)</strong><br /> High Tax Election
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:30mm;font-weight:normal;">
-										Reserved
+										<strong>(xv)</strong><br /> Loss Allocation 
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:30mm;font-weight:normal;border-right-width:0px;">
-										Reserved
+										<strong>(xvi)</strong> Net Income <br />After Loss Allocation <br />(column (xi) minus <br />column (xv))
 									</th>
 								</tr>
 							</thead>
@@ -507,17 +542,31 @@
 									<xsl:with-param name="Sep" select="$sep1e"/>
 									<xsl:with-param name="Line">1e</xsl:with-param>
 								</xsl:call-template>
+								
 								<!-- Line 1f total -->
 								<tr>
 									<td class="styTableCellCtrInherit" style="font-weight:bold;">f</td>
+									<xsl:call-template name="TotCellsSchQp2">
+										<xsl:with-param name="TargetNode" select="$FormData/TotalOtherSubpartFIncomeGrp"/>
+									</xsl:call-template>
+								</tr>
+								<xsl:call-template name="UnitLineSchQp2">
+									<xsl:with-param name="TargetNode" select="$FormData/OtherSubpartFIncomeGrp"/>
+									<xsl:with-param name="Sep" select="$sep1f"/>
+									<xsl:with-param name="Line">1f</xsl:with-param>
+								</xsl:call-template>
+								
+								<!-- Line 1g total -->
+								<tr>
+									<td class="styTableCellCtrInherit" style="font-weight:bold;">g</td>
 									<xsl:call-template name="TotCellsSchQp2">
 										<xsl:with-param name="TargetNode" select="$FormData/TotFrgnBaseCoSalesIncmGrp"/>
 									</xsl:call-template>
 								</tr>
 								<xsl:call-template name="UnitLineSchQp2">
 									<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCoSalesIncmGrp"/>
-									<xsl:with-param name="Sep" select="$sep1f"/>
-									<xsl:with-param name="Line">1f</xsl:with-param>
+									<xsl:with-param name="Sep" select="$sep1g"/>
+									<xsl:with-param name="Line">1g</xsl:with-param>
 								</xsl:call-template>
 							</tbody>
 						</table>
@@ -526,19 +575,19 @@
 						<strong>Important: </strong> See <span style="font-style:italic;font-weight:bold;"> Computer-Generated Schedule Q </span> in instructions. 
 					</div>
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;font-weight:bold;">
-						<span style="float:right;">Schedule Q (Form 5471) (12-2020)</span>
+						<span style="float:right;">Schedule Q (Form 5471) (Rev. 12-2022)</span>
 					</div>
 					<!-- Page 3 -->
 					<div class="styStdDivLS">
-						Schedule Q (Form 5471) (12-2020)
+						Schedule Q (Form 5471) (Rev. 12-2022)
 						<span style="float:right;">Page <span style="font-weight:bold;font-size:8pt;">3</span></span>
 					</div>
-					<xsl:variable name="sep1g" select="($Print = $Separated) and (count($FormData/FrgnBaseCompanySrvcIncmGrp) &gt; 2)"/>
-					<xsl:variable name="sep1h" select="($Print = $Separated) and (count($FormData/FullInclsnFrgnBaseCoIncmGrp) &gt; 2)"/>
-					<xsl:variable name="sep1i" select="($Print = $Separated) and (count($FormData/InsuranceIncomeGrp) &gt; 2)"/>
-					<xsl:variable name="sep1j" select="($Print = $Separated) and (count($FormData/IntntlBoycottIncomeGrp) &gt; 1)"/>
-					<xsl:variable name="sep1k" select="($Print = $Separated) and (count($FormData/BribesKickbackOtherPymtGrp) &gt; 1)"/>
-					<xsl:variable name="sep1l" select="($Print = $Separated) and (count($FormData/CFCSection901jIncomeGrp) &gt; 1)"/>
+					<xsl:variable name="sep1h" select="($Print = $Separated) and (count($FormData/FrgnBaseCompanySrvcIncmGrp) &gt; 2)"/>
+					<xsl:variable name="sep1i" select="($Print = $Separated) and (count($FormData/FullInclsnFrgnBaseCoIncmGrp) &gt; 2)"/>
+					<xsl:variable name="sep1j" select="($Print = $Separated) and (count($FormData/InsuranceIncomeGrp) &gt; 2)"/>
+					<xsl:variable name="sep1k" select="($Print = $Separated) and (count($FormData/IntntlBoycottIncomeGrp) &gt; 1)"/>
+					<xsl:variable name="sep1l" select="($Print = $Separated) and (count($FormData/BribesKickbackOtherPymtGrp) &gt; 1)"/>
+					<xsl:variable name="sep1m" select="($Print = $Separated) and (count($FormData/CFCSection901jIncomeGrp) &gt; 1)"/>
 					<xsl:variable name="sep2" select="($Print = $Separated) and (count($FormData/RecapturedSubpartFIncmGrp) &gt; 1)"/>
 					<xsl:variable name="sep3" select="($Print = $Separated) and (count($FormData/TestedIncomeGrp) &gt; 2)"/>
 					<xsl:variable name="sep4" select="($Print = $Separated) and (count($FormData/ResidualIncomeGrp) &gt; 2)"/>
@@ -588,10 +637,10 @@
 									<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
 									<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
 								</tr>
-								<!-- Line 1g total -->
+								<!-- Line 1h total -->
 								<tr style="vertical-align:top;">
 									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">g</span>
+										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">h</span>
 										Foreign Base Company Services Income (Total)
 									</td>
 									<xsl:call-template name="TotCellsSchQ">
@@ -600,12 +649,12 @@
 								</tr>
 								<xsl:call-template name="UnitLineSchQ">
 									<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCompanySrvcIncmGrp"/>
-									<xsl:with-param name="Sep" select="$sep1g"/>
+									<xsl:with-param name="Sep" select="$sep1h"/>
 								</xsl:call-template>
-								<!-- Line 1h total -->
+								<!-- Line 1i total -->
 								<tr style="vertical-align:top;">
 									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">h</span>
+										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">i</span>
 										Full Inclusion Foreign Base Company <br />Income (Total)
 										<span class="sty5471SQDotLn">.........</span>
 									</td>
@@ -615,12 +664,12 @@
 								</tr>
 								<xsl:call-template name="UnitLineSchQ">
 									<xsl:with-param name="TargetNode" select="$FormData/FullInclsnFrgnBaseCoIncmGrp"/>
-									<xsl:with-param name="Sep" select="$sep1h"/>
+									<xsl:with-param name="Sep" select="$sep1i"/>
 								</xsl:call-template>
-								<!-- Line 1i total -->
+								<!-- Line 1j total -->
 								<tr>
 									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">i</span>
+										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">j</span>
 										Insurance Income (Total)
 									</td>
 									<xsl:call-template name="TotCellsSchQ">
@@ -629,58 +678,31 @@
 								</tr>
 								<xsl:call-template name="UnitLineSchQ">
 									<xsl:with-param name="TargetNode" select="$FormData/InsuranceIncomeGrp"/>
-									<xsl:with-param name="Sep" select="$sep1i"/>
+									<xsl:with-param name="Sep" select="$sep1j"/>
 								</xsl:call-template>
-								<!-- Line 1j -->
+								<!-- Line 1k -->
 								<tr>
 									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">j</span>
+										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">k</span>
 										International Boycott Income
 										<span class="sty5471SQDotLn">......</span>
 									</td>
 									<xsl:call-template name="SingLineSchQ">
 										<xsl:with-param name="TargetNode" select="$FormData/IntntlBoycottIncomeGrp[1]"/>
-										<xsl:with-param name="Sep" select="$sep1j"/>
+										<xsl:with-param name="Sep" select="$sep1k"/>
 									</xsl:call-template>
 								</tr>
-								<xsl:if test="(count($FormData/IntntlBoycottIncomeGrp) &gt; 1) and not($sep1j)">
+								<xsl:if test="(count($FormData/IntntlBoycottIncomeGrp) &gt; 1) and not($sep1k)">
 									<xsl:for-each select="$FormData/IntntlBoycottIncomeGrp[position() &gt; 1]">
 										<tr>
 											<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-												<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">j</span>
+												<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">k</span>
 												International Boycott Income
 												<span class="sty5471SQDotLn">......</span>
 											</td>
 											<xsl:call-template name="SingLineSchQ">
 												<xsl:with-param name="TargetNode" select="."/>
-												<xsl:with-param name="Sep" select="$sep1j"/>
-											</xsl:call-template>
-										</tr>
-									</xsl:for-each>
-								</xsl:if>
-								<!-- Line 1k -->
-								<tr>
-									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">k</span>
-										Bribes, Kickbacks, and Other Payments
-										<span class="sty5471SQDotLn">...</span>
-									</td>
-									<xsl:call-template name="SingLineSchQ">
-										<xsl:with-param name="TargetNode" select="$FormData/BribesKickbackOtherPymtGrp[1]"/>
-										<xsl:with-param name="Sep" select="$sep1j"/>
-									</xsl:call-template>
-								</tr>
-								<xsl:if test="(count($FormData/BribesKickbackOtherPymtGrp) &gt; 1) and not($sep1j)">
-									<xsl:for-each select="$FormData/BribesKickbackOtherPymtGrp[position() &gt; 1]">
-										<tr>
-											<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-												<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">k</span>
-												Bribes, Kickbacks, and Other Payments
-												<span class="sty5471SQDotLn">...</span>
-											</td>
-											<xsl:call-template name="SingLineSchQ">
-												<xsl:with-param name="TargetNode" select="."/>
-												<xsl:with-param name="Sep" select="$sep1j"/>
+												<xsl:with-param name="Sep" select="$sep1k"/>
 											</xsl:call-template>
 										</tr>
 									</xsl:for-each>
@@ -689,25 +711,52 @@
 								<tr>
 									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
 										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">l</span>
+										Bribes, Kickbacks, and Other Payments
+										<span class="sty5471SQDotLn">...</span>
+									</td>
+									<xsl:call-template name="SingLineSchQ">
+										<xsl:with-param name="TargetNode" select="$FormData/BribesKickbackOtherPymtGrp[1]"/>
+										<xsl:with-param name="Sep" select="$sep1k"/>
+									</xsl:call-template>
+								</tr>
+								<xsl:if test="(count($FormData/BribesKickbackOtherPymtGrp) &gt; 1) and not($sep1k)">
+									<xsl:for-each select="$FormData/BribesKickbackOtherPymtGrp[position() &gt; 1]">
+										<tr>
+											<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
+												<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">l</span>
+												Bribes, Kickbacks, and Other Payments
+												<span class="sty5471SQDotLn">...</span>
+											</td>
+											<xsl:call-template name="SingLineSchQ">
+												<xsl:with-param name="TargetNode" select="."/>
+												<xsl:with-param name="Sep" select="$sep1k"/>
+											</xsl:call-template>
+										</tr>
+									</xsl:for-each>
+								</xsl:if>
+								<!-- Line 1m -->
+								<tr>
+									<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
+										<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">m</span>
 										Section 901(j) Income
 										<span class="sty5471SQDotLn">........</span>
 									</td>
 									<xsl:call-template name="SingLineSchQ">
 										<xsl:with-param name="TargetNode" select="$FormData/CFCSection901jIncomeGrp[1]"/>
-										<xsl:with-param name="Sep" select="$sep1l"/>
+										<xsl:with-param name="Sep" select="$sep1m"/>
 									</xsl:call-template>
 								</tr>
-								<xsl:if test="(count($FormData/CFCSection901jIncomeGrp) &gt; 1) and not($sep1l)">
+								<xsl:if test="(count($FormData/CFCSection901jIncomeGrp) &gt; 1) and not($sep1m)">
 									<xsl:for-each select="$FormData/CFCSection901jIncomeGrp[position() &gt; 1]">
 										<tr>
 											<td class="styTableCellTextInherit" style="border-bottom-width:0px;">
-												<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">l</span>
+												<span class="styLNLeftNumBox" style="width:6mm;padding-left:2mm;padding-top:0px;">m</span>
 												Section 901(j) Income
 											<span class="sty5471SQDotLn">........</span>
 											</td>
 											<xsl:call-template name="SingLineSchQ">
 												<xsl:with-param name="TargetNode" select="."/>
-												<xsl:with-param name="Sep" select="$sep1l"/>
+												<xsl:with-param name="Sep" select="$sep1m"/>
 											</xsl:call-template>
 										</tr>
 									</xsl:for-each>
@@ -789,11 +838,11 @@
 						<strong>Important: </strong> See <span style="font-style:italic;font-weight:bold;"> Computer-Generated Schedule Q </span> in instructions. 
 					</div>
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;font-weight:bold;">
-						<span style="float:right;">Schedule Q (Form 5471) (12-2020)</span>
+						<span style="float:right;">Schedule Q (Form 5471) (Rev. 12-2022)</span>
 					</div>
 					<!-- Page 4 -->
 					<div class="styStdDivLS">
-						Schedule Q (Form 5471) (12-2020)
+						Schedule Q (Form 5471) (Rev. 12-2022)
 						<span style="float:right;">Page <span style="font-weight:bold;font-size:8pt;">4</span></span>
 					</div>
 					<div class="styTableContainerLandscapeNBB" id="Page4Table">
@@ -824,10 +873,10 @@
 										<strong>(xiv)</strong><br /> High Tax Election
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:30mm;font-weight:normal;">
-										Reserved
+										<strong>(xv)</strong><br /> Loss Allocation 
 									</th>
 									<th class="styTableCellHeader" scope="col" style="width:30mm;font-weight:normal;border-right-width:0px;">
-										Reserved
+										<strong>(xvi)</strong> Net Income <br />After Loss Allocation <br />(column (xi) minus <br />column (xv))
 									</th>
 								</tr>
 							</thead>
@@ -845,73 +894,54 @@
 									<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
 									<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
 								</tr>
-								<!-- Line 1g total -->
+								<!-- Line 1h total -->
 								<tr style="vertical-align:top;">
-									<td class="styTableCellCtrInherit" style="font-weight:bold;">g</td>
+									<td class="styTableCellCtrInherit" style="font-weight:bold;">h</td>
 									<xsl:call-template name="TotCellsSchQp2">
 										<xsl:with-param name="TargetNode" select="$FormData/TotFrgnBaseCompanySrvcIncmGrp"/>
 									</xsl:call-template>
 								</tr>
 								<xsl:call-template name="UnitLineSchQp2">
 									<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCompanySrvcIncmGrp"/>
-									<xsl:with-param name="Sep" select="$sep1g"/>
+									<xsl:with-param name="Sep" select="$sep1h"/>
 								</xsl:call-template>
-								<!-- Line 1h total -->
+								<!-- Line 1i total -->
 								<tr style="vertical-align:top;">
-									<td class="styTableCellCtrInherit" style="font-weight:bold;">h</td>
+									<td class="styTableCellCtrInherit" style="font-weight:bold;">i</td>
 									<xsl:call-template name="TotCellsSchQp2">
 										<xsl:with-param name="TargetNode" select="$FormData/TotFullInclsnFrgnBaseCoIncmGrp"/>
 									</xsl:call-template>
 								</tr>
 								<xsl:call-template name="UnitLineSchQp2">
 									<xsl:with-param name="TargetNode" select="$FormData/FullInclsnFrgnBaseCoIncmGrp"/>
-									<xsl:with-param name="Sep" select="$sep1h"/>
+									<xsl:with-param name="Sep" select="$sep1i"/>
 								</xsl:call-template>
-								<!-- Line 1i total -->
+								<!-- Line 1j total -->
 								<tr>
-									<td class="styTableCellCtrInherit" style="font-weight:bold;">i</td>
+									<td class="styTableCellCtrInherit" style="font-weight:bold;">j</td>
 									<xsl:call-template name="TotCellsSchQp2">
 										<xsl:with-param name="TargetNode" select="$FormData/TotalInsuranceIncomeGrp"/>
 									</xsl:call-template>
 								</tr>
 								<xsl:call-template name="UnitLineSchQp2">
 									<xsl:with-param name="TargetNode" select="$FormData/InsuranceIncomeGrp"/>
-									<xsl:with-param name="Sep" select="$sep1i"/>
+									<xsl:with-param name="Sep" select="$sep1j"/>
 								</xsl:call-template>
-								<!-- Line 1j -->
-								<tr>
-									<td class="styTableCellCtrInherit" style="font-weight:bold;">j</td>
-									<xsl:call-template name="SingLineSchQp2">
-										<xsl:with-param name="TargetNode" select="$FormData/IntntlBoycottIncomeGrp[1]"/>
-										<xsl:with-param name="Sep" select="$sep1j"/>
-									</xsl:call-template>
-								</tr>
-								<xsl:if test="(count($FormData/IntntlBoycottIncomeGrp) &gt; 1) and not($sep1j)">
-									<xsl:for-each select="$FormData/IntntlBoycottIncomeGrp[position() &gt; 1]">
-										<tr>
-											<td class="styTableCellCtrInherit" style="font-weight:bold;">j</td>
-											<xsl:call-template name="SingLineSchQp2">
-												<xsl:with-param name="TargetNode" select="."/>
-												<xsl:with-param name="Sep" select="$sep1j"/>
-											</xsl:call-template>
-										</tr>
-									</xsl:for-each>
-								</xsl:if>
 								<!-- Line 1k -->
 								<tr>
 									<td class="styTableCellCtrInherit" style="font-weight:bold;">k</td>
 									<xsl:call-template name="SingLineSchQp2">
-										<xsl:with-param name="TargetNode" select="$FormData/BribesKickbackOtherPymtGrp[1]"/>
-										<xsl:with-param name="Sep" select="$sep1j"/>
+										<xsl:with-param name="TargetNode" select="$FormData/IntntlBoycottIncomeGrp[1]"/>
+										<xsl:with-param name="Sep" select="$sep1k"/>
 									</xsl:call-template>
 								</tr>
-								<xsl:if test="(count($FormData/BribesKickbackOtherPymtGrp) &gt; 1) and not($sep1j)">
-									<xsl:for-each select="$FormData/BribesKickbackOtherPymtGrp[position() &gt; 1]">
+								<xsl:if test="(count($FormData/IntntlBoycottIncomeGrp) &gt; 1) and not($sep1k)">
+									<xsl:for-each select="$FormData/IntntlBoycottIncomeGrp[position() &gt; 1]">
 										<tr>
 											<td class="styTableCellCtrInherit" style="font-weight:bold;">k</td>
 											<xsl:call-template name="SingLineSchQp2">
 												<xsl:with-param name="TargetNode" select="."/>
-												<xsl:with-param name="Sep" select="$sep1j"/>
+												<xsl:with-param name="Sep" select="$sep1k"/>
 											</xsl:call-template>
 										</tr>
 									</xsl:for-each>
@@ -920,17 +950,36 @@
 								<tr>
 									<td class="styTableCellCtrInherit" style="font-weight:bold;">l</td>
 									<xsl:call-template name="SingLineSchQp2">
-										<xsl:with-param name="TargetNode" select="$FormData/CFCSection901jIncomeGrp[1]"/>
-										<xsl:with-param name="Sep" select="$sep1l"/>
+										<xsl:with-param name="TargetNode" select="$FormData/BribesKickbackOtherPymtGrp[1]"/>
+										<xsl:with-param name="Sep" select="$sep1k"/>
 									</xsl:call-template>
 								</tr>
-								<xsl:if test="(count($FormData/CFCSection901jIncomeGrp) &gt; 1) and not($sep1l)">
-									<xsl:for-each select="$FormData/CFCSection901jIncomeGrp[position() &gt; 1]">
+								<xsl:if test="(count($FormData/BribesKickbackOtherPymtGrp) &gt; 1) and not($sep1k)">
+									<xsl:for-each select="$FormData/BribesKickbackOtherPymtGrp[position() &gt; 1]">
 										<tr>
 											<td class="styTableCellCtrInherit" style="font-weight:bold;">l</td>
 											<xsl:call-template name="SingLineSchQp2">
 												<xsl:with-param name="TargetNode" select="."/>
-												<xsl:with-param name="Sep" select="$sep1l"/>
+												<xsl:with-param name="Sep" select="$sep1k"/>
+											</xsl:call-template>
+										</tr>
+									</xsl:for-each>
+								</xsl:if>
+								<!-- Line 1m -->
+								<tr>
+									<td class="styTableCellCtrInherit" style="font-weight:bold;">m</td>
+									<xsl:call-template name="SingLineSchQp2">
+										<xsl:with-param name="TargetNode" select="$FormData/CFCSection901jIncomeGrp[1]"/>
+										<xsl:with-param name="Sep" select="$sep1m"/>
+									</xsl:call-template>
+								</tr>
+								<xsl:if test="(count($FormData/CFCSection901jIncomeGrp) &gt; 1) and not($sep1m)">
+									<xsl:for-each select="$FormData/CFCSection901jIncomeGrp[position() &gt; 1]">
+										<tr>
+											<td class="styTableCellCtrInherit" style="font-weight:bold;">m</td>
+											<xsl:call-template name="SingLineSchQp2">
+												<xsl:with-param name="TargetNode" select="."/>
+												<xsl:with-param name="Sep" select="$sep1m"/>
 											</xsl:call-template>
 										</tr>
 									</xsl:for-each>
@@ -983,7 +1032,7 @@
 								<!-- Line 5 total -->
 								<tr>
 									<td class="styTableCellTextInherit" style="padding-left:1mm;font-weight:bold;">5</td>
-									<xsl:call-template name="TotCellsSchQp2">
+									<xsl:call-template name="TotCellsSchQp5">
 										<xsl:with-param name="TargetNode" select="$FormData/CFCTotalIncomeGrp"/>
 									</xsl:call-template>
 								</tr>
@@ -994,7 +1043,7 @@
 						<strong>Important: </strong> See <span style="font-style:italic;font-weight:bold;"> Computer-Generated Schedule Q </span> in instructions. 
 					</div>
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;font-weight:bold;">
-						<span style="float:right;">Schedule Q (Form 5471) (12-2020)</span>
+						<span style="float:right;">Schedule Q (Form 5471) (Rev. 12-2022)</span>
 					</div>
 					<!-- Additonal Data Title Bar and Button -->
 					<div class="styLeftOverTitleLine" id="LeftoverData">
@@ -1094,55 +1143,54 @@
 					<xsl:if test="$sep1f">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 1f - Foreign Base Company Sales Income</span>
+						<span class="styRepeatingDataTitle">Line 1f - Other</span>
 						<xsl:call-template name="UnitLineSep">
-							<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCoSalesIncmGrp"/>
+							<xsl:with-param name="TargetNode" select="$FormData/OtherSubpartFIncomeGrp"/>
 							<xsl:with-param name="Line">1f</xsl:with-param>
 						</xsl:call-template>
 					</xsl:if>
 					<xsl:if test="$sep1g">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 1g - Foreign Base Company Services Income</span>
+						<span class="styRepeatingDataTitle">Line 1g - Foreign Base Company Sales Income</span>
 						<xsl:call-template name="UnitLineSep">
-							<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCompanySrvcIncmGrp"/>
-							<xsl:with-param name="Line">1g</xsl:with-param>
+							<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCoSalesIncmGrp"/>
+							<xsl:with-param name="Line">1f</xsl:with-param>
 						</xsl:call-template>
 					</xsl:if>
 					<xsl:if test="$sep1h">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 1h - Full Inclusion Foreign Base Company Income</span>
+						<span class="styRepeatingDataTitle">Line 1h - Foreign Base Company Services Income</span>
 						<xsl:call-template name="UnitLineSep">
-							<xsl:with-param name="TargetNode" select="$FormData/FullInclsnFrgnBaseCoIncmGrp"/>
+							<xsl:with-param name="TargetNode" select="$FormData/FrgnBaseCompanySrvcIncmGrp"/>
 							<xsl:with-param name="Line">1h</xsl:with-param>
 						</xsl:call-template>
 					</xsl:if>
 					<xsl:if test="$sep1i">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 1i - Insurance Income</span>
+						<span class="styRepeatingDataTitle">Line 1i - Full Inclusion Foreign Base Company Income</span>
 						<xsl:call-template name="UnitLineSep">
-							<xsl:with-param name="TargetNode" select="$FormData/InsuranceIncomeGrp"/>
+							<xsl:with-param name="TargetNode" select="$FormData/FullInclsnFrgnBaseCoIncmGrp"/>
 							<xsl:with-param name="Line">1i</xsl:with-param>
 						</xsl:call-template>
 					</xsl:if>
 					<xsl:if test="$sep1j">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 1j - International Boycott Income</span>
+						<span class="styRepeatingDataTitle">Line 1j - Insurance Income</span>
 						<xsl:call-template name="UnitLineSep">
-							<xsl:with-param name="TargetNode" select="$FormData/IntntlBoycottIncomeGrp"/>
+							<xsl:with-param name="TargetNode" select="$FormData/InsuranceIncomeGrp"/>
 							<xsl:with-param name="Line">1j</xsl:with-param>
-							<xsl:with-param name="Single" select="true()"/>
 						</xsl:call-template>
 					</xsl:if>
 					<xsl:if test="$sep1k">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 1k - Bribes, Kickbacks, and Other Payments</span>
+						<span class="styRepeatingDataTitle">Line 1k - International Boycott Income</span>
 						<xsl:call-template name="UnitLineSep">
-							<xsl:with-param name="TargetNode" select="$FormData/BribesKickbackOtherPymtGrp"/>
+							<xsl:with-param name="TargetNode" select="$FormData/IntntlBoycottIncomeGrp"/>
 							<xsl:with-param name="Line">1k</xsl:with-param>
 							<xsl:with-param name="Single" select="true()"/>
 						</xsl:call-template>
@@ -1150,10 +1198,20 @@
 					<xsl:if test="$sep1l">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 1l - Section 901(j) income</span>
+						<span class="styRepeatingDataTitle">Line 1l - Bribes, Kickbacks, and Other Payments</span>
+						<xsl:call-template name="UnitLineSep">
+							<xsl:with-param name="TargetNode" select="$FormData/BribesKickbackOtherPymtGrp"/>
+							<xsl:with-param name="Line">1l</xsl:with-param>
+							<xsl:with-param name="Single" select="true()"/>
+						</xsl:call-template>
+					</xsl:if>
+					<xsl:if test="$sep1m">
+						<br/>
+						<br/>
+						<span class="styRepeatingDataTitle">Line 1m - Section 901(j) income</span>
 						<xsl:call-template name="UnitLineSep">
 							<xsl:with-param name="TargetNode" select="$FormData/CFCSection901jIncomeGrp"/>
-							<xsl:with-param name="Line">1l</xsl:with-param>
+							<xsl:with-param name="Line">1m</xsl:with-param>
 							<xsl:with-param name="Single" select="true()"/>
 						</xsl:call-template>
 					</xsl:if>
@@ -1172,6 +1230,12 @@
 									</th>
 									<th class="styDepTblCell" scope="col" style="width:30mm;font-weight:normal;">
 										<strong>(xi)</strong><br /> Net Income <br /> (column (ii) less columns (iii) through (x))
+									</th>
+									<th class="styDepTblCell" scope="col" style="width:30mm;font-weight:normal;">
+										<strong>(xv)</strong><br />Loss Allocation
+									</th>
+									<th class="styDepTblCell" scope="col" style="width:30mm;font-weight:normal;">
+										<strong>(xvi)</strong><br /> Net Income <br />After Loss Allocation<br /> (column (xi) minus<br /> column (xv)) 
 									</th>
 								</tr>
 							</thead>
@@ -1193,6 +1257,18 @@
 										<td class="styTableCellAmtInherit" style="">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="NetIncomeAmt"/>
+												<xsl:with-param name="MaxSize" select="17"/>
+											</xsl:call-template>
+										</td>
+										<td class="styTableCellAmtInherit" style="">
+											<xsl:call-template name="PopulateAmount">
+												<xsl:with-param name="TargetNode" select="LossAllocationAmt"/>
+												<xsl:with-param name="MaxSize" select="17"/>
+											</xsl:call-template>
+										</td>
+										<td class="styTableCellAmtInherit" style="">
+											<xsl:call-template name="PopulateAmount">
+												<xsl:with-param name="TargetNode" select="NetIncmAfterLossAllocnAmt"/>
 												<xsl:with-param name="MaxSize" select="17"/>
 											</xsl:call-template>
 										</td>
@@ -1375,16 +1451,34 @@
 					</xsl:call-template>
 				</td>
 				<td class="styTableCellCtrInherit" style="">
-					<input type="checkbox" class="styCkboxNM" style="">
-						<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit <xsl:value-of select="RowId"/> High Tax Election</xsl:attribute>
-						<xsl:call-template name="PopulateCheckbox">
-							<xsl:with-param name="TargetNode" select="HighTaxElectionInd"/>
-							<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/><xsl:value-of select="position()"/></xsl:with-param>
-						</xsl:call-template>
-					</input>
+					<xsl:choose>
+						<xsl:when test="$L4">
+							<xsl:attribute name="style">background-color:lightgrey;</xsl:attribute>
+							&nbsp;
+						</xsl:when>
+						<xsl:otherwise>
+							<input type="checkbox" class="styCkboxNM" style="">
+								<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit <xsl:value-of select="RowId"/> High Tax Election</xsl:attribute>
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="HighTaxElectionInd"/>
+									<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/><xsl:value-of select="position()"/></xsl:with-param>
+								</xsl:call-template>
+							</input>
+						</xsl:otherwise>
+					</xsl:choose>
 				</td>
-				<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-				<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
+				<td class="styTableCellAmtInherit" style="">
+					<xsl:call-template name="PopulateAmount">
+						<xsl:with-param name="TargetNode" select="LossAllocationAmt"/>
+						<xsl:with-param name="MaxSize" select="17"/>
+					</xsl:call-template>				
+				</td>
+				<td class="styTableCellAmtInherit" style="border-right-width:0px;">
+					<xsl:call-template name="PopulateAmount">
+						<xsl:with-param name="TargetNode" select="NetIncmAfterLossAllocnAmt"/>
+						<xsl:with-param name="MaxSize" select="17"/>
+					</xsl:call-template>					
+				</td>
 			</tr>
 		</xsl:for-each>
 	</xsl:if>
@@ -1400,16 +1494,24 @@
 			<td class="styTableCellAmtInherit" style=""><xsl:if test="$L4"><xsl:attribute name="style">background-color:lightgrey;</xsl:attribute></xsl:if>&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="">&nbsp;</td>
 			<td class="styTableCellCtrInherit" style="">
-				<input type="checkbox" class="styCkboxNM" style="" alt="Unit 1 High Tax Election">
-					<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 1 High Tax Election</xsl:attribute>
-					<xsl:call-template name="PopulateCheckbox">
-						<xsl:with-param name="TargetNode" select="/.."/>
-						<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-1</xsl:with-param>
-					</xsl:call-template>
-				</input>
+				<xsl:choose>
+					<xsl:when test="$L4">
+						<xsl:attribute name="style">background-color:lightgrey;</xsl:attribute>
+						&nbsp;
+					</xsl:when>
+					<xsl:otherwise>
+						<input type="checkbox" class="styCkboxNM" style="" alt="Unit 1 High Tax Election">
+							<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 1 High Tax Election</xsl:attribute>
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="/.."/>
+								<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-1</xsl:with-param>
+							</xsl:call-template>
+						</input>
+					</xsl:otherwise>
+				</xsl:choose>
 			</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="border-right-width:0px;">&nbsp;</td>
 		</tr>
 	</xsl:if>
 	<xsl:if test="$Sep or (count($TargetNode) &lt; 2)">
@@ -1422,16 +1524,24 @@
 			<td class="styTableCellAmtInherit" style=""><xsl:if test="$L4"><xsl:attribute name="style">background-color:lightgrey;</xsl:attribute></xsl:if>&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="">&nbsp;</td>
 			<td class="styTableCellCtrInherit" style="">
-				<input type="checkbox" class="styCkboxNM" style="" alt="Unit 2 High Tax Election">
-					<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 2 High Tax Election</xsl:attribute>
-					<xsl:call-template name="PopulateCheckbox">
-						<xsl:with-param name="TargetNode" select="/.."/>
-						<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-2</xsl:with-param>
-					</xsl:call-template>
-				</input>
+				<xsl:choose>
+					<xsl:when test="$L4">
+						<xsl:attribute name="style">background-color:lightgrey;</xsl:attribute>
+						&nbsp;
+					</xsl:when>
+					<xsl:otherwise>
+						<input type="checkbox" class="styCkboxNM" style="" alt="Unit 2 High Tax Election">
+							<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 2 High Tax Election</xsl:attribute>
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="/.."/>
+								<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-2</xsl:with-param>
+							</xsl:call-template>
+						</input>
+					</xsl:otherwise>
+				</xsl:choose>
 			</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="border-right-width:0px;">&nbsp;</td>
 		</tr>
 	</xsl:if>
 	</xsl:template>
@@ -1548,8 +1658,18 @@
 				</xsl:call-template>
 			</td>
 			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="">
+				<xsl:call-template name="PopulateAmount">
+					<xsl:with-param name="TargetNode" select="$TargetNode/LossAllocationAmt"/>
+					<xsl:with-param name="MaxSize" select="17"/>
+				</xsl:call-template>
+			</td>
+			<td class="styTableCellAmtInherit" style="border-right-width:0px;">
+				<xsl:call-template name="PopulateAmount">
+					<xsl:with-param name="TargetNode" select="$TargetNode/NetIncmAfterLossAllocnAmt"/>
+					<xsl:with-param name="MaxSize" select="17"/>
+				</xsl:call-template>			
+			</td>
 		<!--</xsl:for-each>-->
 	</xsl:if>
 	<xsl:if test="$Sep">
@@ -1560,8 +1680,8 @@
 			<td class="styTableCellAmtInherit" style=""><xsl:if test="$L2"><xsl:attribute name="style">background-color:lightgrey;</xsl:attribute></xsl:if>&nbsp;</td>
 			<td class="styTableCellAmtInherit" style=""><xsl:if test="$L2"><xsl:attribute name="style">background-color:lightgrey;</xsl:attribute></xsl:if>&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-			<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="border-right-width:0px;">&nbsp;</td>
 	</xsl:if>
 	</xsl:template>
 	<xsl:template name="TotCellsSchQ">
@@ -1643,9 +1763,20 @@
 				<xsl:with-param name="MaxSize" select="17"/>
 			</xsl:call-template>
 		</td>
+		<!--<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>-->
 		<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-		<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-		<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
+		<td class="styTableCellAmtInherit" style="">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalAllocationLossAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>
+		</td>
+		<td class="styTableCellAmtInherit" style="border-right-width:0px;">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalNetIncmAfterLossAllocnAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>		
+		</td>
 	</xsl:template>
 	<xsl:template name="UnitLineSep">
 		<xsl:param name="TargetNode"/>
@@ -1777,10 +1908,10 @@
 						<strong>(xiv)</strong><br /> High Tax Election
 					</th>
 					<th class="styDepTblCell" scope="col" style="width:30mm;font-weight:normal;">
-						Reserved
+						<strong>(xv)</strong><br /> Loss Allocation
 					</th>
 					<th class="styDepTblCell" scope="col" style="width:30mm;font-weight:normal;">
-						Reserved
+						<strong>(xvi)</strong> Net Income <br />After Loss Allocation <br />(column (xi) minus <br />column (xv))
 					</th>
 				</tr>
 			</thead>
@@ -1853,11 +1984,76 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</td>
-						<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
-						<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
+						<td class="styTableCellAmtInherit" style="">
+							<xsl:call-template name="PopulateAmount">
+								<xsl:with-param name="TargetNode" select="LossAllocationAmt"/>
+								<xsl:with-param name="MaxSize" select="17"/>
+							</xsl:call-template>						
+						</td>
+						<td class="styTableCellAmtInherit" style="border-right-width:0px;">
+							<xsl:call-template name="PopulateAmount">
+								<xsl:with-param name="TargetNode" select="NetIncmAfterLossAllocnAmt"/>
+								<xsl:with-param name="MaxSize" select="17"/>
+							</xsl:call-template>						
+						</td>
 					</tr>
 				</xsl:for-each>
 			</tbody>
 		</table>
+	</xsl:template>
+
+	<xsl:template name="TotCellsSchQp5">
+		<xsl:param name="TargetNode"/>
+		<xsl:param name="L4" select="false()"/>
+		<td class="styTableCellAmtInherit" style="">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotCYTxReattrIncmDsrgrdPymtAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>
+		</td>
+		<td class="styTableCellAmtInherit" style="">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotCYTaxOnAllOthDsrgrdPymtAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>
+		</td>
+		<td class="styTableCellAmtInherit" style="">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalOtherCurrentYearTaxAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>
+		</td>
+		<td class="styTableCellAmtInherit" style="">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalNetIncomeAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>
+		</td>
+		<td class="styTableCellAmtInherit" style="">
+			<xsl:if test="$L4"><xsl:attribute name="style">background-color:lightgrey;</xsl:attribute></xsl:if>
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalAllowedFrgnTaxCreditAmt"/>
+			</xsl:call-template>
+		</td>
+		<!--<td class="styTableCellAmtInherit" style="">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalAverageAssetValueAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>
+		</td>-->
+		<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
+		<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
+		<td class="styTableCellAmtInherit" style="">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalAllocationLossAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>
+		</td>
+		<td class="styTableCellAmtInherit" style="border-right-width:0px;">
+			<xsl:call-template name="PopulateAmount">
+				<xsl:with-param name="TargetNode" select="$TargetNode/TotalNetIncmAfterLossAllocnAmt"/>
+				<xsl:with-param name="MaxSize" select="17"/>
+			</xsl:call-template>		
+		</td>
 	</xsl:template>
 </xsl:stylesheet>

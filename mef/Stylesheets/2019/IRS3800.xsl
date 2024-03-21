@@ -548,7 +548,7 @@
 							<div style="float:right;" class="styGenericDiv">Form <span class="styBoldText">3800</span> (2019)</div>
 						</div>
 					</div>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 					<!-- Page 2 Header -->
 					<div style="width:187mm;clear:both;padding-bottom:.5mm;" class="styBB">
 						<div style="width:90mm;" class="styGenericDiv">Form 3800 (2019)</div>
@@ -1106,7 +1106,7 @@
 							<br/>
 						</div>
 					</div>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 					<!-- Page 3 Header -->
 					<xsl:choose>
 						<xsl:when test="$Form3800Data/GenBusCrOrEligSmllBusCrGrp">
@@ -1126,42 +1126,42 @@
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox A  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrFromNnpssvActyGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox B WORK ON ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrFromPassiveActyGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox C  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrCarryforwardsGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp+$GBusCrPassActyGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox D  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrCarrybacksGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp+$GBusCrPassActyGrp+$GBusCrCarFwdGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox G  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/EligibleSmallBusinessCrCfwdGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp+$GBusCrPassActyGrp+$GBusCrCarFwdGrp+$GBusCrCarBakGrp+$ESmllBusCrNnPassActyGrp+$ESmllBusCrPassActyGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 						</xsl:when>
 						<xsl:otherwise>
@@ -1196,7 +1196,7 @@
 							</xsl:call-template>
 						</table>
 					</div>
-					<p style="page-break-after: always"/>
+					<div class="styStdDiv pageEnd"/>
 				</form>
 			</body>
 		</html>
@@ -2917,7 +2917,7 @@ Enter the appropriate amount
 				<div style="float:right;" class="styGenericDiv">Form <span class="styBoldText">3800</span> (2019)</div>
 			</div>
 		</div>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 		<!--</xsl:for-each>-->
 	</xsl:template>
 	<xsl:template name="PartIIIemptyTemplate">
@@ -3925,7 +3925,7 @@ Enter the appropriate amount
 							<div style="width:55mm;text-align:center;" class="styGenericDiv"/>
 							<div style="float:right;" class="styGenericDiv">Form <span class="styBoldText">3800</span> (2019)</div>
 							<br/>
-<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 						</div>
 		</div>
 		<!--</xsl:for-each>-->

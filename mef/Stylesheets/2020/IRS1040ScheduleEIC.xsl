@@ -6,6 +6,8 @@
 <!-- Last modified on 11/19/2014 by Harold Nadel for IBM Defect 41780 PDF Comparison 1040 EIC made sure all the references to the year 1994 were changed to 1995 -->
 <!-- Last modified on 10/22/2014 by Harold Nadel for IBM Defect 41780 PDF Comparison 1040 EIC -->
 <!-- 08/14/2017 - Changes made for UWR 200411 - Jeremy Nichols -->
+<!-- 11/18/2020 - Updates to formatting for defects 66101 and 66099 - AJH -->
+<!-- 03/09/2021 - Updates to graphic formatting for IM01374703 - AJH -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:include href="PopulateTemplate.xsl"/>
 <xsl:include href="AddHeader.xsl"/>
@@ -64,17 +66,16 @@
         <div class="styMainTitle" style="height:5mm;margin-top:0mm;padding-left:3px;">
           <div style="width:70mm;float:left;clear:none;vertical-align:top;padding-top:1mm;padding-left:20mm;"> Earned Income Credit  </div> 
           <div style="float:right;text-align:right;width:19mm;padding-top:2mm;padding-right:13mm;">
-             <img src="{$ImagePath}/1040ScheduleEICForm.gif" alt="Attach to Form 1040 or 1040-SR icon" border="darkgray" width="56" height="57"/>
+             <img src="{$ImagePath}/1040SchEIC_Form.gif" alt="Attach to Form 1040 or 1040-SR icon" border="darkgray" width="56" height="57"/>
           </div>
           <div style="width:69.5mm;font-size:9pt;margin-top:0mm;font-weight:normal;vertical-align:top;float:left;clear:none;padding-left:16mm;padding-bottom:2mm;">
           Qualifying Child Information</div>
 		  
-		  <div class="styFBT" style="width:92mm;font-size:7pt;margin-top:0mm;font-weight:normal;float:left;text-align:left">
-		    <img src="{$ImagePath}/1040SchEIC_Bullet_Sm.gif" alt="SmallBullet" style="margin-right:2px;"/>Complete and attach to Form 1040 or 
+		  <div class="styFBT" style="width:92mm;font-size:7pt;margin-top:0mm;font-weight:normal;float:left;text-align:left;font-weight: bold;">
+		    <img src="{$ImagePath}/1040SchEIC_Bullet_Sm.gif" alt="SmallBullet" style="margin-right:2px;font-weight: bold;"/>Complete and attach to Form 1040 or 
 		    1040-SR only if you have a qualifying child.</div>
-		  <div class="styFBT" style="width:100mm;font-size:7pt;margin-top:0mm;font-weight:normal;float:left;text-align:left;font-family:Arial Narrow;font-size:7pt;">
-		    <img src="{$ImagePath}/1040SchEIC_Bullet_Sm.gif" alt="SmallBullet" style="margin-right:2px;"/>
-		    Go to <i>www.irs.gov/ScheduleEIC</i> for the latest information.
+		  <div class="styFBT" style="width:100mm;font-size:7pt;margin-top:0mm;font-weight:normal;float:left;text-align:left;font-family:Arial Narrow;font-size:7pt;font-weight: bold;">
+		    <img src="{$ImagePath}/1040SchEIC_Bullet_Sm.gif" alt="SmallBullet" style="margin-right:2px;font-weight: bold;"/>Go to <i>www.irs.gov/ScheduleEIC</i> for the latest information.
 		  </div>
         </div>
 	  </div>
@@ -540,7 +541,7 @@
             <td style="width:75mm;border-bottom:1px solid black;">
              <span style="font-size:9pt;"><b>Child's relationship to you</b></span><br/>
              <span style="font-weight:normal;"> (for example, son, daughter, grandchild,<br/>
-             niece, nephew, foster child, etc.)    
+             niece, nephew, eligible foster child, etc.)    
              </span>
                   </td>    
              <td style="width:34mm;border-left:1px solid black;border-bottom:1px solid black;padding-top:10mm;text-align:center">  

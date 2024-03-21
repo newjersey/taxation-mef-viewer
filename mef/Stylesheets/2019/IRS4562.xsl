@@ -281,7 +281,7 @@
 			  <xsl:if test="not($Print) or $Print=''">
 				<xsl:call-template name="IRS4562Style"/>
 				<xsl:call-template name="AddOnStyle"/>
-			  </xsl:if>				
+			  </xsl:if>		
 			</style>
 			<xsl:call-template name="GlobalStylesForm"/>
 		  </head>
@@ -505,24 +505,19 @@
 			  <!-- end line 5B -->
 			  <!--   END LINE 5   -->
 			  <!--   START LINE 6 Table with Column A, B, and C -->
-			  <div class="styIRS4562TableContainer" id="DPctn">
-				<!--print logic-->
-				<xsl:call-template name="SetInitialState"/>
-				<!--end-->
-				<table class="styIRS4562Table" cellspacing="0">
-				  <thead class="styTableThead">
-					<tr>
-					  <th scope="col" class="styIRS4562TableCellA" style="border-color:black; border-left-width:0px; border-right-width:px; border-top-width:1px; border-bottom-width:1px; width:91mm; text-align:center;">
-						<span style="float:left; padding-left:3mm; font-weight:bold;">6</span>
+			  <div style="width:187mm;border-top:1px solid black;">
+				<div style="float:left;">
+				  <div class="styLNLeftNumBox" style="border-bottom:1px solid black;height:8mm; padding-left:3mm;padding-top:2mm;">6</div>
+				  <div class="styGenericDiv" style="border-bottom:1px solid black;text-align:center;width:82.5mm;height:8mm; padding-top:2mm;">
 						<b>(a)</b> Description of property
-					  </th>
-					  <th scope="col" class="styIRS4562TableCellB" style="border-color:black; border-left-width:0px; border-right-width:1px; border-top-width:1px; border-bottom-width:1px; width:32mm; text-align:center">
+					</div>
+				  <div class="styLNAmountBox" style="border-bottom:1px solid black;height:8mm;text-align:center;">
 						<b>(b)</b> Cost (business use only)
-					  </th>
-					  <th scope="col" class="styIRS4562TableCellC" style="border-color:black; border-left-width:0px; border-right-width:0px; border-top-width:1px; border-bottom-width:1px; width:32mm; text-align:center">
+				  </div>
+				  <div class="styLNAmountBox" style="padding-top:2mm;width:32.5mm;border-bottom:1px solid black;height:8mm;text-align:center;">
 						<b>(c)</b> Elected cost
-					  </th>
-					  <th scope="col" class="styIRS4562TableCellD" style="vertical-align:top; border-color:black; border-left-width:1px; border-right-width:0px; border-top-width:1px; border-bottom-width:0px; width:32mm; background-color:lightgrey;">
+				  </div>
+				  <div class="styLNAmountBox" style="border-bottom:0;height:8mm;text-align:center;background-color:lightgrey;">
 						<xsl:if test="not((count($IRS4562Data/ElectedProperty) &gt; 2) and ($Print = $Separated))">
 						  <span style="width:7mm; text-align:right; float:right;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
@@ -533,10 +528,15 @@
 							</xsl:call-template>
 						  </span>
 					    </xsl:if>
-						<span style="width: 1px"/>
-					  </th>
-					</tr>
-				  </thead>
+					</div>
+				</div>
+			  </div>
+			  <div class="styIRS4562TableContainer" id="DPctn">
+				<!--print logic-->
+				<xsl:call-template name="SetInitialState"/>
+				<!--end-->
+				<table class="styIRS4562Table" cellspacing="0">
+				  <thead class="styTableThead"/>
 				  <tfoot/>
 				  <tbody>
 					<xsl:if test="not((count($IRS4562Data/ElectedProperty) &gt; 2) and ($Print = $Separated))">
@@ -2026,22 +2026,15 @@
 <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Line 20 START &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
 <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Line 20 START &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
 			  <!--  BEGIN SECTION B TABLE  -->
-			  <div class="styIRS4562TableContainer"  id="SecBLine20">
-				<!--print logic-->
-				<xsl:call-template name="SetInitialState"/>
-				<!--end-->
-				<table class="styIRS4562Table" cellspacing="0">
-				  <thead class="styTableThead">
-					<tr scope="col">
-					  <td style="border-style:solid; border-color:black; border-left-width:0px; border-right-width:0px; border-top-width:1px; border-bottom-width:0px; font-weight:bold; text-align:center;" colspan="7">
-                        Section C&#151;Assets Placed in Service During 2019 Tax Year Using the Alternative Depreciation System
+			  <div class="styIRS4562Section" style="float:none; clear:both; border-top-width:1px; border-bottom-width:0px; font-weight:bold; padding-left:10mm; font-size:7pt">
+				Section C&#151;Assets Placed in Service During 2019 Tax Year Using the Alternative Depreciation System
 						<xsl:call-template name="SetFormLinkInline">
 						  <xsl:with-param name="TargetNode" select="$IRS4562Data/AlternativeDepreciationSystem"/>
-						</xsl:call-template>									
-						<xsl:if test="not( ( (count($IRS4562Data/AlternativeDepreciationSystem/ADSClassLifeProperty) +
+						</xsl:call-template>
+						<span style="float:right;">
+							<xsl:if test="not( ( (count($IRS4562Data/AlternativeDepreciationSystem/ADSClassLifeProperty) +
 						  count($IRS4562Data/AlternativeDepreciationSystem/ADS12YearProperty) +
 						  count($IRS4562Data/AlternativeDepreciationSystem/ADS40YearProperty)) &gt; 3) and ($Print = $Separated))">
-						  <span style="float:right;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 							  <xsl:with-param name="TargetNode" select="$IRS4562Data/AlternativeDepreciationSystem/ADSClassLifeProperty"/>
 							  <xsl:with-param name="containerHeight" select="3"/>
@@ -2049,11 +2042,15 @@
 							  <xsl:with-param name="imageID" select=" 'GDimg' "/>
 							  <xsl:with-param name="buttonID" select=" 'GDbtn' "/>
 							</xsl:call-template>
-						  </span>
 						</xsl:if>
-					  </td>
-					</tr>
-				  </thead>
+					</span>
+				</div>
+			  <div class="styIRS4562TableContainer" style="height:100%" id="SecBLine20">
+				<!--print logic-->
+				<xsl:call-template name="SetInitialState"/>
+				<!--end-->
+				<table class="styIRS4562Table" cellspacing="0">
+				  <thead/>
 				  <tfoot/>
 				  <tbody>
 				    <!-- BEGIN CLASS LIFE of Line 20a -->
@@ -6058,9 +6055,9 @@
 												<td class="styIRS4562TableCellA" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width: 122mm">
 													<span class="styLN" style="text-align: center; font-weight: bold; width: 4.5mm;">30</span>
                                                      Total business/investment miles driven<br/>
-													<span style="width: 5mm"/>during the year (<b>don't </b>
+													<span style="width: 5.5mm"/>during the year (<b>don't </b>
                                                          include commuting<br/>
-													<span style="width: 5mm"/>miles&#151;See page 2 of the instructions)
+													<span style="width: 5.5mm"/>miles&#151;See page 2 of the instructions)
                                                       </td>
 												<td class="styIRS4562TableCellSmall2" colspan="2" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px">
 													<xsl:call-template name="PopulateAmount">
@@ -6147,7 +6144,8 @@
 											<tr class="styDepTblRow1">
 												<td class="styIRS4562TableCellA" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width:122mm">
 													<span class="styLN" style="text-align: center; font-weight: bold; width: 4.5mm;">32</span>
-                                                      Total other personal (noncommuting) miles driven
+                                                      Total other personal (noncommuting) miles <br/>
+															<span style="width: 5.5mm"/>driven
                                                          <span class="styIRS4562TableCellPad"/>
 												</td>
 												<td class="styIRS4562TableCellSmall2" colspan="2" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px">
@@ -6191,7 +6189,8 @@
 											<tr class="styDepTblRow2">
 												<td class="styIRS4562TableCellA" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width: 122mm">
 													<span class="styLN" style="text-align: center; font-weight: bold; width: 4.5mm;">33</span>
-                                                       Total miles driven during the year.  Add lines 30 <span style="padding-left:9.5mm"/> through  32
+                                                       Total miles driven during the year.  Add lines 30 <br/>
+															<span style="width: 5.5mm"/>through 32
                                                          <span class="styIRS4562TableCellPad"/>
 												</td>
 												<td class="styIRS4562TableCellSmall2" colspan="2" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px;">
@@ -6290,7 +6289,8 @@
 											<tr class="styDepTblRow1">
 												<td class="styIRS4562TableCellA" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width: 122mm">
 													<span class="styLN" style="text-align: center; font-weight: bold; width: 4.5mm;">34</span>
-                                                       Was the vehicle available for personal use during off-<span style="padding-left:5mm"/>duty hours?
+                                                   Was the vehicle available for personal use <br/>
+														<span style="width: 5.5mm"/>during off-duty hours?
                                                    <span style="width: 5mm"/>
 													<span class="styIRS4562TableCellPad"/>
 												</td>
@@ -6395,7 +6395,8 @@
 											<tr class="styDepTblRow2">
 												<td class="styIRS4562TableCellA" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width: 122mm">
 														<span class="styLN" style="text-align: center; font-weight: bold; width: 4.5mm;">35</span>
-                                                        Was the vehicle used primarily by a more than 5%  <span style="padding-left:7mm"/>owner or related person?
+                                                        Was the vehicle used primarily by a more <br/>
+															 <span style="width: 5.5mm"/>than 5% owner or related person?
                                                            <span class="styIRS4562TableCellPad"/>
 												</td>
 												<td class="styIRS4562TableCellYesNo">

@@ -55,8 +55,8 @@
 			</head>
 			<body class="styBodyClass"  style="width:187mm">
 				<form name="Form1120LEliminationsOrAdj">
-				<!--  *******************************************************************************************************  -->				
-				<!-- ************* Replace  $Form1120LDat a  with   $RtnDoc/IRS1120LEliminationsOrAdj ******** -->
+				<!-- ******************************************************************************************************* -->				
+				<!-- ************* Replace  $Form1120LDat a  with   $RtnDoc/IRS1120LEliminationsOrAdj  ******** -->
 				<!-- ******************************************************************************************************* -->
 				<xsl:call-template name="DocumentHeader"/>
 					<div class="styBB" style="width:187mm;">
@@ -133,7 +133,7 @@
 								</div>
 								<div class="styGenericDiv" style="height:7mm;padding-top:2mm;">
 									<!--<input type="checkbox" alt="Consolidated return (attached Form 851) checkbox" class="styCkbox">-->
-									 <input type="checkbox" alt="Consolidated return (attach Form 851) " class="styCkbox">
+									 <input type="checkbox" alt="Consolidated Return (attach form 851) " class="styCkbox">
 										<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="  $RtnDoc/IRS1120LEliminationsOrAdj/ConsolidatedReturnInd"/>
 											<xsl:with-param name="BackupName">IRS1120L Consolidated Return</xsl:with-param>
@@ -182,7 +182,7 @@
 								</div>
 								<div class="styGenericDiv" style="height:10mm;padding-top:2mm;">
 									<!--<input type="checkbox" alt="ScheduleM3 (form 1120-L) checkbox" class="styCkbox">-->
-									<input type="checkbox" alt="Schedule M-3 (Form 1120-L) attached " class="styCkbox">
+									<input type="checkbox" alt="Schedule M3 (Form 1120L) " class="styCkbox">
 										<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="  $RtnDoc/IRS1120LEliminationsOrAdj/ScheduleM3Form1120LInd"/>
 											<xsl:with-param name="BackupName">IRS1120L ScheduleM3 Required</xsl:with-param>

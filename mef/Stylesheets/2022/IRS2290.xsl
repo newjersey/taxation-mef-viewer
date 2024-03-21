@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 03/14/2019 - Made changes per UWR 2018147 - Jeremy Nichols -->
 <!-- 01/10/2020 - Made changes per UWR 230746 - Jeremy Nichols -->
+<!-- 05/10/2022 - Made changes per defect 69611 - Jeremy Nichols -->
+<!-- 06/15/2022 - Made changes per KISAM IM01963940 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="CommonPathRef.xsl"/>
   <xsl:include href="PopulateTemplate.xsl"/>
@@ -58,7 +60,7 @@
 				<xsl:with-param name="TargetNode" select="$Form2290/@AmendedMonthNum"/>
               </xsl:call-template>
               <br/>
-              <span class="styAgency">(Rev. July 2020)
+              <span class="styAgency">(Rev. July 2022)
           <br/> Department of the Treasury
         </span>
               <br/>
@@ -67,14 +69,14 @@
             <div class="styFTBox" style="width:128mm;height:18mm;">
               <div class="styMainTitle" style="">Heavy Highway Vehicle Use Tax Return</div>
               <div style="font-family: ';Arial'font-size:10pt;">
-          For the period July 1, 2020, through June 30, 2021
+          For the period July 1, 2022, through June 30, 2023
         </div>
               <div class="styFBT" style="height:2.5mm;">
-                <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/> 
+                <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="Right Arrow"/> 
           Attach both copies of Schedule 1 to this return
         </div>
               <div class="styFBT" style="height:2.5mm;font-weight:normal;">
-                <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/> 
+                <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="Right Arrow"/> 
                 <b>Go to <i>www.irs.gov/Form2290</i> for instructions and the latest information. </b>
         </div>
             </div>
@@ -220,75 +222,79 @@ Check if applicable:</div>
 				<table style="height:auto;width:175mm;">
 					<tbody>
 						<tr>
-							<td style="height:auto;width:5mm;vertical-align:top;">
+							<td style="height:auto;width:102mm;vertical-align:top;">
 							  <input type="checkbox" class="styCkbox" onclick="return false;" style="height:3mm;width:3mm;">
 								<xsl:call-template name="PopulateCheckbox">
 								  <xsl:with-param name="TargetNode" select="$Form2290/AddressChangeInd"/>
 								  <xsl:with-param name="BackupName">Form2290AddressChange</xsl:with-param>
 								</xsl:call-template>
 							  </input>
-							  <span style="height:7mm;width:5mm;"/>
+							  <span style="width:0.5mm;"/>
+							<label>
+								<xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$Form2290/AddressChangeInd"/>
+								</xsl:call-template>            
+								Address Change
+							</label><br/>
+								
+							  <span style="height:7mm;"/>
 							  <input type="checkbox" class="styCkbox" onclick="return false;" style="height:3mm;width:3mm;">
 								<xsl:call-template name="PopulateCheckbox">
 								  <xsl:with-param name="TargetNode" select="$Form2290/AmendedReturnInd"/>
 								  <xsl:with-param name="BackupName">Form990ScheduleDProtectionOfNaturalHabitat</xsl:with-param>
 								</xsl:call-template>
 							  </input>
-							</td>
-							<td style="height:auto;width:82.5mm;padding-top:1mm;">
-								<label>
-								  <xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$Form2290/AddressChangeInd"/>
-								  </xsl:call-template>            
-								  Address Change
-								</label><br/>
-								<span style="height:12mm;width;82mm;"/>
 								<label>
 								  <xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$Form2290/AmendedReturnInd"/>
 								  </xsl:call-template>            
 								  Amended Return
 								</label><br/>
+							  <span style="width:5mm;"/>
 								  <span style="padding-left:0.5mm;padding-top:1mm;">Check this box if reporting (a) additional tax from<br/>
 								  an increase in taxable gross vehicle weight or<br/>
 								  (b) suspended vehicles exceeding the mileage<br/>
 								  use limit.  <b>Do not </b>check this box for any other
 								  </span>
 							</td>
-							<td style="height:auto;width:5mm;vertical-align:top;">
+							<td style="height:auto;width:85mm;vertical-align:top;">
 							  <input type="checkbox" class="styCkbox" onclick="return false;">
 								<xsl:call-template name="PopulateCheckbox">
 								  <xsl:with-param name="TargetNode" select="$Form2290/VINCorrectionInd"/>
 								  <xsl:with-param name="BackupName">Form2290VINCorrection</xsl:with-param>
 								</xsl:call-template>
 							  </input>
-							  <span style="height:13mm;width:5mm;"/>
+								<label>
+								  <xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$Form2290/VINCorrectionInd"/>
+								  </xsl:call-template>            
+								  VIN Correction
+								  <xsl:call-template name="SetFormLinkInline">
+									<xsl:with-param name="TargetNode" select="$Form2290/VINCorrectionInd"/>
+								  </xsl:call-template>
+								</label><br/>
+							  <span style="width:5mm;"/>
+								  <span style="padding-left:0.5mm;padding-top:1mm;">Check this box if you are correcting a vehicle<br/>
+								  identification number (VIN) listed on a previously<br/>
+								  filed Schedule 1 (Form 2290).  <b>Do not</b> check this<br/>
+								  box for any other reason.
+								  </span><br/>
+							  
+							  
+							  <span style="height:9mm;"/>
 							  <input type="checkbox" class="styCkbox" onclick="return false;">
 								<xsl:call-template name="PopulateCheckbox">
 								  <xsl:with-param name="TargetNode" select="$Form2290/FinalReturnInd"/>
 								  <xsl:with-param name="BackupName">Form990ScheduleDHistoricStructure</xsl:with-param>
 								</xsl:call-template>
 							  </input>
-							</td>
-							<td style="height:auto;width:82.5mm;padding-top:1mm;vertical-align:top;">
-								<label>
-								  <xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$Form2290/VINCorrectionInd"/>
-								  </xsl:call-template>            
-								  VIN Correction
-								</label><br/>
-								  <span style="padding-left:0.5mm;padding-top:1mm;">Check this box if you are correcting a vehicle<br/>
-								  identification number (VIN) listed on a previously<br/>
-								  filed Schedule 1 (Form 2290).  <b>Do not</b> check this<br/>
-								  box for any other reason.
-								  </span><br/>
-								<span style="height:5mm;width;82mm;"/>
 								<label>
 								  <xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$Form2290/FinalReturnInd"/>
 								  </xsl:call-template>            
 								  Final Return
 								</label><br/>
+							  <span style="width:5mm;"/>
 								  <span style="padding-left:0.5mm;padding-top:1mm;">Check this box if you no longer have taxable<br/>
 								  vehicles to report.
 								  </span>
@@ -317,106 +323,119 @@ Check if applicable:</div>
               </div>
             </div>
           </div>
-          <!-- Line 1 -->
+         <!-- Line 1 -->
           <div style="width:187mm;">
             <div class="styLNLeftNumBox" style="">1</div>
-            <div class="styLNDesc" style="width:135mm;">Was the vehicle(s) reported on this return used on public highways during <b>July</b> 2020? If YES,</div>
+            <div class="styLNDesc" style="width:135mm;">Was the vehicle(s) reported on this return used on public highways during <b>July</b> 2022? If YES,</div>
             <div style="float:right">
                <div class="styLNRightNumBox" style="padding-left:.25mm;width:8.25mm;border-bottom-width:0;border-right-width:1px;"/>
                <div class="styLNAmountBox" style="padding-left:.25mm;width:33.75mm;border-bottom-width:0;border-left-width:0px;">
               </div>
             </div>
           </div>
-<div style="width:187mm;">
-  <div class="styLNLeftNumBox" style=""/>
-  <div class="styLNDesc" style="width:117mm;">enter <span class="styBoldText">202007</span> in the boxes to the right. If NO, see the table on page 3 of the instructions</div>
-  <div class="styLNAmountBox" style="width:34mm;height:4.5mm;float:right">      
-    <xsl:call-template name="PopulateYear">
-      <xsl:with-param name="TargetNode" select="$RtnHdrData/FirstUsedDt"/>
-    </xsl:call-template>
-    <xsl:call-template name="PopulateMonth">
-      <xsl:with-param name="TargetNode" select="$RtnHdrData/FirstUsedDt"/>
-    </xsl:call-template>
-  </div>
-  <div class="styLNRightNumBox" style="height:4.5mm;float:right">1</div>
-  <span style="float:right;padding-right:3mm;padding-top:1mm">
-    <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
-  </span>
-  <div class="styDotLn" style="float:right;padding-right:2mm;padding-top:1mm">...</div>
-           
-           
-               </div>
+		  <div style="width:187mm;display:inline;">
+			  <div class="styLNLeftNumBox" style=""/>
+			  <div class="styLNDesc" style="width:137mm;">enter <span class="styBoldText">202207</span> in the boxes to the right. If NO, see the table on page 3 of the instructions
+				  <span class="styDotLn" style="padding-right:3mm;float:right;">...
+				  
+					<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="arrow"/>
+				  </span>
+			  </div>
+			  <div class="styLNRightNumBox" style="height:4.5mm;display:inline;">1</div>
+			  <div class="styLNAmountBox" style="width:34mm;height:4.5mm;display:inline;float:right;">      
+				<xsl:call-template name="PopulateYear">
+				  <xsl:with-param name="TargetNode" select="$RtnHdrData/FirstUsedDt"/>
+				</xsl:call-template>
+				<xsl:call-template name="PopulateMonth">
+				  <xsl:with-param name="TargetNode" select="$RtnHdrData/FirstUsedDt"/>
+				</xsl:call-template>
+			  </div>
+          </div>
+          
           <!-- Line 2 -->
           <div style="width:187mm;">
             <div class="styLNLeftNumBox" style="">2</div>
-            <div class="styLNDesc" style="width:77mm;">
-              <span class="styBoldText">Tax.</span> Enter the <span class="styBoldText">Total</span> from Form 2290, page 2, column (4)</div>
+            <div class="styLNDesc" style="width:137mm;">
+              <span class="styBoldText">Tax.</span> Enter the <span class="styBoldText">Total</span> from Form 2290, page 2, column (4)
+              <span class="styDotLn" style="padding-right:3mm;float:right;">............
+			  
+				<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="arrow"/>
+			  </span>
+            </div>
+            
+            <div class="styLNRightNumBox" style="">2</div>
             <div class="styLNAmountBox" style="width:34mm;float:right">
               <xsl:call-template name="PopulateAmount">
                 <xsl:with-param name="TargetNode" select="$Form2290/TotalTaxComputationAmt"/>
               </xsl:call-template>
             </div>
-            <div class="styLNRightNumBox" style="float:right">2</div>
-            <span style="float:right;padding-right:3mm;padding-top:1mm">
-              <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
-            </span>
-            <span class="styDotLn" style="float:right;padding-right:2mm;padding-top:1mm">.............</span>
           </div>
+          
           <!-- Line 3 -->
           <div style="width:187mm;">
             <div class="styLNLeftNumBox" style="">3</div>
-            <div class="styLNDesc" style="width:98mm;">Additional tax from increase in taxable gross weight (see instructions).  
-    <xsl:call-template name="SetFormLinkInline">
+            <div class="styLNDesc" style="width:137mm;">Additional tax from increase in taxable gross weight (see instructions).  
+			  <xsl:call-template name="SetFormLinkInline">
                 <xsl:with-param name="TargetNode" select="$Form2290/AdditionalTaxAmt"/>
               </xsl:call-template>
+              
+              <span class="styDotLn" style="padding-right:3mm;float:right;">........
+			  
+				<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="arrow"/>
+			  </span>
             </div>
+            
+            <div class="styLNRightNumBox" style="">3</div>
             <div class="styLNAmountBox" style="width:34mm;float:right">
               <xsl:call-template name="PopulateAmount">
                 <xsl:with-param name="TargetNode" select="$Form2290/AdditionalTaxAmt"/>
               </xsl:call-template>
             </div>
-            <div class="styLNRightNumBox" style="float:right">3</div>
-            <span style="float:right;padding-right:3mm;padding-top:1mm">
-              <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
-            </span>
-            <div class="styDotLn" style="float:right;padding-right:2mm;padding-top:1mm">.......</div>
           </div>
+          
           <!-- Line 4 -->
           <div style="width:187mm;">
             <div class="styLNLeftNumBox" style="">4</div>
-            <div class="styLNDesc" style="width:40mm;">
-              <span class="styBoldText">Total tax.</span> Add lines 2 and 3</div>
+            <div class="styLNDesc" style="width:137mm;">
+              <span class="styBoldText">Total tax.</span> Add lines 2 and 3
+              
+              <span class="styDotLn" style="padding-right:3mm;float:right;">......................
+			  
+				<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="arrow"/>
+			  </span>
+            </div>
+              
+            <div class="styLNRightNumBox" style="">4</div>
             <div class="styLNAmountBox" style="width:34mm;float:right">
               <xsl:call-template name="PopulateAmount">
                 <xsl:with-param name="TargetNode" select="$Form2290/TotalTaxAmt"/>
               </xsl:call-template>
             </div>
-            <div class="styLNRightNumBox" style="float:right">4</div>
-            <span style="float:right;padding-right:3mm;padding-top:1mm">
-              <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
-            </span>
-            <div class="styDotLn" style="float:right;padding-right:2mm;padding-top:1mm">......................</div>
           </div>
+          
           <!-- Line 5 -->
           <div style="width:187mm;">
             <div class="styLNLeftNumBox" style="">5</div>
-            <div class="styLNDesc" style="width:44mm;">
+            <div class="styLNDesc" style="width:137mm;">
               <span class="styBoldText">Credits</span> (see instructions).
-    <xsl:call-template name="SetFormLinkInline">
+			  <xsl:call-template name="SetFormLinkInline">
                 <xsl:with-param name="TargetNode" select="$Form2290/TaxCreditsAmt"/>
               </xsl:call-template>
+              
+              <span class="styDotLn" style="padding-right:3mm;float:right;">.....................
+			  
+				<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="arrow"/>
+			  </span>
             </div>
+            
+            <div class="styLNRightNumBox" style="">5</div>
             <div class="styLNAmountBox" style="width:34mm;float:right">
               <xsl:call-template name="PopulateAmount">
                 <xsl:with-param name="TargetNode" select="$Form2290/TaxCreditsAmt"/>
               </xsl:call-template>
             </div>
-            <div class="styLNRightNumBox" style="float:right">5</div>
-            <span style="float:right;padding-right:3mm;padding-top:1mm">
-              <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
-            </span>
-            <div class="styDotLn" style="float:right;padding-right:2mm;padding-top:1mm">.....................</div>
           </div>
+          
           <!-- Line 6 -->
           <div style="width:187mm;height:4mm">
             <div class="styLNLeftNumBox" style="">6</div>
@@ -425,9 +444,10 @@ Check if applicable:</div>
             <div class="styLNAmountBox" style="width:34mm;border-bottom-width:0;float:right"/>
             <div class="styLNRightNumBox" style="border-bottom-width:0;float:right"/>
           </div>
+          
           <div style="height:5.5mm;width:187mm;">
             <div class="styLNLeftNumBox" style=""/>
-            <div class="styLNDesc" style="height:5.5mm;width:70mm;">payment is through: EFTPS<span style="width2mm"/>
+            <div class="styLNDesc" style="height:5.5mm;width:137mm;">payment is through: EFTPS<span style="width2mm"/>
               <input type="checkbox" class="styCkbox">
                 <xsl:call-template name="PopulateCheckbox">
                   <xsl:with-param name="TargetNode" select="$Form2290/EFTPSPaymentInd"/>
@@ -453,17 +473,19 @@ Check if applicable:</div>
                   <xsl:with-param name="BackupName">IRS2290CreditDebitCardPaymentInd</xsl:with-param>
                 </xsl:call-template>
               </label>
+              
+              <span class="styDotLn" style="padding-right:3mm;float:right;">..............
+			  
+				<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="arrow"/>
+			  </span>
             </div>
+            
+            <div class="styLNRightNumBox" style="height:5.5mm;border-bottom-width:0px">6</div>
             <div class="styLNAmountBox" style="height:5.5mm;width:34mm;float:right;border-bottom-width:0px">
               <xsl:call-template name="PopulateAmount">
                 <xsl:with-param name="TargetNode" select="$Form2290/BalanceDueAmt"/>
               </xsl:call-template>
             </div>
-            <div class="styLNRightNumBox" style="height:5.5mm;float:right;border-bottom-width:0px">6</div>
-            <span style="float:right;padding-right:3mm;padding-top:1mm">
-              <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
-            </span>
-            <div class="styDotLn" style="float:right;padding-right:2mm;padding-top:1mm">..............</div>
           </div>
           <!-- Begin Part II -->
           <div class="styBB" style="width:187mm;height:4.75mm;border-top-width:1px">
@@ -471,7 +493,7 @@ Check if applicable:</div>
             <div class="styPartDesc" style="float:left;width:167mm;padding-top:.5mm;"> Statement in Support of Suspension <span style="font-size:7pt;font-weight:normal">(Complete the statements that apply. Attach additional sheets if needed.)</span>
             </div>
           </div>
-          <!--  LINE 7 -->
+           <!--  LINE 7 -->
           <div style="width:187mm;padding-top:1mm;">
             <div class="styLNLeftNumBox" style="height:6mm;">7</div>
             <div class="styLNDesc" style="width:178mm;height:14mm;padding-top:.5mm;">
@@ -506,19 +528,19 @@ Check if applicable:</div>
         7,500 miles or less for agricultural vehicles</label>
               </span>
               <br/>
-during the period July 1, 2020, through June 30, 2021, and are suspended from the tax. Complete and attach Schedule 1.
+during the period July 1, 2022, through June 30, 2023, and are suspended from the tax. Complete and attach Schedule 1.
        </div>
           </div>
           <!-- Line 8a -->
           <div style="height:8mm;width:187mm;padding-top:1mm;">
             <div class="styLNLeftNumBox" style="">8a</div>
             <div class="styLNDesc" style="width:178mm;;">        
-            I declare that the vehicles listed as suspended on the Form 2290 filed for the period July 1, 2019, through June 30, 2020, were not
+            I declare that the vehicles listed as suspended on the Form 2290 filed for the period July 1, 2021, through June 30, 2022, were not
 subject to the tax for that period except for any vehicles listed on line 8b. <span class="styBoldText">Check this box if applicable.</span>
               <span style="width:3mm"/>
-              <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
+              <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="Right Arrow"/>
               <span style="width:3mm"/>
-              <input type="checkbox" class="styCkbox">
+              <input type="checkbox" class="styCkbox" alt="form 2290 suspended vehicle filed">
                 <xsl:call-template name="PopulateCheckbox">
                   <xsl:with-param name="TargetNode" select="$Form2290/NotSubjectToTaxInd "/>
                   <xsl:with-param name="BackupName">IRS2290NotSubjectToTax </xsl:with-param>
@@ -557,7 +579,7 @@ subject to the tax for that period except for any vehicles listed on line 8b. <s
                 </xsl:call-template>
               </span>
               <br/>
-were listed as suspended on the Form 2290 filed for the period July 1, 2019, through June 30, 2020. These vehicles were sold or
+were listed as suspended on the Form 2290 filed for the period July 1, 2021, through June 30, 2022. These vehicles were sold or
 <br/>transferred to
 <span style="width:90mm;border-bottom:1px black solid"></span>
 
@@ -603,7 +625,7 @@ At the time of the transfer, the vehicles were still eligible for the suspension
                   <br/>
                   <div style="float:left">
           Designee's<br/>name<span style="width:5mm"/>
-                    <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
+                    <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="Right Arrow"/>
                     <span style="width:1mm"/>
                     <span style="width:40mm">
                       <xsl:call-template name="PopulateText">
@@ -613,7 +635,7 @@ At the time of the transfer, the vehicles were still eligible for the suspension
                   </div>
                   <div style="float:left">
           Phone<br/>no.<span style="width:5mm"/>
-                    <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
+                    <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="Right Arrow"/>
                     <span style="width:1mm"/>
                     <span style="width:30mm">
                       <xsl:call-template name="PopulateText">
@@ -623,7 +645,7 @@ At the time of the transfer, the vehicles were still eligible for the suspension
                   </div>
                   <div style="float:left">
           Personal identification<br/>number (PIN)<span style="width:13mm"/>
-                    <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/>
+                    <img src="{$ImagePath}/2290_Bullet_Md.gif" alt="Right Arrow"/>
                     <span style="width:1mm"/>
                     <span style="width:30mm">
                       <xsl:call-template name="PopulatePin">
@@ -837,7 +859,7 @@ Telephone number
             <span>
               <span class="styBoldText" style="padding-right:5mm">For Privacy Act and Paperwork Reduction Act Notice, see the separate instructions.</span>
               <span style="padding-right:5mm;">Cat. No. 11250O</span>
-              <span>Form <span class="styBoldText" style="font-size:8pt">2290</span> (Rev. 7-2020)</span>
+              <span>Form <span class="styBoldText" style="font-size:8pt">2290</span> (Rev. 7-2022)</span>
             </span>
           </div>
           <div class="pageEnd" />
@@ -846,7 +868,7 @@ Telephone number
           <!-- PAGE 2  BEGIN -->
           <div style="display:block;">
           <div class="styBB" style="width:187mm;text-align:right;">
-            <span style="float:left">Form <span class="styBoldText" style="font-size:8pt">2290</span> (Rev. 7-2020)</span>Page <span class="styBoldtext" style="font-size:8pt">2</span>
+            <span style="float:left">Form <span class="styBoldText" style="font-size:8pt">2290</span> (Rev. 7-2022)</span>Page <span class="styBoldtext" style="font-size:8pt">2</span>
           </div>
           <!--******************************************************************************************************************************************-->
           <!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
@@ -985,7 +1007,7 @@ Tax Computation
                     <b>Totals.</b> Add the number of vehicles in columns (3a) and (3b). Enter the total
 				here (this should be the same total of taxable vehicles shown on Schedule 1, Part II, line c). Add the amounts in column (4). Enter
 				the total here and on Form 2290, line 2 <span class="styDotLn" style="float:none;padding-left:1.5mm">.......................... </span>
-				<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="MediumBullet"/> 
+				<img src="{$ImagePath}/2290_Bullet_Md.gif" alt="Right Arrow"/> 
 
                   </td>
                   <td class="styTableCell" style="width:44mm;vertical-align:bottom;font-size:6pt;padding-right:.5mm" colspan="2">
@@ -1004,7 +1026,7 @@ Tax Computation
                   </td>
                 </tr>
                 <tr>
-                  <td class="styLNCtrNumBox" style="border-left-width:0px;height:12mm;vertical-align:middle">W</td>
+                  <td class="styLNCtrNumBox" style="border-left-width:0px;height:14mm;padding-top:5mm;">W</td>
                   <td class="styTableCellText" style="width:22mm;font-size:6pt">
 						Tax-Suspended Vehicles
 						(See <i>Part II</i> on page 7 of the instructions.)
@@ -1014,18 +1036,18 @@ Tax Computation
                   </td>
                   <td class="styTableCell" style="font-size:6pt;height:12mm;width:22mm;vertical-align:bottom">
                     <xsl:call-template name="PopulateAmount">
-                      <xsl:with-param name="TargetNode" select="$Form2290/TaxSuspendedLoggingVehCnt"/>
+                      <xsl:with-param name="TargetNode" select="$Form2290/TaxSuspendedNonLoggingVehCnt"/>
                     </xsl:call-template>
                   </td>
                   <td class="styTableCell" style="font-size:6pt;height:12mm;width:22mm;vertical-align:bottom">
                     <xsl:call-template name="PopulateAmount">
-                      <xsl:with-param name="TargetNode" select="$Form2290/TaxSuspendedNonLoggingVehCnt"/>
+                      <xsl:with-param name="TargetNode" select="$Form2290/TaxSuspendedLoggingVehCnt"/>
                     </xsl:call-template>
                   </td>
                   <td class="styTableCell" style="height:12mm;width:30mm;background-color:lightgrey;border-right-width:0px">
                     <span style="width:1px"/>
                   </td>
-                  <td class="styLNCtrNumBox" style="height:12mm;border-left-width:0px;border-right-width:0px;border-bottom-width:0px;background-color:lightgrey" colspan="2">
+                  <td class="styLNCtrNumBox" style="height:14mm;padding-top:0mm;border-left-width:0px;border-right-width:0px;border-bottom-width:0px;background-color:lightgrey" colspan="2">
                     <span style="width:1px"/>
                   </td>
                 </tr>
@@ -1047,7 +1069,7 @@ Tax Computation
           </div>
           </div>
           <div style="width:187mm">
-            <span style="float:right"> Form <span class="styBoldText" style="font-size:8pt">2290</span> (Rev. 7-2020)</span>
+            <span style="float:right"> Form <span class="styBoldText" style="font-size:8pt">2290</span> (Rev. 7-2022)</span>
           </div>
           <div class="pageEnd" />
           <!-- BEGIN Left Over Table -->

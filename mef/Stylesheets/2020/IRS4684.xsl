@@ -220,7 +220,7 @@
 											</xsl:call-template>
 										</div>
 									</xsl:otherwise>
-								</xsl:choose><span style="width:1mm;"/><br/>declaration number assigned by FEMA. (See instructions).
+								</xsl:choose><span style="width:1mm;"/><br/>declaration number assigned by FEMA. (See instructions.)
 						</div>
 						<div style="width:187mm;">
 								<xsl:if test="(count($Form4684Data/PersonalUseProperties) &gt; 4) and ($Print != $Separated)">

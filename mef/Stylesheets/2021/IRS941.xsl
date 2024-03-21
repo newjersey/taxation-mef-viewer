@@ -370,6 +370,9 @@
 						<!--4/28/2020 AM: Field number off by a hairline and cannot be aligned as it will cause it to wrap if width is max and unable to change the font size-->
 						<span style="float:right;">
 							<!--<div class="styIRS941RightNumBox">4</div>-->
+							<xsl:call-template name="PopulateSpan">
+								<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
+							</xsl:call-template>
 							<input type="checkbox" alt="WagesNotSubjectToSocialSecurityOrMedicareTax" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
@@ -735,7 +738,7 @@
 					<div class="styBB" style="width:187mm;height:6mm;">
 						<span style="float:left;">
 							<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-								<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 							</div>
 							<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.
@@ -1069,25 +1072,27 @@
 							</span>
 						</label>
 						<br/><br/>
-						<xsl:call-template name="PopulateSpan">
-							<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-						</xsl:call-template>
-						<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
-							<xsl:call-template name="PopulateCheckbox">
+						<span>
+							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
 							</xsl:call-template>
-						</input>
-						<label >
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
-							</xsl:call-template>
-							<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
+							<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+							</input>
+							<label >
+								<xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+								<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
 								<b>You were a monthly schedule depositor for the entire quarter.</b> Enter your 
 								tax liability for each month and total liability for the quarter, then go to Part 3.
-							</span>
-						</label>
+								</span>
+							</label>
+						</span>
 					</div>
 					<div style="width:187mm;height:7mm;">
 						<div class="styLNDesc" style="font-weight:bold;width:66mm;padding-top:1mm;padding-left:32mm;text-align:right;padding-right:4mm;">
@@ -1133,35 +1138,37 @@
 					</div>
 				</div>		
 				<div style="width:187mm;padding-left:24mm; padding-bottom:3mm;">
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
 						</xsl:call-template>
-					</input>
-					<label >
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:155mm;vertical-align:top;">
+						<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label >
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:155mm;vertical-align:top;">
 							<b>You were a semiweekly schedule depositor for any part of this quarter.</b> 
 							Complete Schedule B (Form 941), Report of Tax Liability for Semiweekly Schedule Depositors, attach 
 							it to Form 941. Go to Part 3.
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-						</xsl:call-template>
-					</label>
+							</span>
+							<xsl:call-template name="SetFormLinkInline">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+							</xsl:call-template>
+						</label>
+					</span>
 				</div>
 				<!-- Bullet Message -->
 				<div class="styBB" style="width:187mm;height:6mm;">
 					<span style="float:left;">
 						<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-							<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 						</div>
 						<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.
@@ -1217,22 +1224,24 @@
 						<!--Dotted Line-->
 						<span class="styDotLn" style="float:right;padding-right:1mm;">...............</span>
 					</div>
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="FutureFilingNotRequired" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-							<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
 						</xsl:call-template>
-					</input>
-					<label>
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-							<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:1mm;"/>Check here, and<br/><br/>
-					</label>
+						<input type="checkbox" alt="FutureFilingNotRequired" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
+								<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
+								<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:1mm;"/>Check here, and<br/><br/>
+						</label>
+					</span>
 					<div class="styLNDesc" style="width:56mm;padding-left:9mm;padding-top:1mm;">
 						enter the final date you paid wages
 					</div>
@@ -1251,22 +1260,24 @@
 						<!--Dotted Line-->
 						<span class="styDotLn" style="float:right;padding-right:1mm;">...</span>
 					</div>
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="SeasonalEmployer" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
-							<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
 						</xsl:call-template>
-					</input>
-					<label>
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
-							<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:1mm;"/>Check here.<br/>
-					</label>
+						<input type="checkbox" alt="SeasonalEmployer" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
+								<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
+								<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:1mm;"/>Check here.<br/>
+						</label>
+					</span>
 				</div>
 				<!--Line 19-->
 				<div style="width:187mm;height:6mm;padding-top:2mm">
@@ -1424,7 +1435,7 @@
 									<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/DiscussWithThirdPartyYesInd"/>
 								</xsl:call-template>
 								<input type="checkbox" alt="DiscussWithThirdPartyYes" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/DiscussWithThirdPartyYesInd"/>
 										<xsl:with-param name="BackupName">941DiscussWithThirdPartyYesInd</xsl:with-param>
 									</xsl:call-template>
@@ -1443,7 +1454,7 @@
 								<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyNoInd"/>
 							</xsl:call-template>
 							<input type="checkbox" alt="DiscussWithThirdPartyNo" class="styCkbox">
-								<xsl:call-template name="PopulateNoCheckbox">
+								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyNoInd"/>
 									<xsl:with-param name="BackupName">941DiscussWithThirdPartyNoInd</xsl:with-param>
 								</xsl:call-template>
@@ -2134,6 +2145,9 @@
 						<!--4/28/2020 AM: Field number off by a hairline and cannot be aligned as it will cause it to wrap if width is max and unable to change the font size-->
 						<span style="float:right;">
 							<!--<div class="styIRS941RightNumBox">4</div>-->
+							<xsl:call-template name="PopulateSpan">
+								<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
+							</xsl:call-template>
 							<input type="checkbox" alt="WagesNotSubjectToSocialSecurityOrMedicareTax" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
@@ -2502,7 +2516,7 @@
 					<div class="styBB" style="width:187mm;height:6mm;">
 						<span style="float:left;">
 							<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-								<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 							</div>
 							<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.
@@ -2940,25 +2954,27 @@
 							</span>
 						</label>
 						<br/><br/>
-						<xsl:call-template name="PopulateSpan">
-							<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-						</xsl:call-template>
-						<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
-							<xsl:call-template name="PopulateCheckbox">
+						<span>
+							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
 							</xsl:call-template>
-						</input>
-						<label >
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
-							</xsl:call-template>
-							<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
+							<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+							</input>
+							<label >
+								<xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+								<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
 								<b>You were a monthly schedule depositor for the entire quarter.</b> Enter your 
 								tax liability for each month and total liability for the quarter, then go to Part 3.
-							</span>
-						</label>
+								</span>
+							</label>
+						</span>
 					</div>
 					<div style="width:187mm;height:7mm;">
 						<div class="styLNDesc" style="font-weight:bold;width:66mm;padding-top:1mm;padding-left:32mm;text-align:right;padding-right:4mm;">
@@ -3004,35 +3020,37 @@
 					</div>
 				</div>		
 				<div style="width:187mm;padding-left:24mm; padding-bottom:3mm;">
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
 						</xsl:call-template>
-					</input>
-					<label >
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:155mm;vertical-align:top;">
+						<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label >
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:155mm;vertical-align:top;">
 							<b>You were a semiweekly schedule depositor for any part of this quarter.</b> 
 							Complete Schedule B (Form 941), Report of Tax Liability for Semiweekly Schedule Depositors, attach 
 							it to Form 941. Go to Part 3.
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-						</xsl:call-template>
-					</label>
+							</span>
+							<xsl:call-template name="SetFormLinkInline">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+							</xsl:call-template>
+						</label>
+					</span>
 				</div>
 				<!-- Bullet Message -->
 				<div class="styBB" style="width:187mm;height:6mm;">
 					<span style="float:left;">
 						<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-							<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 						</div>
 						<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.
@@ -3088,22 +3106,24 @@
 						<!--Dotted Line-->
 						<span class="styDotLn" style="float:right;padding-right:1mm;">...............</span>
 					</div>
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="FutureFilingNotRequired" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-							<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
 						</xsl:call-template>
-					</input>
-					<label>
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-							<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:1mm;"/>Check here, and<br/><br/>
-					</label>
+						<input type="checkbox" alt="FutureFilingNotRequired" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
+								<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
+								<xsl:with-param name="BackupName">941FutureFilingNotRequiredInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:1mm;"/>Check here, and<br/><br/>
+						</label>
+					</span>
 					<div class="styLNDesc" style="width:56mm;padding-left:9mm;padding-top:1mm;">
 						enter the final date you paid wages
 					</div>
@@ -3122,22 +3142,24 @@
 						<!--Dotted Line-->
 						<span class="styDotLn" style="float:right;padding-right:1mm;">...</span>
 					</div>
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="SeasonalEmployer" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
-							<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
 						</xsl:call-template>
-					</input>
-					<label>
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
-							<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:1mm;"/>Check here.<br/>
-					</label>
+						<input type="checkbox" alt="SeasonalEmployer" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
+								<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/SeasonalEmployerInd"/>
+								<xsl:with-param name="BackupName">941SeasonalEmployerInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:1mm;"/>Check here.<br/>
+						</label>
+					</span>
 				</div>
 				<!--Line 18b-->
 				<div style="width:187mm;padding-top:1mm">
@@ -3147,22 +3169,24 @@
 						<!--Dotted Line-->
 						<!--<span class="styDotLn" style="float:right;padding-right:1mm;">...</span>-->
 					</div>
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/EligEmplRtntnCrRcvryStartUpInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="EmployeeRetentionCreditForStartup" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/EligEmplRtntnCrRcvryStartUpInd"/>
-							<xsl:with-param name="BackupName">941EligEmplRtntnCrRcvryStartUpInd</xsl:with-param>
 						</xsl:call-template>
-					</input>
-					<label>
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/EligEmplRtntnCrRcvryStartUpInd"/>
-							<xsl:with-param name="BackupName">941EligEmplRtntnCrRcvryStartUpInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:1mm;"/>Check here.<br/>
-					</label>
+						<input type="checkbox" alt="EmployeeRetentionCreditForStartup" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/EligEmplRtntnCrRcvryStartUpInd"/>
+								<xsl:with-param name="BackupName">941EligEmplRtntnCrRcvryStartUpInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/EligEmplRtntnCrRcvryStartUpInd"/>
+								<xsl:with-param name="BackupName">941EligEmplRtntnCrRcvryStartUpInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:1mm;"/>Check here.<br/>
+						</label>
+					</span>
 				</div>
 				<!--Line 19-->
 				<div style="width:187mm;height:8mm;padding-top:1mm">
@@ -3378,7 +3402,7 @@
 									<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/DiscussWithThirdPartyYesInd"/>
 								</xsl:call-template>
 								<input type="checkbox" alt="DiscussWithThirdPartyYes" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/DiscussWithThirdPartyYesInd"/>
 										<xsl:with-param name="BackupName">941DiscussWithThirdPartyYesInd</xsl:with-param>
 									</xsl:call-template>
@@ -3397,7 +3421,7 @@
 								<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyNoInd"/>
 							</xsl:call-template>
 							<input type="checkbox" alt="DiscussWithThirdPartyNo" class="styCkbox">
-								<xsl:call-template name="PopulateNoCheckbox">
+								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyNoInd"/>
 									<xsl:with-param name="BackupName">941DiscussWithThirdPartyNoInd</xsl:with-param>
 								</xsl:call-template>

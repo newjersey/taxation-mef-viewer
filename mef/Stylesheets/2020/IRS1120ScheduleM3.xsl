@@ -1122,11 +1122,12 @@
 								<div style="float:left;clear:none;">
 									<div class="styLNLeftLtrBoxDD">a</div>
 									<div class="styLNDesc" style="width:70mm;">
-										<span style="float:left;">Included on Part I, line 4</span>
-										<span style="float:right;padding-right:1mm;">
-											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Bullet"/>
+										<span style="width:65mm; float:left;">Included on Part I, line 4
+											<span class="styDotLn" style="float:right;">........</span>
 										</span>
-										<span class="styDotLn" style="float:right;padding-right:1mm;">........</span>
+										<span style="float:right;padding-right:1mm;">
+											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Right Pointing Arrow"/>
+										</span>										
 									</div>
 								</div>
 								<div class="styLNAmountBox">
@@ -1145,11 +1146,12 @@
 								<div style="float:left;clear:none;">
 									<div class="styLNLeftLtrBoxDD">b</div>
 									<div class="styLNDesc" style="width:70mm;">
-										<span style="float:left;">Removed on Part I, line 5</span>
-										<span style="float:right;padding-right:1mm;">
-											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Bullet"/>
+										<span style="width:65mm;float:left;">Removed on Part I, line 5
+											<span class="styDotLn" style="float:right;">........</span>
 										</span>
-										<span class="styDotLn" style="float:right;padding-right:1mm;">.......</span>
+										<span style="float:right;padding-right:1mm;">
+											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Right Pointing Arrow"/>
+										</span>										
 									</div>
 								</div>
 								<div class="styLNAmountBox">
@@ -1168,11 +1170,12 @@
 								<div style="float:left;clear:none;">
 									<div class="styLNLeftLtrBoxDD">c</div>
 									<div class="styLNDesc" style="width:70mm;">
-										<span style="float:left;">Removed on Part I, line 6</span>
-										<span style="float:right;padding-right:1mm;">
-											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Bullet"/>
+										<span style="width:65mm;float:left;">Removed on Part I, line 6
+											<span class="styDotLn" style="float:right;">........</span>
 										</span>
-										<span class="styDotLn" style="float:right;padding-right:1mm;">.......</span>
+										<span style="float:right;padding-right:1mm;">
+											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Right Pointing Arrow"/>
+										</span>										
 									</div>
 								</div>
 								<div class="styLNAmountBox">
@@ -1191,11 +1194,13 @@
 								<div style="float:left;clear:none;">
 									<div class="styLNLeftLtrBoxDD">d</div>
 									<div class="styLNDesc" style="width:70mm;">
-										<span style="float:left;">Included on Part I, line 7</span>
-										<span style="float:right;padding-right:1mm;">
-											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Bullet"/>
+										<span style="width:65mm;float:left;">Included on Part I, line 7
+											<span class="styDotLn" style="float:right;">........</span>
 										</span>
-										<span class="styDotLn" style="float:right;padding-right:1mm;">........</span>
+										<span style="float:right;padding-right:1mm;">
+											<img src="{$ImagePath}/1120SchN_Bullet_Title.gif" width="10" height="8" alt="Right Pointing Arrow"/>
+										</span>
+										
 									</div>
 								</div>
 								<div class="styLNAmountBox" style="border-bottom-width:0px">
@@ -3978,7 +3983,7 @@
 								</xsl:call-template>
 							</td>
 						</tr>
-						<!-- Part III - Line 38 -->
+						<!-- Part III - Line 38 Pushpin-->
 						<tr>
 							<td class="styIRS1120ScheduleM3NumberCell">38</td>
 							<td style="padding-top:.5mm;">

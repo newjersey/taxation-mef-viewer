@@ -31,7 +31,7 @@
 				<xsl:call-template name="InitJS"/>
 				<style type="text/css">
 				<xsl:if test="not($Print) or $Print=''">
-					<!-- Form 1040ScheduleF CSS Styles are located in the template called below -->
+					<!-- Form 1040ScheduleF CSS Styles are located in the template called below-->
 					<xsl:call-template name="IRS1040ScheduleFStyle"/>
 					<xsl:call-template name="AddOnStyle"/>
 				</xsl:if>
@@ -62,10 +62,10 @@
 						<div class="styFTBox" style="width:121mm;height:20mm; padding-top:2mm;">
 							<div class="styMainTitle" style="height:6mm;">Profit or Loss From Farming</div>
 							<div class="styFBT" style="height:5mm;padding-top:3mm;">
-								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/Medium_Right_Pointing_Arrow.gif" alt="Medium Right Pointing Arrow "/>
 								Attach to Form 1040, Form 1040NR, Form 1040-SR, Form 1041, or Form 1065.
 								<div class="styFST" style="height:5mm;padding-top:1mm;">
-									<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="MediumBullet"/>
+									<img src="{$ImagePath}/Medium_Right_Pointing_Arrow.gif" alt="Medium Right Pointing Arrow"/>
 									Go to  
 									 <a style="text-decoration:none;color:black;" href="http://www.irs.gov/schedulef" title="Link to irs.gov">
 										<i>www.irs.gov/ScheduleF</i>
@@ -191,7 +191,7 @@
 							<span><span style="width:2px;"/>B<span style="width:3mm"/>Enter code from Part IV</span>
 							<br/><br/><br/>
 							<span style="padding-left:11mm;">
-								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/Medium_Right_Pointing_Arrow.gif" alt="Medium Right Pointing Arrow "/>
 							</span>
 							<span class="styEINFld" style="width:30mm;text-align:left;padding-left:2mm;">
 								<xsl:call-template name="PopulateText">
@@ -627,7 +627,7 @@
 								</xsl:call-template>
 								<span style="width:5px;"/>
 							</label>
-							<img src="{$ImagePath}/1040SchF_Bullet_Sm.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/Small_Right_Pointing_Arrow.gif" alt="Small Right Pointing Arrow"/>
 							<span style="width:15px;"/>
 							<input type="checkbox" alt="Election To Defer CropIns Proc" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
@@ -699,7 +699,7 @@
 							<span style="float:right;padding-right:0mm;">
 								<span class="styDotLn" style="padding-right:1mm;">.........</span>
 								<span style="padding-right:4mm;">
-									<img src="{$ImagePath}/1040SchF_Bullet_Sm.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/Small_Right_Pointing_Arrow.gif" alt="Small Right Pointing Arrow "/>
 								</span>
 							</span>
 						</div>
@@ -1268,7 +1268,7 @@
 							<span style="float:right;padding-right:0mm;">
 								<span class="styDotLn" style="padding-right:2.2mm;">.......</span>
 								<span style="padding-right:4mm;">
-									<img src="{$ImagePath}/1040SchF_Bullet_Sm.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/Small_Right_Pointing_Arrow.gif" alt="Small Right Pointing Arrow "/>
 								</span>
 							</span>
 						</div>
@@ -1703,7 +1703,7 @@
 							<span style="float:right;padding-right:0mm;">
 								<span class="styDotLn" style="padding-right:2.2mm;">.....</span>
 								<span style="padding-right:4mm;">
-									<img src="{$ImagePath}/1040SchF_Bullet_Sm.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/Small_Right_Pointing_Arrow.gif" alt="Small Right Pointing Arrow "/>
 								</span>
 							</span>
 						</div>

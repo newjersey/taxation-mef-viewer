@@ -244,19 +244,24 @@
 								If no wages, tips, and other compensation are subject to social security or Medicare tax
 							</div>
 							<div class="styIRS944RightNumBox" style="padding-top:0.5mm;">3</div>
-							<input type="checkbox" class="styCkbox">
-								<xsl:call-template name="PopulateCheckbox">
+							<span>
+								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
-									<xsl:with-param name="BackupName">944WagesNotSubjToSSMedcrTaxInd</xsl:with-param>
 								</xsl:call-template>
-							</input>
-							<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
-									<xsl:with-param name="BackupName">944WagesNotSubjToSSMedcrTaxInd</xsl:with-param>
-								</xsl:call-template>
-								<b><span style="width:1mm;"/>Check and go to line 5.</b><br/>
-							</label>
+								<input type="checkbox" alt="WagesNotSubjectToSocialSecurityMedicareTax" class="styCkbox">
+									<xsl:call-template name="PopulateCheckbox">
+										<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
+										<xsl:with-param name="BackupName">944WagesNotSubjToSSMedcrTaxInd</xsl:with-param>
+									</xsl:call-template>
+								</input>
+								<label>
+									<xsl:call-template name="PopulateLabel">
+										<xsl:with-param name="TargetNode" select="$FormData/WagesNotSubjToSSMedcrTaxInd"/>
+										<xsl:with-param name="BackupName">944WagesNotSubjToSSMedcrTaxInd</xsl:with-param>
+									</xsl:call-template>
+									<b><span style="width:1mm;"/>Check and go to line 5.</b><br/>
+								</label>
+							</span>
 						</div>
 						<!--Line 4 Header-->
 						<div style="width:187mm;font-size:8pt;">
@@ -556,7 +561,7 @@
 							<span style="float:left;">
 								<div class="styLNLeftNumBox" style="width:8mm;"/>
 								<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
-									<img src="{$ImagePath}/944_Bullet.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/944_Bullet.gif" alt="Right pointing arrowhead image"/>
 									You MUST complete all three pages of Form 944 and SIGN it.
 								</div>
 							</span>
@@ -743,7 +748,7 @@
 							<span style="float:left;padding-top:.5mm">
 								<div class="styLNLeftNumBoxSD" style="width:8mm;padding-left:1.5mm">10d</div>
 								<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
-									Refundable portion of credit for qualified sick and family leave wages or leave taken before 
+									Refundable portion of credit for qualified sick and family leave wages for leave taken before 
 									<span style="float:left;">April 1, 2021 </span>
 									<!--Dotted Line-->
 									<span class="styDotLn" style="float:right;padding-right:1mm;">...........................</span>								
@@ -782,7 +787,7 @@
 							<span style="float:left;padding-top:.5mm">
 								<div class="styLNLeftNumBoxSD" style="width:8mm;padding-left:1.5mm">10f</div>
 								<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
-									Refundable portion of credit for qualified sick and family leave wages or leave taken after 
+									Refundable portion of credit for qualified sick and family leave wages for leave taken after 
 									<span style="float:left;">March 31, 2021 </span>
 									<!--Dotted Line-->
 									<span class="styDotLn" style="float:right;padding-right:1mm;">...........................</span>								
@@ -1108,7 +1113,7 @@
 						<span style="float:left;">
 							<div class="styLNLeftNumBox" style="width:8mm;"/>
 							<div class="styLNDesc" style="width:130mm;padding-left:15mm;font-weight:bold;">
-								<img src="{$ImagePath}/944_Bullet.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/944_Bullet.gif" alt="Right pointing arrowhead image"/>
 								You MUST complete all three pages of Form 944 and SIGN it.
 							</div>
 						</span>
@@ -1160,22 +1165,24 @@
 							<!--Dotted Line-->
 							<span class="styDotLn" style="float:right;padding-right:1mm;">...............</span>
 						</div>
-						<xsl:call-template name="PopulateSpan">
-							<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-						</xsl:call-template>
-						<input type="checkbox" alt="FutureFilingNotRequired" class="styCkbox">
-							<xsl:call-template name="PopulateCheckbox">
+						<span> 
+							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-								<xsl:with-param name="BackupName">944FutureFilingNotRequiredInd</xsl:with-param>
 							</xsl:call-template>
-						</input>
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
-								<xsl:with-param name="BackupName">944FutureFilingNotRequiredInd</xsl:with-param>
-							</xsl:call-template>
-							<span style="width:1mm;"/>Check here, and<br/><br/>
-						</label>
+							<input type="checkbox" alt="FutureFilingNotRequired" class="styCkbox">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
+									<xsl:with-param name="BackupName">944FutureFilingNotRequiredInd</xsl:with-param>
+								</xsl:call-template>
+							</input>
+							<label>
+								<xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$FormData/BusinessClosedGrp/FutureFilingNotRequiredInd"/>
+									<xsl:with-param name="BackupName">944FutureFilingNotRequiredInd</xsl:with-param>
+								</xsl:call-template>
+								<span style="width:1mm;"/>Check here, and<br/><br/>
+							</label>
+						</span>
 						<div class="styLNDesc" style="width:56mm;padding-left:9mm;padding-top:1mm;">
 							enter the final date you paid wages
 						</div>
@@ -1437,7 +1444,7 @@
 									<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/DiscussWithThirdPartyYesInd"/>
 								</xsl:call-template>
 								<input type="checkbox" alt="DiscussWithThirdPartyYes" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyYesGrp/DiscussWithThirdPartyYesInd"/>
 										<xsl:with-param name="BackupName">944DiscussWithThirdPartyYesInd</xsl:with-param>
 									</xsl:call-template>
@@ -1455,7 +1462,7 @@
 								<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyNoInd"/>
 							</xsl:call-template>
 							<input type="checkbox" alt="DiscussWithThirdPartyNo" class="styCkbox">
-								<xsl:call-template name="PopulateNoCheckbox">
+								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$RtnHdrData/DiscussWithThirdPartyNoInd"/>
 									<xsl:with-param name="BackupName">944DiscussWithThirdPartyNoInd</xsl:with-param>
 								</xsl:call-template>

@@ -760,8 +760,8 @@
 								<!--Dotted Line-->
 								<span class="styDotLn" style="float:right;padding-right:1mm;">.....</span>
 							</div>							
-							<div class="styLNRightNumBox" style="width:8mm;height:12mm;padding-top:8.5mm;">12</div>
-							<div class="styLNAmountBox" style="width:29.2mm;height:12mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:8.5mm;">
+							<div class="styLNRightNumBox" style="width:8mm;height:12mm;padding-top:8mm;">12</div>
+							<div class="styLNAmountBox" style="width:29.2mm;height:12mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:8mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4835Data/DeprecAndSect179ExpnsDedAmt" />
 								</xsl:call-template>     
@@ -772,12 +772,12 @@
 							<div class="styLNLeftNumBox" style="width:8mm;">13</div>
 							<div class="styLNDesc" style="width:48.25mm;padding-left:1mm;">
 								Employee benefit programs other<br/>than on line 21 (see Schedule F<br/>
-								<span style="float:left;">(Form 1040) instructions) 
+								(Form 1040) instructions) 
 								<!--Dotted Line-->
-								<span class="styDotLn" style="float:right;padding-right:1mm;">.......</span></span>
+								<span class="styDotLn" style="float:right; padding-right:1mm;">..</span>
 							</div>							
-							<div class="styLNRightNumBox" style="width:8mm;height:14mm;padding-top:9.5mm;">13</div>
-							<div class="styLNAmountBox" style="width:29.2mm;height:14mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:9.5mm;">
+							<div class="styLNRightNumBox" style="width:8mm;height:14mm;padding-top:8mm;">13</div>
+							<div class="styLNAmountBox" style="width:29.2mm;height:14mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:8mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4835Data/EmployeeBenefitProgramAmt" />
 								</xsl:call-template>     
@@ -983,7 +983,7 @@
 						<div style="width:93.5mm;height:8mm;font-size:8.5pt;">
 							<div class="styLNLeftNumBox" style="width:8mm;">21</div>
 							<div class="styLNDesc" style="width:48.5mm;padding-left:1mm;">
-								Pension and profitsharing<br/><span style="float:left;"> plans </span>
+								Pension and profit-sharing<br/><span style="float:left;"> plans </span>
 								<!--Dotted Line-->
 								<span class="styDotLn" style="float:right;padding-right:1mm;">.........</span>
 							</div>							

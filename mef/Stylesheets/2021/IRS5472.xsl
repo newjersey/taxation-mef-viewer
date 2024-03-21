@@ -1396,12 +1396,12 @@
 				      </xsl:call-template>
 					</xsl:when>
 					<xsl:when test="$Form5472Data/BorrowedEndingBal50000LessCd !=''">
-					  <xsl:call-template name="PopulateAmount">
+					  <xsl:call-template name="PopulateText">
 				        <xsl:with-param name="TargetNode" select="$Form5472Data/BorrowedEndingBal50000LessCd"/>
 				      </xsl:call-template>
 					</xsl:when>
 					<xsl:otherwise>
-					  <xsl:call-template name="PopulateText">
+					  <xsl:call-template name="PopulateAmount">
 				        <xsl:with-param name="TargetNode" select="$Form5472Data/BorrowedMonthlyAverageAmt"/>
 				      </xsl:call-template>	
 					</xsl:otherwise>
@@ -1834,13 +1834,13 @@
 				      </xsl:call-template>
 					</xsl:when>
 					<xsl:when test="$Form5472Data/LoanedEndingBalance50000LessCd !=''">
-					  <xsl:call-template name="PopulateAmount">
+					  <xsl:call-template name="PopulateText">
 				        <xsl:with-param name="TargetNode" select="$Form5472Data/LoanedEndingBalance50000LessCd"/>
 				      </xsl:call-template>
 					</xsl:when>
 					<xsl:otherwise>
-					  <xsl:call-template name="PopulateText">
-				        <xsl:with-param name="TargetNode" select="$Form5472Data/LoanedMonthlyAverageAmtT"/>
+					  <xsl:call-template name="PopulateAmount">
+				        <xsl:with-param name="TargetNode" select="$Form5472Data/LoanedMonthlyAverageAmt"/>
 				      </xsl:call-template>	
 					</xsl:otherwise>
 				  </xsl:choose>									
@@ -2722,7 +2722,7 @@
 			<!-- END Part VIII NOTE -->
 			<!-- Begin Part III, line 44 - 49b without data -->
 			<!-- repeating group does not display in additional data due to it located close to end of forms. -->
-			<xsl:if test="(not($Form5472Data)) or (($Print = $Separated) and count($Form5472Data) &gt; 1)">
+			<xsl:if test="(not($Form5472Data/CostSharingArrangementGrp)) or (($Print = $Separated) and count($Form5472Data/CostSharingArrangementGrp) &gt; 1)">
 				<!-- BEGIN Part VIII Line 44 Items -->			
 			    <div style="width:187mm; padding-top:1mm; border-top:1 solid black; border-top-width: 2px;">
 			      <div class="styLNLeftNumBox">44</div>
@@ -2965,18 +2965,18 @@
 				  <div class="styLNDesc" style="clear:none; width:26mm;">
 				    <span>
 					  <xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="FrgnCorpBecamePartcpCostShrInd"/>
+						<xsl:with-param name="TargetNode" select="PartcpCostShrPriorSpcfdDateInd"/>
 					  </xsl:call-template>
 					  <input type="checkbox" alt="Foreign Corporation Became Participant of CSA Indicator Yes" class="styCkbox">
 						<xsl:call-template name="PopulateYesCheckbox">
-						  <xsl:with-param name="TargetNode" select="FrgnCorpBecamePartcpCostShrInd"/>
+						  <xsl:with-param name="TargetNode" select="PartcpCostShrPriorSpcfdDateInd"/>
 						  <xsl:with-param name="BackupName">FrgnCorpBecamePartcpCostShrYes</xsl:with-param>
 						</xsl:call-template>
 					  </input>
 					</span>
 					<label>
 					  <xsl:call-template name="PopulateLabelYes">
-						<xsl:with-param name="TargetNode" select="FrgnCorpBecamePartcpCostShrInd"/>
+						<xsl:with-param name="TargetNode" select="PartcpCostShrPriorSpcfdDateInd"/>
 						<xsl:with-param name="BackupName">FrgnCorpBecamePartcpCostShrYesLabel</xsl:with-param>
 					  </xsl:call-template>
 					  Yes
@@ -2984,18 +2984,18 @@
 					<span style="width:4mm;"/>
 					<span>
 					  <xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="FrgnCorpBecamePartcpCostShrInd"/>
+						<xsl:with-param name="TargetNode" select="PartcpCostShrPriorSpcfdDateInd"/>
 					  </xsl:call-template>
 					  <input type="checkbox" alt="Foreign Corporation Became Participant of CSA Indicator No" class="styCkbox">
 						<xsl:call-template name="PopulateNoCheckbox">
-						  <xsl:with-param name="TargetNode" select="FrgnCorpBecamePartcpCostShrInd"/>
+						  <xsl:with-param name="TargetNode" select="PartcpCostShrPriorSpcfdDateInd"/>
 						  <xsl:with-param name="BackupName">FrgnCorpBecamePartcpCostShrNo</xsl:with-param>
 						</xsl:call-template>
 					  </input>
 					</span>
 					<label>
 					  <xsl:call-template name="PopulateLabelNo">
-						<xsl:with-param name="TargetNode" select="FrgnCorpBecamePartcpCostShrInd"/>
+						<xsl:with-param name="TargetNode" select="PartcpCostShrPriorSpcfdDateInd"/>
 						<xsl:with-param name="BackupName">FrgnCorpBecamePartcpCostShrNoLabel</xsl:with-param>
 					  </xsl:call-template>
 					  No

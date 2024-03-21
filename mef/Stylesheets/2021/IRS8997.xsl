@@ -60,13 +60,16 @@
 							</span>
 						</div>
 						<div class="styFTBox" style="width:127mm;height:22.5mm;">
-							<span class="styFMT" style="font-size:10pt;padding-top:1mm;padding-bottom:1mm;">Initial and Annual Statement of <br />
+							<span class="styFMT" style="font-size:11pt;padding-top:1mm;padding-bottom:1mm;">Initial and Annual Statement of <br />
 							Qualified Opportunity Fund (QOF) Investments</span>
 							<br /><br />
 							<span style="font-weight:bold;">
 								&#9658;Go to
 								<span style="font-style:italic">www.irs.gov/Form8997</span>
-								for instructions and the latest information.
+								for the latest information.
+							</span><br />
+							<span style="font-weight:bold;">
+								&#9658;Attach to your tax return.
 							</span>
 						</div>
 						<div class="styTYBox" style="width:30mm;height:22.5mm;">
@@ -98,7 +101,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName">Part I</div>
 						<div class="styPartDesc" style="width:167mm;height:auto;font-weight:normal;">
-							<strong>Total QOF Investment Holdings due to Deferrals Prior to Beginning of Tax Year</strong> <br />
+							<strong>Total QOF Investment Holdings Due to Deferrals Prior to Beginning of Tax Year</strong> <br />
 							If different from last year's ending QOF investment holdings, attach explanation.
 						</div>
 						<div style="float:right;width:4mm;height:3mm;">
@@ -151,7 +154,7 @@
 							<tbody>
 								<xsl:if test="not($shouldSeparateP1)">
 									<xsl:for-each select="$FormData/TotQOFInvstHoldBOYGrp">
-										<tr style="height:7.5mm;vertical-align:top;">
+										<tr style="height:7.5mm;vertical-align:bottom;">
 											<td class="styTableCellCtrInherit">
 												<xsl:call-template name="PopulateEIN">
 													<xsl:with-param name="TargetNode" select="EIN"/>
@@ -285,7 +288,7 @@
 							<tbody>
 								<xsl:if test="not($shouldSeparateP2)">
 									<xsl:for-each select="$FormData/CapGainDefrdInvstQOFCurrTYGrp">
-										<tr style="height:7.5mm;vertical-align:top;">
+										<tr style="height:7.5mm;vertical-align:bottom;">
 											<td class="styTableCellCtrInherit">
 												<xsl:call-template name="PopulateEIN">
 													<xsl:with-param name="TargetNode" select="EIN"/>
@@ -389,9 +392,9 @@
 							</xsl:call-template>
 						</input>
 						<strong>No. </strong> Skip the next question and go to Part III. <br />
-						If you are foreign eligible taxpayer, see instructions to determine if you are required to attach a 
-						written statement for the portion of your first tax year ending after December 21, 2017 and all tax 
-						years that began after December 21, 2017 and on or before March 13, 2020. 
+						If you are a foreign eligible taxpayer, see the instructions to determine if you are required to attach a written statement 
+						for the portion of your first tax year ending after December 21, 2017, and all tax years that began after December 21, 2017, 
+						and on or before March 13, 2020. 
 					</div>
 					<div class="styStdDiv" style="font-size:8pt;font-weight:bold;padding:2px 0px;border-bottom:1px solid black;border-top:1px solid black;">
 						Waiver of Treaty Benefits on Future Inclusions by a Foreign Eligible Taxpayer (for Tax Years Beginning After March 13, 2020, Only)
@@ -436,11 +439,11 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName">Part III</div>
 						<div class="styPartDesc" style="width:167mm;height:auto;">
-							QOF Investments for Which Gain is Included During Current Tax Year
+							Inclusion Events and Certain Other Transfers During the Current Tax Year
 						</div>
 						<div style="float:right;width:4mm;height:3mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
-								<xsl:with-param name="TargetNode" select="$FormData/QOFInvstDisposDurCurrTYGrp"/>
+								<xsl:with-param name="TargetNode" select="$FormData/InclsnEvtOthTrnsfrDurCurrTYGrp"/>
 								<xsl:with-param name="containerID" select=" 'Part3Table' "/>
 								<xsl:with-param name="headerHeight" select="2"/>
 								<xsl:with-param name="containerHeight" select="5"/>
@@ -448,7 +451,7 @@
 						</div>
 					</div>
 					<!-- Table 3, cols (a)-(e) -->
-					<xsl:variable name="shouldSeparateP3" select="($Print = $Separated) and (count($FormData/QOFInvstDisposDurCurrTYGrp) &gt; 5)"/>
+					<xsl:variable name="shouldSeparateP3" select="($Print = $Separated) and (count($FormData/InclsnEvtOthTrnsfrDurCurrTYGrp) &gt; 5)"/>
 					<div class="styStdDiv" style="" id="Part3Table">
 						<xsl:call-template name="SetInitialState"/>
 						<table style="display:table;border-collapse:collapse;">
@@ -460,11 +463,11 @@
 									</th>
 									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:23mm;font-weight:normal;">
 										<strong>(b)</strong><br />
-										Date QOF <br /> sold or disposed <br /> (MM/DD/YYYY)
+										Date of event <br /> (MM/DD/YYYY)
 									</th>
 									<th class="styTableCellHeader" scope="col" rowspan="2" style="min-width:59mm;width:71mm;font-weight:normal;">
 										<strong>(c)</strong><br />
-										Description of inclusion event <br /> (for example, sale of 100 shares, gift of 25% interest, or distribution of $1,000, etc.)
+										Description of event <br /> (for example, sale of 100 shares, gift of 25% interest, or distribution of $1,000, etc.)
 									</th>
 									<th class="styTableCellHeader" scope="col"	rowspan="2" style="width:10mm;font-weight:normal;">
 										<strong>(d)</strong><br />
@@ -487,8 +490,8 @@
 							</thead>
 							<tbody>
 								<xsl:if test="not($shouldSeparateP3)">
-									<xsl:for-each select="$FormData/QOFInvstDisposDurCurrTYGrp">
-										<tr style="height:7.5mm;vertical-align:top;">
+									<xsl:for-each select="$FormData/InclsnEvtOthTrnsfrDurCurrTYGrp">
+										<tr style="height:7.5mm;vertical-align:bottom;">
 											<td class="styTableCellCtrInherit">
 												<xsl:call-template name="PopulateEIN">
 													<xsl:with-param name="TargetNode" select="EIN"/>
@@ -496,12 +499,12 @@
 											</td>
 											<td class="styTableCellCtrInherit">
 												<xsl:call-template name="PopulateMonthDayYear">
-													<xsl:with-param name="TargetNode" select="InvestmentDisposedDt"/>
+													<xsl:with-param name="TargetNode" select="EventDt"/>
 												</xsl:call-template>
 											</td>
 											<td class="styTableCellTextInherit">
 												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="InterestDisposedDesc"/>
+													<xsl:with-param name="TargetNode" select="EventDesc"/>
 												</xsl:call-template>
 											</td>
 											<td class="styTableCellCtrInherit">
@@ -522,9 +525,9 @@
 										</tr>
 									</xsl:for-each>
 								</xsl:if>
-								<xsl:if test="$shouldSeparateP3 or count($FormData/QOFInvstDisposDurCurrTYGrp) &lt; 5">
+								<xsl:if test="$shouldSeparateP3 or count($FormData/InclsnEvtOthTrnsfrDurCurrTYGrp) &lt; 5">
 									<xsl:call-template name="FillTable5Cols">
-										<xsl:with-param name="LineNumber" select="1 + count($FormData/QOFInvstDisposDurCurrTYGrp)"/>
+										<xsl:with-param name="LineNumber" select="1 + count($FormData/InclsnEvtOthTrnsfrDurCurrTYGrp)"/>
 										<xsl:with-param name="SepMessage" select="$shouldSeparateP3"/>
 									</xsl:call-template>
 								</xsl:if>
@@ -533,7 +536,7 @@
 					</div>
 					<xsl:if test="not($shouldSeparateP3)">
 						<xsl:call-template name="SetInitialDynamicTableHeight">
-							<xsl:with-param name="TargetNode" select="$FormData/QOFInvstDisposDurCurrTYGrp"/>
+							<xsl:with-param name="TargetNode" select="$FormData/InclsnEvtOthTrnsfrDurCurrTYGrp"/>
 							<xsl:with-param name="containerID" select=" 'Part3Table' "/>
 							<xsl:with-param name="headerHeight" select="2"/>
 							<xsl:with-param name="containerHeight" select="5"/>
@@ -588,7 +591,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;border-top:1px solid black;">
 						<div class="styPartName">Part IV</div>
 						<div class="styPartDesc" style="width:167mm;height:auto;">
-							Total QOF Investment Holdings at Year End Due to Deferrals <span style="font-weight:normal;">(see instructions)</span>
+							Total QOF Investments Due to Deferrals at Year End <span style="font-weight:normal;"> (see instructions)</span>
 						</div>
 						<div style="float:right;width:4mm;height:3mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
@@ -640,7 +643,7 @@
 							<tbody>
 								<xsl:if test="not($shouldSeparateP5)">
 									<xsl:for-each select="$FormData/TotQOFInvstHoldEOYGrp">
-										<tr style="height:7.5mm;vertical-align:top;">
+										<tr style="height:7.5mm;vertical-align:bottom;">
 											<td class="styTableCellCtrInherit">
 												<xsl:call-template name="PopulateEIN">
 													<xsl:with-param name="TargetNode" select="EIN"/>
@@ -895,7 +898,7 @@
 					<xsl:if test="$shouldSeparateP3">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Part III - QOF Investments for Which Gain is Included During Current Tax Year</span>
+						<span class="styRepeatingDataTitle">Part III - Inclusion Events and Certain Other Transfers During the Current Tax Year</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">
@@ -905,11 +908,11 @@
 									</th>
 									<th class="styDepTblCell" scope="col" rowspan="2" style="width:24mm;">
 										<strong>(b)</strong><br />
-										Date QOF <br /> sold or disposed <br /> (MM/DD/YYYY)
+										Date of event <br /> (MM/DD/YYYY)
 									</th>
 									<th class="styDepTblCell" scope="col" rowspan="2" style="width:80mm;">
 										<strong>(c)</strong><br />
-										Description of inclusion event <br /> (for example, sale of 100 shares, gift of 25% interest, or distribution of $1,000, etc.)
+										Description of event <br /> (for example, sale of 100 shares, gift of 25% interest, or distribution of $1,000, etc.)
 									</th>
 									<th class="styDepTblCell" scope="col"	rowspan="2" style="width:10mm;">
 										<strong>(d)</strong><br />
@@ -931,7 +934,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<xsl:for-each select="$FormData/QOFInvstDisposDurCurrTYGrp">
+								<xsl:for-each select="$FormData/InclsnEvtOthTrnsfrDurCurrTYGrp">
 									<tr style="border-color:black;height:6mm;">
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellCtrInherit">
@@ -941,12 +944,12 @@
 										</td>
 										<td class="styTableCellCtrInherit">
 											<xsl:call-template name="PopulateMonthDayYear">
-												<xsl:with-param name="TargetNode" select="InvestmentDisposedDt"/>
+												<xsl:with-param name="TargetNode" select="EventDt"/>
 											</xsl:call-template>
 										</td>
 										<td class="styTableCellTextInherit">
 											<xsl:call-template name="PopulateText">
-												<xsl:with-param name="TargetNode" select="InterestDisposedDesc"/>
+												<xsl:with-param name="TargetNode" select="EventDesc"/>
 											</xsl:call-template>
 										</td>
 										<td class="styTableCellCtrInherit">
@@ -973,7 +976,7 @@
 					<xsl:if test="$shouldSeparateP5">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Part IV - Total QOF Investment Holdings at Year End Due to Deferrals</span>
+						<span class="styRepeatingDataTitle">Part IV - Total QOF Investments Due to Deferrals at Year End</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">

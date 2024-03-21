@@ -14,7 +14,7 @@
       <head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <META http-equiv="Content-Type" content="text/html"/>
-     <!--   <title>Schedule A (5713)</title>-->
+     <!--   <title>Schedule A (5713)</title> -->
         <title><xsl:call-template name="FormTitle"><xsl:with-param name="RootElement" select="local-name($Form5713AData)"/></xsl:call-template></title>
         <meta http-equiv="Pragma" content="no-cache"/>
         <meta http-equiv="Cache-Control" content="no-cache"/>
@@ -27,10 +27,10 @@
         <script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
         <xsl:call-template name="InitJS"/>
         <style type="text/css">
-          <xsl:if test="not($Print) or $Print=''">
+         <xsl:if test="not($Print) or $Print=''">
             <xsl:call-template name="IRS5713ScheduleAStyle"/>
             <xsl:call-template name="AddOnStyle"/>
-          </xsl:if>
+       </xsl:if>
         </style>
         <xsl:call-template name="GlobalStylesForm"/>
       </head>
@@ -60,15 +60,15 @@
                 <i>Complete only if you are <b>not</b> computing a loss of tax benefits using the specifically attributable taxes and income method on Schedule B (Form 5713)</i>
               </span>
               <div class="styFBT" style="margin-top:0mm;font-size:8pt;">
-                <img src="{$ImagePath}/5713SchA_Bullet.gif" alt="bullet image pointing to right" width="8"/>  Attach to Form 5713.
+                <img src="{$ImagePath}/5713SchA_Bullet.gif" alt=" right arrow image graphic" width="8"/>  Attach to Form 5713.
                 <span style="width:12px;"/>
-                <img src="{$ImagePath}/5713SchA_Bullet.gif" alt="bullet image pointing to right" width="8"/>
+                <img src="{$ImagePath}/5713SchA_Bullet.gif" alt="right arrow image graphic" width="8"/>
                 <span style="width:3px;"/>See instructions on page 2. </div>
             </div>
             <div class="styTYBox" style="width:30mm;height:20mm;">
               <div style="font-size:7pt;padding-top:9mm;">OMB No. 1545-0216</div>
             </div>
-            <!-- end header -->
+            <!-- end header  -->
 			<!--Name and Identifying number Begin-->
             <div class="styBB" style="width:187mm;border-top-width:1px">
               <div class="styNameBox" style="width:137mm;height:8mm;">Name
@@ -117,7 +117,7 @@
                 <xsl:with-param name="BackupName">IRS5713SchAOtherCountryBoycotted</xsl:with-param>
               </xsl:call-template>Other (identify)       
             </label>
-            <img src="{$ImagePath}/5713SchA_Bullet.gif" alt="bullet image pointing to right" width="8"/>
+            <img src="{$ImagePath}/5713SchA_Bullet.gif" alt="right arrow image graphic" width="8"/>
             <span style="width:4px;"/>
             <span class="styFixedUnderline" style="width:83mm;float:none;padding-bottom:0;">
               <xsl:call-template name="PopulateText">
@@ -593,7 +593,7 @@
                 <b>International boycott factor</b> (divide line 1 by line 2d). Enter here and on Schedule C (Form 5713) (see instructions)     
                 <!--Dotted Line-->
                 <span style="letter-spacing:4mm;font-weight:bold">.......................</span>
-                <img src="{$ImagePath}/5713SchA_Bullet.gif" style="margin-left:3mm;" alt="bullet image pointing to right" width="8"/>
+                <img src="{$ImagePath}/5713SchA_Bullet.gif" style="margin-left:3mm;" alt=" right arrow image graphic" width="8"/>
               </div>
             </div>
             <div style="float:right;clear:none">
@@ -611,7 +611,12 @@
           </div>
           <!-- Left over data -->
           <br/>
-          <div class="pageEnd"/>
+          <!--<div class="pageEnd"/>-->
+         <!-- <p style="page-break-after: always"/>-->
+         <!--<p style="page-break-before: always"/> -->
+         
+         <br/><br/><br/><br/><br/><br/><br/>
+         
           <!-- BEGIN Left Over Table -->
           <div class="styLeftOverTitleLine" id="LeftoverData">
             <div class="styLeftOverTitle">         Additional Data               </div>

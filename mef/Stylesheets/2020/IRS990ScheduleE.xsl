@@ -8,6 +8,7 @@
 <!-- 06/18/2019 - Changes made for UWR 220903 - Jeremy Nichols -->
 <!-- 01/16/2020 - Changes made for 2019 pdf review - Jeremy Nichols -->
 <!-- 06/15/2020 - Changes made for UWR 233977 - Jeremy Nichols -->
+<!-- 07/20/2021 - Changes made for defect 129682 - Jeremy Nichols -->
 ]><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <!--xmlns:fo="http://www.w3.org/1999/XSL/Format">-->
   <xsl:include href="PopulateTemplate.xsl"/>
@@ -161,7 +162,6 @@
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
-    <span style="width:2mm;"/>.
   </div>
  <div class="IRS990ScheduleE_LineIndexMid" style="padding-top:.5mm;">1</div>
   <div class="IRS990ScheduleE_LineIndexMid" style="padding-top:.5mm;">
@@ -204,7 +204,6 @@
   <div class="IRS990ScheduleE_LineDesc">
     programs, and scholarships?
     <span style="width:3mm;"/>.
-    <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
@@ -439,8 +438,7 @@
   <div class="IRS990ScheduleE_SubLineIndex" style="padding-top:.5mm;"/>
   <div class="IRS990ScheduleE_LineDesc" style="padding-top:.5mm;">
     basis?
-    <span style="width:1mm;"/>.
-    <span style="width:2mm;"/>.
+    <span style="width:0.25mm;"/>.
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
@@ -511,7 +509,7 @@
   <div class="IRS990ScheduleE_SubLineIndex" style="height:4mm;padding-top:.5mm;"/>
   <div class="IRS990ScheduleE_LineDesc" style="height:4mm;padding-top:.5mm;">
     with student admissions, programs, and scholarships?
-    <span style="width:1mm;"/>.
+    <span style="width:0.5mm;"/>.
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.
     <span style="width:2mm;"/>.

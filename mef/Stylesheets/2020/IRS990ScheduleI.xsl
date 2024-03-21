@@ -152,7 +152,7 @@ Complete if the organization answered "Yes," on Form 990, Part IV, line 21 or 22
        <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox" onclick="return false;">
+      <input type="checkbox" class="styCkbox" alt="GrantRecordsMaintainedIndYes" onclick="return false;">
         <xsl:call-template name="PopulateYesCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
         <xsl:with-param name="BackupName">Form990GrantRecordsMaintainedIndYes</xsl:with-param>
@@ -170,7 +170,7 @@ Complete if the organization answered "Yes," on Form 990, Part IV, line 21 or 22
           <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox" onclick="return false;">
+      <input type="checkbox" class="styCkbox" alt="GrantRecordsMaintainedIndNo" onclick="return false;">
         <xsl:call-template name="PopulateNoCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
         <xsl:with-param name="BackupName">Form990GrantRecordsMaintainedIndNo</xsl:with-param>
@@ -502,20 +502,7 @@ Complete if the organization answered "Yes," on Form 990, Part IV, line 21 or 22
 <thead class="styTableThead">
 
 <!--<div style="width: 256mm;">-->
-  <tr>
-			
-	<th class="sty990ScheduleILNCol" scope="col" style="border-style: solid; border-color: black;width:56mm;text-align: center;font-size: 7pt; border-bottom-width: 1px; border-top-width:1px;padding-top:1mm;font-weight:normal;vertical-align:top"><b>(a)</b> Type of grant or assistance</th>
-
- 	 <th class="sty990ScheduleIColA" scope="col" style="border-style: solid; border-color: black;text-align: center; width:40mm;border-bottom-width: 1px;border-top-width:1px; font-size: 7pt; padding-top: 1mm;font-weight:normal;vertical-align:top"><b>(b)</b> Number of<br/>recipients</th>
-
- 	 <th class="sty990ScheduleIColB" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center; width:31mm; padding-right: 0px; font-size: 7pt; padding-top: 1mm;font-weight:normal;vertical-align:top"><b>(c)</b> Amount of<br/>cash grant</th>
-  <!--<span style="width:94.75mm; height: 8mm">-->
-    	<th class="sty990ScheduleIColC" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center; width:30mm;  margin-top: 0mm;padding-top: 1mm;padding-right: 0px; font-size: 7pt;font-weight:normal;vertical-align:top"><b>(d)</b> Amount of<br/>noncash assistance</th>
   
-  	<th class="sty990ScheduleICol" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center; width:39mm; padding-top: 1mm; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; float: none; clear:none; font-size: 7pt;font-weight:normal;vertical-align:top"><b>(e)</b> Method of valuation (book,<br/>FMV, appraisal, other)</th>
-	
-	<th class="sty990ScheduleICol" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center;  width:60.25mm; padding-top: 1mm; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; float: none; clear:none; font-size: 7pt;font-weight:normal;vertical-align:top"><b>(f)</b> Description of noncash assistance</th>
-	</tr>
 	</thead>
        
 </table>
@@ -530,7 +517,20 @@ Complete if the organization answered "Yes," on Form 990, Part IV, line 21 or 22
 <div class="styTableLandscape" style="width: 256mm; border-bottom-width:1px;display:table;">
 
 <table class="styTable" style="font-size: 7pt; border-color:black;width:256mm;display:table;" cellspacing="0"><!--need this to keep seeadditionaldata msg at top line of table-->
+	<tr>
+			
+	<th class="sty990ScheduleILNCol" scope="col" style="border-style: solid; border-color: black;width:56mm;text-align: center;font-size: 7pt; border-bottom-width: 1px; border-top-width:1px;padding-top:1mm;font-weight:normal;vertical-align:top"><b>(a)</b> Type of grant or assistance</th>
+
+ 	 <th class="sty990ScheduleIColA" scope="col" style="border-style: solid; border-color: black;text-align: center; width:40mm;border-bottom-width: 1px;border-top-width:1px; font-size: 7pt; padding-top: 1mm;font-weight:normal;vertical-align:top"><b>(b)</b> Number of<br/>recipients</th>
+
+ 	 <th class="sty990ScheduleIColB" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center; width:31mm; padding-right: 0px; font-size: 7pt; padding-top: 1mm;font-weight:normal;vertical-align:top"><b>(c)</b> Amount of<br/>cash grant</th>
+  <!--<span style="width:94.75mm; height: 8mm">-->
+    	<th class="sty990ScheduleIColC" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center; width:30mm;  margin-top: 0mm;padding-top: 1mm;padding-right: 0px; font-size: 7pt;font-weight:normal;vertical-align:top"><b>(d)</b> Amount of<br/>noncash assistance</th>
+  
+  	<th class="sty990ScheduleICol" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center; width:39mm; padding-top: 1mm; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; float: none; clear:none; font-size: 7pt;font-weight:normal;vertical-align:top"><b>(e)</b> Method of valuation (book,<br/>FMV, appraisal, other)</th>
 	
+	<th class="sty990ScheduleICol" scope="col" style="border-style: solid; border-color: black;border-top-width:1px;text-align: center;  width:60.25mm; padding-top: 1mm; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; float: none; clear:none; font-size: 7pt;font-weight:normal;vertical-align:top"><b>(f)</b> Description of noncash assistance</th>
+	</tr>
 	<xsl:if test="($Print != $Separated) or count($FormData/GrantsOtherAsstToIndivInUSGrp) &lt;= 7">
 	
           <xsl:for-each select="$FormData/GrantsOtherAsstToIndivInUSGrp">

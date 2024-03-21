@@ -2025,7 +2025,7 @@ en las instrucciones para el Formulario 940, en ingl&amp;#233;s. Anote la cantid
 								<div class="styLNLeftNumBox"/>
 								<div class="styLNDesc" style="width:auto;padding-left:1mm;">
 									<xsl:value-of disable-output-escaping="yes" select="$SpanishBreak"/>
-									<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Bullet Image"/>
+									<img src="{$ImagePath}/1040PR_Bullet_Sm.gif" alt="Right pointing arrowhead image"/>
 									<xsl:value-of disable-output-escaping="yes" select="$MustCompleteText"/>
 								</div>
 							</span>
@@ -2037,8 +2037,11 @@ en las instrucciones para el Formulario 940, en ingl&amp;#233;s. Anote la cantid
 											<span style="float:left;padding-top:1mm;">
 												<xsl:value-of disable-output-escaping="yes" select="$CheckOneText"/>
 											</span>
-											<span style="float:right;padding-left:2mm;padding-right:3mm;">
-												<input type="checkbox" class="styCkbox" alt="Apply Overpayment to next return">
+											<span style="float:left;padding-left:2mm;padding-right:3mm;">
+												<xsl:call-template name="PopulateSpan">
+													<xsl:with-param name="TargetNode" select="$FormData/OverpaymentGrp/ApplyOverpaymentNextReturnInd"/>
+												</xsl:call-template>
+												<input type="checkbox" class="styCkbox" alt="ApplyOverpaymentToNextReturn">
 													<xsl:call-template name="PopulateCheckbox">
 														<xsl:with-param name="TargetNode" select="$FormData/OverpaymentGrp/ApplyOverpaymentNextReturnInd"/>
 														<xsl:with-param name="BackupName">IRS940ApplyOverpaymentNextReturnInd</xsl:with-param>
@@ -2051,9 +2054,14 @@ en las instrucciones para el Formulario 940, en ingl&amp;#233;s. Anote la cantid
 													</xsl:call-template>
 													<xsl:value-of disable-output-escaping="yes" select="$ApplyNextReturnText"/>
 												</label>
-												<span style="width:2mm;"/>
-												<xsl:value-of disable-output-escaping="yes" select="$SpanishBreak"/>
-												<input type="checkbox" class="styCkbox" alt="Send a Refund">
+											</span>
+											<span style="width:2mm;"/>
+											<xsl:value-of disable-output-escaping="yes" select="$SpanishBreak"/>
+											<span style="float:right;padding-left:2mm;padding-right:3mm;">
+												<xsl:call-template name="PopulateSpan">
+													<xsl:with-param name="TargetNode" select="$FormData/OverpaymentGrp/RefundOverpaymentInd"/>
+												</xsl:call-template>
+												<input type="checkbox" class="styCkbox" alt="RefundOverpayment">
 													<xsl:call-template name="PopulateCheckbox">
 														<xsl:with-param name="TargetNode" select="$FormData/OverpaymentGrp/RefundOverpaymentInd"/>
 														<xsl:with-param name="BackupName">IRS940RefundOverpaymentInd</xsl:with-param>

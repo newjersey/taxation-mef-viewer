@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 11/04/2021 -->
+<!-- Last Modified by Eugenia McDonald on 12/09/2021 -->
 <!DOCTYPE xsl:stylesheet [
   <!ENTITY nbsp "&#160;">
   <!ENTITY ndash "&#8211;">
@@ -1156,7 +1156,7 @@
 					<xsl:if test="$alimonyRec">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 2 - Alimony Received</span>
+						<span class="styRepeatingDataTitle">Line 2a - Alimony Received</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;width:120mm;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">
@@ -1190,7 +1190,7 @@
 					<xsl:if test="$alimonySep">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Line 19 - Alimony paid</span>
+						<span class="styRepeatingDataTitle">Line 19a - Alimony paid</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;width:120mm;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">

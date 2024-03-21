@@ -128,7 +128,7 @@
 					</div>
 					<div style="width:187mm;float:left;clear:left;">
 						<div style="width:34mm;height:30mm;float:left;clear:left;">
-							<div class="styEINDateAssets" style="width:34mm;height:12.5mm;border-top-width:1px;">
+							<div class="styEINDateAssets" style="width:34mm;height:13.5mm;border-top-width:1px;">
 								<span class="styBoldText">A</span> Principal business activity
 				<br/>
 								<span class="styEINFld">
@@ -137,7 +137,7 @@
 									</xsl:call-template>
 								</span>
 							</div>
-							<div class="styEINDateAssets" style="width:34mm;height:12mm;">
+							<div class="styEINDateAssets" style="width:34mm;height:13.5mm;">
 								<span class="styBoldText">B</span> Principal product or service
                 <br/>
 								<span class="styEINFld">
@@ -146,8 +146,8 @@
 									</xsl:call-template>
 								</span>
 							</div>
-							<div class="styEINDateAssets" style="width:34mm;height:13mm;border-bottom-width:1px;border-right-width:0px;">
-								<span class="styBoldText">C</span> Business code number<br/><br/><br/>
+							<div class="styEINDateAssets" style="width:34mm;height:10.5mm;border-bottom-width:1px;border-right-width:0px;">
+								<span class="styBoldText">C</span> Business code number<br/><br/>
 								<span class="styEINFld">
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$Form1065Data/PrincipalBusinessActivityCd"/>
@@ -2783,7 +2783,7 @@ province, country, and ZIP or foreign postal code<br/><br/>
 						  Enter the number of foreign partners subject to section 864(c)(8) as a result of transferring all or a portion of an
 							interest in the partnership or of receiving a distribution from the partnership
 						  	<span style="width:1.8mm"/>
-							<span style=" letter-spacing:3.2mm; font-weight:bold; ">............</span>
+							<span style=" letter-spacing:3.2mm; font-weight:bold; ">..........</span>
 							<span style="width:1mm;"/>
 							<img src="{$ImagePath}/1065_Bullet_Sm.gif" alt="MidSizeBullet"/>
 							<span style="width:1mm;"/>
@@ -5640,7 +5640,7 @@ province, country, and ZIP or foreign postal code<br/><br/>
 											<xsl:with-param name="TargetNode" select="$Form1065Data/SupersededReturnInd"/>
 											<xsl:with-param name="BackupName">IRS1065SupersededReturn</xsl:with-param>
 										</xsl:call-template>
-											Form 1065, Line G(7) - Superseded Returns:
+											Form 1065, Line G(6) - Superseded Returns:
 									</label>
 								</td>
 								<td class="styLeftOverTableRowAmount" style="width:87mm;">

@@ -417,7 +417,7 @@
              <div class="styIRS1040SSPRCleanDiv" style="width:100%;height:16%;">
                 <div class="styIRS1040SSPRCleanDiv" style="width:187mm;height:100%;">
                   <div class="styIRS1040SSPRLNDesc" style="width:100%;height:auto;font-size:7pt;padding:.5mm 0mm 0mm 1mm;">
-                    At any time during 2019, did you receive, sell, send, exchange, or otherwise acquire any financial interest in any virtual currency?  
+                    At any time during 2020, did you receive, sell, send, exchange, or otherwise acquire any financial interest in any virtual currency?  
                    	<xsl:call-template name="PopulateYesNoGroup_SS">
 						<xsl:with-param name="TargetNode" select="$Form1040SSPRData/VirtualCurAcquiredDurTYInd"/>
 						<xsl:with-param name="BackupName">Form1040SSPRData/VirtualCurAcquiredDurTYInd</xsl:with-param>
@@ -838,19 +838,19 @@
                    <!--Dotted Line-->
 					<span class="styDotLn" style="float:none;clear:none;padding-left:1mm;">................</span>                    
                     <xsl:call-template name="LinkToLeftoverDataTableInline">
-						<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Code</xsl:with-param>
+						<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Code</xsl:with-param>
 						<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionCd"/>
                     </xsl:call-template>
                     <xsl:call-template name="LinkToLeftoverDataTableInline">
-						<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Amount</xsl:with-param>
+						<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Amount</xsl:with-param>
 						<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionAmt"/>
                     </xsl:call-template>
                      <xsl:call-template name="LinkToLeftoverDataTableInline">
-						<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Tax Code</xsl:with-param>
+						<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Tax Code</xsl:with-param>
 						<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AdditionalMedicareTaxCd"/>
                     </xsl:call-template>
                     <xsl:call-template name="LinkToLeftoverDataTableInline">
-						<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Withholding Amount</xsl:with-param>
+						<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Withholding Amount</xsl:with-param>
 						<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AddlMedcrRRTTaxWithholdingAmt"/>
                     </xsl:call-template>
                   </div>
@@ -2009,22 +2009,22 @@ Enter the portion of Part VI, lines 2 and 4, that can be attributed to March 27,
                 <xsl:with-param name="DescWidth" select="$TableWidth"/>
               </xsl:call-template>
               <xsl:call-template name="PopulateLeftoverRow">
-				<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Code</xsl:with-param>
+				<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Code</xsl:with-param>
 				<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionCd"/>
 				<xsl:with-param name="DescWidth" select="$TableWidth"/>
               </xsl:call-template>
               <xsl:call-template name="PopulateLeftoverRowAmount">
-				<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Amount</xsl:with-param>
+				<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Amount</xsl:with-param>
 				<xsl:with-param name="TargetNode" select="$Form1040SSPRData/TotalPaymentsAmt/@requestForExtensionAmt"/>
 				<xsl:with-param name="DescWidth" select="$TableWidth"/>
               </xsl:call-template>  
               <xsl:call-template name="PopulateLeftoverRow">
-				<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Tax Code</xsl:with-param>
+				<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Tax Code</xsl:with-param>
 				<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AdditionalMedicareTaxCd"/>
 				<xsl:with-param name="DescWidth" select="$TableWidth"/>
               </xsl:call-template>
               <xsl:call-template name="PopulateLeftoverRowAmount">
-				<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Withholding Amount</xsl:with-param>
+				<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Withholding Amount</xsl:with-param>
 				<xsl:with-param name="TargetNode" select="$Form1040SSPRData/AddnlMedicareTaxWithheldGrp/AddlMedcrRRTTaxWithholdingAmt"/>
 				<xsl:with-param name="DescWidth" select="$TableWidth"/>
               </xsl:call-template>  
@@ -8786,22 +8786,22 @@ Parte I
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-							<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Code</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/TotalPaymentsAmt/@requestForExtensionCd"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRowAmount">
-							<xsl:with-param name="Desc">Part I, Line 11 - Request for Extension Amount</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Request for Extension Amount</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/TotalPaymentsAmt/@requestForExtensionAmt"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-							<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Tax Code</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Tax Code</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/AddnlMedicareTaxWithheldGrp/AdditionalMedicareTaxCd"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 						</xsl:call-template>
 					    <xsl:call-template name="PopulateLeftoverRowAmount">
-							<xsl:with-param name="Desc">Part I, Line 11 - Additional Medicare Withholding Amount</xsl:with-param>
+							<xsl:with-param name="Desc">Part I, Line 12 - Additional Medicare Withholding Amount</xsl:with-param>
 							<xsl:with-param name="TargetNode" select="$Form1040PRData/AddnlMedicareTaxWithheldGrp/AddlMedcrRRTTaxWithholdingAmt"/>
 							<xsl:with-param name="DescWidth" select="$TableWidth"/>
 					     </xsl:call-template>    

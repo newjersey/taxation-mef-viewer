@@ -146,14 +146,14 @@
 							A
 						</div>
 						<div class="styLNDesc" style="width:168mm; height:8mm;">
-							<label>
+							<!--<label>
 								<xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$Form1040ScheduleSEData/ExemptForm4361Ind"/>
 									<xsl:with-param name="BackupName">IRS1040ScheduleSE</xsl:with-param>
 								</xsl:call-template>
+							</label>-->
 								If you are a minister, member of a religious order, or Christian Science practitioner <b>and</b> you filed Form 4361, but you<br/> 
 								had $400 or more of <b>other</b> net earnings from self-employment, check here and continue with Part I
-							</label>
 							<!--Dotted Line-->
 							<span style="width:.5mm;"/>
 							<span style=" letter-spacing:2.7mm; font-weight:bold;">...........</span>
@@ -161,8 +161,8 @@
 						<div style="height: 7mm; width: 10mm; padding-top: 3mm;">
 							<img src="{$ImagePath}/1040SchSE_Bullet_Md.gif" alt="MediumBullet"/>
 							<span style="width:2mm;"/>
-							<input type="checkbox" class="styCkbox">
-								<xsl:call-template name="PopulateCheckbox">
+							<input type="checkbox" class="styCkbox" alt="ExemptForm4361">
+								<xsl:call-template name="PopulateCheckbox" >
 									<xsl:with-param name="TargetNode" select="$Form1040ScheduleSEData/ExemptForm4361Ind"/>
 									<xsl:with-param name="BackupName">IRS1040ScheduleSE</xsl:with-param>
 								</xsl:call-template>
@@ -343,8 +343,8 @@
 							 enter -0- and continue</span>
 							<!--Dotted Line-->
 							  <div style="float: right; padding-right: 1.5mm;">
-								  <img src="{$ImagePath}/1040SchSE_Bullet_Md.gif" alt="MediumBullet"/>
-								  <span style=" letter-spacing:3mm; font-weight:bold; float: left;">....</span>
+									 <span style=" letter-spacing:3mm; font-weight:bold; float: left;">....</span>
+									 <img src="{$ImagePath}/1040SchSE_Bullet_Md.gif" alt="MediumBullet" style="float: right;"/>
 							  </div>
 							  </div>
 						<div class="styLNRightNumBox" style="height:7.2mm;"><br/>4c</div>
@@ -497,10 +497,9 @@
 						<div class="styLNLeftNumBoxSD">9</div>
 						<div class="styLNDesc" style="width:139mm;">
 							<span style="float:left">Subtract line 8d from line 7. If zero or less, enter -0- here and on line 10 and go to line 11</span>
-							<img src="{$ImagePath}/1040SchSE_Bullet_Md.gif" alt="MediumBullet" style="float:right;margin-right:1px; 
-							    padding-top: 0.75mm;padding-right: 1.25mm;"/>
-							<span class="styIRS1040ScheduleSEDotLn" style="letter-spacing:3mm; font-weight:bold; float: right; 
-							    padding-right: 1mm;">.....</span>
+							<span class="styIRS1040ScheduleSEDotLn" style="letter-spacing:3mm; font-weight:bold; float: left; padding-left: 2mm;">....</span>							
+							<img src="{$ImagePath}/1040SchSE_Bullet_Md.gif" alt="MediumBullet" style="float:right; margin-right:1px; padding-top: 0.75mm; padding-right: 1.25mm"/>
+
 						</div>
 						<div class="styLNRightNumBox">9</div>
 						<div class="styLNAmountBox" style="padding-right:1mm;">
@@ -724,15 +723,17 @@
 						</div>
 						<!--  FOOTER-->
 					</div>
-					<div class="styGenericDiv" style="float:right; height:40mm">
+					<div class="pageEnd" style="float:right; height:40mm">
 						<span class="styBoldText">Schedule SE (Form 1040) 2020</span>
-						<p class="pageend"/>
+						<!--<p class="pageend"/>-->
 					</div>
 					<!--End of line 18 -->
 					
-					<!-- End Part III  -->
+					<!-- Part III  -->
 					<!-- BEGIN Page Header -->
+					  <p style="page-break-before: always"/> 
 					  <div class="styTBB" style="width:187mm;padding-top:.5mm;">
+						
 						<div style="float:left;">
 						  Schedule SE (Form 1040) 2020 <span style="width:50mm"/> Attachment Sequence No. <b>17</b>
 						</div>
@@ -741,7 +742,7 @@
 						</div>
 					  </div>
 					  <!-- END Page Header -->	
-								<div class="styBB" style="width:187mm; ">
+						<div class="styBB" style="width:187mm; ">
 						<span class="styPartName" style="width:16mm;">Part III</span>
 						<!--Part I-->
 						<span style="width:150mm;" class="styPartDesc">Maximum Deferral of Self-Employment Tax Payments</span>

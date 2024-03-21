@@ -43,21 +43,18 @@
 					<xsl:call-template name="DocumentHeader"/>
 					<!-- Header - Form1120LSchM3 Number, Title, and Year -->
 					<div class="styTBB" style="width:187mm;">
-						<div class="styFNBox" style="width:31mm;height:21.5mm;border-right-width:2px;">
-							<div style="height:15mm;">
-								<span class="styFormNumber" style="font-size:10pt;">SCHEDULE M-3<br/>(Form 1120-L)</span>
-								<span style="font-size:7pt;">(Rev. December 2021)</span>
-								<br/>
+						<div class="styFNBox" style="width:31mm;height:19.5mm;border-right-width:2px;">
+							<span class="styFormNumber" style="width:31mm;font-size:10pt;">SCHEDULE M-3<br/>(Form 1120-L)</span>
+							<span style="width:31mm;">
 								<!-- Form Link -->
 								<xsl:call-template name="SetFormLinkInline">
 									<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3"/>
 								</xsl:call-template>
-								<br/>
-							</div>
-							<div class="styAgency" style="height:6mm;">
-								<span style="width:25mm;"> Department of the Treasury </span>
+							</span>
+							<span class="styAgency" style="width:31mm;height:5mm;padding-top:2mm;">
+							  Department of the Treasury<br/>
 							  Internal Revenue Service
-							</div>
+							</span>
 						</div>
 						<div class="styFTBox" style="width:125mm;height:19.5mm;">
 							<div class="styMainTitle">Net Income (Loss) Reconciliation for U.S. Life Insurance 
@@ -72,10 +69,10 @@
 								for instructions and the latest information.								 
 							</div>
 						</div>
-						<div class="styTYBox" style="width:30mm;height:21.5mm;border-left-width:2px;">
-							<div class="styOMB" style="width:30mm;height:11mm;border-bottom:0px;padding-top:9mm;">OMB No. 1545-0123</div>
-							<!--<div class="styTY" style="height:11mm;padding-top:1.5mm;">20<span class="styTYColor">21</span>-->
-							<!--</div>-->
+						<div class="styTYBox" style="width:30mm;height:19.5mm;border-left-width:2px;">
+							<div class="styOMB" style="height:auto;">OMB No. 1545-0123</div>
+							<div class="styTY" style="height:11mm;padding-top:1.5mm;">20<span class="styTYColor">21</span>
+							</div>
 						</div>
 					</div>
 					<!-- End Header - Form Number, Title, and Year -->
@@ -648,14 +645,14 @@
 							<!--Check Box 1 -->
 							<div class="styLNDesc" style="width:135mm;padding-top:.5mm;">(1)
 							    <input type="checkbox" alt="GAAP" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/GAAPInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3GAAP</xsl:with-param>
 									</xsl:call-template>
 								</input>
 								<span style="width:1.5mm;"/>
 								<label>
-									<xsl:call-template name="PopulateLabelYes">
+									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/GAAPInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3GAAP</xsl:with-param>
 									</xsl:call-template>
@@ -664,14 +661,14 @@
 								<!--Check Box 2 -->
 								<span style="width:3mm;"/>(2)
 								<input type="checkbox" alt="IFRS" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/IFRSInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3IFRS</xsl:with-param>
 									</xsl:call-template>
 								</input>
 								<span style="width:1.5mm;"/>
 								<label>
-									<xsl:call-template name="PopulateLabelYes">
+									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/IFRSInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3IFRS</xsl:with-param>
 									</xsl:call-template>
@@ -680,14 +677,14 @@
 								<!--Check Box 3 -->
 								<span style="width:3mm;"/>(3)
 							    <input type="checkbox" alt="Statutory" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/StatutoryInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3Statutory</xsl:with-param>
 									</xsl:call-template>
 								</input>
 								<span style="width:1.5mm;"/>
 								<label>
-									<xsl:call-template name="PopulateLabelYes">
+									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/StatutoryInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3Statutory</xsl:with-param>
 									</xsl:call-template>
@@ -696,14 +693,14 @@
 								<!--Check Box 4 -->
 								<span style="width:3mm;"/>(4)
 							    <input type="checkbox" alt="Other (specify)" class="styCkbox">
-									<xsl:call-template name="PopulateYesCheckbox">
+									<xsl:call-template name="PopulateCheckbox">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/OtherInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3Other</xsl:with-param>
 									</xsl:call-template>
 								</input>
 								<span style="width:1.5mm;"/>
 								<label>
-									<xsl:call-template name="PopulateLabelYes">
+									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$Form1120LScheduleM3/OtherInd"/>
 										<xsl:with-param name="BackupName">IRS1120LScheduleM3Other</xsl:with-param>
 									</xsl:call-template>
@@ -1190,13 +1187,13 @@
 					<div class="pageEnd" style="width:187mm;">
 						<div class="styBoldText" style="width:110mm;float:left;">For Paperwork Reduction Act Notice, see the Instructions for Form 1120-L.
 						</div>
-						<div style="width:25mm;float:left;padding-top:0.3mm;font-size:6.8pt">Cat. No. 39668S</div>
-						<div class="styBoldText" style="float:right;padding-top:0.7mm;font-size:5.8pt">Schedule M-3 (Form 1120-L) (Rev. 12-2021)</div>
+						<div style="width:25mm;float:left;">Cat. No. 39668S</div>
+						<div class="styBoldText" style="float:right;">Schedule M-3 (Form 1120-L) 2021</div>
 					</div>
 					<!-- Page 2 -->
 					<!-- Page 2 Header -->
 					<div class="styTBB" style="width:187mm;float:none;">
-						<div style="float:left;">Schedule M-3 (Form 1120-L) (Rev. 12-2021)</div>
+						<div style="float:left;">Schedule M-3 (Form 1120-L) 2021</div>
 						<div style="float:right;">Page <span style="font-size:9pt;font-weight:bold;">2</span>
 						</div>
 					</div>
@@ -2555,12 +2552,12 @@
 						Line 30, column (a) must equal the amount on Part I, line 11, and column (d) must equal Form 1120-L, page 1,  line 20. </div>
 					<!-- Page 2 END -->
 					<div class="pageEnd" style="width:187mm;">
-						<div class="styBoldText" style="float:right;padding-top:1mm;font-size:5.8pt">Schedule M-3 (Form 1120-L) (Rev. 12-2021)</div>
+						<div class="styBoldText" style="float:right;padding-top:1mm;">Schedule M-3 (Form 1120-L) 2021</div>
 					</div>
 					<!-- Page 3 -->
 					<!-- Page 3 Header -->
 					<div class="styTBB" style="width:187mm;float:none;">
-						<div style="float:left;">Schedule M-3 (Form 1120-L) (Rev. 12-2021)</div>
+						<div style="float:left;">Schedule M-3 (Form 1120-L) 2021</div>
 						<div style="float:right;">Page <span style="font-size:9pt;font-weight:bold;">3</span>
 						</div>
 					</div>
@@ -3958,7 +3955,7 @@
 						</tr>
 					</table>
 					<div class="pageEnd" style="width:187mm;border-top:2px solid black;">
-						<div class="styBoldText" style="float:right;padding-top:1mm;font-size:5.8pt">Schedule M-3 (Form 1120-L) (Rev. 12-2021)</div>
+						<div class="styBoldText" style="float:right;padding-top:1mm;">Schedule M-3 (Form 1120-L) 2021</div>
 					</div>
 					<!-- Left Over Data Table -->
 					<!-- Additonal Data Title Bar and Button -->

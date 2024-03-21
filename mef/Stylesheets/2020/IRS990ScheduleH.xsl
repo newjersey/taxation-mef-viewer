@@ -9,6 +9,8 @@
 <!-- 11/15/2019 - Changes made for defect 128289 - Jeremy Nichols -->
 <!-- 01/16/2020 - Changes made for 2019 pdf review - Jeremy Nichols -->
 <!-- 06/15/2020 - Changes made for UWR 233977 - Jeremy Nichols -->
+<!-- 09/16/2020 - Changes made for 2020 pdf review - Jeremy Nichols -->
+<!-- 12/01/2020 - Changes made for defect 129683 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="PopulateTemplate.xsl"/>
   <xsl:include href="CommonPathRef.xsl"/>
@@ -833,22 +835,22 @@
                     <span class="styBoldText" style="display:inline;">Means-Tested</span><br/>
                     <span class="styBoldText" style="display:inline;">Government Programs</span><br/>
                   </th>
-                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;width:25mm;font-size:6pt;float:left;clear:none;" scope="col">
+                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;width:30mm;font-size:6pt;float:left;clear:none;" scope="col">
                     <span class="styBoldText" style="display:inline;">(a)</span> Number of activities or programs (optional)
                   </th>
-                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;width:25mm;font-size:6pt;padding-top:1mm;float:left;clear:none;" scope="col">
+                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;width:30mm;font-size:6pt;padding-top:1mm;float:left;clear:none;" scope="col">
                     <span class="styBoldText" style="display:inline;">(b)</span> Persons served (optional)
                   </th>
-                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:25mm;font-size:6pt;float:left;clear:none;" scope="col">
+                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:23mm;font-size:6pt;float:left;clear:none;" scope="col">
                     <span class="styBoldText" style="display:inline;">(c)</span> Total community benefit expense
                   </th>
-                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:25mm;font-size:6pt;float:left;clear:none;" scope="col">
+                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:23mm;font-size:6pt;float:left;clear:none;" scope="col">
                     <span class="styBoldText" style="display:inline;">(d)</span> Direct offsetting revenue
                   </th>
-                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:25mm;font-size:6pt;float:left;clear:none;" scope="col">
+                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:23mm;font-size:6pt;float:left;clear:none;" scope="col">
                     <span class="styBoldText" style="display:inline;">(e)</span> Net community benefit expense
                   </th>
-                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:19mm;border-right-width:0px;font-size:6pt;float:left;clear:none;" scope="col">
+                  <th class="styIRS990ScheduleHTheadCell" style="height:11mm;vertical-align:top;padding-top:1mm;width:15mm;border-right-width:0px;font-size:6pt;float:left;clear:none;" scope="col">
                     <span class="styBoldText" style="display:inline;">(f)</span> Percent of total expense
                   </th>
                 </tr>
@@ -864,32 +866,32 @@
                     <span style="width:4mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FinancialAssistanceAtCostTyp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FinancialAssistanceAtCostTyp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FinancialAssistanceAtCostTyp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FinancialAssistanceAtCostTyp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FinancialAssistanceAtCostTyp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:19mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.25mm;width:15mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/FinancialAssistanceAtCostTyp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -908,32 +910,32 @@
                     <span style="width:4mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedMedicaidGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedMedicaidGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedMedicaidGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedMedicaidGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedMedicaidGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:19mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:15mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedMedicaidGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -953,32 +955,32 @@
                     <span style="width:1mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedCostsGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedCostsGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedCostsGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedCostsGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedCostsGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:19mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:15mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/UnreimbursedCostsGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -999,32 +1001,32 @@
                     <span style="width:4mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalFinancialAssistanceTyp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalFinancialAssistanceTyp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalFinancialAssistanceTyp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalFinancialAssistanceTyp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalFinancialAssistanceTyp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:19mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:15mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalFinancialAssistanceTyp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1037,22 +1039,22 @@
                     <span class="styBoldText">Other Benefits</span>
                     <br/>
 				  </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
                     <span style="width:1mm;"/>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
                     <span style="width:1mm;"/>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
                     <span style="width:1mm;"/>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
                     <span style="width:1mm;"/>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
                     <span style="width:1mm;"/>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:19mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;padding-top:3mm;float:left;clear:none;border-bottom-width:0px;">
                     <span style="width:1mm;"/>
                   </td>
 				</tr>
@@ -1064,32 +1066,32 @@
                     community benefit operations
                     (from Worksheet 4).
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunityHealthServicesGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunityHealthServicesGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunityHealthServicesGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunityHealthServicesGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunityHealthServicesGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:19mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:15mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunityHealthServicesGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1108,32 +1110,32 @@
                     <span style="width:4mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthProfessionsEducationGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthProfessionsEducationGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthProfessionsEducationGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthProfessionsEducationGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthProfessionsEducationGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:19mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:15mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthProfessionsEducationGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1153,32 +1155,32 @@
                     <span style="width:4mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/SubsidizedHealthServicesGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/SubsidizedHealthServicesGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/SubsidizedHealthServicesGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/SubsidizedHealthServicesGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/SubsidizedHealthServicesGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:19mm;padding-top:3mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:15mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/SubsidizedHealthServicesGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1194,32 +1196,32 @@
                     <!--Dotted Line-->
                     <span style="width:0.75mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/ResearchGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/ResearchGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/ResearchGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/ResearchGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/ResearchGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:19mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/ResearchGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1240,32 +1242,32 @@
                     <span style="width:4mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CashAndInKindContributionsGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:30mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CashAndInKindContributionsGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CashAndInKindContributionsGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CashAndInKindContributionsGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:25mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:23mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CashAndInKindContributionsGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:19mm;padding-top:6mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:9mm;width:15mm;font-size:5pt;padding-top:6mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CashAndInKindContributionsGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1283,32 +1285,32 @@
                     <span style="width:3mm;"/>.
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalOtherBenefitsGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalOtherBenefitsGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalOtherBenefitsGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalOtherBenefitsGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalOtherBenefitsGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:19mm;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;border-bottom-width:1px;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalOtherBenefitsGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1324,32 +1326,32 @@
                     <!--Dotted Line-->
                     <span style="width:4mm;"/>.
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommunityBenefitsGrp/ActivitiesOrProgramsCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommunityBenefitsGrp/PersonsServedCnt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommunityBenefitsGrp/TotalCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommunityBenefitsGrp/DirectOffsettingRevenueAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulateAmount">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommunityBenefitsGrp/NetCommunityBenefitExpnsAmt"/>
                     </xsl:call-template>
                   </td>
-                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:19mm;padding-top:1mm;float:left;clear:none;">
+                  <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                     <xsl:call-template name="PopulatePercent">
                       <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommunityBenefitsGrp/TotalExpensePct"/>
                     </xsl:call-template>
@@ -1393,30 +1395,30 @@
           </div>
           
           <!--  BEGIN PART II  TABLE  -->
-          <table class="styTable" id="IRS990ScheduleHPartIITable" summary="Community Building Activities" cellspacing="0" cellpadding="0" style="font-size:6pt;height:auto;width:187mm;float:left;clear:none;">
+          <table class="styTable" id="IRS990ScheduleHPartIITable" summary="Community Building Activities" cellspacing="0" cellpadding="0" style="font-size:5pt;height:auto;width:187mm;float:left;clear:none;">
             <tr>
               <th class="styLNLeftNumBoxBB" style="height:12mm;width:4mm;padding-left:2mm;float:left;clear:none;float:left;clear:none;" scope="col">
 				  <span style="width:5mm;"/>
 			  </th>
-              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:40mm;padding-bottom:0mm;border-left-width:0mm;float:left;clear:none;float:left;clear:none;" scope="col">
+              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:39mm;padding-bottom:0mm;border-left-width:0mm;float:left;clear:none;float:left;clear:none;" scope="col">
 				  <span style="width:41mm;"/>
 			  </th>
-              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:25mm;font-size:6.25pt;padding-bottom:1px;float:left;clear:none;" scope="col">
+              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:30mm;font-size:5pt;padding-bottom:1px;float:left;clear:none;" scope="col">
                 <span class="styBoldText">(a)</span> Number of activities or programs (optional)
               </th>
-              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:25mm;font-size:6.25pt;vertical-align:top;float:left;clear:none;" scope="col">
+              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:30mm;font-size:5pt;vertical-align:top;float:left;clear:none;" scope="col">
                 <span class="styBoldText">(b)</span> Persons served (optional)
               </th>
-              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:25mm;font-size:6.25pt;vertical-align:top;float:left;clear:none;" scope="col">
+              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:23mm;font-size:5pt;vertical-align:top;float:left;clear:none;" scope="col">
                 <span class="styBoldText">(c)</span> Total community building expense
               </th>
-              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:25mm;font-size:6.25pt;vertical-align:top;float:left;clear:none;" scope="col">
+              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:23mm;font-size:5pt;vertical-align:top;float:left;clear:none;" scope="col">
                 <span class="styBoldText">(d)</span> Direct offsetting<br/> revenue
               </th>
-              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:25mm;font-size:6.25pt;vertical-align:top;float:left;clear:none;" scope="col">
+              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:23mm;font-size:5pt;vertical-align:top;float:left;clear:none;" scope="col">
                 <span class="styBoldText">(e)</span> Net community building expense
               </th>
-              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:18mm;font-size:6.25pt;vertical-align:top;float:left;clear:none;" scope="col">
+              <th class="styIRS990ScheduleHTheadCell" style="height:12mm;width:15mm;font-size:5pt;vertical-align:top;float:left;clear:none;" scope="col">
                 <span class="styBoldText">(f)</span> Percent of total expense
               </th>
             </tr>
@@ -1426,35 +1428,35 @@
               <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 1
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Physical improvements and housing</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/PhysicalImprvAndHousingGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/PhysicalImprvAndHousingGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/PhysicalImprvAndHousingGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/PhysicalImprvAndHousingGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/PhysicalImprvAndHousingGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/PhysicalImprvAndHousingGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1463,38 +1465,38 @@
             
             <!--  PART II  Line 2 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 2
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Economic development</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EconomicDevelopmentGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EconomicDevelopmentGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EconomicDevelopmentGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EconomicDevelopmentGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EconomicDevelopmentGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EconomicDevelopmentGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1503,38 +1505,38 @@
             
             <!--  PART II  Line 3 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 3
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Community support</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunitySupportGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunitySupportGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunitySupportGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunitySupportGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunitySupportGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CommunitySupportGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1543,38 +1545,38 @@
             
             <!--  PART II  Line 4 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 4
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Environmental improvements</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EnvironmentalImprovementsGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EnvironmentalImprovementsGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EnvironmentalImprovementsGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EnvironmentalImprovementsGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EnvironmentalImprovementsGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/EnvironmentalImprovementsGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1583,38 +1585,38 @@
             
             <!--  PART II  Line 5 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:6.5mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:6.5mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 5
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:6.5mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:6.5mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Leadership development and <br/>training for community members</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/LeadershipDevelopmentGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/LeadershipDevelopmentGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/LeadershipDevelopmentGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/LeadershipDevelopmentGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/LeadershipDevelopmentGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:18mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:15mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/LeadershipDevelopmentGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1623,38 +1625,38 @@
             
             <!--  PART II  Line 6 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;font-size:5pt;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 6
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Coalition building</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CoalitionBuildingGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CoalitionBuildingGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CoalitionBuildingGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CoalitionBuildingGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CoalitionBuildingGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/CoalitionBuildingGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1663,38 +1665,38 @@
             
             <!--  PART II  Line 7 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:6.5mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:6.5mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 7
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:6.5mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:6.5mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Community health improvement advocacy</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthImprovementAdvocacyGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:30mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthImprovementAdvocacyGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthImprovementAdvocacyGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthImprovementAdvocacyGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:25mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:23mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthImprovementAdvocacyGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:18mm;padding-top:3mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:6.5mm;width:15mm;font-size:5pt;padding-top:3mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/HealthImprovementAdvocacyGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1703,38 +1705,38 @@
             
             <!--  PART II  Line 8 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 8
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Workforce development</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/WorkforceDevelopmentGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/WorkforceDevelopmentGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/WorkforceDevelopmentGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/WorkforceDevelopmentGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/WorkforceDevelopmentGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/WorkforceDevelopmentGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1743,38 +1745,38 @@
             
             <!--  PART II  Line 9 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:1mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 9
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;border-top-width:0px;font-size:5pt;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;">Other</span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/OtherCommuntityBuildingActyGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/OtherCommuntityBuildingActyGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/OtherCommuntityBuildingActyGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/OtherCommuntityBuildingActyGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/OtherCommuntityBuildingActyGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/OtherCommuntityBuildingActyGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -1783,38 +1785,38 @@
             
             <!--  PART II  Line 10 -->
             <tr>
-              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;pading-left:0.5mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
+              <td class="styLNLeftNumBoxBB" style="height:4mm;border-top-width:0px;width:4mm;font-size:5pt;pading-left:0.5mm;padding-top:1mm;font-size:6pt;padding-bottom:0mm;float:left;clear:none;">
                 10
               </td>
-              <td class="styIRS990ScheduleHCell" style="height:4mm;width:40mm;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell" style="height:4mm;width:39mm;font-size:5pt;border-top-width:0px;padding-top:1mm;text-align:left;border-left-width:0px;font-size:6pt;float:left;clear:none;">
                 <span style="width:41.5mm;padding-left:1mm;"><b>Total</b></span>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommuntityBuildingActyGrp/ActivitiesOrProgramsCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:30mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommuntityBuildingActyGrp/PersonsServedCnt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommuntityBuildingActyGrp/TotalCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommuntityBuildingActyGrp/DirectOffsettingRevenueAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:25mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:23mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulateAmount">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommuntityBuildingActyGrp/NetCommunityBenefitExpnsAmt"/>
                 </xsl:call-template>
               </td>
-              <td class="styIRS990ScheduleHCell " style="height:4mm;width:18mm;padding-top:1mm;float:left;clear:none;">
+              <td class="styIRS990ScheduleHCell " style="height:4mm;width:15mm;font-size:5pt;padding-top:1mm;float:left;clear:none;">
                 <xsl:call-template name="PopulatePercent">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleHData/TotalCommuntityBuildingActyGrp/TotalExpensePct"/>
                 </xsl:call-template>
@@ -3515,12 +3517,12 @@
                     a
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:7.5mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-size:7pt;font-weight:normal;">
-                     If "Yes" (list url):
+					  <span style="height:7.5mm;"><br/>If "Yes" (list url): 
 					  <span class="styIRS990ScheduleHUnderlinedText" style="width:105mm;">
 						  <xsl:call-template name="PopulateText">
 							  <xsl:with-param name="TargetNode" select="StrategyWebsiteURLTxt "/>
 						  </xsl:call-template>
-					  </span>
+					  </span></span>
                   </td>
                   <td class="styShadingCell" style="width:6mm;height:7.5mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:1px;border-right-width:0px;border-top-width:0px;font-size:7pt;font-weight:bold;">
                     <span style="width:5mm;"/>
@@ -6532,7 +6534,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="IRS990ScheduleH_LineIndexMid" style="width:6mm;height:6mm;padding-top:3mm;padding-right:0.5mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:right;font-size:7pt;font-weight:bold;">
+                  <td class="IRS990ScheduleH_LineIndexMid" style="width:6mm;height:6mm;padding-top:1.5mm;padding-right:0.5mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:right;font-size:7pt;font-weight:bold;">
                     b
                   </td>
                   <td class="IRS990ScheduleH_LineIndexMid" style="width:159mm;height:6mm;padding-top:.25mm;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;border-top-width:0px;text-align:left;font-size:7pt;font-weight:normal;">

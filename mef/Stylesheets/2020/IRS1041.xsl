@@ -2897,11 +2897,11 @@
 					</xsl:call-template>	
 				</span>
 			   </div>
-			<div class="styPartDesc" style="width:10mm;text-align:center;height:4.5mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
+			<div class="styPartDesc" style="width:10mm;text-align:center;height:4.5mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">				
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/TaxExemptIncomeInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
 				<input type="Checkbox" alt="TaxExemptIncomeYes" class="styCkbox">
 					<xsl:call-template name="PopulateYesCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/TaxExemptIncomeInd"/>
@@ -2915,11 +2915,11 @@
 					</xsl:call-template>												
                 </label>
 			</div>
-			<div class="styPartDesc" style="width:10mm;text-align:center;height:4.5mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
+			<div class="styPartDesc" style="width:10mm;text-align:center;height:4.5mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">				
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/TaxExemptIncomeInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
 				<input type="Checkbox" alt="TaxExemptIncomeNo" class="styCkbox">
 					<xsl:call-template name="PopulateNoCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/TaxExemptIncomeInd"/>
@@ -2976,10 +2976,10 @@
 				</span>
 			   </div>
 			<div class="styPartDesc" style="width:10mm;text-align:center;height:4.2mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/IndividualEarningsInd"/>
-				</xsl:call-template>
+				</xsl:call-template>				
+				<!-- Checkbox -->
 				<input type="Checkbox" alt="IndividualEarningsYes" class="styCkbox">
 					<xsl:call-template name="PopulateYesCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/IndividualEarningsInd"/>
@@ -2993,11 +2993,11 @@
 					</xsl:call-template>												
                 </label>
 			</div>
-			<div class="styPartDesc" style="width:10mm;text-align:center;height:4.2mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
+			<div class="styPartDesc" style="width:10mm;text-align:center;height:4.2mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">				
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/IndividualEarningsInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
 				<input type="Checkbox" alt="IndividualEarningsNo" class="styCkbox">
 					<xsl:call-template name="PopulateNoCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/IndividualEarningsInd"/>
@@ -3025,11 +3025,11 @@
 				</span>
 			   </div>
 			<div class="styPartDesc" style="width:10mm;text-align:center;height:7.6mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
-				<br />
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/ForeignAccountsQuestionInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
+				<br />				
 				<input type="Checkbox" alt="ForeignAccountsQuestionYes" class="styCkbox">
 					<xsl:call-template name="PopulateYesCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/ForeignAccountsQuestionInd"/>
@@ -3044,11 +3044,11 @@
                 </label>
 			</div>
 			<div class="styPartDesc" style="width:10mm;text-align:center;height:7.6mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
-				<br />
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/ForeignAccountsQuestionInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
+				<br />				
 				<input type="Checkbox" alt="ForeignAccountsQuestionNo" class="styCkbox">
 					<xsl:call-template name="PopulateNoCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/ForeignAccountsQuestionInd"/>
@@ -3094,11 +3094,11 @@
 				</span>
 			   </div>
 			<div class="styPartDesc" style="width:10mm;text-align:center;height:7.6mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
-				<br />
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/ForeignTrustInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
+				<br />				
 				<input type="Checkbox" alt="ForeignTrustYes" class="styCkbox">
 					<xsl:call-template name="PopulateYesCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/ForeignTrustInd"/>
@@ -3113,11 +3113,11 @@
                 </label>
 			</div>
 			<div class="styPartDesc" style="width:10mm;text-align:center;height:7.6mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
-				<br />
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/ForeignTrustInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
+				<br />				
 				<input type="Checkbox" alt="ForeignTrustNo" class="styCkbox">
 					<xsl:call-template name="PopulateNoCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/ForeignTrustInd"/>
@@ -3149,11 +3149,11 @@
 				</span>
 			   </div>
 			<div class="styPartDesc" style="width:10mm;text-align:center;height:7.6mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
-				<br />
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/SellerFinancedMortgageInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
+				<br />				
 				<input type="Checkbox" alt="SellerFinancedMortgageYes" class="styCkbox">
 					<xsl:call-template name="PopulateYesCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/SellerFinancedMortgageInd"/>
@@ -3168,11 +3168,11 @@
                 </label>
 			</div>
 			<div class="styPartDesc" style="width:10mm;text-align:center;height:7.6mm;padding:0mm;border-left:1px solid black;border-bottom:1px solid black;">
-				<!-- Checkbox -->
-				<br />
 				<xsl:call-template name="PopulateSpan">
 					<xsl:with-param name="TargetNode" select="$FormData/SellerFinancedMortgageInd"/>
 				</xsl:call-template>
+				<!-- Checkbox -->
+				<br />				
 				<input type="Checkbox" alt="SellerFinancedMortgageNo" class="styCkbox">
 					<xsl:call-template name="PopulateNoCheckbox">
 						<xsl:with-param name="TargetNode" select="$FormData/SellerFinancedMortgageInd"/>

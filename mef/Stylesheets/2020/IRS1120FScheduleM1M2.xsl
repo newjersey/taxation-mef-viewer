@@ -69,10 +69,10 @@
 						  Unappropriated Retained Earnings per Books
 						</div>
 						<div class="styFST" style="padding-top:2mm;">
-							<img src="{$ImagePath}/1120FScheduleM1M2_Bullet.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/1120FScheduleM1M2_Bullet.gif" alt="right arrow graphic"/>
 							Go to
 							<a style="text-decoration:none;color:black;" href="http://www.irs.gov/form1120f">www.irs.gov/Form1120F</a> for the latest information.<br/>
-							<img src="{$ImagePath}/1120FScheduleM1M2_Bullet.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/1120FScheduleM1M2_Bullet.gif" alt="right arrow graphic"/>
 							Attach to Form 1120-F.
 						</div>
 					</div>

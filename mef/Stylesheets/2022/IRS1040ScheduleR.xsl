@@ -44,7 +44,7 @@
 					<xsl:call-template name="DocumentHeader"/>
 					<!-- Begin Form Number and Name -->
 					<div class="styBB" style="width:187mm;height:21mm;">
-						<div class="styFNBox" style="width:31mm;height:21.5mm;">
+						<div class="styFNBox" style="width:31mm;height:21mm;">
 							<div style="line-height:180%;">
 								<span class="styFormNumber" style="font-size:8.5pt;">Schedule R</span><br/>
 								<span class="styFormNumber" style="font-size:7pt;">(Form 1040)</span>
@@ -60,12 +60,12 @@
 							</div>
 				<div class="styGenericDiv" style="height:3mm;margin-top:0.5mm;font:size:6pt;width:97mm;">
 				                <span style="font-weight: bold;  ;">
-								<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="right arrow"/>
+								<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/>
 								<span style="width:0.5mm;"/>
 								Complete and attach to Form 1040 or Form 1040-SR.</span>
        <br/>
                                 <span style="font-weight: bold;  ;">
-								<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="right arrow"/>
+								<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/>
 								<span style="width:0.5mm;"/>
 								Go to <i><a style="text-decoration:none;color:black;" href="http://IRS.gov/ScheduleR">www.irs.gov/ScheduleR.</a></i> for instructions and<br/> the latest information.</span>
         </div>
@@ -75,7 +75,7 @@
 					</div>
 						<div class="styTYBox" style="width:30mm;height:21.5mm;">
 							<div class="styOMB" style="height:4mm;">OMB No. 1545-0074</div>
-							<div class="styTaxYear">20<span class="styTYColor">21</span>
+							<div class="styTaxYear">20<span class="styTYColor">22</span>
 							</div>
 							<div style="margin-left:3mm; text-align:left;padding-top:1mm;">
           Attachment<br/>Sequence No. <span class="styBoldText">16</span>
@@ -101,7 +101,7 @@
 					</div>
 					<div class="styNBB" style="width:187mm;height:14mm;font-size:8.5pt;padding-top:1.5mm;">
 						<div class="styLNDesc" style="width:187mm;height:5mm;padding-top:1.5mm;">
-            You may be able to take this credit and reduce your tax if by the end of 2021:</div>
+            You may be able to take this credit and reduce your tax if by the end of 2022:</div>
 						<div class="styLNDesc" style="width:53mm;height:5mm;">
 							<img src="{$ImagePath}/1040SchR_Bullet_Round.gif" alt="Bullet Image"/>
                You were age 65 or older <span class="styBoldText">
@@ -132,7 +132,7 @@
 					<div class="styBB" style="width:187mm;font-size: 9pt;">
 						<span class="styBoldText">
 							<span style="width:55mm;">If your filing status is:  </span>
-							<span style="width:85mm;font-size: 9pt;">And by the end of 2021:</span>
+							<span style="width:85mm;font-size: 9pt;">And by the end of 2022:</span>
 							<span style="width:44.5mm;font-size: 9pt;text-align:right;">Check only one box:</span>
 						</span>
 					</div>
@@ -358,7 +358,7 @@
 						<div class="styForm1040SchRLNRightNumBox" style="height:10mm;width:6mm;padding-left:0mm;">8</div>
 						<div class="styLNDesc" style="width:118mm;padding-bottom:0mm;">
 							<span style="float:left;clear:none;">		
-								You were 65 or older and you lived apart from your spouse for all of 2021</span>	 
+								You were 65 or older and you lived apart from your spouse for all of 2022</span>	 
           <!--Dotted Line-->
 							<span class="styDotLn" style="float:right;clear:none;padding-right:1mm;">.</span>
 						</div>
@@ -389,7 +389,7 @@
 						<div class="styForm1040SchRLNRightNumBox" style="height:10mm;width:6mm;padding-left:0mm;">9</div>
 						<div class="styLNDesc" style="width:118mm;padding-bottom:0mm;">
 								You were under 65, you retired on permanent and total disability, and you<br/>
-								lived apart from your spouse for all of 2021
+								lived apart from your spouse for all of 2022
           <!--Dotted Line-->
 							<span class="styDotLn" style="float:none;clear:none;padding-left:1mm;">...........</span>
 						</div>
@@ -423,15 +423,15 @@
 							<div class="styLNDesc" style="padding-bottom:5mm;">
 								<img src="{$ImagePath}/1040SchR_Line.gif" alt="Line Image"/> Yes 
 						<img src="{$ImagePath}/1040SchR_Line.gif" alt="Line Image"/>
-								<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="right arrow"/>
+								<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="Bullet Image"/>
 								<span style="width:2mm;"/>
 								<span style="font-weight:normal;">Skip Part II and complete Part III on the back.</span>
 							</div>
 							<img src="{$ImagePath}/1040SchR_Line.gif" alt="Line Image"/> No <span style="width:1mm;"/>
 							<img src="{$ImagePath}/1040SchR_Line.gif" alt="Line Image"/>
-							<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="right arrow"/>
+							<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="Bullet Image"/>
 							<span style="width:2mm;"/>
-							<span style="font-weight:normal;">Complete Parts II and III.</span>
+							<span style="font-weight:normal;">Complete Parts ll and lll.</span>
 						</div>
 						<span class="styPartDesc" style="height:4mm;"/>
 					</div>
@@ -454,7 +454,7 @@
 					<div class="styNBB" style="width:187mm;height:9mm;font-size: 8.5pt;padding-left:0mm;padding-top:1mm;padding-bottom:.5mm;float:left;clear:none;">
 						<div class="styForm1040SchRLNRightNumBox" style="width:6mm;padding-top:1mm;padding-left:8mm;padding-right:3mm;float:left;clear:none;">2</div>
 						<div class="styLNDesc" style="width:162mm;padding-left:2mm;padding-right:0mm;padding-top:.5mm;padding-bottom:0mm;float:left;clear:none;">
- 						Due to your continued disabled condition, you were unable to engage in any substantial gainful activity<br/>in 2021, check this box
+ 						Due to your continued disabled condition, you were unable to engage in any substantial gainful activity<br/>in 2022, check this box
           <!--Dotted Line-->
 							 <span class="styDotLn" style="float:none;clear:none;padding-left:1mm;">..........................</span> 
 		                     <xsl:call-template name="PopulateSpan">
@@ -469,7 +469,7 @@
                                 <xsl:with-param name="TargetNode" select="$Form1040ScheduleRData/PriorYearStatementInd/@personFirstNm"/>
                             </xsl:call-template>
                             <span style="width:3px;"/>
-							<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="right arrow"/>
+							<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="Bullet Image"/>
 							<span style="width:3mm"/>
 						</div>
 						<div class="styForm1040SchRCkBox" style="width:12mm;padding-top:4mm;">
@@ -498,7 +498,7 @@
 						</div>
 						<div class="styLNDesc" style="width:163mm;padding-left:.5mm;padding-right:2mm;padding-top:.5mm;padding-bottom:0mm;float:left;clear:none;">
  						     If you checked this box, you don't have to get another statement for
- 						     2021. 							   
+ 						     2022. 							   
 						</div>
 					</div>
 					<div class="styBB" style="width:187mm;height:9mm;font-size: 8.5pt;padding-left:10mm;padding-top:1mm;padding-bottom:.5mm;float:left;clear:none;">
@@ -517,13 +517,13 @@
 							For Paperwork Reduction Act Notice, see your tax return instructions.</div>
 						<div style="width:20mm;float:left;clear:none;">Cat. No. 11359K</div>
 						<div class="styPartDesc" style="width:60mm;text-align:right;font-size:6.5pt;float:right;clear:none;">
-							Schedule R (Form 1040) 2021
+							Schedule R (Form 1040) 2022
 						</div>
 					</div>
 					<br/>
 					<!-- Start of Page 2 -->
 					<div class="styBB" style="width:187mm;font-size:7pt;">
-						<div class="styLNDesc" style="width:90mm;padding-top:0mm;">Schedule R (Form 1040) 2021</div>
+						<div class="styLNDesc" style="width:90mm;padding-top:0mm;">Schedule R (Form 1040) 2022</div>
 						<div class="styLNDesc" style="width:90mm;text-align:right;float:right;clear:none;">Page  
 						<span class="styBoldText" style="font-size:8pt;">2 </span>
 						</div>
@@ -598,7 +598,7 @@
 						<div class="styPartDesc" style="width:53mm;height:1mm;padding-left:0mm;padding-top:0mm;float:left;clear:none;">
 							<img src="{$ImagePath}/1040SchR_Long_Line.gif" alt="Line Image"/> Yes 
 									<img src="{$ImagePath}/1040SchR_Long_Line.gif" alt="Line Image"/>
-							<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="right arrow"/>
+							<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="Bullet Image"/>
 						</div>
 						<div class="styPartDesc" style="width:61.3mm;padding-top:1mm;float:left;clear:none;">
 							<span style="width:2mm;"/>
@@ -610,7 +610,7 @@
 								<img src="{$ImagePath}/1040SchR_Long_Line.gif" alt="Line Image"/> No 
 										<span style="width:1mm;"/>
 								<img src="{$ImagePath}/1040SchR_Long_Line.gif" alt="Line Image"/>
-								<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="right arrow"/>
+								<img src="{$ImagePath}/1040SchR_Bullet_Sm.gif" alt="Bullet Image"/>
 							</div>
 							<div class="styPartDesc" style="width:61.3mm;padding-top:1mm;float:left;clear:none;">
 								<span style="width:2mm;"/>
@@ -687,7 +687,7 @@
 					<div class="styNBB" style="width:187mm;font-size: 8.5pt;padding-top:0mm;padding-bottom:0mm;float:left;clear:none;">
 						<span style="float:left;"><div class="styLNLeftNumBox" style="height:4mm;padding-left:0mm;padding-top:0mm;       padding-bottom:0mm;">13</div>
 						<div class="styLNDesc" style="height:4mm;width:102.4mm;padding-top:0mm;padding-bottom:0mm;">
-								 Enter the following pensions, annuities, or disability income that<br/>you (and your spouse if filing jointly) received in 2021.							
+								 Enter the following pensions, annuities, or disability income that<br/>you (and your spouse if filing jointly) received in 2022.							
 						</div></span>
 						<span style="float:right;"><div class="styForm1040SchRColBoxGrey" style="height:7.3mm;width:5.9mm;border-style:solid;border-right-width:0px;border-left-width:1px;         border-top-width:0px;border-bottom-width:0px;border-color:black;"/>
 						<div class="styLNAmountBox" style="height:7.3mm;border-left-width:1px solid black;border-bottom-width:0px;border-right-width:0px;"/>
@@ -937,7 +937,7 @@
 						<span style="float:left;"><div class="styLNLeftNumBox" style="height:4mm;padding-left:0mm;padding-top:0mm;padding-bottom:0mm;">22</div>
 						<div class="styLNDesc" style="width:140.5mm;height:12mm;padding-top:0mm;padding-bottom:0mm;">
 							<b>Credit for the elderly or the disabled.</b> Enter the<b> smaller </b>
-							of line 20 or line 21. Also enter this amount on Schedule 3 (Form 1040), line 6 (check box <b>c</b> and enter "Sch R" on the line next to that box)
+							of line 20 or line 21. Also enter this amount on Schedule 3 (Form 1040), line 6d (check box <b>c</b> and enter "Sch R" on the line next to that box)
 							<span class="styDotLn" style="float:none;padding-left:2mm;">.................</span>
 						</div></span>
 						<span style="float:right;"><div class="styForm1040SchRColBoxGrey" style="height:12mm;width:5.7mm;   padding-top:7.5mm;    padding-bottom:0mm;text-align:center;border-style:solid;border-right-width:0px;         border-left-width:1px;border-top-width:0px;border-bottom-width:1px;         border-color:black;">
@@ -952,7 +952,7 @@
 					<!-- BEGIN Left Over Table -->
 					<!-- Additonal Data Title Bar and Button -->
 					<div style="width:187mm;padding-top:1mm">
-						<span style="width:187mm;font-weight:bold;font-size: 7pt;text-align:right;">Schedule R (Form 1040) 2021</span>
+						<span style="width:187mm;font-weight:bold;font-size: 7pt;text-align:right;">Schedule R (Form 1040) 2022</span>
 					</div>
 					<br/>
 					<!-- BEGIN Left Over Table -->

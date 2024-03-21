@@ -190,8 +190,7 @@
 							</xsl:call-template></span>
 						</div>	
 					</div>
-					<table style="float:left; font-size:7pt;border-color:black;" class="styTable" cellspacing="0" 
-					summary="Table displaying entity name or names and corresponding employer identification numbers" name="GBCtable" id="GBCtable">
+					<table style="float:left; font-size:7pt;border-color:black;" class="styTable" cellspacing="0" name="GBCtable" id="GBCtable">
 						<thead class="styTableThead">
 							<tr>
 								<th scope="col" class="styTableCell" 
@@ -393,13 +392,9 @@
 					</span>
 					</div>
 					<!--End schema mods -->
-					<div style="width: 187mm;padding-top:2mm; float:left">
-						<img src="{$ImagePath}/8868_Bullet_Round.gif" alt="bullet"/>
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$IRS8868Data/Automatic6MonthExtensionOfTime/OrgHasNoOfficeInUSInd"/>
-									<xsl:with-param name="BackupName">OrganizationHasNoOfficeInUS</xsl:with-param>
-							</xsl:call-template> If the organization does not have an office or place of business in the United States, check this box</label>
+					<div style="width: 187mm;padding-top:2mm; float:left;">
+						<img src="{$ImagePath}/8868_Bullet_Round.gif" alt="bullet"/>If the organization does not have an office or place 
+						of business in the United States, check this box
 						<span class="styDotLn" style="float:right;">............
 							<img src="{$ImagePath}/8868_Bullet_Lg.gif" alt="bullet"/>
 							<!--<span style="width: 2mm"/>-->

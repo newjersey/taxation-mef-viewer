@@ -13,6 +13,7 @@
 <!-- 03/06/2022 - Changes made for defect 68664 - Jeremy Nichols -->
 <!-- 03/06/2022 - Changes made for defect 69133 - Jeremy Nichols -->
 <!-- 04/19/2022 - Changes made for KISAM IM01892252 - Jeremy Nichols -->
+<!-- 05/18/2022 - Changes made for KISAM IM1759681 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="CommonPathRef.xsl"/>
 	<xsl:include href="PopulateTemplate.xsl"/>
@@ -28,13 +29,8 @@
 	<xsl:param name="Form1118ScheduleD" select="$RtnDoc/IRS1118/IRS1118ScheduleD"/>
 	<xsl:param name="Form1118ScheduleE" select="$RtnDoc/IRS1118/IRS1118ScheduleE"/>
 	<xsl:param name="Form1118ScheduleF" select="$RtnDoc/IRS1118/IRS1118ScheduleF"/>
-	<xsl:param name="Form1118ScheduleF1" select="$RtnDoc/IRS1118/IRS1118ScheduleF1"/>
-	<xsl:param name="Form1118ScheduleF2" select="$RtnDoc/IRS1118/IRS1118ScheduleF2"/>
-	<xsl:param name="Form1118ScheduleF3" select="$RtnDoc/IRS1118/IRS1118ScheduleF3"/>
 	<xsl:param name="Form1118ScheduleG" select="$RtnDoc/IRS1118/IRS1118ScheduleG"/>
 	<xsl:param name="Form1118ScheduleH" select="$RtnDoc/IRS1118/IRS1118ScheduleH"/>
-	<xsl:param name="RowForHeight" select="count($Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/GrossSalesSection901jIncmAmt)"/>
-	<xsl:param name="RowHeight" select="$RowForHeight*4"/>
 	<xsl:template match="/">
 		<xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
 		<html>
@@ -1011,24 +1007,24 @@
 									<th class="styIRS1118TableCellLtr" rowspan="2">
 										<span style="width:11mm;height:9mm;"/>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:120mm;height:5mm;" scope="col" colspan="4">13. <span class="styNormalText" style="display:inline;">Allocable Deductions <i>(continued)</i>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:116mm;height:5mm;" scope="col" colspan="4">13. <span class="styNormalText" style="display:inline;">Allocable Deductions <i>(continued)</i>
 										</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col" rowspan="2">14. <span class="styNormalText" style="display:inline;">Apportioned Share of Deductions (enter amount from applicable line of Schedule H, Part I, column (b), and Schedule H, Part II, column (d))</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col" rowspan="2">14. <span class="styNormalText" style="display:inline;">Apportioned Share of Deductions (enter amount from applicable line of Schedule H, Part I, column (b), and Schedule H, Part II, column (d))</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col" rowspan="2">15. <span class="styNormalText" style="display:inline;">Net Operating Loss Deduction</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col" rowspan="2">15. <span class="styNormalText" style="display:inline;">Net Operating Loss Deduction</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col" rowspan="2">16. <span class="styNormalText" style="display:inline;">Total Deductions (add columns 13(k) through 15)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col" rowspan="2">16. <span class="styNormalText" style="display:inline;">Total Deductions (add columns 13(k) through 15)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col" rowspan="2">17. <span class="styNormalText" style="display:inline;">Total Income or (Loss) Before Adjustments (subtract column 16 from column 12).</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col" rowspan="2">17. <span class="styNormalText" style="display:inline;">Total Income or (Loss) Before Adjustments (subtract column 16 from column 12).</span>
 									</th>
 								</tr>
 								<tr>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col">(h) <span class="styNormalText" style="display:inline;">Currency Loss</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col">(h) <span class="styNormalText" style="display:inline;">Currency Loss</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col">(i) <span class="styNormalText" style="display:inline;">Currency Loss Code <br/>(see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col">(i) <span class="styNormalText" style="display:inline;">Currency Loss Code <br/>(see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col">
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col">
 										(j) <span class="styNormalText" style="display:inline;">
 										Other Allocable Deductions (attach schedule) (see instructions)
 										<xsl:call-template name="SetFormLinkInline">
@@ -1036,7 +1032,7 @@
 											</xsl:call-template>
 										</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:32mm;height:9mm;" scope="col">(k) <span class="styNormalText" style="display:inline;">Total Allocable Deductions (add columns 13(a) through 13(h) and 13(j))</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:31mm;height:9mm;" scope="col">(k) <span class="styNormalText" style="display:inline;">Total Allocable Deductions (add columns 13(a) through 13(h) and 13(j))</span>
 									</th>
 								</tr>
 							</thead>
@@ -1175,12 +1171,7 @@
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalCurrencyLossAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styTableCellSmall" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
-												<xsl:call-template name="PopulateAmount">
-													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalGroIncmRelatedExpensesAmt"/>
-												</xsl:call-template>
-											</td>
-											<td class="styTableCellSmall" style="width:27mm;border-color:black;border-bottom-width:1px;background-color:lightgrey;">
+											<td class="styTableCellSmall" style="border-color:black;border-bottom-width:1px;padding-right:1mm;background-color:lightgrey;">
 												<span class="styTableCellPad"/>
 											</td>
 											<td class="styTableCellSmall" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
@@ -3754,7 +3745,7 @@
 							<table class="styTable" cellspacing="0" style="bordder-bottom-width:0px;">
 								<thead class="styTableThead">
 									<tr>
-										<th class="styIRS1118TableCellHeaderSmall" style="width:52mm;" scope="col">7. <span class="styNormalText" style="display:inline;">Total Amount of PTEP in the PTEP Group Within an Annual PTEP Account</span>
+										<th class="styIRS1118TableCellHeaderSmall" style="width:52mm;" scope="col">7. <span class="styNormalText" style="display:inline;">Total Amount of PTEP in the PTEP Group within an Annual PTEP Account</span>
 										</th>
 										<th class="styIRS1118TableCellHeaderSmall" style="width:52mm;" scope="col">8. <span class="styNormalText" style="display:inline;">Total Amount of the PTEP group taxes with respect to PTEP group within an Annual PTEP Account</span>
 										</th>
@@ -5680,7 +5671,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(5) Amount of line 3 R&amp;E deductions apportioned to this separate
+											(5) Amount of line 3 apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -5731,7 +5722,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(6) Amount of line 2b R&amp;E deductions apportioned to this separate
+											(6) Amount of line 2b apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -6049,7 +6040,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(5) Amount of line 3 R&amp;E deductions apportioned to this separate
+											(5) Amount of line 3 apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -6100,7 +6091,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(6) Amount of line 2b R&amp;E deductions apportioned to this separate
+											(6) Amount of line 2b apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -6536,7 +6527,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(5) Amount of line 3 R&amp;E deductions apportioned to this separate
+											(5) Amount of line 3 apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -6587,7 +6578,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(6) Amount of line 2b R&amp;E deductions apportioned to this separate
+											(6) Amount of line 2b apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -6905,7 +6896,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(5) Amount of line 3 R&amp;E deductions apportioned to this separate
+											(5) Amount of line 3 apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -6956,7 +6947,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(6) Amount of line 2b R&amp;E deductions apportioned to this separate
+											(6) Amount of line 2b apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -7274,7 +7265,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(5) Amount of line 3 R&amp;E deductions apportioned to this separate
+											(5) Amount of line 3 apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.
@@ -7325,7 +7316,7 @@
 									<tr>
 										<td style="width:5mm;font-weight:bold;text-align:right;padding-right:1mm;border-bottom:0px solid black;"></td>
 										<td class="styIRS1118LNDescRD" style="width:80mm;text-align:left;border-bottom:0px solid black;">
-											(6) Amount of line 2b R&amp;E deductions apportioned to this separate
+											(6) Amount of line 2b apportioned to R&amp;E deductions for this separate 
 											<br/><span style="width:4mm;"/>category
 											<!--Dotted Line-->
 											<span>.

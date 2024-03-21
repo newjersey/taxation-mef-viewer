@@ -35,10 +35,10 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript" />
 				<xsl:call-template name="InitJS" />
 				<style type="text/css">
-					<!--<xsl:if test="not($Print) or $Print=''">-->
+					<xsl:if test="not($Print) or $Print=''">
 						<xsl:call-template name="IRS8992ScheduleAStyle" />
 						<xsl:call-template name="AddOnStyle" />
-					<!--</xsl:if>-->
+					</xsl:if>
 				</style>
 				<xsl:call-template name="GlobalStylesForm" />
 			</head>
@@ -48,38 +48,34 @@
 					<!-- Page 1 -->
 					<!-- Header -->
 					<div class="styStdDivLS">
-						<div class="styFNBox" style="width:35mm;height:24mm;">
+						<div class="styFNBox" style="width:35mm;height:19mm;">
 							<span class="styFN" style="font-size:9pt;">SCHEDULE A<br />(Form 8992)</span> 
 							<xsl:call-template name="SetFormLinkInline">
 								<xsl:with-param name="TargetNode" select="$FormData" />
 							</xsl:call-template>
 							<br />
-							(December 2021)<br />
+							(Rev. December 2022)<br />
 							<span class="styAgency" style="padding-top:1mm;">
 								Department of the Treasury
 								<br />
 								Internal Revenue Service
 							</span>
 						</div>
-						<div class="styFTBox" style="width:186mm;height:18mm;">
+						<div class="styFTBox" style="width:186mm;height:19mm;">
 							<span class="styFMT" style="font-size:11pt;padding-top:1mm;">
-															U.S. Shareholder Calculation of Global Intangible Low-Taxed Income (GILTI)
+								Schedule of Controlled Foreign Corporation (CFC) Information to Compute Global Intangible Low-Taxed Income (GILTI)
 							</span>
 							<br /><br />
-							<span style="font-weight:bold;">
-								&#9658;Attach to the U.S. shareholder's tax return
-								
-							</span>
-							<br />
-							
-							<span style="font-weight:bold;">
+							<span style="font-weight:bold;padding-top:1mm;">
 								&#9658;Go to
-								<span style="font-style:italic">www.irs.gov/Form8992</span>
+								<a style="text-decoration:none;color:black;" href="http://www.irs.gov/Form8992" title="Link to IRS.gov">
+					<i>www.irs.gov/Form8992</i>
+					</a>
 								for instructions and the latest information.
 							</span>
 						</div>
-						<div class="styTYBox" style="width:30mm;height:24mm;">
-							<div class="styOMB" style="height:auto;font-size:6pt;padding-top:4mm;padding-bottom:4mm;">OMB No. 1545-0123</div>
+						<div class="styTYBox" style="width:35mm;height:19mm;">
+							<div class="styOMB" style="height:9mm;font-size:6pt;padding-top:3mm;padding-bottom:3mm;">OMB No. 1545-0123</div>
 							<div style="margin-left:0mm;text-align:left;font-size:7pt;padding-top:2mm;">
 								Attachment<br/>Sequence No. 
 								<span class="styBoldText" style="font-size:9pt;">992A</span>
@@ -90,7 +86,7 @@
 					<!-- Filer information section -->
 					<div class="styStdDivLS" style="border-top:1px solid black;border-bottom:1px solid black;">
 						<div class="styNameBox" style="width:200mm;">
-							Name of person filing this form <br />
+							Name of person filing this schedule<br />
 							<xsl:call-template name="PopulateReturnHeaderFiler">
 								<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
 							</xsl:call-template>
@@ -245,18 +241,9 @@
 												</xsl:if>
 											</td>
 											<td class="styTableCellCtrInherit">
-												<xsl:choose>
-													<xsl:when test="MissingEINReasonCd">
-														<xsl:call-template name="PopulateText">
-															<xsl:with-param name="TargetNode" select="MissingEINReasonCd"/>
-														</xsl:call-template>
-													</xsl:when>
-													<xsl:otherwise>
-														<xsl:call-template name="PopulateEIN">
-															<xsl:with-param name="TargetNode" select="EIN"/>
-														</xsl:call-template>
-													</xsl:otherwise>
-												</xsl:choose>
+												<xsl:call-template name="PopulateEIN">
+													<xsl:with-param name="TargetNode" select="EIN"/>
+												</xsl:call-template>
 												<xsl:call-template name="LinkToLeftoverDataTableInline">
 													<xsl:with-param name="Desc">Schedule A, row <xsl:value-of select="position()"/> - Foreign Entity Reference IDs</xsl:with-param>
 													<xsl:with-param name="TargetNode" select="ForeignEntityIdentificationGrp"/>
@@ -416,7 +403,7 @@
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;">
 						<span style="float:left;"><strong> For Paperwork Reduction Act Notice, see the Instructions for Form 8992.</strong></span>
 						<span style="position:absolute; left:500px;"> Cat. No. 71396P</span>
-						<span style="float:right;"><strong>Schedule A (Form 8992) (Rev. 12-2021)</strong></span>
+						<span style="float:right;"><strong>Schedule A (Form 8992) (Rev. 12-2022)</strong></span>
 					</div>
 					<!-- Additonal Data Title Bar and Button -->
 					<div class="styLeftOverTitleLineLandscape" id="LeftoverData">
@@ -506,18 +493,9 @@
 											</xsl:if>
 										</td>
 										<td class="styTableCellCtrInherit">
-											<xsl:choose>
-												<xsl:when test="MissingEINReasonCd">
-													<xsl:call-template name="PopulateText">
-														<xsl:with-param name="TargetNode" select="MissingEINReasonCd"/>
-													</xsl:call-template>
-												</xsl:when>
-												<xsl:otherwise>
-													<xsl:call-template name="PopulateEIN">
-														<xsl:with-param name="TargetNode" select="EIN"/>
-													</xsl:call-template>
-												</xsl:otherwise>
-											</xsl:choose>
+											<xsl:call-template name="PopulateEIN">
+												<xsl:with-param name="TargetNode" select="EIN"/>
+											</xsl:call-template>
 											<xsl:call-template name="LinkToLeftoverDataTableInline">
 												<xsl:with-param name="Desc">Schedule A, row <xsl:value-of select="position()"/> - Foreign Entity Reference IDs</xsl:with-param>
 												<xsl:with-param name="TargetNode" select="ForeignEntityIdentificationGrp"/>

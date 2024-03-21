@@ -67,7 +67,7 @@
 							<span class="styFMT" style="font-size:12pt;padding-top:1mm;">Foreign Taxes Deemed Paid by Domestic Corporation</span>
 							<br />
 							<span style="font-weight:bold;font-size:8pt;padding-top:0.5mm;padding-bottom:1mm;">
-								For tax years of foreign corporations whose last taxable year beginning before January 1, 2020, ends during the <br /> U.S. shareholder's 2019 tax year<br />
+								For tax years of foreign corporations whose last taxable year beginning before January 1, 2020, ends during the <br /> U.S. shareholder's 2020 tax year<br />
 							</span><br />
 							<span style="font-weight:bold;">
 								&#9658;Attach to Form 965.

@@ -736,7 +736,7 @@
 												<xsl:call-template name="PopulateSpan">
 													<xsl:with-param name="TargetNode" select="$Form8862Data/EICClaimedInd"/>
 												</xsl:call-template>
-												<input type="checkbox" class="styCkbox" alt="IRS8862EICClaimedInd">
+												<input type="checkbox" class="styCkbox" alt="EICClaimedInd">
 													<xsl:call-template name="PopulateCheckbox">
 														<xsl:with-param name="TargetNode" select="$Form8862Data/EICClaimedInd"/>
 														<xsl:with-param name="BackupName">IRS8862EICClaimedInd</xsl:with-param>
@@ -763,7 +763,7 @@
 												<xsl:call-template name="PopulateSpan">
 													<xsl:with-param name="TargetNode" select="$Form8862Data/CTCACTCODCClaimedInd"/>
 												</xsl:call-template>
-												<input type="checkbox" class="styCkbox" alt="IRS8862CTCACTCODCClaimedInd">
+												<input type="checkbox" class="styCkbox" alt="CTCACTCODCClaimedInd">
 													<xsl:call-template name="PopulateCheckbox">
 														<xsl:with-param name="TargetNode" select="$Form8862Data/CTCACTCODCClaimedInd"/>
 														<xsl:with-param name="BackupName">IRS8862CTCACTCODCClaimedInd</xsl:with-param>
@@ -787,7 +787,7 @@
 												<xsl:call-template name="PopulateSpan">
 													<xsl:with-param name="TargetNode" select="$Form8862Data/AOTCClaimedInd"/>
 												</xsl:call-template>
-												<input type="checkbox" class="styCkbox" alt="IRS8862AOTCClaimedInd">
+												<input type="checkbox" class="styCkbox" alt="AOTCClaimedInd">
 													<xsl:call-template name="PopulateCheckbox">
 														<xsl:with-param name="TargetNode" select="$Form8862Data/AOTCClaimedInd"/>
 														<xsl:with-param name="BackupName">IRS8862AOTCClaimedInd</xsl:with-param>

@@ -412,25 +412,25 @@
 									<img alt="Small arrow" src="{$ImagePath}/8949_Bullet_Sm.gif" width="8" height="8"/></span>
 								</div>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotalProceedsSalesPriceAmt"/>
 								</xsl:call-template>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30.8mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30.8mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
 								<xsl:call-template name="PopulateNegativeNumber">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotalCostOrOtherBasisAmt"/>
 								</xsl:call-template>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:15mm;padding-bottom:1mm;font-size: 7pt; text-align:right; background-color:lightgrey;border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:15mm;padding-bottom:1mm;font-size: 7pt; text-align:right; background-color:lightgrey;border-bottom:1px solid black;border-right:1px solid black;">
 								<span class="styIRS8949TableCellPad"/>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotAdjustmentsToGainOrLossAmt"/>
 								</xsl:call-template>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:0px;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:0px;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotalGainOrLossAmt"/>
 								</xsl:call-template>
@@ -649,25 +649,25 @@
 									<img alt="Small arrow" src="{$ImagePath}/8949_Bullet_Sm.gif" width="8" height="8"/></span>
 								</div>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotalProceedsSalesPriceAmt"/>
 								</xsl:call-template>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30.8mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30.8mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
 								<xsl:call-template name="PopulateNegativeNumber">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotalCostOrOtherBasisAmt"/>
 								</xsl:call-template>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:15mm;padding-bottom:1mm;font-size: 6pt; text-align:right; background-color:lightgrey;border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:15mm;padding-bottom:1mm;font-size: 6pt; text-align:right; background-color:lightgrey;border-bottom:1px solid black;border-right:1px solid black;">
 								<span class="styIRS8949TableCellPad"/>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:1px solid black;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotAdjustmentsToGainOrLossAmt"/>
 								</xsl:call-template>
 							</td>
-							<td class="styIRS8949TableCell" valign="bottom" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:0px;">
+							<td class="styIRS8949TableCell" valign="top" style="width:30mm;padding-bottom:1mm;font-size: 6pt; text-align:right; border-bottom:1px solid black;border-right:0px;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$NodeData/TotalGainOrLossAmt"/>
 								</xsl:call-template>

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 07/22/2022 - Changes for EDGE formatting -->
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -710,9 +713,9 @@ $
 						</div>
 						<div class="styLNLeftNumBox" style="padding-left: 3mm;padding-top:1mm">b</div>
 						<div class="styLNDesc" style="width:179mm;border-right-width:0;padding-top:.5mm;height:auto;">
-   Assets included in Form 990, Part X  
+   Assets included in Form 990, Part X
    <span class="styIRS990ScheduleD_DotSpacing">...............................</span>
-							<span style="padding-left:1.5mm">
+							<span style="padding-left: 0.7mm">
 								<img src="{$ImagePath}/990SchD_Bullet_Md.gif" alt="SchDMd Bullet"/>
 							</span> 
   $
@@ -1136,7 +1139,7 @@ If "Yes," explain the arrangement in Part XIII. Check here if the explanation ha
 					</div>
 					<!-- End Part IV -->
 					<!-- Part V -->
-					<div class="styBB" style="width:187mm;float:none;border-top-width:1px;">
+					<div class="styBB" style="width:186mm;float:none;border-top-width:1px;">
 						<div class="styPartName" style="float:left;width:14mm;">Part V</div>
 						<div class="styPartDesc" style="width:172mm;height:auto;">Endowment Funds.<br/>
 							<span style="font-size: 8pt;font-weight:normal">
@@ -1637,7 +1640,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 								<th scope="col" align="center" style="height:9mm;float:left;width:36mm;font-size:6pt;border-left:1px solid black; border-bottom:1px solid black;vertical-align:top;">
             (c) <span class="styNormalText"> Accumulated depreciation</span>
 								</th>
-								<th scope="col" align="center" style="height:9mm;float:left;width:36mm;font-size:6pt;border-left:1px solid black; border-bottom:1px solid black;vertical-align:top;">
+								<th scope="col" align="center" style="height:9mm;float:left;width:35mm;font-size:6pt;border-left:1px solid black; border-bottom:1px solid black;vertical-align:top;">
             (d) <span class="styNormalText"> Book value</span>
 								</th>
 							</tr>
@@ -1667,7 +1670,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
   </td>
 								<!--<td class="styIRS990ScheduleDShadingCellRB " style="width:46mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
 </td>-->
-								<td class="styLNAmountBoxSmall" style="width:36mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
+								<td class="styLNAmountBoxSmall" style="width:35mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/LandGrp/BookValueAmt"/>
 									</xsl:call-template>
@@ -1699,7 +1702,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<xsl:with-param name="TargetNode" select="$FormData/BuildingsGrp/DepreciationAmt"/>
 									</xsl:call-template>
 								</td>
-								<td class="styLNAmountBoxSmall" style="width:36mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
+								<td class="styLNAmountBoxSmall" style="width:35mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/BuildingsGrp/BookValueAmt"/>
 									</xsl:call-template>
@@ -1728,7 +1731,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<xsl:with-param name="TargetNode" select="$FormData/LeaseholdImprovementsGrp/DepreciationAmt"/>
 									</xsl:call-template>
 								</td>
-								<td class="styLNAmountBoxSmall" style="width:36mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
+								<td class="styLNAmountBoxSmall" style="width:35mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/LeaseholdImprovementsGrp/BookValueAmt"/>
 									</xsl:call-template>
@@ -1756,7 +1759,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<xsl:with-param name="TargetNode" select="$FormData/EquipmentGrp/DepreciationAmt"/>
 									</xsl:call-template>
 								</td>
-								<td class="styLNAmountBoxSmall" style="width:36mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
+								<td class="styLNAmountBoxSmall" style="width:35mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/EquipmentGrp/BookValueAmt"/>
 									</xsl:call-template>
@@ -1785,7 +1788,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<xsl:with-param name="TargetNode" select="$FormData/OtherLandBuildingsGrp/DepreciationAmt"/>
 									</xsl:call-template>
 								</td>
-								<td class="styLNAmountBoxSmall" style="width:36mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
+								<td class="styLNAmountBoxSmall" style="width:35mm;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/OtherLandBuildingsGrp/BookValueAmt"/>
 									</xsl:call-template>
@@ -1799,7 +1802,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<img src="{$ImagePath}/990SchD_Bullet_Md.gif" alt="SchDMdBullet"/>
 									</span>
 								</td>
-								<td class="styLNAmountBoxSmall" style="width:36mm;padding-right:0.75mm;">
+								<td class="styLNAmountBoxSmall" style="width:35mm;padding-right:0.75mm;">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/TotalBookValueLandBuildingsAmt"/>
 									</xsl:call-template>
@@ -1980,7 +1983,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 								</xsl:call-template>
 							</xsl:if>
 							<tr>
-								<td class="styIRS990ScheduleDTableCellLB" style="width:100mm;height:4.5mm;vertical-align:bottom;border-left:0px;border-color:black">
+								<td class="styIRS990ScheduleDTableCellLB" style="width:100mm;height:auto;vertical-align:bottom;border-left:0px;border-color:black">
 									<span class="styItalicText" style="float:left;font-size:6pt;height:auto;">
 										<span style="font-weight:bold;font-style:normal;height:auto;">Total.</span>
  (Column (b) must equal Form 990, Part X, col. (B) line 12.)</span>
@@ -1993,7 +1996,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<xsl:with-param name="TargetNode" select="$FormData/TotalBookValueSecuritiesAmt"/>
 									</xsl:call-template>
 								</td>
-								<td class="styIRS990ScheduleDShadingCell" style="width:52;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;border-bottom-width:1px;"/>
+								<td class="styIRS990ScheduleDShadingCell" style="width:52;height:4.5mm;vertical-align:bottom;padding-right:0.75mm;"/>
 							</tr>
 							<!--<tr>
 		
@@ -2146,7 +2149,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<xsl:with-param name="TargetNode" select="$FormData/TotalBookValueProgramRltdAmt"/>
 									</xsl:call-template>
 								</td>
-								<td class="styIRS990ScheduleDShadingCell" style="border-color: black; width: 52mm; border-right-width: 0px;border-bottom-width:1px;">
+								<td class="styIRS990ScheduleDShadingCell" style="height:4.5mm;border-color: black; width: 52mm; border-right-width: 0px;border-bottom-width:1px;">
 									<span style="width: 4px;"/>
 								</td>
 							</tr>
@@ -2167,7 +2170,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 						<div class="styPartDesc" style="width:172mm;height:auto;">Other Assets.  <br/>
 							<span style="font-size: 8pt;font-weight:normal">
        Complete if the organization answered 'Yes' on Form 990, Part IV, line 11d. </span>
-							<span style="font-size: 7pt;font-weight:normal;padding-left:1mm;">See Form 990, Part X, line 15.
+							<span style="font-size: 8pt;font-weight:normal;padding-left:1mm;">See Form 990, Part X, line 15.
          
         </span>
 						</div>
@@ -2334,13 +2337,33 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 										<span class="styGenericDiv" style="float:left;">
 											<b>(1) </b>Federal income taxes</span>
 									</td>
-									<td class="styIRS990ScheduleDTableCellLB" style="height:auto;vertical-align:bottom;padding-right:0.75mm;border-left:0px;border-color:black;border-right-width:0px;">
+									<td class="styIRS990ScheduleDTableCellLB" style="width:38mm;height:auto;vertical-align:bottom;padding-right:0.75mm;border-left:0px;border-right:0px;border-color:black">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/FederalIncomeTaxLiabilityAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- <xsl:if test="($Print != $Separated) or count($FormData/OtherLiabilitiesOrgGrp) &lt;= 9">
+								<xsl:if test="($Print != $Separated) or count($FormData/OtherLiabilitiesOrgGrp) &lt;= 9">
+     <xsl:for-each select="$FormData/OtherLiabilitiesOrgGrp">
+	  <tr>
+	 <td class="styIRS990ScheduleDTableCellLB" style="width:100mm;height:auto;vertical-align:bottom;padding-right:0.75mm;border-left:0px;text-align:left;border-color:black"> 
+	 <!--<xsl:number value="position()" format="1"/>-->
+	 <!--(<xsl:number value="position()" format="1"/>)-->
+		<xsl:call-template name="PopulateText">
+			<xsl:with-param name="TargetNode" select="Desc"/>
+	</xsl:call-template></td>
+      <td class="styIRS990ScheduleDTableCellLB" style="width:35mm;height:auto;vertical-align:bottom;padding-right:0.75mm;border-left:0px;border-color:black;border-right-width:0px;">
+		<xsl:call-template name="PopulateAmount">
+			<xsl:with-param name="TargetNode" select="Amt"/>
+		</xsl:call-template></td>
+      <!--<td class="styIRS990ScheduleDShadingCell" style="width:52mm;height:4.5mm;vertical-align:bottom;">
+</td>-->
+ </tr>
+ </xsl:for-each>
+    </xsl:if>
+    
+    
+    								<!-- <xsl:if test="($Print != $Separated) or count($FormData/OtherLiabilitiesOrgGrp) &lt;= 9">
      <xsl:for-each select="$FormData/OtherLiabilitiesOrgGrp">
 	  <tr>
 	 <td class="styIRS990ScheduleDTableCellLB" style="width:100mm;height:auto;vertical-align:bottom;padding-right:0.75mm;border-left:0px;text-align:left;border-color:black"> <xsl:number value="position()" format="1"/> TEGE wants Federal Income Taxes hardcoded with a (1) in front and then increment the remaining liabilities starting with (2). IBM nor I could make it work. TEGE changed it to be a (1) in front of the Federal Income Taxes and no number in front of the other liabilities - RLJ 2010
@@ -2371,42 +2394,42 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 2 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(2)</xsl:with-param>
+										<!--<xsl:with-param name="index">(2)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 3 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(3)</xsl:with-param>
+										<!--<xsl:with-param name="index">(3)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 4 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(4)</xsl:with-param>
+										<!--<xsl:with-param name="index">(4)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 5 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(5)</xsl:with-param>
+										<!--<xsl:with-param name="index">(5)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 6 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(6)</xsl:with-param>
+										<!--<xsl:with-param name="index">(6)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 7 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(7)</xsl:with-param>
+										<!--<xsl:with-param name="index">(7)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 8 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(8)</xsl:with-param>
+										<!--<xsl:with-param name="index">(8)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<xsl:if test="count($FormData/OtherLiabilitiesOrgGrp) &lt; 9 or ((count($FormData/OtherLiabilitiesOrgGrp) &gt; 9) and ($Print = $Separated))">
 									<xsl:call-template name="IRS990SchDPartXTableFillerRow">
-										<xsl:with-param name="index">(9)</xsl:with-param>
+										<!--<xsl:with-param name="index">(9)</xsl:with-param>-->
 									</xsl:call-template>
 								</xsl:if>
 								<tr>
@@ -2605,6 +2628,9 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 </tbody>
   </table>
     -->
+    
+    
+    <!-- Changed from 139 to 138 and 99 to 98-->
 					<!-- Begin Parts XI -->
 					<table class="styTable" style="font-size:7pt;width:187mm;border-top-width:1px" cellspacing="0">
 						<thead>
@@ -2624,7 +2650,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 						<tbody valign="top">
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">1</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Total revenue, gains, and other support per audited financial statements
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Total revenue, gains, and other support per audited financial statements
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.......</span>
 								</td>
@@ -2637,7 +2663,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">2</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Amounts included on line 1 but not on Form 990, Part VIII, line 12:</td>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Amounts included on line 1 but not on Form 990, Part VIII, line 12:</td>
 								<td class="styShadingCell" style="width:8mm;height:4.5mm;border-left-width:1px;">
 									<span class="styTableCellPad"/>
 								</td>
@@ -2647,7 +2673,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">a</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Net unrealized gains (losses) on investments
+								<td class="styLNDesc" style="width:98mm;height:auto;">Net unrealized gains (losses) on investments
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">....</span>
 								</td>
@@ -2667,7 +2693,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">b</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Donated services and use of facilities
+								<td class="styLNDesc" style="width:98mm;height:auto;">Donated services and use of facilities
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.........</span>
 								</td>
@@ -2687,7 +2713,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">c</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Recoveries of prior year grants
+								<td class="styLNDesc" style="width:98mm;height:auto;">Recoveries of prior year grants
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">...........</span>
 								</td>
@@ -2709,13 +2735,13 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">d</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Other (Describe in Part XIII.) 
+								<td class="styLNDesc" style="width:98mm;height:auto;">Other (Describe in Part XIII.) 
              <!--<span class="styBB" style="width:62mm;float:none;">
               <xsl:call-template name="SetFormLinkInline">
                 <xsl:with-param name="TargetNode" select="$FormData/TotOthRevenueOnLnaButNotOnLn12"/>
               </xsl:call-template>
               </span> <br />-->
-									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">............</span>
+									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">...........</span>
 									<!-- <span class="styBB" style="width:85mm;float:none;"></span>-->
 								</td>
 								<td class="styLNRightNumBox" style="height:4.5mm;width:8mm">2d</td>
@@ -2732,9 +2758,12 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 									<span class="styTableCellPad"/>
 								</td>
 							</tr>
+	<!-- Changed from 139 to 138 and 99 to 98-->
+	
+	
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">e</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Add lines <span class="styBoldText">2a</span> through <span class="styBoldText">2d</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Add lines <span class="styBoldText">2a</span> through <span class="styBoldText">2d</span>
 									<!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">
               .....................</span>
@@ -2748,7 +2777,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">3</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Subtract line <span class="styBoldText">2e</span> from line <span class="styBoldText">1</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Subtract line <span class="styBoldText">2e</span> from line <span class="styBoldText">1</span>
 									<!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">..................</span>
 								</td>
@@ -2761,7 +2790,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">4</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Amounts included on Form 990, Part VIII, line 12, but not on line <span class="styBoldText">1</span>:</td>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Amounts included on Form 990, Part VIII, line 12, but not on line <span class="styBoldText">1</span>:</td>
 								<td class="styShadingCell" style="width:8mm;height:4.5mm;border-left-width:1px;">
 									<span class="styTableCellPad"/>
 								</td>
@@ -2771,7 +2800,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">a</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Investment expenses not included on  Form 990, Part  VIII, line 7b
+								<td class="styLNDesc" style="width:98mm;height:auto;">Investment expenses not included on  Form 990, Part  VIII, line 7b
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.</span>
 								</td>
@@ -2792,7 +2821,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">b</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Other (Describe in Part XIII.)  
+								<td class="styLNDesc" style="width:98mm;height:auto;">Other (Describe in Part XIII.)  
             <!--<span class="styBB" style="width:62mm;float:none;">
               <xsl:call-template name="SetFormLinkInline">
                 <xsl:with-param name="TargetNode" select="$FormData/OtherRevenues"/>
@@ -2817,7 +2846,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">c</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Add lines <span class="styBoldText">4a</span> and <span class="styBoldText">4b</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Add lines <span class="styBoldText">4a</span> and <span class="styBoldText">4b</span>
 									<!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">....................</span>
 								</td>
@@ -2830,7 +2859,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;border: solid black 1px; border-top-width:0; border-left-width:0;border-right-width:0px;">5</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;border: solid black 1px; border-top-width:0; border-left-width:0;border-right-width:0px;" colspan="3">
+								<td class="styLNDesc" style="width:138mm;height:auto;border: solid black 1px; border-top-width:0; border-left-width:0;border-right-width:0px;" colspan="3">
 Total revenue. Add lines <span class="styBoldText">3</span> and <span class="styBoldText">4c. </span> (This must equal Form 990, Part I, line 12.)
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">......</span>
@@ -2865,8 +2894,10 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 						<tbody valign="top">
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">1</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Total expenses and losses per audited financial statements
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Total expenses and losses per audited financial statements
               <!--Dotted Line-->
+              
+              <!-- Changed from 139 to 138 and 99 to 98-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">...........</span>
 								</td>
 								<td class="styLNRightNumBox" style="width:8mm;height:4.5mm; border-right:0">1</td>
@@ -2878,7 +2909,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">2</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Amounts included on line 1 but not on Form 990, Part IX, line 25:</td>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Amounts included on line 1 but not on Form 990, Part IX, line 25:</td>
 								<td class="styShadingCell" style="width:8mm;height:4.5mm;border-left-width:1px;">
 									<span class="styTableCellPad"/>
 								</td>
@@ -2888,7 +2919,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">a</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Donated services and use of facilities
+								<td class="styLNDesc" style="width:98mm;height:auto;">Donated services and use of facilities
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.........</span>
 								</td>
@@ -2908,7 +2939,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">b</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Prior year adjustments
+								<td class="styLNDesc" style="width:98mm;height:auto;">Prior year adjustments
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">............</span>
 								</td>
@@ -2928,7 +2959,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">c</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Other losses
+								<td class="styLNDesc" style="width:98mm;height:auto;">Other losses
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">................</span>
 								</td>
@@ -2948,8 +2979,8 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">d</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Other (Describe in Part XIII.) 
-             <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">............</span>
+								<td class="styLNDesc" style="width:98mm;height:auto;">Other (Describe in Part XIII.) 
+             <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">...........</span>
 								</td>
 								<td class="styLNRightNumBox" style="height:4.5mm;">2d</td>
 								<td class="styLNAmountBox" style="height:4.5mm;vertical-align:bottom;">
@@ -2967,7 +2998,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">e</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Add lines <span class="styBoldText">2a</span> through <span class="styBoldText">2d</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Add lines <span class="styBoldText">2a</span> through <span class="styBoldText">2d</span>
 									<!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">....................</span>
 								</td>
@@ -2980,7 +3011,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">3</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Subtract line <span class="styBoldText">2e</span> from line <span class="styBoldText">1</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Subtract line <span class="styBoldText">2e</span> from line <span class="styBoldText">1</span>
 									<!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">...................</span>
 								</td>
@@ -2993,7 +3024,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;">4</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Amounts included on Form 990, Part IX, line 25, but not on line <span class="styBoldText">1:</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Amounts included on Form 990, Part IX, line 25, but not on line <span class="styBoldText">1:</span>
 								</td>
 								<td class="styShadingCell" style="width:8mm;height:4.5mm;border-left-width:1px;">
 									<span class="styTableCellPad"/>
@@ -3004,7 +3035,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">a</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Investment expenses not included on Form 990, Part VIII, line 7b
+								<td class="styLNDesc" style="width:98mm;height:auto;">Investment expenses not included on Form 990, Part VIII, line 7b
               <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">..</span>
 								</td>
@@ -3024,8 +3055,8 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">b</td>
-								<td class="styLNDesc" style="width:99mm;height:auto;">Other (Describe in Part XIII.) 
-            <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">............</span>
+								<td class="styLNDesc" style="width:98mm;height:auto;">Other (Describe in Part XIII.) 
+            <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">...........</span>
 								</td>
 								<td class="styLNRightNumBox" style="height:4.5mm;">4b</td>
 								<td class="styLNAmountBox" style="height:4.5mm;vertical-align:bottom;">
@@ -3043,7 +3074,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">c</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;" colspan="3">Add lines <span class="styBoldText">4a</span> and <span class="styBoldText">4b</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;" colspan="3">Add lines <span class="styBoldText">4a</span> and <span class="styBoldText">4b</span>
 									<!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.....................</span>
 								</td>
@@ -3056,7 +3087,7 @@ Total revenue. Add lines <span class="styBoldText">3</span> and <span class="sty
 							</tr>
 							<tr>
 								<td class="styLNLeftNumBox" style="height:4.5mm;border: solid black 1px; border-top-width:0; border-left-width:0;border-right-width:0px;">5</td>
-								<td class="styLNDesc" style="width:139mm;height:auto;border: solid black 1px; border-top-width:0; border-left-width:0;border-right-width:0px;" colspan="3">Total expenses. Add lines <span class="styBoldText">3</span> and <span class="styBoldText">4c.</span>
+								<td class="styLNDesc" style="width:138mm;height:auto;border: solid black 1px; border-top-width:0; border-left-width:0;border-right-width:0px;" colspan="3">Total expenses. Add lines <span class="styBoldText">3</span> and <span class="styBoldText">4c.</span>
          (This must equal Form 990, Part I, line 18.)     <!--Dotted Line-->
 									<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">......</span>
 								</td>

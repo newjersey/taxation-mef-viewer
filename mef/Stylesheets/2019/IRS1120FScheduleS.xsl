@@ -66,9 +66,9 @@
 							</div>
 							<div class="sty1120ScheduleHFST">
 							<br/>
-								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 								 Attach to Form 1120-F<br/>
-								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 									<b> Go to </b>
 									<a style="text-decoration:none;color:black;" href="http://www.irs.gov/form1120F" title="Link to irs.gov">
 										<i>www.irs.gov/Form1120F</i> 
@@ -76,7 +76,7 @@
 									</a>
 							</div>
 						</div>
-						<!-- Tax Year Box -->
+						<!-- Tax Year Box  -->
 						<div class="styTYBox" style="width:37mm;height:22mm;border-left-width:2px;">
 							<!-- OMB No. -->
 							<div class="styOMB" style="text-align:center;">OMB No. 1545-0123</div>
@@ -126,7 +126,7 @@
 						<div class="styLNLeftNumBoxSD">1a</div>
 						<div class="styLNDesc" style="width:121mm;">
 						  Enter the name of the qualified foreign country in which the foreign corporation was organized
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 							<span style="width:3mm;"/>
 						</div>
 						<div class="styUnderlineAmount" style="width:58mm;text-align:left">
@@ -206,7 +206,7 @@
 							 Enter the applicable authority (i.e., the specific provision) of the equivalent exemption type indicated on line 1b (see instructions)
 							</span>
 							<span style="width:1mm;"/>
-							<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+							<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 							<br/>
 							<div class="styUnderlineAmount" style="width:179mm;text-align:left">
 								<xsl:call-template name="PopulateText">
@@ -233,7 +233,7 @@
                             </span>                            
                             <br/>
                             <div style="float:left;padding-right:1mm;padding-top:1mm;"> check here</div>
-							<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+							<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 							<input type="checkbox" alt="EstimateUsed" class="styCkbox" name="Checkbox">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$Form1120FScheduleSData/EstimateUsedInd"/>
@@ -640,7 +640,7 @@
 						<div class="styLNLeftNumBoxSD">6</div>
 						<div class="styLNDesc" style="width:88mm;">
 						  Enter the name of the country in which the stock is primarily traded
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 						<div class="styUnderlineAmount" style="width:91mm;text-align:left;">
 							<xsl:call-template name="PopulateText">
@@ -653,7 +653,7 @@
 						<div class="styLNLeftNumBoxSD">7</div>
 						<div class="styLNDesc" style="width:92mm;">
 						  Enter the name of the securities market(s) on which the stock is listed
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 						<div class="styUnderlineAmount" style="width:87mm;text-align:left">
 							<xsl:call-template name="PopulateText">
@@ -670,7 +670,7 @@
 								Enter a description of each class of stock relied on to meet the "regularly traded test" of Regulations section 1.883-2(d) (see  
 							</span>
 							<span style="width:55mm;float:left;">instructions for description requirements) 
-							<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+							<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 							</span>
 							<xsl:if test="($Print = $Separated) or (count($Form1120FScheduleSData/ClassStockInformationDsc) &gt;1) ">
 								<span class="styUnderlineAmount" style="width:124mm;float:right;text-align:left;">See Additional Data Table
@@ -799,7 +799,7 @@
 									<xsl:with-param name="TargetNode" select="$Form1120FScheduleSData/DaysFrgnCorpStkCloselyHeldCnt"/>
 								</xsl:call-template>
 								<span style="width:1mm;"/>
-								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 								<span style="width:2mm"/>
 							</div>
 							<div style="float:right;clear:none;">
@@ -829,7 +829,7 @@
 							<div class="styLNLeftNumBox" style="width:5mm;"/>
 							<div class="styLNDesc" style="width:6mm;">
 								<span style="width:1mm"/>
-								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 								<span style="width:2mm"/>
 							</div>
 							<div style="float:right;clear:none;">
@@ -866,7 +866,7 @@
 							<div class="styLNDesc" style="width:118mm;">
 								The total number of qualified shareholders, as defined in Regulations section 1.883-4(b)(1)
 							<span style="width:1mm"/>
-								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 								<span style="width:2mm"/>
 							</div>
 							<div style="float:right;clear:none;">
@@ -1094,7 +1094,7 @@
 							<div class="styLNLeftNumBox" style="width:7mm;"/>
 							<div class="styLNDesc" style="width:37mm;">closely-held block of stock
 								<span style="width:1mm"/>
-								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 								<span style="width:2mm"/>
 							</div>
 							<div style="float:right;clear:none;">
@@ -1123,7 +1123,7 @@
 						    </span>
 						</div>
 						<div class="styLNDesc" style="width:54mm;padding-left:8mm;margin-top:-0.5mm;">Regulations section 1.883-3(b)(4) 
-                          <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+                          <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 						<div style="width:35mm;text-align:left;margin-top:-0.5mm;">
 							<xsl:if test="not($Form1120FScheduleSData/ValueSharesOwnedUSPersonsPct) =''">
@@ -1148,7 +1148,7 @@
 						</div>
 						<div class="styLNDesc" style="width:129mm;padding-left:8mm;margin-top:-0.5mm;">
 							11a above as bearer shares maintained in a dematerialized or immobilized book-entry system 
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 						<div style="width:35mm;text-align:left;margin-top:-0.5mm;">
 							<xsl:if test="not($Form1120FScheduleSData/ValueSharesOwnedQlfyUSPrsnPct) =''">
@@ -1168,7 +1168,7 @@
 						<div class="styLNLeftNumBox">12</div>
 						<div class="styLNDesc" style="width:179mm;">
 						  Enter the period during which such qualified U.S. persons held such stock (see instructions)
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 					</div>
 					<!-- Line 12 Row 2-->
@@ -1184,7 +1184,7 @@
 						<div class="styLNLeftNumBox">13</div>
 						<div class="styLNDesc" style="width:179mm;">
 						  Enter the period during which the foreign corporation was a CFC (see instructions)
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 					</div>
 					<!-- Line 13 Row 2-->
@@ -1286,7 +1286,7 @@
 							<div style="float:left;">
 								<span class="styText" style="width:127mm;">Enter the total number of such qualified shareholders as defined in Regulations section 1.883-4(b)(1)
 								</span>								
-								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+								<img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 							</div>
 							<div style="width:42mm;padding-right:1mm;">
 								<span class="styUnderlineAmount" style="width:40mm;float:right;text-align:left;margin-top:-1mm;">
@@ -1505,7 +1505,7 @@
 						</div>
 						<div class="styLNDesc" style="width:79mm;padding-left:8mm;margin-top:-0.5mm;">
 						  in a dematerialized or immobilized book-entry system
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 						<div style="width:35mm;text-align:left;margin-top:-0.5mm;">
 							<xsl:if test="not($Form1120FScheduleSData/OutstandingSharesMaintainedPct) =''">
@@ -1529,7 +1529,7 @@
 						<div class="styLNLeftNumBox" style="padding-left:4mm">d</div>
 						<div class="styLNDesc" style="width:179mm;">
 						  Enter the period during the tax year of the foreign corporation that such stock was held by qualified shareholders
-						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="Bullet"/>
+						  <img src="{$ImagePath}/1120SchH_Bullet.gif" width="6" height="9" alt="right arrow graphic"/>
 						</div>
 					</div>
 					<!-- Line 16d Row 2-->

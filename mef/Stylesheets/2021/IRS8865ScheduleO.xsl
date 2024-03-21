@@ -16,6 +16,8 @@
 <!-- 02/12/2020 - Changes made for defect 128244 - Jeremy Nichols -->
 <!-- 02/13/2020 - Changes made for defect 129401 - Jeremy Nichols -->
 <!-- 07/20/2021 - Changes made for UWR 369465 - Jeremy Nichols -->
+<!-- 10/06/2021 - Changes made for defect 67948 - Jeremy Nichols -->
+<!-- 11/02/2021 - Changes made for defect 67921 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="AddHeader.xsl"/>
@@ -49,12 +51,12 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
 				<xsl:call-template name="InitJS"/>
 				<style type="text/css">
-					<!-- Remember to remove comment before checked-in your code -->
-<!--					<xsl:if test="not($Print) or $Print=''">
--->						<xsl:call-template name="IRS8865ScheduleOStyle"/>
+				
+					<xsl:if test="not($Print) or $Print=''">
+						<xsl:call-template name="IRS8865ScheduleOStyle"/>
 						<xsl:call-template name="AddOnStyle"/>
-<!--					</xsl:if>
--->				</style>
+					</xsl:if>
+				</style>
 				<xsl:call-template name="GlobalStylesForm"/>
 			</head>
 			<body class="styBodyClass">
@@ -269,7 +271,7 @@
 								<tr>
 									<td style="width:5mm;">1a</td>
 									<td style="width:160mm;">
-										Is the partnership a section 721(c) partnership (as defined in Regulations section 1.721(c)-1(b)(14))? See instructions
+										Is the partnership a section 721(c) partnership (as defined in Regulations section 1.721(c)&#8212;1(b)(14))? See instructions
 										<span class="styDotLn" style="float:right;">..</span>
 									</td>
 									<td style="width:11mm;">
@@ -416,7 +418,7 @@
 					</div>
 					<div class="styTableContainer" style="height:auto;display:block;" id="TPctn">
 						<xsl:call-template name="SetInitialState"/>
-						<table class="styDynamicTable" cellspacing="0" cellpadding="0" summary="Table for Transfers Reportable Under Section 6038B" style="height:auto;display:block;">
+						<table class="styDynamicTable" cellspacing="0" cellpadding="0" style="height:auto;display:block;">
 							<thead class="styTableThead">
 								<tr>
 									<th class="styForm8865ScheduleOTablesCells" scope="col" style="width: 20mm; text-align: center;" colspan="2"> Type of <br/> property </th>
@@ -616,7 +618,7 @@
 							</tbody>
 						</table>
 								
-						<table class="styDynamicTable" cellspacing="0" cellpadding="0" summary="Table for Transfers Reportable Under Section 6038B" style="height:auto;display:block;">
+						<table class="styDynamicTable" cellspacing="0" cellpadding="0" style="height:auto;display:block;">
 								<tr>
 									<td class="styForm8865ScheduleOTablesCells" scope="row" style="width:20mm;text-align: left;" colspan="2"> Totals</td>
 									<td class="styForm8865ScheduleOTablesCells" style="width:20mm;height: 4mm; background-color:lightgrey"> </td>
@@ -746,7 +748,7 @@
 					</div><div>
 					<div class="styForm8865ScheduleOTableContainer" style="height:auto;display:block;" id="DTPctn">
 						<xsl:call-template name="SetInitialState"/>
-						<table class="styTable" cellspacing="0" summary="Table for Dispositions Reportable Under Section 6038B">
+						<table class="styTable" cellspacing="0">
 							<thead class="styTableThead">
 								<tr>
 									<th class="styForm8865ScheduleOTablesCells" scope="col" style="width: 23mm; text-align: center;">

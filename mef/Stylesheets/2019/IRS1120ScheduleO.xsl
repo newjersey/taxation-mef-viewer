@@ -18,7 +18,7 @@
             <xsl:with-param name="RootElement" select="local-name($Form1120ScheduleO)"/>
           </xsl:call-template>
         </title>
-        <!--   No Browser Caching  -->
+        <!--   No Browser Caching -->
         <meta http-equiv="Pragma" content="no-cache"/>
         <meta http-equiv="Cache-Control" content="no-cache"/>
         <meta http-equiv="Expires" content="0"/>
@@ -63,9 +63,9 @@
               <div class="styMainTitle" style="width:125mm;height:13mm;">Consent Plan and Apportionment Schedule<br/>
                     for a Controlled Group</div>
               <div class="styFST" style="font-size:6.6pt;">
-                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt="Bullet"/>Attach to Form 1120, 1120-C, 1120-F, 1120-FSC, 1120-L, 1120-PC, 1120-REIT, or 1120-RIC.<br/>
+                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt=" right arrow graphic "/> Attach to Form 1120, 1120-C, 1120-F, 1120-FSC, 1120-L, 1120-PC, 1120-REIT, or 1120-RIC.<br/>
                 <div class="styFST" style="font-size:7pt;">
-                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt="bullet image" style="padding-right:1mm;"/>
+                <img src="{$ImagePath}/1120SchN_Bullet_Title.gif" alt=" right arrow graphic " style="padding-right:1mm;"/>
 					Go to 
 					<a style="text-decoration:none;color:black;" href="http://www.irs.gov/form1120" title="Link to irs.gov">
 						<i>www.irs.gov/Form1120 </i>
@@ -266,17 +266,17 @@
                 <xsl:call-template name="PopulateSpan">
                   <xsl:with-param name="TargetNode" select="$Form1120ScheduleO/CorporateGroupMemberInd"/>
                 </xsl:call-template>
-                <input type="checkbox" alt="CorpMemberForEntireYear" class="styCkbox">
+                <input type="checkbox" alt="corp member for the indicated months " class="styCkbox">
                   <xsl:call-template name="PopulateYesCheckbox">
                     <xsl:with-param name="TargetNode" select="$Form1120ScheduleO/CorporateGroupMemberInd"/>
-                    <xsl:with-param name="BackupName">CorpMemberForEntireYear</xsl:with-param>
+                    <xsl:with-param name="BackupName">corp member for the indicated months </xsl:with-param>
                   </xsl:call-template>
                 </input>
               </span>
               <label>
                 <xsl:call-template name="PopulateLabelYes">
                   <xsl:with-param name="TargetNode" select="$Form1120ScheduleO/CorporateGroupMemberInd"/>
-                  <xsl:with-param name="BackupName">CorpMemberForEntireYear</xsl:with-param>
+                  <xsl:with-param name="BackupName">corp member for the indicated months </xsl:with-param>
                 </xsl:call-template>
               </label>       
 				From <span style="width:25mm;border-bottom:solid 1px;text-align:center;">

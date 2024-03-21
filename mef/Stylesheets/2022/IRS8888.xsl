@@ -44,30 +44,31 @@
 					<xsl:call-template name="DocumentHeader"/>
 					<div class="styBB" style="width:187mm;padding-bottom:0mm;">
 						<div class="styFNBox" style="width:31mm;height:21mm;padding-bottom:0mm;">
-							<div style="padding-top:3mm;padding-bottom:3mm;font-size:8pt;">
+							<div style="padding-top:3mm;padding-bottom:0mm;font-size:8pt;">
             Form <span class="styFormNumber">  8888</span>
 							</div>
-							<div class="styAgency" style="font-size:7.5pt;padding-bottom:0mm;">Department of  the Treasury<br>
-            Internal Revenue Service</br>
+							<div class="styAgency" style="font-size:7.5pt;padding-bottom:0mm;">(Rev. November 2022)<br/>Department of the Treasury<br/>
+            Internal Revenue Service
 							</div>
 						</div>
 						<div class="styFTBox" style="width:120mm;height:14mm;padding-bottom:0mm;">
 							<div class="styMainTitle" style="font-size: 12pt;height:10mm;padding-top:3mm;padding-bottom:1.5mm;">Allocation of Refund (Including Savings Bond Purchases)</div>
 							<div class="styFBT" style="height:1mm;margin-top:1mm;padding-bottom:1.5mm;font-size:6.5pt;">
-								<img src="{$ImagePath}/8888_Bullet_Md.gif" alt="Bullet"/>
-								Go to <i>www.irs.gov/Form 8888</i> for the latest information.
+								
+								Go to <i>www.irs.gov/Form8888</i> for the latest information.
 								<!-- www.irs.gov/Form8888.-->                                                                                                                    </div>
 								<br/><br/>
-							<img src="{$ImagePath}/8888_Bullet_Md.gif" alt="Bullet"/>
+							
 							<b> Attach to your income tax return.</b>
 						</div>
 						<div class="styTYBox" style="width:32mm;height:21mm;text-align:left;">
 							<div class="styOMB" style="width:35.5mm;height:5mm;font-size:7pt;padding-left:4.5mm;padding-top:1mm;padding-bottom:0mm;">
 							OMB No. 1545-0074</div>
-							<div class="styTaxYear" style="width:32mm;height:8mm;margin-left:3mm;           padding-left:4.5mm;padding-bottom:0mm;">20<span class="styTYColor">21</span>
-							</div>
-							<div style="width:32mm;height:2mm;margin-left:3mm; text-align:left;font-size:7.5pt;padding-bottom:0mm;border:">
-          Attachment<br/> Sequence No.  <b>  56</b>
+							<div style="width:32mm;height:2mm;margin-left:3mm; text-align:left;font-size:7.5pt;padding-top:0mm;border:">
+							  For calendar year 
+							  <xsl:value-of select="$RtnHdrData/TaxYr"/>
+							  <br/><br/>
+							  Attachment<br/> Sequence No.  <b>  56</b>
 							</div>
 						</div>
 					</div>
@@ -137,7 +138,7 @@
 							</span>
 						</div>
 					</div>
-					<div style="width:187mm;height:4.5mm;clear:all;">
+					<div style="width:187mm;height:66mm;clear:all;">
 						<xsl:variable name="pos" select="position()"/>
 						<xsl:if test="(position() mod 3)=1">
 							<div class="styIRS8888TableContainer" id="Spcctn">
@@ -190,9 +191,6 @@
 											</xsl:call-template>
 										</span>
 										<span style="width:4mm;padding-top:.5mm;padding-bottom:.5mm;float:left;clear:none;"/>
-										<span style="height:6mm;padding-bottom:1mm;float:left;clear:none;">
-											<img src="{$ImagePath}/8888_Bullet_Lg.gif" alt="Bullet"/>
-										</span>
 										<span style="width:.3mm;"/>
 										<span class="styBoldText" style="font-size:8pt;padding-bottom:3mm;">c</span>
 										<span style="width:3.5mm;"/>
@@ -296,13 +294,13 @@
 									<div class="styLNDesc" style="height:2mm; width:148.2mm;float:left; clear:none;font-size:7pt;"/>
 									</span>
 									<span style="float:right;">
-									<div class="styShadingCellRB" style="height:16mm; width:7mm; border-style:solid; border-right-width:1px; border-left-width:1px; border-top-width:0px; border-bottom-width:0px; border-color:black; background-color:#B8B8B8; float:left; clear:none;"/>
+									<div class="styShadingCellRB" style="height:17mm; width:7mm; border-style:solid; border-right-width:1px; border-left-width:1px; border-top-width:0px; border-bottom-width:0px; border-color:black; background-color:#B8B8B8; float:left; clear:none;"/>
 									<div class="styLNAmountBox" style="height:2mm;font-size:7pt;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;width:31mm;float:left;"/>
 									</span>
 								</div>
 								<!-- End of Step 2a -->
 								<!-- Beginning of b -->
-								<div style="width:187mm;font-size:8.5pt;height:8mm;font-family:Arial;">
+								<div style="width:187mm;font-size:8.5pt;height:9mm;font-family:Arial;padding-top:2mm">
 									<span style="float:left;">
 									<div class="styLNLeftNumBox" style="padding-top:1mm;padding-right:3mm;text-align:right;">b</div>
 									<div class="styLNDesc" style="width:139.5mm;padding-top:0mm;padding-bottom:0mm;">
@@ -315,9 +313,6 @@
 											</xsl:call-template>
 										</span>
 										<span style="width:4mm;padding-top:.5mm;padding-bottom:.5mm;float:left; clear: none;"/>
-										<span style="height:.5mm;padding-bottom:1mm;float:left;clear:none;">
-											<img src="{$ImagePath}/8888_Bullet_Lg.gif" alt="Bullet"/>
-										</span>
 										<span style="width:.3mm;"/>
 										<span class="styBoldText" style="font-size:8pt;padding-bottom:3mm;">c</span>
 										<span style="width:3.5mm;"/>
@@ -419,13 +414,13 @@
 									<div class="styLNDesc" style="height:2mm; width:148.2mm;float:left;clear:none;padding-top:0mm;padding-bottom:0mm;"/>
 									</span>
 									<span style="float:right;">
-									<div class="styShadingCellRB" style="height:14.5mm; width:7mm; border-style:solid; border-right-width:1px; border-left-width:1px; border-top-width:0px; border-bottom-width:0px; border-color:black; background-color:#B8B8B8; float:left;clear:none;padding-top:0mm;padding-bottom:0mm;"/>
+									<div class="styShadingCellRB" style="height:17mm; width:7mm; border-style:solid; border-right-width:1px; border-left-width:1px; border-top-width:0px; border-bottom-width:0px; border-color:black; background-color:#B8B8B8; float:left;clear:none;padding-top:0mm;padding-bottom:0mm;"/>
 									<div class="styLNAmountBox" style="height:2mm;font-size:7pt;border-bottom-width:0px;border-left-width:0px;border-right-width:0px;width:31mm;float:left;padding-top:0mm;padding-bottom:0mm;clear:right;"/>
 									</span>
 								</div>
 								<!-- End of Step 3a -->
 								<!-- Beginning of b -->
-									<div style="width:187mm;font-size:8.5pt;height:8mm;font-family:Arial;">
+									<div style="width:187mm;font-size:8.5pt;height:9mm;font-family:Arial;padding-top:2mm">
 									<span style="float:left;">
 									<div class="styLNLeftNumBox" style="height:4.5mm;padding-top:1mm;padding-right:3mm;text-align:right;">b</div>
 									<div class="styLNDesc" style="width:139.5mm;padding-top:0mm;padding-bottom:0mm;">
@@ -438,9 +433,6 @@
 											</xsl:call-template>
 										</span>
 										<span style="width:4mm;padding-top:.5mm;padding-bottom:.5mm;float:left; clear: none;"/>
-										<span style="height:.5mm;padding-bottom:1mm;float:left;clear:none;">
-											<img src="{$ImagePath}/8888_Bullet_Lg.gif" alt="Bullet"/>
-										</span>
 										<span style="width:.3mm;"/>
 										<span class="styBoldText" style="font-size:8pt;padding-bottom:3mm;">c</span>
 										<span style="width:3.5mm;"/>
@@ -521,8 +513,7 @@
 						</xsl:if>
 					</div>
 			       <!--Part II-->
-					<div style="width:187mm;height:58mm"/>
-					<div style="width:187mm;font-size:9.5pt;" >
+						<div style="width:187mm;font-size:9.5pt;" >
 						<div class="styBB" style="border-top-width:2px;height:8.5mm;">
 							<div class="styPartName" style="height:4mm;font-family:Arial;font-size:9.5pt;">Part II</div>
 							<div class="styPartDesc" style="font-weight:normal;padding-bottom:.5mm;font-size:9.5pt;">
@@ -606,8 +597,7 @@
 								<div class="styLNDesc" style="height:5mm;width:168mm;">
 								     <span style="width:180mm;">If you would like to add a co-owner or beneficiary, enter the name
 								          here (First then Last). If beneficiary, also check here
-								          <img src="{$ImagePath}/8888_Bullet_Sm.gif" alt="Bullet"/>
-									<span style="width:.5mm;"/>
+								          <span style="width:.5mm;"/>
 									<input type="checkbox" title="beneficiaryInd" id="beneficiaryInd" alt="Beneficiary Ind" class="styCkbox" style="height:4mm;width:4mm;">
 										<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="$Form8888Data/SavingsBondPurchaseInfoGrp[$bondpos]/BeneficiaryInd"/>
@@ -675,7 +665,7 @@
 								<div class="styLNDesc" style="width:170mm;height:8mm">
 								     <span style="width:180mm;height:5mm;">If you would like to add a co-owner or beneficiary, enter the name
 								        here (First then Last). If beneficiary, also check here
-								        <img src="{$ImagePath}/8888_Bullet_Sm.gif" alt="Bullet"/>
+								        
 									    <span style="width:.5mm;"/>
 									    <input type="checkbox" title="beneficiaryInd2" id="beneficiaryInd2" alt="Beneficiary Ind" class="styCkbox" style="height:4mm;width:4mm;">
 									    	<xsl:call-template name="PopulateCheckbox">
@@ -774,7 +764,7 @@
 						
      			<div style="width:114mm;font-weight:bold;float:left;clear:none;font-size:7.5pt;">For Paperwork Reduction Act Notice, see your tax return instructions.</div>
 						<div style="width:30mm;float:left;clear:none;">Cat. No. 21858A</div>
-						<div style="width:30mm;text-align:right;font-size:6pt;float:right;clear:none;">Form <span class="styBoldText" style="font-size:8pt;">8888  </span> (2021)</div>
+						<div style="width:40mm;text-align:right;font-size:6pt;float:right;clear:none;">Form <span class="styBoldText" style="font-size:8pt;">8888  </span> (Rev. 11-2022)</div>
 					</div>
 					<div class="pageEnd" style="width:187mm;"/>
 					<!-- END of Page 1 -->

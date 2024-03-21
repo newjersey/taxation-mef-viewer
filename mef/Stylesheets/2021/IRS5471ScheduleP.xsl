@@ -1447,7 +1447,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/BeginningYearBalanceAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/BeginningYearBalanceAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1490,7 +1490,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/BeginningBalanceAdjustmentAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/BeginningBalanceAdjustmentAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1533,7 +1533,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/AdjustedBeginningBalanceAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/AdjustedBeginningBalanceAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1575,7 +1575,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/ReductionTxsUnsuspendedRuleAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/ReductionTxsUnsuspendedRuleAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1617,7 +1617,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/AttrblDistriPrevTaxedEPAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/AttrblDistriPrevTaxedEPAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1660,7 +1660,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/EPCyovNonrecognitionTransAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/EPCyovNonrecognitionTransAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1703,7 +1703,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/TotalOtherAdjustmentsAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/TotalOtherAdjustmentsAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1745,7 +1745,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/TotalPreviouslyTaxedEPAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/TotalPreviouslyTaxedEPAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1788,7 +1788,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/ReclassifiedSect959c2EPAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/ReclassifiedSect959c2EPAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1831,7 +1831,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/ActualDistributionAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/ActualDistributionAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1874,7 +1874,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/ReclassifiedSect959c1EPAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/ReclassifiedSect959c1EPAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1917,7 +1917,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox" style="height:10mm;"><br /><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/EarnInvstUSPropReclassifiedAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/EarnInvstUSPropReclassifiedAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -1960,7 +1960,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/OtherAdjustmentsTotalAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/OtherAdjustmentsTotalAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -2003,7 +2003,7 @@
 						</div>
 						<div class="sty5471SchPLNAmountBox"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/USSection965aPTEPGrp/BalanceBeginningNextYearAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/USSection965bPTEPGrp/BalanceBeginningNextYearAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>

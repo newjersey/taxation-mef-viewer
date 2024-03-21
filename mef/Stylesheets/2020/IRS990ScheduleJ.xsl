@@ -73,13 +73,13 @@
 							<div class="styFBT" style="padding-top:0mm">
           For certain Officers, Directors, Trustees, Key Employees, and Highest<br/>
 		Compensated Employees<br/>
-					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
+					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="Graphic Arrow"/>
 					Complete if the organization answered "Yes" on Form 990, Part IV, line 23.<br/>
-					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
+					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="Graphic Arrow"/>
 		Attach to Form 990. <br/>
 	<!--	<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
 		See separate instructions.<br/>-->
-		<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
+		<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="Graphic Arrow"/>
 		Go to <!--www.irs.gov/form990.--><a href="http://www.irs.gov/form990" title="Link to IRS.gov">
                 <i>www.irs.gov/Form990</i></a> for instructions and the latest information. 
           </div>
@@ -325,7 +325,7 @@ Check the appropiate box(es) if the organization provided any of the following t
 						<div class="styLNLeftNumBox" style="padding-left: 3mm;padding-top:.5mm">b</div>
 						<div class="styLNDesc" style="height:auto;width:155mm;border-right-width:0;padding-top:.5mm">
  If any of the boxes on Line 1a are checked, did the organization follow a written policy regarding payment or reimbursement or provision of all of the expenses described above? If "No," complete Part III to explain
-<span class="styIRS990ScheduleJDotSpacing">.........</span>
+<span class="styIRS990ScheduleJDotSpacing">.....</span>
 						</div>
 						<div class="styIRS990ScheduleJLineIndexMid" style="width:8mm;height:7.5mm;padding-top:4mm;">1b</div>
 						<div class="styIRS990ScheduleJLNYesNoBox" style="width:8mm;height:7.5mm;padding-top:4mm;">
@@ -345,16 +345,16 @@ Check the appropiate box(es) if the organization provided any of the following t
 						<div class="styLNLeftNumBox" style="padding-left: 1mm;padding-top:0mm">2</div>
 					<div class="styLNDesc" style="width:155mm;border-right-width:0;padding-top:0mm">
 Did the organization require substantiation prior to reimbursing or allowing expenses incurred by all <br/>directors, trustees, officers, including the CEO/Executive Director, regarding the items checked on Line 1a?
-<span class="styIRS990ScheduleJDotSpacing">..</span>
+<span class="styIRS990ScheduleJDotSpacing">....</span>
 						</div>
 						
-						<div class="styIRS990ScheduleJLineIndexMid" style="width:8mm;height:4.5mm;padding-top:0mm">2</div>
-						<div class="styIRS990ScheduleJLNYesNoBox" style="width:8mm;height:4.5mm;padding-top:0mm;">
+						<div class="styIRS990ScheduleJLineIndexMid" style="width:8mm;height:5.5mm;padding-top:2mm">2</div>
+						<div class="styIRS990ScheduleJLNYesNoBox" style="width:8mm;height:5.5mm;padding-top:2mm;">
 							<xsl:call-template name="PopulateYesBoxText">
 								<xsl:with-param name="TargetNode" select="$FormData/SubstantiationRequiredInd"/>
 							</xsl:call-template>
 						</div>
-						<div class="styIRS990ScheduleJLNYesNoBox" style="width:8mm;height:4.5mm;padding-top:0mm;">
+						<div class="styIRS990ScheduleJLNYesNoBox" style="width:8mm;height:5.5mm;padding-top:2mm;">
 							<xsl:call-template name="PopulateNoBoxText">
 								<xsl:with-param name="TargetNode" select="$FormData/SubstantiationRequiredInd"/>
 							</xsl:call-template>
@@ -856,7 +856,7 @@ If "Yes" on line 8, did the organization also follow the rebuttable presumption 
 								<xsl:if test="($Print != $Separated) or count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt;= 9">
 									<xsl:for-each select="$FormData/RltdOrgOfficerTrstKeyEmplGrp">
 										<tr>
-											<td class="styTableCell" style="height:4mm;font-size:6pt;text-align:left;vertical-align:top;border-style: solid; border-color: black;"><b><xsl:number value="position()" format="1"/></b>
+											<td class="styTableCell" style="height:4mm;font-size:6pt;text-align:left;vertical-align:top;border-style: solid; border-color: black;"><b><xsl:number value="position()" format="1"/></b><span style="width:1mm;"></span>
 												<xsl:choose>
 													<xsl:when test="PersonNm">
 														<xsl:call-template name="PopulateText">
@@ -972,16 +972,16 @@ If "Yes" on line 8, did the organization also follow the rebuttable presumption 
 								</xsl:if>
 								 <xsl:if test="count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt; 1 or ($Print = $Separated)">
 							<!--	<xsl:if test="count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt; 1 or             (($Print = $Separated) and (count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &gt; 16)) ">-->
-									<tr>
 									
-									<td class="styTableCellText" style="font-size:7pt;border-style: solid; border-color: black;border-right:0px;border-top:0px;width:50mm;">
+									
+									<span> class="styTableCellText" style="font-size:7pt;border-style: solid; border-color: black;border-right:0px;border-top:0px;width:50mm;">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$FormData/RltdOrgOfficerTrstKeyEmplGrp"/>
 											</xsl:call-template>
 										<span style="width:4px"/>
-										 	</td>
+										 	</span>
 								
-                  </tr>
+                  
                 </xsl:if>
 							
 							<xsl:if test="count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt; 2 or ((count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &gt; 16) and ($Print = $Separated))">

@@ -11,6 +11,8 @@
 <!-- 03/09/2020 - Additional changes made for KISAM IM01010106 - Jeremy Nichols -->
 <!-- 05/07/2020 - Changes made for UWR 230731 - Jeremy Nichols -->
 <!-- 09/18/2020 - Changes made for UWR 235481 - Jeremy Nichols -->
+<!-- 11/17/2020 - Changes made for defect 66024 - Jeremy Nichols -->
+<!-- 11/19/2020 - Changes made for defect 66091 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" version="1.0">
 	<xsl:import href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -509,11 +511,22 @@
 										</div>
 										<span style="width:52mm;text-align:right;padding-right:1mm;">For calendar year 2020, or tax<br/></span>
 									   <span style="width: 52mm;  text-align: right;">year beginning 
-										   <span style="width:20mm;border-bottom: 1px solid black;">
-												<xsl:call-template name="PopulateMonthDayYear">
-													<xsl:with-param name="TargetNode" select="$FormData/TaxYearBeginDt"/>
-												</xsl:call-template>
-											</span>
+										    <xsl:choose>
+												<xsl:when test="($FormData/TaxYearBeginDt)">
+													<span style="width:20mm;border-bottom: 1px solid black;">
+														<xsl:call-template name="PopulateMonthDayYear">
+															<xsl:with-param name="TargetNode" select="$FormData/TaxYearBeginDt"/>
+														</xsl:call-template>
+													</span>
+												</xsl:when>
+												<xsl:otherwise>
+													<span style="width:10mm;border-bottom: 1px solid black;">
+														<xsl:call-template name="PopulateMonthDayYear">
+															<xsl:with-param name="TargetNode" select="$FormData/TaxYearBeginDt"/>
+														</xsl:call-template>
+													</span> 2020
+												</xsl:otherwise>
+											</xsl:choose>
 										</span>
 										<span style="width:52mm;text-align:right; ">ending
 										<span style="width: 20mm; border-bottom: 1px solid black; text-align: center;">
@@ -811,7 +824,7 @@
 												</xsl:call-template>
 												If partnership interest is owned through a disregarded entity (DE), enter DE's: <br/>
 												<span style="width:5mm;"/>TIN:<span style="width:0.4mm;"/>
-												<span style="width: 20mm; border-bottom: 1px solid black; text-align: center;">
+												<span style="width: 20mm; border-bottom: 1px solid black; text-align:left;">
 													<!-- If EIN exists -->
 													<xsl:if test="($FormData/DisregardedEntityEIN)">
 														<xsl:call-template name="PopulateEIN">
@@ -835,7 +848,7 @@
 													</xsl:if>
 												</span><span style="width:0.4mm;"/>
 												Name:<span style="width:0.4mm;"/>
-												<span style="width: 42mm; border-bottom: 1px solid black; text-align: center;">
+												<span style="width: 42mm; border-bottom: 1px solid black; text-align:left;">
 													<xsl:call-template name="PopulateText">
 														<xsl:with-param name="TargetNode" select="$FormData/DisregardedEntityName/BusinessNameLine1Txt"/>
 													</xsl:call-template><span style="width:0.4mm;"/>

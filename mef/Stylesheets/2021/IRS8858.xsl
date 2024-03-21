@@ -73,7 +73,7 @@
 														  <br/>Disregarded Entities (FDEs) and Foreign Branches (FBs)
 							</div>
 							<div class="styFBT" style="margin-top:0px;padding-bottom:1mm;">
-									<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>Go to 
+									<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt=" Right Arrow Image"/> Go to 
 											<a href="http://www.irs.gov/form8858" title="Link to IRS.gov"><i>www.irs.gov/Form8858 </i></a>for instructions and the latest information.
 							</div>
 							<br/>
@@ -2788,7 +2788,7 @@
 							<div class="styLNDesc" style="height:4mm;width:146.5mm; ">If “Yes,” enter the amount of the dual consolidated loss
 								<!--Dotted Lines -->
 								<span class="styDotLn" style="float:none;clear:none;padding-right:1mm;">..........</span>	
-								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 								<span style="width:7px;"/> $ 
                                  <span style="width:27mm;border-bottom:1px solid black;text-align:right">
 									(<xsl:call-template name="PopulateAmount">
@@ -2842,7 +2842,7 @@
 							<div class="styLNDesc" style="height:4mm;width:146.5mm; ">Enter the amount of the dual consolidated loss for the combined separate unit
 								<!--Dotted Lines -->
 								<span class="styDotLn" style="float:none;clear:none;padding-right:1mm;">...</span>	
-								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 								<span style="width:7px;"/> $ 
                                  <span style="width:27mm;border-bottom:1px solid black;text-align:right">
 									(<xsl:call-template name="PopulateAmount">
@@ -2869,7 +2869,7 @@
 								determined under Regulations section 1.1503(d)-5(c)(4)(ii)(A)
 								<!--Dotted Lines -->
 								<span class="styDotLn" style="float:none;clear:none;padding-right:0mm;">..............</span>	
-								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 								<span style="width:7px;"/> $ 
                                  <span style="width:25mm;border-bottom:1px solid black;text-align:right">
 									<xsl:call-template name="PopulateAmount">
@@ -3009,7 +3009,7 @@
 								(“cumulative register”) as of the beginning of the tax year
 								<!--Dotted Lines -->
 								<!--<span class="styDotLn" style="float:none;clear:none;padding-right:0mm;">..............</span>	-->
-								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 								<span style="width:7px;"/> $ 
                                  <span style="width:25mm;border-bottom:1px solid black;text-align:right">
 									<xsl:call-template name="PopulateAmount">
@@ -3064,7 +3064,7 @@
 								If “Yes,” enter the total amount of recapture
 								<!--Dotted Lines -->
 								<span class="styDotLn" style="float:none;clear:none;padding-right:0mm;">........</span>	
-								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 								<span style="width:7px;"/> $ 
                                  <span style="width:25mm;border-bottom:1px solid black;text-align:right">
 									<xsl:call-template name="PopulateAmount">
@@ -3239,7 +3239,7 @@
 									Enter exchange rate used for line 7 
 									<!--Dotted Lines -->
 										<span class="styDotLn" style="float:none;clear: none; padding-right:1mm;">.............</span><!--<span style="width:2mm"/>-->
-									    <img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+									    <img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 								</div>
 								<span class="styUnderlineAmount" style="height:4mm;width:36mm;float:none;clear:none"/>
 								<div style="float:right;">
@@ -3325,8 +3325,8 @@
 										</div>
 									</div>
 									<div style="float:right;">
-										<div class="styLNRightNumBox">3</div>
-										<div class="styLNAmountBox" style="width:33mm">
+										<div class="styLNRightNumBox" style="border-bottom-width:2px;">3</div>
+										<div class="styLNAmountBox" style="width:33mm;border-bottom-width:2px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="TotalNetSubtractionsAmt"/>
 												<xsl:with-param name="MaxSize" select="17"/>
@@ -3339,7 +3339,7 @@
 									<div style="float:left;">
 										<div class="styLNLeftNumBox">4</div>
 										<div class="styLNDesc" style="padding-top:.5mm;padding-bottom:.5mm;">
-											<span style="float:left;">Current earnings and profits (or taxable income—see instructions) (line 1 plus line 2 minus line 3)</span>
+											<span style="float:left;">Current earnings and profits (or taxable income&#8212;see instructions) (line 1 plus line 2 minus line 3)</span>
 											<!--Dotted Lines -->
 											<span class="styDotLn" style="float: right; padding-right:1mm;">...</span>
 										</div>
@@ -3365,8 +3365,8 @@
 										</div>
 									</div>
 									<div style="float:right;">
-										<div class="styLNRightNumBox">5</div>
-										<div class="styLNAmountBox" style="width:33mm">
+										<div class="styLNRightNumBox" style="border-bottom-width:2px;">5</div>
+										<div class="styLNAmountBox" style="width:33mm;border-bottom-width:2px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="DASTMGainOrLossAmt"/>
 												<xsl:with-param name="MaxSize" select="17"/>
@@ -3421,7 +3421,7 @@
 										Enter exchange rate used for line 7
 										<!--Dotted Lines -->
 										<span class="styDotLn" style="float:none;clear: none; padding-right:1mm;">.............</span>
-											<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+											<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 									</div>
 									<span class="styUnderlineAmount" style="height:4mm;width:36mm;float:none;">
 										<xsl:call-template name="PopulateAmount">
@@ -4461,7 +4461,7 @@
 									<tr class="styDepTblRow2">
 										<td class="styDepTblCell" style="text-align:left;">
 											<div class="styLNLeftNumBox" style="text-align:left">4</div>
-                      Current earnings and profits (or taxable incomesee instructions) (line 1 plus line 2 minus line 3)
+                      Current earnings and profits (or taxable income&#8212;see instructions) (line 1 plus line 2 minus line 3)
                         </td>
 										<td class="styDepTblCell" style="text-align:center;font-weight:bold;width:5mm">4</td>
 										<td class="styDepTblCell" style="text-align:right;width:33mm">
@@ -4515,7 +4515,7 @@
 										<td class="styDepTblCell" style="text-align:left;border-top-width:0px">
 											<div class="styLNLeftNumBox" style="text-align:left"/>
                       Enter exchange rate used for line 7<span style="width:4px"/>
-											<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Bullet"/>
+											<img src="{$ImagePath}/8858_Bullet_Sm.gif" alt="Right Arrow Image"/>
 											<span style="width:4px"/>
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="ExchangeRt"/>

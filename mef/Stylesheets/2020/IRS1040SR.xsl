@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 03/31/2022 -->
+<!-- Last Modified by Eugenia McDonald on 07/19/2022 -->
 <!DOCTYPE xsl:stylesheet [
   <!ENTITY nbsp "&#160;">
   <!ENTITY ndash "&#8211;">
@@ -2280,14 +2280,11 @@
 						<div class="styGenericDiv" style="width:20mm;height:14mm;">
 							<span style="font-weight:bold;font-size:8pt;">Third Party Designee</span>
 							<br />
-							<span style="font-family:Arial;font-size:7pt;padding-top:1mm">(Other than
-								<br /> paid preparer)</span>
 						</div>
 						<div style="width:167mm;height:7mm;">
-							<span style="font-size:8pt">Do you want to allow another person (other than your paid
-								preparer) to<br/>discuss this return with the IRS? See instructions
+							<span style="font-size:8pt">Do you want to allow another person to discuss this return with the IRS? See<br/> instructions
 								<span class="sty1040SRDotLn" style="float:none;margin-right:2px;">
-									......<img src="{$ImagePath}/1040_Bullet.gif" alt="Right arrow"/>
+									....................<img src="{$ImagePath}/1040_Bullet.gif" alt="Right arrow"/>
 								</span> 
 								<span style="width:60mm;float:right;">
 									<input type="checkbox" class="styCkboxNM" alt="Third Party Designee Ind Yes"
@@ -2325,7 +2322,7 @@
 								</span>
 							</span>
 						</div>
-						<div style="width:167mm;height:7mm;padding-top:1.3mm">
+						<div style="width:167mm;height:8mm;padding-top:1.3mm">
 							<span style="width:16mm;">
 								Designee's <br /> name <img src="{$ImagePath}/1040_Bullet.gif" alt="Right arrow"/>
 							</span>

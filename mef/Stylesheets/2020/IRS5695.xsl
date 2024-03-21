@@ -321,8 +321,8 @@
 						<div class="styLNDesc" style="height:8mm;padding-top:6mm;">
 								Print the complete address of the main home where you installed the fuel cell property.
 							</div>
-						<div class="styLNRightNumBoxNBB" style="height:7mm;background-color:lightgrey"/>
-						<div class="styLNAmountBoxNBB" style="height:7mm;"/>
+						<div class="styLNRightNumBoxNBB" style="height:9mm;background-color:lightgrey"/>
+						<div class="styLNAmountBoxNBB" style="height:9mm;"/>
 					</div>
 					<!-- Address////////////////////////////////////////////////////-->
 					<xsl:choose>
@@ -375,12 +375,32 @@
 					</xsl:for-each>
 					</xsl:when>
 					<xsl:otherwise>
+					
+					<div class="styIRS5695LineItem" style="height:22mm;padding-top:5mm;">
+					<div class="styLNLeftNumBox"/>
+					<div class="styLNDesc" style="padding-left:26mm;">
+					<span style="width:80mm"></span>
+					<div class="styGenericDiv" style="width:110mm;border-top:1px solid black;margin-top:.5mm;height:8.5mm;">
+						Number and street<span style="width:65mm"/>Unit No. <br/>
+						<br/>
+					<span style="width:80mm"></span>
+					</div>
+					<div class="styGenericDiv" style="width:110mm;border-top:1px solid black;margin-top:1mm;">
+						City, State, and ZIP code
+					</div>
+					</div>
+										
+					<div class="styLNRightNumBoxNBB" style="height:26mm;background-color:lightgrey;"/>
+					<div class="styLNAmountBoxNBB" style="height:26mm;"/>
+					</div>
+
+					<!--
 					<div class="styIRS5695LineItem" style="height:8mm;">
 					<div class="styLNLeftNumBox"/>
 					<div class="styLNDesc" style="padding-left:34mm;"/>
 					<div class="styLNRightNumBoxNBB" style="height:8mm;background-color:lightgrey;"/>
 					<div class="styLNAmountBoxNBB" style="height:8mm;"/>
-					</div>
+					</div>-->
 					</xsl:otherwise>
 					</xsl:choose>
 					<!-- (8) ////////////////////////////////////////////////////-->
@@ -673,8 +693,8 @@
 					<div class="styIRS5695LineItem" style="height:20mm;padding-top:5mm;">
 						<div class="styLNLeftNumBox"/>
 						<div class="styLNDesc" style="padding-left:26mm;">
-<span style="width:80mm">							
-<xsl:call-template name="PopulateText">
+					<span style="width:80mm">							
+					<xsl:call-template name="PopulateText">
 								<xsl:with-param name="TargetNode" select="$Form5695Data/NonBusinessEgyEffcntPropCrGrp/EgyPropCrMainHomeUSAddress/AddressLine1Txt"/>
 							</xsl:call-template>
 							</span>

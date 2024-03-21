@@ -314,91 +314,91 @@ depositor or became one because your accumulated tax liability during any month 
 			<body class="styBodyClass" >
 				<div style="float:left;width:117px;border:solid black;border-width:0px 1px 0px 0px;">
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">1</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=1]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">2</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=2]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">3</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=3]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">4</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=4]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">5</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=5]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">6</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=6]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">7</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=7]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">8</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=8]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">9</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=9]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">10</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=10]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">11</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=11]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">12</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=12]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">13</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=13]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">14</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=14]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:18px;float:left;">15</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;float:right;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=15]/TaxLiabilityAmt"/>
 						</xsl:call-template>
@@ -408,85 +408,85 @@ depositor or became one because your accumulated tax liability during any month 
 				</div>
 				<div style="float:right;width:117px;">
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">16</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=16]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">17</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=17]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">18</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=18]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">19</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=19]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">20</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=20]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">21</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=21]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">22</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=22]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">23</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=23]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">24</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=24]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">25</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=25]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">26</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=26]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">27</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=27]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">28</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=28]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 					</div>
 					<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">29</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=29]/TaxLiabilityAmt"/>
 						</xsl:call-template>
@@ -501,7 +501,7 @@ depositor or became one because your accumulated tax liability during any month 
 					
 					<xsl:if test="$NumDays = 30">
 						<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">30</div>
-					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+					<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=30]/TaxLiabilityAmt"/>
 						</xsl:call-template>
@@ -512,13 +512,13 @@ depositor or became one because your accumulated tax liability during any month 
 					
 					<xsl:if test="$NumDays = 31">
 						<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">30</div>
-						<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+						<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 							<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=30]/TaxLiabilityAmt"/>
 						</xsl:call-template>
 						</div>
 						<div class="styIRS943ACalNumBox" style="height:4.3mm;width:19px;">31</div>
-						<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;padding-right:2px;">
+						<div class="styLNAmountBox" style="border-top-width:1px;height:4.3mm;width:98px;border-bottom-width:0px;border-left-width:0px;font-size:6pt;padding-top:1mm;padding-bottom:0px;">
 							<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/DailyTaxLiabilityDetail[DayNum=31]/TaxLiabilityAmt"/>
 						</xsl:call-template>
@@ -529,7 +529,7 @@ depositor or became one because your accumulated tax liability during any month 
 					<span style="float:left;">
 						<span style="width:.5mm"/><xsl:value-of select="$Letter"/><span style="width:1mm"/><span style="font-size:5pt;">Total liability for month </span><span style="width:.5mm"/><img src="{$ImagePath}/943A_Bullet_Sm.gif"  alt="Bullet Image"/>
 					</span>
-					<span style="float:right;padding-right:2px;">
+					<span style="float:right;">
 						<xsl:call-template name="PopulateAmount">
 							<xsl:with-param name="TargetNode" select="$Form943AData/MonthlyTaxLiabilityGrp[MonthCd = $Month]/TotalMonthlyLiabilityAmt"/>
 						</xsl:call-template>

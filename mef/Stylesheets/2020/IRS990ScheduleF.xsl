@@ -9,6 +9,7 @@
 <!-- 11/05/2019 - Changes made for defect 128309 - Jeremy Nichols -->
 <!-- 01/16/2020 - Changes made for 2019 pdf review - Jeremy Nichols -->
 <!-- 06/15/2020 - Changes made for UWR 233977 - Jeremy Nichols -->
+<!-- 11/16/2020 - Changes made for defect 65249 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" version="1.0">
   <xsl:include href="PopulateTemplate.xsl"/>
   <xsl:include href="CommonPathRef.xsl"/>
@@ -196,16 +197,18 @@
                 <xsl:call-template name="PopulateSpan">
                   <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
                 </xsl:call-template>
-                <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="checkGrantRecordsMaintainedYes" alt="checkGrantRecordsMaintainedYes">
                   <xsl:call-template name="PopulateYesCheckbox">
                     <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
+					<xsl:with-param name="BackupName">CheckGrantRecordsMaintainedYes</xsl:with-param>
                   </xsl:call-template>
                 </input>
               </span>
               <span style="width:3mm;"/>
-              <label>
+              <label name="GrantRecordsMaintainedIndYes" id="checkGrantRecordsMaintainedYes">
                 <xsl:call-template name="PopulateLabelYes">
-                  <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
+					<xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
+					<xsl:with-param name="BackupName">CheckGrantRecordsMaintainedYes</xsl:with-param>
                 </xsl:call-template>
                 <span style="font-weight:bold;">Yes</span>
               </label>
@@ -215,16 +218,18 @@
                 <xsl:call-template name="PopulateSpan">
                   <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
                 </xsl:call-template>
-                <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                <input type="checkbox" class="IRS990ScheduleF_Checkbox" alt="CheckGrantRecordsMaintainedNo" id="CheckGrantRecordsMaintainedNo">
                   <xsl:call-template name="PopulateNoCheckbox">
                     <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
+					<xsl:with-param name="BackupName">CheckGrantRecordsMaintainedNo</xsl:with-param>
                   </xsl:call-template>
                 </input>
               </span>
               <span style="width:3mm;"/>
-              <label>
+              <label name="CheckGrantRecordsMaintainedNo" id="CheckGrantRecordsMaintainedNo">
                 <xsl:call-template name="PopulateLabelNo">
-                  <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
+                    <xsl:with-param name="TargetNode" select="$FormData/GrantRecordsMaintainedInd"/>
+					<xsl:with-param name="BackupName">CheckGrantRecordsMaintainedNo</xsl:with-param>
                 </xsl:call-template>
                 <span style="font-weight:bold;">No</span>
               </label>
@@ -699,15 +704,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/TransferToForeignCorpInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="checkTransferToForeignCorpYes" alt="checkTransferToForeignCorpYes">
                           <xsl:call-template name="PopulateYesCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/TransferToForeignCorpInd"/>
+							<xsl:with-param name="BackupName">CheckTransferToForeignCorpYes</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="checkTransferToForeignCorpYes">
                         <xsl:call-template name="PopulateLabelYes">
                           <xsl:with-param name="TargetNode" select="$FormData/TransferToForeignCorpInd"/>
+							<xsl:with-param name="BackupName">CheckTransferToForeignCorpYes</xsl:with-param>
                         </xsl:call-template>
                         <span>Yes</span>
                       </label>
@@ -719,15 +726,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/TransferToForeignCorpInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="checkTransferToForeignCorpNo" alt="checkTransferToForeignCorpNo">
                           <xsl:call-template name="PopulateNoCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/TransferToForeignCorpInd"/>
+							<xsl:with-param name="BackupName">CheckTransferToForeignCorpNo</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="checkTransferToForeignCorpNo">
                         <xsl:call-template name="PopulateLabelNo">
                           <xsl:with-param name="TargetNode" select="$FormData/TransferToForeignCorpInd"/>
+							<xsl:with-param name="BackupName">CheckTransferToForeignCorpNo</xsl:with-param>
                         </xsl:call-template>
                         <span>No</span>
                       </label>
@@ -773,15 +782,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/InterestInForeignTrustInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="checkInterestInForeignTrustYes" alt="checkInterestInForeignTrustYes">
                           <xsl:call-template name="PopulateYesCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/InterestInForeignTrustInd"/>
+							<xsl:with-param name="BackupName">CheckInterestInForeignTrustYes</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="checkInterestInForeignTrustYes">
                         <xsl:call-template name="PopulateLabelYes">
                           <xsl:with-param name="TargetNode" select="$FormData/InterestInForeignTrustInd"/>
+							<xsl:with-param name="BackupName">CheckInterestInForeignTrustYes</xsl:with-param>
                         </xsl:call-template>
                         <span>Yes</span>
                       </label>
@@ -793,15 +804,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/InterestInForeignTrustInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="checkInterestInForeignTrustNo" alt="checkInterestInForeignTrustNo">
                           <xsl:call-template name="PopulateNoCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/InterestInForeignTrustInd"/>
+							<xsl:with-param name="BackupName">CheckInterestInForeignTrustNo</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="checkInterestInForeignTrustNo">
                         <xsl:call-template name="PopulateLabelNo">
                           <xsl:with-param name="TargetNode" select="$FormData/InterestInForeignTrustInd"/>
+							<xsl:with-param name="BackupName">CheckInterestInForeignTrustNo</xsl:with-param>
                         </xsl:call-template>
                         <span>No</span>
                       </label>
@@ -849,15 +862,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignCorpOwnershipInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="checkForeignCorpOwnershipYes" alt="checkForeignCorpOwnershipYes">
                           <xsl:call-template name="PopulateYesCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/ForeignCorpOwnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignCorpOwnershipYes</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="checkForeignCorpOwnershipYes">
                         <xsl:call-template name="PopulateLabelYes">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignCorpOwnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignCorpOwnershipYes</xsl:with-param>
                         </xsl:call-template>
                         <span>Yes</span>
                       </label>
@@ -869,15 +884,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignCorpOwnershipInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="checkForeignCorpOwnershipNo" alt="checkForeignCorpOwnershipNo">
                           <xsl:call-template name="PopulateNoCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/ForeignCorpOwnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignCorpOwnershipNo</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="checkForeignCorpOwnershipNo">
                         <xsl:call-template name="PopulateLabelNo">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignCorpOwnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignCorpOwnershipNo</xsl:with-param>
                         </xsl:call-template>
                         <span>No</span>
                       </label>
@@ -898,15 +915,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/PassiveForeignInvestmestCoInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="CheckPassiveForeignInvestmestCoYes" alt="CheckPassiveForeignInvestmestCoYes">
                           <xsl:call-template name="PopulateYesCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/PassiveForeignInvestmestCoInd"/>
+							<xsl:with-param name="BackupName">CheckPassiveForeignInvestmestCoYes</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="CheckPassiveForeignInvestmestCoYes">
                         <xsl:call-template name="PopulateLabelYes">
                           <xsl:with-param name="TargetNode" select="$FormData/PassiveForeignInvestmestCoInd"/>
+							<xsl:with-param name="BackupName">CheckPassiveForeignInvestmestCoYes</xsl:with-param>
                         </xsl:call-template>
                         <span>Yes</span>
                       </label>
@@ -918,15 +937,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/PassiveForeignInvestmestCoInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="CheckPassiveForeignInvestmestCoNo" alt="CheckPassiveForeignInvestmestCoNo">
                           <xsl:call-template name="PopulateNoCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/PassiveForeignInvestmestCoInd"/>
+							<xsl:with-param name="BackupName">CheckPassiveForeignInvestmestCoNo</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="CheckPassiveForeignInvestmestCoNo">
                         <xsl:call-template name="PopulateLabelNo">
                           <xsl:with-param name="TargetNode" select="$FormData/PassiveForeignInvestmestCoInd"/>
+							<xsl:with-param name="BackupName">CheckPassiveForeignInvestmestCoNo</xsl:with-param>
                         </xsl:call-template>
                         <span>No</span>
                       </label>
@@ -975,15 +996,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="CheckForeignPartnershipYes" alt="CheckForeignPartnershipYes">
                           <xsl:call-template name="PopulateYesCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignPartnershipYes</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="CheckForeignPartnershipYes">
                         <xsl:call-template name="PopulateLabelYes">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignPartnershipYes</xsl:with-param>
                         </xsl:call-template>
                         <span>Yes</span>
                       </label>
@@ -995,15 +1018,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="CheckForeignPartnershipNo" alt="CheckForeignPartnershipNo">
                           <xsl:call-template name="PopulateNoCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignPartnershipNo</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="CheckForeignPartnershipNo">
                         <xsl:call-template name="PopulateLabelNo">
                           <xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipInd"/>
+							<xsl:with-param name="BackupName">CheckForeignPartnershipNo</xsl:with-param>
                         </xsl:call-template>
                         <span>No</span>
                       </label>
@@ -1050,15 +1075,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/BoycottCountriesInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="CheckBoycottCountriesYes" alt="CheckBoycottCountriesYes">
                           <xsl:call-template name="PopulateYesCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/BoycottCountriesInd"/>
+							<xsl:with-param name="BackupName">CheckBoycottCountriesYes</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="CheckBoycottCountriesYes">
                         <xsl:call-template name="PopulateLabelYes">
                           <xsl:with-param name="TargetNode" select="$FormData/BoycottCountriesInd"/>
+							<xsl:with-param name="BackupName">CheckBoycottCountriesYes</xsl:with-param>
                         </xsl:call-template>
                         <span>Yes</span>
                       </label>
@@ -1070,15 +1097,17 @@
                         <xsl:call-template name="PopulateSpan">
                           <xsl:with-param name="TargetNode" select="$FormData/BoycottCountriesInd"/>
                         </xsl:call-template>
-                        <input type="checkbox" class="IRS990ScheduleF_Checkbox">
+                        <input type="checkbox" class="IRS990ScheduleF_Checkbox" id="CheckBoycottCountriesNo" alt="CheckBoycottCountriesNo">
                           <xsl:call-template name="PopulateNoCheckbox">
                             <xsl:with-param name="TargetNode" select="$FormData/BoycottCountriesInd"/>
+							<xsl:with-param name="BackupName">CheckBoycottCountriesNo</xsl:with-param>
                           </xsl:call-template>
                         </input>
                       </span>
-                      <label>
+                      <label id="CheckBoycottCountriesNo">
                         <xsl:call-template name="PopulateLabelNo">
                           <xsl:with-param name="TargetNode" select="$FormData/BoycottCountriesInd"/>
+							<xsl:with-param name="BackupName">CheckBoycottCountriesNo</xsl:with-param>
                         </xsl:call-template>
                         <span>No</span>
                       </label>

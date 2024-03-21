@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 08/24/2021 -->
+<!-- Last Modified by Eugenia McDonald on 07/08/2022 -->
 <!DOCTYPE xsl:stylesheet [
   <!ENTITY nbsp "&#160;">
   <!ENTITY ndash "&#8211;">
@@ -510,7 +510,7 @@
 					<!-- Page 1 Form footer-->
 					<div class="styStdDiv pageEnd" style="border-top:1px solid black;">
 						<span style="font-weight:bold;font-family:Arial;">For Paperwork Reduction Act Notice, see	your tax return instructions.</span>
-						<span style="margin-left:16mm;font-size:6.5pt;">Cat. No. 71480G</span>
+						<span style="margin-left:24mm;font-size:6.5pt;">Cat. No. 71480G</span>
 						<span style="float:right;font-weight:bold;font-size:6.5pt;">Schedule 3 (Form 1040) 2021
 						</span>
 					</div>
@@ -691,8 +691,8 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftLtrBoxDD">f</div>
 						<div class="styLNDesc" style="width:98mm;font-size:8pt">
-							Net section 965 inclusions
-							<span class="sty1040Sch3DotLn">..............</span>		
+							Deferred amount of net 965 tax liability (see instructions)
+							<span class="sty1040Sch3DotLn">...</span>		
 						</div>
 						<div class="styLNRightNumBox">13f</div>
 						<div class="styLNAmountBox" >
@@ -814,9 +814,6 @@
 					</div>
 					<!-- Form footer-->
 					<div class="styStdDiv" style="border-top:1px solid black;">
-						<span style="font-weight:bold;font-family:Arial;">For Paperwork Reduction Act Notice, see
-							your tax return instructions.</span>
-						<span style="margin-left:16mm;font-size:6.5pt;">Cat. No. 71480G</span>
 						<span style="float:right;font-weight:bold;font-size:6.5pt;">Schedule 3 (Form 1040) 2021
 						</span>
 					</div>

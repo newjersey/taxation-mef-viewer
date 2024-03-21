@@ -65,11 +65,11 @@
 							<span class="styFMT" style="font-size:12pt;padding-top:1mm;">Income, War Profits, and Excess Profits Taxes Paid or Accrued</span>
 							<br /><br />
 							<span style="font-weight:bold;">
-								&#9658;Attach to Form 5471.
+								<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/> Attach to Form 5471.
 							</span><br />
 							<span style="font-weight:bold;">
-								&#9658;Go to
-								<span style="font-style:italic">www.irs.gov/Form5471</span>
+								<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/> Go to
+								<a href="http://www.irs.gov/form5471" title="Link to IRS.gov"><i>www.irs.gov/Form5471</i></a>
 								for instructions and the latest information.
 							</span>
 						</div>
@@ -142,7 +142,7 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div class="styNameBox" style="height:7.75mm;width:56mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;">
+						<div class="styNameBox" style="height:7.75mm;width:56mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;word-break:break-all;">
 							<strong>Reference ID number</strong> (see instructions)
 							<br />
 							 <xsl:choose>
@@ -163,7 +163,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">a</div>
 						<div class="styLNDesc" style="width:210mm;">
 							Separate Category (Enter code&mdash;see instructions.)
-							<span class="sty5471SchEDotLn">...................................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...................................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;border-bottom:1px solid black;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -176,7 +177,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">b</div>
 						<div class="styLNDesc" style="width:210mm;">
 							If code 901j is entered on line a, enter the country code for the sanctioned country (see instructions)
-							<span class="sty5471SchEDotLn">...................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;border-bottom:1px solid black;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -189,7 +191,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">c</div>
 						<div class="styLNDesc" style="width:210mm;">
 							If one of the RBT codes is entered on line a, enter the country code for the treaty country (see instructions)
-							<span class="sty5471SchEDotLn">.................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">.................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -270,7 +273,7 @@
 													</xsl:call-template>
 												</xsl:if>
 											</td>
-											<td class="styTableCellCtrInherit">
+											<td class="styTableCellCtrInherit" style="word-break:break-all;">
 												<xsl:choose>
 													<xsl:when test="PayorEIN">
 														<xsl:call-template name="PopulateEIN">
@@ -287,12 +290,18 @@
 
 											<td class="styTableCellCtrInherit" style="text-align:center">
 												<span>
-												  <input type="checkbox" class="styCkboxNM">
-													<xsl:call-template name="PopulateCheckbox">
-													  <xsl:with-param name="TargetNode" select="UnsuspendedTaxesInd"/>
-													  <xsl:with-param name="BackupName">Unsuspended Taxes Indicator</xsl:with-param>    
-													</xsl:call-template>
+												   <input type="checkbox" class="styCkboxNM" alt="(c) Unsuspended Taxes Indicator">
+														<xsl:call-template name="PopulateCheckbox">
+														    <xsl:with-param name="TargetNode" select="UnsuspendedTaxesInd"/>
+														    <xsl:with-param name="BackupName">Unsuspended Taxes Indicator</xsl:with-param>    
+														</xsl:call-template>
 												  </input>
+												  <label>
+														<xsl:call-template name="PopulateLabel">
+															<xsl:with-param name="TargetNode" select="UnsuspendedTaxesInd"/>
+															<xsl:with-param name="BackupName">Unsuspended Taxes Indicator</xsl:with-param>
+														</xsl:call-template>
+												   </label>
 												</span>
 											</td>
 
@@ -409,7 +418,7 @@
 											</td>
 											<td class="styTableCellCtrInherit" style="text-align:center">
 												<span>
-												  <input type="checkbox" class="styCkboxNM">
+												  <input type="checkbox" class="styCkboxNM" alt="(h) Tax Paid US Source Income Indicator">
 													<xsl:call-template name="PopulateCheckbox">
 													  <xsl:with-param name="TargetNode" select="TaxPaidUSSourceIncomeInd"/>
 													  <xsl:with-param name="BackupName">Tax Paid US Source Income Indicator</xsl:with-param>    
@@ -508,7 +517,8 @@
 						<div class="styLNLeftNumBoxSD">5</div>
 						<div class="styLNDesc" style="width:166mm;">
 							Total (combine lines 1 through 4 of column (l)). Also report amount on Schedule E-1, line 4
-							<span class="sty5471SchEDotLn">...........&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...........</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNAmountBox" style="width:40.8mm;padding-right:0.5mm;">
 							<xsl:call-template name="PopulateAmount">
@@ -522,7 +532,8 @@
 						<div class="styLNLeftNumBoxSD">6</div>
 						<div class="styLNDesc" style="width:206.8mm;">
 							Total (combine lines 1 through 4 of column (m)).
-							<span class="sty5471SchEDotLn">..................................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">..................................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNAmountBoxNBB" style="width:41mm;">
 							<xsl:call-template name="PopulateAmount">
@@ -571,8 +582,6 @@
 										<span style="font-weight:bold;">(e) </span> <br /> 
 										Annual PTEP Account <br /> (enter year)
 									</th>
-									<!--<th class="styTableCellHeader" scope="col" style="width:30mm;font-weight:normal;border-right-width:0px;border-bottom-width:0px;background-color:lightgrey;">
-									</th>-->
 								</tr>
 							</thead>
 							<tbody>
@@ -594,7 +603,7 @@
 													</xsl:call-template>
 												</xsl:if>
 											</td>
-											<td class="styTableCellCtrInherit">
+											<td class="styTableCellCtrInherit" style="word-break:break-all;">
 												<xsl:choose>
 													<xsl:when test="DistributingForeignCorpEIN">
 														<xsl:call-template name="PopulateEIN">
@@ -623,8 +632,6 @@
 													<xsl:with-param name="TargetNode" select="AnnualPTEPAccountYr"/>
 												</xsl:call-template>
 											</td>
-											<!--<td class="styTableCellCtrInherit" style="border-right-width:0px;border-bottom-width:0px;background-color:lightgrey;">
-											</td>-->
 										</tr>
 									</xsl:for-each>
 								</xsl:if>
@@ -777,7 +784,8 @@
 						<div class="styLNLeftNumBoxSD">5</div>
 						<div class="styLNDesc" style="width:185.85mm;">
 							Total (combine lines 1 through 4 of column (i)). Also report amount on Schedule E-1, line 6
-							<span class="sty5471SchEDotLn">................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNAmountBoxNBB" style="width:62mm;">
 							<xsl:call-template name="PopulateAmount">
@@ -825,7 +833,7 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div class="styNameBox" style="height:7.75mm;width:56mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;">
+						<div class="styNameBox" style="height:7.75mm;width:56mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;word-break:break-all;">
 							<strong>Reference ID number</strong> (see instructions)
 							<br />
 							 <xsl:choose>
@@ -846,7 +854,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">a</div>
 						<div class="styLNDesc" style="width:210mm;">
 							Separate Category (Enter code&mdash;see instructions.)
-							<span class="sty5471SchEDotLn">...................................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...................................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;border-bottom:1px solid black;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -859,7 +868,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">b</div>
 						<div class="styLNDesc" style="width:210mm;">
 							If code 901j is entered on line a, enter the country code for the sanctioned country (see instructions)
-							<span class="sty5471SchEDotLn">...................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;border-bottom:1px solid black;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -872,7 +882,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">c</div>
 						<div class="styLNDesc" style="width:210mm;">
 							If one of the RBT codes is entered on line a, enter the country code for the treaty country (see instructions)
-							<span class="sty5471SchEDotLn">.................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">.................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -880,9 +891,6 @@
 							</xsl:call-template>
 						</div>
 					</div>
-
-
-
 					<!-- Part II -->
 					<div class="styStdDivLS" style="border-top:1px solid black;border-bottom:1px solid black;">
 						<div class="styPartName">Part II</div>
@@ -892,7 +900,8 @@
 					</div>
 					<div class="styStdDivLS">
 						<div class="styLNDesc" style="width:256mm;float:none;">
-							For tax years beginning after December 31, 2004, has an election been made under section 986(a)(1)(D) to translate taxes using the exchange rate on the date of payment?
+							For tax years beginning after December 31, 2004, has an election been made under section 986(a)(1)(D) to 
+							translate taxes using the exchange rate on the date of payment?
 						</div>
 						<div class="styLNDesc" style="width:256mm;height:auto;float:none;padding-left:8mm;">
 							<xsl:call-template name="PopulateSpan">
@@ -926,7 +935,7 @@
 								</xsl:call-template>No
 							</label>
 							<span style="width:6mm;"/>
-							If "Yes," state date of election &#9658; 
+							If "Yes," state date of election  <img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/><span style="width:1mm;"/>
 							<xsl:call-template name="PopulateMonthDayYear">
 								<xsl:with-param name="TargetNode" select="$FormData/Section986a1DElectionDt"/>
 							</xsl:call-template>
@@ -1004,7 +1013,7 @@
 													</xsl:call-template>
 												</xsl:if>
 											</td>
-											<td class="styTableCellCtrInherit">
+											<td class="styTableCellCtrInherit" style="word-break:break-all;">
 												<xsl:choose>
 													<xsl:when test="PayorEIN">
 														<xsl:call-template name="PopulateEIN">
@@ -1123,7 +1132,8 @@
 						<div class="styLNLeftNumBoxSD">3</div>
 						<div class="styLNDesc" style="width:218.85mm;">
 							In functional currency (combine lines 1 and 2).
-							<span class="sty5471SchEDotLn">......................................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">......................................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNAmountBox" style="width:29mm;">
 							<xsl:call-template name="PopulateAmount">
@@ -1137,7 +1147,8 @@
 						<div class="styLNLeftNumBoxSD">4</div>
 						<div class="styLNDesc" style="width:218.85mm;">
 							In U.S. dollars (translated at the average exchange rate, as defined in section 989(b)(3) and related regulations (see instructions))
-							<span class="sty5471SchEDotLn">...........&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...........</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNAmountBoxNBB" style="width:29mm;">
 							<xsl:call-template name="PopulateAmount">
@@ -1147,11 +1158,13 @@
 					</div>
 					<div class="styStdDivLS" style="border-top:1px solid black;">
 						<div class="styPartName" style="width:30mm;">Schedule E-1</div>
-						<div class="styPartDesc" style="width:225mm;">Taxes Paid, Accrued, or Deemed Paid on Accumulated Earnings and Profits (E&amp;P) of Foreign Corporation</div>
+						<div class="styPartDesc" style="width:225mm;">Taxes Paid, Accrued, or Deemed Paid on Accumulated Earnings and Profits (E&amp;P) 
+						of Foreign Corporation</div>
 					</div>
 					<!-- Sch E-1 cols (a)-(di) -->
 					<div class="styStdDivLS" style="border-top:1px solid black;">
-						<div class="sty5471SchEHeaderBox" style="width:132mm;border-left:none;min-height:0px;height:14mm;font-family:verdana;font-size:8pt;text-align:left;padding-left:2mm;">
+						<div class="sty5471SchEHeaderBox" style="width:132mm;border-left:none;min-height:0px;height:14mm;font-family:verdana;
+						font-size:8pt;text-align:left;padding-left:2mm;">
 							<br />
 							<strong>IMPORTANT: </strong> 
 							<span style="font-style:italic;display:inline;">Enter amounts in U.S. dollars</span>
@@ -1639,7 +1652,7 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div class="styNameBox" style="height:7.75mm;width:56mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;">
+						<div class="styNameBox" style="height:7.75mm;width:56mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;word-break:break-all;">
 							<strong>Reference ID number</strong> (see instructions)
 							<br />
 							 <xsl:choose>
@@ -1660,7 +1673,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">a</div>
 						<div class="styLNDesc" style="width:210mm;">
 							Separate Category (Enter code&mdash;see instructions.)
-							<span class="sty5471SchEDotLn">...................................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...................................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;border-bottom:1px solid black;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -1673,7 +1687,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">b</div>
 						<div class="styLNDesc" style="width:210mm;">
 							If code 901j is entered on line a, enter the country code for the sanctioned country (see instructions)
-							<span class="sty5471SchEDotLn">...................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">...................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;border-bottom:1px solid black;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -1686,7 +1701,8 @@
 						<div class="styLNLeftNumBoxSD" style="width:6mm;">c</div>
 						<div class="styLNDesc" style="width:210mm;">
 							If one of the RBT codes is entered on line a, enter the country code for the treaty country (see instructions)
-							<span class="sty5471SchEDotLn">.................&#9658;</span>
+							<span class="sty5471SchEDotLn"  style="float:none;clear:none;">.................</span>
+							<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right Pointer Bullet"/>
 						</div>
 						<div class="styLNDesc" style="width:40mm;text-align:center;">
 							<xsl:call-template name="PopulateText">
@@ -1694,9 +1710,6 @@
 							</xsl:call-template>
 						</div>
 					</div>
-
-
-
 					<div class="styStdDivLS" style="border-top:1px solid black;">
 						<div class="styPartName" style="width:30mm;">Schedule E-1</div>
 						<div class="styPartDesc" style="width:225mm;">
@@ -1753,7 +1766,7 @@
 					</div>
 					<!-- Line 1a -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">1a</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">1a</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/BeginningYearBalanceAmt"/>
@@ -1807,7 +1820,7 @@
 					</div>
 					<!-- Line 1b -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;padding-left:4.2mm;">b</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;padding-left:4.2mm;">b</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/BeginningBalanceAdjustmentAmt"/>
@@ -1861,7 +1874,7 @@
 					</div>
 					<!-- Line 1c -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;padding-left:4.2mm;">c</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;padding-left:4.2mm;">c</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/AdjustedBeginningBalanceAmt"/>
@@ -1915,7 +1928,7 @@
 					</div>
 					<!-- Line 2 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">2</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">2</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/AdjustedForeignTaxCreditAmt"/>
@@ -1969,7 +1982,7 @@
 					</div>
 					<!-- Line 3a -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">3a</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">3a</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/ReductionTxsUnsuspendedRuleAmt"/>
@@ -2023,7 +2036,7 @@
 					</div>
 					<!-- Line 3b -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;padding-left:4.2mm;">b</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;padding-left:4.2mm;">b</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/DsallwDedTxsSuspendedRuleAmt"/>
@@ -2077,7 +2090,7 @@
 					</div>
 					<!-- Line 4 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">4</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">4</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/TotalTaxInUSDollarsAmt"/>
@@ -2131,7 +2144,7 @@
 					</div>
 					<!-- Line 5 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">5</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">5</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/EPCyovNonrecognitionTransAmt"/>
@@ -2185,7 +2198,7 @@
 					</div>
 					<!-- Line 6 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">6</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">6</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/TotalTaxDeemedPdSection960bAmt"/>
@@ -2239,7 +2252,7 @@
 					</div>
 					<!-- Line 7 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">7</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">7</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/TotalOtherAdjustmentsAmt"/>
@@ -2293,7 +2306,7 @@
 					</div>
 					<!-- Line 8 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">8</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">8</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/TotalCurrentAccumulatedEPAmt"/>
@@ -2347,7 +2360,7 @@
 					</div>
 					<!-- Line 9 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBoxSD" style="width:8mm;border-bottom:1px solid black;">9</div>
+						<div class="styLNLeftNumBoxSD" style="width:7.8mm;border-bottom:1px solid black;">9</div>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
@@ -2361,7 +2374,7 @@
 					</div>
 					<!-- Line 10 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBox" style="width:8mm;border-bottom:1px solid black;">10</div>
+						<div class="styLNLeftNumBox" style="width:7.8mm;border-bottom:1px solid black;">10</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/ActualDistributionAmt"/>
@@ -2415,7 +2428,7 @@
 					</div>
 					<!-- Line 11 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBox" style="width:8mm;border-bottom:1px solid black;">11</div>
+						<div class="styLNLeftNumBox" style="width:7.8mm;border-bottom:1px solid black;">11</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/EarnInvstUSPropReclassifiedAmt"/>
@@ -2469,7 +2482,7 @@
 					</div>
 					<!-- Line 12 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBox" style="width:8mm;border-bottom:1px solid black;">12</div>
+						<div class="styLNLeftNumBox" style="width:7.8mm;border-bottom:1px solid black;">12</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/OtherAdjustmentsTotalAmt"/>
@@ -2523,7 +2536,7 @@
 					</div>
 					<!-- Line 13 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBox" style="width:8mm;border-bottom:1px solid black;">13</div>
+						<div class="styLNLeftNumBox" style="width:7.8mm;border-bottom:1px solid black;">13</div>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
@@ -2537,7 +2550,7 @@
 					</div>
 					<!-- Line 14 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBox" style="width:8mm;border-bottom:1px solid black;">14</div>
+						<div class="styLNLeftNumBox" style="width:7.8mm;border-bottom:1px solid black;">14</div>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
@@ -2551,7 +2564,7 @@
 					</div>
 					<!-- Line 15 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBox" style="width:8mm;border-bottom:1px solid black;">15</div>
+						<div class="styLNLeftNumBox" style="width:7.8mm;border-bottom:1px solid black;">15</div>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
 						<div class="sty5471SchELNAmountBox2" style="background-color:lightgrey"/>
@@ -2565,7 +2578,7 @@
 					</div>
 					<!-- Line 16 -->
 					<div class="styStdDivLS">
-						<div class="styLNLeftNumBox" style="width:8mm;border-bottom:1px solid black;">16</div>
+						<div class="styLNLeftNumBox" style="width:7.8mm;border-bottom:1px solid black;">16</div>
 						<div class="sty5471SchELNAmountBox2">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CFCReclassifiedSect965aPTEPGrp/BalanceBeginningNextYearAmt"/>
@@ -2675,80 +2688,6 @@
 							</tbody>
 						</table>
 					</xsl:if>
-					<!--<xsl:for-each select="$FormData/TxsForeignTaxCrAllowedGrp">
-						<xsl:if test="ForeignEntityIdentificationGrp">
-							<br /><br />
-							<span class="styRepeatingDataTitle">
-								Part I, row <xsl:value-of select="position()"/> - Foreign Entity Reference IDs
-							</span>
-							<table class="styDepTbl" style="font-size:7pt">
-								<thead class="styTableHead">
-									<tr class="styDepTblHdr">
-										<th class="styDepTblCell" style="text-align:left">
-											Reference ID number
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<xsl:for-each select="ForeignEntityIdentificationGrp">
-										<tr>
-											<xsl:attribute name="class">
-												<xsl:choose>
-													<xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
-													<xsl:otherwise>styDepTblRow2</xsl:otherwise>
-												</xsl:choose>
-											</xsl:attribute>
-											<td class="styDepTblCell" style="text-align:left;">
-												<span style="font-size:7pt;">
-													<xsl:call-template name="PopulateText">
-														<xsl:with-param name="TargetNode" select="ForeignEntityReferenceIdNum"/>
-													</xsl:call-template>
-												</span>
-												<br />
-											</td>
-										</tr>
-									</xsl:for-each>
-								</tbody>
-							</table>
-						</xsl:if>
-					</xsl:for-each>-->
-					<!--<xsl:for-each select="$FormData/TxsForeignTaxCrDisallowedGrp">
-						<xsl:if test="ForeignEntityIdentificationGrp">
-							<br /><br />
-							<span class="styRepeatingDataTitle">
-								Part III, row <xsl:value-of select="position()"/> - Foreign Entity Reference IDs
-							</span>
-							<table class="styDepTbl" style="font-size:7pt">
-								<thead class="styTableHead">
-									<tr class="styDepTblHdr">
-										<th class="styDepTblCell" style="text-align:left">
-											Reference ID number
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<xsl:for-each select="ForeignEntityIdentificationGrp">
-										<tr>
-											<xsl:attribute name="class">
-												<xsl:choose>
-													<xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
-													<xsl:otherwise>styDepTblRow2</xsl:otherwise>
-												</xsl:choose>
-											</xsl:attribute>
-											<td class="styDepTblCell" style="text-align:left;">
-												<span style="font-size:7pt;">
-													<xsl:call-template name="PopulateText">
-														<xsl:with-param name="TargetNode" select="ForeignEntityReferenceIdNum"/>
-													</xsl:call-template>
-												</span>
-												<br />
-											</td>
-										</tr>
-									</xsl:for-each>
-								</tbody>
-							</table>
-						</xsl:if>
-					</xsl:for-each>-->
 					<!-- Part 1 separated tables -->
 					<xsl:if test="$shouldSeparateP1">
 						<br/>
@@ -2786,7 +2725,8 @@
 							<tbody>
 								<xsl:for-each select="$FormData/TxsForeignTaxCrAllowedGrp">
 									<tr style="border-color:black;vertical-align:top;">
-										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
+										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
+										<xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellTextInherit" style="padding-left:2.5mm;font-weight:bold;">
 											<xsl:if test="position() &lt;= 4">
 												<xsl:value-of select="position()"/>
@@ -2802,7 +2742,7 @@
 												</xsl:call-template>
 											</xsl:if>
 										</td>
-										<td class="styTableCellCtrInherit">
+										<td class="styTableCellCtrInherit" style="word-break:break-all;">
 											<xsl:choose>
 													<xsl:when test="PayorEIN">
 														<xsl:call-template name="PopulateEIN">
@@ -2882,7 +2822,8 @@
 							<tbody>
 								<xsl:for-each select="$FormData/TxsForeignTaxCrAllowedGrp">
 									<tr style="border-color:black;vertical-align:top;">
-										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
+										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
+										<xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellTextInherit" style="padding-left:2.5mm;font-weight:bold;">
 											<xsl:if test="position() &lt;= 4">
 												<xsl:value-of select="position()"/>
@@ -2947,8 +2888,6 @@
 							</tbody>
 						</table>
 					</xsl:if>
-
-
 <!-- Part 1 Section 2 separated tables -->
 					<xsl:if test="$shouldSeparateP21">
 						<br/>
@@ -2977,14 +2916,13 @@
 										<span style="font-weight:bold;">(e) </span> <br /> 
 										Annual PTEP Account <br /> (enter year)
 									</th>
-									<!--<th class="styTableCellHeader" scope="col" style="width:30mm;font-weight:normal;border-right-width:0px;border-bottom-width:0px;background-color:lightgrey;">
-									</th>-->
 								</tr>
 							</thead>
 							<tbody>
 									<xsl:for-each select="$FormData/TaxesDeemedPaidSection960bGrp">
 										<tr style="border-color:black;vertical-align:top;">
-										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
+										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
+										<xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellTextInherit" style="padding-left:2.5mm;font-weight:bold;">
 											<xsl:if test="position() &lt;= 4">
 												<xsl:value-of select="position()"/>
@@ -3000,7 +2938,7 @@
 													</xsl:call-template>
 												</xsl:if>
 											</td>
-											<td class="styTableCellCtrInherit">
+											<td class="styTableCellCtrInherit" style="word-break:break-all;">
 												<xsl:choose>
 													<xsl:when test="DistributingForeignCorpEIN">
 														<xsl:call-template name="PopulateEIN">
@@ -3029,8 +2967,6 @@
 													<xsl:with-param name="TargetNode" select="AnnualPTEPAccountYr"/>
 												</xsl:call-template>
 											</td>
-											<!--<td class="styTableCellCtrInherit" style="border-right-width:0px;border-bottom-width:0px;background-color:lightgrey;">
-											</td>-->
 										</tr>
 									</xsl:for-each>
 							</tbody>
@@ -3061,7 +2997,8 @@
 							<tbody>
 								<xsl:for-each select="$FormData/TaxesDeemedPaidSection960bGrp">
 									<tr style="border-color:black;vertical-align:top;">
-										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
+										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
+										<xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellTextInherit" style="padding-left:2.5mm;font-weight:bold;">
 											<xsl:if test="position() &lt;= 4">
 												<xsl:value-of select="position()"/>
@@ -3100,25 +3037,12 @@
 							</tbody>
 						</table>
 					</xsl:if>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 					<!-- Part 3 separated table -->
 					<xsl:if test="$shouldSeparateP3">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Part III - Taxes for Which a Foreign Tax Credit Is Disallowed <span style="font-weight:normal;"> (Enter in functional currency of foreign corporation.)</span></span>
+						<span class="styRepeatingDataTitle">Part III - Taxes for Which a Foreign Tax Credit Is Disallowed <span style="font-weight:normal;"> 
+						(Enter in functional currency of foreign corporation.)</span></span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;width:256mm;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">
@@ -3156,7 +3080,8 @@
 							<tbody>
 								<xsl:for-each select="$FormData/TxsForeignTaxCrDisallowedGrp">
 									<tr style="border-color:black;vertical-align:top;">
-										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
+										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
+										<xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellTextInherit" style="padding-left:2.5mm;font-weight:bold;">
 											<xsl:if test="position() &lt; 3">
 												<xsl:value-of select="position()"/>

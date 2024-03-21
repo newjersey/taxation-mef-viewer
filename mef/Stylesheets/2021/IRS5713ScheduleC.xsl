@@ -556,18 +556,15 @@
   </div>
 <!-- End of item 6 -->
  <!-- Begin Footer -->
-      <div class="pageEnd" style="width:187mm;padding-top:1mm;">
-        <!--<div style="float:left;">
-             <span class="styBoldText" >For Paperwork Reduction Act Notice, see see Instructions for Form 5713.</span>
-             <span style="width:10px;"></span>
-              Cat. No. 120770O
-            </div>-->
-            <div style="float:right;">
-              <span class="styBoldText"> Schedule C (Form 5713) (Rev. 09-2018)</span>
+      <div style="width:187mm;padding-top:1mm;">
+        <div style="float:right;">
+            <span class="styBoldText"> Schedule C (Form 5713) (Rev. 09-2018)</span>
         </div>
       </div>
+      <div class="pageEnd"/>
+			<p style="page-break-before:always"/>
       <!-- End Footer -->
-<br/>
+	<br/>
   <!-- BEGIN Left Over Table -->  
     <div class="styLeftOverTitleLine" id="LeftoverData">
       <div class="styLeftOverTitle">

@@ -35,10 +35,10 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
 				<xsl:call-template name="InitJS"/>
 				<style type="text/css">
-					<xsl:if test="not($Print) or $Print=''">
+				<xsl:if test="not($Print) or $Print=''">
 						<xsl:call-template name="IRS940ScheduleRStyle"/>
 						<xsl:call-template name="AddOnStyle"/>
-					</xsl:if>
+				</xsl:if>
 				</style>
 			</head>
 			<!-- 6/9/2017 AM: Per UWR 197907, Form 940 Sch R changed from portrait orientation to landscape orientation. 940 Sch R Style file has changed as well -->
@@ -160,7 +160,7 @@
 							<thead class="styTableThead">
 								<!-- Column a -->
 								<tr>
-									<th class="IRS940ScheduleR_GenericCellHeader" scope="col" style="border-left-width: 0px;">
+									<th class="IRS940ScheduleR_GenericCellHeader" scope="col">
 										<div style="width:32mm;">
 											(a)<br/>Client’s Employer<br/>Identification Number <br/>(EIN)
 										</div>
@@ -227,7 +227,7 @@
 								<xsl:if test="($Print != $Separated) or (count($FormData/ClientInfoGrp) &lt;= 15)">
 									<xsl:for-each select="$FormData/ClientInfoGrp">
 										<tr>
-											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 												<xsl:choose>
 													<xsl:when test="position() &gt; 9">
 														<xsl:choose>														
@@ -253,32 +253,32 @@
 													</xsl:call-template>
 												</div>
 											</td>
-											<td class="IRS940ScheduleR_GenericCell" style="text-align:center;">
+											<td class="IRS940ScheduleR_GenericCell" style="text-align:center;border-right-width:1px;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="FUTAStateCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="IRS940ScheduleR_GenericCell" style="text-align:center;">
+											<td class="IRS940ScheduleR_GenericCell" style="text-align:center;border-right-width:1px;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="WagesTypeCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalTaxableWagesAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalAdjustmentToFUTATaxAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalCreditReductionAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+											<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="ClientDetailGrp/FUTATaxAfterAdjustmentAmt"/>
 												</xsl:call-template>
@@ -293,7 +293,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 1) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm">1</div>
 											<xsl:if test="((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 												<xsl:call-template name="PopulateAdditionalDataTableMessage">
@@ -313,7 +313,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 2) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">2</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -327,7 +327,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 3) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">3</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -341,7 +341,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 4) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">4</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -355,7 +355,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 5) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">5</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -369,7 +369,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 6) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:3mm;padding-top:1mm;">6</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -383,7 +383,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 7) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">7</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -397,7 +397,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 8) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">8</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -411,7 +411,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 9) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">9</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -425,7 +425,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 10) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;padding-top:1mm;">10</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -439,7 +439,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 11) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;padding-top:1mm;">11</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -453,7 +453,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 12) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;padding-top:1mm;">12</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -467,7 +467,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 13) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;padding-top:1mm;">13</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -481,7 +481,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 14) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;padding-top:1mm;">14</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -495,7 +495,7 @@
 								</xsl:if>
 								<xsl:if test="(count($FormData/ClientInfoGrp) &lt; 15) or ((count($FormData/ClientInfoGrp) &gt; 15) and ($Print = $Separated))">
 									<tr>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;padding-top:1mm;">15</div>
 										</td>
 										<td class="IRS940ScheduleR_GenericCell"><br/></td>
@@ -507,43 +507,53 @@
 										<td class="IRS940ScheduleR_GenericCell" style="border-right-width:0px;"><br/></td>
 									</tr>
 								</xsl:if>
-								
+							</tbody>
+						</table>
+					</div>
+					<div class="IRS940ScheduleRTableContainer" style="display:block">
+						<!-- print logic -->
+						<xsl:call-template name="SetInitialState"/>
+						<!-- end -->
+						<table cellspacing="0" style="font-size:7pt;margin-left:0mm">
+							<thead/>
+							<tfoot/>
+							<tbody>
 								<tr>
-									<td class="IRS940ScheduleR_GenericCell" style="width:32.75mm;text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;border-left-width:0px;">
+									<td class="IRS940ScheduleR_GenericCell" style="width:32.75mm;text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;">
 										<div class="styLNLeftNumBox" style="width:5mm;height:10mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;text-align:right;">16</div>
-										<div style="font-size:6pt;padding-top:0.5mm;padding-left:0.5mm;text-align:left;">
+										<div style="font-size:6pt;padding-top:0.5mm;">
 											<b>Subtotals for clients.<br/></b> Add all amounts on<br/> lines 1 through 15	
 											</div>
 									</td>
 									<!--The following cell is to space and shade the table correctly.-->
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:23mm;"/>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:32mm;"/>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<div style="width:32mm;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SubtotalForClientInfoGrp/TotalTaxableWagesAmt"/>
 											</xsl:call-template>
 										</div>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<div style="width:32mm;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SubtotalForClientInfoGrp/TotalAdjustmentToFUTATaxAmt"/>
 											</xsl:call-template>
 										</div>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<div style="width:32mm;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SubtotalForClientInfoGrp/TotalCreditReductionAmt"/>
 											</xsl:call-template>
 										</div>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<div style="width:30mm;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SubtotalForClientInfoGrp/FUTATaxAfterAdjustmentAmt"/>
@@ -559,18 +569,18 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:left;font-weight:bold;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;border-left-width:0px;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:left;font-weight:bold;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;">
 										<div class="styLNLeftNumBox" style="width:5mm;background-color:lightgrey;height:16mm;padding-right:1mm;padding-left:0.5mm;text-align:right;">17</div>
-										<div style="font-size:6pt;padding-top:0.5mm;padding-left:0.5mm;text-align:left;">Enter the combined<br/>
+										<div style="font-size:6pt;padding-top:0.5mm;">Enter the combined<br/>
 										subtotal from line 23<br/> of all Continuation<br/>Sheets for Schedule R<br/> (Form 940).
 										</div>
 									</td>
 									<!--The following cell is to space and shade the table correctly.-->
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:20mm;">
 										</div>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:32mm;">
 										</div>
 									</td>
@@ -581,35 +591,35 @@
 									<td class="IRS940ScheduleR_GenericCell" style="border-right-width:0px"><br/></td>
 								</tr>
 								<tr>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:left;font-weight:bold;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;border-left-width:0px;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:left;font-weight:bold;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;">
 										<div class="styLNLeftNumBox" style="width:5mm;height:10mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;padding-top:0.5mm;text-align:right;">18</div>
-										<div style="font-size:6pt;padding-top:0.5mm;padding-left:0.5mm;text-align:left;">Enter Form 940<br/> amounts for your<br/>employees</div>
+										<div style="font-size:6pt;padding-top:0.5mm;">Enter Form 940<br/> amounts for your<br/>employees</div>
 									</td>
 									<!--The following cell is to space and shade the table correctly.-->
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:20mm;">
 										</div>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:32mm;">
 										</div>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AggregateRecipientDetailGrp/TotalTaxableWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AggregateRecipientDetailGrp/TotalAdjustmentToFUTATaxAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AggregateRecipientDetailGrp/TotalCreditReductionAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AggregateRecipientDetailGrp/FUTATaxAfterAdjustmentAmt"/>
 										</xsl:call-template>
@@ -621,35 +631,35 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;height:16mm;border-left-width:0px;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;padding-right:0px;height:16mm;">
 										<div class="styLNLeftNumBox" style="width:5mm;height:16mm;background-color:lightgrey;padding-right:1mm;padding-left:0.5mm;text-align:right;">19</div>
-										<div style="font-size:6pt;padding-top:0.5mm;padding-left:0.5mm;text-align:left;">
+										<div style="font-size:6pt;padding-top:0.5mm;">
 											<b>Totals.</b> Add lines 16, 17,<br/> and 18. The column<br/> totals must match the <br/> related lines on the<br/>aggregate Form 940.
 										</div>
 									</td>
 									<!--The following cell is to space and shade the table correctly.-->
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:20mm;"/>											
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;">
 										<div style="width:32mm;"/>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotAggregateRcpntClientInfoGrp/TotalTaxableWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotAggregateRcpntClientInfoGrp/TotalAdjustmentToFUTATaxAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotAggregateRcpntClientInfoGrp/TotalCreditReductionAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;vertical-align:bottom;padding-bottom:2mm;">
+									<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;vertical-align:bottom;padding-bottom:2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotAggregateRcpntClientInfoGrp/FUTATaxAfterAdjustmentAmt"/>
 										</xsl:call-template>
@@ -663,7 +673,6 @@
 							</tbody>
 						</table>
 					</div>
-					
 					<xsl:if test="($Print != $Separated)">
 						<xsl:call-template name="SetInitialDynamicTableHeight">
 							<xsl:with-param name="TargetNode" select="$FormData/ClientInfoGrp"/>
@@ -807,37 +816,37 @@
 												</xsl:call-template>
 											</div>
 										</td>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:center;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:center;border-right-width:1px;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="FUTAStateCd"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalTaxableWagesAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalTaxableWagesAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalAdjustmentToFUTATaxAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalCreditReductionAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ClientDetailGrp/FUTATaxAfterAdjustmentAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;">
+										<td class="IRS940ScheduleR_GenericCell" style="text-align:right;border-right-width:0px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ClientDetailGrp/TotalTaxDepositAmt"/>
 											</xsl:call-template>

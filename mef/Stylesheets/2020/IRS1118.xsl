@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet [<!ENTITY nbsp "&#160;">]>
-<!-- 07/19/2019 - Changes made for UWR 216215 - Jeremy Nichols -->
-<!-- 10/08/2019 - Changes made per 2019 pdf review - Jeremy Nichols -->
-<!-- 10/16/2019 - Changes made for KISAM IM00830642 - Jeremy Nichols -->
-<!-- 11/19/2019 - Changes made for defect 128480 - Jeremy Nichols -->
-<!-- 01/14/2020 - Changes made for KISAM IM00830642 - Jeremy Nichols -->
-<!-- 01/27/2020 - Changes made for defect 128477 - Jeremy Nichols -->
-<!-- 01/28/2020 - Changes made for defect 128589 - Jeremy Nichols -->
-<!-- 01/29/2020 - Changes made for defect 128480 - Jeremy Nichols -->
-<!-- 09/09/2020 - Changes made for UWR 236901 - Jeremy Nichols -->
-<!-- 09/18/2020 - Changes made for UWR 239859 - Jeremy Nichols -->
-<!-- 10/27/2020 - Changes made for defect 65736 - Jeremy Nichols -->
-<!-- 10/30/2020 - Changes made for KISAM IM01071942 - Jeremy Nichols -->
-<!-- 11/03/2020 - Changes made for 2020 pdf review - Jeremy Nichols -->
-<!-- 11/13/2020 - Changes made for KISAM IM01349317 - Jeremy Nichols -->
-<!-- 11/24/2020 - Changes made for defect 66163 - Jeremy Nichols -->
-<!-- 12/15/2020 - Changes made for KISAM IM01372163 - Jeremy Nichols -->
 <!-- 01/05/2021 - Changes made for UWR 241847 - Jeremy Nichols -->
 <!-- 01/14/2021 - Changes made for defect 66375 - Jeremy Nichols -->
+<!-- 02/02/2021 - Changes made for 2020 pdf review - Jeremy Nichols -->
+<!-- 02/16/2021 - Changes made for defect 66634 - Jeremy Nichols -->
+<!-- 03/05/2021 - Changes made for KISAM IM01071942 - Jeremy Nichols -->
+<!-- 06/04/2021 - Additional changes made for KISAM IM01372163 - Jeremy Nichols -->
+<!-- 06/04/2021 - Additional changes made for KISAM IM01349317 - Jeremy Nichols -->
+<!-- 10/05/2021 - Changes made for defect 67355 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="CommonPathRef.xsl"/>
 	<xsl:include href="PopulateTemplate.xsl"/>
@@ -118,8 +108,8 @@
 							<div style="width:45mm;text-align:left;padding-left:10mm;padding-top:2mm;">Attachment<br/> Sequence No. <b>118</b></div>
 						</div>
 					</div>
-					<div class="styBB" style="height:9mm;width:256mm;">
-						<div class="styNameBox" style="width:189mm;height:9mm;font-size:7pt;">
+					<div class="styBB" style="height:10mm;width:256mm;">
+						<div class="styNameBox" style="width:189mm;height:10mm;font-size:7pt;">
           Name of corporation<br/>
 							<xsl:call-template name="PopulateText">
 								<xsl:with-param name="TargetNode" select="$Form1118Data/CorporationName/BusinessNameLine1Txt"/>
@@ -129,7 +119,7 @@
 								<xsl:with-param name="TargetNode" select="$Form1118Data/CorporationName/BusinessNameLine2Txt"/>
 							</xsl:call-template>
 						</div>
-						<div class="styEINBox" style="width:65mm;height:9mm;font-size:7pt;font-weight:bold;padding-left:2mm;">
+						<div class="styEINBox" style="width:65mm;height:10mm;font-size:7pt;font-weight:bold;padding-left:2mm;">
           Employer identification number<br/>
 							<br/>
 							<span class="styNormalText">
@@ -616,19 +606,19 @@
 											</td>
 											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
 												<xsl:call-template name="PopulateAmount">
-													<xsl:with-param name="TargetNode" select="Section986cGainOrLossAmt"/>
+													<xsl:with-param name="TargetNode" select="Section986cGainAmt"/>
 												</xsl:call-template>
 												<span style="width:1px;"/>
 											</td>
 											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
 												<xsl:call-template name="PopulateAmount">
-													<xsl:with-param name="TargetNode" select="Section987GainOrLossAmt"/>
+													<xsl:with-param name="TargetNode" select="Section987GainAmt"/>
 												</xsl:call-template>
 												<span style="width:1px;"/>
 											</td>
 											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
 												<xsl:call-template name="PopulateAmount">
-													<xsl:with-param name="TargetNode" select="Section988GainOrLossAmt"/>
+													<xsl:with-param name="TargetNode" select="Section988GainAmt"/>
 												</xsl:call-template>
 												<span style="width:1px;"/>
 											</td>
@@ -732,17 +722,17 @@
 											</td>
 											<td class="styTableCellSmall" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
 												<xsl:call-template name="PopulateAmount">
-													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotSection986cGainOrLossAmt"/>
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalSection986cGainAmt"/>
 												</xsl:call-template>
 											</td>
 											<td class="styTableCellSmall" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
 												<xsl:call-template name="PopulateAmount">
-													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotSection987GainOrLossAmt"/>
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalSection987GainAmt"/>
 												</xsl:call-template>
 											</td>
 											<td class="styTableCellSmall" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
 												<xsl:call-template name="PopulateAmount">
-													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotSection988GainOrLossAmt"/>
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalSection988GainAmt"/>
 												</xsl:call-template>
 											</td>
 											<td class="styTableCellSmall" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
@@ -1020,9 +1010,7 @@
 									<th class="styIRS1118TableCellHeaderSmall" style="width:35mm;height:9mm;" scope="col">
 										(h) <span class="styNormalText" style="display:inline;">
 										Other Allocable Deductions (attach schedule) (see instructions)
-										<xsl:call-template name="SetFormLinkInline">
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/OtherAllocableDeductionsAmt"/>
-										</xsl:call-template></span>
+										</span>
 									</th>
 									<th class="styIRS1118TableCellHeaderSmall" style="width:35mm;height:9mm;" scope="col">(i) <span class="styNormalText" style="display:inline;">Total Allocable Deductions (add columns 14(a) through 14(h))</span>
 									</th>
@@ -1047,6 +1035,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="OtherAllocableDeductionsAmt"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="OtherAllocableDeductionsAmt"/>
 												</xsl:call-template>
@@ -2618,7 +2609,7 @@
 					<!-- END SCHEDULE B PART III-->
 					
 					<!-- BEGIN SCHEDULE C -->
-					<div class="styBB" style="width:256mm;">
+					<div class="styBB" style="width:256mm;border-bottom:0px;">
 						<div class="styTitleName">Schedule C</div>
 						<span class="styIRS1118TitleDesc">Tax Deemed Paid With Respect to Section 951(a)(1) Inclusions by Domestic Corporation Filing Return (Section 960(a))</span>
 						<div style="margin-left: 27mm; width: 232mm; float:left; clear:none">
@@ -2635,50 +2626,49 @@
 								<!-- end button display logic -->
 							</div>
 						</div>
-					</div>
 					<!-- BEGIN SCHEDULE C PART I-->
-					<div class="styTableContainerLandscape" style="width:260mm;border-top-width:0px;border-bottom-width:0px;" id="DIVDIPST1986ctn">
+					<div class="styTableContainerLandscape" style="width:260mm;border-top-width:1px;border-bottom-width:0px;" id="DIVDIPST1986ctn">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
 						<table class="styLandscapeTable" summary="Part I—Dividends and Deemed Inclusions From Post-1986 Undistributed Earnings" cellspacing="0" style="width:259mm;">
 							<thead class="styTableThead">
 								<tr>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:4pt;" rowspan="2" scope="col">1a. <span class="styNormalText" style="display:inline;">Name of Foreign Corporation</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:5pt;" rowspan="2" scope="col">1a. <span class="styNormalText" style="display:inline;">Name of Foreign Corporation</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:4pt;" rowspan="2" scope="col">1b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Coporation (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:5pt;" rowspan="2" scope="col">1b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Coporation (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">1c. <span class="styNormalText" style="display:inline;">QBU Reference ID (if applicable)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">1c. <span class="styNormalText" style="display:inline;">QBU Reference ID (if applicable)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">2. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">2. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">3. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">3. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">4. <span class="styNormalText" style="display:inline;">Functional Currency of Foreign Corporation (enter code - seev instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">4. <span class="styNormalText" style="display:inline;">Functional Currency of Foreign Corporation (enter code - seev instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:45mm;font-size:4pt;" colspan="3" scope="col">5. <span class="styNormalText" style="display:inline;">Subpart F Income Group</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:45mm;font-size:5pt;" colspan="3" scope="col">5. <span class="styNormalText" style="display:inline;">Subpart F Income Group</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">6. <span class="styNormalText" style="display:inline;">Total Net Income in Subpart F Income Group (in functional currency of foreign corporation)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">6. <span class="styNormalText" style="display:inline;">Total Net Income in Subpart F Income Group (in functional currency of foreign corporation)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">7. <span class="styNormalText" style="display:inline;">Total Current Year Taxes in Subpart F Income Group (in U.S. dollars)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">7. <span class="styNormalText" style="display:inline;">Total Current Year Taxes in Subpart F Income Group (in U.S. dollars)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:4pt;" colspan="2" scope="col">8. <span class="styNormalText" style="display:inline;">Section 951(a)(1) Inclusion Attributable to Subpart F Income Group</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:5pt;" colspan="2" scope="col">8. <span class="styNormalText" style="display:inline;">Section 951(a)(1) Inclusion Attributable to Subpart F Income Group</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">9. <span class="styNormalText" style="display:inline;">Divide column 8(a) by column 6</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">9. <span class="styNormalText" style="display:inline;">Divide column 8(a) by column 6</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:4pt;" rowspan="2" scope="col">10. <span class="styNormalText" style="display:inline;">Tax Deemed Paid (multiply column 7 by column 9)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:15mm;font-size:5pt;" rowspan="2" scope="col">10. <span class="styNormalText" style="display:inline;">Tax Deemed Paid (multiply column 7 by column 9)</span>
 									</th>
 								</tr>
 								<tr>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:4pt;" scope="col">(a) <span class="styNormalText" style="display:inline;">Reg. sec. 1.960-1(d)(2)(ii)(B)(2)(enter code)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:5pt;" scope="col">(a) <span class="styNormalText" style="display:inline;">Reg. sec. 1.960-1(d)(2)(ii)(B)(2)(enter code)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:4pt;" scope="col">(b) <span class="styNormalText" style="display:inline;">Reg. sec.  1.904-4(c)(3)(i)-(iv) (enter code)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:5pt;" scope="col">(b) <span class="styNormalText" style="display:inline;">Reg. sec.  1.904-4(c)(3)(i)-(iv) (enter code)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:4pt;" scope="col">(c) <span class="styNormalText" style="display:inline;">Unit</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:5pt;" scope="col">(c) <span class="styNormalText" style="display:inline;">Unit</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:4pt;" scope="col">(a) <span class="styNormalText" style="display:inline;">Functional Currency</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:5pt;" scope="col">(a) <span class="styNormalText" style="display:inline;">Functional Currency</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:4pt;" scope="col">(b) <span class="styNormalText" style="display:inline;">U.S. Dollars</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:24mm;font-size:5pt;" scope="col">(b) <span class="styNormalText" style="display:inline;">U.S. Dollars</span>
 									</th>
 								</tr>
 							</thead>
@@ -2687,7 +2677,7 @@
 								<xsl:if test="(count($Form1118ScheduleC/Section951a1InclusionsCorpGrp) &lt; 7) or ((count($Form1118ScheduleC/Section951a1InclusionsCorpGrp) &gt; 6) and ($Print != $Separated))">
 									<xsl:for-each select="$Form1118ScheduleC/Section951a1InclusionsCorpGrp">
 										<tr style="height:6mm;">
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:left;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:left;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="ForeignCorporationName/BusinessNameLine1Txt"/>
 												</xsl:call-template>
@@ -2696,7 +2686,7 @@
 													<xsl:with-param name="TargetNode" select="ForeignCorporationName/BusinessNameLine2Txt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:choose>
 													<xsl:when test="(MissingEINReasonCd)">
 														<xsl:call-template name="PopulateText">
@@ -2719,52 +2709,52 @@
 													</xsl:otherwise>
 												</xsl:choose>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="QBUReferenceIdNum"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="TaxYearEndMonthYr"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="CountryCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="FunctionalCurrencyCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="SubpartFIncomeGrpRegSect1960Cd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="SubpartFIncomeGrpRegSect1904Cd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:center;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="QBUName"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="border-right-width:1px;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="border-right-width:1px;font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="TotNetIncmSubpartFIncmGrpAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="TotCYTaxesSubpartFIncmGrpAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="Section951a1InclsnFuncCurAmt"/>
 												</xsl:call-template>
@@ -2774,12 +2764,12 @@
 													<xsl:with-param name="TargetNode" select="Sect951a1InclsnUSDollarAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="FunctionalCurComputationRt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="TaxesDeemedPaidAmt"/>
 												</xsl:call-template>
@@ -2883,6 +2873,7 @@
 						<xsl:with-param name="containerID" select=" 'DIVDIPST1986ctn' "/>
 					</xsl:call-template>
 					<!-- End Set Initial Height of Above Table -->
+					</div>
 					
 					<xsl:if test="($Print = $Separated)">
 						<br/><br/><br/>
@@ -2944,17 +2935,25 @@
 						<table class="styTable" cellspacing="0">
 							<thead class="styTableThead">
 								<tr>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:45mm;font-size:5pt;" rowspan="2" scope="col">1a. <span class="styNormalText" style="display:inline;">Name of Foreign Corporation</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:28mm;font-size:5pt;" rowspan="2" scope="col">1a. <span class="styNormalText" style="display:inline;">Name of Foreign Corporation</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:48mm;font-size:5pt;" rowspan="2" scope="col">1b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Corporation (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:28mm;font-size:5pt;" rowspan="2" scope="col">1b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Corporation (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:38mm;font-size:5pt;" rowspan="2" scope="col">2. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">2. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:38mm;font-size:5pt;" rowspan="2" scope="col">3. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">3. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:38mm;font-size:5pt;" rowspan="2" scope="col">4. <span class="styNormalText" style="display:inline;">Pro Rata Share of CFC's Tested Income</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">4. <span class="styNormalText" style="display:inline;">Functional Currency of Foreign Corporation (enter code)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:38mm;font-size:5pt;" rowspan="2" scope="col">5. <span class="styNormalText" style="display:inline;">Pro Rata Share of Tested Foreign Income Taxes Paid or Accrued by CFC</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">5. <span class="styNormalText" style="display:inline;">Pro rata share of CFC's tested income from applicable Form 8992 schedule (see instructions))</span>
+									</th>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">6. <span class="styNormalText" style="display:inline;">CFC's tested income from applicable Form 8992 schedule (see instructions)</span>
+									</th>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">7. <span class="styNormalText" style="display:inline;">Divide column 5 by column 6</span>
+									</th>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">8. <span class="styNormalText" style="display:inline;">CFC's tested foreign income taxes from Schedule Q (Form 5471) (see instructions)</span>
+									</th>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:25mm;font-size:5pt;" rowspan="2" scope="col">9. <span class="styNormalText" style="display:inline;">Pro rata share of tested foreign income taxes paid or accrued by CFC (Multiply amount in column 7 by amount in column 8)</span>
 									</th>
 								</tr>
 							</thead>
@@ -2962,8 +2961,15 @@
 							<tbody>
 								<xsl:if test="(count($Form1118ScheduleD/ForeignTestedIncmAndFrgnTxGrp) &lt; 6) or ((count($Form1118ScheduleD/ForeignTestedIncmAndFrgnTxGrp) &gt; 5) and ($Print != $Separated))">
 									<xsl:for-each select="$Form1118ScheduleD/ForeignTestedIncmAndFrgnTxGrp">
-										<tr style="">
-											<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:5pt;">
+									<tr style="height:6mm;font-size:5pt;">
+										<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:5pt;">
+												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="ForeignCorporationName/BusinessNameLine1Txt"/>
+												</xsl:call-template>
+												<br/>
+												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="ForeignCorporationName/BusinessNameLine2Txt"/>
+												</xsl:call-template>,<br/>
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="ForeignCorporationName/BusinessNameLine1Txt"/>
 												</xsl:call-template>
@@ -2973,23 +2979,27 @@
 												</xsl:call-template>
 											</td>
 											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
-													<xsl:if test="(MissingEINReasonCd)">
+												<xsl:choose>
+													<xsl:when test="(MissingEINReasonCd)">
 														<xsl:call-template name="PopulateText">
 															<xsl:with-param name="TargetNode" select="MissingEINReasonCd"/>
-														</xsl:call-template><br/>
-													</xsl:if>
-													<xsl:if test="(ForeignCorporationEIN)">
-														<xsl:call-template name="PopulateText">
-															<xsl:with-param name="TargetNode" select="ForeignCorporationEIN"/>
-														</xsl:call-template><br/>
-													</xsl:if>
-													<xsl:if test="(ForeignEntityIdentificationGrp)">
-														<xsl:for-each select="ForeignEntityIdentificationGrp">
-															<xsl:call-template name="PopulateText">
-																<xsl:with-param name="TargetNode" select="ForeignEntityReferenceIdNum"/>
-															</xsl:call-template><br/>
-														</xsl:for-each>
-													</xsl:if>
+														</xsl:call-template>
+													</xsl:when>
+													<xsl:otherwise>
+															<xsl:if test="(ForeignEntityIdentificationGrp)">
+																<xsl:for-each select="ForeignEntityIdentificationGrp">
+																	<xsl:call-template name="PopulateText">
+																		<xsl:with-param name="TargetNode" select="ForeignEntityReferenceIdNum"/>
+																	</xsl:call-template><br/>
+																</xsl:for-each>
+															</xsl:if>
+															<xsl:if test="(ForeignCorporationEIN)">
+																<xsl:call-template name="PopulateText">
+																	<xsl:with-param name="TargetNode" select="ForeignCorporationEIN"/>
+																</xsl:call-template>
+															</xsl:if>
+													</xsl:otherwise>
+												</xsl:choose>
 											</td>
 											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:call-template name="PopulateText">
@@ -3001,6 +3011,11 @@
 													<xsl:with-param name="TargetNode" select="CountryCd"/>
 												</xsl:call-template>
 											</td>
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="FunctionalCurrencyCd"/>
+												</xsl:call-template>
+											</td>
 											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="ProRataShareCFCTestedIncmAmt"/>
@@ -3008,12 +3023,30 @@
 											</td>
 											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="NetTestedIncomeAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="CFCTestedIncomeComputationRt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="CFCTestedForeignTaxesAmt"/>
+												</xsl:call-template>
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="CFCTestedForeignTaxesAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
+												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="ShareFrgnIncmTxPdOrAccrCFCAmt"/>
 												</xsl:call-template>
 											</td>
-										</tr>
-									</xsl:for-each>
-								</xsl:if>
+									</tr>
+								</xsl:for-each>
+							</xsl:if>
 								<!-- Filler rows for Schedule D Part I Section A -->
 								<xsl:if test="(count($Form1118ScheduleD/ForeignTestedIncmAndFrgnTxGrp) &lt; 1) or ((count($Form1118ScheduleD/ForeignTestedIncmAndFrgnTxGrp) &gt; 5) and ($Print = $Separated))">
 									<xsl:choose>
@@ -3041,8 +3074,8 @@
 								</xsl:if>
 								<!-- End of filler rows -->
 								<tr style="height:5mm;">
-									<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:7pt;padding-left:1mm;border-top:1px solid black;border-bottom-width:0px;" colspan="4">
-										<b>Total</b> (add amounts in column 4)
+									<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:7pt;padding-left:1mm;border-top:1px solid black;border-bottom-width:0px;" colspan="5">
+										<b>Total</b> (add amounts in column 5)
 										<!--Dotted Line-->
 										<span>.
 										  <span style="width:10px"/>.
@@ -3091,12 +3124,24 @@
 									<td class="styIRS1118TableCellSmallArial" style="font-size:6pt;background-color:lightgrey;border-top:1px solid black;border-bottom-width:1px;">
 										<span style="width:10mm;"/>
 									</td>
+									<td class="styIRS1118TableCellSmallArial" style="font-size:6pt;background-color:lightgrey;border-top:1px solid black;border-bottom-width:1px;">
+										<span style="width:10mm;"/>
+									</td>
+									<td class="styIRS1118TableCellSmallArial" style="font-size:6pt;background-color:lightgrey;border-top:1px solid black;border-bottom-width:1px;">
+										<span style="width:10mm;"/>
+									</td>
+									<td class="styIRS1118TableCellSmallArial" style="font-size:6pt;background-color:lightgrey;border-top:1px solid black;border-bottom-width:1px;">
+										<span style="width:10mm;"/>
+									</td>
 								</tr>
 								<tr style="height:5mm;">
-									<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:7pt;padding-left:1mm;border-top:0px;border-bottom-width:1px;" colspan="5">
-										<b>Total</b> (add amounts in column 5)
+									<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:7pt;padding-left:1mm;border-top:0px;border-bottom-width:1px;" colspan="9">
+										<b>Total</b> (add amounts in column 9)
 										<!--Dotted Line-->
 										<span>.
+										  <span style="width:10px"/>.
+										  <span style="width:10px"/>.
+										  <span style="width:10px"/>.
 										  <span style="width:10px"/>.
 										  <span style="width:10px"/>.
 										  <span style="width:10px"/>.
@@ -3571,37 +3616,37 @@
 						<table class="styTable" cellspacing="0" style="width:256mm;">
 							<thead class="styTableThead">
 								<tr>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:4pt;" scope="col">1a. <span class="styNormalText" style="display:inline;">Name of Distributing Foreign Corporation</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:5pt;" scope="col">1a. <span class="styNormalText" style="display:inline;">Name of Distributing Foreign Corporation</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:4pt;" scope="col">1b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Corporation (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:5pt;" scope="col">1b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Corporation (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:4pt;" scope="col">2. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:5pt;" scope="col">2. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:4pt;" scope="col">3. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:5pt;" scope="col">3. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:4pt;" scope="col">4a. <span class="styNormalText" style="display:inline;">Name of Recipient Foreign Corporation</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:5pt;" scope="col">4a. <span class="styNormalText" style="display:inline;">Name of Recipient Foreign Corporation</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:4pt;" scope="col">4b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Corporation (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:30mm;font-size:5pt;" scope="col">4b. <span class="styNormalText" style="display:inline;">EIN or Reference ID Number of the Foreign Corporation (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:4pt;" scope="col">5. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:5pt;" scope="col">5. <span class="styNormalText" style="display:inline;">Tax Year End (Year/Month) (see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:4pt;" scope="col">6. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:7.5mm;font-size:5pt;" scope="col">6. <span class="styNormalText" style="display:inline;">Country of Incorporation (enter country code - see instructions)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">7. <span class="styNormalText" style="display:inline;">Functional Currency of the Distributing Foreign Corporation</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">7. <span class="styNormalText" style="display:inline;">Functional Currency of the Distributing Foreign Corporation</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">8. <span class="styNormalText" style="display:inline;">PTEP Group (enter code)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">8. <span class="styNormalText" style="display:inline;">PTEP Group (enter code)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">9. <span class="styNormalText" style="display:inline;">Annual PTEP account (enter year)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">9. <span class="styNormalText" style="display:inline;">Annual PTEP account (enter year)</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">10. <span class="styNormalText" style="display:inline;">Total Amount of PTEP in the PTEP Group </span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">10. <span class="styNormalText" style="display:inline;">Total Amount of PTEP in the PTEP Group </span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">11. <span class="styNormalText" style="display:inline;">Total Amount of the PTEP group taxes with respect to PTEP group</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">11. <span class="styNormalText" style="display:inline;">Total Amount of the PTEP group taxes with respect to PTEP group</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">12. <span class="styNormalText" style="display:inline;">PTEP Distributed</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">12. <span class="styNormalText" style="display:inline;">PTEP Distributed</span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">13. <span class="styNormalText" style="display:inline;">Divide column 12 by column 10 </span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">13. <span class="styNormalText" style="display:inline;">Divide column 12 by column 10 </span>
 									</th>
-									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:4pt;" scope="col">14. <span class="styNormalText" style="display:inline;">Foreign income taxes properly attributable to PTEP and not previously deemed paid (multiply column 11 by column 13)</span>
+									<th class="styIRS1118TableCellHeaderSmall" style="width:13mm;font-size:5pt;" scope="col">14. <span class="styNormalText" style="display:inline;">Foreign income taxes properly attributable to PTEP and not previously deemed paid (multiply column 11 by column 13)</span>
 									</th>
 								</tr>
 							</thead>
@@ -3610,7 +3655,7 @@
 								<xsl:if test="(count($Form1118ScheduleE/LowerTierSect960bFrgnCorpGrp) &lt; 7) or ((count($Form1118ScheduleE/LowerTierSect960bFrgnCorpGrp) &gt; 6) and ($Print != $Separated))">
 									<xsl:for-each select="$Form1118ScheduleE/LowerTierSect960bFrgnCorpGrp">
 										<tr style="height:6mm;">
-											<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="DistributingForeignCorpName/BusinessNameLine1Txt"/>
 												</xsl:call-template>
@@ -3619,7 +3664,7 @@
 													<xsl:with-param name="TargetNode" select="DistributingForeignCorpName/BusinessNameLine2Txt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:center;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:choose>
 													<xsl:when test="(MissingEINReasonCd)">
 														<xsl:call-template name="PopulateText">
@@ -3642,17 +3687,17 @@
 													</xsl:otherwise>
 												</xsl:choose>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:center;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="TaxYearEndMonthYr"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:center;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="CountryCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="text-align:left;font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="LowerTierRecipientFrgnCorpGrp/RecipientForeignCorpName/BusinessNameLine1Txt"/>
 												</xsl:call-template>
@@ -3661,7 +3706,7 @@
 													<xsl:with-param name="TargetNode" select="LowerTierRecipientFrgnCorpGrp/RecipientForeignCorpName/BusinessNameLine2Txt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:center;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:choose>
 													<xsl:when test="(LowerTierRecipientFrgnCorpGrp/MissingEINReasonCd)">
 														<xsl:call-template name="PopulateText">
@@ -3684,52 +3729,52 @@
 													</xsl:otherwise>
 												</xsl:choose>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:center;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="LowerTierRecipientFrgnCorpGrp/TaxYearEndMonthYr"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:center;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="LowerTierRecipientFrgnCorpGrp/CountryCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;text-align:center;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;text-align:center;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="FunctionalCurrencyCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="PTEPGroupCd"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="AnnualPTEPAccountYr"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="TotalPTEPInPTEPGrpAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="TotPTEPGrpTxsRespectPTEPGrpAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="DistributionPrevTxdIncmAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="PTEPComputationRt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styIRS1118TableCellSmallArial" style="font-size:4pt;">
+											<td class="styIRS1118TableCellSmallArial" style="font-size:5pt;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="FrgnIncmPTEPNotPrevDmdPdAmt"/>
 												</xsl:call-template>
@@ -3819,10 +3864,10 @@
 						</div>
 					</div>
 						<div style="width:259mm;height:12mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:1px solid black;">
-							<div class="styIRS1118TitleDesc" style="width:152mm;height:4mm;border-bottom:0px solid black;display:inline;">Part I—Dividends and Deemed Inclusions From Post-1986 Undistributed Earnings</div>
-							<div style="height:4mm;padding-top:0.7mm;border-bottom:0px solid black;">For each line in Schedule F-1, Part I, include the column 12 amount in column 3</div><br/>
-							<div style="width:256mm;height:5mm;padding-bottom:0.5mm;border-bottom:0px solid black;display:inline;">of the line in Schedule B, Part I that corresponds with the identifying number specified in column 1 of Schedule A and that also corresponds with the identifying number specified in either column 1b or 1c<br/>
-							 of this Schedule F-1, Part I (see instructions).</div>
+							<div class="styIRS1118TitleDesc" style="width:256mm;height:5mm;padding-left:0mm;padding-top:0.25mm;padding-bottom:0.25mm;border-bottom:1px solid black;display:inline;">Part I—Dividends and Deemed Inclusions From Post-1986 Undistributed Earnings</div><br/>
+							<div style="width:256mm;height:7mm;border-bottom:0px solid black;display:inline;">For each line in Schedule F-1, Part I, include the column 12 amount in column 3 of the line in 
+								Schedule B, Part I that corresponds with the identifying number specified in column 1 of Schedule A and that <br/>also corresponds with the identifying number specified in either column 1b or 1c 
+								of this Schedule F-1, Part I (see instructions).</div>
 							<div class="styGenericDiv" style="width:3.2mm;float:right">
 								<!-- button display logic -->
 								<xsl:call-template name="SetDynamicTableToggleButton">
@@ -4185,7 +4230,7 @@
 					<!-- BEGIN SCHEDULE F-1 Part II -->
 					<div class="styBB" style="width:256mm;border-top:1px solid black;">
 						<div class="styTitleName" style="width:27mm;">Schedule F-1</div>
-						<span class="styIRS1118TitleDesc" style="height:6mm;width:229mm;display:inline;">Tax Deemed Paid by Domestic Corporation Filing Return - Pre-2018 Tax Years of Foreign Corporations <span style="font-weight:normal;">(continued)</span></span>
+						<span class="styIRS1118TitleDesc" style="height:6.5mm;width:229mm;display:inline;">Tax Deemed Paid by Domestic Corporation Filing Return - Pre-2018 Tax Years of Foreign Corporations <span style="font-weight:normal;">(continued)</span></span>
 						<div style="height:8mm;width: 227mm; ">
 							<span style="font-size:8pt;padding-left:2mm;"><b>IMPORTANT:</b></span><span style="width:8mm;"/>
 							Applicable to dividends or inclusions from tax years of foreign corporations beginning on or before December 31, 2017.<br/>
@@ -4193,10 +4238,10 @@
 						</div>
 					</div>
 						<div style="width:259mm;height:11mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:1px solid black;">
-							<div class="styIRS1118TitleDesc" style="width:115mm;border-bottom:0px solid black;display:inline">Part II—Dividends Paid Out of Pre-1987 Accumulated Profits<span style="width:113mm;"/></div>
-							<div style="width:141mm;padding-top:3mm;border-bottom:0px solid black;display:inline">For each line in Schedule F-1, Part II, include the column 8(b) amount in column 3 of the line in Schedule B,</div>
-							<div style="width:254mm;border-bottom:0px solid black;">Part I that corresponds with the identifying number specified in column 1 of Schedule A and that also corresponds with the identifying number specified in either column 1b or 1c of this Schedule F-1,<br/>
-							Part I (see instructions).</div>
+							<div class="styIRS1118TitleDesc" style="width:256mm;height;5mm;padding-left:0mm;border-bottom:1px solid black;display:inline">Part II—Dividends Paid Out of Pre-1987 Accumulated Profits</div><br/>
+							<div style="width:141mm;padding-top:3mm;border-bottom:0px solid black;display:inline"></div>
+							<div style="width:254mm;border-bottom:0px solid black;">For each line in Schedule F-1, Part II, include the column 8(b) amount in column 3 of the line in Schedule B, Part I that corresponds with the identifying number 
+								specified in column 1 of Schedule A and that also corresponds with the identifying number specified in either column 1b or 1c of this Schedule F-1, Part I (see instructions).</div>
 							<div class="styGenericDiv" style="width:3.2mm;display:inline;float:right">
 								<!-- button display logic -->
 								<xsl:call-template name="SetDynamicTableToggleButton">
@@ -4515,10 +4560,9 @@
 					
 					<!-- BEGIN SCHEDULE F-1 Part III -->
 						<div style="width:259mm;height:12mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:1px solid black;">
-							<div class="styIRS1118TitleDesc" style="width:122mm;height:4mm;border-bottom:0px solid black;display:inline;">Part III—Deemed Inclusions From Pre-1987 Earnings and Profits</div>
-							<div style="height:4mm;padding-top:0.7mm;border-bottom:0px solid black;">For each line in Schedule F-1, Part III, include the column 8 amount in column 3 of the line in Schedule B,</div><br/>
-							<div style="width:256mm;height:5mm;padding-bottom:0.5mm;border-bottom:0px solid black;display:inline;"> Part I that corresponds with the identifying number specified in column 1 of Schedule A and that also corresponds with the identifying number specified in either column 1b or 1c of this Schedule F-1,<br/>
-							Part I (see instructions).</div>
+							<div class="styIRS1118TitleDesc" style="width:256mm;height:5mm;padding-left:0mm;border-bottom:1px solid black;display:inline;">Part III—Deemed Inclusions From Pre-1987 Earnings and Profits</div><br/>
+							<div style="width:256mm;height:5mm;padding-bottom:0.5mm;border-bottom:0px solid black;display:inline;">For each line in Schedule F-1, Part III, include the column 8 amount in column 3 of the line in Schedule B, 
+								Part I that corresponds with the identifying number specified in column 1 of Schedule A and that also corresponds with the identifying number specified in either column 1b or 1c of this Schedule F-1, Part I (see instructions).</div>
 							<div class="styGenericDiv" style="width:3.2mm;float:right">
 								<!-- button display logic -->
 								<xsl:call-template name="SetDynamicTableToggleButton">
@@ -4531,7 +4575,7 @@
 							</div>
 						</div>
 					<!-- BEGIN SCHEDULE F1 PART III-->
-					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;" id="SCHF1PartIIIctn">
+					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;display:inline;" id="SCHF1PartIIIctn">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
@@ -4842,9 +4886,9 @@
 					<!--END HEADER-->
 										
 					<!-- BEGIN SCHEDULE F-2 -->
-					<div class="styBB" style="width:256mm;">
+					<div class="styBB" style="width:255mm;">
 						<div class="styTitleName" style="width:27mm;">Schedule F-2</div>
-						<span class="styIRS1118TitleDesc" style="width:229mm;height:10mm;display:inline;">Tax Deemed Paid by First- and Second-Tier Foreign Corporations Under Section 902(b) - Pre-2018 Tax Years of Foreign Corporations</span>
+						<span class="styIRS1118TitleDesc" style="height:10mm;width:227mm;display:inline;">Tax Deemed Paid by First<span style="width:0.5mm;"/>-<span style="width:0.5mm;"/>and Second<span style="width:0.5mm;"/>-<span style="width:0.5mm;"/>Tier Foreign Corporations Under Section 902(b) - Pre-2018 Tax Years of Foreign Corporations</span>
 						<div style="margin-left: 32mm; width: 227mm; height:8mm; float:left; clear:none">
 								Use Part I to compute the tax deemed paid by a first-tier foreign corporation with respect to dividends from a second-tier foreign corporation. 
 								Use Part II to compute the tax deemed paid by a second-tier foreign corporation with respect to dividends from a third-tier foreign corporation. 
@@ -4856,7 +4900,7 @@
 							<span style="width:32mm;"/>If taxpayer does not have such a dividend, do not complete Schedule F-2(see instructions).
 						</div>
 					</div>
-						<div class="styIRS1118TitleDesc" style="width:256mm;height:5mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:1px solid black;">
+						<div class="styIRS1118TitleDesc" style="width:255mm;height:5mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:1px solid black;">
 							Part I—Tax Deemed Paid by First-Tier Foreign Corporations
 						</div>
 						<div class="styIRS1118TitleDesc" style="width:259mm;height:5mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:0px solid black;">
@@ -4873,11 +4917,11 @@
 							</div>
 						</div>
 					<!-- BEGIN SCHEDULE F1 PART I-->
-					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;" id="SCHF2ctn">
+					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;display:block;" id="SCHF2ctn">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
-						<table class="styLandscapeTable" summary="Part I—Dividends and Deemed Inclusions From Post-1986 Undistributed Earnings" cellspacing="0" style="border-bottom:0px;">
+						<table class="styLandscapeTable" summary="Part I—Dividends and Deemed Inclusions From Post-1986 Undistributed Earnings" cellspacing="0" style="border-bottom:0px;width:255mm;">
 							<thead class="styTableThead">
 								<tr>
 									<th class="styIRS1118TableCellHeaderSmall" style="width:48mm;font-size:5pt;" scope="col">1a. <span class="styNormalText" style="display:inline;">Name of Second-Tier Foreign Corporation and Its Related First-Tier Foreign Corporation</span>
@@ -5006,7 +5050,7 @@
 					<!-- End Set Initial Height of Above Table -->
 										
 					<!-- BEGIN SCHEDULE F-2 -->
-						<div class="styIRS1118TitleDesc" style="width:259mm;height:5mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:0px solid black;">
+						<div class="styIRS1118TitleDesc" style="width:259mm;height:5mm;text-align:left;vertical-align:center;padding-left:0;border-top-width:0px;border-bottom:0px solid black;display:block;">
 							<div style="width:255mm;height:5mm;border-bottom:1px solid black;"><span style="width:256mm;"/></div>
 							<div class="styGenericDiv" style="width:3.2mm;float:right">
 								<!-- button display logic -->
@@ -5413,7 +5457,7 @@
 						<div class="styBB" style="width:256mm;height:9mm;border-bottom:0px solid black;">
 							<div class="styTitleName" style="width:27mm;border-bottom:1px solid black;">Schedule F-2</div>
 							<div class="styIRS1118TitleDesc" style="width:229mm;display:inline;">
-								Dividends Deemed Paid by First- and Second-Tier Foreign Corporations Under Section 902(b) - Pre-2018 Tax Years of Foreign Corporations
+								Tax Deemed Paid by First<span style="width:0.5mm;"/>-<span style="width:0.5mm;"/>and Second<span style="width:0.5mm;"/>-<span style="width:0.5mm;"/>Tier Foreign Corporations Under Section 902(b) - Pre-2018 Tax Years of Foreign Corporations
 								<span style="font-weight:normal;"><i>(Continued)</i></span>
 							</div>
 						</div>
@@ -5443,7 +5487,7 @@
 							</div>
 						</div>
 					<!-- BEGIN SCHEDULE F1 PART II -->
-					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;" id="SCHF2P2ctn">
+					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;display:block;" id="SCHF2P2ctn">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
@@ -6024,7 +6068,7 @@
 							</div>
 						</div>
 					<!-- BEGIN SCHEDULE F-3-->
-					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;" id="SCHF3ctn">
+					<div class="styTableContainerLandscape" style="width:260mm;border-bottom-width:0px;display:block;" id="SCHF3ctn">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
@@ -7204,7 +7248,7 @@
 									</thead>
 									<tr>
 										<td style="height:8mm;width:5mm;font-weight:bold;padding-left:1mm;padding-top:4mm;border-bottom:1px solid black;">1</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;width:30mm;font-size:5pt;padding-top:4mm;">Totals (see instructions)</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;width:30mm;font-size:5pt;padding-top:4mm;">Totals (see instructions)</td>
 										<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:24.5mm;padding-top:4mm;border-left-width:1px;border-right-width:0px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/GrossSalesTotalsAmt"/>
@@ -7259,7 +7303,7 @@
 									</tr>
 									<tr>
 										<td style="height:8mm;width:5mm;font-weight:bold;padding-left:1mm;padding-top:4mm;border-bottom:1px solid black;">2</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;width:30mm;padding-top:4mm;">Total to be apportioned</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;width:30mm;padding-top:4mm;">Total to be apportioned</td>
 										<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:24.5mm;border-bottom-width:1px;border-left-width:1px;border-right-width:0px;background-color:lightgrey;">
 											<span style="width:1px;"/>
 										</td>
@@ -7302,7 +7346,7 @@
 									</tr>
 									<tr>
 										<td class="styLNLeftNumBox" style="height:8mm;width:8mm;padding-top:1.5mm;border-bottom:0px solid black;">3</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;width:30mm;padding-top:0mm;border-bottom-width:0px;'">Apportionment among statutory groupings (see instructions):</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;width:30mm;padding-top:0mm;border-bottom-width:0px;'">Apportionment among statutory groupings (see instructions):</td>
 										<td class="styShadingCellSmall" style="height:8mm;width:24.5mm;padding-top:4mm;float:none;border-left-width:1px;border-right-width:0px;border-bottom-width:1px;">
 											<span style="width:1px;"/>
 										</td>
@@ -7335,7 +7379,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											a				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section951AIncomeCd"/>
@@ -7371,10 +7415,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
 										<xsl:call-template name="AddRowsForSchH">
 											<xsl:with-param name="RowCount" select="count($Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt)"/>
 											<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt"/>
@@ -7413,10 +7457,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -7460,10 +7504,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line a
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -7509,7 +7553,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											b				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ForeignBranchIncomeCd"/>
@@ -7545,10 +7589,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
 										<xsl:call-template name="AddRowsForSchH">
 											<xsl:with-param name="RowCount" select="count($Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ForeignBranchIncomeGrp/Section245ADividendAmt)"/>
 											<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ForeignBranchIncomeGrp/Section245ADividendAmt"/>
@@ -7587,10 +7631,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -7634,10 +7678,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line b
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -7683,7 +7727,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											c				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/PassiveCategoryIncomeCd"/>
@@ -7719,10 +7763,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
 										<xsl:call-template name="AddRowsForSchH">
 											<xsl:with-param name="RowCount" select="count($Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/PassiveCategoryIncomeGrp/Section245ADividendAmt)"/>
 											<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/PassiveCategoryIncomeGrp/Section245ADividendAmt"/>
@@ -7761,10 +7805,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -7808,10 +7852,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line c
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -7857,7 +7901,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											d				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/GeneralCategoryIncomeCd"/>
@@ -7893,10 +7937,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
 										<xsl:call-template name="AddRowsForSchH">
 											<xsl:with-param name="RowCount" select="count($Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/GeneralCategoryIncomeGrp/Section245ADividendAmt)"/>
 											<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/GeneralCategoryIncomeGrp/Section245ADividendAmt"/>
@@ -7935,10 +7979,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -7982,10 +8026,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line d
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -8031,7 +8075,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											e				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:for-each select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section901jIncomeCd">
 													<xsl:call-template name="PopulateText">
@@ -8069,10 +8113,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
 										<xsl:call-template name="AddRowsForSchH">
 											<xsl:with-param name="RowCount" select="count($Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section901jIncomeGrp/Section245ADividendAmt)"/>
 											<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section901jIncomeGrp/Section245ADividendAmt"/>
@@ -8111,10 +8155,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -8158,10 +8202,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line e
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -8207,7 +8251,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											f				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:for-each select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ResourcedTreatyIncomeCd">
 													<xsl:call-template name="PopulateText">
@@ -8245,10 +8289,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>Section 245A dividend</td>
 										<xsl:call-template name="AddRowsForSchH">
 											<xsl:with-param name="RowCount" select="count($Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ResourcedByTreatyIncomeGrp/Section245ADividendAmt)"/>
 											<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ResourcedByTreatyIncomeGrp/Section245ADividendAmt"/>
@@ -8287,10 +8331,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -8334,10 +8378,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line f
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -8381,7 +8425,7 @@
 									</tr>
 									<tr>
 										<td class="styLNLeftLtrBoxBB" style="height:8mm;padding-left:1mm;padding-top:1mm;">4</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;"><b>Total foreign</b> (add lines 3a(3), 3b(3), 3c(3), 3d(3), 3e(3), and 3f(3))</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;"><b>Total foreign</b> (add lines 3a(3), 3b(3), 3c(3), 3d(3), 3e(3), and 3f(3))</td>
 										<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;padding-top:4mm;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/SalesMethodGroSalesAndRsrchDed[1]/ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/TotalForeignAmt"/>
@@ -8532,7 +8576,7 @@
 									</thead>
 									<tr>
 										<td style="height:8mm;width:5mm;font-weight:bold;padding-left:1mm;padding-top:4mm;border-bottom:1px solid black;">1</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;width:30mm;font-size:5pt;padding-top:4mm;">Totals (see instructions)</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;width:30mm;font-size:5pt;padding-top:4mm;">Totals (see instructions)</td>
 										<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:24.5mm;padding-top:4mm;border-left-width:1px;border-right-width:0px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ApportionmentDedSlsMthdGroSls/GrossSalesTotalsAmt"/>
@@ -8587,7 +8631,7 @@
 									</tr>
 									<tr>
 										<td style="height:8mm;width:5mm;font-weight:bold;padding-left:1mm;padding-top:4mm;border-bottom:1px solid black;">2</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;width:30mm;padding-top:4mm;">Total to be apportioned</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;width:30mm;padding-top:4mm;">Total to be apportioned</td>
 										<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:24.5mm;border-bottom-width:1px;border-left-width:1px;border-right-width:0px;background-color:lightgrey;">
 											<span style="width:1px;"/>
 										</td>
@@ -8630,7 +8674,7 @@
 									</tr>
 									<tr>
 										<td class="styLNLeftNumBox" style="height:8mm;width:8mm;padding-top:1.5mm;border-bottom:0px solid black;">3</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;width:30mm;padding-top:0mm;border-bottom-width:0px;'">Apportionment among statutory groupings (see instructions):</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;width:30mm;padding-top:0mm;border-bottom-width:0px;'">Apportionment among statutory groupings (see instructions):</td>
 										<td class="styShadingCellSmall" style="height:8mm;width:24.5mm;padding-top:4mm;float:none;border-left-width:1px;border-right-width:0px;border-bottom-width:1px;">
 											<span style="width:1px;"/>
 										</td>
@@ -8663,7 +8707,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											a				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:17mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section951AIncomeCd"/>
@@ -8699,10 +8743,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>
 											Section 245A dividend
 											<span style="width:5px;"/>.
 										</td>
@@ -8744,10 +8788,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -8794,10 +8838,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line a
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -8845,7 +8889,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											b				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom-width:0px;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ForeignBranchIncomeCd"/>
@@ -8881,10 +8925,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(1)<span style="width:1mm;"/>
 											Section 245A dividend
 											<span style="width:5px;"/>.
 										</td>
@@ -8926,10 +8970,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom-width:0px;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -8976,10 +9020,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom-width:0px;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line b
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -9027,7 +9071,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											c				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/PassiveCategoryIncomeCd"/>
@@ -9063,10 +9107,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
 											Section 245A dividend
 											<span style="width:5px;"/>.
 										</td>
@@ -9108,10 +9152,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -9158,10 +9202,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line c
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -9209,7 +9253,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											d				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/GeneralCategoryIncomeCd"/>
@@ -9245,10 +9289,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
 											Section 245A dividend
 											<span style="width:5px;"/>.
 										</td>
@@ -9290,10 +9334,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -9340,10 +9384,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line d
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -9391,7 +9435,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											e				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:for-each select="ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/Section901jIncomeCd">
 													<xsl:call-template name="PopulateText">
@@ -9429,10 +9473,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
 											Section 245A dividend
 											<span style="width:5px;"/>.
 										</td>
@@ -9474,10 +9518,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -9524,10 +9568,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line e
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -9575,7 +9619,7 @@
 										<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 											f				
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 											<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:for-each select="ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/ResourcedTreatyIncomeCd">
 													<xsl:call-template name="PopulateText">
@@ -9613,10 +9657,10 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(1)<span style="width:1mm;"/>
 											Section 245A dividend
 											<span style="width:5px;"/>.
 										</td>
@@ -9658,10 +9702,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;border-bottom:0px solid black;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;border-bottom:0px solid black;">(2)<span style="width:1mm;"/>
 											Other
 											<span style="width:10px;"/>.
 											<span style="width:10px;"/>.
@@ -9708,10 +9752,10 @@
 										</xsl:call-template>
 									</tr>
 									<tr>
-										<td class="styIRS1118LNDescRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;">
+										<td class="styIRS1118LNDescNewRD" style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;padding-left:4mm;vertical-align:center;">
 											<span style="width;7mm;"/>
 										</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;padding-left:1mm;vertical-align:center;">(3)<span style="width:1mm;"/>
 											Total line f
 											<span style="width:5px;"/>.
 											<span style="width:10px;"/>.
@@ -9757,7 +9801,7 @@
 									</tr>
 									<tr>
 										<td class="styLNLeftLtrBoxBB" style="height:8mm;padding-left:1mm;padding-top:1mm;">4</td>
-										<td class="styIRS1118LNDescRD" style="height:8mm;"><b>Total foreign</b> (add lines 3a(3), 3b(3), 3c(3), 3d(3), 3e(3), and 3f(3))</td>
+										<td class="styIRS1118LNDescNewRD" style="height:8mm;"><b>Total foreign</b> (add lines 3a(3), 3b(3), 3c(3), 3d(3), 3e(3), and 3f(3))</td>
 										<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;padding-top:4mm;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ApportionmentDedSlsMthdGroSls/ApportionmentStatutoryGrp/TotalForeignAmt"/>
@@ -9865,17 +9909,16 @@
 								<table class="styTable" style="height:auto;width:256mm;" cellspacing="0">
 									<thead class="styTableThead">
 										<tr>
-											<td colspan="2" rowspan="2" scope="col" style="height:34mm;width:82mm;">
+											<td colspan="2" rowspan="2" scope="col" style="height:24mm;width:82mm;">
 												<span style="width:1px;"/>
 											</td>
-											<td colspan="2" scope="col" style="height:22mm;width:62mm;text-align:left;float:none;border-bottom:1px solid black;border-left:1px solid black;">
-												<span style="width:16px"/>
+											<td colspan="2" scope="col" style="height:16mm;width:62mm;text-align:left;float:none;border-bottom:1px solid black;border-left:1px solid black;">
+												<span style="width:14mm"/>
 												<span class="styBoldText">(a)</span>
-                Average Value of Assets–<br/>
-												<span style="width:48px"/>
-                Check method used:<br/>
-												<div style="padding-left:4mm;">
-												<span style="width:2mm"/>
+												Average Value of Assets–<br/>
+												<span style="width:18mm"/>
+												Check method used:<br/>
+												<div style="padding-left:14mm;">
 												<input type="checkbox" class="styCkbox">
 													<xsl:call-template name="PopulateCheckbox">
 														<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstVlTaxBookValueMthdInd"/>
@@ -9889,7 +9932,6 @@
 													</xsl:call-template>Tax book value
 												</label>
 												<br/>
-												<span style="width:2mm"/>
 												<input type="checkbox" class="styCkbox">
 													<xsl:call-template name="PopulateCheckbox">
 														<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstVlAltTaxBookValueMthdInd"/>
@@ -9905,37 +9947,45 @@
 												</div>
 												<br/>
 											</td>
-											<td colspan="2" scope="col" style="height:22mm;width:60mm;float:none;border-bottom:1px solid black;border-left:1px solid black;">
+											<td colspan="2" scope="col" style="height:16mm;width:60mm;text-align:center;float:none;border-bottom:1px solid black;border-left:1px solid black;">
 												<span class="styBoldText">(b)</span>
-                Interest Deductions
-              </td>
-											<td rowspan="2" scope="col" style="height:34mm;width:30mm;border-left:1px solid black;">
+												Interest Deductions
+											</td>
+											<td rowspan="2" scope="col" style="height:24mm;width:30mm;text-align:center;border-left:1px solid black;border-bottom:1px solid black;">
 												<span class="styBoldText">(c)</span> 
-												All Other Deductions<br/>
-												(attach schedule)<br/>
+												All Other<br/>
+												Deductions<br/>
 												(see instructions)
-												<xsl:call-template name="SetFormLinkInline">
-													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/OthDedNotAllcblTotalsAmt"/>
-												</xsl:call-template>
-              </td>
-											<td rowspan="2" scope="col" style="height:34mm;width:38mm;padding-top:5mm;Padding-left:1mm;border-left:1px solid black;border-bottom:0px solid black;">
+											</td>
+											<td rowspan="2" scope="col" style="height:24mm;width:38mm;text-align:center;padding-top:5mm;Padding-left:1mm;border-left:1px solid black;border-bottom:0px solid black;">
 												<span class="styBoldText">(d)</span>
-												Totals (add the corresponding amounts from column (c), Part I; columns (b)(iii) and (b)(iv), Part II;
-												and column (c), Part II). Enter each amount from lines 3a(2), 3b(2), 3c(2), 3d(2), 3e(2), and 3f(2) below in column 15 of the
-												corresponding Schedule A.<br/><br/>
-													<b>Additional note: </b> Be sure to also enter the totals from lines 3a(2), 3b(2), 3c(2),
-													3d(2), 3e(2), and 3f(2) below in column 15 of the corresponding Schedule A.<br/>
-													<span style="height:3mm;"/>
+												Totals<br/>
+												(add the<br/>
+												corresponding<br/>
+												amounts from<br/>
+												column (c), Part I;<br/>
+												columns (b)(iii) and<br/>
+												(b)(iv), Part II; and<br/>
+												column (c), Part II)<br/><br/>
+												
+												<b>Additional note: </b><br/>
+												Be sure to also enter<br/>
+												the totals from lines<br/>
+												3a(2), 3b(2), 3c(2),<br/>
+												3d(2), 3e(2), and 3f(2)<br/>
+												below in column 15<br/>
+												of the corresponding<br/>
+												Schedule A.<br/>
 											  </td>
 										</tr>
 										<tr>
-											<td scope="col" style="height:12mm;width:30mm;border-left:1px solid black;">
+											<td scope="col" style="height:8mm;width:30mm;text-align:center;border-left:1px solid black;border-bottom:1px solid black;">
 												<span class="styBoldText">(i)</span> Nonfinancial Corporations</td>
-											<td scope="col" style="height:12mm;width:30mm;border-left:1px solid black;">
+											<td scope="col" style="height:8mm;width:30mm;text-align:center;border-left:1px solid black;border-bottom:1px solid black;">
 												<span class="styBoldText">(ii)</span> Financial Corporations</td>
-											<td scope="col" style="height:12mm;width:30mm;border-left:1px solid black;">
+											<td scope="col" style="height:8mm;width:30mm;text-align:center;border-left:1px solid black;border-bottom:1px solid black;">
 												<span class="styBoldText">(iii)</span> Nonfinancial Corporations</td>
-											<td scope="col" style="height:12mm;width:30mm;border-left:1px solid black;">
+											<td scope="col" style="height:8mm;width:30mm;text-align:center;border-left:1px solid black;border-bottom:1px solid black;">
 												<span class="styBoldText">(iv)</span> Financial Corporations</td>
 										</tr>
 									</thead>
@@ -9984,6 +10034,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/OthDedNotAllcblTotalsAmt"/>
 												</xsl:call-template>
@@ -10188,7 +10241,7 @@
 											<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 												a				
 											</td>
-											<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+											<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 												<span style="width:24mm;text-align:center;border-bottom:1px solid black;">
 													<xsl:call-template name="PopulateText">
 														<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstNonFinclCorporationsGrp/ApportionmentStatutoryGrp/Section951AIncomeCd"/>
@@ -10253,6 +10306,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt"/>
 												</xsl:call-template>
@@ -10308,6 +10364,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/OtherCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10362,6 +10421,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/TotalCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10378,7 +10440,7 @@
 											<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 												b				
 											</td>
-											<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+											<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 												<span style="width:24mm;text-align:center;border-bottom:1px solid black;">
 													<xsl:call-template name="PopulateText">
 														<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstNonFinclCorporationsGrp/ApportionmentStatutoryGrp/ForeignBranchIncomeCd"/>
@@ -10443,6 +10505,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt"/>
 												</xsl:call-template>
@@ -10498,6 +10563,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/OtherCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10552,6 +10620,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/TotalCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10568,7 +10639,7 @@
 											<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 												c				
 											</td>
-											<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+											<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 												<span style="width:24mm;text-align:center;border-bottom:1px solid black;">
 													<xsl:call-template name="PopulateText">
 														<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstNonFinclCorporationsGrp/ApportionmentStatutoryGrp/PassiveCategoryIncomeCd"/>
@@ -10633,6 +10704,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt"/>
 												</xsl:call-template>
@@ -10688,6 +10762,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/OtherCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10742,6 +10819,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/TotalCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10758,7 +10838,7 @@
 											<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 												d				
 											</td>
-											<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+											<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 												<span style="width:24mm;text-align:center;border-bottom:1px solid black;">
 													<xsl:call-template name="PopulateText">
 														<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstNonFinclCorporationsGrp/ApportionmentStatutoryGrp/GeneralCategoryIncomeCd"/>
@@ -10823,6 +10903,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt"/>
 												</xsl:call-template>
@@ -10878,6 +10961,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/OtherCategoryIncomeAmt"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/OtherCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10932,6 +11018,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/TotalCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -10948,7 +11037,7 @@
 											<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 												e				
 											</td>
-											<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+											<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 												<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:for-each select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstNonFinclCorporationsGrp/ApportionmentStatutoryGrp/Section901jIncomeCd">
 													<xsl:call-template name="PopulateText">
@@ -11015,6 +11104,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt"/>
 												</xsl:call-template>
@@ -11070,6 +11162,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/OtherCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -11124,6 +11219,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/TotalCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -11140,7 +11238,7 @@
 											<td style="width:8mm;height:8mm;font-size:6pt;font-weight:bold;text-align:center;vertical-align:center;border-bottom:0px solid black;">
 												f				
 											</td>
-											<td class="styIRS1118LNDescRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
+											<td class="styIRS1118LNDescNewRD" style="height:8mm;vertical-align:center;border-bottom:0px solid black;">Enter Code
 												<span style="width:20mm;text-align:center;border-bottom:1px solid black;">
 												<xsl:for-each select="$Form1118ScheduleH/AverageValueAssetsGrp/AvgAstNonFinclCorporationsGrp/ApportionmentStatutoryGrp/ResourcedTreatyIncomeCd">
 													<xsl:call-template name="PopulateText">
@@ -11207,6 +11305,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/Section245ADividendAmt"/>
 												</xsl:call-template>
@@ -11262,6 +11363,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/OtherCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -11316,6 +11420,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;width:30mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/Section951AIncomeGrp/TotalCategoryIncomeAmt"/>
 												</xsl:call-template>
@@ -11376,6 +11483,9 @@
 												<span style="width:1px;"/>
 											</td>
 											<td class="styIRS1118LNAmountBoxSmall" style="height:8mm;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="$Form1118Data/IRS1118ScheduleH/ApprtnAllOtherDedudctionsGrp"/>
+												</xsl:call-template>
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="$Form1118ScheduleH/ApprtnAllOtherDedudctionsGrp/ApportionmentStatutoryGrp/TotalForeignAmt"/>
 												</xsl:call-template>
@@ -11515,428 +11625,617 @@
 						</xsl:call-template>
 					</table>
 					<!-- END Left Over Table -->
-					<!-- Separated Repeating Data Table for Schedule A Columns 1-8 -->
-					<xsl:if test="((count($Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp) &gt; 6) and ($Print = $Separated))">
-						<span class="styRepeatingDataTitle">Form 1118, Schedule A, Income or (Loss) Before Adjustments, Table Columns 1-8:</span>
+					<!-- Separated Repeating Data Table for Schedule A Columns 1-5 -->
+					<xsl:if test="((count($Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp) &gt; 4) and ($Print = $Separated))">
+						<span class="styRepeatingDataTitle">Form 1118, Schedule A, Income or (Loss) Before Adjustments, Table Columns 1-5:</span>
 						<table class="styDepTblLandscape" cellspacing="0" style="font-size:6pt;">
-							<thead class="styTableThead">
-								<tr class="styDepTblHdr">
-									<th class="styDepTblCell" rowspan="3" style="width:7mm;">
-										<span style="width:4px;height:27mm;"/>
+							<thead class="styDepTblHdr">
+								<tr>
+									<th class="styDepTblCell" rowspan="3">
+										<span style="width:11mm;height:22mm;"/>
 									</th>
-									<th class="styDepTblCell" style="width:21mm;height:27mm;" rowspan="3" scope="col">1. <span class="styNormalText">Foreign Country or U.S. Possession (Enter two-letter code; see instructions. Use a separate line for each.)*</span>
+									<th class="styDepTblCell" style="width:35mm;height:22mm;" rowspan="3" scope="col">1. <span class="styNormalText" style="display:inline;">EIN or Reference ID number (see instructions)*</span>
 									</th>
-									<th class="styDepTblCell" style="width:229mm;height:5mm;" colspan="9" scope="col">Gross Income or (Loss) From Sources Outside the United States (<span class="styItalicText">INCLUDE</span> Foreign Branch Gross Income here <span class="styItalicText">and</span> on Schedule F)</th>
+									<th class="styDepTblCell" style="width:35mm;height:22mm;" rowspan="3" scope="col">2. <span class="styNormalText" style="display:inline;">Foreign Country or U.S. Possession (enter two-letter code-use a separate line for each)(see instructions)</span>
+									</th>
+									<th class="styDepTblCell" style="width:175mm;height:5mm;" colspan="5" scope="col">Gross Income or (Loss) From Sources Outside the United States</th>
 								</tr>
-								<tr class="styDepTblHdr">
-									<th class="styDepTblCell" style="width:50mm;height:11mm;" colspan="2" scope="col">2. <span class="styNormalText">Deemed Dividends (see instructions)</span>
+								<tr>
+									<th class="styDepTblCell" style="width:70mm;height:9mm;" colspan="2" scope="col">3. <span class="styNormalText" style="display:inline;">Inclusions Under Sections 951(a)(1) and 951A (see instructions)</span>
 									</th>
-									<th class="styDepTblCell" style="width:50mm;height:11mm;" colspan="2" scope="col">3. <span class="styNormalText">Other Dividends</span>
+									<th class="styDepTblCell" style="width:70mm;height:9mm;" colspan="2" scope="col">4. <span class="styNormalText" style="display:inline;">Dividends (see instructions)</span>
 									</th>
-									<th class="styDepTblCell" style="width:25mm;height:22mm;" rowspan="2" scope="col">4. <span class="styNormalText">Interest</span>
-									</th>
-									<th class="styDepTblCell" style="width:25mm;height:22mm;" rowspan="2" scope="col">5. <span class="styNormalText">Gross Rents, Royalties, and License Fees</span>
-									</th>
-									<th class="styDepTblCell" style="width:25mm;height:22mm;" rowspan="2" scope="col">6. <span class="styNormalText">Gross Income From Performance of Services</span>
-									</th>
-									<th class="styDepTblCell" style="width:29mm;height:22mm;" rowspan="2" scope="col">7. <span class="styNormalText">Other (attach schedule)</span>
-										<br/>
-									</th>
-									<th class="styDepTblCell" style="width:25mm;height:22mm;" rowspan="2" scope="col">8. <span class="styNormalText">Total (add columns 2(a) through 7)</span>
-										<span style="width:4px"/>
+									<th class="styDepTblCell" style="width:35mm;height:18mm;" rowspan="2" scope="col">5. <span class="styNormalText" style="display:inline;">Interest</span>
 									</th>
 								</tr>
-								<tr class="styDepTblHdr">
-									<th class="styDepTblCell" style="width:25mm;height:11mm;" scope="col">(a) <span class="styNormalText">Exclude gross-up</span>
+								<tr>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(a) <span class="styNormalText" style="display:inline;">Exclude Gross-Up</span>
 									</th>
-									<th class="styDepTblCell" style="width:25mm;height:11mm;" scope="col">(b) <span class="styNormalText">Gross-up (sec. 78)</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(b) <span class="styNormalText" style="display:inline;">Gross-Up (section 78)</span>
 									</th>
-									<th class="styDepTblCell" style="width:25mm;height:11mm;" scope="col">(a) <span class="styNormalText">Exclude gross-up</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(a) <span class="styNormalText" style="display:inline;">Exclude Gross-Up</span>
 									</th>
-									<th class="styDepTblCell" style="width:25mm;height:11mm;" scope="col">(b) <span class="styNormalText">Gross-up (sec. 78)</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(b) <span class="styNormalText" style="display:inline;">Gross-Up (section 78)</span>
 									</th>
 								</tr>
 							</thead>
 							<tfoot/>
 							<tbody>
 								<xsl:for-each select="$Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp">
-									<tr style="height:6mm;">
+									<tr style="">
 										<!-- Set the background color for the row -->
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
-										<td class="styIRS1118TableCellLtr" style="text-align:left;padding-left:0mm;">
-											<span class="styTableCellPad" style="font-weight:bold">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="RowId"/>
+											<td class="styDepTblCell" style="">
+												<span class="styTableCellPad" style="font-weight:bold">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="RowId"/>
+													</xsl:call-template>
+												</span>
+											</td>
+											<td class="styDepTblCell" style="text-align:left;border-color:black;">
+												<!-- this is for new change 1 -->
+												<!-- If ForeignCountryOrUSPossession -->
+												<xsl:if test="(ForeignCorporationEIN != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="ForeignCorporationEIN"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(ForeignCorpMissingEINReasonCd != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="ForeignCorpMissingEINReasonCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(ForeignBranchOrQBUCd != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="ForeignBranchOrQBUCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(ForeignEntityIdentificationGrp != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="ForeignEntityIdentificationGrp"/>
+													</xsl:call-template>
+												</xsl:if>
+											</td>
+											<td class="styDepTblCell" style="text-align:left;border-color:black;">
+												<span class="styTableCellPad"/>
+												<!-- this is for new change 1 -->
+												<!-- If ForeignCountryOrUSPossession -->
+												<xsl:if test="ForeignCountryOrUSPossessionCd != ' '">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="ForeignCountryOrUSPossessionCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(NetOperatingLossCd != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="NetOperatingLossCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(ForeignRegulatedInvestmtCompCd != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="ForeignRegulatedInvestmtCompCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(ForeignIncHighTaxedKickOutCd != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="ForeignIncHighTaxedKickOutCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="Section951AIncomeCd != ' '">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="Section951AIncomeCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="Section863bIncomeCd != ' '">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="Section863bIncomeCd"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(Sect965RepatriationIncomeCd != '')">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="Sect965RepatriationIncomeCd"/>
+													</xsl:call-template>
+												</xsl:if>
+											</td>
+											<td class="styDepTblCell" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="InclsnSect951AExcldGrossUpAmt"/>
 												</xsl:call-template>
-											</span>
-										</td>
-										<!-- this look like blue table change 1 -->
-										<td class="styTableCellSmall" style="width:21mm;text-align:left;border-color:black;">
-											<span class="styTableCellPad"/>
-											<xsl:if test="ForeignCountryOrUSPossessionCd != ' '">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="ForeignCountryOrUSPossessionCd"/>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styDepTblCell" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="InclusionSection951AGrossUpAmt"/>
 												</xsl:call-template>
-											</xsl:if>
-											<xsl:if test="(NetOperatingLossCd != '')">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="NetOperatingLossCd"/>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styDepTblCell" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="DividendsExcldGrossUpAmt"/>
 												</xsl:call-template>
-											</xsl:if>
-											<xsl:if test="(ForeignRegulatedInvestmtCompCd != '')">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="ForeignRegulatedInvestmtCompCd"/>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styDepTblCell" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="DividendsGrossUpAmt"/>
 												</xsl:call-template>
-											</xsl:if>
-											<xsl:if test="(ForeignIncHighTaxedKickOutCd != '')">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="ForeignIncHighTaxedKickOutCd"/>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styDepTblCell" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="InterestReceivedAmt"/>
 												</xsl:call-template>
-											</xsl:if>
-											<xsl:if test="Section863bIncomeCd != ' '">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="Section863bIncomeCd"/>
-												</xsl:call-template>
-											</xsl:if>
-											<!-- If ForeignCountryOrUSPossession -->
-											<!--					<xsl:if test="not(ForeignCountryOrUSPossession='' or not(ForeignCountryOrUSPossession))">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="ForeignCountryOrUSPossession"/>
-												</xsl:call-template>
-											</xsl:if>-->
-											<!-- Else, ForeignCountryOrUSPoss863B -->
-											<!--											<xsl:if test="not(ForeignCountryOrUSPoss863B='' or not(ForeignCountryOrUSPoss863B))">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="ForeignCountryOrUSPoss863B"/>
-												</xsl:call-template>
-											</xsl:if>-->
-										</td>
-										<td class="styTableCellSmall" style="border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="DeemedDividendsExcldGrossUpAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="DeemedDividendsGrossUpAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="OtherDividendsExcldGrossUpAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="OtherDividendsGrossUpAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="InterestReceivedAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="GroRentsRyltsLcnsFeesAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="GrossIncomeAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="width:29mm;border-color:black;">
-											<!-- Form to form link -->
-											<div style="float: left; clear: none">
-												<!--span style="width:2px;"></span-->
-												<xsl:call-template name="SetFormLinkInline">
-													<xsl:with-param name="TargetNode" select="OtherIncomeLossAmt"/>
-												</xsl:call-template>
-											</div>
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="OtherIncomeLossAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-										<td class="styTableCellSmall" style="width:25mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="TotalGrossIncomeOrLossAmt"/>
-											</xsl:call-template>
-											<span style="width:1px;"/>
-										</td>
-									</tr>
+												<span style="width:1px;"/>
+											</td>
+										</tr>
 								</xsl:for-each>
 								<!-- Totals Row -->
-								<tr class="styDepTblHdr" style="height:6mm;">
-									<td class="styDepTblCell" style="text-align:left;" colspan="2">
-										<span style="font-weight:bold;">Totals </span>(add lines A through F)</td>
-									<td class="styDepTblCell" style="text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotDmdDividendsExcldGrossUpAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalDeemedDividendsGrossUpAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotOthDividendsExcldGrossUpAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalOtherDividendsGrossUpAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalInterestReceivedAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalGroRentsRyltsLcnsFeesAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalGrossIncomeAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="width:29mm;text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalOtherIncomeLossAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="width:25mm;text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggrgtTotGrossIncomeOrLossAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-								</tr>
+										<tr class="styDepTblHdr">
+											<td class="styDepTblCell" style="text-align:left;border-color:black;border-bottom-width:0mm;" colspan="3">
+												<span style="font-weight:bold;">Totals </span>(add lines A through C)
+												<!--Dotted Line-->
+												<span class="styNoAudioRead" style="font-weight:bold;">
+													<span style="width:3px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:16px"/>.
+													<span style="width:6px"/>
+												  </span> 
+												<img src="{$ImagePath}/8849Schedule3_Bullet_Md.gif" alt="MediumBullet"/>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:0mm;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotInclsn951AExcldGrossUpAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:0mm;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotInclusionSec951AGrossUpAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:0mm;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotDividendsExcldGrossUpAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:0mm;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotDividendsGrossUpAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:0mm;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalInterestReceivedAmt"/>
+												</xsl:call-template>
+											</td>
+										</tr>
 							</tbody>
 						</table>
 					</xsl:if>
 					
-					<!-- Separated Repeating Data Table for Schedule A Columns 9-12 -->
-					<xsl:if test="((count($Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp) &gt; 6) and ($Print = $Separated))">
+					<!-- Separated Repeating Data Table for Schedule A Columns 6-12 -->
+					<xsl:if test="((count($Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp) &gt; 4) and ($Print = $Separated))">
 						<br/>
-						<span class="styRepeatingDataTitle">Form 1118, Schedule A, Deductions, Table Columns 9-13:</span>
+						<span class="styRepeatingDataTitle">Form 1118, Schedule A, Deductions, Table Columns 6-12:</span>
 						<table class="styDepTblLandscape" cellspacing="0" style="font-size:6pt;">
-							<thead class="styTableThead">
-								<tr class="styDepTblHdr">
-									<th class="styDepTblCell" rowspan="4" style="width:14mm;">
-										<span style="width:4px"/>
+							<thead class="styDepTblHdr">
+								<tr>
+									<th class="styDepTblCell" style="border-top:1px solid black;" rowspan="3">
+										<span style="width:11mm;height:9mm;"/>
 									</th>
-									<th class="styDepTblCell" style="width:222mm;font-size:7pt;padding-top:1mm;padding-bottom:1mm;" colspan="8" scope="col">Deductions (<span class="styItalicText">INCLUDE</span> Foreign Branch Deductions here <span class="styItalicText">and</span> on Schedule F)</th>
-									<th class="styDepTblCell" style="width:25mm" rowspan="4" scope="col">13. <span class="styNormalText">Total Income or (Loss) Before Adjustments (subtract column 12 from column 8)</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;border-top:1px solid black;" scope="col">6. <span class="styNormalText" style="display:inline;">Gross Rents, Royalties, and License Fees</span>
 									</th>
-								</tr>
-								<tr class="styDepTblHdr">
-									<th class="styDepTblCell" style="width:160mm" colspan="5" scope="col">9. Definitely Allocable Deductions</th>
-									<th class="styDepTblCell" style="width:32mm" rowspan="3" scope="col">10. <span class="styNormalText">Apportioned Share of Deductions Not Definitely Allocable (enter amount from applicable line of Schedule H, Part II, column (d))</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;border-top:1px solid black;" scope="col">7. <span class="styNormalText" style="display:inline;">Sales</span>
 									</th>
-									<!-- new 11-->
-									<th class="styDepTblCell" style="width:32mm" rowspan="3" scope="col">11. <span class="styNormalText">
-              Net Operating Loss Deduction</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;border-top:1px solid black;" scope="col">8. <span class="styNormalText" style="display:inline;">Gross Income From Performance of Services</span>
 									</th>
-									<th class="styDepTblCell" style="width:32mm" rowspan="3" scope="col">12. <span class="styNormalText">Total Deductions (add columns 9(e) through 11)</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;border-top:1px solid black;" scope="col">9. <span class="styNormalText" style="display:inline;">Section 986(c) Gain</span>
 									</th>
-								</tr>
-								<tr class="styDepTblHdr">
-									<th class="styDepTblCell" style="width:64mm" colspan="2" scope="col">
-										<span class="styNormalText">Rental, Royalty, and Licensing Expenses</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;border-top:1px solid black;" scope="col">10. <span class="styNormalText" style="display:inline;">Section 987 Gain</span>
 									</th>
-									<th class="styDepTblCell" style="width:32mm" rowspan="2" scope="col">(c) <span class="styNormalText">Expenses Related to Gross Income From Performance of Services</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;border-top:1px solid black;" scope="col">11. <span class="styNormalText" style="display:inline;">Section 988 Gain</span>
 									</th>
-									<th class="styDepTblCell" style="width:32mm" rowspan="2" scope="col">(d) <span class="styNormalText">Other Definitely Allocable Deductions</span>
-									</th>
-									<th class="styDepTblCell" style="width:32mm" rowspan="2" scope="col">(e) <span class="styNormalText">Total Definitely Allocable Deductions (add columns 9(a) through 9(d))</span>
-									</th>
-								</tr>
-								<tr class="styDepTblHdr">
-									<th class="styDepTblCell" style="width:32mm" scope="col">(a) <span class="styNormalText">Depreciation, Depletion, and Amortization</span>
-									</th>
-									<th class="styDepTblCell" style="width:32mm" scope="col">(b) <span class="styNormalText">Other Expenses</span>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;border-top:1px solid black;" scope="col">12. <span class="styNormalText" style="display:inline;">Other (attach schedule)</span>
 									</th>
 								</tr>
 							</thead>
 							<tfoot/>
 							<tbody>
 								<xsl:for-each select="$Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp">
-									<tr style="height:6mm;">
+										<tr style="">
 										<!-- Set the background color for the row -->
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
-										<td class="styIRS1118TableCellLtr" style="text-align:left;">
-											<span class="styTableCellPad" style="font-weight:bold">
-												<xsl:call-template name="PopulateText">
-													<xsl:with-param name="TargetNode" select="RowId"/>
+											<td class="styIRS1118TableCellLtr" style="">
+												<span class="styTableCellPad" style="font-weight:bold">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="RowId"/>
+													</xsl:call-template>
+												</span>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="GroRentsRyltsLcnsFeesAmt"/>
 												</xsl:call-template>
-											</span>
-										</td>
-										<td class="styTableCell" style="width:32mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="DeprecDpltnAmortExpnsAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<td class="styTableCell" style="width:32mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="OtherExpensesAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<td class="styTableCell" style="width:32mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="GroIncmRelatedExpensesAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<td class="styTableCell" style="width:32mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="OtherAllocableDeductionsAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<td class="styTableCell" style="width:32mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="TotalAllocableDeductionsAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<!-- col 10 -->
-										<td class="styTableCell" style="width:32mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="ApportionedShareDeductionAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<!--col 11 -->
-										<td class="styTableCell" style="width:32mm;border-color:black; ">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="NetOperatingLossDeductionAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<td class="styTableCell" style="width:32mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="TotalDeductionAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<td class="styTableCell" style="width:25mm;border-color:black;">
-											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="TotIncmOrLossBfrAdjustmentsAmt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-									</tr>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="SalesAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="GrossIncomeAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="Section986cGainAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="Section987GainAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="Section988GainAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:if test="(OtherIncomeLossAmt != '')">
+													<xsl:call-template name="SetFormLinkInline">
+														<xsl:with-param name="TargetNode" select="OtherIncomeLossAmt"/>
+													</xsl:call-template>
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="OtherIncomeLossAmt"/>
+													</xsl:call-template>
+												</xsl:if>
+												<xsl:if test="(OtherIncomeStatement != '')">
+													<xsl:call-template name="SetFormLinkInline">
+														<xsl:with-param name="TargetNode" select="OtherIncomeStatement"/>
+													</xsl:call-template>
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="OtherIncomeStatement"/>
+													</xsl:call-template>
+												</xsl:if>
+												<span style="width:1px;"/>
+											</td>
+										</tr>
 								</xsl:for-each>
 								<!-- Totals Row -->
-								<tr class="styDepTblHdr" style="height:6mm;text-align:left;padding-left:0mm;">
-									<td class="styDepTblCell" style="padding-left:0mm;">
-										<span class="styTableCellPad" style="font-weight:bold;padding-left:0mm;">Totals</span>
-									</td>
-									<td class="styDepTblCell" style="width:32mm;text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalDeprecDpltnAmortExpnsAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="width:32mm;text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalOtherExpensesAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="width:32mm;text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalGroIncmRelatedExpensesAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="width:32mm;text-align:right;b">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotOtherAllocableDeductionsAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<!-- mark this as 9e-->
-									<td class="styDepTblCell" style="width:32mm;text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggrgtTotalAllocableDedAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<!-- 10 -->
-									<td class="styDepTblCell" style="width:32mm;text-align:right">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalApportionedShareDedAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<!-- 11 -->
-									<td class="styDepTblCell" style="width:32mm;text-align:right">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalNOLDeductionAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<!-- 12 -->
-									<td class="styDepTblCell" style="width:32mm;text-align:right">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggregateTotalDeductionAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-									<td class="styDepTblCell" style="width:25mm;text-align:right;">
-										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="WhiteFont">true</xsl:with-param>
-											<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggrgtTotIncmOrLossBfrAdjAmt"/>
-										</xsl:call-template>
-										<span class="styTableCellPad"/>
-									</td>
-								</tr>
+										<tr class="styDepTblHdr">
+											<td class="styDepTblHdr" style="width:11mm;text-align:left;border-color:black;border-bottom-width:1px;border-right:1px solid black;">
+												<span style="font-weight:bold;">Totals</span>
+											</td>
+											<td class="styDepTblHdr" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;border-right:1px solid black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalGroRentsRyltsLcnsFeesAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblHdr" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;border-right:1px solid black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalSalesAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblHdr" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;border-right:1px solid black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalGrossIncomeAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblHdr" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;border-right:1px solid black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalSection986cGainAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblHdr" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;border-right:1px solid black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalSection987GainAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblHdr" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;border-right:1px solid black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalSection988GainAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblHdr" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;border-right:1px solid black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalOtherIncomeLossAmt"/>
+												</xsl:call-template>
+											</td>
+										</tr>
 							</tbody>
 						</table>
 					</xsl:if>
 					
+					<!-- Separated Repeating Data Table for Schedule A Columns 13-14 -->
+					<xsl:if test="((count($Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp) &gt; 4) and ($Print = $Separated))">
+						<br/>
+						<span class="styRepeatingDataTitle">Form 1118, Schedule A, Deductions, Table Columns 13-14:</span>
+						<table class="styDepTblLandscape" cellspacing="0" style="font-size:6pt;">
+							<thead class="styDepTblHdr">
+								<tr>
+									<th class="styDepTblCell" rowspan="3">
+										<span style="width:11mm;height:23mm;"/>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:23mm;" scope="col" rowspan="3">13. <span class="styNormalText" style="display:inline;">Total (add columns 3(a) through 12)</span>
+									</th>
+									<th class="styDepTblCell" style="width:210mm;height:5mm;" scope="col" colspan="6">14. <span class="styNormalText" style="display:inline;">Allocable Deductions</span>
+									</th>
+								</tr>
+								<tr>
+									<th class="styDepTblCell" style="width:35mm;height:18mm;" scope="col" rowspan="2">(a) <span class="styNormalText" style="display:inline;">Dividends Received Deduction (see instructions)</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:18mm;" scope="col" rowspan="2">(b) <span class="styNormalText" style="display:inline;">Deduction Allowed Under Section 250(a)(1)(A) - Foreign Derived Intangible Income</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:18mm;" scope="col" rowspan="2">(c) <span class="styNormalText" style="display:inline;">Deduction Allowed Under Section 250(a)(1)(B) - Global Intangible Low-Taxed Income</span>
+									</th>
+									<th class="styDepTblCell" style="width:70mm;height:9mm;" scope="col" colspan="2"><span class="styNormalText" style="display:inline;">Rental, Royalty, and Licensing Expenses</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:18mm;" scope="col" rowspan="2">(f) <span class="styNormalText" style="display:inline;">Expenses Allocable to Sales Income</span>
+									</th>
+								</tr>
+								<tr>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(d) <span class="styNormalText" style="display:inline ;">Depreciation, Depletion, and Amortization</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(e) <span class="styNormalText" style="display:inline;">Other Allocable Expenses</span>
+									</th>
+								</tr>
+							</thead>
+							<tfoot/>
+							<tbody>
+								<xsl:for-each select="$Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp">
+										<tr style="">
+										<!-- Set the background color for the row -->
+										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
+											<td class="styIRS1118TableCellLtr" style="">
+												<span class="styTableCellPad" style="font-weight:bold">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="RowId"/>
+													</xsl:call-template>
+												</span>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="TotalGrossIncomeOrLossAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="DividendsReceivedDeductionAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="DedAllwSect250a1AIntangibleAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="DedAllwSect250a1BIntangibleAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="DeprecDpltnAmortExpnsAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="OtherExpensesAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="ExpensesRelatedSalesIncomeAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+										</tr>
+								</xsl:for-each>
+								<!-- Totals Row -->
+										<tr class="styDepTblHdr">
+											<td class="styDepTblCell" style="width:11mm;text-align:left;border-color:black;border-bottom-width:1px;">
+												<span style="font-weight:bold;">Totals</span>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggrgtTotGrossIncomeOrLossAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalDividendsReceivedDedAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotDedSect250a1AIntngblIncmAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotDedSect250a1BIntngblIncmAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalDeprecDpltnAmortExpnsAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalOtherExpensesAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotExpensesRelatedSalesIncmAmt"/>
+												</xsl:call-template>
+											</td>
+										</tr>
+							</tbody>
+						</table>
+					</xsl:if>
+					
+					<!-- Separated Repeating Data Table for Schedule A Columns 14-18 -->
+					<xsl:if test="((count($Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp) &gt; 4) and ($Print = $Separated))">
+						<br/>
+						<span class="styRepeatingDataTitle">Form 1118, Schedule A, Deductions, Table Columns 14-18:</span>
+						<table class="styDepTblLandscape" cellspacing="0" style="font-size:6pt;">
+							<thead class="styDepTblHdr">
+								<tr>
+									<th class="styDepTblCell" rowspan="2">
+										<span style="width:11mm;height:9mm;"/>
+									</th>
+									<th class="styDepTblCell" style="width:105mm;height:5mm;" scope="col" colspan="3">14. <span class="styNormalText" style="display:inline;">Allocable Deductions <i>(continued)</i></span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col" rowspan="2">15. <span class="styNormalText" style="display:inline;">Apportioned Share of Deductions (enter amount from applicable line of Schedule H, Part II, column (d))</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col" rowspan="2">16. <span class="styNormalText" style="display:inline;">Net Operating Loss Deduction</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col" rowspan="2">17. <span class="styNormalText" style="display:inline;">Total Deductions (add columns 14(i) through 16)</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col" rowspan="2">18. <span class="styNormalText" style="display:inline;">Total Income or (Loss) Before Adjustments (subtract column 17 from column 13).</span>
+									</th>
+								</tr>
+								<tr>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(g) <span class="styNormalText" style="display:inline;">Expenses Allocable to Gross Income From Performance of Services</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">
+										(h) <span class="styNormalText" style="display:inline;">
+										Other Allocable Deductions (attach schedule) (see instructions)
+										</span>
+									</th>
+									<th class="styDepTblCell" style="width:35mm;height:9mm;" scope="col">(i) <span class="styNormalText" style="display:inline;">Total Allocable Deductions (add columns 14(a) through 14(h))</span>
+									</th>
+								</tr>
+							</thead>
+							<tfoot/>
+							<tbody>
+								<xsl:for-each select="$Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp">
+										<tr style="">
+										<!-- Set the background color for the row -->
+										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
+											<td class="styIRS1118TableCellLtr" style="">
+												<span class="styTableCellPad" style="font-weight:bold">
+													<xsl:call-template name="PopulateText">
+														<xsl:with-param name="TargetNode" select="RowId"/>
+													</xsl:call-template>
+												</span>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="GroIncmRelatedExpensesAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="OtherAllocableDeductionsAmt"/>
+												</xsl:call-template>
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="OtherAllocableDeductionsAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="TotalAllocableDeductionsAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="ApportionedShareDeductionAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="NetOperatingLossDeductionAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="TotalDeductionAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+											<td class="styTableCellSmall" style="text-align:right;border-color:black;">
+												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="TotIncmOrLossBfrAdjustmentsAmt"/>
+												</xsl:call-template>
+												<span style="width:1px;"/>
+											</td>
+										</tr>
+								</xsl:for-each>
+								<!-- Totals Row -->
+										<tr class="styDepTblHdr">
+											<td class="styDepTblCell" style="width:11mm;text-align:left;border-color:black;border-bottom-width:1px;">
+												<span style="font-weight:bold;">Totals</span>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalGroIncmRelatedExpensesAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotOtherAllocableDeductionsAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggrgtTotalAllocableDedAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalApportionedShareDedAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/TotalNOLDeductionAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggregateTotalDeductionAmt"/>
+												</xsl:call-template>
+											</td>
+											<td class="styDepTblCell" style="border-color:black;border-bottom-width:1px;text-align:right;padding-right:1mm;">
+												<xsl:call-template name="PopulateAmount">
+													<xsl:with-param name="TargetNode" select="$Form1118ScheduleA/AggrgtTotIncmOrLossBfrAdjAmt"/>
+												</xsl:call-template>
+											</td>
+										</tr>
+							</tbody>
+						</table>
+					</xsl:if>
+										
 					<!-- Separated Repeating Data Table for Schedule B, Part I -->
 					<xsl:if test="((count($Form1118ScheduleA/IncmLossBfrAdjFrgnTxsPdAccrGrp) &gt; 6) and ($Print = $Separated))">
 						<br/>

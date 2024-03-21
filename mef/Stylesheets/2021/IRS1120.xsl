@@ -52,7 +52,7 @@
 			<body class="styBodyClass" style="width:187mm;">
 				<form name="IRS1120">
 				<!-- ******************************************************************************************************* -->
-				<!-- *****************************************   For F1120 E & A  copy 	******************************* -->
+				<!-- *****************************************   For F1120 E & A  copy 	******************************** -->
 				<!-- ******************************************************************************************************* -->		
 					<xsl:call-template name="DocumentHeader"/>
 					<div class="styBB" style="width:187mm;border-bottom-width:1px;">
@@ -1370,13 +1370,12 @@
 							<div style="float:left;clear:none;">
 								<div class="styLNLeftNumBox">34</div>
 								<div class="styLNDesc" style="width:132mm;">
-									<span style="float:left;">Estimated tax penalty. See instructions. 
+									<span style="float:left;">Estimated tax penalty. See instructions. Check if Form 2220 is attached
 										<label>
 											<xsl:call-template name="PopulateLabel">
 												<xsl:with-param name="TargetNode" select="$Form1120Data/Form2220AttachedInd"/>
 												<xsl:with-param name="BackupName">IRS1120Form2220Attached</xsl:with-param>
-											</xsl:call-template>
-			                        	      Check if Form 2220 is attached
+											</xsl:call-template>			                        	      
 				                              <span style="width:2px;"/>
 										</label>
 										<!-- Form to Form Link -->
@@ -1488,84 +1487,70 @@
 					<!--<div class="pageEnd" style="width:187mm"/>-->
 					<!-- BEGIN Signature Section -->
 					<!-- Implementing the signature section as a table -->
-					<div style="width=187">
-					<table border="0" cellspacing="0" cellpadding="0" style="width:187mm;font-size:6pt;border-bottom:1px solid black;">
-						<tr>
-							<td rowspan="3" style="width:10mm;font-size: 11pt;font-weight:bold;border-right:1px solid black;">Sign Here</td>
-							<td colspan="6" style="padding-left:1mm;padding-bottom:1mm;">Under penalties of perjury,  
-							I declare that I have examined this return, including accompanying schedules and 
-							statements, and to the best of my knowledge and belief, it is true, correct, and 
-							complete. Declaration of preparer (other than taxpayer) is based on all information 
-							of which preparer has any knowledge. </td>
-						</tr>
-						<tr>
-							<td rowspan="2" style="padding-left:1mm;">
-								<img src="{$ImagePath}/1120_Bullet_Lg.gif" alt="Large right pointing arrow"/>
-							</td>
-							<td style="width:52mm;border-right:1px solid black;
-							      border-bottom:1px solid black;vertical-align:bottom;">
-								<xsl:call-template name="PopulateReturnHeaderOfficer">
-									<xsl:with-param name="TargetNode">TaxpayerPIN</xsl:with-param>
+					<div class="styStdDiv" style="border-bottom:1px solid black;">
+						<div class="styGenericDiv" style="width:13mm;height:20mm;font-size:12pt;font-weight:bold;padding-top:6mm;border-right:1px solid black;">
+							Sign Here
+						</div>
+						<div class="styGenericDiv" style="width:174mm;font-size:6pt;padding:0.5mm;">
+							Under penalties of perjury, I declare that I have examined this return, including accompanying schedules and statements, 
+							and to the best of my knowledge and belief, it is true, correct, and complete. Declaration of preparer (other than taxpayer) 
+							is based on all information of which preparer has any knowledge.<br />
+						</div>
+						<div class="styGenericDiv" style="width:174mm;">
+							<div class="styGenericDiv" style="width:6mm;height:12mm;padding-left:1mm;">
+								<img alt="Right arrow" src="{$ImagePath}/1120_Bullet_Lg.gif" height="30" width="10" style="margin-top:3mm;"/>
+							</div>
+							<div class="styGenericDiv" style="width:50mm;">
+								<span style="width:100%;height:8mm;border-bottom:1px solid black;border-right:1px solid black;vertical-align:bottom;">
+									<br />
+									<xsl:call-template name="PopulateReturnHeaderOfficer">
+										<xsl:with-param name="TargetNode">PersonNm</xsl:with-param>
+									</xsl:call-template>
+								</span>
+								<span>Signature of officer</span>
+							</div>
+							<div class="styGenericDiv" style="width:16mm;">
+								<span style="width:100%;height:8mm;border-bottom:1px solid black;padding-left:0.5mm;">
+									<br />
+									<xsl:call-template name="PopulateReturnHeaderOfficer">
+										<xsl:with-param name="TargetNode">SignatureDt</xsl:with-param>
+									</xsl:call-template>
+								</span>
+								<span>Date</span>
+							</div>
+							<div class="styGenericDiv" style="width:6mm;height:12mm;padding-left:1mm;">
+								<img alt="Right arrow" src="{$ImagePath}/1120_Bullet_Lg.gif" height="30" width="10" style="margin-top:3mm;"/>
+							</div>
+							<div class="styGenericDiv" style="width:52mm;">
+								<span style="width:100%;height:8mm;border-bottom:1px solid black;">
+									<br />
+									<xsl:call-template name="PopulateReturnHeaderOfficer">
+										<xsl:with-param name="TargetNode">PersonTitleTxt</xsl:with-param>
+									</xsl:call-template>
+								</span>
+								<span>Title</span>
+							</div>
+							<div class="styGenericDiv" style="width:42mm;height:11mm;border:3px solid black;margin-left:3px;margin-top:2mm;">
+								<xsl:call-template name="PopulateSpan">
+									<xsl:with-param name="TargetNode" select="$RtnHdrData/BusinessOfficerGrp/DiscussWithPaidPreparerInd"/>
 								</xsl:call-template>
-								<span style="width:1px;"/>
-							</td>
-							<td style="width:20mm;border-bottom:1px solid black;vertical-align:bottom;padding-left:.5mm;">
-								<xsl:call-template name="PopulateReturnHeaderOfficer">
-									<xsl:with-param name="TargetNode">DateSigned</xsl:with-param>
-								</xsl:call-template>
-							</td>
-							<td rowspan="2" style="padding-left:1mm;">
-								<img src="{$ImagePath}/1120_Bullet_Lg.gif" alt="Large right pointing arrow"/>
-							</td>
-							<td style="width:55mm;border-bottom:1px solid black;vertical-align:bottom;">
-								<xsl:call-template name="PopulateReturnHeaderOfficer">
-									<xsl:with-param name="TargetNode">Title</xsl:with-param>
-								</xsl:call-template>
-							</td>
-							<td rowspan="2" style="width:40mm;border-bottom:px solid black;padding-bottom:1mm;">
-			             	<div class="styGenericDiv" style="width:2px;"/>
-			           		<div style="border-right:3px solid black;border-left:3px solid black;
-		         			border-bottom:3px solid black;border-top:3px solid black;float:right;padding-left:1mm" class="styGenericDiv">
-								May the IRS discuss this return<br/> with the preparer shown below? <br/>See instructions
-                            <input class="styCkbox" alt="May the IRS discuss this return with the preparer shown below? Yes"  type="checkbox" name="Checkbox" id="dummyidyes" style="width:3mm;">
-			          		<xsl:call-template name="PopulateReturnHeaderOfficer">
-			         		  <xsl:with-param name="TargetNode">AuthorizeThirdPartyYesCheckbox</xsl:with-param>
-			         		  <xsl:with-param  name="BackupName">May the IRS discuss this return with the preparer shown below? Yes</xsl:with-param>
-			        		</xsl:call-template>
-				            </input>
-				          <span class="styBoldText">
-				       	<label for="dummyidyes">
-		     			  <xsl:call-template name="PopulateReturnHeaderOfficer">
-						<xsl:with-param name="TargetNode">AuthorizeThirdPartyYesLabel</xsl:with-param>
-						<xsl:with-param name="BackupName">May the IRS discuss this return with the preparer shown below? Yes</xsl:with-param>
-					  </xsl:call-template>
-                      Yes
-                    </label>
-				  </span>
-				  <input class="styCkbox" alt="May the IRS discuss this return with the preparer shown below? No"  type="checkbox" name="Checkbox" id="dummyidno" style="width:2.5mm;">
-					<xsl:call-template name="PopulateReturnHeaderOfficer">
-					  <xsl:with-param name="TargetNode">AuthorizeThirdPartyNoCheckbox</xsl:with-param>
-					  <xsl:with-param name="BackupName">May the IRS discuss this return with the preparer shown below? No</xsl:with-param>
-					</xsl:call-template>
-				  </input>
-				  <span class="styBoldText">
-					<label for="dummyidno">
-					  <xsl:call-template name="PopulateReturnHeaderOfficer">
-						<xsl:with-param name="TargetNode">AuthorizeThirdPartyNoLabel</xsl:with-param>
-						<xsl:with-param name="BackupName">May the IRS discuss this return with the preparer shown below? No</xsl:with-param>
-					  </xsl:call-template>
-                      No
-                    </label>
-				  </span>
-				</div>
-			  </td>
-			</tr>
-						<tr>
-							<td style="vertical-align:top;">Signature of officer </td>
-							<td style="vertical-align:top;">Date </td>
-							<td style="vertical-align:top;">Title </td>
-						</tr>
-					</table>
+								May the IRS discuss this return<br/>with the preparer shown below<br/> (see instructions)?
+								<input type="checkbox" class="styCkboxNM" style="margin-right:2px;" alt="Discuss with paid preparer Yes">
+									<xsl:call-template name="PopulateReturnHeaderOfficer">
+										<xsl:with-param name="TargetNode">AuthorizeThirdPartyYesCheckbox</xsl:with-param>
+										<xsl:with-param name="BackupName">IRS1120AuthorizeThirdPartyYesCheckbox</xsl:with-param>
+									</xsl:call-template>
+								</input>
+								<span>Yes</span>
+								<input type="checkbox" class="styCkboxNM" style="margin-left:6px;margin-right:2px;" alt="Discuss with paid preparer No">
+									<xsl:call-template name="PopulateReturnHeaderOfficer">
+										<xsl:with-param name="TargetNode">AuthorizeThirdPartyNoCheckbox</xsl:with-param>
+										<xsl:with-param name="BackupName">IRS1120AuthorizeThirdPartyNoCheckbox</xsl:with-param>
+									</xsl:call-template>
+								</input>
+								<span>No</span>
+							</div>
+						</div>
 					</div>
 					<!-- END Signature Section -->
 					<!-- BEGIN PREPARER SIGNATURE SECTION -->
@@ -2130,14 +2115,14 @@
 								<td class="styLNDesc" style="width:85mm;height:11mm;">Subpart F inclusions derived from the sale by a controlled foreign corporation (CFC) of the stock of a lower-tier foreign corporation treated as a dividend (attach Form(s) 5471) (see instructions) 
 								</td>
 								<td class="styLNAmountBox" style="width:40mm;height:11mm;padding-top:6.5mm;">
-									<xsl:call-template name="PopulateAmount">
-										<xsl:with-param name="TargetNode" select="$Form1120ScheduleC/SubpartFLowTierCFCRcvdAmt"/>
-									</xsl:call-template>
 									<span style="float:left;">
 										<xsl:call-template name="SetFormLinkInline">
 										<xsl:with-param name="TargetNode" select="$Form1120ScheduleC/SubpartFLowTierCFCRcvdAmt"/>
 										</xsl:call-template>
-									</span>
+									</span>									
+									<xsl:call-template name="PopulateAmount">
+										<xsl:with-param name="TargetNode" select="$Form1120ScheduleC/SubpartFLowTierCFCRcvdAmt"/>
+									</xsl:call-template>									
 								</td>
 								<td class="styIRS1120LNPercentBox" style="height:11mm;padding-top:6.5mm;">100</td>
 								<!-- Form to Form Link -->
@@ -3759,17 +3744,17 @@
 						<table class="styTable" cellspacing="0" style="font-size:7pt;border-width:0px;">
 							<thead class="styTableThead">
 								<tr>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:95mm;font-weight:normal;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:95mm;font-weight:normal;">
 										<span style="font-weight:bold;">(i)</span> Name of Corporation
 		             			  </th>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:35mm;font-weight:normal;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:35mm;font-weight:normal;">
 										<span style="font-weight:bold;">(ii)</span> Employer<br/>
 										Identification Number<br/> (if any)
 		                		  </th>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:20mm;font-weight:normal;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:20mm;font-weight:normal;">
 										<span style="font-weight:bold;">(iii)</span> Country of Incorporation
                                     </th>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:36mm;font-weight:normal;border-right:0;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:36mm;font-weight:normal;border-right:0;">
 										<span style="font-weight:bold;">(iv)</span> Percentage<br/>
 										 Owned in Voting <br/>Stock
 			              		  </th>
@@ -4003,16 +3988,16 @@
 						<table class="styTable" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
 								<tr>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:95mm;font-weight:normal;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:95mm;font-weight:normal;">
 										<span style="font-weight:bold;">(i)</span> Name of Entity
 		                			</th>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:35mm;font-weight:normal;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:35mm;font-weight:normal;">
 										<span style="font-weight:bold;">(ii)</span>Employer Identification Number (if any)
 			                		</th>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:20mm;font-weight:normal;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:20mm;font-weight:normal;">
 										<span style="font-weight:bold;">(iii)</span> Country of Organization
 				                	 </th>
-									<th class="styTableCellHeader" scope="col" rowspan="2" style="width:36mm;font-weight:normal;border-right:0;">
+									<th class="styTableCellHeader" scope="col" colspan="1" style="width:36mm;font-weight:normal;border-right:0;">
 										<span style="font-weight:bold;">(iv)</span>Maximum Percentage Owned in Profit, Loss or Capital
 		             			  </th>
 								</tr>
@@ -6041,7 +6026,7 @@ reported on page 1, line 29a.)
 					<!-- BEGIN Schedule M-1 Line Items -->
 					<div class="styBB" style="width:187mm;clear:both;">
 						<!-- BEGIN Left Side Table of Schedule M-1-->
-						<table class="styTable" style="width:93mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:92mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<thead/>
 							<tfoot/>
 							<tbody>
@@ -6242,7 +6227,7 @@ reported on page 1, line 29a.)
 						</table>
 						<!-- END Left Side table of Schedule M-1-->
 						<!-- BEGIN Right Side table of Schedule M-1-->
-						<table class="styTable" style="width:94mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:95mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<thead/>
 							<tfoot/>
 							<tbody>
@@ -6436,7 +6421,7 @@ reported on page 1, line 29a.)
 					<!-- BEGIN Schedule M-2 Line Items -->
 					<div style="width:187mm;clear:both;" class="styBB">
 						<!-- BEGIN Left Side Table of Schedule M-2-->
-						<table class="styTable" style="width:93mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:92mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<tr class="styGenericDiv">
 								<!-- Schedule M2, line 1 -->
 								<td class="styLNLeftNumBoxSD" style="height:4.5mm;">1</td>
@@ -6523,7 +6508,7 @@ reported on page 1, line 29a.)
 						</table>
 						<!-- END Left Side Table of Schedule M-2-->
 						<!-- BEGIN Right Side Table of Schedule M-2-->
-						<table class="styTable" style="width:94mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:95mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<tr class="styGenericDiv">
 								<!-- Schedule M2, line 5a -->
 								<td class="styLNLeftNumBoxSD" style="height:4.5mm;">5</td>

@@ -36,6 +36,9 @@ Log:
   <xsl:include href="AddOnTable.xsl"/>
   <xsl:include href="IRS1040AStyle.xsl"/>
   <xsl:include href="IRS1040EZStyle.xsl"/>
+  <xsl:include href="IRS1040NRScheduleAStyle.xsl"/>
+  <xsl:include href="IRS1040NRScheduleNECStyle.xsl"/>
+  <xsl:include href="IRS1040NRScheduleOIStyle.xsl"/>
   <xsl:include href="IRS1040NRStyle.xsl"/>
   <xsl:include href="IRS1040Schedule1Style.xsl"/>
   <xsl:include href="IRS1040Schedule2Style.xsl"/>
@@ -143,6 +146,7 @@ Log:
   <xsl:include href="IRS461Style.xsl"/>
   <xsl:include href="IRS4626Style.xsl"/>
   <xsl:include href="IRS4684Style.xsl"/>
+  <xsl:include href="IRS4720Style.xsl"/>
   <xsl:include href="IRS4797Style.xsl"/>
   <xsl:include href="IRS4835Style.xsl"/>
   <xsl:include href="IRS4868Style.xsl"/>
@@ -359,6 +363,8 @@ Log:
   <xsl:include href="IRS990ScheduleOStyle.xsl"/>
   <xsl:include href="IRS990ScheduleRStyle.xsl"/>
   <xsl:include href="IRS990Style.xsl"/>
+  <xsl:include href="IRS990TScheduleAStyle.xsl"/>
+  <xsl:include href="IRS990TStyle.xsl"/>
   <xsl:include href="IRSFormTStyle.xsl"/>
   <xsl:include href="IRSRRB1042SStyle.xsl"/>
   <xsl:include href="IRSSSA1042SStyle.xsl"/>
@@ -388,6 +394,15 @@ all PDF stylesheets that are selected for print. -->
               </xsl:when>
               <xsl:when test="@documentName='IRS1040EZ'">
                 <xsl:call-template name="IRS1040EZStyle"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS1040NRScheduleA'">
+                <xsl:call-template name="IRS1040NRScheduleAStyle"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS1040NRScheduleNEC'">
+                <xsl:call-template name="IRS1040NRScheduleNECStyle"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS1040NRScheduleOI'">
+                <xsl:call-template name="IRS1040NRScheduleOIStyle"/>
               </xsl:when>
               <xsl:when test="@documentName='IRS1040NR'">
                 <xsl:call-template name="IRS1040NRStyle"/>
@@ -710,6 +725,9 @@ all PDF stylesheets that are selected for print. -->
               </xsl:when>
               <xsl:when test="@documentName='IRS4684'">
                 <xsl:call-template name="IRS4684Style"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS4720'">
+                <xsl:call-template name="IRS4720Style"/>
               </xsl:when>
               <xsl:when test="@documentName='IRS4797'">
                 <xsl:call-template name="IRS4797Style"/>
@@ -1358,6 +1376,12 @@ all PDF stylesheets that are selected for print. -->
               </xsl:when>
               <xsl:when test="@documentName='IRS990'">
                 <xsl:call-template name="IRS990Style"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS990TScheduleA'">
+                <xsl:call-template name="IRS990TScheduleAStyle"/>
+              </xsl:when>
+              <xsl:when test="@documentName='IRS990T'">
+                <xsl:call-template name="IRS990TStyle"/>
               </xsl:when>
               <xsl:when test="@documentName='IRSFormT'">
                 <xsl:call-template name="IRSFormTStyle"/>
