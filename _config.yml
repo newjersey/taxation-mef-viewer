@@ -10,8 +10,9 @@ exclude: [
 ]
 
 github:
-  url: https://github.com/betson/irs-efile-viewer/tree/master
+  url: https://github.com/newjersey/taxation-mef-viewer/tree/master
   repository_url: https://github.com/newjersey/taxation-mef-viewer
+  repository_nwo: newjersey/taxation-mef-viewer
 
 bucket_url: https://jachan-test-cors-public.s3.amazonaws.com
 
