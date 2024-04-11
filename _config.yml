@@ -9,4 +9,5 @@ exclude: [
   'vendor'
 ]
 
+repository: newjersey/taxation-mef-viewer
 bucket_url: https://jachan-test-cors-public.s3.amazonaws.com
