@@ -10,7 +10,7 @@ exclude: [
 ]
 
 repository: newjersey/taxation-mef-viewer
-bucket_url: https://jachan-test-cors-public.s3.amazonaws.com
+demo_url: https://newjersey.github.io/taxation-mef-viewer/Sample1120.xml
 github:
   url: https://newjersey.github.io/taxation-mef-viewer
   repository_url: https://github.com/newjersey/taxation-mef-viewer
