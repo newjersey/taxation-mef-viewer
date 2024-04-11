@@ -13,7 +13,7 @@ repository: newjersey/taxation-mef-viewer
 url: https://newjersey.github.io
 
 github:
-  url: https://github.com/newjersey/taxation-mef-viewer/tree/master
+  url: https://github.com/newjersey/taxation-mef-viewer/tree/main
   repository_url: https://github.com/newjersey/taxation-mef-viewer
 
 bucket_url: https://jachan-test-cors-public.s3.amazonaws.com
