@@ -155,7 +155,7 @@
 					<!-- Begin Names and Identifying number section -->
 					<div class="styGenericDiv" style="width: 187mm; height: 8mm; clear: left; float: left;">
 						<div class="styNameBox" style="width:137mm;height:8mm;font-weight:normal;font-size:7pt;">
-							Name(s) shown on Form 1040 or 1040-SR<br/>
+							Name(s) shown on your tax return<br/>
 							<xsl:call-template name="PopulateReturnHeaderFiler">
 									 <xsl:with-param name="TargetNode">NameLine1Txt</xsl:with-param>
 								  </xsl:call-template>
@@ -676,7 +676,7 @@
 						<div class="styIRS8689LineItem" style="width: 187mm; height: 4.5mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">27</div>
 							<div class="styIRS8689LNDesc" style="width:105mm; height:4.5mm;padding:1.75mm 0mm 0mm 3mm;">
-								Tuition and fees deduction
+								Reserved for future use
 								<span class="styDotLn" style="float:none;clear:none;padding-left:4mm;">................</span>
 								</div>
 							<div class="styIRS8689LNDesc" style="height:100%; width:75mm; float:right; padding:0px 0px 0px 0px;">
@@ -689,8 +689,8 @@
 								</div>
 								<div class="styIRS8689LNDesc" style="height:auto;width:37mm;float:right;padding:0px 0px 0px 0px;">
 									<xsl:call-template name="CreateBox">
-										<xsl:with-param name="TargetNode" select="$Form8689Data/TuitionAndFeesDedAmt"/>
-										<!--<xsl:with-param name="AmountBoxStyle">background-color:lightgrey</xsl:with-param>-->
+										<!--<xsl:with-param name="TargetNode" select="$Form8689Data/TuitionAndFeesDedAmt"/>-->
+										<xsl:with-param name="AmountBoxStyle">background-color:lightgrey</xsl:with-param>
 										<xsl:with-param name="Number">27</xsl:with-param>
 									</xsl:call-template>
 								</div>
@@ -700,7 +700,7 @@
 						<div class="styIRS8689LineItem" style="width: 187mm; height: 4.5mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">28</div>
 							<div class="styIRS8689LNDesc" style="width:105mm; height:4.5mm;padding:1.75mm 0mm 0mm 3mm;">
-								Charitable contributions. See instructions
+								Reserved for future use
 								<span class="styDotLn" style="float:none;clear:none;padding-left:5mm;">...........</span>
 								</div>
 							<div class="styIRS8689LNDesc" style="height:100%; width:75mm; float:right; padding:0px 0px 0px 0px;">
@@ -713,7 +713,8 @@
 								</div>
 								<div class="styIRS8689LNDesc" style="height:auto;width:37mm;float:right;padding:0px 0px 0px 0px;">
 									<xsl:call-template name="CreateBox">
-										<xsl:with-param name="TargetNode" select="$Form8689Data/CharitableContributionAmt"/>
+										<!--<xsl:with-param name="TargetNode" select="$Form8689Data/CharitableContributionAmt"/>-->
+										<xsl:with-param name="AmountBoxStyle">background-color:lightgrey</xsl:with-param>
 										<xsl:with-param name="Number">28</xsl:with-param>
 									</xsl:call-template>
 								</div>
@@ -769,8 +770,8 @@
 						<div class="styIRS8689LineItem" style="width: 187mm; height: 4.5mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">31</div>
 							<div class="styIRS8689LNDesc" style="width: 144mm; height: 4.5mm;padding:1.75mm 0mm 0mm 3mm;">
-								Enter amount from Form 1040 or 1040-SR, line 24
-	  						    <span class="styDotLn" style="float:none;clear:none;padding-left:2.75mm;">................</span>
+								Enter the amount from the<b> total tax</b> line on your tax return
+	  						    <span class="styDotLn" style="float:none;clear:none;padding-left:2.75mm;">..............</span>
 							</div>
 							<xsl:call-template name="CreateBox">
 								<xsl:with-param name="TargetNode" select="$Form8689Data/Form1040TotalTaxAmt"/>
@@ -781,7 +782,7 @@
 						<div class="styIRS8689LineItem" style="width: 187mm; height: 4.5mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">32</div>
 							<div class="styIRS8689LNDesc" style="width: 144mm; height: 4.5mm;padding:1.75mm 0mm 0mm 3mm;">
-									Enter total of certain amounts from Form 1040 or 1040-SR. See instructions on page 4 for amount to enter
+									Enter total of certain amounts from your tax return. See instructions on page 4 for amount to enter
 	     					</div>
 							<xsl:call-template name="CreateBox">
 								<xsl:with-param name="TargetNode" select="$Form8689Data/VirginIslandsTaxAdjustmentAmt"/>
@@ -804,8 +805,8 @@
 						<div class="styIRS8689LineItem" style="width: 187mm; height: 4.5mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">34</div>
 							<div class="styIRS8689LNDesc" style="width: 106mm; height: 4.5mm;padding:1.75mm 0mm 0mm 3mm;">
-									Enter amount from Form 1040 or 1040-SR, line 11
-	  						       <span class="styDotLn" style="float:none;clear:none;padding-left:2mm;">.......</span>
+									Enter the amount from the <b>adjusted gross income</b> line on your tax return
+	  						       <span class="styDotLn" style="float:none;clear:none;padding-left:2mm;">..</span>
 							</div>
 							<div class="styIRS8689LNDesc" style="height:100%;width:75mm;float:right;padding:0px 0px 0px 0px;">
 								<div class="styIRS8689LNDesc" style="height:5mm;width:37mm;float:right;padding:0px 0px 0px 0px;">
@@ -953,9 +954,8 @@
 						<div class="styGenericDiv" style="width:187mm; height:7mm; clear: left; float: left; border-bottom:1px solid black;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 0.5mm;">41</div>
 							<div class="styIRS8689LNDesc" style="width: 144mm; height: 7mm;padding:.5mm 0mm 0mm 3mm;">
-								Enter the smaller of line 36 or line 40. Include this amount in the total on Form 1040 or 1040-SR, 
-								line 33. <br/>On the dotted line next to line 33, enter "Form 8689" and show this amount
-	  					          <span class="styDotLn" style="float:none;clear:none;padding-left:2.75mm;">..........</span>
+								Enter the smaller of line 36 or line 40. Add this amount on the <b>total payments</b> line of your tax return. <br/>On the dotted line next to it, enter "Form 8689" and show this amount
+	  					          <span class="styDotLn" style="float:none;clear:none;padding-left:2.75mm;">............</span>
 							</div>
 							<div class="styIRS8689LNDesc" style="height:100%;width:37mm;float:right;padding:0px 0px 0px 0px;">
 								<div class="styIRS8689LNDesc" style="height:2mm;width:37mm;float:right;padding:0px 0px 0px 0px;">
@@ -990,9 +990,9 @@
 							</xsl:call-template>
 						</div>
 						<!-- (43) ////////////////////////////////////////////////////-->
-						<div class="styGenericDiv" style="width:187mm; height:4.5mm; clear: left; float: left;">
+						<div class="styGenericDiv" style="width:187mm; height:7mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">43</div>
-							<div class="styIRS8689LNDesc" style="width: 144mm; height:4.5mm;padding:1.75mm 0mm 0mm 3mm;">
+							<div class="styIRS8689LNDesc" style="width: 144mm; height:7mm;padding:1.75mm 0mm 0mm 3mm;">
 									Amount of line 42 you want <b>refunded to you</b>
 	  					           <span class="styDotLn" style="float:none;clear:none;padding-left:3.5mm;">....................</span>
 							</div>
@@ -1004,13 +1004,13 @@
 							</xsl:call-template>
 						</div>
 						<!-- (44) ////////////////////////////////////////////////////-->
-						<div class="styGenericDiv" style="width:187mm; height:4.5; clear: left; float: left;">
+						<div class="styGenericDiv" style="width:187mm; height:4.5mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">44</div>
 							<div class="styIRS8689LNDesc" style="width: 106mm; height: 4.5mm;padding:1.75mm 0mm 0mm 3mm;">
 									Amount of line 42 you want <b>applied to your 2022 estimated tax</b>
 	  					           <span class="styDotLn" style="float:none;clear:none;padding-left:2.75mm;">....</span>
 							</div>
-							<div class="styIRS8689LNDesc" style="height:100%;width:75mm;float:right;padding:0px 0px 0px 0px;">
+							<div class="styIRS8689LNDesc" style="height:5mm;width:75mm;float:right;padding:0px 0px 0px 0px;">
 								<div class="styIRS8689LNDesc" style="height:5mm;width:37mm;float:right;padding:0px 0px 0px 0px;">
 									<xsl:call-template name="CreateBox">
 										<xsl:with-param name="Height">100%</xsl:with-param>
@@ -1048,8 +1048,7 @@
 						<div class="styGenericDiv" style="width:187mm; height:13mm; clear: left; float: left;">
 							<div class="styIRS8689LNLeftNumBox" style="padding-top: 1.75mm;">46</div>
 							<div class="styIRS8689LNDesc" style="width: 144mm; height: 13mm;padding:1.75mm 0mm 0mm 3mm;">
-									Enter the amount from line 45 that you will pay when you file your income tax return. Include this amount<br/>
-									in the total of Form 1040 or 1040-SR, line 33. On the dotted line next to line 33, enter "Form 8689" <br/>
+									Enter the amount from line 45 that you will pay when you file your income tax return. Add this amount on the <b>total payments</b> line of your tax return. On the dotted line next to it, enter "Form 8689" <br/>
 									and show this amount
 	  					           <span class="styDotLn" style="float:none;clear:none;padding-left:2.5mm;">...........................</span>
 							</div>

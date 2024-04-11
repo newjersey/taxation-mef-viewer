@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 01/13/2021 -->
+<!-- Last Modified by Eugenia McDonald on 12/09/2021 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="AddHeader.xsl"/>
@@ -924,18 +924,13 @@
 						</div>
 						<div class="styStdDiv">
 							<span class="styLNLeftNumBox" style="width:11mm;padding-left:4mm">1.</span>
-							<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$FormData/Section871dElectionInd"/>
-									<xsl:with-param name="BackupName">IRS1040NRScheduleOI/Section871dElectionInd</xsl:with-param>
-								</xsl:call-template>
-								<span class="sty1040NRScheduleOILongDesc" style="width:172mm;margin-left:-3mm">This the first year you are making
-									 an election to treat income from real property located in the United States as effectively connected</span>
-								<span class="sty1040NRScheduleOILongDesc" style="padding-left:12mm;width:183mm;margin-left:-4mm;">with a U.S. trade or business under section 871(d).  See instructions
-									<span class="sty1040NRScheduleOIDotLn">....................<span style="width:2px"/>
-									<img src="{$ImagePath}/1040EZ_Bullet_Sm.gif" alt="Right Arrow"/></span>
-								</span>
-							</label>
+							<span class="sty1040NRScheduleOILongDesc" style="width:172mm;margin-left:-3mm">
+								This the first year you are making an election to treat income from real property located in the United States as effectively connected</span>
+							<span class="sty1040NRScheduleOILongDesc" style="padding-left:12mm;width:183mm;margin-left:-4mm;">
+								with a U.S. trade or business under section 871(d).  See instructions
+								<span class="sty1040NRScheduleOIDotLn">....................<span style="width:2px"/>
+								<img src="{$ImagePath}/1040EZ_Bullet_Sm.gif" alt="Right Arrow"/></span>
+							</span>
 							<span style="float:left;padding-top:2px">
 								<input type="checkbox" class="sty1040NRScheduleOICkbox" alt="Section871d Election Ind">
 									<xsl:call-template name="PopulateCheckbox">
@@ -943,21 +938,23 @@
 										<xsl:with-param name="BackupName">IRS1040NRScheduleOI/Section871dElectionInd</xsl:with-param>
 									</xsl:call-template>
 								</input>
+								<label>
+									<xsl:call-template name="PopulateLabel">
+										<xsl:with-param name="TargetNode" select="$FormData/Section871dElectionInd"/>
+										<xsl:with-param name="BackupName">IRS1040NRScheduleOI/Section871dElectionInd</xsl:with-param>
+									</xsl:call-template>
+								</label>
 							</span> 
 						</div>
 						<div class="styStdDiv">
 							<span class="styLNLeftNumBox" style="width:11mm;padding-left:4mm">2.</span>
-							<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$FormData/PYSection871dElectionNotRvkInd"/>
-									<xsl:with-param name="BackupName">IRS1040NRScheduleOI/PYSection871dElectionNotRvkInd</xsl:with-param>
-								</xsl:call-template>
-								<span class="sty1040NRScheduleOILongDesc" style="width:172mm;margin-left:-3mm">You have made an election in a previous year that has not been revoked, to treat income from real property located in the United</span>
-								<span class="sty1040NRScheduleOILongDesc" style="padding-left:12mm;width:183mm;margin-left:-4mm">States as effectively connected with a U.S. trade or business under section 871(d).  See instructions
-									<span class="sty1040NRScheduleOIDotLn">..........<span style="width:2px"/>
-									<img src="{$ImagePath}/1040EZ_Bullet_Sm.gif" alt="Right Arrow"/></span>
-								</span>	
-							</label>
+							<span class="sty1040NRScheduleOILongDesc" style="width:172mm;margin-left:-3mm">
+								You have made an election in a previous year that has not been revoked, to treat income from real property located in the United</span>
+							<span class="sty1040NRScheduleOILongDesc" style="padding-left:12mm;width:183mm;margin-left:-4mm">
+								States as effectively connected with a U.S. trade or business under section 871(d).  See instructions
+								<span class="sty1040NRScheduleOIDotLn">..........<span style="width:2px"/>
+								<img src="{$ImagePath}/1040EZ_Bullet_Sm.gif" alt="Right Arrow"/></span>
+							</span>	
 							<span style="float:left;">
 								<input type="checkbox" class="sty1040NRScheduleOICkbox" alt="PY Section871d Election Not Rvk Ind">
 									<xsl:call-template name="PopulateCheckbox">
@@ -965,6 +962,12 @@
 										<xsl:with-param name="BackupName">IRS1040NRScheduleOI/PYSection871dElectionNotRvkInd</xsl:with-param>
 									</xsl:call-template>
 								</input>
+								<label>
+									<xsl:call-template name="PopulateLabel">
+										<xsl:with-param name="TargetNode" select="$FormData/PYSection871dElectionNotRvkInd"/>
+										<xsl:with-param name="BackupName">IRS1040NRScheduleOI/PYSection871dElectionNotRvkInd</xsl:with-param>
+									</xsl:call-template>
+								</label>	
 							</span>
 						</div>
 					</div>

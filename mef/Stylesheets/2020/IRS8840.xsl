@@ -8,7 +8,7 @@
 	<xsl:output method="html" indent="yes"/>
 	<xsl:strip-space elements="*"/>
 	<xsl:param name="FormData" select="$RtnDoc/IRS8840"/>
-	<xsl:variable name="countryNameDoc" select="document('CountriesList.xml')/countries" />
+	<xsl:variable name="countryNameDoc" select="document('CountriesList.xml')/countries"/>
 	<xsl:template match="/">
 		<xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
 		<html lang="EN-US">
@@ -43,33 +43,48 @@
 					<xsl:call-template name="DocumentHeader"/>
 					<div class="styStdDiv" style="border-bottom:2px solid black;display:inline-block;">
 						<div class="styFNBox" style="width:31mm;height:20mm;border-right-width:2px;">
-							Form <span class="styFN" style="display:inline;">8840</span> <br />
-							<xsl:call-template name="SetFormLinkInline"><xsl:with-param name="TargetNode" select="$FormData"/></xsl:call-template> <br /><br/>
-							<span class="styAgency" style="display:inline;">Department of the Treasury <br />Internal Revenue Service</span>
+							Form <span class="styFN" style="display:inline;">8840</span>
+							<br/>
+							<xsl:call-template name="SetFormLinkInline">
+								<xsl:with-param name="TargetNode" select="$FormData"/>
+							</xsl:call-template>
+							<br/>
+							<br/>
+							<span class="styAgency" style="display:inline;">Department of the Treasury <br/>Internal Revenue Service</span>
 						</div>
 						<div class="styFTBox" style="width:128mm;height:20mm;">
-							<span class="styFST" style="font-size:12pt;">Closer Connection Exception Statement for Aliens</span><br />
+							<span class="styFST" style="font-size:12pt;">Closer Connection Exception Statement for Aliens</span>
+							<br/>
 							<span class="styFBT">
-								<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/> Attach to Form 1040-NR. <br />
+								<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/> Attach to Form 1040-NR. <br/>
 								<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/> Go to <a href="http://www.irs.gov/Form8840">www.irs.gov/Form8840</a> for the latest information.
-							</span><br/>
+							</span>
+							<br/>
 							<span>
-								For the year January 1 &#8212; December 31, 2020, or other tax year<br />beginning 
-								<span style="min-width:22mm;"><xsl:call-template name="PopulateReturnHeaderTaxPeriodBeginDate"></xsl:call-template></span>
+								For the year January 1 &#8212; December 31, 2020, or other tax year<br/>beginning 
+								<span style="min-width:22mm;">
+									<xsl:call-template name="PopulateReturnHeaderTaxPeriodBeginDate"/>
+								</span>
 								and ending 
-								<span style="min-width:22mm;"><xsl:call-template name="PopulateReturnHeaderTaxPeriodEndDate"/></span>
+								<span style="min-width:22mm;">
+									<xsl:call-template name="PopulateReturnHeaderTaxPeriodEndDate"/>
+								</span>
 							</span>
 						</div>
 						<div class="styTYBox" style="width:28mm;height:20mm;border-left-width:2px;">
 							<div class="styOMB">OMB No. 1545-0074</div>
-							<div class="styTaxYear" style="width:100%;">20<span class="styTYColor" style="display:inline;">20</span></div>
-							<div style="width:100%;"><span class="stySequence" style="padding-left:1.5mm;">Attachment<br/>Sequence No.</span><span style="font-weight:bold;font-size:8pt;padding-left:2px;">101</span></div>
+							<div class="styTaxYear" style="width:100%;">20<span class="styTYColor" style="display:inline;">20</span>
+							</div>
+							<div style="width:100%;">
+								<span class="stySequence" style="padding-left:1.5mm;">Attachment<br/>Sequence No.</span>
+								<span style="font-weight:bold;font-size:8pt;padding-left:2px;">101</span>
+							</div>
 						</div>
 					</div>
 					<!-- Begin Form -->
 					<div class="styBB" style="border-bottom-width: 0px;">
 						<div class="styNameBox" style="width:100mm;height:9mm;font-size:7pt;">
-							Your first name and initial<br />
+							Your first name and initial<br/>
 							<xsl:call-template name="PopulateReturnHeaderFiler">
 								<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
 							</xsl:call-template>
@@ -79,35 +94,35 @@
 						</div>
 						<div class="styEINBox" style="width:60mm;height:9mm;font-weight:normal;padding-left:0.5mm;font-size:7pt;">
 							Your U.S. taxpayer identification number, if any<br/>
-    					       <span class="styEINFld" style="width:35mm; text-align:left;font-weight:normal;text-align:center;">
-    					        <span style="width:10mm;height:2.7mm"/> 
-    					                         <xsl:choose>
-									 <!-- TIN from 1040, 1040NR return headers-->
-                                           <xsl:when test="$RtnHdrData/Filer/PrimarySSN"> 
-                                                   <xsl:call-template name="PopulateReturnHeaderFiler">
-                                                   <xsl:with-param name="TargetNode">PrimarySSN</xsl:with-param>
-                                                   </xsl:call-template>
-                                            </xsl:when>		
-                                             <xsl:when test="$RtnHdrData/Filer/SpouseSSN"> 
-                                                   <xsl:call-template name="PopulateReturnHeaderFiler">
-                                                   <xsl:with-param name="TargetNode">SpouseSSN</xsl:with-param>
-                                                   </xsl:call-template>
-                                            </xsl:when>                  
-												 </xsl:choose>
-								</span>
+							<span class="styEINFld" style="width:35mm; text-align:left;font-weight:normal;text-align:center;">
+								<span style="width:10mm;height:2.7mm"/>
+								<xsl:choose>
+									<!-- TIN from 1040, 1040NR return headers-->
+									<xsl:when test="$RtnHdrData/Filer/PrimarySSN">
+										<xsl:call-template name="PopulateReturnHeaderFiler">
+											<xsl:with-param name="TargetNode">PrimarySSN</xsl:with-param>
+										</xsl:call-template>
+									</xsl:when>
+									<xsl:when test="$RtnHdrData/Filer/SpouseSSN">
+										<xsl:call-template name="PopulateReturnHeaderFiler">
+											<xsl:with-param name="TargetNode">SpouseSSN</xsl:with-param>
+										</xsl:call-template>
+									</xsl:when>
+								</xsl:choose>
+							</span>
 						</div>
 					</div>
 					<div class="styStdDiv" style="border-top:1px solid black;">
 						<div class="styGenericDiv" style="width:30mm;height:21mm;font-weight:bold;font-size:8pt;border-right:1px solid black;">
-							Fill in your <br />
-							addresses only if <br />
-							you are filing this <br />
-							form by itself and <br />
-							not with your U.S. <br />
+							Fill in your <br/>
+							addresses only if <br/>
+							you are filing this <br/>
+							form by itself and <br/>
+							not with your U.S. <br/>
 							tax return
 						</div>
 						<div class="styGenericDiv" style="width:78.5mm;height:21mm;border-right:1px solid black;padding-left:1mm;padding-top:0.5mm;">
-							Address in country of residence <br />
+							Address in country of residence <br/>
 							<!-- No reference listed in RLO, and form isn't currently supported stand-alone -->
 						</div>
 						<div class="styGenericDiv" style="width:78.5mm;height:21mm;padding-left:1mm;padding-top:0.5mm;">
@@ -134,7 +149,7 @@
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/USImmigrationStatusGrp/child::*[1]"/>
 										</xsl:call-template>
-										<span style="width:12px;"/>
+										&#160;<span style="width:8px;"/>
 										<xsl:call-template name="PopulateMonthDayYear">
 											<xsl:with-param name="TargetNode" select="$FormData/USImmigrationStatusGrp/EnteredUSDt"/>
 										</xsl:call-template>
@@ -188,7 +203,8 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">4</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							<span style="width:50.5mm;">Enter your passport number(s) <img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/> </span>
+							<span style="width:50.5mm;">Enter your passport number(s) <img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/>
+							</span>
 							<span style="width:128mm;border-bottom:1px dashed black;">
 								<xsl:choose>
 									<xsl:when test="count($FormData/PassportIssuedGrp) &lt; 2">
@@ -207,7 +223,7 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD" style="height:6mm;">5</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							Enter the number of days you were present in the United States during:<br />
+							Enter the number of days you were present in the United States during:<br/>
 							2020
 							<span style="border-bottom:1px solid black;width:30mm;margin-right:4mm;text-align:center;">
 								<xsl:call-template name="PopulateAmount">
@@ -232,8 +248,8 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">6</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							During 2020, did you apply for, or take other affirmative steps to apply for, lawful permanent resident status in <br />
-							the United States or have an application pending to change your status to that of a lawful permanent resident <br />
+							During 2020, did you apply for, or take other affirmative steps to apply for, lawful permanent resident status in <br/>
+							the United States or have an application pending to change your status to that of a lawful permanent resident <br/>
 							of the United States? See instructions. <span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">.........................</span>
 							<span style="float:right;">
 								<xsl:call-template name="PopulateSpan">
@@ -271,7 +287,8 @@
 					<!-- Part II -->
 					<div class="styStdDiv" style="border-bottom:1px solid black;border-top:2px solid black;">
 						<div class="styPartName">Part II</div>
-						<div class="styPartDesc">Closer Connection to One Foreign Country <span style="font-weight:normal;display:inline;">(see instructions)</span></div>
+						<div class="styPartDesc">Closer Connection to One Foreign Country <span style="font-weight:normal;display:inline;">(see instructions)</span>
+						</div>
 					</div>
 					<!-- Line 7 -->
 					<div class="styStdDiv" style="margin-top:3mm;">
@@ -289,20 +306,22 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">8</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							Enter the name of the foreign country to which you had a closer connection than to the United States during 2020. <br />
-							<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/> 
+							Enter the name of the foreign country to which you had a closer connection than to the United States during 2020. <br/>
+							<img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/>
 							<span style="width:174mm;border-bottom:1px dashed black;float:right;">
 								<xsl:call-template name="PopulateCountry8840">
 									<xsl:with-param name="TargetNode" select="$FormData/CloserConnectionCountryCd"/>
 								</xsl:call-template>
-							</span><br />
+							</span>
+							<br/>
 							<strong>Next,</strong> complete Part IV.
 						</div>
 					</div>
 					<!-- Part III -->
 					<div class="styStdDiv" style="border-bottom:1px solid black;border-top:2px solid black;">
 						<div class="styPartName">Part III</div>
-						<div class="styPartDesc">Closer Connection to Two Foreign Countries <span style="font-weight:normal;display:inline;">(see instructions)</span></div>
+						<div class="styPartDesc">Closer Connection to Two Foreign Countries <span style="font-weight:normal;display:inline;">(see instructions)</span>
+						</div>
 					</div>
 					<!-- Line 9 -->
 					<div class="styStdDiv">
@@ -320,14 +339,14 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBox">10</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							After changing your tax home from its location on January 1, 2020, where was your tax home for the remainder of 2020?<br />
+							After changing your tax home from its location on January 1, 2020, where was your tax home for the remainder of 2020?<br/>
 							<span style="width:100%;border-bottom:1px dashed black;">
 								<xsl:call-template name="PopulateCountry8840">
 									<xsl:with-param name="TargetNode" select="$FormData/LocRemainderPYTaxHomeCountryCd"/>
 								</xsl:call-template>
 							</span>
 							<span style="width:100%;border-bottom:1px dashed black;">
-							</span>	
+							</span>
 							<span style="width:100%;border-bottom:1px dashed black;">
 							</span>
 						</div>
@@ -336,7 +355,7 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBox">11</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							Did you have a closer connection to each foreign country listed on lines 9 and 10 than to the United States <br />
+							Did you have a closer connection to each foreign country listed on lines 9 and 10 than to the United States <br/>
 							for the period which you maintained a tax home in that foreign country? <span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">...............</span>
 							<span style="float:right;">
 								<xsl:call-template name="PopulateSpan">
@@ -369,7 +388,7 @@
 									No
 								</label>
 							</span>
-							<br />
+							<br/>
 							If "No," attach an explanation. 
 							<xsl:call-template name="SetFormLinkInline">
 								<xsl:with-param name="TargetNode" select="$FormData/CloserConnectionFrgnCntryInd"/>
@@ -380,8 +399,8 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBox">12</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							Were you subject to tax as a resident under the internal laws of <strong>(a)</strong> either of the countries listed on lines 9 and <br />
-							10 during all of the 2020 or <strong>(b)</strong> both of the countries listed on lines 9 and 10 for the period during which you <br />
+							Were you subject to tax as a resident under the internal laws of <strong>(a)</strong> either of the countries listed on lines 9 and <br/>
+							10 during all of the 2020 or <strong>(b)</strong> both of the countries listed on lines 9 and 10 for the period during which you <br/>
 							maintained a tax home in each country? <span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">........................</span>
 							<span style="float:right;">
 								<xsl:call-template name="PopulateSpan">
@@ -452,17 +471,17 @@
 									No
 								</label>
 							</span>
-							<br />
+							<br/>
 							If "Yes" to either line 12 or line 13, attach verification. 
 							<xsl:call-template name="SetFormLinkInline">
 								<xsl:with-param name="TargetNode" select="$FormData/TaxReturnFldTaxHomeCountryInd"/>
 							</xsl:call-template>
-							<br />
+							<br/>
 							If "No" to either line 12 or line 13, please explain <img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/>
 							<span style="width:113mm;border-bottom:1px dashed black;">&#8194;</span>
-						<div class="sty8840DescA" style="width:179mm;border-bottom:1px dashed black;float:right;">
+							<div class="sty8840DescA" style="width:179mm;border-bottom:1px dashed black;float:right;">
 								<span style="width:1px;"/>
-						</div>
+							</div>
 							<strong>Next, </strong> complete Part IV.
 						</div>
 					</div>
@@ -478,7 +497,8 @@
 					<!-- Page 2 -->
 					<div class="styStdDiv">
 						Form 8840 (2020)
-						<div style="float:right;">Page <strong>2</strong></div>
+						<div style="float:right;">Page <strong>2</strong>
+						</div>
 					</div>
 					<!-- Part IV -->
 					<div class="styStdDiv" style="border-bottom:1px solid black;border-top:2px solid black;">
@@ -503,8 +523,9 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBox">15</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							If you had more than one permanent home available to you at all times during 2020, list the location of each and <br />
-							<span style="width:16mm;float:left;">explain <img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/> </span>
+							If you had more than one permanent home available to you at all times during 2020, list the location of each and <br/>
+							<span style="width:16mm;float:left;">explain <img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/>
+							</span>
 							<span style="width:162.5mm;border-bottom:1px dashed black;float:left;">
 								<xsl:choose>
 									<xsl:when test="count($FormData/MultiplePermanentHomeGrp) &lt; 2">
@@ -577,8 +598,8 @@
 							</span>
 						</div>
 						<div class="sty8840DescA" style="width:179mm;border-bottom:1px dashed black;float:right;">
-	                    	<span style="width:1px;"/>
-						</div>						
+							<span style="width:1px;"/>
+						</div>
 					</div>
 					<!-- Line 19 -->
 					<div class="styStdDiv">
@@ -598,7 +619,7 @@
 							</span>
 						</div>
 						<div class="sty8840DescA" style="width:179mm;border-bottom:1px dashed black;float:right;">
-								<span style="width:1px;"/>
+							<span style="width:1px;"/>
 						</div>
 					</div>
 					<!-- Line 20 -->
@@ -612,7 +633,9 @@
 					<xsl:for-each select="$FormData/PrsnlBankingActyLocCountryCd[(position() mod 2) = 1]">
 						<xsl:variable name="pos" select="position()"/>
 						<div class="styStdDiv">
-							<div class="styLNLeftLtrBox" style="padding-left:4.5mm;"><xsl:number format="a" value="$pos"/></div>
+							<div class="styLNLeftLtrBox" style="padding-left:4.5mm;">
+								<xsl:number format="a" value="$pos"/>
+							</div>
 							<div style="width:85mm;border-bottom:1px solid black;text-align:center;float:left;">
 								<xsl:call-template name="PopulateCountry8840">
 									<xsl:with-param name="TargetNode" select="$FormData/PrsnlBankingActyLocCountryCd[$pos]"/>
@@ -624,7 +647,9 @@
 									<div style="width:85mm;border-bottom:1px solid black;text-align:center;float:left;">&#8194;</div>
 								</xsl:when>
 								<xsl:when test="(($PBALCct mod 2) = 0) and ($PBALCct!=2)">
-									<div class="styLNLeftLtrBox" style="padding-left:4.5mm;"><xsl:number format="a" value="($PBALCct div 2) + $pos"/></div>
+									<div class="styLNLeftLtrBox" style="padding-left:4.5mm;">
+										<xsl:number format="a" value="($PBALCct div 2) + $pos"/>
+									</div>
 									<div style="width:85mm;border-bottom:1px solid black;text-align:center;float:left;">
 										<xsl:call-template name="PopulateCountry8840">
 											<xsl:with-param name="TargetNode" select="$FormData/PrsnlBankingActyLocCountryCd[($PBALCct div 2) + $pos]"/>
@@ -632,7 +657,9 @@
 									</div>
 								</xsl:when>
 								<xsl:otherwise>
-									<div class="styLNLeftLtrBox" style="padding-left:4.5mm;"><xsl:number format="a" value="($PBALCct div 2) + $pos"/></div>
+									<div class="styLNLeftLtrBox" style="padding-left:4.5mm;">
+										<xsl:number format="a" value="($PBALCct div 2) + $pos"/>
+									</div>
 									<div style="width:85mm;border-bottom:1px solid black;text-align:center;float:left;">
 										<xsl:call-template name="PopulateCountry8840">
 											<xsl:with-param name="TargetNode" select="$FormData/PrsnlBankingActyLocCountryCd[floor(($PBALCct div 2)) + $pos + 1]"/>
@@ -643,7 +670,9 @@
 						</div>
 					</xsl:for-each>
 					<xsl:if test="$PBALCct=2">
-						<div class="styLNLeftLtrBox" style="padding-left:4.5mm;"><xsl:number format="a" value="$PBALCct"/></div>
+						<div class="styLNLeftLtrBox" style="padding-left:4.5mm;">
+							<xsl:number format="a" value="$PBALCct"/>
+						</div>
 						<div style="width:85mm;border-bottom:1px solid black;text-align:center;float:left;">
 							<xsl:call-template name="PopulateCountry8840">
 								<xsl:with-param name="TargetNode" select="$FormData/PrsnlBankingActyLocCountryCd[$PBALCct]"/>
@@ -672,7 +701,8 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBox">21</div>
 						<div class="sty8840DescA" style="width:179mm;">
-							Did you conduct business activities in a location other than your tax home? <span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">..............</span><span style="height:3mm;"> </span>
+							Did you conduct business activities in a location other than your tax home? <span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">..............</span>
+							<span style="height:3mm;"> </span>
 							<span style="float:right;">
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$FormData/BusActyLocOthThanTaxHomeInd"/>
@@ -704,7 +734,7 @@
 									No
 								</label>
 							</span>
-							<br />
+							<br/>
 							If "Yes," where? 
 							<span style="width:156mm;border-bottom:1px dashed black;">
 								<xsl:call-template name="PopulateCountry8840">
@@ -749,7 +779,7 @@
 							</span>
 						</div>
 						<div class="sty8840DescA" style="width:179mm;border-bottom:1px dashed black;float:right;">
-								<span style="width:1px;"/>
+							<span style="width:1px;"/>
 						</div>
 					</div>
 					<!-- Line 23 -->
@@ -873,7 +903,6 @@
 						</div>
 					</div>
 					<!-- Line 25c -->
-
 					<!-- Line 25c -->
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBox" style="padding-left:4.5mm;">c</div>
@@ -934,7 +963,7 @@
 									<span style="width:12px;"/>
 								</xsl:for-each>
 							</span>
-							<br />
+							<br/>
 							<span style="width:99.7%;border-bottom:1px dashed black;">&#8194;</span>
 						</div>
 					</div>
@@ -954,7 +983,7 @@
 									<span style="width:12px;"/>
 								</xsl:for-each>
 							</span>
-							<br />
+							<br/>
 							<span style="width:99.7%;border-bottom:1px dashed black;">&#8194;</span>
 						</div>
 					</div>
@@ -963,7 +992,8 @@
 						<div class="styLNLeftNumBox">28</div>
 						<div class="sty8840DescA" style="width:179mm;">
 							Did you have any income from U.S. sources? 
-							<span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">.......................</span><span style="height:3mm;"> </span>
+							<span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">.......................</span>
+							<span style="height:3mm;"> </span>
 							<span style="float:right;">
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$FormData/IncomeFromUSSourceInd"/>
@@ -995,7 +1025,7 @@
 									No
 								</label>
 							</span>
-							<br />
+							<br/>
 							If "Yes," what type? 
 							<span style="width:153mm;border-bottom:1px dashed black;">
 								<span style="width:1px;"/>
@@ -1021,7 +1051,7 @@
 									<span style="width:12px;"/>
 								</xsl:for-each>
 							</span>
-							<br />
+							<br/>
 							<span style="width:99.7%;border-bottom:1px dashed black;">&#8194;</span>
 						</div>
 					</div>
@@ -1030,7 +1060,8 @@
 						<div class="styLNLeftNumBox">30</div>
 						<div class="sty8840DescA" style="width:179mm;">
 							Did you qualify for any type of "national" health plan sponsored by a foreign government?
-							<span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">..........</span><span style="height:3mm;"> </span>
+							<span style="letter-spacing:3.3mm;font-weight:bold;padding-left:8px;">..........</span>
+							<span style="height:3mm;"> </span>
 							<span style="float:right;">
 								<xsl:call-template name="PopulateSpan">
 									<xsl:with-param name="TargetNode" select="$FormData/QlfyFrgnNationalHealthPlanInd"/>
@@ -1062,17 +1093,17 @@
 									No
 								</label>
 							</span>
-							<br />
+							<br/>
 							If "Yes," in what country? 
 							<span style="width:146mm;border-bottom:1px dashed black;min-height:3mm;">
 								<xsl:call-template name="SetFormLinkInline">
 									<xsl:with-param name="TargetNode" select="$FormData/QlfyFrgnNationalHealthPlanInd"/>
 								</xsl:call-template>
 							</span>
-							<br />
-							If "No," please explain <img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/> 
+							<br/>
+							If "No," please explain <img src="{$ImagePath}/1040SchB_Bullet.gif" alt="Bullet Image"/>
 							<span style="width:147mm;border-bottom:1px dashed black;min-height:3mm;"> </span>
-							<br />
+							<br/>
 							If you have any other information to substantiate your closer connection to a country other than the United States or you wish 
 							to explain in more detail any of your responses to lines 14 through 30, attach a statement to this form.
 						</div>
@@ -1083,7 +1114,10 @@
 						</div>
 						<div style="width:169mm;height:25mm;padding-left:1mm;">
 							Under penalties of perjury, I declare that I have examined this form and the accompanying attachments, 
-							and to the best of my knowledge and belief, they are true, correct, and complete.<br /><br /><br /><br />
+							and to the best of my knowledge and belief, they are true, correct, and complete.<br/>
+							<br/>
+							<br/>
+							<br/>
 							<span style="float:left;height:7mm;width:8mm;padding-left:2mm;text-align:right;">
 								<img alt="Arrow image" src="{$ImagePath}/8840_Bullet_Lg.gif"/>
 							</span>
@@ -1120,7 +1154,8 @@
 						</xsl:call-template>
 					</table>
 					<xsl:if test="count($FormData/USImmigrationStatusGrp) &gt;= 2">
-						<br /><br />
+						<br/>
+						<br/>
 						<span class="styRepeatingDataTitle">Line 1 - US Immigration Status</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
@@ -1166,7 +1201,8 @@
 						</table>
 					</xsl:if>
 					<xsl:if test="count($FormData/PassportIssuedGrp) &gt;= 2">
-						<br /><br />
+						<br/>
+						<br/>
 						<span class="styRepeatingDataTitle">Lines 3 &amp; 4 - Passports Issued</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
@@ -1198,7 +1234,8 @@
 						</table>
 					</xsl:if>
 					<xsl:if test="count($FormData/MultiplePermanentHomeGrp) &gt;= 2">
-						<br /><br />
+						<br/>
+						<br/>
 						<span class="styRepeatingDataTitle">Line 15 - Multiple Permanent Homes</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
@@ -1229,7 +1266,7 @@
 							</tbody>
 						</table>
 					</xsl:if>
-					<br />
+					<br/>
 				</form>
 			</body>
 		</html>

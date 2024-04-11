@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 03/31/2022 -->
+<!-- Last Modified by Eugenia McDonald on 07/22/2022 -->
 <!DOCTYPE xsl:stylesheet [
   <!ENTITY nbsp "&#160;">
   <!ENTITY ndash "&#8211;">
@@ -965,7 +965,7 @@
 							font-family:Arial;font-size:8pt;">
 							<div style="width:100%;border:1px solid black;border-radius:8px;
 								padding-top:3mm;padding-bottom:3mm;padding-left:1mm;">
-								Attach Schedule B <br />if required.
+								Attach<br /> Sch. B if<br /> required.
 							</div>
 							<div style="width:50%;height:40mm;">&nbsp;</div>
 						</div>
@@ -1468,7 +1468,7 @@
 						<div class="sty1040SRLN">
 							<div class="sty1040SRLeftNumBox">16</div>
 							<div class="sty1040SRDesc">
-								<span style="font-weight:bold;">Tax </span> (see instuctions). Check if any from: 
+								<span style="font-weight:bold;">Tax </span> (see instuctions). Check if any from Forms: 
 								<xsl:call-template name="LinkToLeftoverDataTableInline">
 									<xsl:with-param name="Desc">Line 16(1) - Child Interest and Dividend Tax Amount</xsl:with-param>
 									<xsl:with-param name="TargetNode" 
@@ -1493,7 +1493,7 @@
 									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$FormData/Form8814Ind"/>
 										<xsl:with-param name="BackupName">F1040SRForm8814Ind</xsl:with-param>
-									</xsl:call-template>Form(s) 8814</label>
+									</xsl:call-template>8814</label>
 								<xsl:call-template name="SetFormLinkInline">
 									<xsl:with-param name="TargetNode" select="$FormData/Form8814Ind"/>
 								</xsl:call-template>
@@ -1505,11 +1505,11 @@
 										<xsl:with-param name="BackupName">F1040SRForm4972Ind</xsl:with-param>
 									</xsl:call-template>
 								</input>
-								<label style="padding-left:1mm;">
+								<label style="padding-left:2mm;">
 									<xsl:call-template name="PopulateLabel">
 										<xsl:with-param name="TargetNode" select="$FormData/Form4972Ind"/>
 										<xsl:with-param name="BackupName">F1040Form4972Ind</xsl:with-param>
-									</xsl:call-template>Form 4972</label>
+									</xsl:call-template>4972</label>
 									<xsl:call-template name="SetFormLinkInline">
 										<xsl:with-param name="TargetNode" select="$FormData/Form4972Ind"/>
 									</xsl:call-template>
@@ -1551,7 +1551,7 @@
 										</xsl:call-template>
 									</xsl:if>
 								</span>
-								<span class="sty1040SRDotLn" style="">.....</span>
+								<span class="sty1040SRDotLn" style="">..........</span>
 							</div>
 							<div class="sty1040SRRightNumBox">16</div>
 							<div class="sty1040SRAmountBox">
@@ -1878,11 +1878,11 @@
 							<div class="sty1040SRLeftNumBoxSD" style="border-top:0px solid black;
 							border-bottom:0px solid black;border-left:0px;margin-left:-2px;
 							margin-right:2px;padding-left:1mm;"></div>
-							<div class="sty1040SRDesc" style="width:87mm;padding-top:1.7mm;">
-								Check here if you had not reached the age of 19 by <br/>
-								December 31, 2021, and satisfy all other requirements <br/>
-								<span style="padding-top:.5mm">for claiming the EIC. See instructions</span> 
+							<div class="sty1040SRDesc" style="width:87mm;padding-top:1.7mm;height:17.5mm;">
+								Check here if you were born after December 31, 1997 <br/>and before January 2, 2004, and you satisfy all the<br/> other requirements for taxpayers who are at least age<br/> 18 to claim the EIC. See instructions
 								<span style="float:right;">
+									<span class="sty1040SRDotLn" style="float:none">....</span>
+									<span style="width:4px;"/>
 									<img src="{$ImagePath}/1040_Bullet.gif" alt="Right arrow"/> 
 									<input type="checkbox" class="styCkbox" style=""
 										alt="Schedule D not required">
@@ -1894,12 +1894,12 @@
 									</input>
 								</span>
 							</div>	
-							<div class="sty1040SRRightNumBox" style="background-color:lightgrey;height:14.5mm"></div>
-							<div class="sty1040SRAmountBox" style="height:14.5mm"></div>
+							<div class="sty1040SRRightNumBox" style="background-color:lightgrey;height:18.5mm"></div>
+							<div class="sty1040SRAmountBox" style="height:18.5mm"></div>
 							<div class="sty1040SRRightNumBoxNBB" 
-							 style="background-color:lightgrey;height:14.5mm">&nbsp;
+							 style="background-color:lightgrey;height:18.5mm">&nbsp;
 							</div>
-							<div class="sty1040SRAmountBoxNBB" style="height:14.5mm">&nbsp;</div>
+							<div class="sty1040SRAmountBoxNBB" style="height:18.5mm">&nbsp;</div>
 						</div>
 						<div class="sty1040SRLN">	
 							<div class="sty1040SRLeftNumBoxSD"	style="padding-left:4.8mm;">b</div>
@@ -2304,15 +2304,11 @@
 						font-family:Verdana;">
 						<div class="styGenericDiv" style="width:20mm;height:14mm;">
 							<span style="font-weight:bold;font-size:8pt;">Third Party Designee</span>
-							<br />
-							<span style="font-family:Arial;font-size:7pt;padding-top:1mm">(Other than
-								<br /> paid preparer)</span>
 						</div>
 						<div style="width:167mm;height:7mm;">
-							<span style="font-size:8pt">Do you want to allow another person (other than your paid
-								preparer) to<br/>discuss this return with the IRS? See instructions
+							<span style="font-size:8pt">Do you want to allow another person to discuss this return with the IRS? See<br/> instructions
 								<span class="sty1040SRDotLn" style="float:none;margin-right:2px;">
-									......<img src="{$ImagePath}/1040_Bullet.gif" alt="Right arrow"/>
+									....................<img src="{$ImagePath}/1040_Bullet.gif" alt="Right arrow"/>
 								</span> 
 								<span style="width:60mm;float:right;">
 									<input type="checkbox" class="styCkboxNM" alt="Third Party Designee Ind Yes"
@@ -2350,7 +2346,7 @@
 								</span>
 							</span>
 						</div>
-						<div style="width:167mm;height:7mm;padding-top:1.3mm">
+						<div style="width:167mm;height:8mm;padding-top:1.3mm">
 							<span style="width:16mm;">
 								Designee's <br /> name <img src="{$ImagePath}/1040_Bullet.gif" alt="Right arrow"/>
 							</span>

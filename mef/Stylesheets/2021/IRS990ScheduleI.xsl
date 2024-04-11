@@ -86,10 +86,10 @@
 Complete if the organization answered "Yes," on Form 990, Part IV, line 21 or 22.
         </span><br />
    <span class="sty990ScheduleIFST">
-<img src="{$ImagePath}/990SchI_Bullet.gif" alt="lBullet"/> 
+<img src="{$ImagePath}/990SchI_Bullet.gif" alt="Graphic Arrow"/> 
  Attach to Form 990.</span><br></br>
  <span class="sty990ScheduleIFST">
-<img src="{$ImagePath}/990SchI_Bullet.gif" alt="lBullet"/> 
+<img src="{$ImagePath}/990SchI_Bullet.gif" alt="Graphic Arrow"/> 
  Go to <!--www.irs.gov/form990.--><a href="http://www.irs.gov/form990" title="Link to IRS.gov">
                 <i>www.irs.gov/Form990</i></a> for the latest information. 
  </span>
@@ -419,7 +419,7 @@ Complete if the organization answered "Yes," on Form 990, Part IV, line 21 or 22
              <span style="letter-spacing:4mm; font-weight:bold; "> ................. </span>  <span style="letter-spacing:2mm; font-weight:bold; ">  
          </span>
           </span>
-   <img src="{$ImagePath}/990SchI_Bullet.gif" alt="Bullet Image"/>
+   <img src="{$ImagePath}/990SchI_Bullet.gif" alt="Graphic Arrow"/>
    </div>
     <div class="styFixedUnderline" style="height:auto;width:40mm;text-align:right;padding-right:1mm">
           <xsl:call-template name="PopulateText">
@@ -442,7 +442,7 @@ Complete if the organization answered "Yes," on Form 990, Part IV, line 21 or 22
       .    </span>          
         
           </span>
-    <img src="{$ImagePath}/990SchI_Bullet.gif" alt="Bullet Image"/>
+    <img src="{$ImagePath}/990SchI_Bullet.gif" alt="Graphic Arrow"/>
    </div>
     <div class="styFixedUnderline" style="height:auto;width:40mm;text-align:right;padding-right:1mm;">
           <xsl:call-template name="PopulateText">

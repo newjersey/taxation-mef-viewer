@@ -55,7 +55,7 @@
 									<xsl:with-param name="TargetNode" select="$FormData" />
 								</xsl:call-template>
 							</div>
-							<div class="" style="padding-top:.5mm;font-size:7pt;">(December 2019)</div>
+							<div class="" style="padding-top:.5mm;font-size:7pt;">(Rev. December 2022)</div>
 							<div class="styAgency" style="padding-top:.5mm;">Department of the Treasury
 								<br/>Internal Revenue Service
 							</div>
@@ -92,6 +92,27 @@
 						<div class="styEINBox" style="width:52mm;padding-left:0.5mm;font-weight:normal;">
 							<strong>Partner tax ID number</strong><br />
 							<xsl:call-template name="PopulateReturnHeaderFilerTIN"/>
+						</div>
+					</div>
+					<!-- box line -->
+					<div class="styStdDiv" style="border-bottom:1px solid black;">
+						<div class="styLNDesc" style="width:187mm;height:auto;float:none;font-weight:bold;">
+							Source of review year adjustments: 
+							<span style="width:7mm;height:1mm;"/>
+							BBA Audit 
+							<input type="checkbox" class="styCkboxNM" style="margin-right:10mm;" alt="BBA Audit">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/BBAAuditInd"/>
+									<xsl:with-param name="BackupName"></xsl:with-param>
+								</xsl:call-template>
+							</input>
+							AAR Filing
+							<input type="checkbox" class="styCkboxNM" style="" alt="AAR Filing">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/AARFilingInd"/>
+									<xsl:with-param name="BackupName"></xsl:with-param>
+								</xsl:call-template>
+							</input>
 						</div>
 					</div>
 					<!-- TH line -->
@@ -479,7 +500,7 @@
 					<div class="styStdDiv pageEnd" style="border-top:2px solid black;">
 						<span style="font-weight:bold;font-family:Arial;">For Paperwork Reduction Act Notice, see the Instructions for Form 1065.</span>
 						<span style="margin-left:17mm;font-size:6.5pt;">Cat. No. 70970F</span>
-						<span style="float:right;font-weight:bold;font-size:6.5pt;">Schedule A (Form 8978) (12-2019)</span>
+						<span style="float:right;font-weight:bold;font-size:6.5pt;">Schedule A (Form 8978) (12-2022)</span>
 					</div>
 					<!-- Additional Data title bar and button -->
 					<div class="styLeftOverTitleLine" id="LeftoverData">

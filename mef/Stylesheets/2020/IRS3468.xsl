@@ -599,7 +599,7 @@
 						<div class="styLNDesc" style="width:130mm;padding-left:2mm">
 				                          Enter the applicable unused investment credit from cooperatives (see instructions)
                         <!--Dotted Line-->
-					<span class="styDotLn" style="float:none;padding-left:2mm">..</span>
+					<span class="styDotLn" style="float:none;padding-left:0mm">..</span>
 						</div>
 						<div class="styLNRightNumBox" style="height:4.5mm;width:8mm;">9</div>
 						<div class="styLNAmountBox" style="height:4.5mm;">
@@ -1759,7 +1759,7 @@
 					<div style="width:187mm;font-size:8pt">
 						<div class="styLNLeftNumBox" style="text-align:right;">x</div>
 						<div class="styLNDesc" style="width:130mm;padding-left:2mm;">
-						   Enter the smaller of line 12s or $4,000
+						   Enter the smaller of line 12w or $4,000
 							<!--Dotted Line-->
 							<span class="styDotLn" style="float:none;padding-left:2mm">................</span>
 						</div>

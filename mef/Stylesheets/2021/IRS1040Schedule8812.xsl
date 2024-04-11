@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Corey Rooks on 4/25/2019 -->
+<!-- Last Modified by Corey Rooks on 1/04/2022 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -73,18 +73,18 @@
 							</div>
 							</div>
 							
-							<div style="float:right; clear:none; width: 40mm; height: 12mm; padding-top:1mm">
+							<div style="float:right; clear:none; width: 40mm; height: 12mm; padding-top:1mm;">
 								<img src="{$ImagePath}/8812_1040_Top_Forms.png" alt="TopFormImage" height="60" width="90"/>
 							</div>						
 							</div>
 						<div class="styTYBox" style="width:23mm;height:23mm;border-left-width:2px;">
-							<div class="styOMB" style="width:23mm; height:4mm;">
+							<div class="styOMB" style="width:23mm; height:8mm;">
 								OMB No. 1545-0074
 							</div>
-							<div class="styTaxYear" style="height:9mm;padding-top:1mm;padding-bottom:0;">
+							<div class="styTaxYear" style="height:8mm;padding-top:.5mm;padding-bottom:0;">
 								20<span class="styTYColor">21</span>
 							</div>
-							<div style="text-align:left;padding-left:3mm;">
+							<div style="text-align:left;padding-left:1mm;">
 								Attachment<br/>Sequence No.<span class="styBoldText">47</span>
 							</div>
 						</div>
@@ -132,7 +132,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm; padding-top: 1mm;">1</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm; padding-top: 1mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TaxLessCreditsAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/AdjustedGrossIncomeAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 32mm; height: 2mm; padding-top: 10mm; border-bottom-width: 0px; float: right;"/>
@@ -150,7 +150,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm; padding-top: 1mm;">2a </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 5mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/ExcldSect933PuertoRicoIncmAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 5mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -166,7 +166,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm; padding-top: 1mm;">2b </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 5mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/ExclusionAndDeductionSumAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 5mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -182,7 +182,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm; padding-top: 1mm;">2c </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 5mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/GrossIncomeExclusionAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 5mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -203,13 +203,13 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm; padding-top: 1mm;">2d</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm; padding-top: 1mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TaxLessCreditsAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/AdditionalIncomeAdjAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 32mm; height: 2mm; padding-top: 10mm; border-bottom-width: 0px; float: right;"/>
 									<div class="styLNAmountBox" style="width: 6mm; height: 2mm; padding-top: 10mm; border-bottom-width: 0px; float: right;"/>
 								</div>
-								<!--END Line 1-->
+								<!--END Line 2-->
 								<!-- BEGIN -->
 								<!-- Line 3 -->
 								<div style="width: 187mm; height: 4mm; clear: left; font-size: 7.5pt; float: left;">
@@ -221,7 +221,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4mm;">3</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/ACTCBeforeLimitAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/ModifiedAGIAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -235,7 +235,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 6mm; padding-top: 1.5mm;">4a </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 6mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/QlfyChildUnderAgeSSNCnt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 6mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -250,7 +250,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 6mm; padding-top: 1.5mm;">4b </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 6mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/QlfyChildIncldUnderAgeSSNCnt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 6mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -266,7 +266,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 6mm; padding-top: 1.5mm;">4c </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 6mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/QlfyChildOverAgeSSNCnt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 6mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -282,7 +282,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4mm;">5</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/ACTCAfterLimitAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/MaxCTCAfterLimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -295,9 +295,9 @@
 										<span style="float:left;clear:none;">Number of other dependents, including any qualifying children who are not under age 18 or who do not have the required social security number</span>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6mm; height: 10mm; padding-top: 6.5mm;">6 </div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 10mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
+									<div class="styLNAmountBox" style="width: 32mm; height: 10mm; padding-top: 6.5mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/OtherDependentCnt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 10mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -321,7 +321,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4mm;">7</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/ACTCBeforeLimitAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/OtherDependentCreditAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -338,7 +338,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">8</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/InitialCTCODCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -370,7 +370,7 @@
 				                <div class="styLNRightNumBox" style="width: 6mm;  height: 13mm; padding-top:8mm;">9</div>
 								<div class="styLNAmountBox"   style="width: 32mm; height: 13mm; padding-top:8mm;">
 									<xsl:call-template name="PopulateAmount">
-										<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+										<xsl:with-param name="TargetNode" select="$Form8812Data/FilingStatusThresholdCd"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -399,7 +399,7 @@
 				                <div class="styLNRightNumBox" style="width: 6mm;  height: 13mm; padding-top:8mm;">10</div>
 								<div class="styLNAmountBox"   style="width: 32mm; height: 13mm; padding-top:8mm;">
 									<xsl:call-template name="PopulateAmount">
-										<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+										<xsl:with-param name="TargetNode" select="$Form8812Data/ExcessAdjGrossIncomeAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -416,7 +416,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">11</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/ModifiedAGIPhaseOutAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -433,7 +433,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">12</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/CTCODCAfterAGILimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -450,7 +450,7 @@
 				                    <div style="float:left; font-size:7pt; width:141mm; height:8mm; padding-top:.7mm;">
 																	   
 									   <div style="float:left; width: 4mm;"><b>A</b></div> 
-									   <div style="float:left; width: 130mm;">Check here if you (or your spouse if married filing jointly) have a principal place of abode in the United.
+									   <div style="float:left; width: 130mm;">Check here if you (or your spouse if married filing jointly) had a principal place of abode in the United
 									   States for more than half of 2021 
 									   <span style="letter-spacing:2mm;font-weight:bold;">..............................</span></div>
 									   <div style="float:right; padding-right:1mm; padding-top:2mm;">
@@ -464,7 +464,7 @@
 									<div style="float:left; font-size:7pt; width:141mm; height:8mm; padding-top:.7mm;">
 									  <div style="float:left; width: 4mm;"><b>B</b></div> 
 									   <div style="float:left; width: 130mm;">
-									   Check here if you (or your spouse if married filing jointly) are 
+									   Check here if you (or your spouse if married filing jointly) were 
 									   a bona fide resident of Puerto Rico for 2021
 									   <span style="letter-spacing:2mm;font-weight:bold;">..........................................</span></div> 
 									   <div style="float:right; padding-right:1mm; padding-top:2mm;">
@@ -478,8 +478,8 @@
 						            
 						            </div>
 				                
-				                <div class="styLNRightNumBox" style="width: 6mm;  height: 20mm; padding-top:8mm; background-color:lightGray"></div>
-								<div class="styLNAmountBox"   style="width: 32mm; height: 20mm; padding-top:8mm; background-color:lightGray"></div>
+				                <div class="styLNRightNumBox" style="border-bottom-width: 0px; width: 6mm;  height: 20mm; padding-top:8mm; background-color:lightGray"></div>
+								<div class="styLNAmountBox"   style="border-bottom-width: 0px; width: 32mm; height: 20mm; padding-top:8mm; background-color:lightGray"></div>
 								</div>
 								<!--END line 13-->
 								<!-- BEGIN Part I-B Title -->
@@ -503,7 +503,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">14a</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/ODCAfterAGILimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -518,7 +518,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">14b</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/CTCAfterAGILimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -533,7 +533,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">14c</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/RCTCTaxLiabiltyLimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -548,7 +548,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">14d</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/ODCAfterTaxLiabilityLimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -563,27 +563,27 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">14e</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/CTCODCAfterTaxLiabilityLmtAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
-								<div style="width: 187mm; height: 10.5mm; clear: left; font-size: 7.5pt; float: left;">
-									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 5mm; padding-left: 7mm;">f</div>
-									<div class="styLNDesc" style="width: 141mm; height: 4.5mm;padding-left: 2mm">
+								<div style="width: 187mm; height: 13mm; clear: left; font-size: 7.5pt; float: left;">
+									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 13mm; padding-left: 7mm;">f</div>
+									<div class="styLNDesc" style="width: 141mm; height: 13mm;padding-left: 2mm;">
 										<span style="float:left;clear:none;">  
-				                         	Enter the aggregate amount of advance child tax credit payments you (and your spouse if filing jointly) received for 2021. See your Letter(s) 6419 for the amounts to include on this line. If you are missing Letter 6419, see the instructions before entering an amount on this line
-				                         	<span class="styDotLn" style="float:right;padding-right:2mm;">.........</span>
+				                         	Enter the aggregate amount of advance child tax credit payments you (and your spouse if filing jointly) received for 2021. See your Letter(s) 6419 for the amounts to include on this line. If you are missing Letter 6419, see the instructions before entering an amount on this line. If you didn't receive any advance child tax credit payments for 2021, enter -0-
+				                         	<span class="styDotLn" style="float:right;padding-right:0mm;">................</span>
 				                        </span>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 10.5mm;padding-top:6.5mm;">14f</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 10.5mm;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 13mm;padding-top:8.5mm;">14f</div>
+									<div class="styLNAmountBox" style="width: 32mm; height: 13mm;padding-top:8.5mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/AggregateAdvncCTCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
 									<div style="width: 187mm; height: 8mm; clear: left; font-size: 7.5pt; float: left;">
-									<div class="styLNDesc" style="width:149mm; height:8mm; padding-left:10mm; padding-top: 0mm;">
+									<div class="styLNDesc" style="width:149mm; height:10mm; padding-left:10mm; padding-top: 0mm;">
 										<span style="float:left;clear:none;"><b>Caution:</b> If the amount on this line doesn’t match the aggregate amounts reported to you (and your spouse if filing jointly) on your Letter(s) 6419, the processing of your return will be delayed.</span>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 8mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -598,7 +598,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">14g</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/NetCTCODCAfterLimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -612,9 +612,9 @@
 										
 									</div>
 									<div class="styLNRightNumBox" style="width: 6mm; height: 7mm;padding-top: 3mm;">14h</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;">
+									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;padding-top:3mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/NonrefundableODCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -627,10 +627,10 @@
 				                        </span>
 										
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 7mm;padding-top: 3mm;">14i</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;">
+									<div class="styLNRightNumBox" style="border-bottom-width: 0px; width: 6mm; height: 9mm;padding-top: 5mm;">14i</div>
+									<div class="styLNAmountBox" style="border-bottom-width: 0px; width: 32mm; height: 9mm;padding-top:5mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoCheckBoxSpcfdGrp/RefundableCTCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -668,7 +668,7 @@
 								<!--End of line 15 -->
 								<!-- capturing the page bottom info -->
 								<!--  FOOTER-->
-								<div class="pageEnd" style="width: 187mm; height: 8mm; clear: both; font-family: Arial; font-size: 7pt; border-top-color: black; border-top-width: 2px; border-top-style: solid; float: none;">
+								<div class="pageEnd" style="width: 187mm; height: 8mm; clear: both; font-family: Arial; font-size: 7pt; border-top-color: black; border-top-width: 1px; border-top-style: solid; float: none;">
 									<span style="float:left;clear:none;">
 										<b>For Paperwork Reduction Act Notice, see your tax return instructions.</b>
 										<span style="width:18mm;"/>Cat. No. 59761M</span>
@@ -683,7 +683,7 @@
 					<!-- END Page Header -->	
 					<!-- BEGIN Part I-C Title -->
 								<!-- BEGIN Part I-C Title -->
-								<div style="width: 187mm; height: 4.5mm; clear: left; border-top-color: black; border-bottom-color: black; border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; float: left;">
+								<div style="width: 187mm; height: 4.5mm; clear: left; border-top-color: black; border-bottom-color: black; border-top-width: 0px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; float: left;">
 									<div class="styPartName" style="font-family: Arial; font-size: 10pt;">Part I-C</div>
 									<div class="styPartDesc" style="font-family: Arial; font-size: 10pt;">Filers Who Do Not Check a Box on Line 13</div>
 									
@@ -703,7 +703,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">15a</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/ACTCTaxLiabiltyLimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -718,7 +718,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">15b</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/NonrefundableCTCODCLmtAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -763,7 +763,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">15c</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/CalcAddnlChildTaxCreditAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -778,22 +778,22 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">15d</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/TotalNrfdblRfdblCTCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
-								<div style="width: 187mm; height: 11mm; clear: left; font-size: 7.5pt; float: left;">
-									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 11mm; padding-left: 7mm;">e</div>
-									<div class="styLNDesc" style="width: 141mm; height: 11mm;padding-left: 2mm;">
+								<div style="width: 187mm; height: 13mm; clear: left; font-size: 7.5pt; float: left;">
+									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 13mm; padding-left: 7mm;">e</div>
+									<div class="styLNDesc" style="width: 141mm; height: 13mm;padding-left: 2mm;">
 										<span style="float:left;clear:none;">  
-				                         	Enter the aggregate amount of advance child tax credit payments you (and your spouse if filing jointly) received for 2021. See your Letter(s) 6419 for the amounts to include on this line. If you are missing Letter 6419, see the instructions before entering an amount on this line
-				                         	<span class="styDotLn" style="float:right;padding-right:2mm;">.........</span>
+				                         	Enter the aggregate amount of advance child tax credit payments you (and your spouse if filing jointly) received for 2021. See your Letter(s) 6419 for the amounts to include on this line. If you are missing Letter 6419, see the instructions before entering an amount on this line. If you didn't receive any advance child tax credit payments for 2021. enter -0-
+				                         	<span class="styDotLn" style="float:right;padding-right:2mm;">................</span>
 				                        </span>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 11mm;padding-top:7mm;">15e</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 11mm;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 13mm;padding-top:9mm;">15e</div>
+									<div class="styLNAmountBox" style="width: 32mm; height: 13mm;padding-top:9mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/AggregateAdvncCTCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -813,7 +813,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">15f</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/CTCDifferenceAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -825,9 +825,9 @@
 				                        </span>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6mm; height: 8.4mm;padding-top:5mm">15g</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 8.4mm;">
+									<div class="styLNAmountBox" style="width: 32mm; height: 8.4mm;padding-top:5mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/NonrefundableCTCODCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -840,24 +840,24 @@
 				                        </span>
 										
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 7mm;padding-top: 3mm;">15h</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;">
+									<div class="styLNRightNumBox" style="border-bottom-width: 0px; width: 6mm; height: 7mm;padding-top: 3mm;">15h</div>
+									<div class="styLNAmountBox" style="border-bottom-width: 0px; width: 32mm; height: 7mm;padding-top: 3mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/AdditionalChildTaxCreditAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
 								<!-- BEGIN Part II-A Title -->
 								<div style="width: 187mm; height: 4.5mm; clear: left; border-top-color: black; border-bottom-color: black; border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; float: left;">
 									<div class="styPartName" style="font-family: Arial; font-size: 10pt;">Part II-A</div>
-									<div class="styPartDesc" style="font-family: Arial; font-size: 10pt;"><b>Additional Child Tax Credit</b> (use only if completing Part I-C)</div>
+									<div class="styPartDesc" style="font-weight:normal;font-family: Arial; font-size: 10pt;"><b>Additional Child Tax Credit</b> (use only if completing Part I-C)</div>
 									
 								</div>
 								<div style="width:187mm;height:4.5mm;border-bottom color:black;border-bottom-width: 1px;border-bottom-style:solid;padding-bottom:2mm;padding-top:0mm;">
-								   <b>Caution:</b> If you file Form 2555, <b>stop here</b> and enter -0- on line 15c; you cannot claim the additional child tax credit.                  
+								   <b>Caution:</b> If you file Form 2555, do not complete Parts II-A through II-C; you cannot claim the additional child tax credit.                  
 								</div>
 								<div style="width:187mm;height:4.5mm;border-bottom color:black;border-bottom-width: 1px;border-bottom-style:solid;padding-bottom:2mm;padding-top:0mm;">
-								   <b>Caution:</b> If you checked a box on line 13, do not complete parts II-A through II-C; you cannot claim the additional child tax credit.                  
+								   <b>Caution:</b> If you checked a box on line 13, do not complete Parts II-A through II-C; you cannot claim the additional child tax credit.                  
 								</div>
 								<!--End of Part II-A Title-->
 								<!-- Line 16a-->
@@ -866,15 +866,16 @@
 									 <div style="width: 141mm; clear: none; float: left; height:5.5mm">
 									    <div class="styLNDesc" style="width: 138mm; height: 5.5mm;">																									
 									        <div class="styLNDesc" style="width: 138mm; height: 5.5mm;padding-left:1mm">
-									           Subtract line 15b from line 12. If zero, <b>stop here</b> and enter -0- on line 15c; you cannot claim this credit									           <span class="styDotLn" style="float:right;padding-right:2mm;">...............................</span>
+									           Subtract line 15b from line 12. If zero, skip Parts II-A and II-B and enter -0- on line 27
+									           <span class="styDotLn" style="float:right;padding-right:2mm;">....</span>
 											</div>
                                         </div>
 										   
 									</div>
 									<div class="styLNRightNumBox" style="width: 6mm; height: 6.5mm; padding-top: 2.5mm;">16a</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 6.5mm; padding-top: 1mm;">
+									<div class="styLNAmountBox" style="width: 32mm; height: 6.5mm; padding-top: 3mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TaxLessCreditsAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/ACTCBeforeLimitAmt"/>
 										</xsl:call-template>
 									</div>
 	<!--								<div class="styLNRightNumBox" style="width: 32mm; height: 2mm; padding-top: 10mm; border-bottom-width: 0px; float: right;"/>
@@ -890,26 +891,29 @@
 				                         	Number of qualifying children under 18 with the required social security number: ________  x $1,400.
 				                        </span>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 17mm;padding-top:13mm">16b</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 17mm;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 9mm;padding-top:4.5mm">16b</div>
+									<div class="styLNAmountBox" style="width: 32mm; height: 9mm;padding-top:4.5mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/QlfyChildUnderAgeSSNLimtAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
 								<div style="width: 187mm; height: 4.5mm; clear: left; font-size: 7.5pt; float: left;">
 								<div class="styLNDesc" style="width: 149mm; height: 4.5mm;padding-left: 10mm">
 										<span style="float:left;clear:none;">  
-				                         	Enter the result. If zero, <b>stop here</b> and enter -0- on line 15c; you cannot claim this credit
+				                         	Enter the result. If zero, skip Parts II-A and II-B and enter -0- on line 27 
 				                        </span>
+				                        <span class="styDotLn" style="float:right;padding-right:2mm;">.........</span>
 				                        </div>								
 				                        </div>
 				                        <div style="width: 187mm; height: 7.5mm; clear: left; font-size: 7.5pt; float: left;">
-								<div class="styLNDesc" style="width: 141mm; height: 7.5mm;padding-left: 10mm">
+								<div class="styLNDesc" style="width: 149mm; height: 7.5mm;padding-left: 10mm">
 										<span style="float:left;clear:none;">  
 				                         	<b>TIP:</b> The number of children you use for this line is the same as the number of children you used for line 4a.
 				                        </span>
 				                        </div>
+				                        <div class="styLNRightNumBox" style="width: 6mm; height: 8mm; background-color:lightgray;"/>
+									<div class="styLNAmountBox"   style="width: 32mm; height: 8mm; background-color:lightgray; border-bottom-width: 1px;"/>
 				                        </div>
 								<!-- END Line b -->
 								<!-- Line 17 -->
@@ -924,7 +928,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">17</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/ACTCAfterLimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -939,7 +943,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm; padding-top: 1mm;">18a </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 5mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/TotalEarnedIncomeAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 12mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -955,7 +959,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm; padding-top: 1mm;">18b </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 5mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/NontaxableCombatPayAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 5mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -1004,7 +1008,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm; ">19</div>
 									<div class="styLNAmountBox"   style="width: 32mm; height: 5mm;  border-bottom-width: 1px;">
 									<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetTotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/NetTotalEarnedIncomeAmt"/>
 									</xsl:call-template>
 									</div>
 									
@@ -1015,7 +1019,7 @@
 								<!--END Line 19-->
 								
 								<!-- Line 20-->
-								<div style="width: 187mm; height: 26mm; clear: left; font-size: 7.5pt; float: left;">
+								<div style="width: 187mm; height: 24.5mm; clear: left; font-size: 7.5pt; float: left;">
 									<div class="styLNLeftNumBox" style="width: 8mm; height: 5mm; padding-left: 2mm; padding-top: .75mm;">
 										20
 									</div>
@@ -1023,17 +1027,17 @@
 										Multiply the amount on line 19 by 15% (0.15) and enter the result 
 										<span style="letter-spacing:2mm;font-weight:bold;">................</span>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm;  border-bottom-width: 0px;">20</div>
-									<div class="styLNAmountBox"   style="width: 32mm; height: 5mm; border-bottom-width: 0px;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm;">20</div>
+									<div class="styLNAmountBox"   style="width: 32mm; height: 5mm;">
 									<xsl:call-template name="PopulateAmount">
-										<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+										<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/NetEarnedIncomeCalculatedAmt"/>
 									</xsl:call-template>
 									</div>
 									
 									<div class="styLNDesc" style="float:left; clear:left; width:149mm; height:4mm; padding-left:8mm; ">
 									<b>Next.</b> On line 16b, is the amount $4,200 or more?</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 4mm; background-color:lightgray; border-bottom-width: 0px;"/>
-									<div class="styLNAmountBox"   style="width: 32mm; height: 4mm; background-color:lightgray; border-bottom-width: 0px;"/>
+									<div class="styLNRightNumBox" style="border-bottom-width: 0px;width: 6mm; height: 4mm; background-color:lightgray;"/>
+									<div class="styLNAmountBox"   style="border-bottom-width: 0px;width: 32mm; height: 4mm; background-color:lightgray;"/>
 
 									<div style="float:left; clear:left; padding-left:8mm; padding-right:2mm;">
 									    <input type="checkbox" alt="MainHomeInUSOverHalfYrInd" class="styCkbox">
@@ -1043,13 +1047,12 @@
 											</xsl:call-template>
 										</input>
 									</div>
-									<div class="styLNDesc" style="width:134.1mm; height:8mm; padding-top: 1mm;">
-										<b>No.</b> If line 20 is zero, stop here and enter -0- on line 15c; you cannot claim this credit. 
-										<br/>Otherwise, skip Part II-B and enter the smaller of line 17 or line 20 on line 27.
+									<div class="styLNDesc" style="width:134.1mm; height:7.5mm; padding-top: 1mm;">
+										<b>No.</b> If line 20 is zero, enter -0- on line 15c; Otherwise, skip Part II-B and enter the smaller of line 17 or line 20 on line 27.
 									</div>
 
-									<div class="styLNRightNumBox" style="width: 6mm; height: 8mm; background-color:lightgray; border-bottom-width: 0px;"/>
-									<div class="styLNAmountBox"   style="width: 32mm; height: 8mm; background-color:lightgray; border-bottom-width: 0px;"/>
+									<div class="styLNRightNumBox" style="border-bottom-width: 0px; width: 6mm; height: 7.5mm; background-color:lightgray;"/>
+									<div class="styLNAmountBox"   style="border-bottom-width: 0px; width: 32mm; height: 7.5mm; background-color:lightgray;"/>
 									
 									<div style="float:left; clear:left; padding-left:8mm; padding-right:2mm;">
 									    <input type="checkbox" alt="MainHomeInUSOverHalfYrInd" class="styCkbox">
@@ -1063,8 +1066,8 @@
 										<b>Yes.</b> If line 20 is equal to or more than line 17, skip Part II-B and enter the amount from line 17 
 										<br/>on line 27. Otherwise, go to line 21.
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 8mm; background-color:lightgray;"/>
-									<div class="styLNAmountBox"   style="width: 32mm; height: 8mm; background-color:lightgray; border-bottom-width: 1px;"/>
+									<div class="styLNRightNumBox" style="border-bottom: 0px;width: 6mm; height: 8mm; background-color:lightgray;"/>
+									<div class="styLNAmountBox"   style="border-bottom: 0px;width: 32mm; height: 8mm; background-color:lightgray; border-bottom-width: 1px;"/>
 
 										</div>
 								<!--END Line 20-->
@@ -1079,19 +1082,19 @@
 					</div>
 					<!-- Line 21 -->
 								<div style="width: 187mm; height: 14mm; clear: left; font-size: 7.5pt; float: left;">
-									<div class="styLNLeftNumBox" style="width: 8mm; height: 14mm; padding-left: 3mm; padding-top: .75mm;">21 </div>
-									<div class="styLNDesc" style="width:103mm; height:14mm; padding-top: 1mm;">
+									<div class="styLNLeftNumBox" style="width: 8mm; height: 14mm; padding-left: 3mm; padding-top: .5mm;">21 </div>
+									<div class="styLNDesc" style="width:103mm; height:14mm; padding-top: .75mm;">
 										<span style="float:left;clear:none;">Withheld social security, Medicare, and Additional Medicare taxes from Form(s) W-2, boxes 4 and 6. If married filing jointly, include your spouse’s amounts with yours. If your employer withheld or you paid Additional Medicare Tax or tier 1 RRTA taxes, see instructions
 										<span class="styDotLn" style="float:right;padding-right:2mm;">.......</span></span>
 										
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 14mm; padding-top: 11mm;">21 </div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 14mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 14mm; padding-top: 9.5mm;">21 </div>
+									<div class="styLNAmountBox" style="width: 32mm; height: 14mm; padding-top: 9.5mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/FromW2Amt"/>
 										</xsl:call-template>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6.2mm; height: 14mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
+									<div class="styLNRightNumBox" style="width: 6.2mm; height: 14mm; padding-top: .75mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
 								</div>
 								<!-- END Line 21 -->
 								<!-- Line 22 -->
@@ -1103,9 +1106,9 @@
 										
 									</div>
 									<div class="styLNRightNumBox" style="width: 6mm; height: 11mm; padding-top: 7mm;">22 </div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 11mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
+									<div class="styLNAmountBox" style="width: 32mm; height: 11mm; padding-top: 7mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/FromTaxReturnAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 14mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
@@ -1121,14 +1124,14 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 5mm; padding-top: 1mm;">23 </div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 5mm; padding-top: 1mm; padding-right: 0.5mm; border-bottom-width: 1px;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/TotalEarnedIncomeAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/CalcFromW2AndReturnAmt"/>
 										</xsl:call-template>
 									</div>
 									<div class="styLNRightNumBox" style="width: 6.2mm; height: 5mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
 								</div>
 								<!-- END Line 23 -->
 								<!--Line 24-->
-								<div style="width: 187mm; height: 23mm; clear: left; font-size: 7.5pt; float: left;">
+								<div style="width: 187mm; height: 19mm; clear: left; font-size: 7.5pt; float: left;">
 								
 									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 14.5mmmm; padding-left: 3mm;">24</div>
 									<div class="styLNDesc" style="width: 103mm; height: 14.5mm;">
@@ -1137,27 +1140,27 @@
 				                        </span>
 				                    <br/>
 				                    <div>
-				                    <div style="float:left;font-size:7pt;width:80mm;height:18mm;padding-top:.7mm;">
+				                    <div style="float:left;font-size:7pt;width:80mm;height:19mm;padding-top:.7mm;">
 									   <b>1040-SR filers:</b> Enter the total of the amounts from Form 1040 or 1040-SR, line 27a<br/>
 									   and Schedule 3 (Form 1040), line 11.
-									   <div style="float:left;font-size:7pt;width:80mm;height:18mm;padding-top:.7mm;">
+									   <div style="float:left;font-size:7pt;width:80mm;height:19mm;padding-top:.7mm;">
 									   <b>1040-NR filers:</b> Enter the amount from Schedule 3 (Form 1040), line 11.
 									 </div>
 						            </div>
-						            <div style="float:left;width:5mm;height:18mm;">
+						            <div style="float:left;width:5mm;height:19mm;">
 										<img alt="right bracket" height="50px" src="{$ImagePath}/8912_Bracket_Sm.gif"/>
 									</div>
-									<div style="float:left;width:5mm;height:18mm;padding-top:5mm;">
+									<div style="float:left;width:5mm;height:19mm;padding-top:5mm;">
 									</div>
 						            </div> 
 						            </div>						             
-				                	<div class="styLNRightNumBox" style="width: 6mm;  height: 23mm; padding-top:19mm;">24</div>
-								<div class="styLNAmountBox"   style="width: 32mm; height: 23mm; padding-top:8mm;">
+				                	<div class="styLNRightNumBox" style="width: 6mm;  height: 19mm; padding-top:14mm;">24</div>
+								<div class="styLNAmountBox"   style="width: 32mm; height: 19mm; padding-top:14mm;">
 									<xsl:call-template name="PopulateAmount">
-										<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+										<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/CalcAmtFromRetPlusTaxWhldAmt"/>
 										</xsl:call-template>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6.2mm; height: 23mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
+									<div class="styLNRightNumBox" style="width: 6.2mm; height: 19mm; padding-top: 1.3mm; border-right-width: 1px; border-bottom-width: 0px; background-color: lightgrey;"/>
 								</div>
 								<!--END Line 24-->
 								<!--Line 25-->
@@ -1172,28 +1175,28 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">25</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/CalculatedDifferenceAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
 								<!--END Line 25-->
 								<!--Line 26-->
-								<div style="width: 187mm; height: 4.5mm; clear: left; font-size: 7.5pt; float: left;">
-									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 5mm; padding-left: 3mm;">26</div>
-									<div class="styLNDesc" style="width: 141mm; height: 4.5mm;padding-left: 2mm">
+								<div style="width: 187mm; height: 4mm; clear: left; font-size: 7.5pt; float: left;">
+									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 4mm; padding-left: 3mm;">26</div>
+									<div class="styLNDesc" style="width: 141mm; height: 4mm;padding-left: 2mm">
 										<span style="float:left;clear:none;">  
 				                         	Enter the larger of line 20 or line 25
 				                        </span>
 										<span class="styDotLn" style="float:right;padding-right:2mm;">.....................</span>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">26</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 4mm;">26</div>
+									<div class="styLNAmountBox" style="width: 32mm; height: 4mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/LargerCalcIncomeOrDiffAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
-								<div class="styLNDesc" style="width: 149mm; height: 4.5mm;padding-left: 10mm">
+								<div class="styLNDesc" style="width: 149mm; height: 4mm;padding-left: 10mm">
 										<span style="float:left;clear:none;">  
 				                         	<b>Next,</b> enter the <b>smaller</b> of line 17 or line 26 on line 27.
 				                        </span>
@@ -1202,48 +1205,48 @@
 
 								<!--END Line 26-->
 								<!-- BEGIN Part II-C Title -->
-					<div class="styBB" style="width: 187mm; height: 4.5mm; border-top-width: 1px; clear:left; float: left;">
-						<div class="styPartName" style="font-family:Arial;font-size:10pt;">
+					<div class="styBB" style="width: 187mm; height: 4mm; border-top-width: 1px; clear:left; float: left;">
+						<div class="styPartName" style="font-family:Arial;font-size:9.5pt;">
 							Part II-C
 						</div>
-						<div class="styPartDesc" style="font-family:Arial;font-size:10pt;">
+						<div class="styPartDesc" style="font-family:Arial;font-size:9.5pt;">
 							Additional Child Tax Credit
 						</div>
 					</div>
 					<!--Line 27-->
-								<div style="width: 187mm; height: 4.5mm; clear: left; font-size: 7.5pt; float: left;">
-									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 5mm; padding-left: 3mm;">27</div>
-									<div class="styLNDesc" style="width: 141mm; height: 4.5mm;padding-left: 2mm">
+								<div style="width: 187mm; height: 4mm; clear: left; font-size: 7.5pt; float: left;">
+									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 4mm; padding-left: 3mm;">27</div>
+									<div class="styLNDesc" style="width: 141mm; height: 4mm;padding-left: 2mm">
 										<span style="float:left;clear:none;">  
 				                         	Enter this amount on line 15c
 				                        </span>
-										<span class="styDotLn" style="float:right;padding-right:2mm;">...............</span>
+										<span class="styDotLn" style="float:right;padding-right:2mm;">.......................</span>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">27</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
+									<div class="styLNRightNumBox" style="border-bottom-width: 0px; width: 6mm; height: 4mm;">27</div>
+									<div class="styLNAmountBox" style="border-bottom-width: 0px; width: 32mm; height: 4mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/FilersWhoDoNotCheckBoxSpcfdGrp/CalcAddnlChildTaxCreditAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
 								<!--END Line 27-->
-								<div class="pageEnd" style="width: 187mm; height: 4mm; clear: both; font-family: Arial; font-size: 7pt; border-top-color: black; border-top-width: 2px; border-top-style: solid; float: none;">
-								<span style="float:right;clear:none;font-weight:bold;">Schedule 8812 (Form 1040) 2021</span>
+								<div class="pageEnd" style="width: 187mm; clear: both; font-family: Arial; font-size: 7pt; border-top-color: black; border-top-width: 2px; border-top-style: solid; float: none;background-color:yellow">
+									<span style="float:right;clear:none;font-weight:bold;">Schedule 8812 (Form 1040) 2021</span>
 								</div>
 								<!--Begin Page 3 -->
 					<!-- Page Header -->
-					<div class="styTBB" style="width:187mm;padding-top:.5mm;">
-						<div style="float:left;">Schedule 8812 (Form 1040) 2021</div>
+					<div class="styTBB" style="width:187mm;padding-top:2.5mm;">
+						<div style="float:left;">Schedule 8812 (Form 1040)2021</div>
 						<div style="float:right;">Page <span style="font-weight:bold;font-size:8pt;">3</span></div>
 					</div>
 					<!-- END Page Header -->	
 					<!-- BEGIN Part III Title -->
-					<div class="styBB" style="width: 187mm; height: 4.5mm; border-top-width: 1px; clear:left; float: left;">
+					<div class="styBB" style="width: 187mm; height: 4.5mm; border-top-width: 0px; clear:left; float: left;">
 						<div class="styPartName" style="font-family:Arial;font-size:10pt;">
 							Part III
 						</div>
-						<div class="styPartDesc" style="font-family:Arial;font-size:10pt;">
-							<b>Additional Tax</b> (use only if line 14g or line 15f is zero)
+						<div class="styPartDesc" style="font-family:Arial;font-size:10pt;font-weight:normal;">
+							<b>Additional Tax</b> (use only if line 14g or line 15f, whichever applies, is zero)
 						</div>
 					</div>
 					<div style="width: 187mm; height: 4.5mm; clear: left; font-size: 7.5pt; float: left;">
@@ -1257,7 +1260,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">28a</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/AdvncCTCReceivedAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1272,7 +1275,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">28b</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/AllowableCTCODCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1284,25 +1287,25 @@
 				                      <span class="styDotLn" style="float:right;padding-right:2mm;">.........................</span>  </span>
 										
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 8.5mm;padding-top:5mm">29</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 8.5mm;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 9.5mm;padding-top:5mm">29</div>
+									<div class="styLNAmountBox" style="width: 32mm; height: 9.5mm;padding-top:5mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/ExcessAdvncCTCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
-								<div style="width: 187mm; height: 12mm; clear: left; font-size: 7.5pt; float: left;">
+								<div style="width: 187mm; height: 13mm; clear: left; font-size: 7.5pt; float: left;">
 									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 10mm; padding-left: 3mm;">30</div>
-									<div class="styLNDesc" style="width: 141mm; height: 12mm;padding-left: 2mm;">
+									<div class="styLNDesc" style="width: 141mm; height: 13mm;padding-left: 2mm;">
 										<span style="float:left;clear:none;">  
 				                         	Enter the number of qualifying children taken into account in determining the annual advance amount you received for 2021. See your Letter 6419 for this number. If you are missing your Letter 6419, you are filing a joint return, or you received more than one Letter 6419, see the instructions before entering a number on this line
-				                         	<span class="styDotLn" style="float:right;padding-right:2mm;">..</span>
+				                         	<span class="styDotLn" style="float:right;padding-right:2mm;">......................</span>
 				                        </span>
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 12mm;padding-top:7mm;">30</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 12mm;">
+									<div class="styLNRightNumBox" style="width: 6mm; height: 13mm;padding-top:9mm;">30</div>
+									<div class="styLNAmountBox" style="width: 32mm; height: 13mm;padding-top:9mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/AdvncCTCDepdRt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1323,7 +1326,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">31</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/SmallerQlfyChildRt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1336,43 +1339,43 @@
 										
 									</div>
 									<div class="styLNRightNumBox" style="width: 6mm; height: 7mm;padding-top:3mm">32</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;">
+									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;padding-top:3mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/NetAdvncCTCDepdRt"/>
 										</xsl:call-template>
 									</div>
 								</div>
 								<!--Line 33-->
-								<div style="width: 187mm; height: 17mm; clear: left; font-size: 7.5pt; float: left;">
+								<div style="width: 187mm; height: 18mm; clear: left; font-size: 7.5pt; float: left;">
 								
-									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 11.5mmmm; padding-left: 3mm;">33</div>
-									<div class="styLNDesc" style="width: 141mm; height: 11.5mm;">
+									<div class="styLNLeftNumBoxSD" style="width: 8mm; height: 12.5mmmm; padding-left: 3mm;">33</div>
+									<div class="styLNDesc" style="width: 141mm; height: 12.5mm;">
 										<span style="float:left;clear:none;">  
 				                         	Enter the amount shown below for your filing status.
 				                        </span>
 				                    <br/>
 				                    <div>
-				                    <div style="float:left;font-size:7pt;width:80mm;height:12mm;padding-top:.7mm;">
+				                    <div style="float:left;font-size:7pt;width:80mm;height:13mm;padding-top:.7mm;">
 									   &#8226; Married filing jointly or Qualifying widow(er)--$60,000.<br/>
 									   &#8226; Head of household--$50,000<br/>
 									   &#8226; All other filing statuses--$40,000
 						            </div>
-						            <div style="float:left;width:5mm;height:12mm;">
+						            <div style="float:left;width:5mm;height:13mm;">
 						            
-										<img alt="right bracket" height="60px" src="{$ImagePath}/8912_Bracket_Sm.gif"/>
+										<img alt="right bracket" height="55px" src="{$ImagePath}/8912_Bracket_Sm.gif"/>
 										
 									</div>
-									<div style="float:left;width:5mm;height:12mm;padding-top:5mm;">
+									<div style="float:left;width:5mm;height:13mm;padding-top:5mm;">
 										
 									</div>
 						            </div><span style="letter-spacing:2mm;font-weight:bold;">.................</span>
 						            
 						            </div>
 				                
-				                <div class="styLNRightNumBox" style="width: 6mm;  height: 17mm; padding-top:13mm;">33</div>
-								<div class="styLNAmountBox"   style="width: 32mm; height: 17mm; padding-top:13mm;">
+				                <div class="styLNRightNumBox" style="width: 6mm;  height: 18mm; padding-top:14mm;">33</div>
+								<div class="styLNAmountBox"   style="width: 32mm; height: 18mm; padding-top:14mm;">
 									<xsl:call-template name="PopulateAmount">
-										<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+										<xsl:with-param name="TargetNode" select="$Form8812Data/SafeHarborFSThresholdCd"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1387,7 +1390,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">34</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/MAGIAfterSafeHarborLimitAmt"/>
 										</xsl:call-template>
 									</div>
 								</div><div style="width: 187mm; height: 4.5mm; clear: left; font-size: 7.5pt; float: left;">
@@ -1401,7 +1404,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">35</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/SafeHarborFSThresholdCd"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1414,9 +1417,9 @@
 										
 									</div>
 									<div class="styLNRightNumBox" style="width: 6mm; height: 7mm;padding-top:3mm">36</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;">
+									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;padding-top:3mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/ReducedExcessCTCAmtPct"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1432,7 +1435,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">37</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/MaxExcessAdvncCTCReducedAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1448,7 +1451,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">38</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/LimitExcessAdvncCTCReducedAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1464,7 +1467,7 @@
 									<div class="styLNRightNumBox" style="width: 6mm; height: 4.5mm;">39</div>
 									<div class="styLNAmountBox" style="width: 32mm; height: 4.5mm;">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/ReducedExcessAdvncCTCAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>
@@ -1476,10 +1479,10 @@
 				                       <span class="styDotLn" style="float:right;padding-right:2mm;">...........</span> </span>
 										
 									</div>
-									<div class="styLNRightNumBox" style="width: 6mm; height: 7mm;padding-top:3mm">40</div>
-									<div class="styLNAmountBox" style="width: 32mm; height: 7mm;">
+									<div class="styLNRightNumBox" style="border-bottom-width: 0px; width: 6mm; height: 7mm;padding-top:3mm">40</div>
+									<div class="styLNAmountBox" style="border-bottom-width: 0px; width: 32mm; height: 7mm;padding-top:3mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$Form8812Data/NetEarnedIncomeCalculatedAmt"/>
+											<xsl:with-param name="TargetNode" select="$Form8812Data/AdvncCTCAdditionalTaxAmt"/>
 										</xsl:call-template>
 									</div>
 								</div>

@@ -371,10 +371,10 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
 				<xsl:call-template name="InitJS"/>
 				<style type="text/css">
-					<!--<xsl:if test="not($Print) or $Print=''">-->
+					<xsl:if test="not($Print) or $Print=''">
 						<xsl:call-template name="IRS990PFStyle"/>
 						<xsl:call-template name="AddOnStyle"/>
-					<!--</xsl:if>-->
+					</xsl:if>
 				</style>
 				<xsl:call-template name="GlobalStylesForm"/>
 			</head>
@@ -534,28 +534,26 @@
 						</div>
 						<div class="styEINDateAssets" style="width:65mm;height:5mm;border-bottom-width: 0px; padding-top: 2mm">
 							<span class="styBoldText" style="float: left">C </span>
-							<label for="Pending" style="float: left; clear:none; padding-left: 1mm">If exemption application is pending, check here
+							<label for="Pending" style="float: left; clear:none; padding-left: 1mm">If exemption application is pending,
+							 check here
 							</label>
-							<span style="float: right">
-								<!--          <span style="padding-right: 2mm"><img src="{$ImagePath}/990PF_Bullet_Sm.gif" alt="bullet"/></span>
-          <input type="checkbox" class="styCkBox" TabIndex="-1" id="Pending" onclick="return false;"></input>
-          </span>
-*** Enabled "Pending" Box on 02/13/08          
- -->
+							<span style="float: right; ">
 								<span style="padding-right: 2mm">
 									<img src="{$ImagePath}/990PF_Bullet_Sm.gif" alt="bullet"/>
 								</span>
-								<input type="checkbox" alt="Pending" class="styCkBox">
+								<input type="checkbox" alt="ApplicationPending" class="styCkBox">
 									<xsl:call-template name="PopulateCheckbox">
-										<xsl:with-param name="TargetNode" select="$FormData/Pending"/>
-										<xsl:with-param name="BackupName">IRS990PFPending</xsl:with-param>
+										<xsl:with-param name="TargetNode" select="$FormData/ApplicationPendingInd"/>
+										<xsl:with-param name="BackupName">ApplicationPending</xsl:with-param>
 									</xsl:call-template>
 								</input>
 							</span>
 						</div>
-					</div>					
+					</div>
 					<div style="width: 187mm">
-						<span style="width: 122mm; border-style: solid; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width: 0px; float: left">
+					<!-- This is section G start -->
+						<span style="width: 122mm; border-style: solid; border-left-width: 0px; border-right-width: 1px; 
+							border-top-width: 0px; border-bottom-width: 0px; float: left">
 								<span  style="width:3mm;"><b>G</b></span>
 								<span style="width:30mm;"> Check all that apply: </span> 						
 									<span style="width:28mm;">
@@ -628,21 +626,37 @@
 										</xsl:call-template>Address change
 									</label>
 								</span>
-								<span style="width:58mm;"><!-- NameChange checkbox is for Paper Filers Only.  It is a write in field. -->
-									<input type="checkbox" alt="NameChange" class="styIRS990PFCkBox" id="NameChange" onclick="return false;"/>
-									<label for="NameChange">Name change</label>
+								<span style="width:58mm;">
+									<input type="checkbox" alt="NameChange" class="styIRS990PFCkBox">
+										<xsl:call-template name="PopulateCheckbox">
+											<xsl:with-param name="TargetNode" select="$FormData/NameChangeInd"/>
+											<xsl:with-param name="BackupName">IRS990PFNameChange</xsl:with-param>
+										</xsl:call-template>
+									</input>
+									<label>
+										<xsl:call-template name="PopulateLabel">
+											<xsl:with-param name="TargetNode" select="$FormData/NameChangeInd"/>
+											<xsl:with-param name="BackupName">IRS990PFNameChange</xsl:with-param>
+										</xsl:call-template>Name change
+									</label>
 								</span>
 						</span>
-						<!-- Checkboxes D 1 and D 2 are for Paper Filers Only.  They are write in fields -->
+						<!-- This is section G end -->
+						<!-- This checkbox D 1 and D 2 start -->
 						<div class="styEINDateAssets" style="width:65mm;height:5mm;border-bottom-width: 0px; padding-top: 1.5mm">
 							<span style="float: left"><b> D 1.</b> Foreign organizations, check here.............  </span>
 							<label for="ForeignOrg" style="float: left; clear: none; padding-left: 1mm;">
 							</label>
-							<span style="float: right">
-								<span style="width:4mm;">
+							<span style="float: right; ">
+								<span style="padding-right: 2mm">
 									<img src="{$ImagePath}/990PF_Bullet_Sm.gif" alt="bullet"/>
 								</span>
-								<input type="checkbox" alt="ForeignOrganization" class="styCkBox" TabIndex="-1" id="ForeignOrg" onclick="return false;"/>
+								<input type="checkbox" alt="ForeignOrgMeeting85PctTest" class="styCkBox">
+									<xsl:call-template name="PopulateCheckbox">
+										<xsl:with-param name="TargetNode" select="$FormData/ForeignOrganizationInd"/>
+										<xsl:with-param name="BackupName">IRS990PFPFForeignOrganizationInd</xsl:with-param>
+									</xsl:call-template>
+								</input>
 							</span>
 						</div>						
 						<span class="styEINDateAssets" style="width:65mm;height:5mm;border-bottom-width: 0px; float:right; padding-top: 1mm">
@@ -651,19 +665,26 @@
 							</span>
 							<label for="85" style="float: left; clear: none; padding-left: 1mm;">
 							</label>
-							<span style=" float:right;padding-top: 1mm;">
-								<span style="width:4mm;">
+							<span style="float: right; ">
+								<span style="padding-right: 2mm">
 									<img src="{$ImagePath}/990PF_Bullet_Sm.gif" alt="bullet"/>
 								</span>
-								<input type="checkbox" alt="Foreign organization meeting 85% test" class="styCkBox" id="85" onclick="return false;"/>
+								<input type="checkbox" alt="PFStatusTermSect507b1A" class="styCkBox">
+									<xsl:call-template name="PopulateCheckbox">
+										<xsl:with-param name="TargetNode" select="$FormData/ForeignOrgMeeting85PctTestInd"/>
+										<xsl:with-param name="BackupName">ForeignOrganizationMeets85%TestInd</xsl:with-param>
+									</xsl:call-template>
+								</input>
 							</span>
 						</span>										
-					</div>		
-					<!-- H section starts here.-->
+					</div>
+						<!-- This checkbox D end -->
 					<div style="width: 187mm;">
-					<div class="styEINDateAssets" style="width:65mm;height:5mm;border-bottom-width: 0px; float: right; clear: both;">
+						<!-- Checkbox E starts here.-->
+						<div class="styEINDateAssets" style="width:65mm;height:5mm;border-bottom-width: 0px; float: right; clear: both;">
 							<span class="styBoldText" style="float: left">E </span>
-							<label for="507" style="float: left; clear: none; padding-left: 2mm">If private foundation status was terminated<br/>under section 507(b)(1)(A), check here ....... 
+							<label for="507" style="float: left; clear: none; padding-left: 2mm">If private foundation status was 
+								terminated<br/>under section 507(b)(1)(A), check here ....... 
 							</label>
 							<span style="float: right; ">
 								<span style="padding-right: 2mm">
@@ -677,6 +698,8 @@
 								</input>
 							</span>
 						</div>
+						<!-- This checkbox E end -->
+						<!-- H section starts here.-->
 						<span style="width: 122mm; border-style: solid; border-left-width: 0px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; float: left;">
 							<span class="styBoldText">H</span> Check type of organization: <span style="width: 2mm"/>
 							<input type="checkbox" alt="Section 501(c)(3) exempt private foundation" class="styIRS990PFCkBox">
@@ -718,20 +741,28 @@
 							</label>
 						</span>
 					</div>
-					<!-- I section starts here.-->
-					<div style="width: 187mm;"><!-- float:none; clear:none-->
-						<!-- Checkbox on Line F is Paper Filers Only.  It is a write in field. -->
-						<div class="styEINDateAssets" style="width:65mm;height:15mm; padding-top: 1.5mm; float: right; clear:both;padding-bottom:5.35mm;">
+						<div style="width: 187mm;">
+						<!-- Checkbox F starts here.-->
+						<div class="styEINDateAssets" style="width:65mm;height:15mm; padding-top: 1.5mm; float: right; clear:both;
+							padding-bottom:5.35mm;">
 							<span class="styBoldText" style="float: left">F </span>
-							<label for="60" style="float: left; clear: none; padding-left: 2mm">If the foundation is in a 60-month termination<br/>under section 507(b)(1)(B), check here .......
-							</label> 
-							<span style="float:right;">
+							<label for="60" style="float: left; clear: none; padding-left: 2mm">If the foundation is in a 60-month 
+								termination<br/>under section 507(b)(1)(B), check here .......
+							</label>
+							<span style="float: right; ">
 								<span style="padding-right: 2mm">
 									<img src="{$ImagePath}/990PF_Bullet_Sm.gif" alt="bullet"/>
 								</span>
-								<input type="checkbox" alt="Foundation is in a 60-month termination" class="styCkBox" id="60" onclick="return false;"/>
-							</span>						
+								<input type="checkbox" alt="PF60MonthTermSect507b1B" class="styCkBox">
+									<xsl:call-template name="PopulateCheckbox">
+										<xsl:with-param name="TargetNode" select="$FormData/PF60MonthTermSect507b1BInd"/>
+										<xsl:with-param name="BackupName">PF60MonthTermSect507b1B</xsl:with-param>
+									</xsl:call-template>
+								</input>
+							</span>					
 						</div>
+						<!-- This checkbox F end -->
+						<!-- I section starts here.-->
 						<span style="width: 55mm; float: left; border-style: solid; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width: 1px;padding-top:1mm; height: 15mm">
 							<span class="styBoldText">I </span> 
 								Fair market value of all assets at end<br/>
@@ -1253,7 +1284,8 @@
 							</tr>							
 							<!-- lines 13 through 26 -->
 							<tr>
-								<td class="styIRS990VTImageBox" style="width: 4mm; border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width: 1px" rowspan="17" valign="middle">
+								<td class="styIRS990VTImageBox" style="width: 4mm; border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; 
+									border-top-width: 0px; border-bottom-width: 1px" rowspan="17" valign="top">
 									<img src="{$ImagePath}/990PF_OAE.gif" alt="Operating and Administrative Expenses"/>
 								</td>
 								<td class="styLNLeftNumBox" style="width: 4mm">13</td>
@@ -1711,7 +1743,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="styLNLeftNumBox" style="border-color: black; border-style: solid; border-left-width: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; padding-top:1mm; width: 7mm;height:8mm">26</td>
+								<td class="styLNLeftNumBox" style="border-color: black; border-style: solid; border-left-width: 0px; border-top-width: 0px; 
+										border-right-width: 0px; border-bottom-width: 1px; padding-top:1mm; width: 7mm;height:8mm">26</td>
 								<td class="styIRS990PFLNDesc" colspan="2" style="border-bottom-width: 1px; font-size: 7pt; padding-top: 1mm">
 									<span class="styBoldText">Total expenses and disbursements. </span> Add lines 24 and 25</td>
 								<td class="styIRS990PFLNAmountBox" colspan="2" style="border-right-width:1px; border-left-width: 0px; width: 29mm;vertical-align:bottom">
@@ -1737,7 +1770,8 @@
 							</tr>	
 							<!--  Lines 27, a, b, c  -->
 							<tr>
-								<td class="styIRS990VTImageBox" style="width: 4mm;border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width: 1px" rowspan="4">
+								<td class="styIRS990VTImageBox" style="width: 4mm;border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; 
+									border-top-width: 0px; border-bottom-width: 1px" rowspan="4">
 									<span class="styTableCellPad"/>
 								</td>
 								<td class="styLNLeftNumBox" style="width: 4mm">27</td>
@@ -3186,14 +3220,15 @@
 						<div style="float:right">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp"/>
-								<xsl:with-param name="setDynamicHeight" select="5"/>
+								<xsl:with-param name="containerHeight" select="5"/>
+									<xsl:with-param name="headerHeight" select="1"/>
 								<xsl:with-param name="containerID" select="'AthruDctn'"/>
 							</xsl:call-template>
 						</div>
 					</div>
 					<!--  Part IV  -->
 					<div class="styTableContainer" style="width:187mm;height:auto;border-bottom-width:0px;" id="AthruDctn" >
-						<!--<xsl:call-template name="SetInitialState"/>-->
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt;border-color:black;" cellspacing="0">
 							<thead class="styTableThead">
 								<tr scope="col">
@@ -3265,23 +3300,24 @@
 					</div>
 					<xsl:call-template name="SetInitialDynamicTableHeight">
 						<xsl:with-param name="TargetNode" select="$FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp"/>
-						<xsl:with-param name="setDynamicHeight" select="6"/>
+						<xsl:with-param name="containerHeight" select="5"/>
+						<xsl:with-param name="headerHeight" select="1"/>
 						<xsl:with-param name="containerID" select=" 'AthruDctn' "/>
-						<xsl:with-param name="headerRowCount" select="2"/> <!--  -->
 					</xsl:call-template>
 					<xsl:if test="(count($FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp) &gt; 5) and $Print=''">
 						<div class="styGenericDiv" style="width:187mm;height:auto">
 							<div style="float:right">
 								<xsl:call-template name="SetDynamicTableToggleButton">
 									<xsl:with-param name="TargetNode" select="$FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp"/>
-									<xsl:with-param name="setDynamicHeight" select="5"/>
+									<xsl:with-param name="containerHeight" select="5"/>
+									<xsl:with-param name="headerHeight" select="1"/>
 									<xsl:with-param name="containerID" select="'EthruHctn'"/>
 								</xsl:call-template>
 							</div>
 						</div>
 					</xsl:if>
 					<div class="styTableContainer" style="width:187mm;height:34mm;border-color:black;border-bottom-width:0px;border-top-width:1px;" id="EthruHctn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt; border-color:black" cellspacing="0">
 							<thead>
 								<tr scope="col">
@@ -3350,7 +3386,8 @@
 					</div>
 					<xsl:call-template name="SetInitialDynamicTableHeight">
 						<xsl:with-param name="TargetNode" select="$FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp"/>
-						<xsl:with-param name="setDynamicHeight" select="6"/>
+						<xsl:with-param name="containerHeight" select="5"/>
+						<xsl:with-param name="headerHeight" select="1"/>
 						<xsl:with-param name="containerID" select=" 'EthruHctn' "/>
 					</xsl:call-template>
 					<xsl:if test="(count($FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp) &gt; 5) and $Print=''">
@@ -3358,15 +3395,15 @@
 							<div style="float:right">
 								<xsl:call-template name="SetDynamicTableToggleButton">
 									<xsl:with-param name="TargetNode" select="$FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp"/>
-									<xsl:with-param name="setDynamicHeight" select="6"/>
-									<xsl:with-param name="headerRowCount" select="2"/>
+									<xsl:with-param name="containerHeight" select="5"/>
+									<xsl:with-param name="headerHeight" select="2"/>
 									<xsl:with-param name="containerID" select="'IthruLctn'"/>
 								</xsl:call-template>
 							</div>
 						</div>
 					</xsl:if>
 					<div class="styTableContainer" style="border-bottom-width:1px; width:187mm; height:38mm;" id="IthruLctn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt; border-color:black" cellspacing="0">
 							<thead>
 								<tr scope="col">
@@ -3439,8 +3476,8 @@
 					</div>
 					<xsl:call-template name="SetInitialDynamicTableHeight">
 						<xsl:with-param name="TargetNode" select="$FormData/CapGainsLossTxInvstIncmDetail/CapGainsLossTxInvstIncmGrp"/>
-						<xsl:with-param name="setDynamicHeight" select="6"/>
-						<xsl:with-param name="headerRowCount" select="2"/>
+						<xsl:with-param name="containerHeight" select="5"/>
+						<xsl:with-param name="headerHeight" select="2"/>
 						<xsl:with-param name="containerID" select=" 'IthruLctn' "/>
 					</xsl:call-template>
 					<div class="styTableContainer" style="border-bottom: 0px solid black; border-top:0px solid black; width: 187mm; height:auto "><!--24mm-->
@@ -3573,7 +3610,7 @@
 						</thead>
 						<tfoot/>
 						<tbody valign="top" >
-							<tr>
+							<tr style="height:4mm;">
 								<td class="styTableCell" style="width: 39mm; text-align: center"></td>
 								<td class="styTableCell" style="width: 45mm">
 									<!--<xsl:call-template name="PopulateAmount">
@@ -3591,7 +3628,7 @@
 									</xsl:call-template>-->
 								</td>
 							</tr>
-							<tr>
+							<tr style="height:4mm;">
 								<td class="styTableCell" style="width: 39mm; text-align: center"></td>
 								<td class="styTableCell" style="width: 45mm">
 									<!--<xsl:call-template name="PopulateAmount">
@@ -3609,7 +3646,7 @@
 									</xsl:call-template>-->
 								</td>
 							</tr>
-							<tr>
+							<tr style="height:4mm;">
 								<td class="styTableCell" style="width: 39mm; text-align: center"></td>
 								<td class="styTableCell" style="width: 45mm">
 									<!--<xsl:call-template name="PopulateAmount">
@@ -3627,7 +3664,7 @@
 									</xsl:call-template>-->
 								</td>
 							</tr>
-							<tr>
+							<tr style="height:4mm;">
 								<td class="styTableCell" style="width: 39mm; text-align: center"></td>
 								<td class="styTableCell" style="width: 45mm">
 									<!--<xsl:call-template name="PopulateAmount">
@@ -3645,7 +3682,7 @@
 									</xsl:call-template>-->
 								</td>
 							</tr>
-							<tr>
+							<tr style="height:4mm;">
 								<td class="styTableCell" style="width: 39mm; text-align: center"></td>
 								<td class="styTableCell" style="width: 45mm">
 									<!--<xsl:call-template name="PopulateAmount">
@@ -3834,7 +3871,8 @@
 								    Date of ruling or determination letter:
 								    <span class="styIRS990PFUnderlinedText" style="width: 15mm">
 										<xsl:call-template name="PopulateAmount">
-											<xsl:with-param name="TargetNode" select="$FormData/ExciseTaxBasedOnInvstIncmGrp/RulingLetterDt"/>
+											<xsl:with-param name="TargetNode" 
+												select="$FormData/ExciseTaxBasedOnInvstIncmGrp/RulingLetterDt"/>
 										</xsl:call-template>
 									</span>
 									<span class="styBoldText">(attach copy of letter if necessary–see instructions)</span>
@@ -3850,7 +3888,8 @@
 							<!--  Line 1b  -->
 							<tr>
 								<td class="styLNLeftLtrBox" style="padding-left: 4mm; width: 5mm">b</td>
-								<td class="styTableCell" colspan="3" style="text-align: left; width: 136mm; border-bottom-width: 0px; border-right-width: 0px">
+								<td class="styTableCell" colspan="3" style="text-align: left; width: 136mm; border-bottom-width: 0px; 
+									border-right-width: 0px">
 									<label>
 										<xsl:call-template name="PopulateLabel">
 											<xsl:with-param name="TargetNode" 
@@ -3871,16 +3910,18 @@
 										</xsl:when>
 										<xsl:otherwise>
 											<xsl:call-template name="PopulateText">
-												<xsl:with-param name="TargetNode" select="$FormData/ExciseTaxBasedOnInvstIncmGrp/NotApplicableCd"/>
+												<xsl:with-param name="TargetNode" 
+													select="$FormData/ExciseTaxBasedOnInvstIncmGrp/NotApplicableCd"/>
 											</xsl:call-template>
 										</xsl:otherwise>
 									</xsl:choose>
 								</td>
 							</tr>
-							<tr>
+							<!--<tr>
 								<td class="styLNLeftLtrBox" style="padding-left: 3mm; width: 5mm"/>
-								<td class="styTableCell" colspan="3" style="text-align: left; width: 136mm; border-bottom-width: 0px; border-right-width: 0px">
-									<!--<span style="float: left; clear: none">here<span style="width: 1mm"/>
+								<td class="styTableCell" colspan="3" style="text-align: left; width: 136mm; border-bottom-width: 0px; 
+									border-right-width: 0px">
+									--><!--<span style="float: left; clear: none">here<span style="width: 1mm"/>
 										<img src="{$ImagePath}/990PF_Bullet_Md.gif" alt="Bullet"/>
 										<span style="width: 1mm"/>
 										<input type="checkbox" alt="DomesticOrgMeetingSect4940e" class="styCkBox">
@@ -3890,7 +3931,7 @@
 												<xsl:with-param name="BackupName">IRS990PFDomesticOrgMeetingSect4940e</xsl:with-param>
 											</xsl:call-template>
 										</input>
-										<span style="width:1px"/>and enter 1% of Part I, line 27b</span>-->
+										<span style="width:1px"/>and enter 1% of Part I, line 27b</span>--><!--
 								</td>
 								<td class="styLNRightNumBox" style="background-color: lightgrey; border-bottom-width: 0px; height:6mm">
 									<span style="width: 1px"/>
@@ -3898,15 +3939,16 @@
 								<td class="styShadingCell" style="width: 30mm; height:6mm">
 									<span class="styTableCellPad"/>
 								</td>
-							</tr>
+							</tr>-->
 							<!-- Line 1b  -->
 							<!--  Line 1c  -->
 							<tr>
 								<td class="styLNLeftLtrBox" style="padding-left: 4mm; width: 5mm">c</td>
 								<td class="styTableCell" colspan="3" 
-									style="padding-top: 1mm; text-align: left; width: 136mm; border-bottom-width: 0px; border-right-width: 0px">
-									<span style="font-size: 7pt; ">All other domestic foundations enter 1.39% of line 27b. Exempt foreign organizations enter 4% of Part I, line 12, col. 
-										(b)
+									style="padding-top: 1mm; text-align: left; width: 136mm; border-bottom-width: 0px; 
+										border-right-width: 0px">
+									<span style="font-size: 7pt; ">All other domestic foundations enter 1.39% of line 27b. Exempt 
+										foreign organizations enter 4% of Part I, line 12, col. (b)
 									</span>
 								</td>
 								<td class="styLNRightNumBox" style="background-color: lightgrey; border-bottom-width: 0px; height:7mm">
@@ -4021,7 +4063,6 @@
 							</tr>
 							<!--  Line 6a  -->
 							<!--  Line 6b  -->
-							<!-- According to TY2016 schema, this is a Paper Filers Only Field.  There is no field name to populate here. -->
 							<tr>
 								<td class="styLNLeftLtrBox" style="padding-left: 4mm; width: 5mm">b</td>
 								<td class="styTableCell" style="padding-left:3mm;text-align: left; width: 99mm; border-bottom-width: 0px; border-right-width: 0px">
@@ -4030,7 +4071,9 @@
 								</td>
 								<td class="styLNRightNumBox">6b</td>
 								<td class="styLNAmountBox" colspan="2" style="width: 36mm">
-									<span class="styTableCellPad"/>
+									<xsl:call-template name="PopulateAmount">
+										<xsl:with-param name="TargetNode" select="$FormData/ExciseTaxBasedOnInvstIncmGrp/ExemptFrgnOrgTaxWthldAtSrceAmt"/>
+									</xsl:call-template>
 								</td>
 								<td class="styLNRightNumBox" style="background-color: lightgrey; border-bottom-width: 0px">
 									<span style="width: 1px"/>
@@ -4064,8 +4107,10 @@
 							<!--  Line 6d  -->
 							<tr>
 								<td class="styLNLeftLtrBox" style="padding-left: 4mm; width: 5mm">d</td>
-								<td class="styTableCell" style="padding-left:3mm;text-align: left; width: 99mm; border-bottom-width: 0px; border-right-width: 0px">
-        Backup withholding erroneously withheld 
+								<td class="styTableCell" 
+								style="padding-left:3mm;text-align: left; width: 99mm; border-bottom-width: 0px; 
+								border-right-width: 0px">
+									Backup withholding erroneously withheld 
 									<span class="styDotLn" style="float:none; clear:none">...........</span>
 								</td>
 								<td class="styLNRightNumBox">6d</td>
@@ -4253,7 +4298,7 @@
 					<div style="width: 187mm">
 						<div class="styLNLeftLtrBox">b</div>
 						<div class="styLNDesc" style="width: 155mm">
-							Did it spend more than $100 during the year (either directly or indirectly) for political purposes? (see Instructions
+							Did it spend more than $100 during the year (either directly or indirectly) for political purposes? See the instructions
 						</div>
 						<div class="styLNRightNumBox" style="border-bottom-width: 0px"/>
 						<div class="styLNRightNumBox" style="border-bottom-width: 0px"/>
@@ -4262,7 +4307,7 @@
 					<div style="width: 187mm">
 						<div class="styLNLeftLtrBox"/>
 						<div class="styLNDesc" style="width: 155mm">
-							<span style="float: left; clear: none">for definition)</span>
+							<span style="float: left; clear: none"> for the definition</span>
 							<span class="styDotLn" style="clear: none">.................................</span>
 						</div>
 						<div class="styLNRightNumBox">1b</div>
@@ -6505,14 +6550,16 @@
 								<span class="styBoldText">
 									<label>
 										<xsl:call-template name="PopulateLabelYes">
-											<xsl:with-param name="TargetNode" select="$FormData/StatementsRegardingActy4720Grp/ProhibitedTaxShelterTransInd"/>
+											<xsl:with-param name="TargetNode" 
+												select="$FormData/StatementsRegardingActy4720Grp/ProhibitedTaxShelterTransInd"/>
 											<xsl:with-param name="BackupName">IRS990PFProhibitedTaxShelterTransactn</xsl:with-param>
 										</xsl:call-template>Yes</label>
 								</span>
 								<span style="width: 2mm"/>
 								<input type="checkbox" alt="ProhibitedTaxShelterTransactionNo" class="styCkBox">
 									<xsl:call-template name="PopulateNoCheckbox">
-										<xsl:with-param name="TargetNode" select="$FormData/StatementsRegardingActy4720Grp/ProhibitedTaxShelterTransInd"/>
+										<xsl:with-param name="TargetNode" 
+											select="$FormData/StatementsRegardingActy4720Grp/ProhibitedTaxShelterTransInd"/>
 										<xsl:with-param name="BackupName">IRS990PFProhibitedTaxShelterTransactn</xsl:with-param>
 									</xsl:call-template>
 								</input>
@@ -6559,7 +6606,8 @@
 					<div style="width: 187mm">
 						<div class="styLNLeftNumBox">8</div>
 						<div class="styLNDesc" style="width: 155mm">
-							<span style="float: left; clear: none"> Is the foundation subject to the section 4960 tax on payment(s) of more than $1,000,000 in remuneration or
+							<span style="float: left; clear: none"> Is the foundation subject to the section 4960 tax on payment(s) of 
+							more than $1,000,000 in remuneration or
 						    </span>
 						</div>
 						<div class="styLNRightNumBox" style="background-color: lightgrey; border-bottom:0"/>
@@ -6574,11 +6622,13 @@
 							</span>
 							<span style="float: right; clear:none; padding-right: 2mm">
 								<xsl:call-template name="PopulateSpan">
-									<xsl:with-param name="TargetNode" select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
+									<xsl:with-param name="TargetNode" 
+										select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
 								</xsl:call-template>
-								<input type="checkbox" class="styCkBox">
+								<input type="checkbox" alt="SubjectToTaxRemunerationExcessParachutePaymentIndYes" class="styCkBox">
 									<xsl:call-template name="PopulateYesCheckbox">
-										<xsl:with-param name="TargetNode" select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
+										<xsl:with-param name="TargetNode" 
+											select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
 										<xsl:with-param name="BackupName">IRS990PFSubjToTaxRmnrtnExPrchtPymt</xsl:with-param>
 									</xsl:call-template>
 								</input>
@@ -6586,14 +6636,16 @@
 								<span class="styBoldText">
 									<label>
 										<xsl:call-template name="PopulateLabelYes">
-											<xsl:with-param name="TargetNode" select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
+											<xsl:with-param name="TargetNode" 
+												select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
 											<xsl:with-param name="BackupName">IRS990PFSubjToTaxRmnrtnExPrchtPymt</xsl:with-param>
 										</xsl:call-template>Yes</label>
 								</span>
 								<span style="width: 2mm"/>
-								<input type="checkbox" class="styCkBox">
+								<input type="checkbox" alt="SubjectToTaxRemunerationExcessParachutePaymentIndNo" class="styCkBox">
 									<xsl:call-template name="PopulateNoCheckbox">
-										<xsl:with-param name="TargetNode" select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
+										<xsl:with-param name="TargetNode" 
+											select="$FormData/StatementsRegardingActy4720Grp/SubjToTaxRmnrtnExPrchtPymtInd"/>
 										<xsl:with-param name="BackupName">IRS990PFSubjToTaxRmnrtnExPrchtPymt</xsl:with-param>
 									</xsl:call-template>
 								</input>
@@ -6999,8 +7051,8 @@
 						</span>
 					</div>
 					<!--  Line 3  -->
-					<!--<div class="pageEnd"/>
-					<div style="page-break-after:always"/>-->
+					<!--<div class="pageEnd"/>-->
+					<div style="page-break-after:always"/>
 					<!--  Part IX-A  -->
 					<div style="width:187mm;border-top-width: 0px; " class="styBB">
 						<div class="styPartName" style="width:18mm;">Part IX-A</div> 
@@ -8721,10 +8773,10 @@
 									style="text-align:left; border-bottom-width: 0px; border-left-width: 0px; border-top-width: 0px; width: 75mm" colspan="2">
 										<span class="styBoldText" style="padding-left: 2.5mm">f</span>
 										<span style="width: 1mm"/>
-										    Undistributed income for 2021. Subtract<br/>
+										    Undistributed income for 2020. Subtract<br/>
 										<span style="width: 5.5mm"/>lines 4d and 5 from line 1. This amount must
 										    <br/>
-										<span style="width: 5.5mm"/>be distributed in 2020
+										<span style="width: 5.5mm"/>be distributed in 2021
 										    <span class="styDotLn" style="float:none; clear:none">..........
 										    </span>
 									</td>
@@ -8747,7 +8799,7 @@
 									<td class="styTableCell" style="text-align:left; border-bottom-width: 0px; border-left-width: 0px; border-top-width: 0px; width: 75mm" colspan="2">
 										<span class="styBoldText" style="padding-left: 2mm">7</span>
 										<span style="width: 1mm"/>
-         Amounts treated as distributions out of<br/>
+										 Amounts treated as distributions out of<br/>
 										<span style="width: 5.5mm"/>corpus to satisfy requirements imposed by
 										 <br/>
 										<span style="width: 5.5mm"/>section 170(b)(1)(F) or 4942(g)(3) (Election may 
@@ -9544,47 +9596,64 @@
 							</tbody>
 						</table>
 					</div>
+
 					<!--  Part XV  -->
-					<div style="width:187mm;border-top-width: 1px" class="styBB">
-						<div class="styPartName" style="margin-top:2mm">Part XV</div>
-						<div class="styPartDesc" style="height:auto">
-							Supplementary Information (Complete this part only if the foundation had $5,000 or more in<br/>
-							assets at any time during the year—see instructions.)  
-						</div>
+					<div style="float:none;clear:both;width:187mm;border-top-width: 1px" class="styBB">
+						<div class="styPartName">Part XV</div>
+						<div class="styPartDesc" style="height:auto;">
+    Supplementary Information (Complete this part only if the foundation had $5,000 or more in<br/>
+							assets at any time during the year—see instructions.)   
+  </div>
 					</div>
-					<!--  Line 1a  -->
+					<!--  Line 1a Start -->
 					<div style="text-align:left; width: 187mm">
 						<span class="styBoldText">1</span>
 						<span style="width: 4.5mm"/>
 						<span class="styBoldText">Information Regarding Foundation Managers:</span>
 					</div>
-					<div style="text-align:left; width: 187mm;height:auto">
+					<div style="text-align:left; width: 187mm">
 						<span class="styBoldText" style="padding-left:2mm">a</span>
-						<span style="width: 2mm"/>List any managers of the foundation who have contributed more than 2% of the total contributions     
+						<span style="width: 3mm"/>List any managers of the foundation who have contributed more than 2% of the total contributions     
 							received by the foundation<br/>
 						<span style="width: 6mm"/>
 							before the close of any tax year (but only if they have contributed more than $5,000). (See section 507(d)(2).)
-				    </div>
-					<div class="styGenericDiv" style="width:187mm;height:auto">
+   </div>
+
+
+
+
+
+
+
+
+
+
+			<xsl:if test="($Print != $Separated) and (count($FormData/SupplementaryInformationGrp/ContributingManagerNm) &gt;1)">
+
+					<div class="styGenericDiv" style="float:none;clear:both;width:187mm">
 						<div style="float:right">
-							<xsl:call-template name="SetDynamicTableToggleButton">
+
+							<xsl:call-template name="SetTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ContributingManagerNm"/>
-								<xsl:with-param name="setDynamicHeight" select="4"/>
+								<xsl:with-param name="containerHeight" select="1"/>
 								<xsl:with-param name="containerID" select="'1aCMctn'"/>
 							</xsl:call-template>
 						</div>
 					</div>
-					<div class="styTableContainer" style="width: 187mm; " id="1aCMctn"><!--height:14mm-->
-						<!--<xsl:call-template name="SetInitialState"/>-->
+
+			</xsl:if>
+
+					<div class="styTableContainer" style="width: 187mm; height: auto;" id="1aCMctn">
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt">
 							<tbody>
-								<!--<xsl:call-template name="SetInitialState"/>-->
+								<xsl:call-template name="SetInitialState"/>
 								<xsl:if test="($Print != $Separated) or (count($FormData/SupplementaryInformationGrp/ContributingManagerNm) &lt;2)">
 									<xsl:for-each select="$FormData/SupplementaryInformationGrp/ContributingManagerNm">
 										<tr>
-											<td class="styBB" style="width: 187mm; padding-left: 6mm">
+											<td class="styBB" style="float:none;width: 187mm; padding-left: 6mm">
 												<xsl:if test="position()=last()">
-													<xsl:attribute name="style">width: 187mm; padding-left: 6mm; border-bottom-width: 0px</xsl:attribute>
+													<xsl:attribute name="style">float:none;width: 187mm; padding-left: 6mm; border-bottom-width: 0px</xsl:attribute>
 												</xsl:if>
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="."/>
@@ -9595,7 +9664,7 @@
 								</xsl:if>
 								<xsl:if test="($Print = $Separated) and (count($FormData/SupplementaryInformationGrp/ContributingManagerNm) &gt;1)">
 									<tr>
-										<td class="styBB" style="width: 187mm; padding-left: 6mm; border-bottom-width: 0px">
+										<td class="styBB" style="float:none;width: 187mm; padding-left: 6mm; border-bottom-width: 0px">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ContributingManagerNm"/>
 											</xsl:call-template>
@@ -9605,35 +9674,60 @@
 							</tbody>
 						</table>
 					</div>
-					<!--  Line 1a  -->
-					<!--  Line 1b  -->
+
+
+
+			<xsl:if test="($Print != $Separated) and (count($FormData/SupplementaryInformationGrp/ContributingManagerNm) &gt;1)">
+
+					<xsl:call-template name="SetInitialDynamicTableHeight">
+						<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ContributingManagerNm"/>
+						<xsl:with-param name="containerHeight" select="1"/>
+						<xsl:with-param name="containerID" select=" '1aCMctn' "/>
+					</xsl:call-template>
+				</xsl:if>
+
+
+					<!--  Line 1a End -->
+
+
+
+
+
+
+
+
+
+					<!--  Line 1b Start -->
 					<div style="text-align:left; border-bottom-width: 0px; border-left-width: 0px; border-top-width: 0px; width: 187mm">
 						<span class="styBoldText" style="padding-left:2mm">b</span>
-						<span style="width: 2mm"/>List any managers of the foundation who own 10% or more of the stock of a corporation (or an equally large 
-							portion of the<br/>
+						<span style="width: 2mm"/>List any managers of the foundation who own 10% or more of the stock of a corporation (or an       equally large portion of the<br/>
 						<span style="width: 6mm"/>
-							ownership of a partnership or other entity) of which the foundation has a 10% or greater interest.
-				    </div>
-					<div class="styGenericDiv" style="width:187mm;height:auto">
+    ownership of a partnership or other entity) of which the foundation has a 10% or greater interest.
+   </div>
+			<xsl:if test="($Print != $Separated) and (count($FormData/SupplementaryInformationGrp/ShareholderManagerNm) &gt;1)">
+
+					<div class="styGenericDiv" style="float:none;clear:both;width:187mm">
 						<div style="float:right">
-							<xsl:call-template name="SetDynamicTableToggleButton">
+							<xsl:call-template name="SetTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ShareholderManagerNm"/>
-								<xsl:with-param name="setDynamicHeight" select="4"/>
+								<xsl:with-param name="containerHeight" select="1"/>
 								<xsl:with-param name="containerID" select="'1bSMctn'"/>
 							</xsl:call-template>
 						</div>
 					</div>
-					<div class="styTableContainer" style="width: 187mm;" id="1bSMctn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
+
+</xsl:if>
+
+					<div class="styTableContainer" style="width: 187mm; height: auto;" id="1bSMctn">
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt">
 							<tbody>
-								<!--<xsl:call-template name="SetInitialState"/>-->
 								<xsl:if test="($Print != $Separated) or (count($FormData/SupplementaryInformationGrp/ShareholderManagerNm) &lt;2)">
 									<xsl:for-each select="$FormData/SupplementaryInformationGrp/ShareholderManagerNm">
 										<tr>
-											<td class="styBB" style="width: 187mm; padding-left: 6mm">
+											<td class="styBB" style="float:none;width: 187mm; padding-left: 6mm">
 												<xsl:if test="position()=last()">
-													<xsl:attribute name="style">width: 187mm; padding-left: 6mm; border-bottom-width: 0px</xsl:attribute>
+													<xsl:attribute name="style">float:none;width: 187mm; padding-left: 6mm; border-bottom-width: 0px</xsl:attribute>
 												</xsl:if>
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="."/>
@@ -9644,7 +9738,7 @@
 								</xsl:if>
 								<xsl:if test="($Print = $Separated) and (count($FormData/SupplementaryInformationGrp/ShareholderManagerNm) &gt;1)">
 									<tr>
-										<td class="styBB" style="width: 187mm; padding-left: 6mm; border-bottom-width: 0px">
+										<td class="styBB" style="float:none;width: 187mm; padding-left: 6mm; border-bottom-width: 0px">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ShareholderManagerNm"/>
 											</xsl:call-template>
@@ -9654,8 +9748,18 @@
 							</tbody>
 						</table>
 					</div>
-					<!--  Line 1b  -->
-					<!--  Line 2  -->
+			<xsl:if test="($Print != $Separated) and (count($FormData/SupplementaryInformationGrp/ShareholderManagerNm) &gt;1)">
+							<xsl:call-template name="SetInitialDynamicTableHeight">
+								<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ShareholderManagerNm"/>
+								<xsl:with-param name="containerHeight" select="1"/>
+								<xsl:with-param name="containerID" select="'1bSMctn'"/>
+							</xsl:call-template>			
+			</xsl:if>
+
+
+					<!--  Line 1b End -->
+
+					<!--  Line 2 Start -->
 					<div style="text-align:left; width: 187mm; padding-bottom:1mm">
 						<span class="styBoldText">2</span>
 						<span style="width: 4.5mm"/>
@@ -9681,29 +9785,28 @@
 							  other conditions, complete items 2a, b, c, and d.  See instructions
 						</label>
 					</div>
-					<!--  Line 2  -->
+					<!--  Line 2 End -->
+
 					<!--  Line 2a  - 2d   -->
-					<div class="styGenericDiv" style="width:187mm; ">
+					<div class="styGenericDiv" style="float:none;clear:both;width:187mm">
 						<div style="float:right">
-							<xsl:call-template name="SetDynamicTableToggleButton">
+							<xsl:call-template name="SetTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ApplicationSubmissionInfoGrp"/>
-								<xsl:with-param name="setDynamicHeight" select="1"/>
+								<xsl:with-param name="containerHeight" select="1"/>
 								<xsl:with-param name="containerID" select="'2aASctn'"/>
 							</xsl:call-template>
 						</div>
 					</div>
-					<div class="styTableContainer" style="width: 187mm; height: 50mm" id="2aASctn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
+					<div class="styTableContainer" style="width: 187mm; height: auto;display:table;" id="2aASctn">
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt">
 							<tbody>
-								<!--<xsl:call-template name="SetInitialState"/>-->
 								<xsl:if test="($Print != $Separated) or (count($FormData/SupplementaryInformationGrp/ApplicationSubmissionInfoGrp) &lt;2)">
 									<xsl:for-each select="$FormData/SupplementaryInformationGrp/ApplicationSubmissionInfoGrp">
 										<tr>
-											<td style="text-align:left; border-bottom-width: 0px; border-left-width: 0px; border-top-width: 0px; width: 187mm; height:auto">
+											<td style="text-align:left; border-bottom-width: 0px; border-left-width: 0px; border-top-width: 0px; width: 187mm">
 												<span class="styBoldText" style="padding-left:2mm">a</span>
-												<span style="width: 2mm"/>The name, address, and telephone number or e-mail address of the person to whom applications 
-													should be addressed:</td>
+												<span style="width: 2mm"/>The name, address, and telephone number or e-mail address of the person to whom applications should be addressed:</td>
 										</tr>
 										<tr>
 											<td class="styBB" style="width: 187mm; padding-left: 6mm">
@@ -9861,6 +9964,16 @@
 							</tbody>
 						</table>
 					</div>
+
+			<xsl:if test="($Print != $Separated) and (count($FormData/SupplementaryInformationGrp/ApplicationSubmissionInfoGrp) &gt;1)">
+							<xsl:call-template name="SetInitialDynamicTableHeight">
+								<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/ApplicationSubmissionInfoGrp"/>
+								<xsl:with-param name="containerHeight" select="1"/>
+								<xsl:with-param name="containerID" select="'2aASctn'"/>
+							</xsl:call-template>			
+			</xsl:if>
+
+
 					<!--  Line 2  -->
 					<!--BEGIN FOOTER-->
 					<div style="width:187mm;">
@@ -9872,36 +9985,40 @@
 					<div style="page-break-after:always"/>
 					<!--END FOOTER-->
 					<!--BEGIN HEADER-->
-					<div class="styGenericDiv" style="width:187mm">
+					<div class="styGenericDiv" style="float:none;clear:both;width:187mm">
 						<div style="float: left; clear: none">Form 990-PF (2020)</div>
 						<div style="float:right">
 							Page <span class="styBoldText" style="font-size: 8pt">11</span>
 						</div>
 					</div>
+
 					<!--END HEADER-->
 					<!--  Part XV  -->
-					<div style="width:187mm;border-top-width: 1px" class="styBB">
+					<div style="float:none;clear:both;width:187mm;border-top-width: 1px" class="styBB">
 						<div class="styPartName">Part XV</div>
 						<div class="styPartDesc" style="width: 160mm">
-							Supplementary Information <span class="styNormalText"> (continued) </span>
+						  Supplementary Information<span class="styNormalText"> (continued) </span>
 						</div>
 						<div style="float:right">
 							<xsl:call-template name="SetDynamicTableToggleButton">
-								<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp"/>
-								<xsl:with-param name="setDynamicHeight" select="4"/>
-								<xsl:with-param name="headerRowCount" select="1"/>
+								<xsl:with-param name="TargetNode" 
+									select="$FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp"/>
+								<xsl:with-param name="containerHeight" select="9"/>
+								<xsl:with-param name="headerHeight" select="3"/>
 								<xsl:with-param name="containerID" select="'Paidctn'"/>
 							</xsl:call-template>
 						</div>
 					</div>
-					<div class="styTableContainerNBB" style="width: 187mm; height: auto; border-bottom-width: 0px" id="Paidctn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
+					<div class="styTableContainerNBB" style="width: 187mm; min-height: 66mm; border-bottom-width: 0px" id="Paidctn">
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt; border-color:black" cellspacing="0">
 							<thead>
 								<tr scope="col">
-									<th scope="col" class="styTableCellHeader" colspan="5" style="text-align: left; height: 4mm; width: 187mm; border-right-width: 0px">
-										<span class="styPartDesc" style="padding-left: 0px">3 
-											<span style="width: 4.5mm"/>Grants and Contributions Paid During the Year or Approved for Future Payment
+									<th scope="col" class="styTableCellHeader" colspan="5" style="text-align: left; height: 4mm; 
+										width: 187mm; border-right-width: 0px">
+										<span class="styPartDesc" 
+											style="padding-left: 0px">3 Grants and Contributions Paid During the Year or Approved for 
+											Future Payment
 										</span>
 									</th>
 								</tr>
@@ -9913,10 +10030,10 @@
 									</th>
 									<th scope="col" class="styTableCellHeader" rowspan="2" style="height: 4mm; width: 40mm">
 										<span class="styNormalText">
-											  If recipient is an individual,<br/>
-											  show any relationship to<br/>
-											  any foundation manager<br/>
-											  or substantial contributor<br/>
+										  If recipient is an individual,<br/>
+										  show any relationship to<br/>
+										  any foundation manager<br/>
+										  or substantial contributor<br/>
 										</span>
 									</th>
 									<th scope="col" class="styTableCellHeader" rowspan="2" style="height: 4mm; width: 20mm">
@@ -9949,7 +10066,7 @@
 							<tfoot/>
 							<tbody valign="top">
 								<tr>
-									<td class="styTableCell" style="border-bottom-width: 0px; text-align:left; width: 55mm; height:auto">
+									<td class="styTableCell" style="border-bottom-width: 0px; text-align:left; width: 55mm;">
 										<span class="styBoldText">a</span>
 										<span style="width: 2mm"/>
 										<span class="styItalicText">Paid during the year</span>
@@ -9970,7 +10087,7 @@
 								<xsl:if test="($Print != $Separated) or (($Print = $Separated) and 
 								(count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &lt;5))">
 									<xsl:for-each select="$FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp">
-										<tr style="border-bottom-width: 0px; height:auto">
+										<tr style="border-bottom-width: 0px">
 											<td class="styTableCell" style="text-align:left; width: 55mm">
 												<xsl:if test="count(RecipientPersonNm) &gt;0">
 													<xsl:call-template name="PopulateText">
@@ -10024,9 +10141,10 @@
 										</tr>
 									</xsl:for-each>
 								</xsl:if>
-								<xsl:if test="(count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &lt;1) or (($Print = $Separated) and 
-									(count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &gt;4))">
-									<tr style="height: auto">
+								<xsl:if test="(count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &lt;1) or 
+									(($Print = $Separated) and 
+										(count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &gt;4))">
+									<tr style="height: 126mm">
 										<td class="styTableCell" style="text-align:left; width: 55mm">
 										<xsl:choose>
 											<xsl:when test="$FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp/RecipientPersonNm !=''">
@@ -10063,7 +10181,8 @@
 											<img src="{$ImagePath}/990PF_Bullet_Md.gif" alt="bullet"/>
 											<span style="width: 1.5mm"/> 3a</span>
 									</td>
-									<xsl:if test="($Print != $Separated)">
+									<xsl:if test="($Print != $Separated) or (($Print = $Separated) and 
+										(count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &lt;5))">
 										<td class="styTableCell" style="width: 32mm; border-right-width: 0px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/TotalGrantOrContriPdDurYrAmt"/>
@@ -10071,28 +10190,25 @@
 										</td>
 									</xsl:if>
 								</tr>
+
 							</tbody>
 						</table>
 					</div>
-					<xsl:call-template name="SetInitialDynamicTableHeight">
-						<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp"/>
-						<xsl:with-param name="setDynamicHeight" select="9"/>
-						<xsl:with-param name="containerID" select=" 'Paidctn' "/>
-					</xsl:call-template>
+
 					<xsl:if test="(count($FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp) &gt;4)">
 						<div class="styBB" style="width: 187mm">
 							<div style="float:right">
 								<xsl:call-template name="SetDynamicTableToggleButton">
 									<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp"/>
-									<xsl:with-param name="setDynamicHeight" select="4"/>
-									<xsl:with-param name="headerRowCount" select="1"/>
+									<xsl:with-param name="containerHeight" select="5"/>
+									<xsl:with-param name="headerHeight" select="2"/>
 									<xsl:with-param name="containerID" select="'Futurectn'"/>
 								</xsl:call-template>
 							</div>
 						</div>
 					</xsl:if>
-					<div class="styTableContainerNBB" style="width: 187mm; height: auto; border-bottom-width: 0px; border-top-width:1px" id="Futurectn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
+					<div class="styTableContainerNBB" style="width: 187mm; min-height: 49mm; border-bottom-width: 0px" id="Futurectn">
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt; border-color:black" cellspacing="0">
 							<thead/>
 							<tfoot/>
@@ -10173,9 +10289,10 @@
 										</tr>
 									</xsl:for-each>
 								</xsl:if>
-								<xsl:if test="(count($FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp) &lt;1) or 
-								((count($FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp) &gt;3) and ($Print = $Separated))">
-									<tr style="height: auto">
+								<xsl:if test="(count($FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp) &lt;1) or
+									((count($FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp) &gt;3) and 
+									($Print = $Separated))">
+									<tr style="height: 80mm">
 										<td class="styTableCell" style="width: 55mm; text-align: left">
 										<xsl:choose>
 											<xsl:when test="$FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp/RecipientPersonNm !=''">
@@ -10212,7 +10329,8 @@
 											<img src="{$ImagePath}/990PF_Bullet_Md.gif" alt="bullet"/>
 											<span style="width: 1.5mm"/> 3b</span>
 									</td>
-									<xsl:if test="($Print != $Separated)">
+									<xsl:if test="($Print != $Separated) or (($Print = $Separated) and
+									 (count($FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp) &lt;4))">
 										<td class="styTableCell" style="width: 32mm; border-right-width: 0px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/TotalGrantOrContriApprvFutAmt"/>
@@ -10223,11 +10341,7 @@
 							</tbody>
 						</table>
 					</div>
-					<xsl:call-template name="SetInitialDynamicTableHeight">
-						<xsl:with-param name="TargetNode" select="$FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp"/>
-						<xsl:with-param name="setDynamicHeight" select="5"/>
-						<xsl:with-param name="containerID" select=" 'Futurectn' "/>
-					</xsl:call-template>
+
 					<!--BEGIN FOOTER-->
 					<div style="width:187mm">
 						<div style="float:right">
@@ -10946,22 +11060,24 @@
 						</div>
 					</div>-->
 						<!-- The page break was commented out, and the header was commented out and moved in response to Defect 48222 gdy-->
-					<!--106mm-->
-					<div style="width:187mm;border-top-width: 1px" class="styBB">
+<!--					<div class="styTableContainer" style="width: 187mm; height:auto ; border-bottom-width: 0px" id="RActn">--><!--106mm--><!--
+-->
+					<!--  Part XVI-B  -->
+					<div style="float:none;clear:both;width:187mm;border-top-width: 1px" class="styBB">
 						<div class="styPartName" style="width: 20mm">Part XVI-B</div>
 						<div class="styPartDesc" style="width: 160mm">
-						  Relationship of Activities to the Accomplishment of Exempt Purposes
+							Relationship of Activities to the Accomplishment of Exempt Purposes
 						</div>
 						<div style="float:right">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/RlnOfActyToAccomOfExmptPrpsGrp/RlnOfActyToAccomOfExmptPrpsGrp"/>
-								<xsl:with-param name="setDynamicHeight" select="24"/>
+								<xsl:with-param name="containerHeight" select="24"/>
 								<xsl:with-param name="containerID" select="'RActn'"/>
 							</xsl:call-template>
 						</div>
-						<div class="styTableContainer" style="width: 187mm; height:auto ; border-bottom-width: 0px" id="RActn">
-					</div> 
-						<!--<xsl:call-template name="SetInitialState"/>-->
+					</div>
+					<div class="styTableContainer" style="width: 187mm; height: auto; border-bottom-width: 0px;display:table;" id="RActn">
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt; border-color:black" cellspacing="0">
 							<thead>
 								<tr>
@@ -11008,11 +11124,15 @@
 							</tbody>
 						</table>
 					</div>
-					<xsl:call-template name="SetInitialDynamicTableHeight">
+<!--					</div>
+-->
+					<!--106mm-->
+<!--					<xsl:call-template name="SetInitialDynamicTableHeight">
 						<xsl:with-param name="TargetNode" select="$FormData/RlnOfActyToAccomOfExmptPrpsGrp/RlnOfActyToAccomOfExmptPrpsGrp"/>
-						<xsl:with-param name="containerHeight" select="25"/>
+						<xsl:with-param name="setDynamicHeight" select="24"/>
+						<xsl:with-param name="headerHeight" select="1"/>
 						<xsl:with-param name="containerID" select=" 'RActn' "/>
-					</xsl:call-template>
+					</xsl:call-template>-->
 					<!--BEGIN FOOTER-->
 					<div style="width:187mm">
 						<div style="float:right">
@@ -11273,40 +11393,38 @@
 					<div style="width: 187mm">
 						<div class="styLNLeftNumBox" style="width: 5mm; padding-left: 2mm">d</div>
 						<div class="styLNDesc" style="width: 180mm; height:auto">
-							If the answer to any of the above is "Yes," complete the following schedule. Column <span class="styBoldText">(b)</span> should always show the 
-							fair market value<br/>
-							of the goods, other assets, or services given by the reporting foundation. If the foundation received less than fair market value<br/>
-							in any transaction or sharing arrangement, show in column <span class="styBoldText">(d)</span>  the value of the goods, other assets, or services 
-							received.
-						</div>
+      If the answer to any of the above is "Yes," complete the following schedule. Column <span class="styBoldText">(b)</span> should always show the fair market value<br/>
+      of the goods, other assets, or services given by the reporting foundation. If the foundation received less than fair market value<br/>
+      in any transaction or sharing arrangement, show in column <span class="styBoldText">(d)</span>  the value of the goods, other assets, or services received.
+    </div>
 					</div>
-					<!--  Line 1d  -->					
-					<div  style="width:187mm">
+					<!--  Line 1d  -->
+					<div class="styGenericDiv" style="float:none;clear:both;width:187mm">
 						<div style="float:right">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/TrnsfrTransRlnNonchrtblEOGrp/TransferScheduleDetail"/>
-								<xsl:with-param name="setDynamicHeight" select="5"/><!--16-->
+								<xsl:with-param name="containerHeight" select="5"/><!--16-->
+								<xsl:with-param name="headerHeight" select="1"/>
 								<xsl:with-param name="containerID" select="'TSctn'"/>
 							</xsl:call-template>
 						</div>
 					</div>
-					<br/>
-					<div class="styTableContainer" style="width: 187mm;display:table; height: auto; border-top-width:1px; border-bottom-width: 0px" id="TSctn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
-						<table class="styTable" style="font-size: 7pt; border-color:black; table-layout:fixed;overflow:hidden " cellspacing="0"><!--white-space:nowrap-->
+					<div class="styTableContainer" style="width: 187mm; height: auto; border-top-width:1px; border-bottom-width: 0px" id="TSctn">
+						<xsl:call-template name="SetInitialState"/>
+						<table class="styTable" style="font-size: 7pt; border-color:black" cellspacing="0">
 							<thead style="font-size: 6pt">
 								<tr>
 									<th scope="col" class="styTableCellHeader" style="width: 15mm">(a)
-										<span class="styNormalText">Line No.</span>
+        <span class="styNormalText">Line No.</span>
 									</th>
 									<th scope="col" class="styTableCellHeader" style="width: 32mm">(b)
-										<span class="styNormalText">Amount involved</span>
+        <span class="styNormalText">Amount involved</span>
 									</th>
 									<th scope="col" class="styTableCellHeader" style="width: 55mm">(c)
-										<span class="styNormalText">Name of noncharitable exempt organization</span>
+        <span class="styNormalText">Name of noncharitable exempt organization</span>
 									</th>
 									<th scope="col" class="styTableCellHeader" style="width: 85mm; border-right-width: 0px">(d)
-										<span class="styNormalText">Description of transfers, transactions, and sharing arrangements</span>
+        <span class="styNormalText">Description of transfers, transactions, and sharing arrangements</span>
 									</th>
 								</tr>
 							</thead>
@@ -11355,11 +11473,12 @@
 							</tbody>
 						</table>
 					</div>
-					<xsl:call-template name="SetInitialDynamicTableHeight">
+<!--					<xsl:call-template name="SetInitialDynamicTableHeight">
 						<xsl:with-param name="TargetNode" select="$FormData/TrnsfrTransRlnNonchrtblEOGrp/TransferScheduleDetail"/>
-						<xsl:with-param name="containerHeight" select="17"/>
+						<xsl:with-param name="setDynamicHeight" select="5"/>
+						<xsl:with-param name="headerHeight" select="1"/>
 						<xsl:with-param name="containerID" select=" 'TSctn' "/>
-					</xsl:call-template>
+					</xsl:call-template>-->
 					<!--  Line 2a  -->
 					<div style="width: 187mm">
 						<div class="styLNLeftNumBox" style="width: 5mm">2a</div>
@@ -11402,26 +11521,27 @@
 							<div style="float:right">
 								<xsl:call-template name="SetDynamicTableToggleButton">
 									<xsl:with-param name="TargetNode" select="$FormData/TrnsfrTransRlnNonchrtblEOGrp/RelationshipScheduleDetail"/>
-									<xsl:with-param name="setDynamicHeight" select="5"/>
+									<xsl:with-param name="containerHeight" select="5"/>
+									<xsl:with-param name="headerHeight" select="1"/>
 									<xsl:with-param name="containerID" select="'RSctn'"/>
 								</xsl:call-template>
 							</div> 						
 					</div>
 					<br/>
 					<!--  Line 2b  -->
-					<div class="styTableContainer" style="width: 187mm; height: auto;display:table ; border-top-width: 1px; border-bottom-width: 0px" id="RSctn">
-						<!--<xsl:call-template name="SetInitialState"/>-->
+					<div class="styTableContainer" style="width: 187mm; height: auto; border-top-width: 1px; border-bottom-width: 0px" id="RSctn">
+						<xsl:call-template name="SetInitialState"/>
 						<table class="styTable" style="font-size: 7pt; border-color:black" cellspacing="0">
 							<thead style="font-size: 6pt">
 								<tr>
 									<th scope="col" class="styTableCellHeader" style="width: 70mm">(a)
-										<span class="styNormalText">Name of organization</span>
+        <span class="styNormalText">Name of organization</span>
 									</th>
 									<th scope="col" class="styTableCellHeader" style="width: 47mm">(b)
-										<span class="styNormalText">Type of organization</span>
+        <span class="styNormalText">Type of organization</span>
 									</th>
 									<th scope="col" class="styTableCellHeader" style="width: 70mm; border-right-width: 0px">(c)
-										<span class="styNormalText">Description of relationship</span>
+        <span class="styNormalText">Description of relationship</span>
 									</th>
 								</tr>
 							</thead>
@@ -11465,11 +11585,12 @@
 							</tbody>
 						</table>
 					</div>
-					<xsl:call-template name="SetInitialDynamicTableHeight">
+<!--					<xsl:call-template name="SetInitialDynamicTableHeight">
 						<xsl:with-param name="TargetNode" select="$FormData/TrnsfrTransRlnNonchrtblEOGrp/RelationshipScheduleDetail"/>
-						<xsl:with-param name="containerHeight" select="5"/>
+						<xsl:with-param name="setDynamicHeight" select="5"/>
+						<xsl:with-param name="headerHeight" select="1"/>
 						<xsl:with-param name="containerID" select=" 'RSctn' "/>
-					</xsl:call-template>
+					</xsl:call-template>-->
 					<!-- BEGIN Signature section and Preparer section -->
 					<table cellspacing="0" style="width:187mm;font-size:7pt;">
 					<!--<table class="styTable" cellspacing="0" style="width:187mm;font-size:7pt;">gdy 170109-->
@@ -11482,9 +11603,14 @@
 								<!-- BEGIN Signature Section -->
 								<table class="styTable" cellspacing="0" style="width:176mm;font-size:7pt;">
 									<tr>
-										<td colspan="6"  style="width:178mm;vertical-align:top;border-color: black; border-style:solid; border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px;padding-left: 2mm;">
-            Under penalties of perjury, I declare that I have examined this return, including accompanying schedules and statements, and to the best of my knowledge and belief, it is true, correct, and complete.  Declaration of preparer (other than taxpayer) is based on all information of which preparer has any knowledge.
-          </td>
+										<td colspan="6"  style="width:178mm;vertical-align:top;border-color: black; border-style:solid; 
+											border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 
+											0px;	padding-left: 2mm;">
+											Under penalties of perjury, I declare that I have examined this return, including accompanying 
+											schedules and statements, and to the best of my knowledge and belief, it is true, correct, and 
+											complete.  Declaration of preparer (other than taxpayer) is based on all information of which 
+											preparer has any knowledge.
+										</td>
 									</tr>
 									<!-- Data for "Signature of officer or trustee", "Date", "Title" -->
 									<tr>
@@ -11511,11 +11637,11 @@
 										</td>
 										<td rowspan="2" style="width:35mm;">
 								<div class="styGenericDiv" style="width:2px;"/>
-							<div style="width:32mm;font-size:5pt;border-right:3px solid black;border-left:3px solid black;border-bottom:3px solid black;border-top:3px solid 
-								black;float:right;" class="styGenericDiv">
+							<div style="width:34mm;font-size:5pt;border-right:3px solid black;border-left:3px solid black;
+								border-bottom:3px solid black;border-top:3px solid black;float:right" class="styGenericDiv">
 									May the IRS discuss this return<br/>
-									with the preparer shown below<br/>
-									(see instr.)
+									with the preparer shown below?<br/>
+									See instructions.
 							  <!-- Permission to discuss return with preparer checkboxes are write in fields -->
 							  <input class="styCkbox" alt="MayIRSdiscussReturnWithPreparerYes" type="checkbox" name="Checkbox" id="dummyidyes" style="width:3mm;">
 								<xsl:call-template name="PopulateReturnHeaderOfficer">
@@ -12284,7 +12410,9 @@
 						</xsl:for-each>
 						<br/>
 					</xsl:if>
-					<xsl:if test="($Print = $Separated) and (count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &gt;4)">
+					<xsl:if test="($Print = $Separated) and 
+						(count($FormData/SupplementaryInformationGrp/GrantOrContributionPdDurYrGrp) &gt;4) or
+						(count($FormData/SupplementaryInformationGrp/GrantOrContriApprvForFutGrp) &gt;4)">
 						<br/>
 						<span class="styRepeatingDataTitle">Form 990PF Part XV Line 3 - Grants and Contributions Paid During the Year or Approved for Future 	
 							Payment</span>

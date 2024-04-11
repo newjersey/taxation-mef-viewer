@@ -59,10 +59,10 @@
             <span class="styFST">
               <div class="styFST" style="height:5mm;padding-top:2mm;font-size:6.5pt;">
               <span style="width:80mm;">
-                  <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="bullet"/><span style="width: 4px"/> Attach to Form 5471.
+                  <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="Right pointing arrow image"/><span style="width: 4px"/> Attach to Form 5471.
 				</span>
 				<br/>
-                <img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+                <img src="{$ImagePath}/3800_Bullet.gif" alt="Right pointing arrow image"/>
                 Go to
                 <a style="text-decoration:none;color:black;" href="http://www.irs.gov/form5471" title="Link to irs.gov">
                   <i>www.irs.gov/Form 5471</i> for instructions and the latest information.
@@ -195,7 +195,7 @@
           </div>
           <div class="styGenericDiv" style="padding-top:.5mm;">
             Enter the relevant functional currency and the exchange rate used throughout this schedule
-            <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="bullet"/>
+            <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="Right pointing arrow image"/>
             <span class="sty5471ScheduleMNBSP"/>
             <span class="sty5471ScheduleMNBSP"/>
             <xsl:call-template name="PopulateText">

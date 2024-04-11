@@ -182,7 +182,7 @@
 								<tbody>
 									<!-- print logic -->
 									<xsl:for-each select="$Form2441Data/CareProviderGrp">
-										<xsl:if test="($Print != $Separated) or (count($Form2441Data/CareProviderGrp) &lt;= 2) ">
+										<xsl:if test="($Print != $Separated) or (count($Form2441Data/CareProviderGrp) &lt;= 3) ">
 											<tr style="vertical-align:top">
 												<td class="styTableCellText" style="width:64mm;border-color:black;text-align:none;vertical-align:top;padding-top:0mm;">
 													<!--CareProviderPersonName-->
@@ -377,7 +377,7 @@
 											</tr>
 										</xsl:if>
 									</xsl:for-each>
-									<xsl:if test="count($Form2441Data/CareProviderGrp)&lt; 1 or ((count($Form2441Data/CareProviderGrp) &gt; 2) and ($Print = $Separated))">
+									<xsl:if test="count($Form2441Data/CareProviderGrp)&lt; 1 or ((count($Form2441Data/CareProviderGrp) &gt; 3) and ($Print = $Separated))">
 										<tr>
 											<td class="styTableCellText" style="width:60mm;text-align:left; border-color:black;">
 												<xsl:call-template name="PopulateAdditionalDataTableMessage">
@@ -400,7 +400,7 @@
 											</td>
 										</tr>
 									</xsl:if>
-									<xsl:if test="count($Form2441Data/CareProviderGrp)&lt; 2  or ((count($Form2441Data/CareProviderGrp) &gt; 2) and ($Print = $Separated))">
+									<xsl:if test="count($Form2441Data/CareProviderGrp)&lt; 2  or ((count($Form2441Data/CareProviderGrp) &gt; 3) and ($Print = $Separated))">
 										<tr>
 											<td class="styTableCellText" style="width:60mm;  border-color:black;border-bottom-width:0px;">
 												<span class="styTableCellPad"/>
@@ -563,7 +563,7 @@ Did you receive<br/>
 											</tr>
 										</xsl:for-each>
 									</xsl:if>
-									<xsl:if test="(count($Form2441Data/QualifyingPersonGrp)&lt; 1) or ((count($Form2441Data/QualifyingPersonGrp) &gt; 2) and ($Print = $Separated))">
+									<xsl:if test="(count($Form2441Data/QualifyingPersonGrp)&lt; 1) or ((count($Form2441Data/QualifyingPersonGrp) &gt; 3) and ($Print = $Separated))">
 										<tr>
 											<td class="styTableCell" style="width:44mm;text-align:left;  border-color:black;">
 												<span class="styBoldText"/>
@@ -583,7 +583,7 @@ Did you receive<br/>
 											</td>
 										</tr>
 									</xsl:if>
-									<xsl:if test="(count($Form2441Data/QualifyingPersonGrp)&lt; 2) or ((count($Form2441Data/QualifyingPersonGrp) &gt; 2) and ($Print = $Separated))">
+									<xsl:if test="(count($Form2441Data/QualifyingPersonGrp)&lt; 2) or ((count($Form2441Data/QualifyingPersonGrp) &gt; 3) and ($Print = $Separated))">
 										<tr>
 											<td class="styTableCellText" style="width:44mm;  border-color:black;border-bottom-width:0px;">
 												<span class="styTableCellPad"/>
@@ -1345,7 +1345,7 @@ Did you receive<br/>
 					<!-- END Additional Data Left Over Table -->
 					<!--Separated Data  Part I Care Provider Table -->
 					<div class="styTableContainer" id="CareProviderGrp"  style="border-bottom:0px;">
-					<xsl:if test="($Print = $Separated) and (count($Form2441Data/CareProviderGrp) &gt; 2)">
+					<xsl:if test="($Print = $Separated) and (count($Form2441Data/CareProviderGrp) &gt; 3)">
 						<br/>
 						<span class="styRepeatingDataTitle">Form 2441 - Part I - Care Provider Table, Line 1:</span>
 						<br/>
@@ -1505,7 +1505,7 @@ Did you receive<br/>
 					</div>
 					<!-- END Separated Data for Part I -->
 					<!-- Separated Data for Part II Qualifying Peron Table -->
-					<xsl:if test="($Print = $Separated) and (count($Form2441Data/QualifyingPersonGrp) &gt; 2)">
+					<xsl:if test="($Print = $Separated) and (count($Form2441Data/QualifyingPersonGrp) &gt; 3)">
 						<br/>
 						<br/>
 						<span class="styRepeatingDataTitle">Form 2441 - Part II - Qualifying Person Table, Line 2:</span>

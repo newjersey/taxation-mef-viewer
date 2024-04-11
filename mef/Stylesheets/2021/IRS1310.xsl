@@ -9,6 +9,7 @@
 <!-- 10/01/2019 - Changes made per UWR 225455 - Jeremy Nichols -->
 <!-- 10/24/2019 - Changes made per UWR 225455 - Greg Young-->
 <!-- 10/07/2020 - Changes made per UWR 238246 - AJH-->
+<!-- 07/22/2022 - Changes for IM01887060 relates to RefundClaimWithProofOfDeathGrp -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -266,7 +267,7 @@ Refund Due a Deceased Taxpayer</div>
 						<div class="styLNLeftLtrBox" style="clear:left;">B</div>
 						<div class="styGenericDiv"><input type="checkbox">
 						<xsl:call-template name="PopulateCheckbox">
-							<xsl:with-param name="TargetNode" select="$FormData/CourtOrPersonalRepInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/CourtOrPersonalRepGrp/CourtOrPersonalRepInd"/>
 							<xsl:with-param name="BackupName">FormDataCourtOrPersonalRepInd</xsl:with-param>
 						</xsl:call-template></input>	
 						<!--	
@@ -281,7 +282,7 @@ Refund Due a Deceased Taxpayer</div>
 						</div>
 						<label>
 						  <xsl:call-template name="PopulateLabel">
-						  <xsl:with-param name="TargetNode" select="$FormData/CourtOrPersonalRepInd"/>
+						  <xsl:with-param name="TargetNode" select="$FormData/CourtOrPersonalRepGrp/CourtOrPersonalRepInd"/>
 						  <xsl:with-param name="BackupName">FormDataCourtOrPersonalRepInd</xsl:with-param>
 						  </xsl:call-template>
 							<span style="line-height:4mm;">Court-appointed or certified personal representative (defined below). Attach a court certificate showing your <br/>  appointment, unless previously filed.</span>
@@ -292,19 +293,19 @@ Refund Due a Deceased Taxpayer</div>
 						<div class="styLNLeftLtrBox" style="clear:left;">C</div>
 						<div class="styGenericDiv"><input type="checkbox">
 						<xsl:call-template name="PopulateCheckbox">
-							<xsl:with-param name="TargetNode" select="$FormData/OtherPersonClaimingRefundInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/OtherPersonClaimingRefundInd"/>
 							<xsl:with-param name="BackupName">FormDataOtherPersonClaimingRefundInd</xsl:with-param>
 						</xsl:call-template></input>
 						
 							<xsl:call-template name="LinkToLeftoverDataTableInline">
 								<xsl:with-param name="Desc">Part I Line C - Valid Proof Of Death Indicator</xsl:with-param>
-								<xsl:with-param name="TargetNode" select="$FormData/ValidProofOfDeathInd"/>
+								<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/ValidProofOfDeathInd"/>
 							</xsl:call-template>
 						
 						</div>
 						<label>
 						  <xsl:call-template name="PopulateLabel">
-						  <xsl:with-param name="TargetNode" select="$FormData/OtherPersonClaimingRefundInd"/>
+						  <xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/OtherPersonClaimingRefundInd"/>
 						  <xsl:with-param name="BackupName">FormDataOtherPersonClaimingRefundInd</xsl:with-param>
 						  </xsl:call-template>
 							<span style="line-height:4mm;">Person, <span style="font-weight:bold;">other</span> than A or B, claiming refund for the decedent's
@@ -328,11 +329,11 @@ Refund Due a Deceased Taxpayer</div>
 						<div class="styLNDesc" style="width:150mm;height:4.5mm;">Did the decedent leave a will?<span style="letter-spacing:3mm;">..........................</span></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:4.5mm;font-weight:normal;">
 						<xsl:call-template name="PopulateYesBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/DecedentHasWillInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/DecedentHasWillInd"/>
 						</xsl:call-template></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:4.5mm;font-weight:normal;">
 						<xsl:call-template name="PopulateNoBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/DecedentHasWillInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/DecedentHasWillInd"/>
 						</xsl:call-template></div>
 					</div>
 					<!-- Part II, Line 2a -->
@@ -341,11 +342,11 @@ Refund Due a Deceased Taxpayer</div>
 						<div class="styLNDesc" style="width:150mm;height:4.5mm;">Has a court appointed a personal representative for the estate of the decedent?<span style="letter-spacing:3mm;">.......</span></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:4.5mm;font-weight:normal;">
 						<xsl:call-template name="PopulateYesBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/CourtAppointedRepInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/CourtAppointedRepInd"/>
 						</xsl:call-template></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:4.5mm;font-weight:normal;">
 						<xsl:call-template name="PopulateNoBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/CourtAppointedRepInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/CourtAppointedRepInd"/>
 						</xsl:call-template></div>
 					</div>
 					<!-- Part II, Line 2b -->
@@ -354,11 +355,11 @@ Refund Due a Deceased Taxpayer</div>
 						<div class="styLNDesc" style="width:150mm;height:4.5mm;">If you answered <span style="font-weight:bold;">"No" </span> to 2a, will one be appointed?<span style="letter-spacing:3mm;">..................</span></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:4.5mm;font-weight:normal;">
 						<xsl:call-template name="PopulateYesBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/RepresentativeToBeAppointedInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/RepresentativeToBeAppointedInd"/>
 						</xsl:call-template></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:4.5mm;font-weight:normal;">
 						<xsl:call-template name="PopulateNoBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/RepresentativeToBeAppointedInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/RepresentativeToBeAppointedInd"/>
 						</xsl:call-template></div>
 					</div>
 					<div style="width:187mm;font-size:8pt;">
@@ -373,11 +374,11 @@ Refund Due a Deceased Taxpayer</div>
 						<div class="styLNDesc" style="width:150mm;height:8mm;">As the person claiming the refund for the decedent's estate, will you pay out the refund according to the laws of the state where the decedent was a legal resident?<span style="letter-spacing:3mm;">................</span></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:8mm;font-weight:normal;">
 						<xsl:call-template name="PopulateYesBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/PaymentAccordingToStateLawInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/PaymentAccordingToStateLawInd"/>
 						</xsl:call-template></div>
 						<div class="styLNRightNumBox" style="width:15mm;height:8mm;font-weight:normal;">
 						<xsl:call-template name="PopulateNoBoxText">
-							<xsl:with-param name="TargetNode" select="$FormData/PaymentAccordingToStateLawInd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/PaymentAccordingToStateLawInd"/>
 						</xsl:call-template></div>
 					</div>
 					<div style="width:187mm;font-size:8pt;">
@@ -441,7 +442,7 @@ Refund Due a Deceased Taxpayer</div>
 							<br></br>
 						<div>
 						<xsl:call-template name="LinkToLeftoverDataTableInline">
-							<xsl:with-param name="TargetNode" select="$FormData/CertificatePreviouslyFiledCd"/>
+							<xsl:with-param name="TargetNode" select="$FormData/CourtOrPersonalRepGrp/CertificatePreviouslyFiledCd"/>
 							<xsl:with-param name="Desc">Certificate Previously Filed Code</xsl:with-param>
 						</xsl:call-template>
 						</div>
@@ -467,11 +468,11 @@ Refund Due a Deceased Taxpayer</div>
 							<xsl:with-param name="DescWidth" select="100"/>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-						<xsl:with-param name="TargetNode" select="$FormData/CertificatePreviouslyFiledCd"/>
+						<xsl:with-param name="TargetNode" select="$FormData/CourtOrPersonalRepGrp/CertificatePreviouslyFiledCd"/>
 						<xsl:with-param name="Desc">Certificate Previously Filed Code</xsl:with-param>
 						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
-						<xsl:with-param name="TargetNode" select="$FormData/ValidProofOfDeathInd"/>
+						<xsl:with-param name="TargetNode" select="$FormData/RefundClaimWithProofOfDeathGrp/ValidProofOfDeathInd"/>
 						<xsl:with-param name="Desc">Part I Line C - Valid Proof Of Death Indicator</xsl:with-param>
 						</xsl:call-template>
 					</table>

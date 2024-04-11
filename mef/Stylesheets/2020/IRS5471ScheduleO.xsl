@@ -18,7 +18,7 @@
 						<xsl:with-param name="RootElement" select="local-name($Form5471ScheduleO)"/>
 					</xsl:call-template>
 				</title>
-				<!-- No Browser Caching   -->
+				<!-- No Browser Caching  -->
 				<meta http-equiv="Pragma" content="no-cache"/>
 				<meta http-equiv="Cache-Control" content="no-cache"/>
 				<meta http-equiv="Expires" content="0"/>
@@ -66,7 +66,7 @@
 								Information about Schedule O (Form 5471) and its instructions is at 
 								<a style="text-decoration:none;color:black;" href="http://www.irs.gov/form5471" title="Link to irs.gov">	<i>www.irs.gov/form5471 </i>	</a>
 								<span style="width:80mm;">
-									<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="bullet"/>
+									<img src="{$ImagePath}/5471_Bullet_Title.gif" alt="Right pointing arrow image"/>
 									Attach to Form 5471.
 								</span>
 							</div>
@@ -165,16 +165,18 @@
 							</xsl:choose>
 							</span>
 						</div>
-						<div class="styNameBox" style="float:left;clear:none;padding-left:1mm;width:45mm;height:11mm;border-right-width:0px;border-color:black;">
+											<div class="styNameBox" style="word-break:break-all;float:left;clear:none;padding-left:1mm;width:45mm;height:11mm;border-right-width:0px;border-color:black;">
 							<span>
 								Reference ID number (see instructions) <br/>
-								<span style="font-size:7pt;padding-top:2mm;">
+								<span style="word-wrap: break-word;font-size:7pt;padding-top:0mm;">
 									<xsl:choose>
 										<xsl:when test="(count($Form5471ScheduleO/ForeignEntityIdentificationGrp/ForeignEntityReferenceIdNum) = 1)">
 											<br/>
-											<xsl:call-template name="PopulateText">
-												<xsl:with-param name="TargetNode" select="$Form5471ScheduleO/ForeignEntityIdentificationGrp"/>
-											</xsl:call-template>
+										<xsl:call-template name="PopulateText">
+											
+												<xsl:with-param name="TargetNode" select="$Form5471ScheduleO/ForeignEntityIdentificationGrp/ForeignEntityReferenceIdNum">
+												</xsl:with-param>
+											</xsl:call-template>	
 										</xsl:when>
 										<xsl:when test="(count($Form5471ScheduleO/ForeignEntityIdentificationGrp/ForeignEntityReferenceIdNum) &gt;1)">
 											<br/>See Additional Table
@@ -1931,7 +1933,8 @@
 						</tr>
 						<tr>
 							<td class="styBB" style="width:187mm;font-size:7pt;">
-								<span class="styBoldText">(b)</span> List the date of any reorganization of the foreign corporation that occured during the last 4 years while any U.S. person held 10% or more in value or vote (directly or indirectly) of the corporation's stock <img src="{$ImagePath}/5471SchO_Bullet.gif" alt="bullet"/>
+								<span class="styBoldText">(b)</span> List the date of any reorganization of the foreign corporation that occured during the last 4 years while any U.S. person held 10% or more in value or vote (directly or indirectly) of the corporation's stock 
+								<img src="{$ImagePath}/5471SchO_Bullet.gif" alt="Right pointing arrow image"/>
 								<span style="width:4px"/>
 								<xsl:call-template name="PopulateText">
 									<xsl:with-param name="TargetNode" select="$Form5471ScheduleO/ReorganizationDt"/>

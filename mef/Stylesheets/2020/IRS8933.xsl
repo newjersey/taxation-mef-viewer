@@ -532,7 +532,7 @@ utilized in a way described in section 45Q(f)(5).
 							</label>
 <span style="width:2px;"/>
 							
-							<input type="Checkbox" class="styCkbox">
+							<input type="Checkbox" class="styCkbox" disabled="disabled">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/DummyInd"/>
 									<xsl:with-param name="BackupName">IRS8933DummyInd</xsl:with-param>

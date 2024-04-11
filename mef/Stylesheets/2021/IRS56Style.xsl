@@ -21,8 +21,8 @@
        padding-top:1mm;
 	   padding-bottom:1mm;
        float:left; 
-       border-top:1 solid black;
-       border-bottom:1 solid black;
+       border-style: solid; border-color: black;
+      border-width: 1px 0px 1px 0px;
     } 
      .styIRS56PartNum {
       width:7mm;      

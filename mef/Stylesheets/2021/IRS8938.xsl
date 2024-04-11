@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Iskilu Lawal 4/1/2021  UWR # 243365 Drop 1 -->
+<!-- Last Modified by Iskilu Lawal 11/24/2021  UWR # 37051 DD4 KISAM IM01739617 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -149,7 +149,6 @@
 						<div class="styNameBox" style="width:110mm;font-weight:normal;font-size:8pt;height:10mm">
       Name(s) shown on return
       <br/>
-							<br/>
 							<xsl:call-template name="PopulateReturnHeaderFiler">
 								<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
 							</xsl:call-template>
@@ -172,7 +171,7 @@
 						</div>
 					</div>
 					<!--  End Name and Employer indentification number  -->
-					<div class="styBB" style="width:187mm;">
+					<div class="styBB" style="width:187mm;height:10mm;">
 						<!--  Line 3  Start of Type of filer-->
 						<div style="width:187mm;font-size:9pt;">
 							<div class="styLNLeftLtrBox" style="padding-left:4mm;">3</div>
@@ -534,7 +533,7 @@ trust. (See instructions for definitions and what to do if you have more than on
 					<div class="styBB" style="width:187mm;font-size:8pt;">
 						<div class="styLNLeftLtrBox" style="padding-right:2mm;padding-left:2.5mm;text-align:left;width:3mm;">10</div>
 						<div class="styLNDesc" style="width:150.5mm;padding-left:3.5mm;height:auto;">
-		  Number of Foreign Assets (reported in Part Vl)
+		  Number of Foreign Assets (reported in Part VI)
 			<span class="styDotLn" style="float:none;clear:none;padding-left:2mm;">...............</span>
 							<span style="width:2.5mm"/>
 							<img src="{$ImagePath}/8938_Bullet.gif" alt="MediumBullet"/>
@@ -551,7 +550,7 @@ trust. (See instructions for definitions and what to do if you have more than on
 					<div class="styBB" style="width:187mm;font-size:8pt;">
 						<div class="styLNLeftLtrBox" style="padding-right:2mm;padding-left:2.5mm;width:3mm">11</div>
 						<div class="styLNDesc" style="width:150.5mm;padding-left:3.5mm;height:auto;">
-		  Maximum Value of All Assets (reported in Part Vl)
+		  Maximum Value of All Assets (reported in Part VI)
 			<span class="styDotLn" style="float:none;clear:none;padding-left:2.9mm;">....................</span>
 							<span style="width:1.6mm"/>$
 		</div>

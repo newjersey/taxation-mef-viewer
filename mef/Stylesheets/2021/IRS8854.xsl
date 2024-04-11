@@ -3812,93 +3812,59 @@
 						</table>
 						<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 					</xsl:if>
-					<!-- Separated Data for Part III, Line 1 -->
-					<xsl:if test="($Print = $Separated) and  (count($Form8854Data/ExptrtPeriod2Grp/PropTaxDeferredPYFrm8854Grp) &gt; 7)">
+					<!-- Separated Data for Part II, Section B, Line 5b-->
+					<xsl:if test="(count($Form8854Data/InitialExptrtStmtBalSheetGrp/SepStateStockIssdFrgnCoGrp) &gt; 1)">
 						<span class="styRepeatingDataTitle">
-							Form 8854, Part III, Line 1 - Property Tax Deferred From Prior Year Form 8854
+							Form 8854, Part II, Section B, Line 5a/b - Separate State Stock Issued By Foreign Companies
 						</span>
 						<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 						<table class="styDepTbl" cellspacing="0">
 							<!-- ++++++++++++++++++++++++ Start: Table Headers ++++++++++++++++++++++ -->
 							<thead class="styTableThead">
-								<tr class="styDepTblHdr">
-								   <th class="styTableCellHeader" style="text-align:center;font-size: 7pt;">
-                                              <span>(a)</span><br/>
-                                              <span style="font-weight:normal"><span style="width:1mm;"/>Description of property </span>
-                                   </th>
-									<!--<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:25%;" scope="col">
-										<span class="styBoldText">(a)<br/>
-										
+								<tr class="styDepTblHdr" style="">
+									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:60mm;color:white;border-color:black;" scope="col">
+										<span class="styBoldText">5b</span>
 										<span class="styNormalText">
-											<span style="width:1mm;"/>Description of property<br/>
-											<br/>
-										</span>
-									</th>-->
-									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:28%;" scope="col">
-										<span class="styBoldText">(b)<br/>
-										</span>
-										<span class="styNormalText">
-											<span style="width:1mm;"/>Amount of mark-to-market gain or<br/>(loss) reported on prior year<br/>Form 8854
-											<br/>
-										</span>
+											<span style="width:1mm;"/>Foreign Entity Information</span>
 									</th>
-									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:22%;" scope="col">
-										<span class="styBoldText">(c)<br/>
-										</span>
+									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:32mm;color:white;border-color:black;" scope="col">
+										<span class="styBoldText">5a(a)</span>
 										<span class="styNormalText">
-											<span style="width:1mm;"/>Amount of tax deferred on<br/>prior year Form 8854<br/>
-											<br/>
-										</span>
+											<span style="width:1mm;"/>Fair market value (FMV)</span>
 									</th>
-									 <th class="styTableCellHeader" style="text-align:center;font-size: 7pt;">
-                                              <span>(d)</span><br/>
-                                              <span style="font-weight:normal"><span style="width:1mm;"/>Date of disposition (if any)</span><br/>
-                                   </th>
-									<!--<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:28%;" scope="col">
-										<span class="styBoldText">(d)<br/>
-										</span>
+									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:32mm;color:white;border-color:black;" scope="col">
+										<span class="styBoldText">5a(b)</span>
 										<span class="styNormalText">
-											<span style="width:1mm;"/>Date of disposition (if any)<br/>
-											<br/>
-										</span>
-									</th>-->
+											<span style="width:1mm;"/>U.S. adjusted basis</span>
+									</th>
 								</tr>
 							</thead>
 							<!-- ++++++++++++++++++++++++ End: Table Headers +++++++++++++++++++++++ -->
 							<tfoot/>
 							<tbody>
 								<!-- ++++++++++++++++++++++++++ Start  Populating +++++++++++++++++++++++ -->
-								<xsl:for-each select="$Form8854Data/AnnualExptrtStmtBfrSpcfdYrGrp/PropTaxDeferredPYFrm8854Grp">
-									<tr style="border-color:black;">
+								<xsl:for-each select="$Form8854Data/InitialExptrtStmtBalSheetGrp/SepStateStockIssdFrgnCoGrp">
+									<tr style="border-color:black;vertical-align:top;">
 										<!-- Define background colors to the rows -->
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<!--++++++++++++++++++++++++++++++++++++++-->
-										<td class="styIRS8854TableCell" style="width:25%;font-size: 7pt; text-align:left;">
+										<td class="styIRS8854TableCell" style="width:60mm;font-size: 7pt; text-align:left;">
 											<xsl:call-template name="PopulateText">
-												<xsl:with-param name="TargetNode" select="PropertyDesc"/>
+												<xsl:with-param name="TargetNode" select="ForeignEntityDesc"/>
 											</xsl:call-template>
 											<span class="styTableCellPad"/>
 										</td>
-										<!--++++++++++++++++++++++++++++++++++++++-->
-										<td class="styIRS8854TableCell" style="width:28%;font-size: 7pt; text-align:right;">
+										<td class="styIRS8854TableCell" style="width:32mm;font-size: 7pt; text-align:right;padding-top:4mm;;">
+											<span class="styTableCellPad"/>
 											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="MarkToMarketGainOrLossAmt"/>
+												<xsl:with-param name="TargetNode" select="FairMarketValueAmt"/>
 											</xsl:call-template>
-											<span class="styTableCellPad"/>
 										</td>
-										<!--++++++++++++++++++++++++++++++++++++++-->
-										<td class="styIRS8854TableCell" style="width:22%;font-size: 7pt; text-align:right;">
+										<td class="styIRS8854TableCell" style="width:32mm;font-size: 7pt; text-align:right;padding-top:4mm;;">
+											<span class="styTableCellPad"/>
 											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="DeferredTaxAmt"/>
+												<xsl:with-param name="TargetNode" select="USAdjustedBasisAmt"/>
 											</xsl:call-template>
-											<span class="styTableCellPad"/>
-										</td>
-										<!--++++++++++++++++++++++++++++++++++++++-->
-										<td class="styIRS8854TableCell" style="width:25%;font-size: 7pt; text-align:center;">
-											<xsl:call-template name="PopulateMonthDayYear">
-												<xsl:with-param name="TargetNode" select="DispositionDt"/>
-											</xsl:call-template>
-											<span class="styTableCellPad"/>
 										</td>
 									</tr>
 								</xsl:for-each>
@@ -4053,59 +4019,93 @@
 						</table>
 						<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 					</xsl:if>
-					<!-- Separated Data for Part II, Section B, Line 5b-->
-					<xsl:if test="(count($Form8854Data/InitialExptrtStmtBalSheetGrp/SepStateStockIssdFrgnCoGrp) &gt; 1)">
+					<!-- Separated Data for Part III, Line 1 -->
+					<xsl:if test="($Print = $Separated) and  (count($Form8854Data/AnnualExptrtStmtBfrSpcfdYrGrp/PropTaxDeferredPYFrm8854Grp) &gt; 7)">
 						<span class="styRepeatingDataTitle">
-							Form 8854, Part II, Section B, Line 5a/b - Separate State Stock Issued By Foreign Companies
+							Form 8854, Part III, Line 1 - Property Tax Deferred From Prior Year Form 8854
 						</span>
 						<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 						<table class="styDepTbl" cellspacing="0">
 							<!-- ++++++++++++++++++++++++ Start: Table Headers ++++++++++++++++++++++ -->
 							<thead class="styTableThead">
-								<tr class="styDepTblHdr" style="">
-									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:60mm;color:white;border-color:black;" scope="col">
-										<span class="styBoldText">5b</span>
+								<tr class="styDepTblHdr">
+								   <th class="styTableCellHeader" style="text-align:center;font-size: 7pt;">
+                                              <span>(a)</span><br/>
+                                              <span style="font-weight:normal"><span style="width:1mm;"/>Description of property </span>
+                                   </th>
+									<!--<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:25%;" scope="col">
+										<span class="styBoldText">(a)<br/>
+										
 										<span class="styNormalText">
-											<span style="width:1mm;"/>Foreign Entity Information</span>
-									</th>
-									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:32mm;color:white;border-color:black;" scope="col">
-										<span class="styBoldText">5a(a)</span>
+											<span style="width:1mm;"/>Description of property<br/>
+											<br/>
+										</span>
+									</th>-->
+									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:28%;" scope="col">
+										<span class="styBoldText">(b)<br/>
+										</span>
 										<span class="styNormalText">
-											<span style="width:1mm;"/>Fair market value (FMV)</span>
+											<span style="width:1mm;"/>Amount of mark-to-market gain or<br/>(loss) reported on prior year<br/>Form 8854
+											<br/>
+										</span>
 									</th>
-									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:32mm;color:white;border-color:black;" scope="col">
-										<span class="styBoldText">5a(b)</span>
+									<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:22%;" scope="col">
+										<span class="styBoldText">(c)<br/>
+										</span>
 										<span class="styNormalText">
-											<span style="width:1mm;"/>U.S. adjusted basis</span>
+											<span style="width:1mm;"/>Amount of tax deferred on<br/>prior year Form 8854<br/>
+											<br/>
+										</span>
 									</th>
+									 <th class="styTableCellHeader" style="text-align:center;font-size: 7pt;">
+                                              <span>(d)</span><br/>
+                                              <span style="font-weight:normal"><span style="width:1mm;"/>Date of disposition (if any)</span><br/>
+                                   </th>
+									<!--<th class="styTableCellHeader" style="text-align:center;font-size: 7pt; width:28%;" scope="col">
+										<span class="styBoldText">(d)<br/>
+										</span>
+										<span class="styNormalText">
+											<span style="width:1mm;"/>Date of disposition (if any)<br/>
+											<br/>
+										</span>
+									</th>-->
 								</tr>
 							</thead>
 							<!-- ++++++++++++++++++++++++ End: Table Headers +++++++++++++++++++++++ -->
 							<tfoot/>
 							<tbody>
 								<!-- ++++++++++++++++++++++++++ Start  Populating +++++++++++++++++++++++ -->
-								<xsl:for-each select="$Form8854Data/InitialExptrtStmtBalSheetGrp/SepStateStockIssdFrgnCoGrp">
-									<tr style="border-color:black;vertical-align:top;">
+								<xsl:for-each select="$Form8854Data/AnnualExptrtStmtBfrSpcfdYrGrp/PropTaxDeferredPYFrm8854Grp">
+									<tr style="border-color:black;">
 										<!-- Define background colors to the rows -->
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<!--++++++++++++++++++++++++++++++++++++++-->
-										<td class="styIRS8854TableCell" style="width:60mm;font-size: 7pt; text-align:left;">
+										<td class="styIRS8854TableCell" style="width:25%;font-size: 7pt; text-align:left;">
 											<xsl:call-template name="PopulateText">
-												<xsl:with-param name="TargetNode" select="ForeignEntityDesc"/>
+												<xsl:with-param name="TargetNode" select="PropertyDesc"/>
 											</xsl:call-template>
 											<span class="styTableCellPad"/>
 										</td>
-										<td class="styIRS8854TableCell" style="width:32mm;font-size: 7pt; text-align:right;padding-top:4mm;;">
-											<span class="styTableCellPad"/>
+										<!--++++++++++++++++++++++++++++++++++++++-->
+										<td class="styIRS8854TableCell" style="width:28%;font-size: 7pt; text-align:right;">
 											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="FairMarketValueAmt"/>
+												<xsl:with-param name="TargetNode" select="MarkToMarketGainOrLossAmt"/>
 											</xsl:call-template>
+											<span class="styTableCellPad"/>
 										</td>
-										<td class="styIRS8854TableCell" style="width:32mm;font-size: 7pt; text-align:right;padding-top:4mm;;">
-											<span class="styTableCellPad"/>
+										<!--++++++++++++++++++++++++++++++++++++++-->
+										<td class="styIRS8854TableCell" style="width:22%;font-size: 7pt; text-align:right;">
 											<xsl:call-template name="PopulateAmount">
-												<xsl:with-param name="TargetNode" select="USAdjustedBasisAmt"/>
+												<xsl:with-param name="TargetNode" select="DeferredTaxAmt"/>
 											</xsl:call-template>
+											<span class="styTableCellPad"/>
+										</td>
+										<!--++++++++++++++++++++++++++++++++++++++-->
+										<td class="styIRS8854TableCell" style="width:25%;font-size: 7pt; text-align:center;">
+											<xsl:call-template name="PopulateMonthDayYear">
+												<xsl:with-param name="TargetNode" select="DispositionDt"/>
+											</xsl:call-template>
+											<span class="styTableCellPad"/>
 										</td>
 									</tr>
 								</xsl:for-each>
@@ -4114,6 +4114,8 @@
 						</table>
 						<!-- |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
 					</xsl:if>
+				
+				
 				</form>
 			</body>
 		</html>

@@ -65,10 +65,10 @@
 							to Gain Deferral Method Under Section 721(c)</span>
 							<br /><br />
 							<span style="font-weight:bold;">
-								&#9658;Attach to Form 8865. See the Instructions for Form 8865.
+								<img src="{$ImagePath}/8865_Bullet_Md.gif" alt="Right Arrow Image"/> Attach to Form 8865. See the Instructions for Form 8865.
 							</span><br />
 							<span style="font-weight:bold;">
-								&#9658;Go to
+								<img src="{$ImagePath}/8865_Bullet_Md.gif" alt="Right Arrow Image"/> Go to
 								<span style="font-style:italic">www.irs.gov/Form8865</span>
 								for instructions and the latest information.
 							</span>
@@ -130,7 +130,7 @@
 						</div>
 					</div>
 					<div class="styStdDiv" style="border-top:1px solid black;">
-						<div class="styNameBox" style="width:93mm;height:7.75mm;">
+						<div class="styNameBox" style="width:93mm;height:8mm;">
 							Name of partnership
 							<br />			
 							<xsl:call-template name="PopulateText">
@@ -141,7 +141,7 @@
 								<xsl:with-param name="TargetNode" select="$FormData/ForeignPartnershipName/BusinessNameLine2Txt" />
 							</xsl:call-template>
 						</div>
-						<div class="styNameBox" style="width:22mm;height:7.75mm;">
+						<div class="styNameBox" style="width:22mm;height:8mm;">
 							<input type="checkbox" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/SuccessorPartnershipInd"/>
@@ -156,7 +156,7 @@
 									</xsl:call-template>Successor <br /> partnership</label>
 							</span>
 						</div>
-						<div class="styEINBox" style="height:7.75mm;width:20mm;padding-left:0.5mm;font-weight:normal;border-right:1px solid black;">
+						<div class="styEINBox" style="height:8mm;width:20mm;padding-left:0.5mm;font-weight:normal;border-right:1px solid black;">
 							EIN (if any)
 							<br />
 							<xsl:choose>
@@ -172,7 +172,7 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div class="styNameBox" style="height:7.75mm;width:52mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;">
+						<div class="styNameBox" style="height:8mm;width:45mm;padding-left:0.5mm;font-weight:normal;border-right:0px solid black;">
 							Reference ID number (see instructions)
 							<br />
 							 <xsl:choose>
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 					<div class="styStdDiv" style="border-top:1px solid black;">
-						<div class="styNameBox" style="width:93mm;height:7.75mm;">
+						<div class="styNameBox" style="width:93mm;height:8mm;">
 							Name of U.S. transferor (see instructions)
 							<br />
 							<xsl:choose>
@@ -209,7 +209,7 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div class="styNameBox" style="width:25mm;height:7.75mm;">
+						<div class="styNameBox" style="width:25mm;height:8mm;">
 							<input type="checkbox" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/SuccessorUSTransferorInd"/>
@@ -224,7 +224,7 @@
 									</xsl:call-template>Successor <br /> U.S. transferor</label>
 							</span>
 						</div>
-						<div class="styEINBox" style="height:7.75mm;width:69mm;padding-left:0.5mm;font-weight:normal;">
+						<div class="styEINBox" style="height:8mm;width:69mm;padding-left:0.5mm;font-weight:normal;">
 							Filing year: (see instructions) <br />
 							<input type="checkbox" class="styCkbox" style="margin-left:2px;">
 								<xsl:call-template name="PopulateCheckbox">
@@ -254,7 +254,7 @@
 					<div class="styStdDiv" style="border-top:1px solid black;border-bottom:1px solid black;">
 						<div class="styPartName">Part I</div>
 						<div class="styPartDesc" style="width:167mm;">Acceleration Event <span style="font-weight:normal;">(see instructions)</span></div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:4.2mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/AccelerationEventGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchHTable1' "/>
@@ -403,7 +403,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName">Part II</div>
 						<div class="styPartDesc" style="width:167mm;">Termination Event <span style="font-weight:normal;">(see instructions)</span></div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:4.2mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/TerminationEventGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchHTable2' "/>
@@ -491,7 +491,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName">Part III</div>
 						<div class="styPartDesc" style="width:167mm;">Successor Event <span style="font-weight:normal;">(see instructions)</span></div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:4.2mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/SuccessorEventGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchHTable3' "/>
@@ -620,7 +620,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName">Part IV</div>
 						<div class="styPartDesc" style="width:167mm;">Taxable Disposition of a Portion of an Interest in Partnership Event <span style="font-weight:normal;">(see instructions)</span></div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:4.2mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/TxblDisposPrtnIntPrtshpEvtGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchHTable4' "/>
@@ -730,7 +730,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName">Part V</div>
 						<div class="styPartDesc" style="width:167mm;">Section 367 Transfer Event <span style="font-weight:normal;">(see instructions)</span></div>
-						<div style="float:right;width:5mm;height:4mm;">
+						<div style="float:right;width:5mm;height:4.2mm;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/Sect367TransferEventGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchHTable5' "/>

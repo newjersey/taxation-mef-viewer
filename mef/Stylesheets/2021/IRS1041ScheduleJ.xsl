@@ -33,10 +33,10 @@
 				<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
 				<xsl:call-template name="InitJS"/>
 				<style type="text/css">
-<!--				     <xsl:if test="not($Print) or $Print=''">
--->					<xsl:call-template name="IRS1041ScheduleJStyle"/>
+				     <xsl:if test="not($Print) or $Print=''">
+					<xsl:call-template name="IRS1041ScheduleJStyle"/>
 					<xsl:call-template name="AddOnStyle"/>
-				     <!--</xsl:if>-->
+				     </xsl:if>
 				</style>
 				<xsl:call-template name="GlobalStylesForm"/>
 			</head>
@@ -1560,8 +1560,8 @@
 			</div>
 		</div>
 		<div style="width:187mm;">
-			<div style="width:105mm;float:left;">
-				<div style="width:105mm;border-bottom:1px solid black;height:10.6mm;">
+			<div style="width:109mm;float:left;">
+				<div style="width:109mm;border-bottom:1px solid black;height:10.6mm;">
 					Beneficiary's address (number and street including apartment number or P.O. box) 
 					<xsl:choose>
 						<xsl:when test="$TargetNode/USAddress"><br/>												
@@ -1588,7 +1588,7 @@
 						</xsl:otherwise>
 					</xsl:choose>
 				</div>
-				<div style="width:105mm;height:10.6mm;border-bottom:1px solid black;">
+				<div style="width:109mm;height:10.6mm;border-bottom:1px solid black;">
 					City, state, and ZIP code <br/>
 					<xsl:call-template name="PopulateCityStateInfo">
 						<xsl:with-param name="TargetNode" select="$TargetNode/USAddress"/>
@@ -1610,11 +1610,11 @@
 				<b>(b)</b>
 				<br/>This<br/>beneficiary's<br/>share of<br/>line 14
 			</div>
-			<div class="styIRS1041SJBox" style="font-weight:normal;height:21.2mm;padding-top:2mm;width:28mm;">
+			<div class="styIRS1041SJBox" style="font-weight:normal;height:21.2mm;padding-top:2mm;">
 				<b>(c)</b>
 				<br/>This<br/>beneficiary's<br/>share of<br/>
 				<div style="float:left;clear:none;padding-left:8mm;">line 16</div>
-				<div style="float:right;padding-top:3mm;padding-right:1mm;">
+				<div style="float:right;padding-top:3mm;">
 					<xsl:call-template name="SetDynamicTableToggleButton">
 						<xsl:with-param name="TargetNode" select="$TargetNode/AllocationToBenefShareDetail"/>
 						<xsl:with-param name="containerHeight" select="5"/>
@@ -1629,7 +1629,7 @@
 		<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
 		<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
 		<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
-		<div class="styTableContainer" style="width:185mm;">
+		<div class="styTableContainer" style="width:187mm;">
 			<xsl:attribute name="id">BeneficiaryShares<xsl:value-of select="position()"/></xsl:attribute>
 			<xsl:call-template name="SetInitialState"/>
 			<!-- end -->
@@ -1647,7 +1647,7 @@
 										<xsl:value-of select="$lineNo"/>
 									</xsl:if>
 								</td>
-								<td class="styLNDesc" style="width:89mm;">
+								<td class="styLNDesc" style="width:93mm;">
 									<span style="float:left;font-size:7pt">Throwback Year 
 								<span style="width:14mm;margin-left:2mm;border-bottom:1px dashed black;text-align:center;">
 											<xsl:call-template name="PopulateYear">
@@ -1655,7 +1655,7 @@
 											</xsl:call-template>
 										</span>
 									</span>
-									<span class="styDotLn" style="float:right">...........</span>
+									<span class="styDotLn" style="float:right">..............</span>
 								</td>
 								<td class="styLNRightNumBox" style="height:4.4mm">
 									<xsl:if test="$lineNo &lt; 37">
@@ -1683,12 +1683,12 @@
 					<xsl:if test="($Reps &lt; 1) or ($Print = $Separated and $Reps &gt; 5)">
 						<tr style="width:187mm;">
 							<td class="styLNLeftNumBox">32</td>
-							<td class="styLNDesc" style="width:89mm;">
+							<td class="styLNDesc" style="width:93mm;">
 								<span style="float:left;">
 							Throwback Year 
 							<span style="width:14mm;margin-left:2mm;border-bottom:1px dashed black;"/>
 								</span>
-								<span class="styDotLn" style="float:right">............</span>
+								<span class="styDotLn" style="float:right">..............</span>
 							</td>
 							<td class="styLNRightNumBox" style="height:4.5mm;">32</td>
 							<td class="styIRS1041SJAmtBox" style="height:4.5mm;">
@@ -1704,12 +1704,12 @@
 					<xsl:if test="($Reps &lt; 2) or ($Print = $Separated and $Reps &gt; 5)">
 						<tr style="width:187mm;">
 							<td class="styLNLeftNumBox">33</td>
-							<td class="styLNDesc" style="width:89mm;">
+							<td class="styLNDesc" style="width:93mm;">
 								<span style="float:left;">
 							Throwback Year 
 							<span style="width:14mm;margin-left:2mm;border-bottom:1px dashed black;"/>
 								</span>
-								<span class="styDotLn" style="float:right">............</span>
+								<span class="styDotLn" style="float:right">..............</span>
 							</td>
 							<td class="styLNRightNumBox" style="height:4.5mm;">33</td>
 							<td class="styIRS1041SJAmtBox" style="height:4.5mm;"/>
@@ -1720,12 +1720,12 @@
 					<xsl:if test="($Reps &lt; 3) or ($Print = $Separated and $Reps &gt; 5)">
 						<tr style="width:187mm;">
 							<td class="styLNLeftNumBox">34</td>
-							<td class="styLNDesc" style="width:89mm;">
+							<td class="styLNDesc" style="width:93mm;">
 								<span style="float:left;">
 							Throwback Year 
 							<span style="width:14mm;margin-left:2mm;border-bottom:1px dashed black;"/>
 								</span>
-								<span class="styDotLn" style="float:right">............</span>
+								<span class="styDotLn" style="float:right">..............</span>
 							</td>
 							<td class="styLNRightNumBox" style="height:4.5mm;">34</td>
 							<td class="styIRS1041SJAmtBox" style="height:4.5mm;"/>
@@ -1736,12 +1736,12 @@
 					<xsl:if test="($Reps &lt; 4) or ($Print = $Separated and $Reps &gt; 5)">
 						<tr style="width:187mm;">
 							<td class="styLNLeftNumBox">35</td>
-							<td class="styLNDesc" style="width:89mm;">
+							<td class="styLNDesc" style="width:93mm;">
 								<span style="float:left;">
 							Throwback Year 
 							<span style="width:14mm;margin-left:2mm;border-bottom:1px dashed black;"/>
 								</span>
-								<span class="styDotLn" style="float:right">............</span>
+								<span class="styDotLn" style="float:right">..............</span>
 							</td>
 							<td class="styLNRightNumBox" style="height:4.5mm;">35</td>
 							<td class="styIRS1041SJAmtBox" style="height:4.5mm;"/>
@@ -1752,12 +1752,12 @@
 					<xsl:if test="($Reps &lt; 5) or ($Print = $Separated and $Reps &gt; 5)">
 						<tr class="styIRS1041SJCon" style="clear:all;height:auto;width:187mm;">
 							<td class="styLNLeftNumBox">36</td>
-							<td class="styLNDesc" style="width:89mm;">
+							<td class="styLNDesc" style="width:93mm;">
 								<span style="float:left;">
 							Throwback Year 
 							<span style="width:14mm;margin-left:2mm;border-bottom:1px dashed black;"/>
 								</span>
-								<span class="styDotLn" style="float:right">............</span>
+								<span class="styDotLn" style="float:right">..............</span>
 							</td>
 							<td class="styLNRightNumBox" style="height:4.5mm;">36</td>
 							<td class="styIRS1041SJAmtBox" style="height:4.5mm;"/>
@@ -1779,10 +1779,10 @@
 		<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
 		<div style="width:187mm;height:7mm;border-bottom:1px solid black;">
 			<div class="styLNLeftNumBox">37</div>
-			<div class="styLNDesc" style="width:89mm;">
+			<div class="styLNDesc" style="width:93mm;">
 				Total. Add lines 32 through 36. Enter here and on the appropriate <br/>
 				<span style="float:left;">lines of Form 4970</span>
-				<span class="styIRS1041SJDots">..............</span>
+				<span class="styIRS1041SJDots">................</span>
 			</div>
 			<div class="styLNRightNumBoxNBB" style="height:7mm;padding-top:3.5mm">37</div>
 			<div class="styIRS1041SJAmtNBB" style="height:7mm;padding-top:4mm">

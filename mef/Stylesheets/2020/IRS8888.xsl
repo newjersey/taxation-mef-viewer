@@ -328,7 +328,7 @@
 										<input type="checkbox" class="styCkbox" style="height:4mm;width:4mm;">
 											<xsl:call-template name="PopulateNoCheckbox">
 												<xsl:with-param name="TargetNode" select="$Form8888Data/DirectDepositInfoGroup[$pos + 1]/BankAccountTypeCd"/>
-												<xsl:with-param name="BackupName">IRS8888AccountTypeCd</xsl:with-param>
+												<xsl:with-param name="BackupName">IRS8888AccountTypeCd1</xsl:with-param>
 												<xsl:with-param name="Checkbox1or2Type">yes</xsl:with-param>
 											</xsl:call-template>
 										</input>
@@ -339,7 +339,7 @@
 											</xsl:call-template>
 											<xsl:call-template name="PopulateLabelNo">
 												<xsl:with-param name="TargetNode" select="$Form8888Data/DirectDepositInfoGroup[$pos + 1]/BankAccountTypeCd"/>
-												<xsl:with-param name="BackupName">IRS8888AccountTypeCd</xsl:with-param>
+												<xsl:with-param name="BackupName">IRS8888AccountTypeCd1</xsl:with-param>
 											</xsl:call-template>
 											<span style="font-size:8.5pt;padding-bottom:0mm;padding-top:2mm;font-family:Arial;">Checking</span>
 										</label>
@@ -475,7 +475,7 @@
 										<input type="checkbox" class="styCkbox" style="height:4mm;width:4mm;padding-left:4mm;">
 											<xsl:call-template name="PopulateYesCheckbox">
 												<xsl:with-param name="TargetNode" select="$Form8888Data/DirectDepositInfoGroup[$pos + 2]/BankAccountTypeCd"/>
-												<xsl:with-param name="BackupName">IRS8888AccountTypeCd</xsl:with-param>
+												<xsl:with-param name="BackupName">IRS8888AccountTypeCd2</xsl:with-param>
 												<xsl:with-param name="Checkbox1or2Type">yes</xsl:with-param>
 											</xsl:call-template>
 										</input>
@@ -486,7 +486,7 @@
 											</xsl:call-template>
 											<xsl:call-template name="PopulateLabelYes">
 												<xsl:with-param name="TargetNode" select="$Form8888Data/DirectDepositInfoGroup[$pos + 2]/BankAccountTypeCd"/>
-												<xsl:with-param name="BackupName">IRS8888AccountTypeCd</xsl:with-param>
+												<xsl:with-param name="BackupName">IRS8888AccountTypeCd2</xsl:with-param>
 											</xsl:call-template>
 											<span style="font-size:8.5pt;padding-bottom:0mm;padding-top:2mm;font-family:Arial">Savings</span>
 										</label>
@@ -608,10 +608,7 @@
 								          here (First then Last). If beneficiary, also check here
 								          <img src="{$ImagePath}/8888_Bullet_Sm.gif" alt="Bullet"/>
 									<span style="width:.5mm;"/>
-									<xsl:call-template name="PopulateSpan">
-										<xsl:with-param name="TargetNode" select="$Form8888Data/SavingsBondPurchaseInfoGrp[$bondpos]/BeneficiaryInd"/>
-									</xsl:call-template>
-									<input type="checkbox" title="beneficiaryInd" id="beneficiaryInd" alt="alt" class="styCkbox" style="height:4mm;width:4mm;">
+									<input type="checkbox" title="beneficiaryInd" id="beneficiaryInd" alt="Beneficiary Ind" class="styCkbox" style="height:4mm;width:4mm;">
 										<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="$Form8888Data/SavingsBondPurchaseInfoGrp[$bondpos]/BeneficiaryInd"/>
 											<!--<xsl:with-param name="BackupName">IRS8888BeneficiaryIndicator</xsl:with-param>-->
@@ -680,10 +677,7 @@
 								        here (First then Last). If beneficiary, also check here
 								        <img src="{$ImagePath}/8888_Bullet_Sm.gif" alt="Bullet"/>
 									    <span style="width:.5mm;"/>
-									<xsl:call-template name="PopulateSpan">
-										<xsl:with-param name="TargetNode" select="$Form8888Data/SavingsBondPurchaseInfoGrp[$bondpos + 1]/BeneficiaryInd"/>
-									</xsl:call-template>
-									    <input type="checkbox" title="beneficiaryInd2" id="beneficiaryInd2" alt="alt" class="styCkbox" style="height:4mm;width:4mm;">
+									    <input type="checkbox" title="beneficiaryInd2" id="beneficiaryInd2" alt="Beneficiary Ind" class="styCkbox" style="height:4mm;width:4mm;">
 									    	<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="$Form8888Data/SavingsBondPurchaseInfoGrp[$bondpos + 1]/BeneficiaryInd"/>
 											<!--<xsl:with-param name="BackupName">IRS8888BeneficiaryIndicator2</xsl:with-param>-->

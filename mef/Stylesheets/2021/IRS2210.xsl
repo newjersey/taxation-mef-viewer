@@ -60,7 +60,7 @@
 								<img src="{$ImagePath}/2210_Bullet.gif" alt="MediumBullet"/> Attach to Form 1040, 1040-SR, 1040-NR, or 1041.</div>
 						</div>
 						<div class="styTYBox" style="width:31mm; height:22mm">
-							<div class="styOMB">OMB No. 1545-0074</div>
+							<div class="styOMB">OMB No. 1545-0140</div>
 							<div>
 								<span class="styTaxYear" style="font-size:21pt;">20</span>
 								<span class="styTYColor" style="font-family: 'Arial Narrow';font-size:21pt">
@@ -227,7 +227,7 @@
 							<div class="styLNLeftNumBox" style="font-size:7pt;height:4mm;padding-bottom:0mm;padding-left: 2.25mm">2
                             </div>
 							<div class="styLNDesc" style="font-size:7pt;width:135mm;height:4mm;padding-bottom:0mm;">
-								<span style="float:left">Other taxes, including the portion of 2021 self-employment tax to which the estimated tax requirement applies and, if applicable, Additional Medicare Tax and/or Net Investment Income Tax (see instructions)</span>
+								<span style="float:left">Other taxes, including self-employment tax and, if applicable, Additional Medicare Tax and/or Net Investment Income Tax (see instructions)</span>								
 							</div>
 							<div class="styLNRightNumBox" style="height:7mm;padding-bottom:0mm;bottom-border-width:1px;padding-top:3mm;">2</div>
 							<div class="styLNAmountBox" style="width:36mm;height:7mm;padding-bottom:0mm;bottom-border-width:1px;padding-top:3mm;">
@@ -241,13 +241,23 @@
 							<div class="styLNLeftNumBox" style="font-size:7pt;height:3mm;padding-bottom:0mm;padding-left: 2.25mm">3
                             </div>
 							<div class="styLNDesc" style="font-size:7pt;width:135mm;height:3mm;padding-bottom:0mm;">
-							   Other payments and refundable credits (see instructions)
+							  Refundable credits (see instructions)
 								<span class="styBoldText">
 									<span style="width:11px"/>.
 								    <span style="width:11px"/>.
                                     <span style="width:11px"/>.
                                     <span style="width:11px"/>.
                                      <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
+                                    <span style="width:11px"/>.
                                     <span style="width:11px"/>.
                                     <span style="width:11px"/>.
                                     <span style="width:11px"/>.

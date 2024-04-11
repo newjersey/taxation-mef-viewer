@@ -36,8 +36,8 @@
 				<xsl:call-template name="InitJS"/>
 				<style type="text/css">
 					<xsl:if test="not($Print) or $Print=''">
-						<xsl:call-template name="IRS943ScheduleRStyle"/>
-						<xsl:call-template name="AddOnStyle"/>
+					<xsl:call-template name="IRS943ScheduleRStyle"/>
+					<xsl:call-template name="AddOnStyle"/>
 					</xsl:if>
 				</style>
 			</head>
@@ -162,9 +162,7 @@
 							</div>
 						</div>
 					</div>
-					
-					<!--First Table -->
-					<div class="IRS943ScheduleRTableContainer" style="display:block;padding-top:0mm;">
+					<div class="IRS943ScheduleRTableContainer" style="display:block;padding-top:1mm;">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
@@ -172,54 +170,54 @@
 							<thead class="styTableThead">
 								<tr>
 									<!-- Column a -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-left-width:0px;">
-										<div style="width:29mm; padding-left:2.5mm;">(a) Client’s EIN</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:26mm;">(a) Client’s EIN</div>
 									</th>
 									<!-- Column b -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:29mm;">(b) Type of wages<br/>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:28mm;">(b) Type of wages<br/>
 											<span style="font-weight:normal;">(CPEO Only)</span>
 										</div>
 									</th>
 									<!-- Column c -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:25mm;">(c) Form 943, line 1</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:33.5mm;">(c) Form 943, line 1</div>
 									</th>
 									<!-- Column d -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:27mm;">(d) Form 943, line 2</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:25.1mm;">(d) Form 943, line 2</div>
 									</th>
 									<!-- Column e -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:27mm;">(e) Form 943, line 2a</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:26mm;">(e) Form 943, line 2a</div>
 									</th>
 									<!-- Column f -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:27mm;">(f) Form 943, line 2b</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:30.1mm;">(f) Form 943, line 2b</div>
 									</th>
 									<!-- Column g-->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:27mm;">(g) Form 943, line 4</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:30mm;">(g) Form 943, line 4</div>
 									</th>
 									<!-- Column h-->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:27.5mm;">(h) Form 943, line 6</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:25.4mm;">(h) Form 943, line 6</div>
 									</th>
 									<!-- Column i-->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-right-width:0px;">
-										<div style="width:27.5mm;vertical-align:none">(i) Form 943, line 8</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-right-width:0px;height:10mm">
+										<div style="width:25mm;vertical-align:none">(i) Form 943, line 8</div>
 									</th>
 								</tr>
 							</thead>
 							<tbody>
 								<xsl:variable name="NumberOfClientInfGrp" select="$FormData/PayerInformationGrp"/>
-								<!-- For loop to display line 1 to 5+ of first table -->
 								<xsl:for-each select="$NumberOfClientInfGrp">
 									<tr>
-										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
 												<xsl:choose>
-													<xsl:when test="position() &gt; 5"/>
+													<xsl:when test="position() &gt; 5">
+													</xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="position()"/>
 													</xsl:otherwise>
@@ -231,214 +229,238 @@
 												</xsl:call-template>
 											</div>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" style="text-align:center;">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:center;border-right-width:1px;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="WagesTypeCd"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/EmployeeCnt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/SocialSecurityTaxCashWagesAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/SocialSecurityQlfyPdSLWageAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/SocialSecurityQlfyPdFMLWageAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/MedicareTaxCashWagesAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotMedcrTaxCashWagesAddnlWhAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/FederalIncomeTaxWithheldAmt"/>
 											</xsl:call-template>
 										</td>
 									</tr>
 								</xsl:for-each>
-								<!-- End For loop to display line 1 to 5+ of first table -->
-								
 								<xsl:if test="count($NumberOfClientInfGrp) &lt; 5">
 									<xsl:call-template name="FillTable1Rows">
 										<xsl:with-param name="LineNumber" select="5 - count($NumberOfClientInfGrp)"/>
 									</xsl:call-template>
 								</xsl:if>
-								
-								<!-- Line 6 of first table -->
+							</tbody>
+						</table>
+					</div>
+					<!-- line 6 to line 9 first table -->
+					<div class="IRS943ScheduleRTableContainer" style="display:block">
+						<!-- print logic -->
+						<xsl:call-template name="SetInitialState"/>
+						<!-- end -->
+						<table cellspacing="0" style="font-size:7pt;margin-left:0mm">
+							<thead/>
+							<tfoot/>
+							<tbody>
 								<tr>
-									<td colspan="2" class="IRS943ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width: 0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:1mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">6</div>
-										<div style="text-align:left;padding-top:1mm;padding-left:1mm;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+												6
+											</div>
+											<div style="text-align:left;padding-top:1mm;padding-left:1mm;width:50mm;colspan=2">
 											<b>Subtotals for clients.</b> Add lines 1 through 5
-										</div>
+											</div>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:34.5mm;">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/EmployeeCnt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:25.8mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/SocialSecurityTaxCashWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:26.7mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/SocialSecurityQlfyPdSLWageAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:31mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/SocialSecurityQlfyPdFMLWageAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:30.8mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/MedicareTaxCashWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:26.2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotMedcrTaxCashWagesAddnlWhAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px;width:25mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/FederalIncomeTaxWithheldAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 6 of first table -->
-								
-								<!-- Line 7 of first table -->
+								<!--Line 7-->
 								<tr>
-									<td colspan="2" class="IRS943ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width: 0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:7mm;background-color:lightgrey;padding-top:2mm;padding-right:1mm;padding-left:2mm;">7</div>
-										<div style="text-align:left;padding-top:1mm;padding-left:1mm;">
+								<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:6mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">
+												7
+											</div>
+										<div style="text-align:left;padding-left:1mm;padding-top:.5mm;width:50mm;colspan=2;font-size:5.5pt;">
 											<b>Enter the combined subtotal from line 9 of<br/>all Continuation Sheets for Schedule R</b>
 										</div>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px"/>
-								</tr>
-								<!-- End Line 7 of first table -->
-								
-								<!-- Line 8 of first table -->
-								<tr>
-									<td colspan="2" class="IRS943ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width: 0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:1mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">8</div>
-										<div style="text-align:left;padding-top:1mm;padding-left:1mm;"><b>Enter Form 943 amounts for your employees</b></div>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:34.5mm;">
+										<br/>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:25.8mm;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:25.8mm;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:31mm;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:30.5mm;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:26.2mm;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px;width:25mm;">
+										<br/>
+									</td>
+								</tr>
+								<!--Line 8-->
+								<tr>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:0.5mm;">
+												8
+											</div>
+										<div style="text-align:left;padding-top:1mm;padding-left:1mm;width:50mm;colspan=2;font-size:5.5pt;">
+											<b>Enter Form 943 amounts for your employees</b>
+										</div>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:34.5mm;">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/EmployeeCnt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:25.8mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/SocialSecurityTaxCashWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:25.8mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/SocialSecurityQlfyPdSLWageAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:31mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/SocialSecurityQlfyPdFMLWageAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:30.5mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/MedicareTaxCashWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:26.2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotMedcrTaxCashWagesAddnlWhAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px;width:25mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/FederalIncomeTaxWithheldAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 8 of first table -->
-								
-								<!-- Line 9 of first table -->
 								<tr>
-									<td colspan="2" class="IRS943ScheduleR_GenericCell" style="text-align:left;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width: 0px;border-bottom-width:0px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;padding-top:1mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">9</div>
-										<div style="text-align:left;padding-top:1mm;padding-left:1mm;"><b>Totals.</b> Add lines 6, 7, and 8.</div>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">
+												9
+											</div>
+										<div style="text-align:left;padding-top:1mm;padding-left:1mm;width:50mm;colspan=2;">
+											<b>Totals.</b> Add lines 6, 7, and 8.
+											</div>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:34.5mm;">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/EmployeeCnt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:25.8mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/SocialSecurityTaxCashWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:25.8mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/SocialSecurityQlfyPdSLWageAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:31mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/SocialSecurityQlfyPdFMLWageAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:30.5mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/MedicareTaxCashWagesAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;width:26.2mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotMedcrTaxCashWagesAddnlWhAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px;border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px;width:25mm;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/FederalIncomeTaxWithheldAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 9 of first table -->
 							</tbody>
 						</table>
 					</div>
-					<!-- End first table -->
 					
-					<!--Second table -->
-					<div class="IRS943ScheduleRTableContainer" style="display:block;padding-top:0mm;">
+					<div class="IRS943ScheduleRTableContainer" style="display:block" id="SchRCtn">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
@@ -446,36 +468,36 @@
 							<thead class="styTableThead">
 								<tr>
 									<!-- Column j -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-left-width:0px;">
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
 										<div style="width:33mm;padding-left:4mm;">(j) Form 943, line 12a</div>
 									</th>
 									<!-- Column k -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:30.5mm;">(k) Form 943, lines 12b and 14d, total</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(k) Form 943, lines 12b and 14d, total</div>
 									</th>
 									<!-- Column l -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:30.5mm;">(l) Form 943, lines 12c and 14e, total</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(l) Form 943, lines 12c and 14e, total</div>
 									</th>
 									<!-- Column m -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
 										<div style="width:31mm;">(m) Form 943, lines 12d and 14f, total</div>
 									</th>
 									<!-- Column n -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
 										<div style="width:31mm;">(n) Form 943, lines 12e and 14g, total</div>
 									</th>
 									<!-- Column o -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:29mm;">(o) Form 943, line 12f</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(o) Form 943, line 12f</div>
 									</th>
 									<!-- Column p-->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:30.5mm;">(p) Form 943, line 13</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(p) Form 943, line 13</div>
 									</th>
 									<!-- Column q-->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-right-width:0px;">
-										<div style="width:31mm;vertical-align:none">(q) Form 943, line 14a</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-right-width:0px;height:10mm">
+										<div style="width:30mm;">(q) Form 943, line 14a</div>
 									</th>
 								</tr>
 							</thead>
@@ -483,10 +505,11 @@
 								<xsl:variable name="NumberOfClientInfGrp" select="$FormData/PayerInformationGrp"/>
 								<xsl:for-each select="$NumberOfClientInfGrp">
 									<tr>
-										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
 												<xsl:choose>
-													<xsl:when test="position() &gt; 5"/>
+													<xsl:when test="position() &gt; 5">
+													</xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="position()"/>
 													</xsl:otherwise>
@@ -498,266 +521,286 @@
 												</xsl:call-template>
 											</div>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" >
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotalCrQlfySLFMLWagesAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" >
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotalEmplRtntnCrCOVIDAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" >
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotalCrQlfySLFMLWagesAftrAmt"/>
 											</xsl:call-template>
-										</td>										
-										<td class="IRS943ScheduleR_GenericCell" >
+										</td>
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotalCOBRAPremiumSubsidyAmt"/>
 											</xsl:call-template>
-										</td>										
-										<td class="IRS943ScheduleR_GenericCell">
+										</td>
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/COBRAPremiumSubsidyRcpntCnt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotalTaxAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotalTaxDepositAmt"/>
 											</xsl:call-template>
 										</td>
 									</tr>
 								</xsl:for-each>
-								<!-- End for loop to create line 1 to 5 of Second table -->
-								
 								<xsl:if test="count($NumberOfClientInfGrp) &lt; 5">
 									<xsl:call-template name="FillSecTable1Rows">
 										<xsl:with-param name="LineNumber" select="5 - count($NumberOfClientInfGrp)"/>
 									</xsl:call-template>
 								</xsl:if>
-								
-								<!-- Line 6 of Second table -->
+							</tbody>
+						</table>
+					</div>
+					<div class="IRS943ScheduleRTableContainer" style="display:block">
+						<!-- print logic -->
+						<xsl:call-template name="SetInitialState"/>
+						<!-- end -->
+						<table cellspacing="0" style="font-size:7pt;margin-left:0mm">
+							<thead/>
+							<tfoot/>
+							<tbody>
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:1mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">6</div>
-										<div style="text-align:right;padding-top:1mm">
-												<xsl:call-template name="PopulateAmount">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											6
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
+											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/PayrollTaxCreditAmt"/>
 											</xsl:call-template>
-											</div>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+										</div>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotalCrQlfySLFMLWagesAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotalEmplRtntnCrCOVIDAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotalCrQlfySLFMLWagesAftrAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotalCOBRAPremiumSubsidyAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/COBRAPremiumSubsidyRcpntCnt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotalTaxAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px">
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotalTaxDepositAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 6 of Second table -->
-								
-								<!-- Line 7 of Second table -->
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:2mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">7</div>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											7
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
+											<br/>
+										</div>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px"/>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
+										<br/>
+									</td>
 								</tr>
-								<!-- End Line 7 of Second table -->
-								
-								<!-- Line 8 of Second table -->
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:1mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">8</div>
-										<div style="text-align:right;padding-top:1mm;padding-left:1mm;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											8
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/PayrollTaxCreditAmt"/>
 											</xsl:call-template>
 										</div>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotalCrQlfySLFMLWagesAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotalEmplRtntnCrCOVIDAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotalCrQlfySLFMLWagesAftrAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotalCOBRAPremiumSubsidyAmt"/>
 										</xsl:call-template>
-									</td>	
-									<td class="IRS943ScheduleR_GenericCell">
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/COBRAPremiumSubsidyRcpntCnt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotalTaxAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px">
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotalTaxDepositAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 8 of Second table -->
-								
-								<!-- Line 9 of Second table -->
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:0px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;padding-top:1mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">9</div>
-										<div style="text-align:right;padding-top:1mm;padding-left:1mm;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											9
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/PayrollTaxCreditAmt"/>
 											</xsl:call-template>
 										</div>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotalCrQlfySLFMLWagesAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotalEmplRtntnCrCOVIDAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotalCrQlfySLFMLWagesAftrAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotalCOBRAPremiumSubsidyAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/COBRAPremiumSubsidyRcpntCnt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotalTaxAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px;border-bottom-width:0px;">
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotalTaxDepositAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 9 of Second table -->
 							</tbody>
 						</table>
 					</div>
-					<!-- End of Second table -->
-					
-					<!--Third Table -->
-					<div class="IRS943ScheduleRTableContainer" style="display:block;padding-top:0mm;border-bottom-width:1px;">
+					<!--Third Table-->
+					<div class="IRS943ScheduleRTableContainer" style="display:block">
 						<!-- print logic -->
 						<xsl:call-template name="SetInitialState"/>
 						<!-- end -->
 						<table cellspacing="0" style="font-size:6pt;margin-left:0mm;">
 							<thead class="styTableThead">
+								
 								<tr>
-									<!-- Column r -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-left-width:0px;">
+									<!-- Column r-->
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
 										<div style="width:33mm;padding-left:4mm;">(r) Form 943, line 14i</div>
 									</th>
 									<!-- Column s -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:30.5mm;">(s) Form 943, lines 18 and 19, total</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(s) Form 943, lines 18 and 19, total</div>
 									</th>
 									<!-- Column t -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:30.5mm;">(t) Form 943, lines 20 and 21, total</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(t) Form 943, lines 20 and 21, total</div>
 									</th>
 									<!-- Column u -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
 										<div style="width:31mm;">(u) Form 943, lines 22 and 24, total</div>
 									</th>
 									<!-- Column v -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
 										<div style="width:31mm;">(v) Form 943, lines 23 and 26, total</div>
 									</th>
 									<!-- Column w -->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:29mm;">(w) Form 943, lines 25 and 27, total</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(w) Form 943, lines 25 and 27, total</div>
 									</th>
 									<!-- Column x-->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col">
-										<div style="width:30.5mm;">(x) Form 943, line 28</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="height:10mm">
+										<div style="width:31mm;">(x) Form 943, line 28</div>
 									</th>
 									<!-- Column y-->
-									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-right-width:0px;">
-										<div style="width:31mm;vertical-align:none">(y) Form 943, line 29</div>
+									<th class="IRS943ScheduleR_GenericCellHeader" scope="col" style="border-right-width:0px;height:10mm">
+										<div style="width:30mm;">(y) Form 943, line 29</div>
 									</th>
 								</tr>
 							</thead>
 							<tbody>
 								<xsl:variable name="NumberOfClientInfGrp" select="$FormData/PayerInformationGrp"/>
-								
-								<!-- For Loop to generate line 1 to 5 of Third Table -->
 								<xsl:for-each select="$NumberOfClientInfGrp">
 									<tr>
-										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+											<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
 												<xsl:choose>
-													<xsl:when test="position() &gt; 5"/>
+													<xsl:when test="position() &gt; 5">
+													</xsl:when>
 													<xsl:otherwise>
 														<xsl:value-of select="position()"/>
 													</xsl:otherwise>
@@ -769,218 +812,237 @@
 												</xsl:call-template>
 											</div>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" >
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotQHPExpnssQlfyPdSLFMLWgsAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" >
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotQlfyExpnsWgsRtnEmplCOVIDAmt"/>
 											</xsl:call-template>
-										</td>										
-										<td class="IRS943ScheduleR_GenericCell" >
+										</td>
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotQlfyCrtnBrgnAgrmtSLWgsAmt"/>
 											</xsl:call-template>
 										</td>
-																		
-										<td class="IRS943ScheduleR_GenericCell" >
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotQHPExpnsQlfySLFMLWgsAftrAmt"/>
 											</xsl:call-template>
 										</td>
-																				
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/TotQlfyCrtnBrgnAgrmtFMLWgsAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:1px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/EligEmplRtntnCrRcvryStUp3rdAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px">
+										<td class="IRS943ScheduleR_GenericCell" style="text-align:right;border-right-width:0px">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="PayerAllocationInfoGrp/EligEmplRtntnCrRcvryStUp4thAmt"/>
 											</xsl:call-template>
 										</td>
 									</tr>
 								</xsl:for-each>
-								<!-- End For Loop to generate line 1 to 5 of Third Table -->
-								
 								<xsl:if test="count($NumberOfClientInfGrp) &lt; 5">
 									<xsl:call-template name="FillSecTable1Rows">
 										<xsl:with-param name="LineNumber" select="5 - count($NumberOfClientInfGrp)"/>
 									</xsl:call-template>
 								</xsl:if>
-								
-								<!-- Line 6 of Third Table -->
+							</tbody>
+						</table>
+					</div>
+					<div class="IRS943ScheduleRTableContainer" style="display:block">
+						<!-- print logic -->
+						<xsl:call-template name="SetInitialState"/>
+						<!-- end -->
+						<table cellspacing="0" style="font-size:7pt;margin-left:0mm">
+							<thead/>
+							<tfoot/>
+							<tbody>
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:1mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">6</div>
-										<div style="text-align:right;padding-top:1mm">
-												<xsl:call-template name="PopulateAmount">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											6
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
+											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotAdvncPymtEmplrCrReqQtrAmt"/>
 											</xsl:call-template>
-											</div>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+										</div>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotQHPExpnssQlfyPdSLFMLWgsAmt"/>
 										</xsl:call-template>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotQlfyExpnsWgsRtnEmplCOVIDAmt"/>
 										</xsl:call-template>
-									</td>					
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotQlfyCrtnBrgnAgrmtSLWgsAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotQHPExpnsQlfySLFMLWgsAftrAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/TotQlfyCrtnBrgnAgrmtFMLWgsAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/EligEmplRtntnCrRcvryStUp3rdAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px">
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/SubtlPayerAllocationInfoGrp/EligEmplRtntnCrRcvryStUp4thAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 6 of Third Table -->
-								
-								<!-- Line 7 of Third Table -->
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:2mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">7</div>
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											7
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
+											<br/>
+										</div>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell"/>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px"/>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
+										<br/>
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
+										<br/>
+									</td>
 								</tr>
-								<!-- End Line 7 of Third Table -->
-								
-								<!-- Line 8 of Third Table -->
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-top:1mm;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">8</div>
-										<div style="text-align:right;padding-top:1mm;padding-left:1mm;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											8
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotAdvncPymtEmplrCrReqQtrAmt"/>
 											</xsl:call-template>
 										</div>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" >
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotQHPExpnssQlfyPdSLFMLWgsAmt"/>
 										</xsl:call-template>
-									</td>		
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotQlfyExpnsWgsRtnEmplCOVIDAmt"/>
 										</xsl:call-template>
-									</td>						
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotQlfyCrtnBrgnAgrmtSLWgsAmt"/>
 										</xsl:call-template>
-									</td>					
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotQHPExpnsQlfySLFMLWgsAftrAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/TotQlfyCrtnBrgnAgrmtFMLWgsAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/EligEmplRtntnCrRcvryStUp3rdAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px">
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/AgriculturalEmployeeInfoGrp/EligEmplRtntnCrRcvryStUp4thAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 8 of Third Table -->
-								
-								<!-- Line 9 of Third Table -->
 								<tr>
-									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;border-bottom-width:1px;">
-										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;padding-top:1mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;border-bottom-width:1px;">9</div>
-										<div style="text-align:right;padding-top:1mm;padding-left:1mm;">
+									<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
+										<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;">
+											9
+											</div>
+										<div style="width:28.4mm;text-align:right;padding-top:1mm">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotAdvncPymtEmplrCrReqQtrAmt"/>
 											</xsl:call-template>
 										</div>
-									</td>									
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.6mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotQHPExpnssQlfyPdSLFMLWgsAmt"/>
 										</xsl:call-template>
-									</td>		
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotQlfyExpnsWgsRtnEmplCOVIDAmt"/>
 										</xsl:call-template>
-									</td>						
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotQlfyCrtnBrgnAgrmtSLWgsAmt"/>
 										</xsl:call-template>
-									</td>					
-									<td class="IRS943ScheduleR_GenericCell" >
+									</td>
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.8mm;text-align:right;border-right-width:1px;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotQHPExpnsQlfySLFMLWgsAftrAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
-										<xsl:call-template name="PopulateText">
+									<td class="IRS943ScheduleR_GenericCell" style="width:32mm;text-align:right;border-right-width:1px">
+										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/TotQlfyCrtnBrgnAgrmtFMLWgsAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell">
+									<td class="IRS943ScheduleR_GenericCell" style="width:31.7mm;text-align:right;border-right-width:1px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/EligEmplRtntnCrRcvryStUp3rdAmt"/>
 										</xsl:call-template>
 									</td>
-									<td class="IRS943ScheduleR_GenericCell" style="border-right-width:0px">
+									<td class="IRS943ScheduleR_GenericCell" style="width:30mm;text-align:right;border-right-width:0px">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalPayerAllocationInfoGrp/EligEmplRtntnCrRcvryStUp4thAmt"/>
 										</xsl:call-template>
 									</td>
 								</tr>
-								<!-- End Line 9 of Third Table -->
 							</tbody>
 						</table>
 					</div>
-					<!--End of Third Table -->
-					
+					<!--Third Table-->
 					<!--Page Footer-->
-					<div class="pageEnd" style="width:256mm;border-top-width:1px;border-bottom-width:0px;padding-top:.5mm;">
+					<div class="pageEnd" style="width:256mm;border-top-width:1px;border-bottom-width:0px;">
 						<div style="font-weight:bold;width:90mm;float:left;padding-left:0mm;">
 							For Paperwork Reduction Act Notice, see the instructions.
 					  </div>
@@ -1024,9 +1086,9 @@
 		<xsl:param name="LineNumber"/>
 		<xsl:param name="MaxLine" select="5"/>
 		<tr>
-			<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-bottom-width:1px;border-left-width:0px;">
+			<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 				<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">
-					<xsl:number value="$MaxLine - $LineNumber + 1"/>
+					<xsl:number value="$MaxLine -  $LineNumber + 1"/>
 				</div>
 			</td>
 			<td class="IRS943ScheduleR_GenericCell">
@@ -1035,7 +1097,7 @@
 			<td class="IRS943ScheduleR_GenericCell">
 				<br/>
 			</td>
-			<td class="IRS943ScheduleR_GenericCell"> 
+			<td class="IRS943ScheduleR_GenericCell">
 				<br/>
 			</td>
 			<td class="IRS943ScheduleR_GenericCell">
@@ -1065,7 +1127,7 @@
 		<xsl:param name="LineNumber"/>
 		<xsl:param name="MaxLine" select="5"/>
 		<tr>
-			<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;border-left-width:0px;">
+			<td class="IRS943ScheduleR_GenericCell" style="text-align:right;padding-left:0px;padding-top:0px;padding-bottom:0px;">
 				<div class="styLNLeftNumBox" style="width:5mm;height:5mm;background-color:lightgrey;padding-right:1mm;padding-left:2mm;padding-top:1mm;">
 					<xsl:number value="$MaxLine -  $LineNumber + 1"/>
 				</div>

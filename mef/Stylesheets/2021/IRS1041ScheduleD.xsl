@@ -36,10 +36,10 @@
 			<script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
 			<xsl:call-template name="InitJS"/>
 			<style type="text/css">
-				<!--<xsl:if test="not($Print) or $Print=''">-->
+				<xsl:if test="not($Print) or $Print=''">
 					<xsl:call-template name="IRS1041ScheduleDStyle"/>
 					<xsl:call-template name="AddOnStyle"/>
-				<!--</xsl:if>-->
+				</xsl:if>
 			</style>
 			<xsl:call-template name="GlobalStylesForm"/>
 		</head>
@@ -51,7 +51,7 @@
 				</div>
 				<!-- END WARNING LINE -->
 				<!-- BEGIN FORM HEADER -->
-				<!--<div style="width:187mm;">-->
+				<div style="width:187mm;">
 					<div class="styBB" style="width: 187mm;">
 						<!-- Form Name -->
 						<div class="styFNBox" style="width:26mm;height:20mm;border-right-width:2px;">
@@ -200,10 +200,10 @@
 								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:18mm;text-align:center;font-weight:normal;" scope="col">
 									<span style="font-weight:bold;padding-top:2mm">(e)</span><br/>Cost<br/>(or other basis)
 								</th>
-								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:18mm;text-align:center;font-weight:normal;font-size:7pt;border-bottom-width:1px;" scope="col">
+								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:18mm;text-align:center;font-weight:normal;font-size:7pt;" scope="col">
 									<span style="font-weight:bold;">(g)</span><br/>Adjustments to gain or loss from Form(s) 8949, Part I, line 2, column (g)
 								</th>
-								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:18mm;text-align:center;font-weight:normal;font-size:7pt;border-right-width:0px;" scope="col">
+								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:18mm;text-align:center;font-weight:normal;font-size:7pt;border-right-width:0px;" scope="col">
 									<span style="font-weight:bold;">(h)</span><b> Gain or (loss)</b><br/>Subtract column (e) from column (d) and combine the result with column (g)
 								</th>
 							</tr>
@@ -211,10 +211,10 @@
 							<!-- BEGIN PART I TABLE -->
 							<!-- Line 1a -->
 							<tr>
-								<td class="IRS1041ScheduleD_styTableCellNote" style="width:8mm;height:23mm;border-right-width:0px">
+								<td class="IRS1041ScheduleD_styTableCellNote" style="width:8mm;height:24mm;border-right-width:0px">
 									<span class="styLNLeftNumBoxSD">1a</span>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellNote" style="width:67mm;height:23mm">
+								<td class="IRS1041ScheduleD_styTableCellNote" style="width:67mm;height:24mm">
 									<span class="styDesc" style="width:67mm;padding-top:.5mm">Totals for all short-term transactions reported<br/> on Form 1099-B for which
 										basis was reported<br/> to the IRS and for which you have no<br/> adjustments (see instructions). However, if<br/> you choose to
 										report all these transactions<br/> on Form 8949, leave this line blank and go<br/>
@@ -223,18 +223,18 @@
 										<span class="styDotLn" style="float:right;padding-left:6.5mm;padding-right:1mm;">...........</span>
 									</span>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellDt" style="width:28mm;height:23mm;padding-top:20mm;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellDt" style="width:28mm;height:24mm;padding-top:20mm;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BBssRptNoAdjGrp/TotalProceedsSalesPriceAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellDt" style="width:28mm;height:23mm;padding-top:20mm;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellDt" style="width:28mm;height:24mm;padding-top:20mm;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BBssRptNoAdjGrp/TotalCostOrOtherBasisAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:23mm;vertical-align:bottom;border-left-width:1px;border-top-width:1px;background-color:lightgrey;"><br/></td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:23mm;border-right-width:0px;padding-top:20mm;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:24mm;vertical-align:bottom;background-color:lightgrey;"><br/></td>
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:24mm;border-right-width:0px;padding-top:20mm;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BBssRptNoAdjGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -266,7 +266,7 @@
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BShowsBasisGrp/TotAdjustmentsToGainOrLossAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:8mm;border-right-width:0px;padding-top:4mm;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:8mm;border-right-width:0px;padding-top:4mm;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BShowsBasisGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -298,7 +298,7 @@
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BNotShowBasisGrp/TotAdjustmentsToGainOrLossAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BNotShowBasisGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -330,7 +330,7 @@
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BNotReceivedGrp/TotAdjustmentsToGainOrLossAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalSTCGL1099BNotReceivedGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -348,7 +348,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">..........</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;">4</div>
-						<div class="styLNAmountBox" style="width:27mm;">
+						<div class="styLNAmountBox" style="width:28mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/STGainOrLossFromFormsAmt"/>
 							</xsl:call-template>
@@ -364,7 +364,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">....</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;">5</div>
-						<div class="styLNAmountBox" style="width:27mm;">
+						<div class="styLNAmountBox" style="width:28mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/NetSTGainOrLossFromSchK1Amt"/>
 							</xsl:call-template>
@@ -380,7 +380,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">...........................</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;height:8mm;"><br/>6</div>
-						<div class="styLNAmountBox" style="width:27mm;height:8mm;"><br/>(
+						<div class="styLNAmountBox" style="width:28mm;height:8mm;"><br/>(
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/STCapitalLossCarryoverAmt"/>
 							</xsl:call-template>)
@@ -398,7 +398,7 @@
 							<img src="{$ImagePath}/1040SchD_Bullet.gif" alt="Right arrow" border="0"/>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;height:8mm;border-bottom:0px;"><br/>7</div>
-						<div class="styLNAmountBox" style="width:27mm;height:8mm;border-bottom:0px;"><br/>
+						<div class="styLNAmountBox" style="width:28mm;height:8mm;border-bottom:0px;"><br/>
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/NetSTCapitalGainOrLossAmt"/>
 							</xsl:call-template>
@@ -431,7 +431,7 @@
 								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:18mm;text-align:center;font-weight:normal;font-size:7pt;" scope="col">
 									<span style="font-weight:bold;">(g)</span><br/>Adjustments to gain or loss from Form(s) 8949, Part II, line 2, column (g)
 								</th>
-								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:18mm;text-align:center;font-weight:normal;font-size:7pt; border-right-width:0px;" scope="col">
+								<th class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:18mm;text-align:center;font-weight:normal;font-size:7pt; border-right-width:0px;" scope="col">
 									<span style="font-weight:bold;">(h)</span><b> Gain or (loss)</b><br/>Subtract column (e) from column (d) and combine the result with column (g)
 								</th>
 							</tr>
@@ -461,8 +461,8 @@
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BBssRptNoAdjGrp/TotalCostOrOtherBasisAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:24mm;vertical-align:bottom;border-left-width:1px;border-top-width:1px;background-color:lightgrey;"><br/></td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:24mm;padding-top:20mm;border-right-width:0px;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:24mm;vertical-align:bottom;background-color:lightgrey;"><br/></td>
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:24mm;padding-top:20mm;border-right-width:0px;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BBssRptNoAdjGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -494,7 +494,7 @@
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BShowsBasisGrp/TotAdjustmentsToGainOrLossAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BShowsBasisGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -526,7 +526,7 @@
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BNotShowBasisGrp/TotAdjustmentsToGainOrLossAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BNotShowBasisGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -558,7 +558,7 @@
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BNotReceivedGrp/TotAdjustmentsToGainOrLossAmt"/>
 										</xsl:call-template>
 								</td>
-								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:27mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
+								<td class="IRS1041ScheduleD_styTableCellAmt" style="width:28mm;height:8mm;padding-top:4mm;border-right-width:0px;text-align:right;">
 										<xsl:call-template name="PopulateAmount">
 											<xsl:with-param name="TargetNode" select="$FormData/TotalLTCGL1099BNotReceivedGrp/TotalGainOrLossAmt"/>
 										</xsl:call-template>
@@ -576,7 +576,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">........</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;">11</div>
-						<div class="styLNAmountBox" style="width:27mm;">
+						<div class="styLNAmountBox" style="width:28mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/LTGainOrLossFromFormsAmt"/>
 							</xsl:call-template>
@@ -592,7 +592,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">.....</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;">12</div>
-						<div class="styLNAmountBox" style="width:27mm;">
+						<div class="styLNAmountBox" style="width:28mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/NetLTGainOrLossFromSchK1Amt"/>
 							</xsl:call-template>
@@ -608,7 +608,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">..........................</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;">13</div>
-						<div class="styLNAmountBox" style="width:27mm;">
+						<div class="styLNAmountBox" style="width:28mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/CapitalGainDistributionsAmt"/>
 							</xsl:call-template>
@@ -624,7 +624,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">.........................</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;">14</div>
-						<div class="styLNAmountBox" style="width:27mm;">
+						<div class="styLNAmountBox" style="width:28mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/Form4797GainOrLossAmt"/>
 							</xsl:call-template>
@@ -640,7 +640,7 @@
 							<span class="styDotLn" style="float:right;padding-right:1mm;">...........................</span>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;height:8mm;"><br/>15</div>
-						<div class="styLNAmountBox" style="width:27mm;height:8mm;"><br/>(
+						<div class="styLNAmountBox" style="width:28mm;height:8mm;"><br/>(
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/LTCapitalLossCarryoverAmt"/>
 							</xsl:call-template>)
@@ -658,7 +658,7 @@
 							<img src="{$ImagePath}/1040SchD_Bullet.gif" alt="Right arrow" border="0"/>
 						</div>
 						<div class="styLNRightNumBox" style="width:7mm;height:8mm;border-bottom:0px;"><br/>16</div>
-						<div class="styLNAmountBox" style="width:27mm;height:8mm;border-bottom:0px;"><br/>
+						<div class="styLNAmountBox" style="width:28mm;height:8mm;border-bottom:0px;"><br/>
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/NetLTCapitalGainOrLossAmt"/>
 							</xsl:call-template>
@@ -675,16 +675,11 @@
 					</div>
 					<p style="page-break-before: always"/>
 					<!--Begin Page 2 -->
-					<!--<div class="styBB" style="width:187mm;border-bottom-width:2px;">
+					<div class="styBB" style="width:187mm;border-bottom-width:2px;">
 						<span style="width:65mm;font-size:7pt;" class="styGenericDiv">Schedule D (Form 1041) 2021</span>
 						<span style="float:right;font-size:7pt;text-align:center;" class="styGenericDiv">Page <b>2</b></span>
-					</div>-->
+					</div>
 					<!--  PART III HEADER -->
-					<div class="styTBB" style="width:187mm;padding-top:.5mm;">
-			<span class="" style="float:left;clear:none;">Schedule D (Form 1041) 2021</span>
-			<span style="float:right;clear:none;">Page <span class="styBoldText" style="font-size:8pt;">2</span>
-			</span>
-		</div>
 					<div class="styBB" style="width:187mm;height:11mm;">
 						<span class="styPartName" style="width:17mm;font-size:9pt;">Part III</span>
 						<div class="styPartDesc" style="padding-left:1mm;width:73.8mm;font-size:9pt;padding-bottom:1mm;">
@@ -911,7 +906,7 @@
 						</div>
 					</div> 
 					<!-- END PART V HEADER -->
-					<!--<div style="float:none;clear:both;">-->
+					<div style="float:none;clear:both;">
 					<!-- BEGIN LINE 21 -->               
 					<div class="styGenericDiv" style="width:187mm;float:none;clear:both;height:4.4mm;">
 						<div class="styLNLeftNumBox" style="4.4mm;">21</div>
@@ -1375,12 +1370,12 @@
 						</div>
 					</div>
 					<!-- END LINE 45 -->
-				<!--</div>-->
+				</div>
 				<div class="styBB" style="width:187mm;border-top-width: 2px;border-bottom-width:0px;">
 					<span style="font-weight:bold;float:right" class="styGenericDiv">Schedule D (Form 1041) 2021</span>
 				</div>
 				<div class="pageEnd"></div>
-           <!-- </div>-->
+            </div>
             <p style="page-break-before: always"/>
 			<div class="styLeftOverTitleLine" id="LeftoverData">
 				<div class="styLeftOverTitle">Additional Data </div>

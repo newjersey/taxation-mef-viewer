@@ -46,9 +46,9 @@
 					<xsl:call-template name="DocumentHeader" />
 					<!-- Header -->
 					<div class="styStdDiv">
-						<div class="styFNBox" style="width:33mm;height:17.5mm;">
+						<div class="styFNBox" style="width:31mm;height:17.5mm;">
 							<span style="font-size:10pt;font-weight:bold;">Schedule LEP</span> <br />
-							<span style="font-family:Arial;font-size:8pt;font-weight:bold;">(Form 1040 or 1040-SR)</span>
+							<span style="font-family:Arial;font-size:8pt;font-weight:bold;">(Form 1040)</span>
 							<br />
 							(December 2020)
 							<xsl:call-template name="SetFormLinkInline">
@@ -61,7 +61,7 @@
 								Internal Revenue Service
 							</span>
 						</div>
-						<div class="styFTBox" style="width:124mm;height:17.5mm;">
+						<div class="styFTBox" style="width:126mm;height:17.5mm;">
 							<span class="styFMT" style="font-size:12pt;padding-top:1mm;padding-bottom:0.5mm;">Request for Change in Language Preference</span><br />
 							<span style="font-weight:bold;padding-top:4mm;">
 								&#9658;Attach to Form 1040, Form 1040-SR, Form 1040-NR, Form 1040-PR, or Form 1040-SS.
@@ -75,7 +75,7 @@
 							<div class="styOMB" style="height:auto;font-size:6pt;padding-top:2mm;padding-bottom:2mm;">OMB No. 1545-0074</div>
 							<div style="margin-left:0mm;text-align:left;font-size:7pt;padding-top:1mm;">
 								Attachment<br/>Sequence No. 
-								<span class="styBoldText" style="font-size:9pt;">XX</span>
+								<span class="styBoldText" style="font-size:9pt;">77A</span>
 							</div>
 						</div>
 					</div>
@@ -102,7 +102,7 @@
 							Check only one.
 						</div>
 					</div>
-					<div class="styStdDiv" style="height:auto;margin-bottom:4mm;margin-top:4mm;">
+					<div class="styStdDiv" style="height:auto;margin-bottom:4mm;margin-top:4mm;font-size:8pt;">
 						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 						</xsl:call-template>
@@ -114,7 +114,7 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd000</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '000' "/>
@@ -129,12 +129,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd001</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '001' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd001</xsl:with-param>
-								</xsl:call-template>001 Spanish</label>
+								</xsl:call-template>001 Spanish (Español)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -144,12 +144,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd002</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '002' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd002</xsl:with-param>
-								</xsl:call-template>002 Korean</label>
+								</xsl:call-template>002 Korean (한국어)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -159,12 +159,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd003</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '003' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd003</xsl:with-param>
-								</xsl:call-template>003 Vietnamese</label>
+								</xsl:call-template>003 Vietnamese (Tiếng Việt)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -174,12 +174,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd004</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '004' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd004</xsl:with-param>
-								</xsl:call-template>004 Russian</label>
+								</xsl:call-template>004 Russian (Русский)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;">
@@ -189,12 +189,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd005</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '005' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd005</xsl:with-param>
-								</xsl:call-template>005 Arabic</label>
+								</xsl:call-template>005 Arabic (العربية)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -204,12 +204,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd006</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '006' "/>
 									<xsl:with-param name="BackupName">F9000AlternativeMediaCd006</xsl:with-param>
-								</xsl:call-template>006 Haitian Creole</label>
+								</xsl:call-template>006 Haitian Creole (Kreyòl Ayisyen)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -219,12 +219,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd007</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '007' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd007</xsl:with-param>
-								</xsl:call-template>007 Tagalog</label>
+								</xsl:call-template>007 Tagalog (Tagalog)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -234,12 +234,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd008</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '008' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd008</xsl:with-param>
-								</xsl:call-template>008 Portuguese</label>
+								</xsl:call-template>008 Portuguese (Português)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -249,12 +249,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd009</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '009' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd009</xsl:with-param>
-								</xsl:call-template>009 Polish</label>
+								</xsl:call-template>009 Polish (Polski)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -264,12 +264,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd010</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '010' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd010</xsl:with-param>
-								</xsl:call-template>010 Farsi</label>
+								</xsl:call-template>010 Farsi (فارسی)</label>
 							</span>
 						</div>
 						<div class="styGenericDiv" style="width:90mm;padding-left:8mm;">
@@ -280,12 +280,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd011</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '011' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd011</xsl:with-param>
-								</xsl:call-template>011 French</label>
+								</xsl:call-template>011 French (Français)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -295,12 +295,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd012</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '012' "/>
 									<xsl:with-param name="BackupName">F9000AlternativeMediaCd012</xsl:with-param>
-								</xsl:call-template>012 Japanese</label>
+								</xsl:call-template>012 Japanese (日本語)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -310,12 +310,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd013</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '013' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd013</xsl:with-param>
-								</xsl:call-template>013 Gujarati</label>
+								</xsl:call-template>013 Gujarati (ગુજરાતી)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -325,12 +325,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd014</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '014' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd014</xsl:with-param>
-								</xsl:call-template>014 Punjabi</label>
+								</xsl:call-template>014 Punjabi (ਪੰਜਾਬੀ)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -340,12 +340,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd015</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '015' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd015</xsl:with-param>
-								</xsl:call-template>015 Khmer</label>
+								</xsl:call-template>015 Khmer (ខ្មែរ)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -355,12 +355,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd016</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '016' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd016</xsl:with-param>
-								</xsl:call-template>016 Urdu</label>
+								</xsl:call-template>016 Urdu (اردو)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;">
@@ -370,12 +370,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd017</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '017' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd017</xsl:with-param>
-								</xsl:call-template>017 Bengali</label>
+								</xsl:call-template>017 Bengali (বাংলা)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -385,12 +385,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd018</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '018' "/>
 									<xsl:with-param name="BackupName">F9000AlternativeMediaCd018</xsl:with-param>
-								</xsl:call-template>018 Italian</label>
+								</xsl:call-template>018 Italian (Italiano)</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -400,12 +400,12 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd019</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '019' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd019</xsl:with-param>
-								</xsl:call-template>019 Chinese (Traditional)</label>
+								</xsl:call-template>019 Chinese (Traditional) (中文(繁體))</label>
 							</span>
 							<br />
 							<input type="checkbox" class="styCkboxNM" style="margin-right:12px;margin-bottom:4px;">
@@ -415,19 +415,19 @@
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd020</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							<span style="vertical-align:top;padding-top:1px;">
+							<span style="vertical-align:top;">
 								<label><xsl:call-template name="PopulateLabel">
 									<xsl:with-param name="TargetNode" select="$FormData/LanguagePreferenceCd"/>
 									<xsl:with-param name="DisplayedCheckboxValue" select=" '020' "/>
 									<xsl:with-param name="BackupName">F9000LanguagePreferenceCd020</xsl:with-param>
-								</xsl:call-template>020 Chinese (Simplified)</label>
+								</xsl:call-template>020 Chinese (Simplified) (中文(简体))</label>
 							</span>
 						</div>
 					</div>
 					<div class="styStdDiv" style="border-top:2px solid black;">
 						<span style="font-weight:bold;font-family:Arial;">For Paperwork Reduction Act Notice, see your tax return instructions.</span>
 						<span style="margin-left:13mm;">Cat. No. 74174D</span>
-						<span style="float:right;font-weight:bold;font-family:Arial;">Schedule LEP (Form 1040 or 1040-SR) (12-2020)</span>
+						<span style="float:right;font-weight:bold;font-family:Arial;">Schedule LEP (Form 1040) (12-2020)</span>
 					</div>
 					<!-- Additonal Data Title Bar and Button -->
 					<div class="styLeftOverTitleLine" id="LeftoverData">

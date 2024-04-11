@@ -116,17 +116,18 @@
 						 Health Options Program
 (SHOP) Marketplace (or do you qualify for an exception to this requirement)? See instructions.<br/>
 							<!-- CheckboxYesStart -->
-							<span>
-                              <xsl:call-template name="PopulateSpan">
+                            	<span>
+                            	 <xsl:call-template name="PopulateSpan">
                                <xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/SHOPInd"/>
-                                 </xsl:call-template> 
-							<input type="Checkbox" class="styCkbox">
+                                 </xsl:call-template>	
+
+							<input type="Checkbox" alt="Small Business Health Options Program Marketplace Indicator Yes" class="styCkbox">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/SHOPInd"/>
 									<xsl:with-param name="BackupName">IRS8941SHOPInd</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							 </span>
+
 							<label>
 								<xsl:call-template name="PopulateLabelYes">
 									<xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/SHOPInd"/>
@@ -144,7 +145,7 @@
 							</span>
 							<br/>
 							<!-- CheckboxNoStart -->
-							<input type="Checkbox" class="styCkbox">
+							<input type="Checkbox" alt="Small Business Health Options Program Marketplace Indicator No" class="styCkbox">
 								<xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/SHOPInd"/>
 									<xsl:with-param name="BackupName">IRS8941SHOPInd</xsl:with-param>
@@ -159,6 +160,7 @@
 							</label>
 							<!-- CheckboxNoEnd -->
 							                    							Stop.  Do not file Form 8941 (see instructions for an exception that may apply to a partnership, S corporation, <br/><div class="styLNDesc" style="width:80mm;font size:7pt;padding-bottom:0mm;position:relative;padding:0px 4px 4px 28px"> cooperative, estate, trust, or tax-exempt entity)</div>
+							 </span>
 						</div>
 						<div class="styRightNumBox" style="height:15mm;width:6.3mm;border-right-width:1px;border-bottom-width:0px;padding-top:0mm;padding-bottom:0mm;">
                             </div>
@@ -186,13 +188,13 @@
                              <xsl:call-template name="PopulateSpan">
                               <xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/PriorYearSHOPInd"/>
                                 </xsl:call-template>
-							<input type="Checkbox" class="styCkbox">
+							<input type="Checkbox" alt="Prior Year Small Business Health Options Program Marketplace Indicator Yes" class="styCkbox">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/PriorYearSHOPInd"/>
 									<xsl:with-param name="BackupName">IRS8941PriorYearSHOPInd</xsl:with-param>
 								</xsl:call-template>
 							</input>
-							</span>
+
 							<label>
 								<xsl:call-template name="PopulateLabelYes">
 									<xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/PriorYearSHOPInd"/>
@@ -210,7 +212,7 @@
 							<!--</span>-->
 							<br/>
 							<!-- CheckboxNoStart -->
-							<input type="Checkbox" class="styCkbox">
+							<input type="Checkbox" alt="Prior Year Small Business Health Options Program Marketplace Indicator No" class="styCkbox">
 								<xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$RtnDoc/IRS8941/PriorYearSHOPInd"/>
 									<xsl:with-param name="BackupName">IRS8941PriorYearSHOPInd</xsl:with-param>
@@ -225,6 +227,7 @@
 							</label>
 							<!-- CheckboxNoEnd -->
 							                    						 <!--<div class="styLNDesc" style="width:80mm;font size:7pt;padding-bottom:0mm;position:relative;padding:0px 4px 4px 28px;"></div>-->
+							</span>
 						</div>
 						<!--<div class="styRightNumBox" style="height:15mm;width:6.3mm;border-right-width:1px;border-bottom-width:0px;padding-top:0mm;padding-bottom:0mm;">
                             </div>-->

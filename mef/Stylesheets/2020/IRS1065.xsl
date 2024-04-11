@@ -3011,14 +3011,14 @@ province, country, and ZIP or foreign postal code<br/><br/>
 						   Percentage:
 							<span style="width:75mm;"/>						   
 							<span style="width:30mm;text-align:right;border-bottom-solid 1px;">
-							  By Vote:
+							  By Vote
 								<xsl:call-template name="PopulatePercent">
 									<xsl:with-param name="TargetNode" select="$Form1065ScheduleB/OwnershipByVotePct"/>
 								</xsl:call-template>
 							</span>
 							<span style="width:10mm;"/>
 							<span style="width:30mm;text-align:right;border-bottom-solid 1px;">
-							  By Value:
+							  By Value
 								<xsl:call-template name="PopulatePercent">
 									<xsl:with-param name="TargetNode" select="$Form1065ScheduleB/OwnershipByValuePct"/>
 								</xsl:call-template>

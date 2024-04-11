@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Jermaine Merchant on 08/23/2021 -->
+<!-- Last Modified by Jermaine Merchant on 11/17/2021 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -363,30 +363,30 @@
 					<!-- Line 2 -->
 					<div style="width:187mm;border:1px solid black;border-left:none;border-right:none;border-bottom:none;">
 						<div class="styLNLeftNumBoxSD">2</div>
-						<div class="styIRS4137DescInd" style="height:auto;">
+						<div class="styIRS4137DescInd" style="height:4mm;">
 							Total cash and charge tips you <b>received</b> in 2021. Add the amounts from line 1, column (c)
 							<span class="styIRS4137Dots">................</span>
 						</div>
-						<div class="styLNRightNumBox" style="height:auto;"><br/>2</div>
-						<div class="styLNAmountBox" style="width:34mm;height:auto;padding-right:2px;">
+						<div class="styLNRightNumBox" style="height:7mm;"><br/>2</div>
+						<div class="styLNAmountBox" style="width:34mm;height:7mm;padding-right:2px;">
 							<br/>
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$Form4137Data/TotalTipsReceivedAmt"/>
 							</xsl:call-template>
 						</div>
-						<div class="styLNRightNumBox" style="height:auto;background-color:lightgrey;"><br/><span style="width:0px"/></div>
-						<div class="styIRS4137AmountBox" style="height:auto;background-color:lightgrey;"><br/><span style="width:0px"/></div>
+						<div class="styLNRightNumBox" style="height:7mm;background-color:lightgrey;"><br/><span style="width:0px"/></div>
+						<div class="styIRS4137AmountBox" style="height:7mm;"><br/><span style="width:0px"/></div>
 					</div>
 					<!-- Line 3 -->
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBoxSD">3</div>
-						<div class="styIRS4137Desc" style="height:auto;">
+						<div class="styIRS4137Desc" style="height:0mm;">
 							Total cash and charge tips you <b>reported</b> to your employer(s) in 2021. Add the amounts from line 1,<br/>
 							<span style="float:left;">column (d)</span>
 							<span class="styIRS4137Dots">.............................</span>
 						</div>
-						<div class="styLNRightNumBox" style="height:auto;"><br/>3</div>
-						<div class="styIRS4137AmountBox" style="height:auto;">
+						<div class="styLNRightNumBox" style="height:6.5mm;padding-top;1mm"><br/>3</div>
+						<div class="styIRS4137AmountBox" style="height:6.5mm;">
 							<br/>
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$Form4137Data/TotalTipsReportedAmt"/>
@@ -396,29 +396,30 @@
 					<!-- Line 4 -->
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBoxSD">4</div>
-						<div class="styIRS4137Desc" style="height:auto;">
+						<div class="styIRS4137Desc" style="height:0mm;">
 							Subtract line 3 from line 2. This amount is income you <b>must</b> include in the total on Form 1040 or Form<br/>
 							<span style="float:left;">1040-SR, line 1; Form 1040-NR, line 1a</span>
 							<span class="styIRS4137Dots">....................</span>
 						</div>
-						<div class="styLNRightNumBox" style="height:auto;"><br/>4</div>
-						<div class="styIRS4137AmountBox" style="height:auto;">
+						<div class="styLNRightNumBox" style="height:6.5mm;"><br/>4</div>
+						<div class="styIRS4137AmountBox" style="height:6.5mm;">
 							<br/>
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$Form4137Data/TotalTipsReceivedMinusRptAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
-					<!-- Line 5 -->
+					
+			    	<!-- Line 5 -->
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBoxSD">5</div>
-						<div class="styIRS4137Desc" style="height:auto;">
+						<div class="styIRS4137Desc" style="height:0mm;">
 							Cash and charge tips you received but didn't report to your employer because the total was less than $20<br/>
 							<span style="float:left;"> in a calendar month (see instructions)</span>
 							<span class="styIRS4137Dots">....................</span>
 						</div>
-						<div class="styLNRightNumBox" style="height:auto;"><br/>5</div>
-						<div class="styIRS4137AmountBox" style="height:auto;">
+						<div class="styLNRightNumBox" style="height:6.5mm;padding-top:.5mm"><br/>5</div>
+						<div class="styIRS4137AmountBox" style="height:6.5mm;">
 							<br/>
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$Form4137Data/IncidentalCashAndTipsAmt"/>
@@ -427,15 +428,14 @@
 					</div>
 					<!-- Line 6 -->
 					<div style="width:187mm;">
-						<div class="styLNLeftNumBoxSD"><br/>6</div>
+						<div class="styLNLeftNumBoxSD">6</div>
 						<div class="styIRS4137Desc" style="height:auto;">
-						   <br/>Unreported tips subject to Medicare tax. Subtract line 5 from line 4
-							<span class="styIRS4137Dots">..........</span>
+						   Unreported tips subject to Medicare tax. Subtract line 5 from line 4
+							<span class="styIRS4137Dots">...........</span>
 						</div>
-						<div class="styLNRightNumBox" style="height:auto;"><br/>6</div>
-						<div class="styIRS4137AmountBox" style="height:auto;">
-							<br/>
-							<xsl:call-template name="PopulateAmount">
+						<div class="styLNRightNumBox">6</div>
+						<div class="styIRS4137AmountBox">
+								<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$Form4137Data/NetUnreportedMinusIncdntlAmt"/>
 							</xsl:call-template>
 						</div>
@@ -443,7 +443,7 @@
 					<!-- Line 7 -->
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBoxSD" style="padding-top:1mm">7</div>
-						<div class="styIRS4137DescInd" style="height:auto;padding-top:1mm">
+						<div class="styIRS4137DescInd" style="height:3mm;padding-top:1mm">
 							Maximum amount of wages (including tips) subject to social security tax.
 							<!--<span class="styIRS4137Dots">.</span>-->
 						</div>
@@ -477,10 +477,10 @@
 						<div class="styLNLeftNumBoxSD">9</div>
 						<div class="styIRS4137Desc" style="height:auto;">
 							Subtract line 8 from line 7. If line 8 is more than line 7, enter -0-
-							<span class="styIRS4137Dots">...........</span>
+							<span class="styIRS4137Dots">............</span>
 						</div>
-						<div class="styLNRightNumBox" style="height:auto;">9</div>
-						<div class="styIRS4137AmountBox" style="height:auto;">
+						<div class="styLNRightNumBox" style="height:4mm;">9</div>
+						<div class="styIRS4137AmountBox" style="height:4mm;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$Form4137Data/NetWageSubjectToSocSecTaxAmt"/>
 							</xsl:call-template>
@@ -502,7 +502,7 @@
 									<xsl:with-param name="TargetNode" select="$Form4137Data/GovernmentEmployeeTipAmt"/>
 								</xsl:call-template>
 							</span>
-							<span class="styIRS4137Dots">....</span>
+							<span class="styIRS4137Dots">......</span>
 						</div>
 						<div class="styLNRightNumBox" style="height:7.5mm;"><br/>10</div>
 						<div class="styIRS4137AmountBox" style="height:7.5mm;">
@@ -517,7 +517,7 @@
 						<div class="styLNLeftNumBox">11</div>
 						<div class="styIRS4137Desc" style="height:auto;">
 							Multiply line 10 by 0.062 (social security tax rate)
-							<span class="styIRS4137Dots">................</span>
+							<span class="styIRS4137Dots">.................</span>
 						</div>
 						<div class="styLNRightNumBox">11</div>
 						<div class="styIRS4137AmountBox">

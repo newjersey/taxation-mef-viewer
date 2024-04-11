@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 02/24/2022 -->
+<!-- Last Modified by Eugenia McDonald on 03/01/2022 -->
 <!DOCTYPE xsl:stylesheet [
   <!ENTITY nbsp "&#160;">
   <!ENTITY ndash "&#8211;">
@@ -45,6 +45,9 @@
 			</head>
 			<body class="styBodyClass">
 				<form id="Form1040NR">
+					<xsl:if test="$FormData/AmendedReturnInd='X'"><span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> AMENDED RETURN </span></xsl:if>
+				    <xsl:if test="$FormData/SupersededReturnInd='X'"><span style="padding-right:10mm; color:red; font-size:10pt;font-weight:bold;"> SUPERSEDED</span></xsl:if>
+				    <xsl:if test="$FormData/AddressChangeInd='X'"><span style="color:red; font-size:10pt;font-weight:bold;"> ADDRESS CHANGE </span></xsl:if>
 					<xsl:call-template name="DocumentHeader" />
 					<!-- Header -->		
 					<div class="styStdDiv">

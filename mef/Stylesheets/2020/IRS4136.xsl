@@ -60,7 +60,7 @@
 						<div class="styGenericDiv" style="width:128mm;height:21mm;text-align:center;font-weight:bold;">
 							<div class="styMainTitle" style="font-size:16pt;padding-top:1mm;">Credit for Federal Tax Paid on Fuels</div>
 							<div class="styFBT" style="height:4mm;padding-top:6mm;">
-								<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 								Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/Form4136" title="Link to irs.gov/Form4136">
 									<i>www.irs.gov/Form4136</i></a> for instructions and the latest information. 
 							</div>
@@ -358,7 +358,7 @@
 					<div class="styIRS4136NumLine">3<span style="width:6mm"/>Nontaxable Use of Undyed Diesel Fuel</div>
 					<div class="styIRS4136DescLine">Claimant certifies that the diesel fuel did not contain visible evidence of dye.<br/>
 						<b>Exception.</b> If any of the diesel fuel included in this claim <b>did</b> contain visible evidence of dye, attach an explanation and check here
-						<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 						<xsl:call-template name="SetFormLinkInline">
 							<xsl:with-param name="TargetNode" select="$IRS4136Data/UndyedDieselUseExceptionInd"/>
 						</xsl:call-template>
@@ -551,7 +551,7 @@
 					</div>
 					<div class="styIRS4136DescLine">Claimant certifies that the kerosene did not contain visible evidence of dye.<br/>
 						<b>Exception.</b> If any of the kerosene included in this claim <b>did</b> contain visible evidence of dye, attach an explanation and check here
-						<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 						<xsl:call-template name="SetFormLinkInline">
 							<xsl:with-param name="TargetNode" select="$IRS4136Data/UndyedKeroseneUseExceptionInd"/>
 						</xsl:call-template>
@@ -993,7 +993,7 @@
 						6<span style="width:6mm"/>Sales by Registered Ultimate Vendors of Undyed Diesel Fuel
 <span style="float:right;width:70mm;">
 						 Registration No.
-  <img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+  <img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 							<span style="width:4px;"/>
 							<span style="font-weight:normal">
 								<xsl:call-template name="PopulateText">
@@ -1006,7 +1006,7 @@
 					 to the buyer, or has obtained the written consent of the buyer to make the claim. Claimant certifies that the diesel fuel did not
 					 contain visible evidence of dye. <br/>
 						<b>Exception.</b> If any of the diesel fuel included in this claim <b> did </b> contain visible evidence of dye, attach an explanation
-					  and check here <img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+					  and check here <img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 						<xsl:call-template name="SetFormLinkInline">
 							<xsl:with-param name="TargetNode" select="$IRS4136Data/SalesUndyedDieselExceptionInd"/>
 						</xsl:call-template>
@@ -1080,7 +1080,7 @@
 					<div class="styIRS4136NumLine">
 						7<span style="width:6mm"/>Sales by Registered Ultimate Vendors of Undyed Kerosene (Other <br/>
 						<span style="width:8mm"/>Than Kerosene For Use in Aviation) <span style="float:right;width:70mm;">
-						 Registration No. <img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						 Registration No. <img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 							<span style="width:4px;"/>
 							<span style="font-weight:normal">
 								<xsl:call-template name="PopulateText">
@@ -1093,7 +1093,7 @@
 					 repaid the amount of tax to the buyer, or has obtained the written consent of the buyer to make the claim. Claimant certifies that
 					 the kerosene did not contain visible evidence of dye. <br/>
 						<b>Exception.</b> If any of the kerosene included in this claim <b> did </b> contain visible evidence of dye, attach an explanation
-					  and check here <img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+					  and check here <img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 						<xsl:call-template name="SetFormLinkInline">
 							<xsl:with-param name="TargetNode" select="$IRS4136Data/SlsUndyedKeroseneExceptionInd"/>
 						</xsl:call-template>
@@ -1189,7 +1189,7 @@
 					<div class="styIRS4136NumLine">
 						8<span style="width:6mm"/>
 						<span style="font-size:7.5pt;">Sales by Registered Ultimate Vendors of Kerosene For Use in Aviation</span>
-						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 							<span style="width:4px;"/>
 							<span style="font-weight:normal">
 								<xsl:call-template name="PopulateText">
@@ -1348,7 +1348,7 @@
 					<!-- ============================================================================= -->
 					<div class="styIRS4136NumLine" style="padding-top:2mm;">
 						9<span style="width:6mm"/>Reserved for future use
-						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 						</span>
 					</div>
 					<div class="styIRS4136DescLine" style="height:8mm;"/>
@@ -1389,7 +1389,7 @@
 					<!-- ============================================================================= -->
 					<div class="styIRS4136NumLine" style="padding-left:1mm;">
 						10<span style="width:5mm"/>Biodiesel or Renewable Diesel Mixture Credit
-						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 						<xsl:call-template name="SetFormLinkInline">
 							<xsl:with-param name="TargetNode" select="$IRS4136Data/BiodieselRnwblRegistrationNum"/>
 						</xsl:call-template>
@@ -1639,7 +1639,7 @@
 					<!-- ============================================================================= -->
 					<div class="styNumLine" style="padding-left:1mm;font-size:8pt;width:187mm;font-weight:bold;border-bottom:1px solid black;padding-top:6mm;padding-bottom:2mm;">
 						12<span style="width:5mm"/>Alternative Fuel Credit
-						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<span style="float:right;width:70mm;">Registration No.<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 							<span style="width:4px;"/>
 							<span style="font-weight:normal">
 								<xsl:call-template name="PopulateText">
@@ -1899,7 +1899,7 @@
 					<!-- ============================================================================= -->
 					<div class="styIRS4136NumLine" style="padding-left:1mm;">
 						13<span style="width:5mm"/>Registered Credit Card Issuers
-						<span style="float:right;width:70mm;">Registration No. <img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<span style="float:right;width:70mm;">Registration No. <img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 							<span style="width:4px;"/>
 							<span style="font-weight:normal">
 								<xsl:call-template name="PopulateText">
@@ -2048,7 +2048,7 @@
 					<!-- ============================================================================= -->
 					<div class="styIRS4136NumLine" style="padding-left:1mm;">
 						15<span style="width:5mm"/>Diesel-Water Fuel Emulsion Blending
-						<span style="float:right;width:70mm;">Registration No. <img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+						<span style="float:right;width:70mm;">Registration No. <img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 							<span style="width:4px;"/>
 							<span style="font-weight:normal">
 								<xsl:call-template name="PopulateText">
@@ -2153,7 +2153,7 @@
 							<b>Total income tax credit claimed.</b> Add lines 1 through 16, column (d). Enter here and on Schedule 3 (Form 1040), line 12; Form 1120, Schedule J, line 20b; Form 1120S, line 23c; Form 1041, line 25h; or the proper line of other returns.
         <span style="padding-left:2mm">
         <span class="styDotLn">.................</span>
-								<img src="{$ImagePath}/4136_Bullet.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/4136_Bullet.gif" alt="Right pointing arrowhead"/>
 							</span>
 						</div>
 						<div class="styGenericDiv" style="width:8mm;height:10mm;font-weight: bold;text-align:center;padding-top:7mm;border-left:1px solid black;">17

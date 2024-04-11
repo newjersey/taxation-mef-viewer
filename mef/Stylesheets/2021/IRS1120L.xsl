@@ -34,7 +34,7 @@
 						<xsl:with-param name="RootElement" select="local-name($Form1120LEliminationsOrAdjData)"/>
 					</xsl:call-template>
 				</title>
-				<!-- No Browser Caching  -->
+				<!-- No Browser Caching -->
 				<meta http-equiv="Pragma" content="no-cache"/>
 				<meta http-equiv="Cache-Control" content="no-cache"/>
 				<meta http-equiv="Expires" content="0"/>
@@ -133,7 +133,7 @@
 								</div>
 								<div class="styGenericDiv" style="height:7mm;padding-top:2mm;">								
 								<!--	<input type="checkbox" alt="Consolidated Return (attach form 851) checkbox" class="styCkbox">-->
-	                            <input type="checkbox" alt="Consolidated return (attach Form 851) " class="styCkbox">
+	                            <input type="checkbox" alt="Consolidated Return (attach form 851) " class="styCkbox">
 										<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="  $RtnDoc/IRS1120L/ConsolidatedReturnInd"/>
 											<xsl:with-param name="BackupName">IRS1120L Consolidated Return</xsl:with-param>
@@ -156,7 +156,7 @@
 								</div>
 								<div class="styGenericDiv" style="height:7mm;padding-top:2mm;">
 									<!--<input type="checkbox" alt="Life-nonlife Consolidated return checkbox" class="styCkbox">-->
-									<input type="checkbox" alt="Life-nonlife consolidated return " class="styCkbox">
+									<input type="checkbox" alt="Life-nonlife consolidated return" class="styCkbox">
 										<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="  $RtnDoc/IRS1120L/LifeNonlifeConsolidatedRetInd"/>
 											<xsl:with-param name="BackupName">IRS1120L Life-Nonlife Consolidated Return</xsl:with-param>
@@ -181,7 +181,7 @@
 									</label>
 								</div>
 								<div class="styGenericDiv" style="height:10mm;padding-top:2mm;">
-									<input type="checkbox" alt="Schedule M-3 (Form 1120-L) attached" class="styCkbox">
+									<input type="checkbox" alt="Schedule M3 (Form 1120L) " class="styCkbox">
 										<xsl:call-template name="PopulateCheckbox">
 											<xsl:with-param name="TargetNode" select="  $RtnDoc/IRS1120L/ScheduleM3Form1120LInd"/>
 											<xsl:with-param name="BackupName">IRS1120L ScheduleM3 Required</xsl:with-param>

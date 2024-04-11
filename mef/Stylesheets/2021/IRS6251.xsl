@@ -105,7 +105,7 @@
 						<div style="width:187mm;height:10mm">
                                         <div class="styLNLeftNumBox" style="font-size:7pt;height:mm;padding-bottom:0mm;padding-left: 3mm;">1</div>
                                         <div class="styLNDesc" style="font-size:7pt;width:135mm;height:4mm;padding-bottom:0mm;">
-                                           Enter the amount from Form 1040 or 1040-SR, line 15, if more than zero.  If Form 1040 or 1040-SR, line 15, is zero, subtract lines 14 of Form 1040 or 1040-SR from line 11 of Form 1040  or 1040-SR and enter the result here. (If less than zero, enter as a
+                                           Enter the amount from Form 1040 or 1040-SR, line 15, if more than zero.  If Form 1040 or 1040-SR, line 15, is zero, subtract line 14 of Form 1040 or 1040-SR from line 11 of Form 1040  or 1040-SR and enter the result here. (If less than zero, enter as a
                                             negative amount.)
                                                <span class="styDotLn" style="float:none;clear:none;padding-left:1mm;">..............</span>
                                        </div>

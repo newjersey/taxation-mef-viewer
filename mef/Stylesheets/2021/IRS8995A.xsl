@@ -98,7 +98,9 @@
 						</div>
 					</div>
 					<div class="styStdDiv" style="border-top:1px solid black;padding-top:0.5mm;padding-bottom:0.5mm;font-style:italic;font-family:Arial;border-bottom:1px solid black;">
-					<b>Note:</b> You can claim the qualified business income deduction <b>only</b> if you have qualified business income from a qualified trade or business, real estate investment trust dividends, publicly traded partnership income, or a domestic production activities deduction passed through from an agricultural or horticultural cooperative. See instructions. Use this form if your taxable income, before your qualified business income deduction, is above $164,900 ($164,925 if married filing separately; $329,800 if married filing jointly), or you’re a patron of an agricultural or horticultural cooperative.
+					<b>Note:</b> You can claim the qualified business income deduction <b>only</b> if you have qualified business income from a qualified trade or business, real estate investment trust dividends, publicly traded partnership income, or a domestic production activities deduction passed through from an agricultural or horticultural cooperative. See instructions.
+					<br/>
+					<span style="width:10px;"></span>Use this form if your taxable income, before your qualified business income deduction, is above $164,900 ($164,925 if married filing separately; $329,800 if married filing jointly), or you’re a patron of an agricultural or horticultural cooperative.
 						</div>
 					<!-- Part 1 -->
 					<div class="styStdDiv" style="border-top:1px solid black;">
@@ -106,8 +108,8 @@
 						<div class="styPartDesc">Trade, Business, or Aggregation Information</div>
 					</div>
 					<div class="styStdDiv" style="border-top:1px solid black;padding-top:0.5mm;padding-bottom:0.5mm;font-style:italic;font-family:Arial;border-bottom:1px solid black;">
-						Complete the schedules for Form 8995-A, (A, B, C, and/or D), as applicable, before starting Part I. Attach additional schedules when needed. See instructions.
-						<div style="float:right;width:5mm;height:4mm;text-align:right;">
+						Complete Schedules A, B, and/or C (Form 8995-A) as applicable, before starting Part I. Attach additional worksheets when needed. See instructions.
+						<div style="float:right;width:5mm;height:4.5mm;text-align:right;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/QBIDeductionInformationGrp"/>
 								<xsl:with-param name="containerID" select=" 'Part1Table' "/>
@@ -520,22 +522,22 @@
 							<!-- Line 12 -->
 							<div class="styStdIBDiv">
 								<div class="styLNLeftNumBox">12</div>
-								<div class="sty8995ADesc" style="min-height:7.2mm;height:auto;">
-									Phased-in reduction. Enter amount from line 26, if any. <br />See instructions
-									<span class="sty8995ADotLn">..............</span>
+								<div class="sty8995ADesc" >
+									Phased-in reduction. Enter amount from line 26, if any.
+									<span class="sty8995ADotLn">..</span>
 								</div>
-								<div class="styLNRightNumBox" style="min-height:7.2mm;height:auto;"><br />12</div>
-								<div class="sty8995AAmtBox" style="min-height:7.2mm;height:auto;"><br />
+								<div class="styLNRightNumBox" >12</div>
+								<div class="sty8995AAmtBox" >
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="QBIAfterPhaseInReductionAmt" />
 									</xsl:call-template>
 								</div>
-								<div class="sty8995AAmtBox" style="min-height:7.2mm;height:auto;"><br />
+								<div class="sty8995AAmtBox" >
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/QBIDeductionInformationGrp[$pos + 1]/QBIAfterPhaseInReductionAmt" />
 									</xsl:call-template>
 								</div>
-								<div class="sty8995AAmtBox" style="min-height:7.2mm;height:auto;"><br />
+								<div class="sty8995AAmtBox">
 									<xsl:call-template name="PopulateAmount">
 										<xsl:with-param name="TargetNode" select="$FormData/QBIDeductionInformationGrp[$pos + 2]/QBIAfterPhaseInReductionAmt" />
 									</xsl:call-template>
@@ -569,8 +571,8 @@
 							<div class="styStdIBDiv">
 								<div class="styLNLeftNumBox">14</div>
 								<div class="sty8995ADesc" style="min-height:7.2mm;height:auto;">
-									Patron reduction. Enter the amount from Schedule D (Form 8995-A), line 6, if any
-									<span class="sty8995ADotLn">............</span>
+									Patron reduction. Enter the amount from Schedule D (Form 8995-A), line 6, if any. See Instructions
+									<span class="sty8995ADotLn">.......</span>
 								</div>
 								<div class="styLNRightNumBox" style="min-height:7.2mm;height:auto;"><br />14</div>
 								<div class="sty8995AAmtBox" style="min-height:7.2mm;height:auto;"><br />

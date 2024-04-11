@@ -1034,7 +1034,7 @@
 
   <!-- line 30a -->
 
- <div style="width:187mm;">
+ <div style="width:187mm; height:5mm;">
       <div class="styLNLeftNumBox" style="height:4.5mm;padding-top:0;font-size:7pt;">30a</div>
       <div class="styLNDesc" style="width:155mm;height:4.5mm;padding-top:0mm;padding-bottom:0mm;font-size:7pt;">
       During the year, did the organization receive by contribution any property reported in Part I, lines 1 through 28, that 
@@ -1043,9 +1043,9 @@
        <!--Dotted Line-->
          <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm;">...................</span>
       </div>
-      <div class="styShadingCell" style="width:8mm;height:4.5mm;padding-bottom:1mm;border-top-width:1px;padding-top:0mm;"/>
-      <div class="styShadingCell" style="width:8mm;height:4.5mm;padding-bottom:1mm;border-top-width:1px;padding-top:0mm;"/>
-      <div class="styShadingCell" style="width:8mm;height:4.5mm;padding-bottom:1mm;border-top-width:1px;padding-top:0mm;"/>
+      <div class="styShadingCell" style="width:8mm;height:7.5mm;padding-bottom:0mm;border-top-width:1px;padding-top:0mm;"/>
+      <div class="styShadingCell" style="width:8mm;height:7.5mm;padding-bottom:0mm;border-top-width:1px;padding-top:0mm;"/>
+      <div class="styShadingCell" style="width:8mm;height:7.5mm;padding-bottom:0mm;border-top-width:1px;padding-top:0mm;"/>
     </div>
     <div style="width:187mm">
       <div class="styLNLeftNumBox" style="height:auto;"/>

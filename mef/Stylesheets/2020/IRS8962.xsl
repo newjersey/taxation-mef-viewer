@@ -170,6 +170,9 @@
 					<div class="styBB" style="187mm;">
 						<div class="styNameBox" style="width:187mm;height:7mm;font-size:6pt;border-right:0px solid black;padding-left:1mm;padding-top:2mm;">
 							You cannot take the PTC if your filing status is married filing separately unless you qualify for an exception
+								(see instructions).  If you qualify, check the box.
+							<span style=" letter-spacing:3.1mm; font-weight:bold; ">...</span>
+							<img src="{$ImagePath}/2106EZ_Bullet.gif" width="9" height="9" alt="Bullet"/>
 							<span style="float:right;">						
 								<input type="checkbox" alt="Married Filing Separately Exception Indicator" class="styCkbox">
 									<xsl:call-template name="PopulateCheckbox">
@@ -183,10 +186,7 @@
 										<xsl:with-param name="BackupName">IRS8962MarriedFilingSeparatelyExcInd</xsl:with-param>
 									</xsl:call-template>							
 								</label>
-							</span>	
-								(see instructions).  If you qualify, check the box.
-							<span style=" letter-spacing:3.1mm; font-weight:bold; ">...</span>
-							<img src="{$ImagePath}/2106EZ_Bullet.gif" width="9" height="9" alt="Bullet"/>
+							</span>
 						</div>
 					</div>			
 					<div class="styBB" style="width:187mm;">		
@@ -401,9 +401,9 @@
 						<div class="styLNDesc" style="width:142mm;">
 							Did you enter 401% on line 5? (See instructions if you entered less than 100%.)<br />
 							<span>								
-									<xsl:call-template name="PopulateSpan">
-										<xsl:with-param name="TargetNode" select="$FormData/FederalPovertyLevelPct401Ind"/>
-									</xsl:call-template>
+							<xsl:call-template name="PopulateSpan">
+								<xsl:with-param name="TargetNode" select="$FormData/FederalPovertyLevelPct401Ind"/>
+							</xsl:call-template>
 							<input type="checkbox" class="styCkbox" style="margin-left:0px;">
 								<xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/FederalPovertyLevelPct401Ind"/>								
@@ -415,7 +415,8 @@
 									<xsl:with-param name="TargetNode" select="$FormData/FederalPovertyLevelPct401Ind"/>
 									<xsl:with-param name="BackupName">IRS8962FederalPovertyLevelPct401Ind</xsl:with-param>
 								</xsl:call-template>							
-							</label><span style="padding-left:1mm;"><b>No.</b> Continue to line 7.</span><br />
+							<span style="padding-left:1mm;"><b>No.</b> Continue to line 7.</span><br />
+							</label>
 							<input type="checkbox" class="styCkbox" style="margin-left:0px;vertical-align:top;">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/FederalPovertyLevelPct401Ind"/>								
@@ -427,9 +428,9 @@
 									<xsl:with-param name="TargetNode" select="$FormData/FederalPovertyLevelPct401Ind"/>
 									<xsl:with-param name="BackupName">IRS8962FederalPovertyLevelPct401Ind</xsl:with-param>
 								</xsl:call-template>							
+							<span style="padding-top:4px;padding-left:1mm;"><b>Yes. </b>You are not eligible to take the PTC. If advance payment of the PTC was made, see the instructions for<br />
+							 how to report your excess advance PTC repayment amount.</span>
 							</label>
-							<span style="padding-top:4px;padding-left:1mm;"><b>Yes. </b>You are not eligible to take the PTC. If advance payment of the PTC was made, see the instructions for</span><br />
-							 how to report your excess advance PTC repayment amount.
 							</span>
 						</div>
 						<div class="styLNRightNumBox" style="height:17.2mm;padding-top:4mm;background-color:lightgray;"><span style="width:1px;" /></div>
@@ -493,7 +494,7 @@
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/SharePolicyMarriedAltCalcInd"/>
 								</xsl:call-template>
-							<input type="checkbox" class="styCkbox" style="margin-left:0px;">
+							<input type="checkbox" alt="Yes. Skip to Part IV" class="styCkbox" style="margin-left:0px;">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/SharePolicyMarriedAltCalcInd"/>								
 									<xsl:with-param name="BackupName">IRS8962SharePolicyMarriedAltCalcInd</xsl:with-param>
@@ -504,10 +505,13 @@
 									<xsl:with-param name="TargetNode" select="$FormData/SharePolicyMarriedAltCalcInd"/>
 									<xsl:with-param name="BackupName">IRS8962SharePolicyMarriedAltCalcInd</xsl:with-param>
 								</xsl:call-template>
-							<span style="width:5px;" /><b>Yes. </b></label><span style="font-family:Arial;display:inline;font-size:6.5pt;">Skip to Part IV, Allocation of Policy Amounts, or Part V,
-							 Alternative Calculation for Year of Marriage.</span></div>
+								<span style="width:5px;" /><b>Yes. </b><span style="font-family:Arial;display:inline;font-size:6.5pt;">Skip to Part IV, Allocation of Policy Amounts, or Part V,
+									 Alternative Calculation for Year of Marriage.
+								</span>
+							 </label>
+						</div>
 						<div class="styLNDesc" style="width:58mm;">
-							<input type="checkbox" class="styCkbox">
+							<input type="checkbox" alt="No. Continue to line 10" class="styCkbox">
 								<xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/SharePolicyMarriedAltCalcInd"/>								
 									<xsl:with-param name="BackupName">IRS8962SharePolicyMarriedAltCalcInd</xsl:with-param>
@@ -518,7 +522,8 @@
 									<xsl:with-param name="TargetNode" select="$FormData/SharePolicyMarriedAltCalcInd"/>
 									<xsl:with-param name="BackupName">IRS8962SharePolicyMarriedAltCalcInd</xsl:with-param>
 								</xsl:call-template>
-							<span style="width:5px;" /><b>No.</b> Continue to line 10.</label>
+								<span style="width:5px;" /><b>No.</b> Continue to line 10.
+							</label>
 						</div>	
 						</span>				
 					</div>
@@ -535,7 +540,7 @@
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/FullYrCoverage1095AInd"/>
 								</xsl:call-template>
-							<input type="checkbox" class="styCkbox" style="margin-left:0px;">
+							<input type="checkbox" alt="Full Year Coverage 1095A Indicator Yes" class="styCkbox" style="margin-left:0px;">
 							<xsl:call-template name="PopulateYesCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/FullYrCoverage1095AInd"/>								
 								<xsl:with-param name="BackupName">IRS8962FullYrCoverage1095AInd</xsl:with-param>
@@ -548,7 +553,7 @@
 							</xsl:call-template>
 						<span style="width:5px;" /><b>Yes.</b> Continue to line 11.</label> Compute your annual PTC. Then skip lines 12–23<br />and continue to line 24.</div>
 						<div class="styLNDesc" style="width:59mm;">
-						<input type="checkbox" class="styCkbox">
+						<input type="checkbox" alt="Full Year Coverage 1095A Indicator No" class="styCkbox">
 							<xsl:call-template name="PopulateNoCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/FullYrCoverage1095AInd"/>								
 								<xsl:with-param name="BackupName">IRS8962FullYrCoverage1095AInd</xsl:with-param>
@@ -1506,7 +1511,7 @@
 										<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$FormData/SharedPolicyAllocationInfoInd"/>
 									</xsl:call-template>
-								<input type="checkbox" class="styCkbox" style="margin-left:0px;margin-top:0px;">
+								<input type="checkbox" alt="Shared Policy Allocation Info Indicator Yes" class="styCkbox" style="margin-left:0px;margin-top:0px;">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/SharedPolicyAllocationInfoInd"/>								
 									<xsl:with-param name="BackupName">IRS8962SharedPolicyAllocationInfoInd</xsl:with-param>
@@ -1522,7 +1527,7 @@
 						<div class="styLNDesc" style="width:187mm;"></div>
 						<div class="styLNLeftNumBox"><span style="width:1px;" /></div>						
 						<div class="styLNDesc" style="width:179mm;height:5.4mm;">
-						<input type="checkbox" class="styCkbox" style="margin-left:0px;">
+						<input type="checkbox" alt="Shared Policy Allocation Info Indicator No" class="styCkbox" style="margin-left:0px;">
 							<xsl:call-template name="PopulateNoCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/SharedPolicyAllocationInfoInd"/>								
 								<xsl:with-param name="BackupName">IRS8962SharedPolicyAllocationInfoInd</xsl:with-param>

@@ -1058,7 +1058,7 @@
                 <tr>
                   <td class="styLNLeftNumBox" style="padding-left:4mm;">e</td>
                   <td class="sty1120FSchIStep3ContAdjUSDesc" colspan="3" scope="row">
-					Enter the rate from line 10c or, if elected, the published rate on line 10d. See instructions if amount on line 10c <br/>
+					Enter the rate from line 10c or, if elected, the published rate on line 10d. See instructions if amount<br/>
                 </td>
                   <td class="sty1120FSchIStep3ContAdjUSShadedCell" colspan="2">
                     <span style="width:1px"/>
@@ -1067,14 +1067,17 @@
                 <tr>
                   <td class="styLNLeftNumBox" style="padding-left:4mm;"></td>
                   <td class="sty1120FSchIStep3ContAdjUSDesc" colspan="3" scope="row">
-					  is zero
-                    <div class="sty1120FSchIRightFloat" style="padding-right:2.3mm">
-                      <span class="sty1120FSchIDotLn">.............................</span>
-                    </div>
+					  on line 10c is zero
+                    <!--<div class="sty1120FSchIRightFloat" style="padding-right:2.3mm">
+                      <span class="sty1120FSchIDotLn">.........................</span>
+                    </div>-->
                       <!--Push Pin-->
                       <xsl:call-template name="SetFormLinkInline">
                         <xsl:with-param name="TargetNode" select="$FormData/UseRt"/>
                       </xsl:call-template>
+                      <div class="sty1120FSchIRightFloat" style="padding-right:2.3mm">
+                      <span class="sty1120FSchIDotLn">.........................</span>
+                    </div>
                   </td>
                   <td class="sty1120FSchIGenericRightNumBox">10e</td>
                   <td class="sty1120FSchIStep3ContAdjUSAmountLastCol" style="vertical-align:bottom;">

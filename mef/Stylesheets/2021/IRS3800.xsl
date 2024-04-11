@@ -68,12 +68,12 @@
 						<div class="styFTBox" style="width:128mm;height:21mm;">
 							<div class="styMainTitle" style="padding-top:2mm;">General Business Credit</div>
 							<div class="styFST" style="padding-top:6mm;">
-								<img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+								<img src="{$ImagePath}/3800_Bullet.gif" alt="Right pointing arrowhead"/>
 								Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/Form3800" title="Link to irs.gov/Form3800">
 									<i>www.irs.gov/Form3800</i></a> for instructions and the latest information.
 							</div>
 							<div class="styFST" style="font-size:7pt;">
-								<img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+								<img src="{$ImagePath}/3800_Bullet.gif" alt="Right pointing arrowhead"/>
                  You must attach all pages of Form 3800, pages 1, 2, and 3, to your tax return.
               </div>
 						</div>
@@ -176,8 +176,8 @@
 						<div style="width:187mm;">
 							<div class="styLNLeftNumBoxSD">4</div>
 							<div class="styLNDesc" style="width:139mm;">
-								<span style="float:left;">Carryforward of general business credit to 2021. Enter the amount from line 2 of Part III with box C</span>
-								<span style="float:left;">   checked. See instructions for statement to attach
+								Carryforward of general business credit to 2021. Enter the amount from line 2 of Part III with box C 
+								<span style="float:left;">  checked.  See instructions for statement to attach
                     <!--Dotted Line-->
 									<xsl:call-template name="SetFormLinkInline">
 										<xsl:with-param name="TargetNode" select="$Form3800Data/CYGeneralBusCrCarryforwardAmt"/>
@@ -202,7 +202,7 @@
 							<span>
 								Check this box if the carryforward was changed or revised from the original reported amount
 								<span style="width:2.5mm;"/>
-							<span class="styDotLn" style="float:right;">............<img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+							<span class="styDotLn" style="float:right;">............<img src="{$ImagePath}/3800_Bullet.gif" alt="Right pointing arrowhead"/>
 								</span>
 							</span>
 						</div>
@@ -235,10 +235,10 @@
 							<div class="styLNDesc" style="width:139mm;">
 								<!-- Revisit: Changing year 2002 to 2003 -->
 								<!--Passive activity credits allowed for 2002-->
-								<span style="float:left;">Carryback of general business credit from 2022. Enter the amount from line 2 of Part III with box D</span>
-								<span style="float:left;">checked.  See instructions </span>
+								Carryback of general business credit from 2022. Enter the amount from line 2 of Part III with box D 
+								<span style="float:left;">  checked.  See instructions </span>
 								<!--Dotted Line-->
-								<div class="styDotLn" style="float:right;">.........................</div>
+								<div class="styDotLn" style="float:right;">..........................</div>
 							</div>
 							<div class="styLNRightNumBox" style="height:7mm;padding-top:3.5mm;">5</div>
 							<div class="styLNAmountBox" style="height:7mm;padding-top:3.5mm;">
@@ -585,7 +585,7 @@
 							<div style="float:right;" class="styGenericDiv">Form <span class="styBoldText">3800</span> (2021)</div>
 						</div>
 					</div>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 					<!-- Page 2 Header -->
 					<div style="width:187mm;clear:both;padding-bottom:.5mm;" class="styBB">
 						<div style="width:90mm;" class="styGenericDiv">Form 3800 (2021)</div>
@@ -1021,7 +1021,7 @@
 							<span>
 								Check this box if the carryforward was changed or revised from the original reported amount
 								<span style="width:2.5mm;"/>
-							<span class="styDotLn" style="float:right;">............<img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+							<span class="styDotLn" style="float:right;">............<img src="{$ImagePath}/3800_Bullet.gif" alt="Right pointing arrowhead"/>
 								</span>
 							</span>
 						</div>
@@ -1179,7 +1179,7 @@
 							<br/>
 						</div>
 					</div>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 					<!-- Page 3 Header -->
 					<xsl:choose>
 						<xsl:when test="$Form3800Data/GenBusCrOrEligSmllBusCrGrp">
@@ -1199,42 +1199,42 @@
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox A  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrFromNnpssvActyGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox B WORK ON ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrFromPassiveActyGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox C  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrCarryforwardsGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp+$GBusCrPassActyGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox D  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/GeneralBusCrCarrybacksGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp+$GBusCrPassActyGrp+$GBusCrCarFwdGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 							<!-- ********    CheckBox G  ******** -->
 							<xsl:for-each select="$Form3800Data/GenBusCrOrEligSmllBusCrGrp/EligibleSmallBusinessCrCfwdGrp">
 								<xsl:call-template name="PartIIITemplate">
 									<xsl:with-param name="counter" select="position()+$CBusCrGrp+$GBusCrNnPassActyGrp+$GBusCrPassActyGrp+$GBusCrCarFwdGrp+$GBusCrCarBakGrp+$ESmllBusCrNnPassActyGrp+$ESmllBusCrPassActyGrp"/>
 								</xsl:call-template>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 							</xsl:for-each>
 						</xsl:when>
 						<xsl:otherwise>
@@ -1269,7 +1269,7 @@
 							</xsl:call-template>-->
 						</table>
 					</div>
-					<p style="page-break-after: always"/>
+					<div class="styStdDiv pageEnd"/>
 				</form>
 			</body>
 		</html>
@@ -1418,7 +1418,7 @@
 								<span style="width:2mm;"/>  
 						If you are filing more than one Part III with box A or B checked, complete and attach first an additional Part III combining amounts from
 						<span style="width:4mm;"/>   all Parts III with box A or B checked. Check here if this is the consolidated Part III  
-							<span class="styDotLn" style="float:right;">.................<img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+							<span class="styDotLn" style="float:right;">.................<img src="{$ImagePath}/3800_Bullet.gif" alt="Right pointing arrowhead"/>
 								</span>
 							</span>
 						</div>
@@ -2991,7 +2991,7 @@ Enter the appropriate amount
 				<div style="float:right;" class="styGenericDiv">Form <span class="styBoldText">3800</span> (2021)</div>
 			</div>
 		</div>
-					<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 		<!--</xsl:for-each>-->
 	</xsl:template>
 	<xsl:template name="PartIIIemptyTemplate">
@@ -3083,7 +3083,7 @@ Enter the appropriate amount
 								<span style="width:2mm;"/>  
 						If you are filing more than one Part III with box A or B checked, complete and attach first an additional Part III combining amounts from
 						<span style="width:4mm;"/>   all Parts III with box A or B checked. Check here if this is the consolidated Part III  
-							<span class="styDotLn" style="float:right;">.................<img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+							<span class="styDotLn" style="float:right;">.................<img src="{$ImagePath}/3800_Bullet.gif" alt="Right pointing arrowhead"/>
 								</span>
 							</span>
 						</div>
@@ -3999,7 +3999,7 @@ Enter the appropriate amount
 							<div style="width:55mm;text-align:center;" class="styGenericDiv"/>
 							<div style="float:right;" class="styGenericDiv">Form <span class="styBoldText">3800</span> (2021)</div>
 							<br/>
-<p style="page-break-before: always"/>
+					<div class="styStdDiv pageEnd"/>
 						</div>
 		</div>
 		<!--</xsl:for-each>-->

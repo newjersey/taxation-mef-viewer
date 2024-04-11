@@ -120,7 +120,7 @@
 							<div class="styFBT" style="height:4mm;margin-top:0mm;">
 								<br/><br/>
 								<img src="{$ImagePath}/2106EZ_Bullet.gif" width="9" height="9" alt="Bullet"/>
-								Attach to Form 1040, Form 1040-SR, or Form 1040-NR.<br/>
+								Attach to Form 1040, 1040-SR, or 1040-NR.<br/>
 								<img src="{$ImagePath}/2106EZ_Bullet.gif" width="9" height="9" alt="Bullet"/>
 								Go to
 								<a style="text-decoration:none;color:black;" href="http://www.irs.gov/Form8962" title="Link to IRS.gov">
@@ -174,16 +174,16 @@
 							<span style=" letter-spacing:3.1mm; font-weight:bold; ">...........</span>
 							<img src="{$ImagePath}/2106EZ_Bullet.gif" width="9" height="9" alt="Bullet"/>
 							<span>						
-								<input type="checkbox" alt="Married Filing Separately Exception Indicator" class="styCkbox">
+								<input type="checkbox" alt="Eligible to receive unemployment compensation Indicator" class="styCkbox">
 									<xsl:call-template name="PopulateCheckbox">
-										<xsl:with-param name="TargetNode" select="$FormData/MarriedFilingSeparatelyExcInd"/>								
-										<xsl:with-param name="BackupName">IRS8962MarriedFilingSeparatelyExcInd</xsl:with-param>
+										<xsl:with-param name="TargetNode" select="$FormData/UnemploymentCompensationInd"/>								
+										<xsl:with-param name="BackupName">IRS8962UnemploymentCompensationInd</xsl:with-param>
 									</xsl:call-template>
 								</input>
 								<label>
 									<xsl:call-template name="PopulateLabel">
-										<xsl:with-param name="TargetNode" select="$FormData/MarriedFilingSeparatelyExcInd"/>
-										<xsl:with-param name="BackupName">IRS8962MarriedFilingSeparatelyExcInd</xsl:with-param>
+										<xsl:with-param name="TargetNode" select="$FormData/UnemploymentCompensationInd"/>
+										<xsl:with-param name="BackupName">IRS8962UnemploymentCompensationInd</xsl:with-param>
 									</xsl:call-template>							
 								</label>
 							</span>
@@ -323,7 +323,7 @@
 					<div class="styBB" style="width:187mm;border-bottom-width:0px;">
 						<div class="styLNLeftNumBoxSD">4</div>
 						<div class="styLNDesc" style="width:142mm;font-size:6.5pt;">
-							Federal poverty line. Enter the federal poverty line amount from Table 1-1, 1-2, or 1-3.  see instructions.
+							Federal poverty line. Enter the federal poverty line amount from Table 1-1, 1-2, or 1-3.  See instructions.
 							 Check the appropriate box for the federal poverty table used.
 							<span>
 								<xsl:call-template name="PopulateSpan">

@@ -11,6 +11,7 @@
 <!-- 11/13/2017 - Modified per defect 125766 - Jeremy Nichols-->
 <!-- 11/14/2017 - Modified per defect 125103 - Jeremy Nichols-->
 <!-- 09/02/2020 - Changes made for UWR 239544 - Jeremy Nichols -->
+<!-- 11/10/2020 - Modified per defect 65773 - Jeremy Nichols-->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="AddHeader.xsl"/>
@@ -132,26 +133,18 @@
 					<!-- END Part I Title -->
 					<div class="styTableContainer" id="TPctn" style="border-bottom-width:0px;">
 						<xsl:call-template name="SetInitialState"/>
-						<table class="styTable" cellspacing="0" style="height:auto;" summary="Table displaying entity name or names and corresponding employer identification numbers">
+						<table class="styTable" cellspacing="0" style="height:auto;">
 							<thead class="styTableThead">
 								<tr>
 									<th scope="col" class="styTableCell" rowspan="3" style="width:7mm;border-right:none;font-weight:bold;">
 										<span style="width:1mm;"/>
 									</th>
-									<th scope="col" class="styTableCell" style="width:51.75mm;font-size:7pt;text-align:center;border-bottom:none;font-weight:bold;">(a)</th>
-									<th scope="col" class="styTableCell" style="width:20mm;font-size:7pt;text-align:center;border-bottom:none;font-weight:bold;">(b)</th>
-									<th scope="col" class="styTableCell" style="width:20mm;font-size:7pt;text-align:center;border-bottom:none;font-weight:bold;">(c)</th>
-									<th scope="col" class="styTableCell" style="width:30mm;font-size:7pt;text-align:center;border-bottom:none;font-weight:bold;">(d)</th>
-									<th scope="col" class="styTableCell" style="width:12mm;font-size:7pt;text-align:center;border-bottom:none;font-weight:bold;">(e)</th>
-									<th scope="col" class="styTableCell" style="width:45.5mm;font-size:7pt;text-align:center;border-bottom:none;border-right:none;font-weight:bold;">(f)</th>
-								</tr>
-								<tr>
-									<th scope="col" class="styTableCell" style="width:51.75mm;font-size:7pt;text-align:center;font-weight:normal;">Name and address of the qualified community development entity (CDE)</th>
-									<th scope="col" class="styTableCell" style="width:20mm;font-size:7pt;text-align:center;font-weight:normal;">Employer identification number of CDE</th>
-									<th scope="col" class="styTableCell" style="width:20mm;font-size:7pt;text-align:center;font-weight:normal;">Date of initial investment</th>
-									<th scope="col" class="styTableCell" style="width:30mm;font-size:7pt;text-align:center;font-weight:normal;">Amount of qualified equity investment</th>
-									<th scope="col" class="styTableCell" style="width:12mm;font-size:7pt;text-align:center;font-weight:normal;">Credit rate</th>
-									<th scope="col" class="styTableCell" style="width:45.5mm;font-size:7pt;text-align:center;border-right:none;font-weight:normal;">Credit ((d) x (e))</th>
+									<th scope="col" class="styTableCell" style="width:51.75mm;font-size:7pt;text-align:center;vertical-align:top;font-weight:normal;"><b>(a)</b><br/>Name and address of the qualified community development entity (CDE)</th>
+									<th scope="col" class="styTableCell" style="width:20mm;font-size:7pt;text-align:center;vertical-align:top;font-weight:normal;"><b>(b)</b><br/>Employer identification number of CDE</th>
+									<th scope="col" class="styTableCell" style="width:20mm;font-size:7pt;text-align:center;vertical-align:top;font-weight:normal;"><b>(c)</b><br/>Date of initial investment</th>
+									<th scope="col" class="styTableCell" style="width:30mm;font-size:7pt;text-align:center;vertical-align:top;font-weight:normal;"><b>(d)</b><br/>Amount of qualified equity investment</th>
+									<th scope="col" class="styTableCell" style="width:12mm;font-size:7pt;text-align:center;vertical-align:top;font-weight:normal;"><b>(e)</b><br/>Credit rate</th>
+									<th scope="col" class="styTableCell" style="width:45.5mm;font-size:7pt;text-align:center;vertical-align:top;border-right:none;font-weight:normal;"><b>(f)</b><br/>Credit ((d) x (e))</th>
 								</tr>
 							</thead>
 							<tfoot/>

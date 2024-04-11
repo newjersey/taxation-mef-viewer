@@ -1704,7 +1704,7 @@
 					<div class="styBB" style="height:auto;float:none; clear:both; width: 187mm;border-color: black; border-bottom-width: 1px; border-right-width: 0px; border-left-width: 0px; border-top-width: 1px;">
 						<div class="styPartName" style="height:auto;">Part <span style="font-size: 8.75pt">&#8547;</span></div>
 						<div class="styPartDesc" style="font-size: 7pt; width: 163mm;height:auto;">
-						List of Officers, Directors, Trustees, and Key Employees <span class="styNormalText" style="font-size: 6pt">(list each one even if not compensated &#151; see the instructions for Part IV)</span>
+						List of Officers, Directors, Trustees, and Key Employees <span class="styNormalText" style="font-size: 6pt">(list each one even if not compensated ; see the instructions for Part IV)</span>
 						<span class="styNormalText" style="font-size: 7pt; width:163mm"> 
 						<span style="float:left;">Check if the organization used Schedule O to respond to any question in this Part IV</span>
 							<!-- Dotted Line -->
@@ -2335,8 +2335,9 @@
 					<!--   BEGIN LINE 41   -->
 					<div class="styIRS990EZLineItem">
 						<span class="styIRS990EZLNLeftNumBox" style="width:5mm;padding-bottom:1mm;">41</span>
-						<span class="styIRS990EZLNLongDesc" style="width: 62mm;padding-top:1mm;">List the states with which a copy of this return is filed. 
-    <img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
+						<span class="styIRS990EZLNLongDesc" style="width: 62mm;padding-top:1mm;">List the states with which a copy of this 
+							return is filed. 
+							<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
 						</span>
 						<span class="styIRS990EZUnderlinedBox" style="width: 115mm;padding-top:1mm; font-size: 6pt; ">
 							<xsl:if test="($Print = $Separated) and (count($IRS990EZData/StatesWhereCopyOfReturnIsFldCd) &gt;25)">
@@ -2360,8 +2361,9 @@
 							<!--   BEGIN LINE 42   -->
 					<div class="styIRS990EZLineItem" style="width: 187mm;">
 						<span class="styIRS990EZLNLeftNumBox" style="width:6mm;padding-top:2mm;">42a</span>
-						<span class="styIRS990EZLNLongDesc" style="width: 180mm;font-size:6.5pt;height:6mm;margin-left: 0mm; float: right;">The organization's books are in care of
-    <img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
+						<span class="styIRS990EZLNLongDesc" style="width: 180mm;font-size:6.5pt;height:6mm;margin-left: 0mm; float: right;">
+							The organization's books are in care of
+							<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
 							<span style="width: 3px;"/>
 							<span class="styIRS990EZUnderlinedBox" style="border-style: solid; width: 87mm;font-size:5.85pt;height:auto;">
 								<xsl:if test="$IRS990EZData/BooksInCareOfDetail/PersonNm">
@@ -2371,16 +2373,17 @@
 								</xsl:if>
 								<xsl:if test="$IRS990EZData/BooksInCareOfDetail/BusinessName">
 									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/BusinessName/BusinessNameLine1Txt"/>
+										<xsl:with-param name="TargetNode" 
+											select="$IRS990EZData/BooksInCareOfDetail/BusinessName/BusinessNameLine1Txt"/>
 									</xsl:call-template>
 								</xsl:if>
 								<br></br>
 								<xsl:if test="$IRS990EZData/BooksInCareOfDetail/BusinessName/BusinessNameLine2Txt">
-									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/BusinessName/BusinessNameLine1Txt != ''">
-										
+									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/BusinessName/BusinessNameLine1Txt != ''">										
 									</xsl:if>
 									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/BusinessName/BusinessNameLine2Txt"/>
+										<xsl:with-param name="TargetNode" 
+											select="$IRS990EZData/BooksInCareOfDetail/BusinessName/BusinessNameLine2Txt"/>
 									</xsl:call-template>
 								</xsl:if>
 							</span>
@@ -2395,20 +2398,23 @@
 							</span>
 						</span>
 					</div>
+					<br/><br/>
 					<div class="styIRS990EZLineItem">
 						<span class="styIRS990EZLNLeftNumBox" style="font-size:6pt"/>
 						<span class="styIRS990EZLNLongDesc" style="margin-left: 5.5mm; width: 177mm;font-size:7pt">Located at
-    <img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
+							<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
 							<span style="width: 4px"/>
 							<span class="styIRS990EZUnderlinedBox" style="border-style: solid; width: 116mm; font-size: 6pt">
 								<xsl:if test="count($IRS990EZData/BooksInCareOfDetail/USAddress) &gt;0">
 									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/USAddress/AddressLine1Txt"/>
+										<xsl:with-param name="TargetNode" 
+											select="$IRS990EZData/BooksInCareOfDetail/USAddress/AddressLine1Txt"/>
 									</xsl:call-template>
 									<span style="width: 3px"/>
 									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/USAddress/AddressLine2Txt != ''">
 											<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/USAddress/AddressLine2Txt"/>
+											<xsl:with-param name="TargetNode" 
+												select="$IRS990EZData/BooksInCareOfDetail/USAddress/AddressLine2Txt"/>
 										</xsl:call-template>
 									</xsl:if>
 									<span style="width: 3px"/>
@@ -2418,55 +2424,67 @@
 										</xsl:call-template>
 										</xsl:if>
 									<span style="width: 3px"/>
-				<xsl:if test="$IRS990EZData/BooksInCareOfDetail/USAddress/CityNm != '' and $IRS990EZData/BooksInCareOfDetail/USAddress/StateAbbreviationCd != ''">,</xsl:if>
+									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/USAddress/CityNm != '' and 
+										$IRS990EZData/BooksInCareOfDetail/USAddress/StateAbbreviationCd != ''">,
+									</xsl:if>
 									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/USAddress/StateAbbreviationCd != ''">
 										<span style="width: 6px"/>
 										<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/USAddress/StateAbbreviationCd"/>
+											<xsl:with-param name="TargetNode" 
+												select="$IRS990EZData/BooksInCareOfDetail/USAddress/StateAbbreviationCd"/>
 										</xsl:call-template>
 									</xsl:if>
 								</xsl:if>
 								<span style="width: 3px"/>
 								<xsl:if test="count($IRS990EZData/BooksInCareOfDetail/ForeignAddress) &gt;0">
 									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/AddressLine1Txt"/>
+										<xsl:with-param name="TargetNode" 
+											select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/AddressLine1Txt"/>
 									</xsl:call-template>
 									<span style="width: 3px"/>
 									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/AddressLine2Txt != ''">
 										
 										<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/AddressLine2Txt"/>
+											<xsl:with-param name="TargetNode" 
+												select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/AddressLine2Txt"/>
 										</xsl:call-template>
 									</xsl:if>
 									<span style="width: 3px"/>
 									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CityNm != ''">
 										
 										<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CityNm"/>
+											<xsl:with-param name="TargetNode" 
+												select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CityNm"/>
 										</xsl:call-template>
 									</xsl:if>
 									<span style="width: 3px"/>
-									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CityNm != '' and $IRS990EZData/BooksInCareOfDetail/ForeignAddress/ProvinceOrStateNm != ''">,</xsl:if>
+									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CityNm != '' and 
+										$IRS990EZData/BooksInCareOfDetail/ForeignAddress/ProvinceOrStateNm != ''">,
+									</xsl:if>
 									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/ProvinceOrStateNm != ''">
 										<span style="width: 6px"/>
 										<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/ProvinceOrStateNm"/>
+											<xsl:with-param name="TargetNode" 
+												select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/ProvinceOrStateNm"/>
 										</xsl:call-template>
 									</xsl:if>
 									<span style="width: 3px"/>
 									<xsl:if test="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CountryCd != ''">
 										<span style="width: 6px"/>
 										<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CountryCd"/>
+											<xsl:with-param name="TargetNode" 
+												select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/CountryCd"/>
 										</xsl:call-template>
 									</xsl:if>
 									<span style="width: 3px"/>
 								</xsl:if>
 							</span>
-						<span style="padding-left:2mm">
-     ZIP + 4</span>
-     <span style="padding-right:1mm;padding-left:2mm">
-    <img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/></span>
+							<span style="padding-left:2mm">
+								 ZIP + 4
+							</span>
+							<span style="padding-right:1mm;padding-left:2mm">
+								<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
+							</span>
 							<span class="styIRS990EZUnderlinedBox" style="border-style: solid; width: 24mm; height:auto;">
 								<xsl:if test="count($IRS990EZData/BooksInCareOfDetail/USAddress) &gt;0">
 									<xsl:call-template name="PopulateText">
@@ -2476,27 +2494,33 @@
 								<span style="width: 3px"/>
 								<xsl:if test="count($IRS990EZData/BooksInCareOfDetail/ForeignAddress) &gt;0">
 									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/ForeignPostalCd"/>
+										<xsl:with-param name="TargetNode" 
+											select="$IRS990EZData/BooksInCareOfDetail/ForeignAddress/ForeignPostalCd"/>
 									</xsl:call-template>
 								</xsl:if>
 							</span>
 						</span>
 					</div>
-						<div style="width: 187mm; height: auto;">
-						<div class="styIRS990EZYesNoBox" style="width: 10mm; height: auto; padding-top: 1mm; margin-top: 3mm; margin-left: 166mm; border-top-width: 1px; border-bottom-width: 0px;">
+					<div style="width: 187mm; height: auto;">
+						<div class="styIRS990EZYesNoBox" style="width: 10mm; height:5.5mm; padding-top: 1mm; margin-top: 0mm; 
+							margin-left: 166mm; border-top-width: 1px; border-bottom-width: 0px;">
 							<b>Yes</b>
 						</div>
-						<div class="styIRS990EZYesNoBox" style="width: 10mm; height: auto; padding-top: 1mm; margin-top: 3mm; border-top-width: 1px; border-bottom-width: 0px;">
+						<div class="styIRS990EZYesNoBox" style="width: 10mm; height:5.5mm; padding-top: 1mm; margin-top: 0mm; 
+							border-top-width: 1px; border-bottom-width: 0px;">
 							<b>No</b>
 						</div>
 						
 						<div style="width: 187mm;">
 						<div class="styLNLeftNumBox" style="height: 7.5mm; padding-left: 4mm;">
 							b
-						</div><div class="styLNDesc" style="width: 150mm; height: auto;">
-							At any time during the calendar year, did the organization have an interest in or a signature or other authority over a financial account in a foreign country (such as a bank account, securities account, or other financial account)? 
-							<span class="styIRS990EZNBSP"></span>.            
-							<span class="styIRS990EZNBSP"></span>.                  
+						</div>
+						<div class="styLNDesc" style="width: 150mm; height: auto;">
+							At any time during the calendar year, did the organization have an interest in or a signature or other authority 
+							over a financial account in a foreign country (such as a bank account, securities account, or other financial 
+							account)? 
+							<span class="styIRS990EZNBSP"></span>.
+							<span class="styIRS990EZNBSP"></span>.
 						</div>
 						<div class="styLNRightNumBox" style="height: 7.5mm; padding-top: 1.5mm; border-top-width: 1px;">
 							42b
@@ -2517,10 +2541,11 @@
 					<div style="width:187mm;float:none;">
 						<div class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;"/>
 						<div class="styLNDesc" style="width:150mm;height:auto;">
-          If “Yes," enter the name of the foreign country:      
-        <img src="{$ImagePath}/990_Bullet_Md.gif" alt="bullet"/>
+							If “Yes," enter the name of the foreign country:
+							<img src="{$ImagePath}/990_Bullet_Md.gif" alt="bullet"/>
 							<span class="styFixedUnderline" style="width:80mm;float:none;padding-left:2mm;padding-top:0;padding-bottom:0;">
-								<xsl:if test="(count($IRS990EZData/ForeignFinancialAccountCntryCd) &lt;= 20) or ((count($IRS990EZData/ForeignFinancialAccountCntryCd) &gt; 20) and ($Print != $Separated))">
+								<xsl:if test="(count($IRS990EZData/ForeignFinancialAccountCntryCd) &lt;= 20) or 
+								((count($IRS990EZData/ForeignFinancialAccountCntryCd) &gt; 20) and ($Print != $Separated))">
 								<xsl:for-each select="$IRS990EZData/ForeignFinancialAccountCntryCd">
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="."/>
@@ -2546,7 +2571,8 @@
 						<div class="styLNLeftNumBox" style="height:6.5mm;padding-left:3mm;"/>
 						<div class="styLNDesc" style="width:150mm;height:6.5mm;">
 						<!-- Removed period after "Accounts" per pdf review. PDF has it but DOW doesn't. -->
-          See the instructions for exceptions and filing requirements for FinCEN Form 114, Report of Foreign Bank and Financial Accounts (FBAR).
+						  See the instructions for exceptions and filing requirements for FinCEN Form 114, Report of Foreign Bank and 
+						  Financial Accounts (FBAR).
 						</div>
 						<div class="styShadingCell" style="width:8mm;height:6.5mm;"/>
 						<div class="styShadingCell" style="width:10mm;height:6.5mm;"/>
@@ -2555,12 +2581,11 @@
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBox" style="height:4.5mm;padding-left:4mm;">c</div>
 						<div class="styLNDesc" style="width:150mm;height:4.5mm;">
-         At any time during the calendar year, did the organization maintain an office outside the U.S.?
-         <span class="styIRS990EZNBSP"/>.
-            <span class="styIRS990EZNBSP"/>.
-            <span class="styIRS990EZNBSP"/>.
-            
-      </div>
+							 At any time during the calendar year, did the organization maintain an office outside the U.S.?
+							 <span class="styIRS990EZNBSP"/>.
+							 <span class="styIRS990EZNBSP"/>.
+							 <span class="styIRS990EZNBSP"/>.
+						</div>
 						<div class="styLNRightNumBox" style="height:4.5mm;">42c</div>
 						<div class="styIRS990EZYesNoBox" style="height:4.5mm;">
 							<xsl:call-template name="PopulateYesBoxText">
@@ -2609,12 +2634,13 @@
 									<xsl:with-param name="TargetNode" select="$IRS990EZData/NECTFilingForm990Ind"/>
 									<xsl:with-param name="BackupName">IRS990EZNECTFilingForm990</xsl:with-param>
 								</xsl:call-template>
-    Section 4947(a)(1) nonexempt charitable trusts filing Form 990-EZ in lieu of <b>Form 1041 - </b> Check here </label>
-							<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm; margin-right:1mm">......</span>
-							
-							<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
-							<span style="padding-left:1mm">
-							<input type="checkbox" class="styIRS990EZCkBox" alt="NECTFilingForm990Ind">
+									Section 4947(a)(1) nonexempt charitable trusts filing Form 990-EZ in lieu of <b>Form 1041 - 
+									</b> Check here </label>
+								<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm; margin-right:1mm">......
+								</span>
+									<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
+								<span style="padding-left:1mm">
+								<input type="checkbox" class="styIRS990EZCkBox" alt="NECTFilingForm990Ind">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$IRS990EZData/NECTFilingForm990Ind"/>
 									<xsl:with-param name="BackupName">IRS990EZNECTFilingForm990</xsl:with-param>
@@ -2625,8 +2651,11 @@
 					<div class="styIRS990EZLineItem" style="border-bottom-width: 0px">
 						<span class="styIRS990EZLNLeftNumBox" style="font-size:6pt;width:4mm;"/>
 						<span class="styIRS990EZLNLongDesc" style="width: 135mm; font-size:7pt;height:auto;">
-						<span style="float:left;">and enter the amount of tax-exempt interest received or accrued during the tax year</span>
- <span class="styDotLn" style="float:right;padding-right:1mm;">....<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/></span>
+							<span style="float:left;">and enter the amount of tax-exempt interest received or accrued during the tax year
+							</span>
+							<span class="styDotLn" style="float:right;padding-right:1mm;">....<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" 
+								alt="bullet"/>
+							</span>
 						</span>
 						<span class="styLNRightNumBox" style="border-bottom-width: 1px">43</span>
 						<div class="styLNAmountBox" style="border-bottom-width: 1px; width: 36mm;">
@@ -2676,28 +2705,29 @@
 					</div>
 					<!--  END LINE 44a  -->
 					<!--  BEGIN LINE 44b -->
-									<div style="width:187mm;">
+					<div style="width:187mm;">
 						<div class="styLNLeftNumBox" style="padding-left:4mm;">b</div>
 						<div class="styLNDesc" style="width:150mm;">
-        <span style="float:left;white-space:nowrap;">Did the organization operate one or more hospital facilities during the year? If "Yes," Form 990 must be completed</span>
-        <span style="float:left;white-space:nowrap;">instead of Form 990-EZ</span>
+							<span style="float:left;white-space:nowrap;">Did the organization operate one or more hospital facilities during 
+								the year? If "Yes," Form 990 must be completed</span>
+							<span style="float:left;white-space:nowrap;">instead of Form 990-EZ</span>
 							<span class="styDotLn" style="float:right;padding-right:1mm;">.............................</span>
-</div>
+					</div>
 						
-						 <div class="styShadingCell" style="height:2.5mm;width:8mm;"/>
-      <div class="styShadingCell" style="height:2.5mm;width:10mm;"/>
-      <div class="styShadingCell" style="height:2.5mm;width:10mm;"/> 
-						<div class="styLNRightNumBox" style="height:4.5mm;border-bottom-width:0px">44b</div>
-						<div class="styIRS990EZYesNoBox" style="height:4.5mm;border-bottom-width:0px">
-							<xsl:call-template name="PopulateYesBoxText">
-								<xsl:with-param name="TargetNode" select="$IRS990EZData/OperateHospitalInd"/>
-							</xsl:call-template>
-						</div>
-						<div class="styIRS990EZYesNoBox" style="height:4.5mm;border-bottom-width:0px">
-							<xsl:call-template name="PopulateNoBoxText">
-								<xsl:with-param name="TargetNode" select="$IRS990EZData/OperateHospitalInd"/>
-							</xsl:call-template>
-						</div>
+					<div class="styShadingCell" style="height:2.5mm;width:8mm;"/>
+					<div class="styShadingCell" style="height:2.5mm;width:10mm;"/>
+					<div class="styShadingCell" style="height:2.5mm;width:10mm;"/> 
+					<div class="styLNRightNumBox" style="height:4.5mm;border-bottom-width:0px">44b</div>
+					<div class="styIRS990EZYesNoBox" style="height:4.5mm;border-bottom-width:0px">
+						<xsl:call-template name="PopulateYesBoxText">
+							<xsl:with-param name="TargetNode" select="$IRS990EZData/OperateHospitalInd"/>
+						</xsl:call-template>
+					</div>
+					<div class="styIRS990EZYesNoBox" style="height:4.5mm;border-bottom-width:0px">
+						<xsl:call-template name="PopulateNoBoxText">
+							<xsl:with-param name="TargetNode" select="$IRS990EZData/OperateHospitalInd"/>
+						</xsl:call-template>
+					</div>
 					</div>
 					<!-- End 44b -->
 					<!--  BEGIN LINE 44c -->
@@ -2705,10 +2735,11 @@
 						<!--style="height:4.5mm;padding-left:4mm;">c</div>-->
 						<div class="styLNLeftNumBox" style="padding-left:4mm;">c</div>
 						<div class="styLNDesc" style="width:150mm;">
-                             <span style="float:left;">Did the organization receive any payments for indoor tanning services during the year?</span>
+                             <span style="float:left;">Did the organization receive any payments for indoor tanning services during the year?
+                             </span>
 							 <span class="styDotLn" style="float:right;padding-right:1mm;">.........</span>    
                         </div>
-		<div class="styLNRightNumBox" style="height:4.5mm;border-bottom-width:1px;border-top-width:1px;">44c</div>
+						<div class="styLNRightNumBox" style="height:4.5mm;border-bottom-width:1px;border-top-width:1px;">44c</div>
 						<div class="styIRS990EZYesNoBox" style="height:4.5mm;border-bottom-width:1px;border-top-width:1px;">
 							<xsl:call-template name="PopulateYesBoxText">
 								<xsl:with-param name="TargetNode" select="$IRS990EZData/TanningServicesProvidedInd"/>
@@ -2750,10 +2781,10 @@
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBox">45a</div>
 						<div class="styLNDesc" style="width:150mm;">
-         <span style="float:left;">Did the organization have a controlled entity within 
-          the meaning of section 512(b)(13)?</span>
+							<span style="float:left;">Did the organization have a controlled entity within 
+							  the meaning of section 512(b)(13)?</span>
 							<span class="styDotLn" style="float:right;padding-right:1mm;">.........</span>    
-      			          </div>
+      			        </div>
 						
 						<div class="styLNRightNumBox" style="height:4.5mm;border-bottom-width:1px;">45a</div>
 						<div class="styIRS990EZYesNoBox" style="height:4.5mm;border-bottom-width:1px;">
@@ -2840,16 +2871,19 @@ meaning of section 512(b)(13)? If "Yes," Form 990 and Schedule R may need to be 
 					<div style="width:187mm;">
 						<div class="styLNLeftNumBox">46</div>
 						<div class="styLNDesc" style="width:150mm;Height:auto;">
-                             <span style="float:left;">Did the organization engage, directly or indirectly, in political campaign activities on behalf of or in opposition to</span>
-                             <span style="float:left;">candidates for public office? If “Yes," complete Schedule C, Part I.
+                             <span style="float:left;">Did the organization engage, directly or indirectly, in political campaign activities 
+								 on behalf of or in opposition to
+							</span>
+                            <span style="float:left;">candidates for public office? If “Yes," complete Schedule C, Part I.
                                  <xsl:call-template name="SetFormLinkInline">
 									<xsl:with-param name="TargetNode" select="$IRS990EZData/PoliticalCampaignActyInd"/>
-								 </xsl:call-template></span>
-                            <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm;">...........</span>
-</div>
+								 </xsl:call-template>
+							</span>
+                             <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm;">...........</span>
+					</div>
 						
-						 <div class="styShadingCell" style="height:4.5mm;width:8mm;"/>
-                         <div class="styShadingCell" style="height:4.5mm;width:10mm;"/>
+						<div class="styShadingCell" style="height:4.5mm;width:8mm;"/>
+						<div class="styShadingCell" style="height:4.5mm;width:10mm;"/>
                          <div class="styShadingCell" style="height:4.5mm;width:10mm;"/> 
 						<div class="styLNRightNumBox" style="height:4.5mm;border-bottom-width:0px">46</div>
 						<div class="styIRS990EZYesNoBox" style="height:4.5mm;border-bottom-width:0px">
@@ -2866,40 +2900,45 @@ meaning of section 512(b)(13)? If "Yes," Form 990 and Schedule R may need to be 
 					<!--  END LINE 46  -->
 					
 					<!--   BEGIN PART VI HEADER   -->
-					<div class="styBB" style="float: none; clear:both; width: 189mm; border-top-width: 1px; border-bottom-width: 1px; font-size:8pt">
+					<div class="styBB" style="float: none; clear:both; width: 189mm; border-top-width: 1px; border-bottom-width: 1px; 
+						font-size:8pt;">
 						<div class="styPartName" style="float:left;clear:none;height: 4.5mm;width:14mm; padding-top: .5mm">
 							Part <span style="font-size: 8.75pt">&#8549;</span>
 						</div>
-						<div class="styPartDesc" style="float:left;clear:none;height: auto;width:173mm;padding-top: .5mm; padding-left: 2mm;">Section 501(c)(3) Organizations Only
-						<span class="styNormalText" style="height: 4.5mm;padding-top: .5mm;">All section 501(c)(3) organizations must answer questions 47- 49b and 52, and complete the tables for lines 50 and 51.
-						<span class="styNormalText" style="font-size: 7pt; width:165mm;">
-						<span style="float:left;"> Check if the organization used Schedule O to respond to any question in this Part VI   </span>       
-                       
-					    <!--<span class="styDotLn" style="padding-right:2mm;">............</span> Removed to test JAWS--> 
-					    <span style="letter-spacing:2mm; font-weight:bold; font-size:7pt; margin-left:1mm;">..................</span>  					
-					         <input type="checkbox" class="styIRS990EZCkBox" alt="InfoInScheduleOPartVIInd">
-								<xsl:call-template name="PopulateCheckbox">
-									<xsl:with-param name="TargetNode" select="$IRS990EZData/InfoInScheduleOPartVIInd"/>
-									<xsl:with-param name="BackupName">IRS990EZInfoInScheduleOPartVI</xsl:with-param>
-								</xsl:call-template>
-							</input>
-				<label>
-								<xsl:call-template name="PopulateLabel">
-									<xsl:with-param name="TargetNode" select="$IRS990EZData/InfoInScheduleOPartVIInd"/>
-									<xsl:with-param name="BackupName">IRS990EZInfoInScheduleOPartVI</xsl:with-param>
-								</xsl:call-template>
-					        </label>
-                                     
-                       </span>
-					</span>
-					</div></div>
+						<div class="styPartDesc" style="float:left;clear:none;height: auto;width:173mm;padding-top: .5mm; padding-left: 2mm;">
+							Section 501(c)(3) Organizations Only
+							<span class="styNormalText" style="height: 4.5mm;padding-top: .5mm;">All section 501(c)(3) organizations must answer
+								questions 47- 49b and 52, and complete the tables for lines 50 and 51.
+								<span class="styNormalText" style="font-size: 7pt; width:165mm;">
+									<span style="float:left;"> Check if the organization used Schedule O to respond to any question in this 
+										Part VI
+									</span>                       
+										<!--<span class="styDotLn" style="padding-right:2mm;">............</span> Removed to test JAWS--> 
+									<span style="letter-spacing:2mm; font-weight:bold; font-size:7pt; margin-left:1mm;">..................
+									</span>
+									<input type="checkbox" class="styIRS990EZCkBox" alt="InfoInScheduleOPartVIInd">
+										<xsl:call-template name="PopulateCheckbox">
+											<xsl:with-param name="TargetNode" select="$IRS990EZData/InfoInScheduleOPartVIInd"/>
+											<xsl:with-param name="BackupName">IRS990EZInfoInScheduleOPartVI</xsl:with-param>
+										</xsl:call-template>
+									</input>
+									<label>
+										<xsl:call-template name="PopulateLabel">
+											<xsl:with-param name="TargetNode" select="$IRS990EZData/InfoInScheduleOPartVIInd"/>
+											<xsl:with-param name="BackupName">IRS990EZInfoInScheduleOPartVI</xsl:with-param>
+										</xsl:call-template>
+									</label>
+								</span>
+							</span>
+						</div>
+					</div>
 					<!--   END PART VI HEADER   -->
-					<div style="width:187mm;float:none;">
+					<div style="width:187mm;float:none;display:block">
 						<div class="styLNLeftNumBox" style="height:4.5mm;padding-top:2mm;"/>
-						<div class="styLNDesc" style="width:150mm;height:4.5mm;padding-top:2mm;">
-      
-    </div>
-						<div class="styIRS990EZYesNoBox" style="width:8mm;height:6mm;border-left-width:0px;border-bottom-width:1;padding-top:1mm;">
+						<div class="styLNDesc" style="width:150mm;height:4.5mm;padding-top:2mm;">      
+						</div>
+						<div class="styIRS990EZYesNoBox" style="width:8mm;height:6mm;border-left-width:0px;border-bottom-width:1;
+							padding-top:1mm;">
 							<span style="width:1px;"/>
 						</div>
 						<div class="styIRS990EZYesNoBox" style="width:10mm;height:6mm;border-bottom-width:1;">
@@ -2907,12 +2946,12 @@ meaning of section 512(b)(13)? If "Yes," Form 990 and Schedule R may need to be 
 						</div>
 						<div class="styIRS990EZYesNoBox" style="width:10mm;height:6mm;border-bottom-width:1;">
 							<b>No</b>
-						</div>
-						
+						</div>						
 						
 							<div class="styLNLeftNumBox" style="height:9.5mm;padding-top:2mm">47</div>
 							<div class="styLNDesc" style="width:150mm;height:9.5mm;padding-top:2mm;">
-                                 <span style="float:left;">Did the organization engage in lobbying activities or have a section 501(h) election   in effect during the tax year? </span>
+                                 <span style="float:left;">Did the organization engage in lobbying activities or have a section 501(h) 
+									 election in effect during the tax year? </span>
                                  <span style="float:left;">If "Yes," complete Schedule C, Part II       
                                 <xsl:call-template name="SetFormLinkInline">
 									<xsl:with-param name="TargetNode" select="$IRS990EZData/LobbyingActivitiesInd"/>
@@ -2960,7 +2999,7 @@ meaning of section 512(b)(13)? If "Yes," Form 990 and Schedule R may need to be 
 							<div class="styLNDesc" style="width:150mm;height:4.5mm;padding-top:2mm;">
 							     <span style="float:left;">Did the organization make any transfers to an exempt non-charitable related organization?</span>
                                  <span class="styDotLn" style="float:right;padding-right:1mm;">......</span>   
-     </div>
+							</div>
 							<div class="styLNRightNumBox" style="height:6mm;border-top-width:0px;padding-top:1mm;">49a</div>
 							<div class="styIRS990EZYesNoBox" style="height:6mm;border-top-width:0px">
 								<xsl:call-template name="PopulateYesBoxText">
@@ -3563,7 +3602,7 @@ meaning of section 512(b)(13)? If "Yes," Form 990 and Schedule R may need to be 
 							<span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm; margin-right:1mm">.........</span>
 							<img src="{$ImagePath}/990EZ_Bullet_Lg.gif" alt="bullet"/>
 							<span class="styIRS990EZNBSP"/>
-							<input type="checkbox" class="styIRS990EZCkBox" alt="AuthorizeThirdPartyYesCheckbox">
+							<input type="checkbox" class="styIRS990EZCkBox" alt="AuthorizeThirdPartyYes">
 								<xsl:call-template name="PopulateReturnHeaderOfficer">
 									<xsl:with-param name="TargetNode">AuthorizeThirdPartyYesCheckbox</xsl:with-param>
 									<xsl:with-param name="BackupName">ReturnHeaderMayIRSDiscussReturnWithPrep</xsl:with-param>
@@ -3577,7 +3616,7 @@ meaning of section 512(b)(13)? If "Yes," Form 990 and Schedule R may need to be 
 								<b>Yes</b>
 							</label>
 							<span class="styIRS990EZNBSP"/>
-							<input type="checkbox" class="styIRS990EZCkBox" alt="AuthorizeThirdPartyNoCheckbox">
+							<input type="checkbox" class="styIRS990EZCkBox" alt="AuthorizeThirdPartyNo">
 								<xsl:call-template name="PopulateReturnHeaderOfficer">
 									<xsl:with-param name="TargetNode">AuthorizeThirdPartyNoCheckbox</xsl:with-param>
 									<xsl:with-param name="BackupName">ReturnHeaderMayIRSDiscussReturnWithPrep</xsl:with-param>
@@ -3787,7 +3826,7 @@ as measured by expenses.  In a clear and concise manner, describe the services p
 					<xsl:if test="(count($IRS990EZData/OfficerDirectorTrusteeEmplGrp) &gt;3) and ($Print = $Separated)">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle" style="height:auto;">Form 990EZ, Part <span style="font-size: 8.75pt">&#8547;</span> &#8212; List of Officers, Directors, Trustees, and Key Employees<span class="styNormalText" style="font-size: 7pt"> (list each one even if not compensated &#151; see the instructions for Part IV)</span></span>
+						<span class="styRepeatingDataTitle" style="height:auto;">Form 990EZ, Part <span style="font-size: 8.75pt">&#8547;</span> &#8212; List of Officers, Directors, Trustees, and Key Employees<span class="styNormalText" style="font-size: 7pt"> (list each one even if not compensated ; see the instructions for Part IV)</span></span>
 						<span class="styNormalText" style="font-size: 7pt; width:163mm"> 
 						<span style="float:left;">Check if the organization used Schedule O to respond to any question in this Part IV</span>
 							<!-- Dotted Line -->

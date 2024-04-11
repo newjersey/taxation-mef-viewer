@@ -63,8 +63,8 @@
 							<div class="styMainTitle" style="height:8mm;">Additional Information for Schedule M-3 Filers
 							</div>
 							<div class="styFST" style="height:2mm;">
-								<img src="{$ImagePath}/1120SchB_Bullet_Title.gif" alt="Bullet"/> Attach to Form 1120.<br/>
-								<img src="{$ImagePath}/1120SchB_Bullet_Title.gif" alt="Bullet"/>Go to <a  style="text-decoration:none;color:black;" href="http://www.irs.gov/Form1120" title="Link to IRS.gov/Form1120"><i>www.irs.gov/Form1120</i></a> for the latest information.
+								<img src="{$ImagePath}/1120SchB_Bullet_Title.gif" alt="Right Pointing Arrow"/> Attach to Form 1120.<br/>
+								<img src="{$ImagePath}/1120SchB_Bullet_Title.gif" alt="Right Pointing Arrow"/> Go to <a  style="text-decoration:none;color:black;" href="http://www.irs.gov/Form1120" title="Link to IRS.gov/Form1120"><i>www.irs.gov/Form1120</i></a> for the latest information.
 							</div>
 						</div>
 						<div class="styTYBox" style="width:30mm;height:18.5mm;border-left-width:2px">

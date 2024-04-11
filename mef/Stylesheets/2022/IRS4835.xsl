@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Last modified by Sergey Smirnov for 10.6 D4 on 08/11/2022 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -225,7 +226,7 @@
 						</div>
 						<div class="styTYBox" style="width:30mm;height:22mm;border-left-width:2px;">
 							<div class="styOMB" style="width:30mm;height:4mm;font-size:7pt;">OMB No. 1545-0074</div>
-							<div class="styTY">20<span class="styTYColor">21</span>
+							<div class="styTY">20<span class="styTYColor">22</span>
 							</div>
 							<div style="text-align:left;font-size:7pt;">
 								Attachment<br/>Sequence No. 
@@ -319,7 +320,7 @@
 							<div class="styIRS4835CleanDiv" style="width:153mm;height:4mm;padding:0px 0px 0px 0px;">
 								<div class="styIRS4835LNDesc" style="width:auto;height:4mm;padding:0px 0px 0px 0px;">
 									<div class="styIRS4835LNDesc" style="width:auto;height:4mm;">
-										<span style="float:left;">Did you actively participate in the operation of this farm during 2021? See instructions</span>
+										<span style="float:left;">Did you actively participate in the operation of this farm during 2022? See instructions</span>
 										<!--Dotted Line-->
 										<span class="styDotLn" style="float:right;padding-left:1mm;padding-right:1mm;">........</span>
 									</div>
@@ -550,7 +551,7 @@
 					<div style="width:187mm;height:4mm;font-size:8.5pt;">
 						<div class="styLNLeftNumBoxSD" style="width:8mm;padding-left:4.5mm;">a</div>
 						<div class="styLNDesc" style="width:67.2mm;padding-left:1mm;">
-							<span style="float:left;">Amount received in 2021 </span>
+							<span style="float:left;">Amount received in 2022 </span>
 							<!--Dotted Line-->
 							<span class="styDotLn" style="float:right;padding-right:1mm;">.......</span>
 						</div>
@@ -581,7 +582,7 @@
 									</xsl:call-template>
 								</label>-->
 								
-									If election to defer to 2022 is attached, check here
+									If election to defer to 2023 is attached, check here
 									<span style="width:1px;"/>
 									<xsl:call-template name="SetFormLinkInline">
 										<xsl:with-param name="TargetNode" select="$Form4835Data/ElectionDeferCropInsProcInd"/>
@@ -602,7 +603,7 @@
 						<div class="styIRS4835LineItem" style="width:87mm;height:4mm;float:right;">
 							<div class="styIRS4835LNLeftNumBox" style="padding: .75mm 5mm 0mm 0mm;">5d</div>
 							<div class="styIRS4835LNDesc" style="width:auto;height:auto;padding:.75mm 3mm 0mm 0mm;">
-								Amount deferred from 2020
+								Amount deferred from 2021
 							</div>
 							<div class="styIRS4835CleanDiv" style="width:37mm;height:4mm;padding:0px 0px 0px 0px;float:right;">
 								<div class="styIRS4835CleanDiv" style="width:100%;height:4mm;float:right;">
@@ -760,8 +761,8 @@
 								<!--Dotted Line-->
 								<span class="styDotLn" style="float:right;padding-right:1mm;">.....</span>
 							</div>							
-							<div class="styLNRightNumBox" style="width:8mm;height:12mm;padding-top:8.5mm;">12</div>
-							<div class="styLNAmountBox" style="width:29.2mm;height:12mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:8.5mm;">
+							<div class="styLNRightNumBox" style="width:8mm;height:12mm;padding-top:8mm;">12</div>
+							<div class="styLNAmountBox" style="width:29.2mm;height:12mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:8mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4835Data/DeprecAndSect179ExpnsDedAmt" />
 								</xsl:call-template>     
@@ -772,12 +773,12 @@
 							<div class="styLNLeftNumBox" style="width:8mm;">13</div>
 							<div class="styLNDesc" style="width:48.25mm;padding-left:1mm;">
 								Employee benefit programs other<br/>than on line 21 (see Schedule F<br/>
-								<span style="float:left;">(Form 1040) instructions) 
+								(Form 1040) instructions) 
 								<!--Dotted Line-->
-								<span class="styDotLn" style="float:right;padding-right:1mm;">.......</span></span>
+								<span class="styDotLn" style="float:right; padding-right:1mm;">..</span>
 							</div>							
-							<div class="styLNRightNumBox" style="width:8mm;height:14mm;padding-top:9.5mm;">13</div>
-							<div class="styLNAmountBox" style="width:29.2mm;height:14mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:9.5mm;">
+							<div class="styLNRightNumBox" style="width:8mm;height:14mm;padding-top:8mm;">13</div>
+							<div class="styLNAmountBox" style="width:29.2mm;height:14mm;font-size:7pt;border-bottom-width:1px;padding-right:.5mm;padding-top:8mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4835Data/EmployeeBenefitProgramAmt" />
 								</xsl:call-template>     
@@ -983,7 +984,7 @@
 						<div style="width:93.5mm;height:8mm;font-size:8.5pt;">
 							<div class="styLNLeftNumBox" style="width:8mm;">21</div>
 							<div class="styLNDesc" style="width:48.5mm;padding-left:1mm;">
-								Pension and profitsharing<br/><span style="float:left;"> plans </span>
+								Pension and profit-sharing<br/><span style="float:left;"> plans </span>
 								<!--Dotted Line-->
 								<span class="styDotLn" style="float:right;padding-right:1mm;">.........</span>
 							</div>							
@@ -1432,7 +1433,7 @@
 						</div>
 						<div style="float:right;">
 							<span style="width:40px;"/>  
-							Form <span class="styBoldText" style="font-size:8pt;">4835</span> (2021)
+							Form <span class="styBoldText" style="font-size:8pt;">4835</span> (2022)
 						</div>
 					</div>
 					<!-- END Page Break and Footer-->

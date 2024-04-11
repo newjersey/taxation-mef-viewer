@@ -486,13 +486,13 @@
 						<!-- END PART I TABLE -->
 						<!-- Start Line 3 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">3</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:0.6em">3</span>
+							<span class="styIRS4797LNText" style="width:145mm;padding-bottom:0.5mm">
 								Gain, if any, from Form 4684, line 39
 								<span class="styIRS4797DotLn">........................</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">3</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:5.0mm">3</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:5.0mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/GainForm4684Amt"/>
 								</xsl:call-template>
@@ -501,13 +501,13 @@
 						<!-- End Line 3 -->
 						<!-- Start Line 4 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">4</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:0.7em">4</span>
+							<span class="styIRS4797LNText" style="width:145mm;padding-bottom:0.6mm">
 								Section 1231 gain from installment sales from Form 6252, line 26 or 37
 								<span class="styIRS4797DotLn">.............</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">4</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:5.2mm">4</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:5.2mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/GainInstallmentSalesFrm6252Amt"/>
 								</xsl:call-template>
@@ -516,13 +516,13 @@
 						<!-- End Line 4 -->
 						<!-- Start Line 5 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">5</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:0.5em">5</span>
+							<span class="styIRS4797LNText" style="width:145mm;padding-bottom:0.6mm">
 								Section 1231 gain or (loss) from like-kind exchanges from Form 8824
 								<span class="styIRS4797DotLn">..............</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">5</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:5.2mm">5</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:5.2mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/GainLossForm8824Amt"/>
 								</xsl:call-template>
@@ -531,13 +531,13 @@
 						<!-- End Line 5 -->
 						<!-- Start Line 6 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">6</span>
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:0.3em">6</span>
 							<span class="styIRS4797LNText" style="width:145mm;">
 								Gain, if any, from line 32, from other than casualty or theft 
 								<span class="styIRS4797DotLn">.................</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">6</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:4.2mm">6</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:4.2mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/GainOthThanCasualtyOrTheftAmt"/>
 								</xsl:call-template>
@@ -546,13 +546,13 @@
 						<!-- End Line 6 -->
 						<!-- Start Line 7 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">7</span>
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:0.3em">7</span>
 							<span class="styIRS4797LNText" style="width:145mm;">
 								Combine lines 2 through 6.  Enter the gain or (loss) here and on the appropriate line as follows: 
 								<span class="styIRS4797DotLn">......</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">7</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:4.2mm">7</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:4.2mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/TotalPropertyGainLossAmt"/>
 								</xsl:call-template>
@@ -580,13 +580,13 @@
 						<!-- End Line 7 Instructions -->
 						<!-- Start Line 8 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">8</span>
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:0.3em">8</span>
 							<span class="styIRS4797LNText" style="width:145mm;">
 								Nonrecaptured net section 1231 losses from prior years. See instructions 
 								<span class="styIRS4797DotLn">.............</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">8</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:4.2mm">8</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:4.2mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/NonrecapturedNet1231LossesAmt"/>
 								</xsl:call-template>
@@ -595,7 +595,7 @@
 						<!-- End Line 8 -->
 						<!-- Start Line 9 -->
 						<div class="styGenericDiv" style="width:187mm;height:10mm;">
-							<span class="styIRS4797LNLeftNumBox" style="height:10mm;">9</span>
+							<span class="styIRS4797LNLeftNumBox" style="height:10mm;padding-top:0.3em">9</span>
 							<span class="styIRS4797LNText" style="width:145mm;">
 								Subtract line 8 from line 7. If zero or less, enter -0-. If line 9 is zero, enter the gain 
 						        from line 7 on line 12 below. If line 9 is more than zero, enter the amount from line 8
@@ -603,8 +603,8 @@
 								Schedule D  filed with your return. See instructions 
 								<span class="styIRS4797DotLn">............</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox" style="border-bottom:0;height:10mm;padding-top:6.5mm;">9</span>
-							<div class="styIRS4797LNAmountBoxSmall" style="border-bottom:0;height:10mm;padding-top:7mm;">
+							<span class="styIRS4797LNRightNumBox" style="border-bottom:0;height:10mm;padding-top:0.3em;">9</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="border-bottom:0;height:10mm;padding-bottom:0.9mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/TotalGainLossAmt"/>
 								</xsl:call-template>
@@ -888,13 +888,13 @@
 						<!-- END PART II TABLE -->
 						<!-- Start Line 11 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">11</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:1.5mm">11</span>
+							<span class="styIRS4797LNText" style="width:145mm;padding-bottom:0.4mm">
 								Loss, if any, from line 7
 								<span class="styIRS4797DotLn">............................</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">11</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:4.9mm">11</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:4.9mm">
 								<xsl:call-template name="PopulateNegativeNumber">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/OrdinaryLossAmt"/>
 								</xsl:call-template>
@@ -903,13 +903,13 @@
 						<!-- End Line 11 -->
 						<!-- Start Line 12 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">12</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:1.3mm">12</span>
+							<span class="styIRS4797LNText" style="width:145mm;padding-bottom:0.6mm">
 								Gain, if any, from line 7 or amount from line 8, if applicable
 								<span class="styIRS4797DotLn">.................</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">12</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:4.9mm">12</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:4.9mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/PropGainNonrecapturedLossAmt"/>
 								</xsl:call-template>
@@ -918,13 +918,13 @@
 						<!-- End Line 12 -->
 						<!-- Start Line 13 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">13</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:1.2mm">13</span>
+							<span class="styIRS4797LNText" style="width:145mm;padding-bottom:0.6mm">
 								Gain, if any, from line 31
 								<span class="styIRS4797DotLn">............................</span>
 							</span>
-							<span class="styIRS4797LNRightNumBox">13</span>
-							<div class="styIRS4797LNAmountBoxSmall">
+							<span class="styIRS4797LNRightNumBox" style="height:4.9mm">13</span>
+							<div class="styIRS4797LNAmountBoxSmall" style="height:4.9mm">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form4797Data/TotalSectionPropertyAmt"/>
 								</xsl:call-template>
@@ -933,7 +933,7 @@
 						<!-- End Line 13 -->
 						<!-- Start Line 14 -->
 						<div class="styGenericDiv" style="width:187mm;">
-							<span class="styIRS4797LNLeftNumBox">14</span>
+							<span class="styIRS4797LNLeftNumBox" style="padding-top:.5mm">14</span>
 							<span class="styIRS4797LNText" style="width:145mm;">
 								<span style="float:left;">Net gain or (loss) from Form 4684, lines 31 and 38a </span>
 								<!--Dotted Line-->
@@ -965,7 +965,7 @@
 						<!-- Start Line 15 -->
 						<div class="styGenericDiv" style="width:187mm;">
 							<span class="styIRS4797LNLeftNumBox">15</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNText" style="width:145mm;padding-bottom:0.5mm">
 								Ordinary gain from installment sales from Form 6252, line 25 or 36
 								<span class="styIRS4797DotLn">...............</span>
 							</span>
@@ -980,7 +980,7 @@
 						<!-- Start Line 16-->
 						<div class="styGenericDiv" style="width:187mm;">
 							<span class="styIRS4797LNLeftNumBox">16</span>
-							<span class="styIRS4797LNText" style="width:145mm;">
+							<span class="styIRS4797LNText" style="width:145mm; padding-bottom:0.3mm">
 								Ordinary gain or (loss) from like-kind exchanges from Form 8824
 							<span class="styIRS4797DotLn">...............</span>
 							</span>
@@ -1009,7 +1009,7 @@
 						<!-- End Line 17 -->
 						<!-- Start Line 18 -->
 						<div class="styGenericDiv" style="width:187mm;height:7mm;">
-							<span class="styIRS4797LNLeftNumBox" style="height:7mm;">18</span>
+							<span class="styIRS4797LNLeftNumBox" style="height:7mm;padding-top:0.6mm">18</span>
 							<span class="styIRS4797LNText" style="width:145mm;">
 								For all except individual returns, enter the amount from line 17 on the appropriate
 								line of your return and skip lines a and b below.  For individual returns, complete lines a and b below.

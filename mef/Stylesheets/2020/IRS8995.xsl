@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#160;"> <!ENTITY mdash "&#8212;"> ]>
-    <!-- Last Modified by Iskilu Lawal on 10/20/2020 drop 2 UWR # 237401 -->
+    <!-- Last Modified by Iskilu Lawal on 11/23/2020 drop 2 UWR # 237401 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl" />
 	<xsl:include href="AddHeader.xsl" />
@@ -73,7 +73,7 @@
 							</span>
 						</div>
 						<div class="styTYBox" style="width:30mm;height:22.5mm;">
-							<div class="styOMB" style="height:auto;font-size:6pt;">OMB No. XXXX-XXXX</div>
+							<div class="styOMB" style="height:auto;font-size:6pt;">OMB No. 1545-0123</div>
 							<div class="styTY">20<span class="styTYColor">20</span>
 							</div>
 							<div style="margin-left:3mm;text-align:left;font-size:7pt;">
@@ -97,14 +97,7 @@
 						<div class="styEINBox" style="width:52mm;padding-left:0.5mm;font-weight:normal;">
 							<strong>Your taxpayer identification number</strong><br />
 							<xsl:call-template name="PopulateReturnHeaderFilerTIN"/>
-							<div style="float:right;width:4mm;height:3.5mm;">
-								<xsl:call-template name="SetDynamicTableToggleButton">
-									<xsl:with-param name="TargetNode" select="$FormData/QualifiedBusinessIncomeDedGrp"/>
-									<xsl:with-param name="containerID" select=" 'Line1Table' "/>
-									<xsl:with-param name="headerHeight" select="1"/>
-									<xsl:with-param name="containerHeight" select="5"/>
-								</xsl:call-template>
-							</div>
+							
 						</div>
 					</div>
 				<!-- ********************************************************************************************************************* -->
@@ -131,6 +124,14 @@ For use by taxpayers whose taxable income, before any qualified business income 
 									<th class="styTableCellHeader" scope="col" style="width:40.75mm;font-weight:normal;vertical-align:top;border-right-width:0px;">
 										<span style="font-weight:bold;">(c) </span> Qualified business <br />
 										income or (loss)
+										<div style="float:right;width:4mm;height:3.5mm;">
+								<xsl:call-template name="SetDynamicTableToggleButton">
+									<xsl:with-param name="TargetNode" select="$FormData/QualifiedBusinessIncomeDedGrp"/>
+									<xsl:with-param name="containerID" select=" 'Line1Table' "/>
+									<xsl:with-param name="headerHeight" select="1"/>
+									<xsl:with-param name="containerHeight" select="5"/>
+								</xsl:call-template>
+							</div>
 									</th>
 								</tr>
 							</thead>

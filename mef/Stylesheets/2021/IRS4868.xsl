@@ -139,7 +139,7 @@
 																<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/USAddress/CityNm"/>
 															</xsl:call-template>
 														</xsl:if>
-														<xsl:if test="AppData/SubmissionHeaderAndDocument/ReturnHeader/Filer/ForeignAddress">
+														<xsl:if test="$RtnHdrData/Filer/ForeignAddress">
 															<div style="font-size:6pt;">
 																<xsl:call-template name="PopulateReturnHeaderFiler">
 																	<xsl:with-param name="TargetNode">CityNm</xsl:with-param>
@@ -163,11 +163,11 @@
 														<xsl:if test="AppData/SubmissionHeaderAndDocument/ReturnHeader/Filer/ForeignAddress">
 															<xsl:call-template name="LinkToLeftoverDataTableInline">
 																<xsl:with-param name="Desc">Part I, line 1 - State - Province or State Name</xsl:with-param>
-																<xsl:with-param name="TargetNode" select="AppData/SubmissionHeaderAndDocument/ReturnHeader/Filer/ForeignAddress/ProvinceOrStateNm"/>
+																<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/ForeignAddress/ProvinceOrStateNm"/>
 															</xsl:call-template>
 															<xsl:call-template name="LinkToLeftoverDataTableInline">
 																<xsl:with-param name="Desc">Part I, line 1 - State - Country Code</xsl:with-param>
-																<xsl:with-param name="TargetNode" select="AppData/SubmissionHeaderAndDocument/ReturnHeader/Filer/ForeignAddress/CountryCd"/>
+																<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/ForeignAddress/CountryCd"/>
 															</xsl:call-template>
 															<!--<xsl:call-template name="PopulateReturnHeaderFiler">
 																<xsl:with-param name="TargetNode">CountryCd</xsl:with-param>
@@ -187,7 +187,7 @@
 														<xsl:if test="AppData/SubmissionHeaderAndDocument/ReturnHeader/Filer/ForeignAddress">
 															<xsl:call-template name="LinkToLeftoverDataTableInline">
 																<xsl:with-param name="Desc">Part I, line 1 - Zip Code - Postal Code</xsl:with-param>
-																<xsl:with-param name="TargetNode" select="AppData/SubmissionHeaderAndDocument/ReturnHeader/Filer/ForeignAddress/ForeignPostalCd"/>
+																<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/ForeignAddress/ForeignPostalCd"/>
 															</xsl:call-template>
 														</xsl:if>
 													</div>
@@ -199,26 +199,32 @@
 										<tr>
 											<!--SSN-->
 											<td>
-												<div style="width: 95mm;border-bottom-width: 0px;border-right: 1px solid black;">
-													<span class="styLNLeftNumBox" style="width:4mm;padding-left: mm;height:8mm;font-size:7pt;">2</span>
-													<span class="styLNDesc" style="width:42mm;height:10mm;font-size:7pt;border-right: 1px solid black;text-align:center">
-														<span style="margin-right:2mm">
-													Your social security number
-													</span>
-														<br/>
-														<br/>
-														<xsl:call-template name="PopulateSSN">
-															<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/PrimarySSN"/>
-														</xsl:call-template>
-													</span>
-													<span class="styLNLeftNumBox" style="padding-left: 1mm;width:5mm;height:10mm;font-size:7pt;">3</span>
-													<span class="styLNDesc" style="width:43mm;height:10mm;font-size:7pt;text-align:center">Spouse's social security number
-                                            <br/>
-														<br/>
-														<xsl:call-template name="PopulateSSN">
-															<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/SpouseSSN"/>
-														</xsl:call-template>
-													</span>
+												<div style="width: 95mm;border-right: 1px solid black;">
+												<!--Primary SSN-->
+													<div style="width: 46mm;">
+														<div class="styLNLeftNumBox" style="width:4mm;height:10mm;font-size:7pt;">2</div>
+														<div class="styLNDesc" style="width:42mm;height:10mm;font-size:7pt;border-right: 1px solid black;text-align:center;">
+															<!--<span style="margin-right:2mm">-->
+														Your social security number
+														<!--</span>-->
+															<br/>
+															<br/>
+															<xsl:call-template name="PopulateSSN">
+																<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/PrimarySSN"/>
+															</xsl:call-template>
+														</div>
+													</div>
+												<!--Spouse SSN-->		
+													<div style="width: 46mm;">
+														<div class="styLNLeftNumBox" style="width:4mm;height:10mm;font-size:7pt;">3</div>
+														<div class="styLNDesc" style="width:42mm;height:10mm;font-size:7pt;text-align:center;">Spouse's social security number
+															<br/>
+															<br/>
+															<xsl:call-template name="PopulateSSN">
+																<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/SpouseSSN"/>
+															</xsl:call-template>
+														</div>
+													</div>
 												</div>
 											</td>
 										</tr>
@@ -335,7 +341,7 @@
 										</tr>
 										<tr>
 											<!--Line 9-->
-											<td style="height:12mm;width:92mm;font-size:8pt;">
+											<td style="height:11mm;width:92mm;font-size:8pt;">
 												<!--<div style="width: 92mm; padding-top: .1mm;">-->
 													<div class="styLNLeftNumBox" style="width:5mm;padding-left:1.25mm;height:4mm; font-size:7pt;">9</div>
 													<div class="styLNDesc" style="width:86mm;height:4mm;font-size:7pt;">

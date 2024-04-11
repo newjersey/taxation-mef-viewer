@@ -1429,108 +1429,106 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 				<div class="IRS990ScheduleA_LineContainer">
 					<div class="IRS990ScheduleA_LineIndex" style="width:6mm;padding-right:9px;">16a</div>
 					<div class="IRS990ScheduleA_LineDescIVB" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsCY170Ind"/>
-								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsCY170Ind</xsl:with-param>
-							</xsl:call-template>
-							<span style="font-weight:bold;">
-								 33 <span style="font-size:5pt;">1/3</span>% support test—2021.
-							</span>
-							  If the organization did not check the box on line 13, and line 14 is 33 <span style="font-size:5pt;">1/3
-							  </span>% or more, check this box<br/> and <b>stop here.</b>  The organization qualifies as a publicly 
-							  supported organization
-							  <span class="IRS990ScheduleA_DotSpacing">.......................  
-							  </span>
+						<span style="font-weight:bold;">
+						    33 <span style="font-size:5pt;">1/3</span>% support test—2021.
+						</span>
+						    If the organization did not check the box on line 13, and line 14 is 33 
+							<span style="font-size:5pt;">1/3</span>% or more, check this box<br/> and <b>stop here.</b>  The
+							 organization qualifies as a publicly supported organization
+							  <span class="IRS990ScheduleA_DotSpacing">.......................</span>
 							  <img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
 						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchAThirtyThrPctSuprtTestsCY170Ind">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsCY170Ind"/>
 								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsCY170Ind</xsl:with-param>
 							</xsl:call-template>
 						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsCY170Ind"/>
+								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsCY170Ind</xsl:with-param>
+							</xsl:call-template>
+						</label>
 					</div>
 				</div>
 				<!-- line 16b -->
 				<div class="IRS990ScheduleA_LineContainer">
 					<div class="IRS990ScheduleA_LineIndex" style="width:7.4mm;padding-right:9px;">b</div>
 					<div class="IRS990ScheduleA_LineDescIVB" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsPY170Ind"/>
-								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsPY170Ind</xsl:with-param>
-							</xsl:call-template>
-							<span style="font-weight:bold;">
-								 33 <span style="font-size:5pt;">1/3</span>% support test—2020.
-						    </span>
-							  If the organization did not check a box on line 13 or 16a, and line 15 is 33 <span style="font-size:5pt;">1/3</span>% or more, check this<br/>
-							  box and <b>stop here.</b>  The organization qualifies as a publicly supported organization
-							<span class="IRS990ScheduleA_DotSpacing">.....................  </span>
+						<span style="font-weight:bold;">
+						   33 <span style="font-size:5pt;">1/3</span>% support test—2020.
+					    </span>
+						  If the organization did not check a box on line 13 or 16a, and line 15 is 33 
+						<span style="font-size:5pt;">1/3</span>% or more, check this<br/>
+						  box and <b>stop here.</b>  The organization qualifies as a publicly supported organization
+						<span class="IRS990ScheduleA_DotSpacing">.....................  </span>
 							<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
 						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchAThirtyThrPctSuprtTestsPY170Ind">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsPY170Ind"/>
 								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsPY170Ind</xsl:with-param>
 							</xsl:call-template>
 						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsPY170Ind"/>
+								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsPY170Ind</xsl:with-param>
+							</xsl:call-template>
+						</label>
 					</div>
 				</div>
 				<!-- line 17a -->
 				<div class="IRS990ScheduleA_LineContainer">
 					<div class="IRS990ScheduleA_LineIndex" style="width:6mm;padding-right:9px;">17a</div>
 					<div class="IRS990ScheduleA_LineDescIVB" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/TenPctFactsCrcmstncsTestCYInd"/>
-								<xsl:with-param name="BackupName">IRS990SchATenPctFactsCrcmstncsTestCYInd</xsl:with-param>
-							</xsl:call-template>
 							<span style="font-weight:bold;">
 							  10%-facts-and-circumstances test—2021.
   						    </span>
-							  If the organization did not check a box on line 13, 16a, or 16b, and line 14<br/>
-							  is 10% or more, and if the organization meets the "facts-and-circumstances" test, check this box and <b>stop here.</b>  Explain<br/>
-							  in Part VI how the organization meets the "facts-and-circumstances" test.  The organization qualifies as a publicly supported<br/>
-							  organization
-							<span class="IRS990ScheduleA_DotSpacing">.....................................................  </span>
+							  If the organization did not check a box on line 13, 16a, or 16b, and line 14
+							  is 10% or more, and if the organization meets the "facts-and-circumstances" test, check this box and
+							  <b>stop here.</b>  Explain in Part VI how the organization meets the "facts-and-circumstances" test.
+							  The organization qualifies as a publicly supported organization
+							<span class="IRS990ScheduleA_DotSpacing">............  </span>
 							<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
 						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchATenPctFactsCrcmstncsTestCYInd">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/TenPctFactsCrcmstncsTestCYInd"/>
 								<xsl:with-param name="BackupName">IRS990SchATenPctFactsCrcmstncsTestCYInd</xsl:with-param>
 							</xsl:call-template>
 						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/TenPctFactsCrcmstncsTestCYInd"/>
+								<xsl:with-param name="BackupName">IRS990SchATenPctFactsCrcmstncsTestCYInd</xsl:with-param>
+							</xsl:call-template>
+						</label>
 					</div>
 				</div>
 				<!-- line 17b -->
 				<div class="IRS990ScheduleA_LineContainer">
 					<div class="IRS990ScheduleA_LineIndex" style="width:7.2mm;padding-right:9px;">b</div>
 					<div class="IRS990ScheduleA_LineDescIVB" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/TenPctFactsCrcmstncsTestPYInd"/>
-								<xsl:with-param name="BackupName">IRS990SchATenPctFactsCrcmstncsTestPYInd</xsl:with-param>
-							</xsl:call-template>
 							<span style="font-weight:bold;">
 								10%-facts-and-circumstances test—2020.
 							</span>
-								If the organization did not check a box on line 13, 16a, 16b, or 17a, and line<br/>
-								15 is 10% or more, and if the organization meets the "facts-and-circumstances" test, check this box and 
-								<b>stop here.</b>
-								<br/>
-								Explain in Part VI how the organization meets the "facts-and-circumstances" test.  The organization 
-								qualifies as a publicly<br/> supported organization
-								<span class="IRS990ScheduleA_DotSpacing">................................................  </span>
-								<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
-						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchATenPctFactsCrcmstncsTestPYInd">
-							<xsl:call-template name="PopulateCheckbox">
-								<xsl:with-param name="TargetNode" select="$FormData/TenPctFactsCrcmstncsTestPYInd"/>
-								<xsl:with-param name="BackupName">IRS990SchATenPctFactsCrcmstncsTestPYInd</xsl:with-param>
-							</xsl:call-template>
-						</input>
+								If the organization did not check a box on line 13, 16a, 16b, or 17a, and line 15 is 10% or more,
+								and if the organization meets the "facts-and-circumstances" test, check this box and 
+								<b>stop here.</b>  Explain in Part VI how the organization meets the "facts-and-circumstances" test.
+								The organization qualifies as a publicly supported organization
+							<span class="IRS990ScheduleA_DotSpacing">............  </span>
+							<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
+							<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchATenPctFactsCrcmstncsTestPYInd">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/TenPctFactsCrcmstncsTestPYInd"/>
+									<xsl:with-param name="BackupName">IRS990SchATenPctFactsCrcmstncsTestPYInd</xsl:with-param>
+								</xsl:call-template>
+							</input>
+							<label>
+								<xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$FormData/TenPctFactsCrcmstncsTestPYInd"/>
+									<xsl:with-param name="BackupName">IRS990SchATenPctFactsCrcmstncsTestPYInd</xsl:with-param>
+								</xsl:call-template>
+							</label>
 					</div>
 				</div>
 				<!-- line 18 -->
@@ -1578,10 +1576,12 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 				<!-- Part III header-->
 				<div class="styBB" style="width:187mm;">
 					<div class="styPartName" style="width:20mm;height:auto;">Part III</div>
-					<div class="styPartDesc" style="width:165mm;height:auto;">Support Schedule for Organizations Described in Section 509(a)(2)<br/>
-						<span class="styNormalText">(Complete only if you checked the box on line 10 of Part I or if the organization
-						failed to qualify under Part II. If the organization fails to qualify under
-						the tests listed below, please complete Part II.)</span>
+					<div class="styPartDesc" style="width:165mm;height:auto;">Support Schedule for Organizations Described in
+					 Section 509(a)(2)<br/>
+						<span class="styNormalText">(Complete only if you checked the box on line 10 of Part I or if the
+						  organization failed to qualify under Part II. If the organization fails to qualify under the tests listed
+						  below, please complete Part II.)
+						</span>
 					</div>
 				</div>
 				<span class="styPartDesc" style="width:165mm;font-weight:bold;height:auto;">Section A. Public Support</span>
@@ -2265,30 +2265,31 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 				<div class="IRS990ScheduleA_LineContainer">
 					<div class="IRS990ScheduleA_LineIndex">14</div>
 					<div class="IRS990ScheduleA_LineDescIVAL" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/First5Years509Ind"/>
-								<xsl:with-param name="BackupName">IRS990SchAFirst5Years509Ind</xsl:with-param>
-							</xsl:call-template>
-							<span style="font-weight:bold;">
-         First 5 years.
-      </span>
-      If the Form 990 is for the organization's first, second, third, fourth, or fifth tax year as a section 501(c)(3) organization,<br/>
-      check this box and <b>stop here</b>
-							<span class="IRS990ScheduleA_DotSpacing">............................................. </span>
-							<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
+						<span style="font-weight:bold;">
+						  First 5 years.
+						</span>
+						  If the Form 990 is for the organization's first, second, third, fourth, or fifth tax year as a section 
+						  501(c)(3) organization, check this box and <b>stop here</b>
+						<span class="IRS990ScheduleA_DotSpacing">................................................. </span>
+						<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
 						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchAFirst5Years509Ind">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/First5Years509Ind"/>
 								<xsl:with-param name="BackupName">IRS990SchAFirst5Years509Ind</xsl:with-param>
 							</xsl:call-template>
 						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/First5Years509Ind"/>
+								<xsl:with-param name="BackupName">IRS990SchAFirst5Years509Ind</xsl:with-param>
+							</xsl:call-template>
+						</label>
 					</div>
 				</div>
 				<!-- line 14 ends -->
 				<div class="styBB" style="width:187mm;border-top-width: 1px">
-					<span class="styPartDesc" style="width:162mm;font-weight:bold;height:auto;">Section C.  Computation of Public Support Percentage</span>
+					<span class="styPartDesc" style="width:162mm;font-weight:bold;height:auto;">Section C.  Computation of Public
+					 Support Percentage</span>
 				</div>
 				<!-- line 15 -->
 				<div class="IRS990ScheduleA_LineContainer">
@@ -2299,8 +2300,8 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 								<xsl:with-param name="TargetNode" select="$FormData/PublicSupportCY509Pct"/>
 								<xsl:with-param name="BackupName">IRS990SchAPublicSupportCY509Pct</xsl:with-param>
 							</xsl:call-template>
-      Public support percentage for 2021 (line 8, column (f) divided by line 13, column (f))
-       <span class="IRS990ScheduleA_DotSpacing">.........  </span>
+							  Public support percentage for 2021 (line 8, column (f) divided by line 13, column (f))
+							<span class="IRS990ScheduleA_DotSpacing">.........  </span>
 						</label>
 					</div>
 					<div class="styLNRightNumBox" style="height:4mm;">15</div>
@@ -2320,8 +2321,8 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 								<xsl:with-param name="TargetNode" select="$FormData/PublicSupportPY509Pct"/>
 								<xsl:with-param name="BackupName">IRS990SchAPublicSupportPY509Pct</xsl:with-param>
 							</xsl:call-template>
-      Public support percentage from 2020 Schedule A, Part III, line 15
-       <span class="IRS990ScheduleA_DotSpacing">...............  </span>
+							  Public support percentage from 2020 Schedule A, Part III, line 15
+							   <span class="IRS990ScheduleA_DotSpacing">...............  </span>
 						</label>
 					</div>
 					<div class="styLNRightNumBox" style="height:4mm;border-bottom-width: 0px">16</div>
@@ -2333,7 +2334,9 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 					</div>
 				</div>
 				<div class="styBB" style="width:187mm;border-top-width: 1px">
-					<span class="styPartDesc" style="width:162mm;font-weight:bold;height:auto;">Section D. Computation of Investment Income Percentage</span>
+					<span class="styPartDesc" style="width:162mm;font-weight:bold;height:auto;">Section D. Computation of Investment
+					 Income Percentage
+					</span>
 				</div>
 				<!-- line 17 -->
 				<div class="IRS990ScheduleA_LineContainer">
@@ -2344,8 +2347,8 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 								<xsl:with-param name="TargetNode" select="$FormData/InvestmentIncomeCYPct"/>
 								<xsl:with-param name="BackupName">IRS990SchAInvestmentIncomeCYPct</xsl:with-param>
 							</xsl:call-template>
-      Investment income percentage for <b>2021</b> (line 10c, column (f) divided by line 13, column (f))
-       <span class="IRS990ScheduleA_DotSpacing">......  </span>
+							  Investment income percentage for <b>2021</b> (line 10c, column (f) divided by line 13, column (f))
+							   <span class="IRS990ScheduleA_DotSpacing">......  </span>
 						</label>
 					</div>
 					<div class="styLNRightNumBox" style="height:4mm;">17</div>
@@ -2365,8 +2368,8 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 								<xsl:with-param name="TargetNode" select="$FormData/InvestmentIncomePYPct"/>
 								<xsl:with-param name="BackupName">IRS990SchAInvestmentIncomePYPct</xsl:with-param>
 							</xsl:call-template>
-      Investment income percentage from <b>2020</b> Schedule A, Part III, line 17
-       <span class="IRS990ScheduleA_DotSpacing">.............  </span>
+							  Investment income percentage from <b>2020</b> Schedule A, Part III, line 17
+							   <span class="IRS990ScheduleA_DotSpacing">.............  </span>
 						</label>
 					</div>
 					<div class="styLNRightNumBox" style="height:4mm;">18</div>
@@ -2379,75 +2382,79 @@ instructions). <b>You must complete Part IV, Sections A and D, and Part V.</b>
 				</div>
 				<!-- line 19a -->
 				<div class="IRS990ScheduleA_LineContainer" style="padding-left:0.8mm;">
-					<div class="IRS990ScheduleA_LineIndex" style="width:5mm;padding-right:9px;">19a</div>
+					<div class="IRS990ScheduleA_LineIndex" style="width:7mm;padding-right:9px;">19a</div>
 					<div class="IRS990ScheduleA_LineDescIVB" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsCY509Ind"/>
-								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsCY509Ind</xsl:with-param>
-							</xsl:call-template>
-							<b>
-								<span style="padding-left:1mm;;">33</span>
-								<span style="font-size:5pt;">1/3</span>% support tests—2021.
-      </b>
-      If the organization did not check the box on line 14, and line 15 is more than 33 <span style="font-size:5pt;">1/3</span>%, and line 17 is not <span style="padding-left:1mm;"/>more than 33 <span style="font-size:5pt;">1/3</span>%, check this box and <b>stop here.</b>  The organization qualifies as a publicly supported organization
-      <span class="IRS990ScheduleA_DotSpacing">....... </span>
-							<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
+						<span style="font-weight:bold;">33 <span style="font-size:5pt;">1/3</span>% support
+						 tests-2021.
+                        </span>	
+						  If the organization did not check the box on line 14, and line 15 is more than 33 
+						  <span style="font-size:5pt;">1/3</span>%, and line 17 is not <span style="padding-left:1mm;"/>more than 
+						  33 <span style="font-size:5pt;">1/3</span>%, check this box and <b>stop here.</b>  The organization 
+						  qualifies as a publicly supported organization
+						<span class="IRS990ScheduleA_DotSpacing">....... </span>
+						<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
 						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchAThirtyThrPctSuprtTestsCY509Ind">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsCY509Ind"/>
 								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsCY509Ind</xsl:with-param>
 							</xsl:call-template>
 						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsCY509Ind"/>
+								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsCY509Ind</xsl:with-param>
+							</xsl:call-template>
+						</label>
 					</div>
 				</div>
 				<!-- line 19b -->
 				<div class="IRS990ScheduleA_LineContainer">
 					<div class="IRS990ScheduleA_LineIndex" style="padding-right:8px;">b</div>
 					<div class="IRS990ScheduleA_LineDescIVAL" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsPY509Ind"/>
-								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsPY509Ind</xsl:with-param>
-							</xsl:call-template>
-							<span style="font-weight:bold;">
-         33 <span style="font-size:5pt;">1/3</span>% support tests—2020.
-      </span>
-      If the organization did not check a box on line 14 or line 19a, and line 16 is more than 33 <span style="font-size:5pt;">1/3</span>% and line 18 is not more than 33 <span style="font-size:5pt;">1/3</span>%, check this box and <b>stop here.</b> The organization qualifies as a publicly supported organization
-      <span class="IRS990ScheduleA_DotSpacing">.... </span>
-							<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
+						<span style="font-weight:bold;">33 <span style="font-size:5pt;">1/3</span>% support tests—2020.
+						</span>
+						  If the organization did not check a box on line 14 or line 19a, and line 16 is more than 33 
+						  <span style="font-size:5pt;">1/3</span>% and line 18 is not more than 33 
+						  <span style="font-size:5pt;">1/3</span>%, check this box and <b>stop here.</b> The organization qualifies
+						   as a publicly supported organization
+						  <span class="IRS990ScheduleA_DotSpacing">..... </span>
+						<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
 						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchAThirtyThrPctSuprtTestsPY509Ind">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsPY509Ind"/>
 								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsPY509Ind</xsl:with-param>
 							</xsl:call-template>
 						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/ThirtyThrPctSuprtTestsPY509Ind"/>
+								<xsl:with-param name="BackupName">IRS990SchAThirtyThrPctSuprtTestsPY509Ind</xsl:with-param>
+							</xsl:call-template>
+						</label>
 					</div>
 				</div>
 				<!-- line 20 -->
 				<div class="IRS990ScheduleA_LineContainer">
 					<div class="IRS990ScheduleA_LineIndex">20</div>
 					<div class="IRS990ScheduleA_LineDescIVAL" style="height:auto;">
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/PrivateFoundation509Ind"/>
-								<xsl:with-param name="BackupName">IRS990SchAPrivateFoundation509Ind</xsl:with-param>
-							</xsl:call-template>
-							<span style="font-weight:bold;height:auto;">
-         Private foundation.
-      </span>
-      If the organization did not check a box on line 14, 19a, or 19b, check this box and see instructions
-      <span class="IRS990ScheduleA_DotSpacing">.... </span>
-							<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
-						</label>
+						<span style="font-weight:bold;height:auto;">
+						  Private foundation.
+						</span>
+						  If the organization did not check a box on line 14, 19a, or 19b, check this box and see instructions
+						<span class="IRS990ScheduleA_DotSpacing">.... </span>
+						<img src="{$ImagePath}/990SchA_Bullet_Line.gif" alt="right arrow"/>
 						<input class="IRS990ScheduleA_Checkbox" type="checkbox" alt="IRS990SchAPrivateFoundation509Ind">
 							<xsl:call-template name="PopulateCheckbox">
 								<xsl:with-param name="TargetNode" select="$FormData/PrivateFoundation509Ind"/>
 								<xsl:with-param name="BackupName">IRS990SchAPrivateFoundation509Ind</xsl:with-param>
 							</xsl:call-template>
 						</input>
+						<label>
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/PrivateFoundation509Ind"/>
+								<xsl:with-param name="BackupName">IRS990SchAPrivateFoundation509Ind</xsl:with-param>
+							</xsl:call-template>
+						</label>
 					</div>
 				</div>
 				<div class="styBB" style="width:187mm;"/>

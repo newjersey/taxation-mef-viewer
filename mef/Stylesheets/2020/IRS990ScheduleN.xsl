@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 06/15/2020 - Changes made for UWR 233977 - Jeremy Nichols -->
+<!-- 08/27/2020 - Changes made for KISAM IM01231595 - Jeremy Nichols -->
+<!-- 09/14/2020 - Changes made for 2020 PDF review - Jeremy Nichols -->
+<!-- 10/07/2020 - Changes made for defect 65219 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -33,7 +36,6 @@
 				<!--Stylesheet References-->
 				<style type="text/css">
 				<xsl:if test="not($Print) or $Print=''">
-				<!--Form 990ScheduleN CSS Styles are located in the template called below -->
 					<xsl:call-template name="IRS990ScheduleNStyle"/>
 					<xsl:call-template name="AddOnStyle"/>
 				</xsl:if>
@@ -462,14 +464,8 @@
 
 				<xsl:if test="($Print = $Separated) and (count($FormData/LiquidationOfAssetsTableGrp/LiquidationOfAssetsDetail)) &gt; 0">
 				<!--<table class="styTableLandscape " id="p1TbCtnr" style="width: 256mm; height: auto; font-size: 7pt; margin-left: 0mm;" cellspacing="0">-->
-					<tr>
-						<xsl:call-template name="PopulateAdditionalDataTableMessage">
-							<xsl:with-param name="TargetNode" select="$FormData/LiquidationOfAssetsTableGrp/LiquidationOfAssetsDetail"/>
-						</xsl:call-template>
-						<span style="width:3px"/>
-					</tr>
-				<xsl:if test="count($FormData/LiquidationOfAssetsDetail) &lt; 20 and ($Print = $Separated)">
-					<xsl:call-template name="IRS990PartITableFillerRow"/>
+				<xsl:if test="count($FormData/LiquidationOfAssetsTableGrp/LiquidationOfAssetsDetail) &gt; 0 and ($Print = $Separated)">
+					<xsl:call-template name="IRS990PartITableFillerRowWithMessage"/>
 				</xsl:if>
 							
 				<xsl:if test="count($FormData/LiquidationOfAssetsDetail) &lt; 3 or ((count($FormData/LiquidationOfAssetsDetail) &gt; 9) and ($Print = $Separated))">
@@ -543,7 +539,7 @@
 		</div>
 		<div class="styLNDescLandscape" style="width: 223mm;">
 			Become a director or trustee of a successor or transferee organization?          
-			<span style="letter-spacing: 4mm; font-weight: bold;">.........................  </span>
+			<span style="letter-spacing: 4mm; font-weight: bold;">...........................  </span>
 		</div>
 <!-- ++ Line 2a Question - Populate Yes/No Box Text ++ -->	
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; border-top-width: 0px; border-right-width: 1px; border-left-width: 1px;">
@@ -552,11 +548,13 @@
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
 			<xsl:call-template name="PopulateYesBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/DirectorOfSuccessorInd"/>
+				<xsl:with-param name="BackupName">DirectorOfSuccessorYes</xsl:with-param>
 			</xsl:call-template>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px; border-right-width: 0px;">
 			<xsl:call-template name="PopulateNoBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/DirectorOfSuccessorInd"/>
+				<xsl:with-param name="BackupName">DirectorOfSuccessorNo</xsl:with-param>
 			</xsl:call-template>
 		</div>
 	</div>
@@ -573,13 +571,15 @@
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
 			<xsl:call-template name="PopulateYesBoxText">
-					<xsl:with-param name="TargetNode" select="$FormData/EmployeeOfSuccessorInd"/>
-				</xsl:call-template>
+				<xsl:with-param name="TargetNode" select="$FormData/EmployeeOfSuccessorInd"/>
+				<xsl:with-param name="BackupName">EmployeeOfSuccessorYes</xsl:with-param>
+			</xsl:call-template>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px; border-right-width: 0px;">
 			<xsl:call-template name="PopulateNoBoxText">
-						<xsl:with-param name="TargetNode" select="$FormData/DirectorOfSuccessorInd"/>
-					</xsl:call-template>
+				<xsl:with-param name="TargetNode" select="$FormData/EmployeeOfSuccessorInd"/>
+				<xsl:with-param name="BackupName">EmployeeOfSuccessorNo</xsl:with-param>
+			</xsl:call-template>
 		</div>
 	</div>
 <!-- ++ Line 2c Question - Populate Yes/No Box Text ++ -->		
@@ -594,13 +594,15 @@
 			2c
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
-		<xsl:call-template name="PopulateYesBoxText">
-			<xsl:with-param name="TargetNode" select="$FormData/OwnerOfSuccessorInd"/>
-		</xsl:call-template>
+			<xsl:call-template name="PopulateYesBoxText">
+				<xsl:with-param name="TargetNode" select="$FormData/OwnerOfSuccessorInd"/>
+				<xsl:with-param name="BackupName">OwnerOfSuccessorYes</xsl:with-param>
+			</xsl:call-template>
 	</div>
 	<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 			<xsl:call-template name="PopulateNoBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/OwnerOfSuccessorInd"/>
+				<xsl:with-param name="BackupName">OwnerOfSuccessorNo</xsl:with-param>
 			</xsl:call-template>
 		</div>
 	</div>
@@ -610,7 +612,7 @@
 			d
 		</div>
 		<div class="styLNDescLandscape" style="width: 223mm;">
-			Receive, or become entitled to, compensation or other similar payments as a result of the organization's significant disposition of assets? 
+			Receive, or become entitled to, compensation or other similar payments as a result of the organization's liquidation, termination, or dissolution? 
 			<span style="letter-spacing: 4mm; font-weight: bold;">........</span>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; border-top-width: 0px; border-right-width: 1px; border-left-width: 1px;">
@@ -619,11 +621,13 @@
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
 			<xsl:call-template name="PopulateYesBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/ReceiveCompensationInd"/>
+				<xsl:with-param name="BackupName">ReceiveCompensationYes</xsl:with-param>
 			</xsl:call-template>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 			<xsl:call-template name="PopulateNoBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/ReceiveCompensationInd"/>
+				<xsl:with-param name="BackupName">ReceiveCompensationNo</xsl:with-param>
 			</xsl:call-template>
 		</div>
 	</div>
@@ -708,12 +712,14 @@
 				</div>	
 				<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;">
 					<xsl:call-template name="PopulateYesBoxText">
-						<xsl:with-param name="TargetNode" select="$FormData/AssetsDistributedInd"/>							
+						<xsl:with-param name="TargetNode" select="$FormData/AssetsDistributedInd"/>	
+						<xsl:with-param name="BackupName">AssetsDistributedYes</xsl:with-param>						
                     </xsl:call-template>
 				</div>
 				<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 					<xsl:call-template name="PopulateNoBoxText">
 						<xsl:with-param name="TargetNode" select="$FormData/AssetsDistributedInd"/>
+						<xsl:with-param name="BackupName">AssetsDistributedNo</xsl:with-param>
 					</xsl:call-template>
 				</div>
 			</div>
@@ -732,11 +738,13 @@
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;">
 				<xsl:call-template name="PopulateYesBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/RequiredToNotifyAGInd"/>
+						<xsl:with-param name="BackupName">RequiredToNotifyAGYes</xsl:with-param>
 				</xsl:call-template>
 			</div>
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 				<xsl:call-template name="PopulateNoBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/RequiredToNotifyAGInd"/>
+						<xsl:with-param name="BackupName">RequiredToNotifyAGNo</xsl:with-param>
 				</xsl:call-template>
 			</div>
 		</div>
@@ -755,11 +763,13 @@
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;">
 				<xsl:call-template name="PopulateYesBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/AttorneyGeneralNotifiedInd"/>
+						<xsl:with-param name="BackupName">AttorneyGeneralNotifiedYes</xsl:with-param>
 				</xsl:call-template>
 			</div>
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 				<xsl:call-template name="PopulateNoBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/AttorneyGeneralNotifiedInd"/>
+						<xsl:with-param name="BackupName">AttorneyGeneralNotifiedNo</xsl:with-param>
 				</xsl:call-template>
 			</div>
 		</div>
@@ -778,11 +788,13 @@
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;">
 				<xsl:call-template name="PopulateYesBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/LiabilitiesPaidInd"/>
+						<xsl:with-param name="BackupName">LiabilitiesPaidYes</xsl:with-param>
 				</xsl:call-template>
 			</div>
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 				<xsl:call-template name="PopulateNoBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/LiabilitiesPaidInd"/>
+						<xsl:with-param name="BackupName">LiabilitiesPaidNo</xsl:with-param>
 				</xsl:call-template>
 			</div>
 		</div>
@@ -798,11 +810,13 @@
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;">
 				<xsl:call-template name="PopulateYesBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/BondsOutstandingInd"/>
+						<xsl:with-param name="BackupName">BondsOutstandingYes</xsl:with-param>
 				</xsl:call-template>
 			</div>
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 				<xsl:call-template name="PopulateNoBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/BondsOutstandingInd"/>
+						<xsl:with-param name="BackupName">BondsOutstandingNo</xsl:with-param>
 				</xsl:call-template>
 			</div>
 		</div>
@@ -821,11 +835,13 @@
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;">
 				<xsl:call-template name="PopulateYesBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/BondLiabilitiesDischargedInd"/>
+						<xsl:with-param name="BackupName">BondLiabilitiesDischargedYes</xsl:with-param>
 				</xsl:call-template>
 			</div>
 			<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 				<xsl:call-template name="PopulateNoBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/BondLiabilitiesDischargedInd"/>
+						<xsl:with-param name="BackupName">BondLiabilitiesDischargedNo</xsl:with-param>
 				</xsl:call-template>
 			</div>
 		</div>
@@ -1112,16 +1128,8 @@
 			<xsl:if test="($Print = $Separated) and (count($FormData/DispositionOfAssetsDetail) &gt; 0)">
 					<!--<table class="styTableLandscape " id="p2TbCtnr" style="width: 256mm; height: auto; font-size: 7pt; margin-left: 0mm;" cellspacing="0">
 				<tbody>-->
-					<tr>
-						<xsl:call-template name="PopulateAdditionalDataTableMessage">
-							<xsl:with-param name="TargetNode" select="$FormData/DispositionOfAssetsDetail"/>
-						</xsl:call-template>
-						<span style="width:3px"/>
-					</tr>
-				
-				
 				<xsl:if test="count($FormData/DispositionOfAssetsDetail) &gt; 0 and ($Print = $Separated)">
-					<xsl:call-template name="IRS990PartIITableFillerRow"/>
+					<xsl:call-template name="IRS990PartIITableFillerRowWithMessage"/>
 				</xsl:if>
 							
 				<xsl:if test="count($FormData/DispositionOfAssetsDetail) &lt; 3 or ((count($FormData/DispositionOfAssetsDetail) &gt; 9) and ($Print = $Separated))">
@@ -1197,11 +1205,13 @@
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
 			<xsl:call-template name="PopulateYesBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/DirectorOfSuccessorInd"/>
+						<xsl:with-param name="BackupName">DirectorOfSuccessorYes</xsl:with-param>
 			</xsl:call-template>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px; border-right-width: 0px;">
 			<xsl:call-template name="PopulateNoBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/DirectorOfSuccessorInd"/>
+						<xsl:with-param name="BackupName">DirectorOfSuccessorNo</xsl:with-param>
 			</xsl:call-template>
 		</div>
 	</div>
@@ -1219,11 +1229,13 @@
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
 			<xsl:call-template name="PopulateYesBoxText">
 					<xsl:with-param name="TargetNode" select="$FormData/EmployeeOfSuccessorInd"/>
+						<xsl:with-param name="BackupName">EmployeeOfSuccessorYes</xsl:with-param>
 				</xsl:call-template>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px; border-right-width: 0px;">
 			<xsl:call-template name="PopulateNoBoxText">
 						<xsl:with-param name="TargetNode" select="$FormData/DirectorOfSuccessorInd"/>
+						<xsl:with-param name="BackupName">EmployeeOfSuccessorNo</xsl:with-param>
 					</xsl:call-template>
 		</div>
 	</div>
@@ -1241,11 +1253,13 @@
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
 		<xsl:call-template name="PopulateYesBoxText">
 			<xsl:with-param name="TargetNode" select="$FormData/OwnerOfSuccessorInd"/>
+						<xsl:with-param name="BackupName">OwnerOfSuccessorYes</xsl:with-param>
 		</xsl:call-template>
 	</div>
 	<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 			<xsl:call-template name="PopulateNoBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/OwnerOfSuccessorInd"/>
+						<xsl:with-param name="BackupName">OwnerOfSuccessorNo</xsl:with-param>
 			</xsl:call-template>
 		</div>
 	</div>
@@ -1255,7 +1269,7 @@
 			d
 		</div>
 		<div class="styLNDescLandscape" style="width: 223mm;">
-			Receive, or become entitled to, compensation or other similar payments as a result of the organization's liquidation, termination, or dissolution? 
+			Receive, or become entitled to, compensation or other similar payments as a result of the organization's significant disposition of assets? 
 			<span style="letter-spacing: 4mm; font-weight: bold;">........</span>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; border-top-width: 0px; border-right-width: 1px; border-left-width: 1px;">
@@ -1264,11 +1278,13 @@
 		<div class="IRS990ScheduleN_LineIndexMid" style="width: 8mm; height: 4mm; padding-top: 0mm; font-weight: normal; border-top-width: 0px;">
 			<xsl:call-template name="PopulateYesBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/ReceiveCompensationInd"/>
+						<xsl:with-param name="BackupName">ReceiveCompensationYes</xsl:with-param>
 			</xsl:call-template>
 		</div>
 		<div class="IRS990ScheduleN_LineIndexMid" style="font-weight:normal;width:8mm;height:4mm;border-top-width:0px;padding-top:0mm;border-right-width:0px">
 			<xsl:call-template name="PopulateNoBoxText">
 				<xsl:with-param name="TargetNode" select="$FormData/ReceiveCompensationInd"/>
+						<xsl:with-param name="BackupName">ReceiveCompensationNo</xsl:with-param>
 			</xsl:call-template>
 		</div>
 	</div>
@@ -1710,9 +1726,39 @@
 	<xsl:template name="IRS990PartITableFillerRow">
 		<tr>
 			<td class="styTableCellText" style="width:62mm;">
-				<br/>
-				<br/>
-				<span style="width:4px;"/>
+				<span style="width:4px"/>
+			</td>
+			<td class="styTableCell" style="width:20mm;">
+				<span style="width:4px"/>
+			</td>
+			<td class="styTableCell" style="width:32mm;">
+				<span style="width:4px"/>
+			</td>
+			<td class="styTableCell" style="width:31mm;">
+				<span style="width:4px"/>
+			</td>
+			<td class="styTableCell" style="width:30mm;">
+				<span style="width:0px"/>
+			</td>
+			<td class="styTableCell" style="width:48mm;">
+				<span style="width:0px"/>
+			</td>
+			
+			<td class="styTableCell" style="width:32mm;border-right-width:0px">
+				<span style="width:4px;border-right-width:0px;"/>
+			</td>
+			
+		</tr>
+	</xsl:template>
+	<xsl:template name="IRS990PartITableFillerRowWithMessage">
+		<tr>
+			<td class="styTableCellText" style="width:62mm;"><br/><br/>
+				<xsl:if test="($Print = $Separated)">
+					<xsl:call-template name="PopulateAdditionalDataTableMessage">
+						<xsl:with-param name="TargetNode" select="$FormData/LiquidationOfAssetsTableGrp/LiquidationOfAssetsDetail"/>
+					</xsl:call-template>
+					<span style="width:3px"/>
+				</xsl:if>
 			</td>
 			<td class="styTableCell" style="width:20mm;">
 				<span style="width:4px"/>
@@ -1742,6 +1788,38 @@
 				<br/>
 				<br/>
 				<span style="width:4px;"/>
+			</td>
+			<td class="styTableCell" style="width:20mm;">
+				<span style="width:4px"/>
+			</td>
+			<td class="styTableCell" style="width:32mm;">
+				<span style="width:4px"/>
+			</td>
+			<td class="styTableCell" style="width:31mm;">
+				<span style="width:4px"/>
+			</td>
+			<td class="styTableCell" style="width:30mm;">
+				<span style="width:0px"/>
+			</td>
+			<td class="styTableCell" style="width:48mm;">
+				<span style="width:0px"/>
+			</td>
+			
+			<td class="styTableCell" style="width:32mm;border-right-width:0px">
+				<span style="width:4px;border-right-width:0px;"/>
+			</td>
+			
+		</tr>
+	</xsl:template>
+	<xsl:template name="IRS990PartIITableFillerRowWithMessage">
+		<tr>
+			<td class="styTableCellText" style="width:65mm;"><br/><br/>
+				<xsl:if test="($Print = $Separated)">
+					<xsl:call-template name="PopulateAdditionalDataTableMessage">
+						<xsl:with-param name="TargetNode" select="$FormData/DispositionOfAssetsDetail"/>
+					</xsl:call-template>
+					<span style="width:3px"/>
+				</xsl:if>
 			</td>
 			<td class="styTableCell" style="width:20mm;">
 				<span style="width:4px"/>

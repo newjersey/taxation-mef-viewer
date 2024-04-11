@@ -246,7 +246,7 @@
        <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/DisclosedOrgLegCtrlInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="DisclosedOrgLegCtrlIndYes">
         <xsl:call-template name="PopulateYesCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/DisclosedOrgLegCtrlInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDDisclosedOrgsLegalControl</xsl:with-param>
@@ -265,7 +265,7 @@
           <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/DisclosedOrgLegCtrlInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="DisclosedOrgLegCtrlIndNo">
         <xsl:call-template name="PopulateNoCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/DisclosedOrgLegCtrlInd"/>
          <xsl:with-param name="BackupName">IRS990ScheduleDDisclosedOrgsLegalControl</xsl:with-param>
@@ -291,7 +291,7 @@
        <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/DisclosedForCharitablePrpsInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="DisclosedForCharitablePrpsIndYes">
         <xsl:call-template name="PopulateYesCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/DisclosedForCharitablePrpsInd"/>
       <xsl:with-param name="BackupName">IRS990ScheduleDDisclosedForCharitablePurposes</xsl:with-param>
@@ -310,7 +310,7 @@
           <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/DisclosedForCharitablePrpsInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="DisclosedForCharitablePrpsIndNo">
         <xsl:call-template name="PopulateNoCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/DisclosedForCharitablePrpsInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDDisclosedForCharitablePurposes</xsl:with-param>
@@ -586,7 +586,7 @@ Complete lines 2a through 2d if the organization held a qualified conservation c
        <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/WrittenPolicyMonitoringInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="WrittenPolicyMonitoringIndYes">
         <xsl:call-template name="PopulateYesCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/WrittenPolicyMonitoringInd"/>
 	<xsl:with-param name="BackupName">IRS990ScheduleDWrittenPolicyMonitoring</xsl:with-param>
@@ -605,7 +605,7 @@ Complete lines 2a through 2d if the organization held a qualified conservation c
           <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/WrittenPolicyMonitoringInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="WrittenPolicyMonitoringIndNo">
         <xsl:call-template name="PopulateNoCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/WrittenPolicyMonitoringInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDWrittenPolicyMonitoring</xsl:with-param>
@@ -660,7 +660,7 @@ Complete lines 2a through 2d if the organization held a qualified conservation c
        <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/Section170hRqrStsfdInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="Section170hRqrStsfdIndYes">
         <xsl:call-template name="PopulateYesCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/Section170hRqrStsfdInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDSect170hRequirementsSatisfied</xsl:with-param>
@@ -679,7 +679,7 @@ Complete lines 2a through 2d if the organization held a qualified conservation c
           <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/Section170hRqrStsfdInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="Section170hRqrStsfdIndNo">
         <xsl:call-template name="PopulateNoCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/Section170hRqrStsfdInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDSect170hRequirementsSatisfied</xsl:with-param>
@@ -983,7 +983,7 @@ During the year, did the organization solicit or receive donations of art, histo
        <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/SolicitedAssetsSaleInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="SolicitedAssetsSaleIndYes" >
         <xsl:call-template name="PopulateYesCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/SolicitedAssetsSaleInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDSolicitedAssetsForSale</xsl:with-param>
@@ -1002,7 +1002,7 @@ During the year, did the organization solicit or receive donations of art, histo
           <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/SolicitedAssetsSaleInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="SolicitedAssetsSaleIndNo">
         <xsl:call-template name="PopulateNoCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/SolicitedAssetsSaleInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDSolicitedAssetsForSale</xsl:with-param>
@@ -1045,7 +1045,7 @@ During the year, did the organization solicit or receive donations of art, histo
        <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/AgentTrusteeEtcInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="AgentTrusteeEtcIndYes">
         <xsl:call-template name="PopulateYesCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/AgentTrusteeEtcInd"/>
         <xsl:with-param name="BackupName">IRS990ScheduleDAgentTrusteeEtc</xsl:with-param>
@@ -1064,7 +1064,7 @@ During the year, did the organization solicit or receive donations of art, histo
           <xsl:call-template name="PopulateSpan">
             <xsl:with-param name="TargetNode" select="$FormData/AgentTrusteeEtcInd"/>
           </xsl:call-template>
-      <input type="checkbox" class="styCkbox">
+      <input type="checkbox" class="styCkbox" alt="AgentTrusteeEtcIndNo">
         <xsl:call-template name="PopulateNoCheckbox">
           <xsl:with-param name="TargetNode" select="$FormData/AgentTrusteeEtcInd"/>
       <xsl:with-param name="BackupName">IRS990ScheduleDAgentTrusteeEtc</xsl:with-param>
@@ -1653,7 +1653,7 @@ The percentages on lines 2a, 2b, and 2c should equal 100%.
   <div class="styLNDesc" style="border-right-width:0px; width: 150mm;padding-top:0mm;height:auto;">
     <span style="font-weight:bold;text-align:center;">(i)</span>
     Unrelated organizations
-    <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.................</span>
+    <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.......................</span>
 
   </div>
   <div class="styIRS990ScheduleDLineIndexMid" style="width:10mm;border-left-width:1px">3a(i)</div>
@@ -1678,7 +1678,7 @@ The percentages on lines 2a, 2b, and 2c should equal 100%.
   <div class="styLNDesc" style="border-right-width:0px; width: 150mm;height:auto;">
     <span style="font-weight:bold;text-align:center;">(ii)</span>
      Related organizations
-    <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.................</span>
+    <span style="letter-spacing:4.1mm; font-weight:bold; font-size:7pt; margin-left:2mm">.......................</span>
 
   </div>
   <div class="styIRS990ScheduleDLineIndexMid" style="width: 10mm;border-left-width:1px">3a(ii)</div>
@@ -1733,7 +1733,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 <!-- BEGIN Part VI Title -->
     <div class="styBB" style="width:187mm;float:none;border-top:solid 1px;">
       <div class="styPartName" style="float:left;width:14mm;">Part VI</div>
-      <!--<div class="styPartDesc" style="width:172mm;">Investments&#151;Land, Buildings, and Equipment. --> 
+      <!--<div class="styPartDesc" style="width:172mm;">Investments - Land, Buildings, and Equipment. --> 
       <span class="styPartDesc" style="width:172mm;height:auto;">Land, Buildings, and Equipment.<br/>      
           <span style="font-size: 8pt;font-weight:normal">Complete if the organization answered "Yes" on Form 990, Part IV, line 11a.  
           See Form 990, Part X, line 10.
@@ -1913,7 +1913,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 <!-- Begin  Part VII -->
 <div class="styBB" style="width:187mm;float:none;border-top-width:0px;">
       <div class="styPartName" style="float:left;width:14mm;height:auto;">Part VII</div>
-      <div class="styPartDesc" style="width:172mm;height:auto;">Investments&#151;Other Securities. <br/>
+      <div class="styPartDesc" style="width:172mm;height:auto;">Investments - Other Securities. <br/>
       <span style="font-size: 8pt;font-weight:normal">
            Complete if the organization answered "Yes" on Form 990, Part IV, line 11b.
         </span>
@@ -2115,7 +2115,7 @@ Describe in Part XIII the intended uses of the organization's endowment funds.
 <!-- Part VIII -->
 <div class="styBB" style="width:187mm;float:none;border-top-width:1px;">
       <div class="styPartName" style="float:left;width:15mm;height:7.5mm;">Part VIII</div>
-       <div class="styPartDesc" style="width:172mm;height:7.5mm;">Investments&#151;Program Related.  
+       <div class="styPartDesc" style="width:172mm;height:7.5mm;">Investments - Program Related.  
        <span style="font-size: 8pt;font-weight:normal;height:4.5mm;">
           Complete if the organization answered 'Yes' on Form 990, Part IV, line 11c.
        

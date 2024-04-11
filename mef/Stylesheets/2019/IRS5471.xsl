@@ -1249,10 +1249,8 @@
 								</span>
 								<span class="styTableCell" style="width:70mm;border-color:black;border:none;font-weight:normal;
 								text-align:left;vertical-align:top;font-size:7pt;" scope="col">
-									Name and address (including corporate
-									department, if applicable) of person (or persons) 
-									with custody of the books and records of the
-									foreign corporation, and the location of such
+									Name and address (including corporate department, if applicable) of person (or persons) 
+									with custody of the books and records of the foreign corporation, and the location of such
 									books and records, if different 
 									<br/>
 									<xsl:if test="count($IRS5471Data/PersonWithRecordsCustody) &gt; 1">
@@ -1360,21 +1358,21 @@
 								</xsl:call-template>
 							</tbody>
 						</table>
-					</div>
+					</div>					
+					<xsl:if test="($Print != $Separated)
+						and (count($IRS5471AData/StockOfTheForeignCorporation) &gt;4)">
 						<xsl:call-template name="SetInitialDynamicTableHeight">
 							<xsl:with-param name="TargetNode" select="$IRS5471AData/StockOfTheForeignCorporation"/>
-								<xsl:with-param name="containerHeight" select="4"/>
-								<xsl:with-param name="headerHeight" select="2"/>
+							<xsl:with-param name="containerHeight" select="4"/>
+							<xsl:with-param name="headerHeight" select="2"/>
 							<xsl:with-param name="containerID" select=" 'SCctn' "/>
-							</xsl:call-template>
-					<!--   END A, B, i and ii   -->
-						<xsl:if test="($Print = $Separated)">
-							<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-						</xsl:if>
+						</xsl:call-template>
+					</xsl:if>					
+					<!--   END A, B, i and ii   -->						
 					<!--BEGIN FOOTER-->
 					<div style="width:187mm; border-color: black; border-style: solid; border-right-width: 0px;
 					 border-left-width: 0px; border-top-width: 1px; border-bottom-width: 0px;">
-							<span class="styBoldText">For Paperwork Reduction Act Notice, see instructions.</span>
+						<span class="styBoldText">For Paperwork Reduction Act Notice, see instructions.</span>
 						<div style="float:right">
 							Cat. No. 49958V 
 							<span style="width:90px"/>
@@ -1746,7 +1744,7 @@
 														</xsl:choose>
 														<span class="styTableCellPad"/>
 													</td>
-													<td class="styTableCell" style="text-align:left; border-color:black; width:60mm;">
+													<td class="styTableCell" style="text-align:left; border-color:black; width:60mm; height:6.5mm;">
 														<xsl:call-template name="PopulateText">
 															<xsl:with-param name="TargetNode" select="StockClassDesc"/>
 														</xsl:call-template>
@@ -1774,7 +1772,7 @@
 											</xsl:when>
 											<xsl:otherwise>
 												<tr>
-													<td class="styTableCell" style="border-color:black; width:50mm; text-align:left;">
+													<td class="styTableCell" style="border-color:black; width:50mm; text-align:left;height:6.5mm;">
 														<xsl:call-template name="PopulateText">
 															<xsl:with-param name="TargetNode" select="StockClassDesc"/>
 														</xsl:call-template>
@@ -2619,8 +2617,7 @@
 					<!--   BEGIN SCHEDULE F HEADER   -->
 					<div class="styBB" style="width:187mm; border-top: 1px solid black;">
 						<div class="styPartName" style="width: 22mm;">Schedule F</div>
-						<div class="styPartDesc" style="width: 165mm;">Balance Sheet
-								 </div>
+						<div class="styPartDesc" style="width: 165mm;">Balance Sheet</div>
 					</div>
 					<div class="styGenericDiv" style="width: 187mmm; font-size: 8pt">
 						<span class="styBoldText">Important:</span>
@@ -5795,11 +5792,15 @@
 					  &gt; 0)) and ($Print = $Separated)">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">
-							Form 5471, Schedule B Part I - U.S. Shareholders of Foreign Corporation (see instructions):
-						</span>
+						
 						<table class="styDepTbl" style="font-size:7pt;">
 							<thead class="styTableThead">
+							</thead>
+							<tfoot/>
+							<tbody>
+						<span class="styRepeatingDataTitle">
+							Form 5471, Schedule B Part I - U.S. Shareholders of Foreign Corporation (see instructions):
+						</span>						
 								<tr class="styDepTblHdr">
 									<th scope="col" class="styDepTblCell" style="width:50mm; text-align:center;">
 										<br/>
@@ -5820,12 +5821,10 @@
 										<b>(e)</b> Pro rata share of subpart F income (enter as a percentage)
 									</th>
 								</tr>
-							</thead>
-							<tfoot/>
-							<tbody>
+							
 								<xsl:for-each select="$IRS5471BData/USShareholdersOfForeignCorp">
 									<xsl:variable name="RowCount" select="count(ForeignCorporationStocks)"/>
-									<tr style="height:6mm;">
+									<tr style="height:10mm;">
 										<xsl:attribute name="class">
 											<xsl:choose>
 												<xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
@@ -5975,11 +5974,16 @@
 					  &gt; 0)) and ($Print = $Separated)">
 						<br/>
 						<br/>
+						
+						<table class="styDepTbl" style="font-size:7pt;">
+							<thead class="styTableThead">
+							</thead>
+							<tfoot/>
+							<tbody>
 						<span class="styRepeatingDataTitle">
 							Form 5471, Schedule B Part II - Direct Shareholders of Foreign Corporation (see instructions):
 						</span>
-						<table class="styDepTbl" style="font-size:7pt;">
-							<thead class="styTableThead">
+						
 								<tr class="styDepTblHdr">
 									<th scope="col" class="styDepTblCell" style="width:58mm; text-align:center;">
 										<b>(a)</b> Name, address, and identifying number of shareholder.  Also include country of incorporation or formation, if applicable.
@@ -5998,9 +6002,7 @@
 										<b>(e)</b> Pro rata share of subpart F income (enter as a percentage)
 									</th>-->
 								</tr>
-							</thead>
-							<tfoot/>
-							<tbody>
+							
 								<xsl:for-each select="$IRS5471BData/DirectShareholdersForeignCorp">
 									<xsl:variable name="RowCount" select="count(ForeignCorporationStocks)"/>
 									<tr style="height:6mm;">
@@ -6903,7 +6905,7 @@
 		<xsl:param name="RowNumber"/>
 		<xsl:if test="$RowNumber &lt; 4">
 			<tr>
-				<td class="styTableCell" style="border-color:black; width:60mm;">
+				<td class="styTableCell" style="border-color:black; width:60mm;height:6.5mm;">
 					<span class="styTableCellPad"/>
 				</td>
 				<td class="styTableCell" style="border-color:black; width:20mm; text-align:right;">

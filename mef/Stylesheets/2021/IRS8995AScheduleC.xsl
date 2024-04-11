@@ -298,8 +298,8 @@ column (a), and 2 for all trades, businesses, or aggregations
 						<div class="styLNDesc" style="height:10mm;">
 							Losses netted with income of other trades, businesses, or aggregations. Enter in the parentheses on line 5, <br />
 							the smaller of the absolute value of line 3 or line 4. Allocate this amount to each of the trades, businesses, or <br />
-							aggregations on line 1, column (b). See instructions
-							<span class="sty8995ASchCDotLn">..................</span>
+							aggregations on line 1, column (b). 
+							<span class="sty8995ASchCDotLn">......................</span>
 						</div>
 						<div class="styLNRightNumBox" style="height:10mm;"><br /><br />5</div>
 						<div class="styLNAmountBox" style="height:10mm;"><br /><br />

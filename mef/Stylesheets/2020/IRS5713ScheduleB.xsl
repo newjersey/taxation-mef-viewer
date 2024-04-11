@@ -26,16 +26,16 @@
     <script language="JavaScript" src="{$ScriptPath}/FormDisplay.js" type="text/javascript"/>
     <xsl:call-template name="InitJS"/>
     <style type="text/css">
-	<xsl:if test="not($Print) or $Print=''">
+	<!--<xsl:if test="not($Print) or $Print=''">-->
       <xsl:call-template name="IRS5713ScheduleBStyle"/>    
       <xsl:call-template name="AddOnStyle"/> 
-    </xsl:if>
+   <!-- </xsl:if>-->
     </style>
   </head>
   <span style="width:187mm">
 	<body class="styBodyClass">
 	  <form name="Form5713B">
-	<!-- start page header-->
+	<!-- start page header -->
 	 <xsl:call-template name="DocumentHeader"/>
         <div style="width:187mm;">
         <div class="styFNBox" style="width:32mm;height:28.5mm;">
@@ -55,17 +55,17 @@
         <div class="styFTBox" style="width:125mm;height:28.5mm;">
           <div class="styMainTitle"><b>Specifically Attributable Taxes</b><br/><b>and Income (Section 999(c)(2))</b></div>
 					<br/>
-          <div style="height:4mm;font-size: 7pt;"><img src="{$ImagePath}/5713SchB_Bullet.gif" alt="bullet image pointing to right" width="6"/>
+          <div style="height:4mm;font-size: 7pt;"><img src="{$ImagePath}/5713SchB_Bullet.gif" alt=" right arrow graphic" width="6"/>
 						<span style="width: 1mm;"/>Complete only if you are <b>not</b> computing a loss of tax benefits<br/> 
 						using the international boycott factor on Schedule A (Form 5713).
 					</div>
-					<div class="styFBT"><img src="{$ImagePath}/5713SchB_Bullet.gif" alt="bullet image pointing to right" width="6"/>
+					<div class="styFBT"><img src="{$ImagePath}/5713SchB_Bullet.gif" alt=" right arrow graphic" width="6"/>
 						<span style="width: 1mm;"/>Attach to Form 5713. 
-						<span style="width:15mm;"/><img src="{$ImagePath}/5713SchB_Bullet.gif" alt="bullet image pointing to right" width="6"/>
+						<span style="width:15mm;"/><img src="{$ImagePath}/5713SchB_Bullet.gif" alt=" right arrow graphic" width="6"/>
 						<span style="width: 1mm;"/>See instructions on page 2.
 					</div>
 					<div class="styFST" style="font-size:7pt;">
-					  <img src="{$ImagePath}/5713SchB_Bullet.gif" alt="MediumBullet" style="padding-right:1mm"/>Go to 
+					  <img src="{$ImagePath}/5713SchB_Bullet.gif" alt="right arrow graphic" style="padding-right:1mm"/>Go to 
 					  <a style="text-decoration:none;color:black;" href="http://www.irs.gov/forms-pubs/about-schedule-b-form-5713" title="Link to irs.gov">
 						<i>www.irs.gov/forms-pubs/about-schedule-b-form-5713 </i>
 					  </a>for the latest information.
@@ -127,7 +127,7 @@
           <xsl:with-param name="BackupName">IRS5713BOtherCountryBoycotted</xsl:with-param>
           </xsl:call-template>Other (identify)
       </label>  
-      <img src="{$ImagePath}/5713SchB_Bullet.gif" alt="bullet image pointing to right" width="6"/>
+      <img src="{$ImagePath}/5713SchB_Bullet.gif" alt=" right arrow graphic" width="6"/>
       <span style="width:.5mm;"/>
       <span class="styFixedUnderline" style="width:79mm;float:none;padding-bottom:0;">
 	  <xsl:call-template name="PopulateText">
@@ -425,7 +425,7 @@
       <tr>
         <td class="styTableCell" colspan="3" style="width:48mm;text-align:left;font-weight:bold;font-size:7pt;border-color:black;height:8mm;vertical-align:bottom;border-bottom-width: 2px;">&#160; o<span style="width:3mm;"/> Total
         <!--dotted line-->
-          <span style="letter-spacing:4mm;">...............<img src="{$ImagePath}/5713SchB_Bullet.gif" alt="Right pointing arrow large image" width="6"/></span>
+          <span style="letter-spacing:4mm;">...............<img src="{$ImagePath}/5713SchB_Bullet.gif" alt="right arrow graphic" width="6"/></span>
         </td>
         <td class="styTableCell" style="width:34mm;text-align:right;font-size:7pt;border-color:black;vertical-align:bottom;border-bottom-width: 2px;" nowrap="yes">
           <xsl:call-template name="PopulateAmount">
@@ -457,16 +457,17 @@
       <xsl:with-param name="containerID" select=" 'TP1ctn' "/>
    </xsl:call-template>
     <!--Begin Footer-->
-      <div class="pageEnd" style="width:187mm;">
+      <!--<div class="pageEnd" style="width:187mm;">-->
         <div class="stySmallText" style="width:110mm;padding-top:1mm"><span class="styBoldText">For Paperwork Reduction Act Notice, see the instructions for Form 5713.</span></div>
         <div class="stySmallText" style="width:20mm;padding-top:1mm">Cat. No. 12060S</div>
         <div class="stySmallText" style="width:56mm;text-align:right;padding-top:1mm"><span class="styBoldText">Schedule B (Form 5713) (Rev. 9-2018)</span>
         </div>
-      </div>
+      <!--</div>-->
       <!--End Footer-->
-       <br/>
-  <!-- BEGIN Left Over Table -->  
-    <div class="styLeftOverTitleLine" id="LeftoverData">
+      
+     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>   
+  <!-- BEGIN Left Over Table --> 
+       <div class="styLeftOverTitleLine" id="LeftoverData">
       <div class="styLeftOverTitle">
         Additional Data        
       </div>
@@ -588,7 +589,7 @@
             <td class="styDepTblCell" colspan="3" style="width:60mm;text-align:left;font-weight:bold;">
               <span style="width:3mm;"/> Total
               <span style="letter-spacing:4mm;">
-                ...............<img src="{$ImagePath}/5713SchB_Bullet.gif" alt="Right pointing arrow large image" width="6"/>
+                ...............<img src="{$ImagePath}/5713SchB_Bullet.gif" alt="right arrow graphic" width="6"/>
               </span>
             </td>
             <td class="styDepTblCell" style="width:32mm;text-align:right;">

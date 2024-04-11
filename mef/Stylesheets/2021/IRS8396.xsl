@@ -299,8 +299,8 @@
 						<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 							<div class="styLNLeftNumBoxSD">8</div>
 							<div class="styLNDesc">
-								Limitation based on tax liability. Enter the amount from the Credit Limit Worksheet (see <br/>
-								<span style="float:left;">instructions) </span>
+								Limitation based on tax liability. Enter the amount from line 3 of Credit Limit Worksheet in the <br/>
+								<span style="float:left;">instructions. </span>
 								<span class="styIRS8396Dots">.............................</span>
 							</div>
 							<div class="styLNRightNumBox" style="height:auto;"><br/>8</div>

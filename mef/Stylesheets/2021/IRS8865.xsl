@@ -7,6 +7,12 @@
 <!-- 07/20/2021 - Changes made for defect 67472 - Jeremy Nichols -->
 <!-- 07/20/2021 - Changes made for defect 67476 - Jeremy Nichols -->
 <!-- 07/20/2021 - Changes made for defect 67497 - Jeremy Nichols -->
+<!-- 09/29/2021 - Changes made for UWR 369303 - Jeremy Nichols -->
+<!-- 10/05/2021 - Additional changes made for defect 67497 - Jeremy Nichols -->
+<!-- 11/16/2021 - Changes made for defect 68265 - Jeremy Nichols -->
+<!-- 11/16/2021 - Changes made for defect 68290 - Jeremy Nichols -->
+<!-- 02/23/2022 - Changes made for defect 69044 - Jeremy Nichols -->
+<!-- 02/23/2022 - Changes made for defect 69045 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -49,6 +55,9 @@
 				<xsl:call-template name="GlobalStylesForm"/>
 			</head>
 			<body class="styBodyClass">
+				<xsl:call-template name="PopulatePreheader">
+					<xsl:with-param name="TargetNode" select="$FormData"/>
+				</xsl:call-template>
 				<xsl:call-template name="DocumentHeader"/>
 				<!-- BEGIN FORM HEADER -->
 				<div class="IRS8865_LineContainer">
@@ -371,26 +380,26 @@
 					</div>
 				</div>
 				<!-- New line E -->
-				<div class="IRS8865_LineContainer" style="width:187mm;padding-top:1mm;border-bottom:1px solid black;">
-					<div class="IRS8865_LineIndex">
+				<div class="IRS8865_LineContainer" style="width:187mm;padding-bottom:1mm;border-bottom:1px solid black;">
+					<div class="IRS8865_LineIndex" style="padding-top:1mm;">
 						E
 					</div>
-					<div class="IRS8865_LineDescLong" style="width:125mm;border-right-width:0px;">
+					<div class="IRS8865_LineDescLong" style="width:178mm;vertical-align:top;border-right-width:0px;">
 						<label>
 							<xsl:call-template name="PopulateLabel">
 								<xsl:with-param name="TargetNode" select="$FormData/ForeignFinancialAssetInd"/>
 								<xsl:with-param name="BackupName">IRS8865ForeignFinancialAssetInd</xsl:with-param>
 							</xsl:call-template>
 						  Check if any excepted specified foreign financial assets are reported on this form (See instructions)
+						<span class="IRS8865_DotSpacing" style="skiplink:display:none;">................</span>
 						</label>
+						<input type="checkbox" class="IRS8865_Checkbox" alt="Foreign Financial Assets">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/ForeignFinancialAssetInd"/>
+								<xsl:with-param name="BackupName">IRS8865ForeignFinancialAssetInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
 					</div>
-					<span class="IRS8865_DotSpacing" style="skiplink:display:none;">................</span>
-					<input type="checkbox" class="IRS8865_Checkbox" alt="Foreign Financial Assets">
-						<xsl:call-template name="PopulateCheckbox">
-							<xsl:with-param name="TargetNode" select="$FormData/ForeignFinancialAssetInd"/>
-							<xsl:with-param name="BackupName">IRS8865ForeignFinancialAssetInd</xsl:with-param>
-						</xsl:call-template>
-					</input>
 				</div>
 				<!-- line F -->
 				<div class="IRS8865_LineContainer">
@@ -4157,663 +4166,35 @@ based on all information of which preparer has any knowledge. </td>
 	
 				
 				
-				<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  -->
-				<xsl:for-each select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs">
-				  		<xsl:variable name="pos" select="position()"/>
 				<!-- superimposed image -->
-					<span style="z-index:1;position:absolute;padding-top:16mm;padding-left:4mm;vertical-align: top;" >
-						<img src="{$ImagePath}/8865_ForeignTrans.gif" alt="image displaying the word Foreign transactions" border="0" height="114mm;"/>
+					<span style="z-index:1;position:absolute;padding-top:10mm;vertical-align: top;" >
+						<img src="{$ImagePath}/8865_InternationalTrans.gif" alt="image displaying the word International Transactions" border="0" height="110mm" width="44mm"/>
   					</span>
-				<!-- Schedule K line 16a -->	
+				<!-- Schedule K line 16 -->	
 								
 				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;padding-top:0.5mm;"/>
+					<div class="IRS8865_LabelSpaceWide" style="height:50mm;padding-top:0.5mm;border-bottom:1px solid black;"/>
 
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-top:0.5mm;padding-right:9px;">
+					<div class="IRS8865_LineIndex" style="height:50mm;padding-top:0.5mm;padding-right:9px;border-bottom:1px solid black;">
 					
-					16a</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;padding-top:0.5mm;width:50mm;border-right-width:0px;">Name of country or U.S. possession
-
-             <img src="{$ImagePath}/8865_Bullet_Sm.gif" width="4" height="7" alt="right pointing bullet image" border="0"/>
-					</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;padding-top:0.5mm;width:84mm;border-bottom-width:1px;border-bottom-style:solid;">
-						<xsl:call-template name="PopulateText">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/ForeignCountryOrUSPossessionCd"/>
-						</xsl:call-template>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray" style="height:4.5mm;padding-top:0.5mm;"/>
-					<div class="IRS8865_MoneyFieldFiller" style="height:4.5mm;padding-top:0.5mm;"/>
-				</div>
-				<!-- Schedule K line 16b -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;">b</div>
-					<div class="IRS8865_LineDescLongSchK">Gross income from all sources
-
-             <span class="IRS8865_DotSpacing">...............................</span>
-					</div>
-					<div class="IRS8865_LineIndexMid">16b</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/GrossIncomeFromAllSourcesAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16c -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;">c</div>
-					<div class="IRS8865_LineDescLongSchK">Gross income sourced at partner level
-                          <xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/GrossIncomeSrceAtPrtnrLvlAmt"/>
-						</xsl:call-template>
-						<span style="width:2px;"/>
-						<span class="IRS8865_DotSpacing">..........................</span>
-						<span style="width:3px;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid">16c</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/GrossIncomeSrceAtPrtnrLvlAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"/>
-					<div class="IRS8865_LineDescLongSchK">
-						<span style="font-style:bold;">Foreign gross income sourced at partnership level</span>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray"/>
-					<div class="IRS8865_MoneyField" style="border-bottom-width:0px;">
-						<span style="width:1mm;"/>
-					</div>
-				</div>
-				<!-- Schedule K line 16d -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-right:9px;">d</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:30mm;border-right-width:0px;vertical-align: top;font-size:6pt;"> Reserved for future use
-                  <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm;border-style:solid; text-align: right; ">
-						<!--<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/FrgnGroIncmPrtshpLvl951AAmt"/>
-						</xsl:call-template>-->
-					</div>
-					<!-- Schedule K line 16e -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:82mm;padding-left:5px; border-right-width:1px;">
-						<span style="width:0.5mm;"/><span style="font-weight:bold;">e</span><span style="width:0.25mm;"/>
-						<span style="font-size:6pt"> Foreign branch category
-						</span>
-						<span class="IRS8865_DotSpacing">...............</span>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="height:4.5mm;">16e</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/FrgnGroIncmPrtshpLvlFrgnBrAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"></div>
-					<div class="IRS8865_LineDescLongSchK"><span style="width:1mm;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="border-bottom:0;"><span style="width:1mm;"/></div>
-					<div class="IRS8865_MoneyField" style="border-bottom:0;">
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16f -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-right:9px;">f</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:21mm;border-right-width:0px;vertical-align: top;font-size:6pt;"> Passive category
-                  <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm;border-style:solid; text-align: right; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmPssvAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16g -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:31mm;padding-left:5px; border-right-width:0px;">
-						<span style="font-weight:bold;">g</span><span style="width:0.5mm;"/>
-						<span style="font-size:6pt"> General category
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmGenCatAmt"/>
-						</xsl:call-template>
-						<span style="width:1px;"/>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm; text-align: right;border-left-width: 0px; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmGenCatAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16h -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:38mm; padding-left:5px;">
-						<span style="font-weight:bold;">h</span> Other <span style="font-style:italic;">(attach statement)</span>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="height:4.5mm;">16h</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"/>
-					<div class="IRS8865_LineDescLongSchK">
-						<span style="font-style:italic;">Deductions allocated and apportioned at partner level </span>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray"/>
-					<div class="IRS8865_MoneyFieldFiller"/>
-				</div>
-				<!-- Schedule K line 16i -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;">i</div>
-					<div class="IRS8865_LineDescLongSchK" style="width:28mm;border-right-width:0px;vertical-align: top;"> Interest expense
-					   <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="width:25mm;border-style:solid; text-align: right; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnerLevelDedIntExpnsAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16j -->
-					<div class="IRS8865_LineDescLongSchK" style="width:81mm;padding-left:5px;">
-						<span style="width:2mm;"/><span style="font-weight:bold;">j</span> Other
-						<span style="width:2mm;"/><span class="IRS8865_DotSpacing">.....................</span>
-					</div>
-					<div class="IRS8865_LineIndexMid">16j</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnerLevelDeductionsOtherAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"/>
-					<div class="IRS8865_LineDescLongSchK">
-						<span style="font-style:italic;">Deductions allocated and apportioned at partnership level to foreign source income</span>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray"/>
-					<div class="IRS8865_MoneyField" style="border-bottom-width:0px;">
-						
-					</div>
-				</div>
-				<!-- Schedule K line 16k -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-right:9px;">k</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:32mm;border-right-width:0px;vertical-align: top;font-size:7pt;"> Reserved for future use
-                  <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm;border-style:solid; text-align: right; ">
-						<!--<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/DedAllocApprtnPrtshpLvl951AAmt"/>
-						</xsl:call-template>-->
-					</div>
-					<!-- Schedule K line 16l -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:80mm;padding-left:5px; border-right-width:1px;">
-						<span style="width:2mm;"/><span style="font-weight:bold;">l</span><span style="width:0.5mm;"/>
-						<span style="font-size:7pt"> Foreign branch category
-						</span>
-						<span style="width:1.5mm;"/>
-						<span class="IRS8865_DotSpacing">............</span>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="height:4.5mm;">16l</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/DedAllocApprtnPrtshpLvlBrAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"></div>
-					<div class="IRS8865_LineDescLongSchK"><span style="width:1mm;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="border-bottom:0;"><span style="width:1mm;"/></div>
-					<div class="IRS8865_MoneyField" style="border-bottom:0;">
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnershipFrgnIncmDedOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16m -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-right:9px;">m</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:21mm;border-right-width:0px;vertical-      align: top;font-size:6pt;"> Passive category
-                  <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm;border-style:solid; text-align: right; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnIncmDedPssvAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16n -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:31mm;padding-left:5px; border-right-width:0px;">
-						<span style="font-weight:bold;">n</span><span style="width:0.5mm;"/>
-						<span style="font-size:6pt"> General category
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpFrgnIncmDedGenCatAmt"/>
-						</xsl:call-template>
-						<span style="width:1px;"/>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm; text-align: right;border-left-width: 0px;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpFrgnIncmDedGenCatAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16o -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:38mm; padding-left:5px;">
-						<span style="font-weight:bold;">o</span> Other <span style="font-style:italic;">(attach statement)</span>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="height:4.5mm;">16o</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnershipFrgnIncmDedOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16p -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:5.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:5.5mm;padding-top:2mm;padding-right:9px;">p</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:5.5mm;border-right-width:1px;vertical-align: top;"> Total foreign taxes (check one): 
-						<span style="width:2mm;"/>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-						<span style="width:2mm;"/>
-						<input type="checkbox" class="styCkbox" name="CheckTotalForeignTaxesPaid" alt="Check Total Foreign Taxes Paid">
+					16</div>
+					<div class="IRS8865_LineDescLongSchK" style="height:50mm;padding-top:0.5mm;width:134mm;border-right-width:1px;border-bottom:1px solid black;">
+						Attach Schedule K-2 (Form 8865), Partners’ Distributive Share Items–International, and check
+						this box to indicate that you are reporting items of international tax relevance
+						<img src="{$ImagePath}/8865_Bullet_Sm.gif" width="4" height="7" alt="right pointing bullet image" border="0"/> 
+						<span class="IRS8865_DotSpacing"> ..............</span>
+						<input type="checkbox" >
 							<xsl:call-template name="PopulateCheckbox">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesPaidInd"/>
-									<xsl:with-param name="BackupName">IRS8865ScheduleKDistributiveShareItemsFrgnTxs[<xsl:value-of select="$pos"/>]TotalForeignTaxesPaidInd</xsl:with-param>
+								<xsl:with-param name="TargetNode" select="IntntlTaxRelevanceRptgInd"/>
 							</xsl:call-template>
 						</input>
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesPaidInd"/>
-									<xsl:with-param name="BackupName">IRS8865ScheduleKDistributiveShareItemsFrgnTxs[<xsl:value-of select="$pos"/>]TotalForeignTaxesPaidInd</xsl:with-param>
-							</xsl:call-template>
-							<span style="padding-top:1.5mm;padding-bottom:0mm;"> Paid</span>
-						</label>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesPaidInd"/>
-						</xsl:call-template>
-						<span style="width:12px"/>
-						<input type="checkbox" class="styCkbox" name="CheckTotalForeignTaxesAccrued" alt="Check Total Foreign Taxes Accrued" id="CheckTotalForeignTaxesAccrued">
-							<xsl:call-template name="PopulateCheckbox">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAccruedInd"/>
-								<xsl:with-param name="BackupName">Check[<xsl:value-of select="$pos"/>]TotalForeignTaxesAccrued</xsl:with-param>
-							</xsl:call-template>
-						</input>
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAccruedInd"/>
-								<xsl:with-param name="BackupName">Check[<xsl:value-of select="$pos"/>]TotalForeignTaxesAccrued</xsl:with-param>
-							</xsl:call-template>
-							<span style="padding-top:2mm;padding-bottom:0mm;">  Accrued</span>
-						</label>
-						<span style="width:2mm;"/>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAccruedInd"/>
-						</xsl:call-template>
 					</div>
-					<div class="IRS8865_LineIndexMid" style="height:5.5mm;padding-top:2mm;">16p</div>
-					<div class="IRS8865_MoneyField" style="height:5.5mm;padding-top:2mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAmt"/>
-						</xsl:call-template>
-					</div>
+					<div class="IRS8865_LineIndexMidFillerGray" style="height:50mm;padding-top:0.5mm;border-bottom:1px solid black;border-right:0px;"/>
+					<div class="IRS8865_MoneyFieldFiller" style="height:50mm;padding-top:0.5mm;border-bottom:1px solid black;background-color:lightgrey;"/>
 				</div>
-				<!-- Schedule K line 16q -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="border-bottom-width:0px;"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;border-bottom-width:0px;">q</div>
-					<div class="IRS8865_LineDescLongSchK" style="border-bottom-width:0px;">Reduction in taxes available for credit
-              <span style="font-style:italic;">(attach statement)</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/ReductionInTaxesAvlblForCrAmt"/>
-						</xsl:call-template>
-						<span class="IRS8865_DotSpacing">...................</span>
-						<span style="width:3px;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid">16q</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/ReductionInTaxesAvlblForCrAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16r -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="border-bottom-width:1px;"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;border-bottom-width:1px;">r</div>
-					<div class="IRS8865_LineDescLongSchK" style="border-bottom-width:1px;">Other foreign tax information
-              <span style="font-style:italic;">(attach statement)</span>
-              <xsl:call-template name="SetFormLinkInline">
-								<xsl:with-param name="TargetNode" select=" $FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs"/>
-							</xsl:call-template>
-						<span class="IRS8865_DotSpacing">.......................</span>
-						<span style="width:3px;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="background-color:lightgrey;"/>
-					<div class="IRS8865_MoneyField" style="background-color:lightgrey;">
-						<!--          <xsl:call-template name="PopulateAmount">
-                <xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs/OtherForeignTaxInformation"/>
-              </xsl:call-template>    -->
-					</div>
-				</div>
-				</xsl:for-each>
-								<!--  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&   -->
-				<xsl:if test="normalize-space($FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs)=''">
-					<xsl:variable name="pos" select="position()"/>
-				<!-- superimposed image -->
-					<span style="z-index:1;position:absolute;padding-top:1mm;padding-top:5mm;padding-left:4mm;">
-						<img src="{$ImagePath}/8865_ForeignTrans.gif" alt="image displaying the word Foreign transactions" border="0"/>
-  					</span>
-				<!-- Schedule K line 16a -->	
-								
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;padding-top:0.5mm;"/>
-
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-top:0.5mm;padding-right:9px;">
-					
-					16a</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;padding-top:0.5mm;width:50mm;border-right-width:0px;">Name of country or U.S. possession
-
-             <img src="{$ImagePath}/8865_Bullet_Sm.gif" width="4" height="7" alt="right pointing bullet image" border="0"/>
-					</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;padding-top:0.5mm;width:84mm;border-bottom-width:1px;border-bottom-style:solid;">
-						<xsl:call-template name="PopulateText">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/ForeignCountryOrUSPossessionCd"/>
-						</xsl:call-template>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray" style="height:4.5mm;padding-top:0.5mm;"/>
-					<div class="IRS8865_MoneyFieldFiller" style="height:4.5mm;padding-top:0.5mm;"/>
-				</div>
-				<!-- Schedule K line 16b -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;">b</div>
-					<div class="IRS8865_LineDescLongSchK">Gross income from all sources
-
-             <span class="IRS8865_DotSpacing">...............................</span>
-					</div>
-					<div class="IRS8865_LineIndexMid">16b</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/GrossIncomeFromAllSourcesAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16c -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;">c</div>
-					<div class="IRS8865_LineDescLongSchK">Gross income sourced at partner level
-                          <xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/GrossIncomeSrceAtPrtnrLvlAmt"/>
-						</xsl:call-template>
-						<span class="IRS8865_DotSpacing">........................</span>
-						<span style="width:2px;"/>
-						<span style="width:3px;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid">16c</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/GrossIncomeSrceAtPrtnrLvlAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"/>
-					<div class="IRS8865_LineDescLongSchK">
-						<span style="font-style:italic;">Foreign gross income sourced at partnership level</span>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray"/>
-					<div class="IRS8865_MoneyField" style="border-bottom-width:0px;">
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16d -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-right:9px;">d</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:21mm;border-right-width:0px;vertical-align: top;font-size:6pt;"> Passive category
-                  <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm;border-style:solid; text-align: right; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmPssvAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16e -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:31mm;padding-left:5px; border-right-width:0px;">
-						<span style="font-weight:bold;">e</span><span style="width:0.5mm;"/>
-						<span style="font-size:6pt"> General category
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmGenCatAmt"/>
-						</xsl:call-template>
-						<span style="width:1px;"/>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm; text-align: right;border-left-width: 0px; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmGenCatAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16f -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:38mm; padding-left:5px;">
-						<span style="font-weight:bold;">f</span> Other <span style="font-style:italic;">(attach statement)</span>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="height:4.5mm;">16f</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnGroIncmOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"/>
-					<div class="IRS8865_LineDescLongSchK">
-						<span style="font-style:italic;">Deductions allocated and apportioned at partner level </span>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray"/>
-					<div class="IRS8865_MoneyFieldFiller"/>
-				</div>
-				<!-- Schedule K line 16g -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;">g</div>
-					<div class="IRS8865_LineDescLongSchK" style="width:27mm;border-right-width:0px;vertical-align: top;"> Interest expense
-           
-
-         <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="width:25mm;border-style:solid; text-align: right; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnerLevelDedIntExpnsAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16h -->
-					<div class="IRS8865_LineDescLongSchK" style="width:82mm;padding-left:5px;">
-						<span style="font-weight:bold;">h</span> Other
-             
-         
-           <span class="IRS8865_DotSpacing">.......................</span>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_LineIndexMid">16h</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnerLevelDeductionsOtherAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;"/>
-					<div class="IRS8865_LineDescLongSchK">
-						<span style="font-style:italic;">Deductions allocated and apportioned at partnership level to foreign source income</span>
-					</div>
-					<div class="IRS8865_LineIndexMidFillerGray"/>
-					<div class="IRS8865_MoneyField" style="border-bottom-width:0px;">
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnershipFrgnIncmDedOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16i -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:4.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:4.5mm;padding-right:9px;">i</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:21mm;border-right-width:0px;vertical-      align: top;font-size:6pt;"> Passive category
-                  <img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm;border-style:solid; text-align: right; ">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpLvlFrgnIncmDedPssvAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16J -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:31mm;padding-left:5px; border-right-width:0px;">
-						<span style="font-weight:bold;">j</span><span style="width:0.5mm;"/>
-						<span style="font-size:6pt"> General category
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpFrgnIncmDedGenCatAmt"/>
-						</xsl:call-template>
-						<span style="width:1px;"/>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;width:22mm; text-align: right;border-left-width: 0px;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PrtshpFrgnIncmDedGenCatAmt"/>
-						</xsl:call-template>
-					</div>
-					<!-- Schedule K line 16k -->
-					<div class="IRS8865_LineDescLongSchK" style="height:4.5mm;width:38mm; padding-left:5px;">
-						<span style="font-weight:bold;">k</span> Other <span style="font-style:italic;">(attach statement)</span>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="height:4.5mm;">16k</div>
-					<div class="IRS8865_MoneyField" style="height:4.5mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/PartnershipFrgnIncmDedOthAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16l -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="height:5.5mm;"/>
-					<div class="IRS8865_LineIndex" style="height:5.5mm;padding-top:2mm;padding-right:9px;">l</div>
-					<div class="IRS8865_LineDescLongSchK" style="height:5.5mm;border-right-width:1px;vertical-align: top;"> Total foreign taxes (check one): 
-             <span style="width:2mm;"/>
-						<img src="{$ImagePath}/8865_Bullet_Sm.gif" alt="Small Right Arrow" border="0"/>
-						<span style="width:2mm;"/>
-						<input type="checkbox" class="styCkbox">
-							<xsl:call-template name="PopulateCheckbox">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesPaidInd"/>
-								<xsl:with-param name="BackupName">IRS8865ScheduleK[<xsl:value-of select="$pos"/>]TotalForeignTaxesPaid</xsl:with-param>
-							</xsl:call-template>
-						</input>
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesPaidInd"/>
-								<xsl:with-param name="BackupName">IRS8865ScheduleK[<xsl:value-of select="$pos"/>]TotalForeignTaxesPaid</xsl:with-param>
-							</xsl:call-template>
-							<span style="padding-top:1.5mm;padding-bottom:0mm;"> Paid</span>
-						</label>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesPaidInd"/>
-						</xsl:call-template>
-						<span style="width:12px"/>
-						<input type="checkbox" class="styCkbox">
-							<xsl:call-template name="PopulateCheckbox">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAccruedInd"/>
-								<xsl:with-param name="BackupName">$FormData/IRS8865ScheduleK[<xsl:value-of select="$pos"/>]TotalForeignTaxesAccrued</xsl:with-param>
-							</xsl:call-template>
-						</input>
-						<label>
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAccruedInd"/>
-								<xsl:with-param name="BackupName">$FormData/IRS8865ScheduleK[<xsl:value-of select="$pos"/>]TotalForeignTaxesAccrued</xsl:with-param>
-							</xsl:call-template>
-							<span style="padding-top:2mm;padding-bottom:0mm;">  Accrued</span>
-						</label>
-						<span style="width:2mm;"/>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAccruedInd"/>
-						</xsl:call-template>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="height:5.5mm;padding-top:2mm;">16l</div>
-					<div class="IRS8865_MoneyField" style="height:5.5mm;padding-top:2mm;">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/TotalForeignTaxesAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16m -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="border-bottom-width:0px;"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;border-bottom-width:0px;">m</div>
-					<div class="IRS8865_LineDescLongSchK" style="border-bottom-width:0px;">Reduction in taxes available for credit
-              <span style="font-style:italic;">(attach statement)</span>
-						<xsl:call-template name="SetFormLinkInline">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/ReductionInTaxesAvlblForCrAmt"/>
-						</xsl:call-template>
-						<span class="IRS8865_DotSpacing">...................</span>
-						<span style="width:3px;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid">16m</div>
-					<div class="IRS8865_MoneyField">
-						<xsl:call-template name="PopulateAmount">
-							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs[$pos]/ReductionInTaxesAvlblForCrAmt"/>
-						</xsl:call-template>
-					</div>
-				</div>
-				<!-- Schedule K line 16n -->
-				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="border-bottom-width:1px;"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;border-bottom-width:1px;">n</div>
-					<div class="IRS8865_LineDescLongSchK" style="border-bottom-width:1px;">Other foreign tax information
-              <span style="font-style:italic;">(attach statement)</span>
-              <xsl:call-template name="SetFormLinkInline">
-								<xsl:with-param name="TargetNode" select=" $FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs"/>
-							</xsl:call-template>
-						<span class="IRS8865_DotSpacing">.......................</span>
-						<span style="width:3px;"/>
-					</div>
-					<div class="IRS8865_LineIndexMid" style="background-color:lightgrey;"/>
-					<div class="IRS8865_MoneyField" style="background-color:lightgrey;">
-						<!--          <xsl:call-template name="PopulateAmount">
-                <xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/DistributiveShareItemsFrgnTxs/OtherForeignTaxInformation"/>
-              </xsl:call-template>    -->
-					</div>
-				</div>
-				</xsl:if>
-
+				
+				
+				
 				<!-- superimposed image -->
 				<span style="z-index:1;position:absolute;padding-top:1mm;padding-left:0mm;">
 					<img src="{$ImagePath}/8865_Alternative.gif" alt="image displaying the word alternative minimum tax (AMT) item" border="0"/>
@@ -5047,9 +4428,9 @@ based on all information of which preparer has any knowledge. </td>
 				</div>
 				<!-- Schedule K line 20c -->
 				<div class="IRS8865_LineContainer">
-					<div class="IRS8865_LabelSpaceWide" style="border-bottom-width:1px;"/>
-					<div class="IRS8865_LineIndex" style="padding-right:9px;border-bottom-width:1px">c</div>
-					<div class="IRS8865_LineDescLongSchK" style="border-bottom-width:1px;">Other items and amounts           
+					<div class="IRS8865_LabelSpaceWide" style="border-bottom-width:0px;"/>
+					<div class="IRS8865_LineIndex" style="padding-right:9px;border-bottom-width:0px">c</div>
+					<div class="IRS8865_LineDescLongSchK" style="border-bottom-width:0px;">Other items and amounts           
            <span style="font-style:italic;"> (attach statement)</span>
 						<xsl:call-template name="SetFormLinkInline">
 						  <xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK"/>
@@ -5063,6 +4444,22 @@ based on all information of which preparer has any knowledge. </td>
 						<!--xsl:call-template name="PopulateAmount">
               <xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/OtherItemsAndAmountsSchedule"/>
             </xsl:call-template-->
+					</div>
+				</div>
+				<!-- Schedule K line 21 -->
+				<div class="IRS8865_LineContainer">
+					<div class="IRS8865_LabelSpaceWide" style="border-bottom-width:1px;"/>
+					<div class="IRS8865_LineIndex" style="padding-right:15px;border-bottom-width:1px;">21</div>
+					<div class="IRS8865_LineDescLongSchK" style="border-bottom-width:1px;">Total foreign taxes paid or accrued
+                  
+            <span class="IRS8865_DotSpacing">.............................</span>
+						<span style="width:3px;"/>
+					</div>
+					<div class="IRS8865_LineIndexMid">21</div>
+					<div class="IRS8865_MoneyField">
+						<xsl:call-template name="PopulateAmount">
+							<xsl:with-param name="TargetNode" select="$FormData/IRS8865ScheduleK/TotalForeignTaxesPaidOrAccrAmt"/>
+						</xsl:call-template>
 					</div>
 				</div>
 				<!-- Page Break and Footer-->

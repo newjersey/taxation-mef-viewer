@@ -1605,7 +1605,7 @@
 					<!-- Body -->
 					<!-- Table starts here -->
 					<!-- Retrevie all ForeignTaxCreditSource elements -->
-					<table class="styTable" cellspacing="0" style="width:187mm; height:auto; font-size:7pt; clear: left; float: left;">
+					<table class="styTable" cellspacing="0" style="width:188mm; height:auto; font-size:7pt; clear: left; float: left;">
 						<xsl:variable name="AllForeign" select="$Form1116Data/*[starts-with(name(), 'ForeignTaxCreditSource')]"/>
 						<xsl:choose>
 							<xsl:when test="count($Form1116Data/ForeignTaxCreditSource) &gt; 0">

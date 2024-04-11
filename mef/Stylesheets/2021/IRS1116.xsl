@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Jermaine Merchant on 08/18/2021 -->
+<!-- Last Modified by Jermaine Merchant on 05/02/2022 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -1593,7 +1593,7 @@
 					<!-- Body -->
 					<!-- Table starts here -->
 					<!-- Retrevie all ForeignTaxCreditSource elements -->
-					<table class="styTable" cellspacing="0" style="width:187mm; height:auto; font-size:7pt; clear: left; float: left;">
+					<table class="styTable" cellspacing="0" style="width:188mm; height:auto; font-size:7pt; clear: left; float: left;">
 						<xsl:variable name="AllForeign" select="$Form1116Data/*[starts-with(name(), 'ForeignTaxCreditSource')]"/>
 						<xsl:choose>
 							<xsl:when test="count($Form1116Data/ForeignTaxCreditSource) &gt; 0">
@@ -1809,31 +1809,30 @@
 							<div class="styLNRightNumBox" style="border-width: 0px 1px; padding: 0px; width: 8.25mm; height: 8mm; float: left; background-color: lightgrey;"/>
 						</div>
 						<!-- (10) ////////////////////////////////////////////////////-->
-						<div class="styIRS1116LineItem" style="width: 187mm; height: 7.5mm;">
-							<div class="styIRS1116LNLeftNumBox" style="width: 5mm; height: 8mm; text-align: left; padding-top: .5mm; padding-left: 1mm;">10</div>
-							<div class="styIRS1116LNDesc" style="width: 114mm; height: 8mm; padding-top: .5mm;">
+						<div class="styIRS1116LineItem" style="width: 187mm; height: 8mm;">
+							<div class="styIRS1116LNLeftNumBox" style="width: 5mm; height: 8mm; text-align: left; padding-top: 2mm; padding-left: 1mm;">10</div>
+							<div class="styIRS1116LNDesc" style="width: 114mm; height: 8mm; padding-top: 2mm;">
 							Enter the sum of any carryover of foreign taxes (from Schedule B, line 3, column (xiv)) plus any carrybacks to the current tax year
 							<span style="width:.1mm"/>
 								<!--Dotted Line-->
-								<span class="styDotLn" style="float:right;padding-right:4mm;padding-top:.0mm;">.............</span>
-								<br/>
+								<span class="styDotLn" style="float:right;padding-right:1mm;padding-top:.0mm;">.............</span>
 								<br/>
 							(If your income was section 951A category income (box a above Part I), leave line 10 blank.)
 							<br/>
 							</div>
 							<xsl:call-template name="CreateBoxLine7">
 								<xsl:with-param name="Number">10</xsl:with-param>
-								<xsl:with-param name="AmountBoxStyle">padding: 3.5mm 0.5mm 0mm 0mm; width: 26mm; height: 7.5mm; text-align: right; font-size: 5.75pt;
+								<xsl:with-param name="AmountBoxStyle">padding: 4.5mm 0.5mm 0mm 0mm; width: 26mm; height: 8.5mm; text-align: right; font-size: 5.75pt;
 							  border-right-width: 0px;</xsl:with-param>
-								<xsl:with-param name="NumberBoxStyle">padding: 3.5mm 0.5mm 0mm 0mm; height: 7.5mm; border-right-width: 0px;</xsl:with-param>
+								<xsl:with-param name="NumberBoxStyle">padding: 5mm 0.5mm 0mm 0mm; height: 8.5mm; border-right-width: 0px;</xsl:with-param>
 								<xsl:with-param name="TargetNode" select="$Form1116Data/ForeignTaxCrCarrybackOrOverAmt"/>
 							</xsl:call-template>
 							<div class="styLNRightNumBox" style="border-width: 0px 1px; padding: 0px; width: 8.25mm; height: 8mm; float: left; background-color: lightgrey;"/>
 						</div>
 						<!-- (11) ////////////////////////////////////////////////////-->
-						<div class="styIRS1116LineItem" style="width: 187mm; height: 8mm;">
-							<div class="styIRS1116LNLeftNumBox" style="width: 5mm; height: 8mm; text-align: left; padding-top: 8mm; padding-left: 1mm;">11</div>
-							<div class="styIRS1116LNDesc" style="width: 114mm; height: 8mm; padding-top: 8mm;">
+						<div class="styIRS1116LineItem" style="width: 187mm; height: 6mm;">
+							<div class="styIRS1116LNLeftNumBox" style="width: 5mm; height: 6mm; text-align: left; padding-top: 7mm; padding-left: 1mm;">11</div>
+							<div class="styIRS1116LNDesc" style="width: 114mm; height: 6mm; padding-top: 7mm;">
 						    Add lines 9 and 10
 							<span style="width:.5mm"/>
 								<!--Dotted Line-->
@@ -1841,17 +1840,17 @@
 							</div>
 							<xsl:call-template name="CreateBoxLine7">
 								<xsl:with-param name="Number">11</xsl:with-param>
-								<xsl:with-param name="AmountBoxStyle">padding: 8mm 0.5mm 0mm 0mm; width: 26mm; height: 12mm; text-align: right; font-size: 6.5pt; 
+								<xsl:with-param name="AmountBoxStyle">padding: 7mm .5mm 0mm 0mm; width: 26mm; height: 10.5mm; text-align: right; font-size: 6.5pt; 
 							  border-right-width: 0px;</xsl:with-param>
-								<xsl:with-param name="NumberBoxStyle">padding: 8mm 0mm 0mm; height: 12mm; border-right-width: 0px;</xsl:with-param>
+								<xsl:with-param name="NumberBoxStyle">padding: 7mm 0mm 0mm; height: 10.5mm; border-right-width: 0px;</xsl:with-param>
 								<xsl:with-param name="TargetNode" select="$Form1116Data/ForeignGrossTaxPaidOrAccrAmt"/>
 							</xsl:call-template>
-							<div class="styLNRightNumBox" style="border-width: 0px 1px; padding: 0px; width: 8.25mm; height: 8mm; float: left; background-color: lightgrey;"/>
+							<div class="styLNRightNumBox" style="border-width: 0px 1px; padding: 0px; width: 8.25mm; height: 9mm; float: left; background-color: lightgrey;"/>
 						</div>
 						<!-- (12) ////////////////////////////////////////////////////-->
 						<div class="styIRS1116LineItem" style="width: 187mm; height: 12mm;">
-							<div class="styIRS1116LNLeftNumBox" style="width: 5mm; height: 12mm; text-align: left; padding-top: 8mm; padding-left: 1mm;">12</div>
-							<div class="styIRS1116LNDesc" style="width: 114mm; height: 12mm; padding-top: 8mm;">
+							<div class="styIRS1116LNLeftNumBox" style="width: 5mm; height: 12mm; text-align: left; padding-top: 8.5mm; padding-left: 1mm;">12</div>
+							<div class="styIRS1116LNDesc" style="width: 114mm; height: 12mm; padding-top: 8.5mm;">
 							Reduction in foreign taxes (see instructions)
 						   <span style="width:.1mm"/>
 								<!--Dotted Line-->
@@ -1859,9 +1858,9 @@
 							</div>
 							<xsl:call-template name="CreateBoxLine12">
 								<xsl:with-param name="Number">12</xsl:with-param>
-								<xsl:with-param name="AmountBoxStyle">padding: 5.5mm 0.5mm 0mm 0.75mm; width: 26mm; height: 12mm; text-align: left; font-size: 5.75pt;
+								<xsl:with-param name="AmountBoxStyle">padding: 5mm 2mm 0mm 7mm; width: 26mm; height: 12mm; text-align: left; font-size: 5.75pt;
 							    border-right-width: 0px;</xsl:with-param>
-								<xsl:with-param name="NumberBoxStyle">padding: 8mm 0mm 0mm; height: 12mm; border-right-width: 0px;</xsl:with-param>
+								<xsl:with-param name="NumberBoxStyle">padding: 8.5mm 0mm 0mm; height: 12mm; border-right-width: 0px;</xsl:with-param>
 								<xsl:with-param name="TargetNode" select="$Form1116Data/ForeignTaxReductionAmt"/>
 							</xsl:call-template>
 							<div class="styLNRightNumBox" style="border-width: 0px 1px; padding: 0px; width: 8.25mm; height: 12mm; float: left; background-color: lightgrey;"/>
@@ -1909,7 +1908,7 @@
 							</div>
 							<xsl:call-template name="CreateBoxLine7">
 								<xsl:with-param name="Number">14</xsl:with-param>
-								<xsl:with-param name="AmountBoxStyle">padding: 4.5mm 0.5mm 0mm 0mm; width: 26mm; height: 8mm; text-align: right; font-size: 6.5pt;
+								<xsl:with-param name="AmountBoxStyle">padding: 4.5mm 0mm 0mm 0mm; width: 26mm; height: 8mm; text-align: right; font-size: 6.5pt;
 								border-right-width: 0px;</xsl:with-param>
 								<xsl:with-param name="NumberBoxStyle">padding: 4.5mm 0mm 0mm; height: 8mm; border-right-width: 0px;</xsl:with-param>
 								<xsl:with-param name="TargetNode" select="$Form1116Data/ForeignTaxAvailableForCrRedAmt"/>

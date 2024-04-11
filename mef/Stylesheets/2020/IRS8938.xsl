@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Iskilu Lawal 6/17/2020  UWR # 230731 Drop 1 -->
+<!-- Last Modified by Iskilu Lawal 1/28/2021  UWR # 230731 Drop 1 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="CommonPathRef.xsl"/>
@@ -39,8 +39,8 @@
 				</xsl:if> 
 				</style>
 			</head>
-			<body class="styBodyClass"  style="font-family:arial;width:187mm;">
-				<form name="Form8938">
+			<body class="styBodyClass" >
+				<form name="Form8938" style="font-family:arial;width:187mm;">
 					<xsl:call-template name="DocumentHeader"/>
 					<!--Title of Form -->
 					<div class="styBB" style="width:187mm;">
@@ -65,10 +65,10 @@
 								<span style="font-size:8pt;text-align:center;">
 									<span style=""/>
 									<img src="{$ImagePath}/8938_Bullet.gif" alt="MediumBullet"/>  
-			  Go to 
-				  <a href="http://www.irs.gov/Form8938" title="Link to irs.gov">
-                <i>www.irs.gov/Form8938 </i>
-            </a> for instructions and the latest information.
+			  Go to
+								<a style="text-decoration:none;color:black;" href="http://www.irs.gov/Form1065" title="Link to IRS.gov">               
+									<i>www.irs.gov/Form8938</i> for instructions and the latest information.
+								</a>
 			  <br/>
 									<span style="text-align:center;"/>
 									<img src="{$ImagePath}/8938_Bullet.gif" alt="MediumBullet"/>  
@@ -79,21 +79,14 @@
 									<xsl:with-param name="TargetNode" select="$FormData/CalendarYr"/>
 									<xsl:with-param name="BackupName">CalendarYear</xsl:with-param>
 								</xsl:call-template>
-								<!--<span style="width:6mm;">
-									<xsl:call-template name="PopulateReturnHeaderTaxYear"/>
-								</span> -->  
-								 or tax year beginning
-								<span style="width:18mm;border-bottom:1 solid black;">
+								 
+								or tax year beginning
+								<span style="width: 17mm;border-bottom:1 solid black;">
 									<!-- No need to send the parameters -->
-									<xsl:call-template name="PopulateMonthDayYear">
-										<xsl:with-param name="TargetNode" select="$FormData/TaxYearBeginDt"/>
-									</xsl:call-template>
-								</span>
-								<!--,
-									<span style="width: 10mm;">
-										<xsl:call-template name="PopulateReturnHeaderTaxYear"></xsl:call-template>
-									</span>			
-								-->
+									<xsl:call-template name="PopulateReturnHeaderTaxPeriodBeginDate"/>
+								</span>,  
+							  ending 
+								
 								 and ending 
 								<span style="width:18mm;border-bottom:1 solid black;">
 									<!-- No need to send the parameters -->
@@ -101,11 +94,7 @@
 										<xsl:with-param name="TargetNode" select="$FormData/TaxYearEndDt"/>
 									</xsl:call-template>
 								</span>
-			<!--
-									, 										<span style="width: 10mm;">
-											<xsl:call-template name="PopulateReturnHeaderTaxYear"></xsl:call-template>
-									</span>        
-								-->
+			
 		</span>
 							</div>
 						</div>
@@ -421,8 +410,8 @@ trust. (See instructions for definitions and what to do if you have more than on
 					</div>
 					<!-- PART 1 LINE 2 -->
 					<div class="styBB" style="width:187mm;font-size:8pt;">
-						<div class="styLNLeftLtrBox" style="padding-left:4mm;width:3mm">2.</div>
-						<div class="styLNDesc" style="width:151mm;padding-left:4mm;">
+						<div class="styLNLeftLtrBox" style="padding-left:4mm;width:6mm;">2.</div>
+						<div class="styLNDesc" style="width:148mm;padding-left:4mm;">
 		  Maximum Value of All Deposit Accounts
 			<span class="styDotLn" style="float:none;clear:none;padding-left:.2mm;">.....................</span>
 							<span style="width:2mm"/>$
@@ -631,9 +620,9 @@ trust. (See instructions for definitions and what to do if you have more than on
 					<div class="styBB" style="width:187mm;">
 						<div class="styPartName" style="font-size:10pt;padding-bottom:5mm;font-family:arial;
 		  text-align:center;padding-top:.5mm;">Part III</div>
-						<div class="styPartDesc" style="font-size:10pt;padding-left:3mm;float:left;clear:none;width:156mm;padding-top:1mm">
+						<div class="styPartDesc" style="font-size:10pt;padding-left:0mm;float:left;clear:none;width:173mm;padding-top:1mm;">
 			Summary of Tax Items Attributable to Specified Foreign Financial Assets
-			<span style="font-weight:normal;"> (see instructions)</span>
+			<span style="font-weight:normal;"> (see instructions) </span>
 						</div>
 					</div>
 					<!-- END PART IIl TITLE -->

@@ -2,6 +2,7 @@
 <!-- 06/15/2020 - Changes made for UWR 235750 - Jeremy Nichols -->
 <!-- 09/08/2020 - Changes made for UWR 238468 - Jeremy Nichols -->
 <!-- 09/21/2020 - Changes made for UWR 240855 - Jeremy Nichols -->
+<!-- 11/16/2020 - Changes made for defect 65208 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <xsl:include href="CommonPathRef.xsl"/>
@@ -351,7 +352,7 @@
                     </span>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/BiodieselOrRnwblDslMixtureCr/BiodieselMixtures/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -380,7 +381,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/BiodieselOrRnwblDslMixtureCr/AgriBiodieselMixtures/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -409,7 +410,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/BiodieselOrRnwblDslMixtureCr/RenewableDieselMixtures/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -479,7 +480,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/LiquefiedPetroleumGas/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -508,7 +509,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/PSeriesFuels/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -538,7 +539,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/CompressedNaturalGas/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -568,7 +569,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/LiquefiedHydrogen/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -598,7 +599,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/LiquidFuelFromCoal/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -628,7 +629,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/LiquidFuelFromBiomass/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -658,7 +659,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/LiquefiedNaturalGas/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -688,7 +689,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/LiquefiedGasFromBiomass/GallonsQty"/>
                     </xsl:call-template>
                   </td>
@@ -718,7 +719,7 @@
                     </xsl:call-template>
                   </td>
                   <td style="text-align:center;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
-                    <xsl:call-template name="PopulateAmount">
+                    <xsl:call-template name="PopulateText">
                       <xsl:with-param name="TargetNode" select="$FormData/AlternativeFuelCredit/CompressedGasFromBiomass/GallonsQty"/>
                     </xsl:call-template>
                   </td>

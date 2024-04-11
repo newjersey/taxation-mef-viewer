@@ -45,33 +45,33 @@
 					<div class="styGenericDiv" style=" width:187mm;">
 						<xsl:call-template name="DocumentHeader"/>
 					</div>
-					<div class="styTBB" style="width:187mm;height:20mm;">
-						<div class="styFNBox" style="width:29mm;height:20mm;border-right-width:2px;">
+					<div class="styTBB" style="width:187mm;height:19mm;">
+						<div class="styFNBox" style="width:29mm;height:19mm;border-right-width:2px;">
 							<div style="padding-top:1mm;">
 								Form <span class="styFormNumber"> 2220 <br/> </span>
 							</div>
-							<div style="padding-top:3.5mm;">
+							<div style="padding-top:2.5mm;">
 								<span class="styAgency">Department of the Treasury</span>
 								<br/>
 								<span class="styAgency">Internal Revenue Service</span>
 							</div>
 						</div>
-						<div class="styFTBox" style="width:128mm;height:16mm;padding-top:1mm;">
+						<div class="styFTBox" style="width:128mm;height:15mm;padding-top:1mm;">
 							<div style="height:8mm;" class="styMainTitle">Underpayment of Estimated Tax by Corporations</div>
-							<div class="styFBT" style="height:5mm;padding-top:2mm;">
-								<img src="{$ImagePath}/2220_Bullet.gif" alt="Bullet"/>
+							<div class="styFBT" style="height:5mm;padding-top:1mm;">
+								<img src="{$ImagePath}/2220_Bullet.gif" alt="Right arrow"/>
 Attach to the corporation's tax return.
 <br/>
-								<img src="{$ImagePath}/2220_Bullet.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/2220_Bullet.gif" alt="Right arrow"/>
 								Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/FORM2220" title="Link to irs.gov/FORM2220">
 									<i>www.irs.gov/FORM2220</i></a> for instructions and the latest information.
 </div>
 						</div>
-						<div class="styTYBox" style="border-left-width:2px;width:29mm;height:20mm;padding-top:1mm;">
+						<div class="styTYBox" style="border-left-width:2px;width:29mm;height:19mm;padding-top:1mm;">
 							<div class="styOMB">OMB No. 1545-0123</div>
-							<div class="styTaxYear" style="padding-top:3mm;">
-20<span class="styTYColor">21
-</span>
+							<div class="styTaxYear" style="padding-top:2mm;">
+								20<span class="styTYColor">21
+								</span>
 							</div>
 						</div>
 					</div>
@@ -211,14 +211,14 @@ Look-back interest included on line 1 under section
 								<!-- Dotted Lines -->
 								<span class="styDotLn" style="float:right;">..................</span>
 							</div>
-							<div class="styLNRightNumBox" style="height:11mm;padding-top:7mm;">2b</div>
-							<div class="styLNAmountBox" style="height:11mm;padding-top:7mm;">
+							<div class="styLNRightNumBox" style="height:10mm;padding-top:6mm;">2b</div>
+							<div class="styLNAmountBox" style="height:10mm;padding-top:6mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form2220Data/LookbackInterestIncludedAmt"/>
 								</xsl:call-template>
 							</div>
-							<div class="styLNRightNumBoxNBB" style="height:11mm;background-color:lightgrey;padding-top:1.4mm;"/>
-							<div class="styLNAmountBoxNBB" style="height:11mm;padding-top:1.4mm;"/>
+							<div class="styLNRightNumBoxNBB" style="height:10mm;background-color:lightgrey;padding-top:0.4mm;"/>
+							<div class="styLNAmountBoxNBB" style="height:10mm;padding-top:0.4mm;"/>
 						</div>
 						<!--Line 2c -->
 						<div style="width:187mm;">
@@ -520,25 +520,25 @@ of one column before going to the next column.
 						</div>
 						<!--Line 12 -->
 						<div style="width:187mm;">
-							<div class="styLNLeftNumBox" style="height:8mm;">12</div>
-							<div class="styIRS2220LNDescTbl" style="height:8mm;">
+							<div class="styLNLeftNumBox" style="height:7mm;">12</div>
+							<div class="styIRS2220LNDescTbl" style="height:7mm;">
 							Enter amount, if any, from line 18 of the <span style="float:left;">preceding column</span>
 								<!--Dotted Line -->
 								<span class="styDotLn" style="float:right;">........</span>
 							</div>
-							<div class="styLNRightNumBox" style="height:8mm;padding-top:4mm;">12</div>
-							<div class="styShadingCell" style="border-bottom-width:1px;height:8mm;width:28mm;"/>
-							<div class="styIRS2220Part2LNCell" style="height:8mm;padding-top:4mm;">
+							<div class="styLNRightNumBox" style="height:7mm;padding-top:3.5mm;">12</div>
+							<div class="styShadingCell" style="border-bottom-width:1px;height:7mm;width:28mm;"/>
+							<div class="styIRS2220Part2LNCell" style="height:7mm;padding-top:3.5mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form2220Data/Overpayment1Amt"/>
 								</xsl:call-template>
 							</div>
-							<div class="styIRS2220Part2LNCell" style="height:8mm;padding-top:4mm;">
+							<div class="styIRS2220Part2LNCell" style="height:7mm;padding-top:3.5mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form2220Data/Overpayment2Amt"/>
 								</xsl:call-template>
 							</div>
-							<div class="styIRS2220Part2LNCell" style="height:8mm;padding-top:4mm;">
+							<div class="styIRS2220Part2LNCell" style="height:7mm;padding-top:3.5mm;">
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$Form2220Data/Overpayment3Amt"/>
 								</xsl:call-template>
@@ -717,7 +717,6 @@ Go to Part IV on page 2 to figure the penalty. Do not go to Part IV if there are
 </div>
 					</div>
 					<!--Begin Page 1 Footer -->
-					<p style="page-break-after: always">
 						<div class="pageEnd" style="width:187mm;">
 							<div class="stySmallText" style="width:110mm;">
 								<span class="styBoldText">For Paperwork Reduction Act Notice, see separate instructions.</span>
@@ -726,7 +725,7 @@ Go to Part IV on page 2 to figure the penalty. Do not go to Part IV if there are
 							<div class="stySmallText" style="width:36mm;text-align:right;">Form<span class="styBoldText">2220</span>(2021)</div>
 						</div>
 						<!--End Page 1 Footer -->
-					</p>
+						<p style="page-break-before: always"/>
 						<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 							<!-- Page 2 Header -->
 							<div style="width:187mm;padding-top:.5mm;">
@@ -1523,10 +1522,10 @@ Underpayment on line 17 x
 Number of days on line 21
 </span>
 										<span style="width:2px"/>
-x 5% (0.05)
+x 3% (0.03)
 <br/>
 										<span style="width:60px"/>
-366
+365
 </div>
 									<div class="styLNRightNumBox" style="height:11mm;padding-top:7mm;">22</div>
 									<div class="styIRS2220Part3LNCell" style="height:11mm;padding-top:7mm;">
@@ -1565,10 +1564,10 @@ Underpayment on line 17 x
 										<span style="width:33mm;border-bottom: 1px solid black;">
 Number of days on line 23</span>
 										<span style="width:2px"/>
-x *%
+x *% (*)
 <br/>
 										<span style="width:60px"/>
-366
+365
 </div>
 									<div class="styLNRightNumBox" style="height:11mm;padding-top:7mm;">24</div>
 									<div class="styIRS2220Part3LNCell" style="height:11mm;padding-top:7mm;">
@@ -1607,10 +1606,10 @@ Underpayment on line 17 x
 										<span style="width:33mm;border-bottom: 1px solid black;">
 Number of days on line 25</span>
 										<span style="width:2px"/>
-x *%
+x *% (*)
 <br/>
 										<span style="width:60px"/>
-366
+365
 </div>
 									<div class="styLNRightNumBox" style="height:11mm;padding-top:7mm;">26</div>
 									<div class="styIRS2220Part3LNCell" style="height:11mm;padding-top:7mm;">
@@ -1648,7 +1647,7 @@ Underpayment on line 17 x
 <br/>
 										<span style="width:33mm;border-bottom: 1px solid black;">Number of days on line 27</span>
 										<span style="width:2px"/>
-x *%
+x *% (*)
 <br/>
 										<span style="width:60px"/>
 365
@@ -1884,24 +1883,23 @@ You can also call 1-800-829-4933 to get interest rate information.
 					<!--Begin Page 2 Footer -->
 		<xsl:choose>
 			<xsl:when test="$Print != $Separated and count($Form2220Data/PaymentPenaltyComputationTxt) &gt; 4">
-					<div class="pageEnd" style="width:187mm">
+					<div class="styStdDiv pageEnd" style="width:187mm">
 						<div style="float:right;">
 							<span style="width:80px;"/>Form <span class="styBoldText"> 2220</span> (2021)
 						</div>
 					</div>
 			</xsl:when>
 			<xsl:otherwise>
-					<p class="pageEnd" style="width:187mm">
+					<div class="styStdDiv pageEnd" style="width:187mm">
 						<div style="float:right;">
 							<span style="width:80px;"/>Form <span class="styBoldText"> 2220</span> (2021)
 						</div>
-					</p>
+					</div>
 			</xsl:otherwise>
 		</xsl:choose>
 					<!--End Page 2 Footer -->
 						<!-- Page 3 Header -->
 						<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
-					<p style="page-break-before: always"/>
 							<div style="float:left;">Form 2220 (2021)<span style="width:148mm;"/>
 						</div>
 							<div style="float:right;"> Page <span style="font-weight:bold;font-size:8pt;"> 3 </span>
@@ -2758,7 +2756,7 @@ Total tax after credits. Subtract line 18 from line 17. If zero or less, enter -
 							</div>
 						</div>
 						<!--Page Footer -->
-						<div class="pageEnd" style="width:187mm">
+						<div class="styStdDiv pageEnd" style="width:187mm">
 							<div style="float:right;">
 								<span style="width:80px;"/>
 Form
@@ -2768,7 +2766,6 @@ Form
 						</div>
 
 						<!-- Page 4 Header -->
-					<p style="page-break-before: always">
 						<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 							<div style="width:187mm;padding-top:.5mm;">
 								<div style="float:left;">Form 2220 (2021)<span style="width:148mm;"/></div>
@@ -2776,7 +2773,6 @@ Form
 								</div>
 							</div>
 						</div>
-					</p>
 						<!-- END Page 4 Header -->
 					<!-- Part II -->
 					<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
@@ -3471,7 +3467,7 @@ Subtract line 38 of the preceding column from line 37 of the preceding column
 						</div>
 					</div>
 					<!--Page Footer -->
-					<div class="pageEnd" style="width:187mm">
+					<div class="styStdDiv pageEnd" style="width:187mm">
 						<div style="float:right;">
 							<span style="width:80px;"/>
 Form
@@ -3484,7 +3480,6 @@ Form
 					<!--END Page Footer -->
 					<!-- BEGIN Left Over Table -->
 					<!-- Additonal Data Title Bar and Button -->
-					<p style="page-break-before: always">
 					<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 						<div class="styLeftOverTitleLine" id="LeftoverData">
 							<div class="styLeftOverTitle">
@@ -3517,7 +3512,8 @@ Line 1 - Section 338 Gain Amount
 						</table>
 						<br/>
 					</div>
-</p>
+									<div class="styStdDiv pageEnd" style="width:187mm;"/>
+
 					<!-- END Left Over Table -->
 					<!-- ********************************************************************************** -->
 					<!-- Begin Separated repeating data for Part IV -->
@@ -3658,10 +3654,10 @@ Underpayment on line 17 x
 Number of days on line 21
 </span>
 														<span style="width:2px"/>
-x 5% (0.05)
+x 3% (0.03)
 <br/>
 														<span style="width:60px"/>
-366
+365
 </td>
 													<td class="styDepTblCellRNBSRD">22</td>
 													<td class="styDepTblCellSRD">
@@ -3729,10 +3725,10 @@ Underpayment on line 17 x
 Number of days on line 23
 </span>
 														<span style="width:2px"/>
-x *%
+x *% (*)
 <br/>
 														<span style="width:60px"/>
-366
+365
 </td>
 													<td class="styDepTblCellRNBSRD">24</td>
 													<td class="styDepTblCellSRD">
@@ -3798,10 +3794,10 @@ Underpayment on line 17 x
 														<span style="width:33mm;border-bottom: 1px solid black;">
 Number of days on line 25</span>
 														<span style="width:2px"/>
-x *%
+x *% (*)
 <br/>
 														<span style="width:60px"/>
-366
+36
 </td>
 													<td class="styDepTblCellRNBSRD">26</td>
 													<td class="styDepTblCellSRD">
@@ -3867,7 +3863,7 @@ Underpayment on line 17 x
 													<br/>
 														<span style="width:33mm;border-bottom: 1px solid black;">Number of days on line 27</span>
 														<span style="width:2px"/>
-x *%
+x *% (*)
 <br/>
 														<span style="width:60px"/>
 365
@@ -4212,8 +4208,8 @@ Add lines 22, 24, 26, 28, 30, 32, 34, and 36
 											</tbody>
 										</table>
 									</div>
-<!--					<p style="page-break-after: always"/>
--->								</xsl:if>
+									<div class="styStdDiv pageEnd" style="width:187mm;"/>
+						</xsl:if>
 							</xsl:for-each>
 							<!-- ****************************************************************************** -->
 						</xsl:if>

@@ -83,8 +83,8 @@
           <div style="font-weight:bold; font-size:7.5pt; padding-top:2mm;">
           <img src="{$ImagePath}/990SchB_Bullet.gif" alt="Arrow Bullet"/> 
             Attach to Form 990, 990-EZ, or 990-PF.<br/>
-          <div style="text-align:center;"><img src="{$ImagePath}/990SchB_Bullet.gif" alt="Arrow Bullet"/> Go to <!--www.irs.gov/form990.--><a href="http://www.irs.gov/form990" title="Link to IRS.gov">
-                <i>www.irs.gov/Form990</i></a> for the latest information. 
+          <div style="text-align:center;"><img src="{$ImagePath}/990SchB_Bullet.gif" alt="Arrow Bullet"/> Go to <!--www.irs.gov/form990.-->
+          <a href="http://www.irs.gov/form990" title="Link to IRS.gov"> <i>www.irs.gov/Form990</i></a> for the latest information. 
             
           </div>
           </div>
@@ -134,7 +134,7 @@
           </div>
         </div>
         <div class="styGenericDiv" style="height:15mm; width:40mm">Form 990 or 990-EZ</div>
-                            <!-- Is it a 501(c)(      ) checkbox -->
+        <!-- Is it a 501(c)(      ) checkbox -->
         <div style="">
           <input type="Checkbox" class="styIRS990ScheduleBCkbox" alt="Organization501c">
             <xsl:call-template name="PopulateCheckbox">
@@ -293,8 +293,10 @@
             For an organization described in section 501(c)(3) filing Form 990 or 990-EZ that met the 
             33<font style="font-family: 'Arial Narrow'; font-size: smaller;"><sup>1</sup>/3</font>% 
             support test of the regulations <br/>under sections 509(a)(1) and 170(b)(1)(A)(vi), that checked Schedule A (Form 990 or 990-EZ),
-Part II, line 13, 16a, or 16b, and that received from any one contributor, during the year, total contributions of the greater of <b>(1)</b> $5,000 or <b>(2)</b> 2% of the amount on (i) Form 990, Part VIII, line 1h, or (ii) Form 990-EZ, line 1. Complete Parts I and II. 
-         </label>
+            Part II, line 13, 16a, or 16b, and that received from any one contributor, during the year, total contributions of the greater of 
+            <b>(1)</b> $5,000 or <b>(2)</b> 2% of the amount on (i) Form 990, Part VIII, line 1h, or (ii) Form 990-EZ, line 1. Complete Parts 
+            I and II. 
+          </label>
         </div>
       </div>
       
@@ -313,7 +315,9 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
           <xsl:with-param name="TargetNode" select="$Form990ScheduleBData/TotContriRcvdMore1000Ind"/>
           <xsl:with-param name="BackupName">IRS990SchBSpclRuleRcvdTotContriMore1000</xsl:with-param>
           </xsl:call-template>
-           For an organization described in section 501(c)(7), (8), or (10) filing Form 990 or 990-EZ that received from any one contributor,<br />during the year, total contributions of more than $1,000 <i>exclusively</i> for religious, charitable, scientific, literary, or educational purposes, or for the prevention of cruelty to children or animals. Complete Parts I, II, and III.
+           For an organization described in section 501(c)(7), (8), or (10) filing Form 990 or 990-EZ that received from any one contributor,
+           <br />during the year, total contributions of more than $1,000 <i>exclusively</i> for religious, charitable, scientific, literary, 
+           or educational purposes, or for the prevention of cruelty to children or animals. Complete Parts I, II, and III.
           </label>
         </div>
       </div>
@@ -333,20 +337,30 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
           <xsl:with-param name="TargetNode" select="$Form990ScheduleBData/TotContriRcvdUpTo1000Ind"/>
           <xsl:with-param name="BackupName">IRS990SchBSpclRuleRcvdTotContriUpTo1000</xsl:with-param>
           </xsl:call-template>
-            For an organization described in section 501(c)(7), (8), or (10) filing Form 990 or 990-EZ that received from any one contributor,<br />during the year, contributions <i>exclusively</i> for religious, charitable, etc., purposes, but no such contributions totaled more than $1,000. If this box is checked, enter here the total contributions that were received during the year for an <i>exclusively</i> religious, charitable, etc., purpose. Don't complete any of the parts unless the <b>General Rule</b> applies to this organization because it received <i>nonexclusively</i> religious, charitable, etc., contributions totaling $5,000 or more during the year
+            For an organization described in section 501(c)(7), (8), or (10) filing Form 990 or 990-EZ that received from any one contributor,
+            <br />during the year, contributions <i>exclusively</i> for religious, charitable, etc., purposes, but no such contributions 
+            totaled more than $1,000. If this box is checked, enter here the total contributions that were received during the year for an 
+            <i>exclusively</i> religious, charitable, etc., purpose. Don't complete any of the parts unless the <b>General Rule</b> applies to
+             this organization because it received <i>nonexclusively</i> religious, charitable, etc., contributions totaling $5,000 or more 
+             during the year
           </label>        
           <span class="styIRS990ScheduleBDotLn">      
             .........
           </span>          
           <img src="{$ImagePath}/990SchB_Bullet.gif" alt="Arrow Bullet"/> <span style="width:1px;" /> $ <span style="width:1px;" />
           <span style="border-bottom:1px solid black; width:30mm; text-align:center; color:blue">
-            <xsl:call-template name="PopulateAmount"><xsl:with-param name="TargetNode" select="$Form990ScheduleBData/TotContriRcvdUpTo1000Ind/@totalContributionsAmt"/></xsl:call-template>
+            <xsl:call-template name="PopulateAmount"><xsl:with-param name="TargetNode" 
+				select="$Form990ScheduleBData/TotContriRcvdUpTo1000Ind/@totalContributionsAmt"/>
+			</xsl:call-template>
           </span>    
         </div>
       </div>
       
       <div style="border-bottom:1px solid black; width:187mm; margin-top:5mm; padding-bottom:3mm">      
-        <b>Caution:</b>&#160;An organization that isn't covered by the General Rule and/or the Special Rules doesn't file Schedule B (Form 990,<br />990-EZ, or 990-PF), but it <b>must</b> answer “No” on Part IV, line 2, of its Form 990; or check the box on line H of its Form 990-EZ <br />or on its Form 990PF, Part I, line 2, to certify that it doesn't meet the filing requirements of Schedule B (Form 990,<br/>990-EZ, or 990-PF).
+        <b>Caution:</b>&#160;An organization that isn't covered by the General Rule and/or the Special Rules doesn't file Schedule B 
+        (Form 990,<br />990-EZ, or 990-PF), but it <b>must</b> answer “No” on Part IV, line 2, of its Form 990; or check the box on line H 
+        of its Form 990-EZ <br />or on its Form 990PF, Part I, line 2, to certify that it doesn't meet the filing requirements of Schedule B 
+        (Form 990,<br/>990-EZ, or 990-PF).
       </div>      
       
       <div style="width:187mm; font-size:7pt; border-top:1px solid black">
@@ -356,13 +370,13 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
       </div>
       <div class="pageEnd"/>
       <div style="width:187mm;padding-top:2mm;border-bottom:0px ">
-						<span style="float:none">      
-        Schedule B (Form 990, 990-EZ, or 990-PF) (2020)
-      </span>  
-						<span style="float:none; padding-left:100mm">
-    Page <span class="styBoldText" style="font-size: 8pt; padding-top:5mm;">2</span>
-						</span>
-					</div>
+		<span style="float:none">      
+			Schedule B (Form 990, 990-EZ, or 990-PF) (2020)
+		</span>  
+		<span style="float:none; padding-left:100mm">
+			Page <span class="styBoldText" style="font-size: 8pt; padding-top:5mm;">2</span>
+		</span>
+	  </div>
 
     <!-- BEGIN Part I -->
       <xsl:variable name="totalRowCount1" select="count($Form990ScheduleBData/ContributorInformationGrp)"/>    
@@ -414,10 +428,10 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
 						<div style="float:left">      
         Schedule B (Form 990, 990-EZ, or 990-PF) (2020)
       </div>  
-						<div style="float:right">
-    Page <span class="styBoldText" style="font-size: 8pt; ">3</span>
-						</div>
-					</div>
+	  <div style="float:right">
+			Page <span class="styBoldText" style="font-size: 8pt; ">3</span>
+	  </div>
+	</div>
       
       <table class="styIRS990ScheduleBTable" cellspacing="0" cellpadding="0" border="0" style="width:187mm;">  
           
@@ -456,21 +470,18 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
     <!-- END Part II -->      
       
     <!-- BEGIN Part III -->  
-<xsl:variable name="totalRowCount3" select="count($Form990ScheduleBData/CharitableContributionsDetail)"/>                
-      <xsl:variable name="containerHeight3" select="4"/>    
+	<xsl:variable name="totalRowCount3" select="count($Form990ScheduleBData/CharitableContributionsDetail)"/>                
+	<xsl:variable name="containerHeight3" select="4"/>    
           
     <div class="pageEnd"/>
      <div style="width:187mm;padding-top:3mm;">
-			<div style="float:left">      
-				Schedule B (Form 990, 990-EZ, or 990-PF) (2020)
-			</div>  
-			<div style="float:right">
-				Page <span class="styBoldText" style="font-size: 8pt; ">4</span>
-			</div>
-	</div>
-					
-    
-      
+		<div style="float:left">      
+			Schedule B (Form 990, 990-EZ, or 990-PF) (2020)
+		</div>  
+		<div style="float:right">
+			Page <span class="styBoldText" style="font-size: 8pt; ">4</span>
+		</div>
+	 </div>      
         <table class="styIRS990ScheduleBTable" cellspacing="0" cellpadding="0" border="0" style="width:187mm;">   
              
         <xsl:choose>
@@ -479,7 +490,7 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
               <xsl:with-param name="max">
                 <xsl:choose>
                      <xsl:when test="$totalRowCount3 &gt; $containerHeight3">     
-                    <xsl:value-of select="ceiling($totalRowCount3 div 6)*6"/>
+                    <xsl:value-of select="ceiling($totalRowCount3 div 4)*4"/>
                      </xsl:when>
                      <xsl:otherwise>
                         <xsl:value-of select="$containerHeight"/>
@@ -504,12 +515,12 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
 			  </xsl:call-template>              
 			</xsl:otherwise>
 		</xsl:choose>
-        </table>                          
+        </table>
               
     <!-- END Part III -->              
       
-      <div class="pageEnd" />
-      <p style="page-break-before:always"/>
+      <div class="pageEnd"/>
+      <div style="page-break-before:always"/>
       
       <div class="styLeftOverTitleLine" id="LeftoverData" style="font-family:verdana, arial, sans-serif">
         <div class="styLeftOverTitle">
@@ -527,14 +538,16 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
       </table>    
 
       <xsl:if test="($Print = $Separated) and (count($Form990ScheduleBData/ContributorInformationGrp) &gt; 6)">
-        <span class="styRepeatingDataTitle">Form 990 Schedule B, Part I - Contributors (See Instructions) Use duplicate copies of Part I if additional space is needed.</span>
+        <span class="styRepeatingDataTitle">Form 990 Schedule B, Part I - Contributors (See Instructions) Use duplicate copies of Part I if 
+			additional space is needed.</span>
         <table class="styDepTbl" cellspacing="0" cellpadding="0" border="0" style="width:187mm;font-size:6pt;">  
           <xsl:call-template name="p1SRDTemplate"/>
         </table>
       </xsl:if>
 
       <xsl:if test="($Print = $Separated) and (count($Form990ScheduleBData/NonCashPropertyContributionGrp) &gt; 6)"> <br/>
-        <span class="styRepeatingDataTitle">Form 990 Schedule B, Part II - Noncash Property (See Instructions) Use duplicate copies of Part II if additional space is needed</span>
+        <span class="styRepeatingDataTitle">Form 990 Schedule B, Part II - Noncash Property (See Instructions) Use duplicate copies of Part II 
+			if additional space is needed</span>
         <table class="styDepTbl" cellspacing="0" cellpadding="0" border="0" style="width:187mm;font-size:7pt;">  
           <xsl:call-template name="p2SRDTemplate"/>
         </table>
@@ -542,12 +555,16 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
       
      <xsl:if test="($Print = $Separated) and (count($Form990ScheduleBData/CharitableContributionsDetail) &gt; 4)"> 
      <br/>
-        <span class="styRepeatingDataTitle"><b>Form 990 Schedule B, Part III - <i>Exclusively</i> religious, charitable, etc., contributions to organizations described in section 501(c)(7), (8), or (10) that total more than $1,000 for the year from any one contributor.</b> Complete columns <b>(a)</b> through <b>(e)</b> and the following line entry. For organizations completing Part III, enter the total of <i>exclusively</i> religious, charitable, etc., contributions of <b>$1,000 or less</b> for the year. (Enter this information once. See instructions.) 
+        <span class="styRepeatingDataTitle"><b>Form 990 Schedule B, Part III - <i>Exclusively</i> religious, charitable, etc., contributions 
+			to organizations described in section 501(c)(7), (8), or (10) that total more than $1,000 for the year from any one contributor.
+			</b> Complete columns <b>(a)</b> through <b>(e)</b> and the following line entry. For organizations completing Part III, enter the
+			total of <i>exclusively</i> religious, charitable, etc., contributions of <b>$1,000 or less</b> for the year. (Enter this 
+			information once. See instructions.) 
         <img src="{$ImagePath}/990SchB_Bullet.gif" alt="Arrow Bullet"/> $
         <xsl:call-template name="PopulateAmount">
         <xsl:with-param name="TargetNode" select="$Form990ScheduleBData/TotalUnder1000ContributionsAmt"/>
         </xsl:call-template>
- <br></br>Use duplicate copies of Part III if additional space is needed.</span>
+	 <br></br>Use duplicate copies of Part III if additional space is needed.</span>
         <table class="styDepTbl" cellspacing="0" cellpadding="0" border="0" style="width:187mm;font-size:7pt;">  
           <xsl:call-template name="p3SRDTemplate"/>
         </table>
@@ -1152,7 +1169,10 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
             Complete columns <b>(a)</b> through <b>(e) and</b> the following line entry. For organizations completing Part III, enter the total of <i>exclusively</i> religious, charitable, etc., contributions of <b>$1,000 or less</b> for the year. (Enter this information once. See instructions.) 
                 <img src="{$ImagePath}/990SchB_Bullet.gif" alt="Arrow Bullet" /><span style="width:3mm"/>$ 
                  <span style="border-bottom:1px solid black; width:32mm; text-align:center; color:blue">
-                           <xsl:call-template name="PopulateAmount"><xsl:with-param name="TargetNode" select="$Form990ScheduleBData/TotalUnder1000ContributionsAmt"/></xsl:call-template></span>
+                           <xsl:call-template name="PopulateAmount"><xsl:with-param name="TargetNode" 
+							   select="$Form990ScheduleBData/TotalUnder1000ContributionsAmt"/>
+						   </xsl:call-template>
+				 </span>
             <!--</span>-->  <br/>
             <span style=" font-weight:normal; float:left">Use duplicate copies of Part III if additional space is needed.</span>
           </div>                  
@@ -1303,7 +1323,6 @@ Part II, line 13, 16a, or 16b, and that received from any one contributor, durin
             <xsl:with-param name="showAll" select="1"/>
           </xsl:call-template>        
         </td>
-
       </tr>
     </xsl:if>    
     <xsl:call-template name="p3Template">      

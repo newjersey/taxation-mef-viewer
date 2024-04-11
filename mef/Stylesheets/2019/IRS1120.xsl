@@ -5945,7 +5945,7 @@ reported on page 1, line 29a.)
 					<!-- BEGIN Schedule M-1 Line Items -->
 					<div class="styBB" style="width:187mm;clear:both;">
 						<!-- BEGIN Left Side Table of Schedule M-1-->
-						<table class="styTable" style="width:93mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:92mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<thead/>
 							<tfoot/>
 							<tbody>
@@ -6146,7 +6146,7 @@ reported on page 1, line 29a.)
 						</table>
 						<!-- END Left Side table of Schedule M-1-->
 						<!-- BEGIN Right Side table of Schedule M-1-->
-						<table class="styTable" style="width:94mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:95mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<thead/>
 							<tfoot/>
 							<tbody>
@@ -6340,7 +6340,7 @@ reported on page 1, line 29a.)
 					<!-- BEGIN Schedule M-2 Line Items -->
 					<div style="width:187mm;clear:both;" class="styBB">
 						<!-- BEGIN Left Side Table of Schedule M-2-->
-						<table class="styTable" style="width:93mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:92mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<tr class="styGenericDiv">
 								<!-- Schedule M2, line 1 -->
 								<td class="styLNLeftNumBoxSD" style="height:4.5mm;">1</td>
@@ -6427,7 +6427,7 @@ reported on page 1, line 29a.)
 						</table>
 						<!-- END Left Side Table of Schedule M-2-->
 						<!-- BEGIN Right Side Table of Schedule M-2-->
-						<table class="styTable" style="width:94mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
+						<table class="styTable" style="width:95mm;float:left;clear:none;font-size:7pt;" cellspacing="0">
 							<tr class="styGenericDiv">
 								<!-- Schedule M2, line 5a -->
 								<td class="styLNLeftNumBoxSD" style="height:4.5mm;">5</td>

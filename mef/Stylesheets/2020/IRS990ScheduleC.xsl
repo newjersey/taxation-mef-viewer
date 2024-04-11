@@ -276,7 +276,7 @@ If the organization incurred a section 4955 tax, did it file Form 4720 for this 
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledSection4955TaxInd"/>
 							</xsl:call-template>
-							<input type="checkbox" class="styCkbox" onclick="return false;">
+							<input type="checkbox" class="styCkbox" alt="Form4720FiledSection4955TaxIndYes"   onclick="return false;">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledSection4955TaxInd"/>
 									<xsl:with-param name="BackupName">Form990ScheduleCForm4720Filed4955Tax</xsl:with-param>
@@ -294,7 +294,7 @@ If the organization incurred a section 4955 tax, did it file Form 4720 for this 
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledSection4955TaxInd"/>
 							</xsl:call-template>
-							<input type="checkbox" class="styCkbox" onclick="return false;">
+							<input type="checkbox" class="styCkbox" alt="Form4720FiledSection4955TaxIndNo" onclick="return false;">
 								<xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledSection4955TaxInd"/>
 									<xsl:with-param name="BackupName">Form990ScheduleCForm4720Filed4955Tax</xsl:with-param>
@@ -319,7 +319,7 @@ If the organization incurred a section 4955 tax, did it file Form 4720 for this 
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/CorrectionMadeInd"/>
 							</xsl:call-template>
-							<input type="checkbox" class="styCkbox" onclick="return false;">
+							<input type="checkbox" class="styCkbox" alt="CorrectionMadeIndYes"  onclick="return false;">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/CorrectionMadeInd"/>
 									<xsl:with-param name="BackupName">Form990ScheduleCCorrectionMade</xsl:with-param>
@@ -337,7 +337,7 @@ If the organization incurred a section 4955 tax, did it file Form 4720 for this 
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/CorrectionMadeInd"/>
 							</xsl:call-template>
-							<input type="checkbox" class="styCkbox" onclick="return false;">
+							<input type="checkbox" class="styCkbox" alt="CorrectionMadeIndNo" onclick="return false;">
 								<xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/CorrectionMadeInd"/>
 									<xsl:with-param name="BackupName">Form990ScheduleCCorrectionMade</xsl:with-param>
@@ -435,7 +435,7 @@ Did the filing organization file <span style="font-weight:bold"> Form 1120-POL</
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/Form1120POLFiledInd"/>
 							</xsl:call-template>
-							<input type="checkbox" class="styCkbox" onclick="return false;">
+							<input type="checkbox" class="styCkbox" alt="Form1120POLFiledIndYes" onclick="return false;">
 								<xsl:call-template name="PopulateYesCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/Form1120POLFiledInd"/>
 									<xsl:with-param name="BackupName">Form990ScheduleCForm1120PolFiled</xsl:with-param>
@@ -453,7 +453,7 @@ Did the filing organization file <span style="font-weight:bold"> Form 1120-POL</
 							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/Form1120POLFiledInd"/>
 							</xsl:call-template>
-							<input type="checkbox" class="styCkbox" onclick="return false;">
+							<input type="checkbox" class="styCkbox" alt="Form1120POLFiledIndNo" onclick="return false;">
 								<xsl:call-template name="PopulateNoCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/Form1120POLFiledInd"/>
 									<xsl:with-param name="BackupName">Form990ScheduleCForm1120PolFiled</xsl:with-param>
@@ -940,7 +940,7 @@ exempt under section 501(c)(3) and filed Form 5768 (election under section 501(h
 										<xsl:call-template name="PopulateSpan">
 											<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledInd"/>
 										</xsl:call-template>
-										<input type="checkbox" class="styCkbox" onclick="return false;">
+										<input type="checkbox" class="styCkbox" alt="Form4720FiledIndYes" onclick="return false;">
 											<xsl:call-template name="PopulateYesCheckbox">
 												<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledInd"/>
 												<xsl:with-param name="BackupName">Form990ScheduleCForm4720Filed</xsl:with-param>
@@ -958,7 +958,7 @@ exempt under section 501(c)(3) and filed Form 5768 (election under section 501(h
 										<xsl:call-template name="PopulateSpan">
 											<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledInd"/>
 										</xsl:call-template>
-										<input type="checkbox" class="styCkbox" onclick="return false;">
+										<input type="checkbox" class="styCkbox" alt="Form4720FiledIndNo" onclick="return false;">
 											<xsl:call-template name="PopulateNoCheckbox">
 												<xsl:with-param name="TargetNode" select="$FormData/Form4720FiledInd"/>
 												<xsl:with-param name="BackupName">Form990ScheduleCForm4720Filed</xsl:with-param>

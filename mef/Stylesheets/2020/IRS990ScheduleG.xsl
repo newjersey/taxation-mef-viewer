@@ -9,6 +9,7 @@
 <!-- 11/05/2019 - Changes made for defect 128304 - Jeremy Nichols -->
 <!-- 01/16/2020 - Changes made for 2019 pdf review - Jeremy Nichols -->
 <!-- 06/15/2020 - Changes made for UWR 233977 - Jeremy Nichols -->
+<!-- 11/16/2020 - Changes made for defect 65250 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="PopulateTemplate.xsl"/>
   <xsl:include href="CommonPathRef.xsl"/>
@@ -179,16 +180,18 @@
                     <span class="styBoldText">a</span>
                   </td>  
                   <td style="width:5mm;text-align:center;">
-                    <input type="checkbox" class="styCkbox">
+                    <input type="checkbox" class="styCkbox" id="CheckMailSolicitations" alt="CheckMailSolicitations">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/MailSolicitationsInd"/>
+											  <xsl:with-param name="BackupName">CheckMailSolicitations</xsl:with-param>
                       </xsl:call-template>
                     </input>
                   </td>  
                   <td style="width:77mm;">
-                    <label>
+                    <label id="CheckMailSolicitations">
                       <xsl:call-template name="PopulateLabel">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/MailSolicitationsInd"/>
+							<xsl:with-param name="BackupName">CheckMailSolicitations</xsl:with-param>
                       </xsl:call-template>
                       Mail solicitations
                     </label>
@@ -197,16 +200,18 @@
                     <span class="styBoldText">e</span>
                   </td> 
                   <td style="width:5mm;text-align:center;"> 
-                    <input type="checkbox" class="styCkbox">
+                    <input type="checkbox" class="styCkbox" id="CheckSolicitationOfNonGovtGrants" alt="CheckSolicitationOfNonGovtGrants">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/SolicitationOfNonGovtGrantsInd"/>
+						<xsl:with-param name="BackupName">CheckSolicitationOfNonGovtGrants</xsl:with-param>
                       </xsl:call-template>
                     </input>
                   </td>  
                   <td style="width:87mm;">
-                    <label>
+                    <label id="CheckSolicitationOfNonGovtGrants">
                       <xsl:call-template name="PopulateLabel">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/SolicitationOfNonGovtGrantsInd"/>
+						<xsl:with-param name="BackupName">CheckSolicitationOfNonGovtGrants</xsl:with-param>
                       </xsl:call-template>
                       Solicitation of non-government grants
                     </label>
@@ -217,16 +222,18 @@
                     <span class="styBoldText">b</span>
                   </td> 
                   <td style="width:5mm;text-align:center;"> 
-                    <input type="checkbox" class="styCkbox">
+                    <input type="checkbox" class="styCkbox" id="CheckEmailSolicitations" alt="CheckEmailSolicitations">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/EmailSolicitationsInd"/>
+						<xsl:with-param name="BackupName">CheckEmailSolicitations</xsl:with-param>
                       </xsl:call-template>
                     </input>
                   </td>  
                   <td style="width:77mm;">
-                    <label>
+                    <label id="CheckEmailSolicitations">
                       <xsl:call-template name="PopulateLabel">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/EmailSolicitationsInd"/>
+						<xsl:with-param name="BackupName">CheckEmailSolicitations</xsl:with-param>
                       </xsl:call-template>
                       Internet and email solicitations
                     </label>
@@ -235,16 +242,18 @@
                     <span class="styBoldText">f</span>
                   </td> 
                   <td style="width:5mm;text-align:center;"> 
-                    <input type="checkbox" class="styCkbox">
+                    <input type="checkbox" class="styCkbox" id="CheckSolicitationOfGovtGrants" alt="CheckSolicitationOfGovtGrants">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/SolicitationOfGovtGrantsInd"/>
+						<xsl:with-param name="BackupName">CheckSolicitationOfGovtGrants</xsl:with-param>
                       </xsl:call-template>
                     </input>
                   </td>  
                   <td style="width:87mm;">
-                    <label>
+                    <label id="CheckSolicitationOfGovtGrants">
                       <xsl:call-template name="PopulateLabel">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/SolicitationOfGovtGrantsInd"/>
+						<xsl:with-param name="BackupName">CheckSolicitationOfGovtGrants</xsl:with-param>
                       </xsl:call-template>
                       Solicitation of government grants
                     </label>
@@ -255,16 +264,18 @@
                     <span class="styBoldText">c</span>
                   </td> 
                   <td style="width:5mm;text-align:center;"> 
-                    <input type="checkbox" class="styCkbox">
+                    <input type="checkbox" class="styCkbox" id="CheckPhoneSolicitations" alt="CheckPhoneSolicitations">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/PhoneSolicitationsInd"/>
+						<xsl:with-param name="BackupName">CheckPhoneSolicitations</xsl:with-param>
                       </xsl:call-template>
                     </input>
                   </td>  
                   <td style="width:77mm;">              
-                    <label>
+                    <label id="CheckPhoneSolicitations">
                       <xsl:call-template name="PopulateLabel">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/PhoneSolicitationsInd"/>
+						<xsl:with-param name="BackupName">CheckPhoneSolicitations</xsl:with-param>
                       </xsl:call-template>
                       Phone solicitations
                     </label>
@@ -273,16 +284,18 @@
                     <span class="styBoldText">g</span>
                   </td> 
                   <td style="width:5mm;text-align:center;"> 
-                    <input type="checkbox" class="styCkbox">
+                    <input type="checkbox" class="styCkbox" id="CheckSpecialFundraisingEvents" alt="CheckSpecialFundraisingEvents">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/SpecialFundraisingEventsInd"/>
+						<xsl:with-param name="BackupName">CheckSpecialFundraisingEvents</xsl:with-param>
                       </xsl:call-template>
                     </input>
                   </td>  
                   <td style="width:87mm;">   
-                    <label>
+                    <label id="CheckSpecialFundraisingEvents">
                       <xsl:call-template name="PopulateLabel">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/SpecialFundraisingEventsInd"/>
+						<xsl:with-param name="BackupName">CheckSpecialFundraisingEvents</xsl:with-param>
                       </xsl:call-template>
                       Special fundraising events
                     </label>
@@ -293,16 +306,18 @@
                     <span class="styBoldText">d</span>
                   </td>  
                   <td style="width:5mm;text-align:center;">
-                    <input type="checkbox" class="styCkbox">
+                    <input type="checkbox" class="styCkbox" id="CheckInPersonSolicitations" alt="CheckInPersonSolicitations">
                       <xsl:call-template name="PopulateCheckbox">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/InPersonSolicitationsInd"/>
+						<xsl:with-param name="BackupName">CheckInPersonSolicitations</xsl:with-param>
                       </xsl:call-template>
                     </input> 
                   </td>  
                   <td style="width:77mm;">   
-                    <label>
+                    <label id="CheckInPersonSolicitations">
                       <xsl:call-template name="PopulateLabel">
                         <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/InPersonSolicitationsInd"/>
+						<xsl:with-param name="BackupName">CheckInPersonSolicitations</xsl:with-param>
                       </xsl:call-template>
                       In-person solicitations
                     </label>
@@ -325,15 +340,17 @@
               <xsl:call-template name="PopulateSpan">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/AgrmtProfFundraisingActyInd"/>
               </xsl:call-template>
-              <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+              <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckAgrmtProfFundraisingActyYes" alt="CheckAgrmtProfFundraisingActyYes">
                 <xsl:call-template name="PopulateYesCheckbox">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/AgrmtProfFundraisingActyInd"/>
+				  <xsl:with-param name="BackupName">CheckAgrmtProfFundraisingActyYes</xsl:with-param>
                 </xsl:call-template>
               </input>
             </span>
-            <label>
+            <label id="CheckAgrmtProfFundraisingActyYes">
               <xsl:call-template name="PopulateLabelYes">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/AgrmtProfFundraisingActyInd"/>
+				<xsl:with-param name="BackupName">CheckAgrmtProfFundraisingActyYes</xsl:with-param>
               </xsl:call-template>
               <span style="font-weight:bold;">Yes</span>
             </label>  
@@ -341,15 +358,17 @@
               <xsl:call-template name="PopulateSpan">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/AgrmtProfFundraisingActyInd"/>
               </xsl:call-template>
-              <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+              <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckAgrmtProfFundraisingActyNo" alt="CheckAgrmtProfFundraisingActyNo">
                 <xsl:call-template name="PopulateNoCheckbox">
                   <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/AgrmtProfFundraisingActyInd"/>
+				  <xsl:with-param name="BackupName">CheckAgrmtProfFundraisingActyNo</xsl:with-param>
                 </xsl:call-template>
               </input>
             </span>
-            <label>
+            <label id="CheckAgrmtProfFundraisingActyNo">
               <xsl:call-template name="PopulateLabelNo">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/AgrmtProfFundraisingActyInd"/>
+				<xsl:with-param name="BackupName">CheckAgrmtProfFundraisingActyNo</xsl:with-param>
               </xsl:call-template>
               <span style="font-weight:bold;">No</span>
             </label>  
@@ -1352,19 +1371,19 @@
 										  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborBingoInd"/>
 										</xsl:call-template>
 										<span style="float:left;clear:none;display:inline;">
-										  <input type="checkbox" class="styCkbox" name="Checkbox">
+										  <input type="checkbox" class="styCkbox" name="Checkbox" id="CheckVolunteerLaborBingoYes" alt="CheckVolunteerLaborBingoYes">
 											<xsl:call-template name="PopulateYesCheckbox">
 											  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborBingoInd"/>
-											  <xsl:with-param name="BackupName">VolunteerLaborBingo</xsl:with-param>
+											  <xsl:with-param name="BackupName">CheckVolunteerLaborBingoYes</xsl:with-param>
 											</xsl:call-template>
 										  </input>
 										</span>
 									  </td> 
 									  <td style="width:25mm;text-align:left;padding-left:1mm;"> 
-										<label>
+										<label id="CheckVolunteerLaborBingoYes">
 										  <xsl:call-template name="PopulateLabelYes">
 											<xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborBingoInd"/>
-											<xsl:with-param name="BackupName">VolunteerLaborBingo</xsl:with-param>
+											<xsl:with-param name="BackupName">CheckVolunteerLaborBingoYes</xsl:with-param>
 										  </xsl:call-template>
 										  <b>Yes</b>
 										</label>
@@ -1390,19 +1409,19 @@
 										  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborBingoInd"/>
 										</xsl:call-template>    
 										<span style="float:left;clear:none;display:inline;">
-										  <input type="checkbox" class="styCkbox" name="Checkbox">
+										  <input type="checkbox" class="styCkbox" name="Checkbox" id="CheckVolunteerLaborBingoNo" alt="CheckVolunteerLaborBingoNo">
 											<xsl:call-template name="PopulateNoCheckbox">
 											  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborBingoInd"/>
-											  <xsl:with-param name="BackupName">VolunteerLaborBingo</xsl:with-param>
+											  <xsl:with-param name="BackupName">CheckVolunteerLaborBingoNo</xsl:with-param>
 											</xsl:call-template>
 										  </input>
 										</span>
 									  </td> 
 									  <td style="width:25mm;text-align:left;padding-left:1mm;"> 
-										<label>
+										<label id="CheckVolunteerLaborBingoNo">
 										  <xsl:call-template name="PopulateLabelNo">
 											<xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborBingoInd"/>
-											<xsl:with-param name="BackupName">VolunteerLaborBingo</xsl:with-param>
+											<xsl:with-param name="BackupName">CheckVolunteerLaborBingoNo</xsl:with-param>
 										  </xsl:call-template>
 										  <b>No</b>
 										</label>
@@ -1421,19 +1440,19 @@
 										  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborPullTabsInd"/>
 										</xsl:call-template>
 										<span style="float:left;clear:none;display:inline;">
-										  <input type="checkbox" class="styCkbox" name="Checkbox">
+										  <input type="checkbox" class="styCkbox" name="Checkbox" id="CheckVolunteerLaborPullTabsYes" alt="CheckVolunteerLaborPullTabsYes">
 											<xsl:call-template name="PopulateYesCheckbox">
 											  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborPullTabsInd"/>
-											  <xsl:with-param name="BackupName">VolunteerLaborPullTabs</xsl:with-param>
+											  <xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsYes</xsl:with-param>
 											</xsl:call-template>
 										  </input>
 										</span> 
 									  </td> 
 									  <td style="width:25mm;text-align:left;padding-left:1mm;">          
-										<label>
+										<label id="CheckVolunteerLaborPullTabsYes">
 										  <xsl:call-template name="PopulateLabelYes">
 											<xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborPullTabsInd"/>
-											<xsl:with-param name="BackupName">VolunteerLaborPullTabs</xsl:with-param>
+											<xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsYes</xsl:with-param>
 										  </xsl:call-template>
 										  <b>Yes</b>
 										</label>
@@ -1459,19 +1478,19 @@
 										  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborPullTabsInd"/>
 										</xsl:call-template>
 										<span style="float:left;clear:none;display:inline;">
-										  <input type="checkbox" class="styCkbox" name="Checkbox">
+										  <input type="checkbox" class="styCkbox" name="Checkbox" id="CheckVolunteerLaborPullTabsNo" alt="CheckVolunteerLaborPullTabsNo">
 											<xsl:call-template name="PopulateNoCheckbox">
 											  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborPullTabsInd"/>
-											  <xsl:with-param name="BackupName">VolunteerLaborPullTabs</xsl:with-param>
+											  <xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsNo</xsl:with-param>
 											</xsl:call-template>
 										  </input>
 										</span>
 									  </td> 
 									  <td style="width:25mm;text-align:left;padding-left:1mm;">     
-										<label>
+										<label id="CheckVolunteerLaborPullTabsNo">
 										  <xsl:call-template name="PopulateLabelNo">
 											<xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborPullTabsInd"/>
-											<xsl:with-param name="BackupName">VolunteerLaborPullTabs</xsl:with-param>
+											<xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsNo</xsl:with-param>
 										  </xsl:call-template>
 										  <b>No</b>
 										</label>
@@ -1490,19 +1509,19 @@
 										  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborOtherGamingInd"/>
 										</xsl:call-template>
 										<span style="float:left;clear:none;display:inline;">
-										  <input type="checkbox" class="styCkbox" name="Checkbox">
+										  <input type="checkbox" class="styCkbox" name="Checkbox" id="CheckVolunteerLaborPullTabsYes" alt="CheckVolunteerLaborPullTabsYes">
 											<xsl:call-template name="PopulateYesCheckbox">
 											  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborOtherGamingInd"/>
-											  <xsl:with-param name="BackupName">VolunteerLaborPullTabs</xsl:with-param>
+											  <xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsYes</xsl:with-param>
 											</xsl:call-template>
 										  </input>
 										</span>  
 									  </td> 
 									  <td style="width:25mm;text-align:left;padding-left:1mm;">         
-										<label>
+										<label id="CheckVolunteerLaborPullTabsYes">
 										  <xsl:call-template name="PopulateLabelYes">
 											<xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborOtherGamingInd"/>
-											<xsl:with-param name="BackupName">VolunteerLaborPullTabs</xsl:with-param>
+											<xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsYes</xsl:with-param>
 										  </xsl:call-template>
 										  <b>Yes</b>
 										</label>
@@ -1528,19 +1547,19 @@
 										  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborOtherGamingInd"/>
 										</xsl:call-template>
 										<span style="float:left;clear:none;display:inline;">
-										  <input type="checkbox" class="styCkbox" name="Checkbox">
+										  <input type="checkbox" class="styCkbox" name="Checkbox" id="CheckVolunteerLaborPullTabsNo" alt="CheckVolunteerLaborPullTabsNo">
 											<xsl:call-template name="PopulateNoCheckbox">
 											  <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborOtherGamingInd"/>
-											  <xsl:with-param name="BackupName">VolunteerLaborOtherGaming</xsl:with-param>
+											  <xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsNo</xsl:with-param>
 											</xsl:call-template>
 										  </input>
 										</span>
 									  </td> 
 									  <td style="width:27mm;text-align:left;padding-left:1mm;">  
-										<label>
+										<label id="CheckVolunteerLaborPullTabsNo">
 										  <xsl:call-template name="PopulateLabelNo">
 											<xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingInformationGrp/VolunteerLaborOtherGamingInd"/>
-											<xsl:with-param name="BackupName">VolunteerLaborOtherGaming</xsl:with-param>
+											<xsl:with-param name="BackupName">CheckVolunteerLaborPullTabsNo</xsl:with-param>
 										  </xsl:call-template>
 										  <b>No</b>
 										</label>
@@ -1674,26 +1693,30 @@
         </div>
              
         <div style="height:5mm;font-size:7pt;vertical-align:center;display:inline;">
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckLicensedYes" alt="CheckLicensedYes">
               <xsl:call-template name="PopulateYesCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicensedInd"/>
+				<xsl:with-param name="BackupName">CheckLicensedYes</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckLicensedYes">
             <xsl:call-template name="PopulateLabelYes">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicensedInd"/>
+				<xsl:with-param name="BackupName">CheckLicensedYes</xsl:with-param>
             </xsl:call-template>
             <span><b>Yes</b></span>
           </label>
           <span style="width:2mm;"/>
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckLicensedNo" alt="CheckLicensedNo">
               <xsl:call-template name="PopulateNoCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicensedInd"/>
+				<xsl:with-param name="BackupName">CheckLicensedNo</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckLicensedNo">
             <xsl:call-template name="PopulateLabelNo">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicensedInd"/>
+				<xsl:with-param name="BackupName">CheckLicensedNo</xsl:with-param>
             </xsl:call-template>
             <span><b>No</b></span>
           </label>
@@ -1737,26 +1760,30 @@
         </span>
       </div>
       <div style="height:5mm;padding-top:1mm;font-size:7pt;vertical-align:center;">
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckLicenseSuspendedEtcYes" alt="CheckLicenseSuspendedEtcYes">
               <xsl:call-template name="PopulateYesCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicenseSuspendedEtcInd"/>
+				<xsl:with-param name="BackupName">CheckLicenseSuspendedEtcYes</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckLicenseSuspendedEtcYes">
             <xsl:call-template name="PopulateLabelYes">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicenseSuspendedEtcInd"/>
+				<xsl:with-param name="BackupName">CheckLicenseSuspendedEtcYes</xsl:with-param>
             </xsl:call-template>
             <span><b>Yes</b></span>
           </label>
           <span style="width:2mm;"/>
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckLicenseSuspendedEtcNo" alt="CheckLicenseSuspendedEtcNo">
               <xsl:call-template name="PopulateNoCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicenseSuspendedEtcInd"/>
+				<xsl:with-param name="BackupName">CheckLicenseSuspendedEtcNo</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckLicenseSuspendedEtcNo">
             <xsl:call-template name="PopulateLabelNo">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/LicenseSuspendedEtcInd"/>
+				<xsl:with-param name="BackupName">CheckLicenseSuspendedEtcNo</xsl:with-param>
             </xsl:call-template>
             <span><b>No</b></span>
           </label>
@@ -1820,26 +1847,30 @@
           <span style="width:4mm;"/>.
         </span></div>
         <div style="height:5mm;padding-top:1mm;font-size:7pt;vertical-align:center;">
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckGamingWithNonmembersYes" alt="CheckGamingWithNonmembersYes">
               <xsl:call-template name="PopulateYesCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingWithNonmembersInd"/>
+				<xsl:with-param name="BackupName">CheckGamingWithNonmembersYes</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckGamingWithNonmembersYes">
             <xsl:call-template name="PopulateLabelYes">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingWithNonmembersInd"/>
+				<xsl:with-param name="BackupName">CheckGamingWithNonmembersYes</xsl:with-param>
             </xsl:call-template>
             <span><b>Yes</b></span>
           </label>
           <span style="width:2mm;"/>
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckGamingWithNonmembersNo" alt="CheckGamingWithNonmembersNo">
               <xsl:call-template name="PopulateNoCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingWithNonmembersInd"/>
+				<xsl:with-param name="BackupName">CheckGamingWithNonmembersNo</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckGamingWithNonmembersNo">
             <xsl:call-template name="PopulateLabelNo">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingWithNonmembersInd"/>
+				<xsl:with-param name="BackupName">CheckGamingWithNonmembersNo</xsl:with-param>
             </xsl:call-template>
             <span><b>No</b></span>
           </label>
@@ -1878,26 +1909,30 @@
           <span style="width:4mm;"/>.
         </span></div>
         <div style="height:5mm;padding-top:1mm;font-size:7pt;vertical-align:center;">
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckMemberOfOtherEntityYes" alt="CheckMemberOfOtherEntityYes">
               <xsl:call-template name="PopulateYesCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/MemberOfOtherEntityInd"/>
+				<xsl:with-param name="BackupName">CheckMemberOfOtherEntityYes</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckMemberOfOtherEntityYes">
             <xsl:call-template name="PopulateLabelYes">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/MemberOfOtherEntityInd"/>
+				<xsl:with-param name="BackupName">CheckMemberOfOtherEntityYes</xsl:with-param>
             </xsl:call-template>
             <span><b>Yes</b></span>
           </label>
           <span style="width:2mm;"/>
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckMemberOfOtherEntityNo" alt="CheckMemberOfOtherEntityNo">
               <xsl:call-template name="PopulateNoCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/MemberOfOtherEntityInd"/>
+				<xsl:with-param name="BackupName">CheckMemberOfOtherEntityNo</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckMemberOfOtherEntityNo">
             <xsl:call-template name="PopulateLabelNo">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/MemberOfOtherEntityInd"/>
+				<xsl:with-param name="BackupName">CheckMemberOfOtherEntityNo</xsl:with-param>
             </xsl:call-template>
             <span><b>No</b></span>
           </label>
@@ -2147,26 +2182,30 @@
           <span style="width:4mm;"/>.
         </span></div>
         <div style="height:5mm;padding-top:1mm;font-size:7pt;vertical-align:center;">
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckCntrctWith3rdPrtyForGameRevYes" alt="CheckCntrctWith3rdPrtyForGameRevYes">
               <xsl:call-template name="PopulateYesCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CntrctWith3rdPrtyForGameRevInd"/>
+				<xsl:with-param name="BackupName">CheckCntrctWith3rdPrtyForGameRevYes</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckCntrctWith3rdPrtyForGameRevYes">
             <xsl:call-template name="PopulateLabelYes">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CntrctWith3rdPrtyForGameRevInd"/>
+				<xsl:with-param name="BackupName">CheckCntrctWith3rdPrtyForGameRevYes</xsl:with-param>
             </xsl:call-template>
             <span><b>Yes</b></span>
           </label>
           <span style="width:2mm;"/>
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckCntrctWith3rdPrtyForGameRevNo" alt="CheckCntrctWith3rdPrtyForGameRevNo">
               <xsl:call-template name="PopulateNoCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CntrctWith3rdPrtyForGameRevInd"/>
+				<xsl:with-param name="BackupName">CheckCntrctWith3rdPrtyForGameRevNo</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckCntrctWith3rdPrtyForGameRevNo">
             <xsl:call-template name="PopulateLabelNo">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CntrctWith3rdPrtyForGameRevInd"/>
+				<xsl:with-param name="BackupName">CheckCntrctWith3rdPrtyForGameRevNo</xsl:with-param>
             </xsl:call-template>
             <span><b>No</b></span>
           </label>
@@ -2400,33 +2439,32 @@
      <div class="styLNLeftNumBox" style="height:4mm;"/>
       <div class="styLNDesc" style="width:155mm;height:5mm;"> 
        <span style="width:50mm;">
-        <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+        <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckGamingManagerIsDirectorOfficer" alt="CheckGamingManagerIsDirectorOfficer">
          <xsl:call-template name="PopulateCheckbox">
           <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingManagerIsDirectorOfcrInd"/>
-          <xsl:with-param name="BackupName">GamingManagerIsDirectorOfficer</xsl:with-param>
+          <xsl:with-param name="BackupName">CheckGamingManagerIsDirectorOfficer</xsl:with-param>
          </xsl:call-template>
         </input>
-        <label>
+        <label id="CheckGamingManagerIsDirectorOfficer">
           <xsl:call-template name="PopulateLabel">
             <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingManagerIsDirectorOfcrInd"/>
-            <xsl:with-param name="BackupName">GamingManagerIsDirectorOfficer
-            </xsl:with-param>
+            <xsl:with-param name="BackupName">CheckGamingManagerIsDirectorOfficer</xsl:with-param>
           </xsl:call-template>
           Director/officer
         </label>
       </span>     
       
       <span style="width:45mm;">
-      <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+      <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckGamingManagerIsEmployee" alt="CheckGamingManagerIsEmployee">
          <xsl:call-template name="PopulateCheckbox">
           <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingManagerIsEmployeeInd"/>
-          <xsl:with-param name="BackupName">GamingManagerIsEmployee</xsl:with-param>
+          <xsl:with-param name="BackupName">CheckGamingManagerIsEmployee</xsl:with-param>
          </xsl:call-template>
         </input>
-        <label>
+        <label id="CheckGamingManagerIsEmployee">
           <xsl:call-template name="PopulateLabel">
             <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingManagerIsEmployeeInd"/>
-            <xsl:with-param name="BackupName">GamingManagerIsEmployee
+            <xsl:with-param name="BackupName">CheckGamingManagerIsEmployee
             </xsl:with-param>
           </xsl:call-template>
          Employee
@@ -2434,16 +2472,16 @@
       </span>
 
       <span style="width:45mm;">
-      <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+      <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckGamingManagerIsIndContractor" alt="CheckGamingManagerIsIndContractor">
          <xsl:call-template name="PopulateCheckbox">
           <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingManagerIsIndCntrctInd"/>
-          <xsl:with-param name="BackupName">GamingManagerIsIndContractor</xsl:with-param>
+          <xsl:with-param name="BackupName">CheckGamingManagerIsIndContractor</xsl:with-param>
          </xsl:call-template>
         </input>
-        <label>
+        <label id="CheckGamingManagerIsIndContractor">
           <xsl:call-template name="PopulateLabel">
             <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/GamingManagerIsIndCntrctInd"/>
-            <xsl:with-param name="BackupName">GamingManagerIsIndContractor
+            <xsl:with-param name="BackupName">CheckGamingManagerIsIndContractor
             </xsl:with-param>
           </xsl:call-template>
           Independent contractor
@@ -2494,26 +2532,30 @@
          <span style="width:4mm;"/>.
         </span></div>
         <div style="height:5mm;padding-top:1mm;font-size:7pt;vertical-align:center;">
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckCharitableDistributionRqrYes" alt="CheckCharitableDistributionRqrYes">
               <xsl:call-template name="PopulateYesCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CharitableDistributionRqrInd"/>
+				<xsl:with-param name="BackupName">CheckCharitableDistributionRqrYes</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckCharitableDistributionRqrYes">
             <xsl:call-template name="PopulateLabelYes">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CharitableDistributionRqrInd"/>
+				<xsl:with-param name="BackupName">CheckCharitableDistributionRqrYes</xsl:with-param>
             </xsl:call-template>
             <span>Yes</span>
           </label>
           <span style="width:2mm;"/>
-            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;">
+            <input type="checkbox" class="IRS990ScheduleG_Checkbox" style="height:3mm;width:3mm;" id="CheckCharitableDistributionRqrNo" alt="CheckCharitableDistributionRqrNo">
               <xsl:call-template name="PopulateNoCheckbox">
                 <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CharitableDistributionRqrInd"/>
+				<xsl:with-param name="BackupName">CheckCharitableDistributionRqrNo</xsl:with-param>
               </xsl:call-template>
             </input>
-          <label>
+          <label id="CheckCharitableDistributionRqrNo">
             <xsl:call-template name="PopulateLabelNo">
               <xsl:with-param name="TargetNode" select="$Form990ScheduleGData/CharitableDistributionRqrInd"/>
+				<xsl:with-param name="BackupName">CheckCharitableDistributionRqrNo</xsl:with-param>
             </xsl:call-template>
             <span>No</span>
           </label>

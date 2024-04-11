@@ -73,13 +73,13 @@
 							<div class="styFBT" style="padding-top:0mm">
           For certain Officers, Directors, Trustees, Key Employees, and Highest<br/>
 		Compensated Employees<br/>
-					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
+					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="Graphic Arrow"/>
 					Complete if the organization answered "Yes" on Form 990, Part IV, line 23.<br/>
-					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
+					<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="Graphic Arrow"/>
 		Attach to Form 990. <br/>
 	<!--	<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
 		See separate instructions.<br/>-->
-		<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="SchJMediumBullet"/>
+		<img src="{$ImagePath}/990SchJ_Bullet_Md.gif" alt="Graphic Arrow"/>
 		Go to <!--www.irs.gov/form990.--><a href="http://www.irs.gov/form990" title="Link to IRS.gov">
                 <i>www.irs.gov/Form990</i></a> for instructions and the latest information. 
           </div>
@@ -856,7 +856,7 @@ If "Yes" on line 8, did the organization also follow the rebuttable presumption 
 								<xsl:if test="($Print != $Separated) or count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt;= 9">
 									<xsl:for-each select="$FormData/RltdOrgOfficerTrstKeyEmplGrp">
 										<tr>
-											<td class="styTableCell" style="height:4mm;font-size:6pt;text-align:left;vertical-align:top;border-style: solid; border-color: black;"><b><xsl:number value="position()" format="1"/></b>
+											<td class="styTableCell" style="height:4mm;font-size:6pt;text-align:left;vertical-align:top;border-style: solid; border-color: black;"><b><xsl:number value="position()" format="1"/></b><span style="width:1mm;"></span>
 												<xsl:choose>
 													<xsl:when test="PersonNm">
 														<xsl:call-template name="PopulateText">
@@ -972,16 +972,16 @@ If "Yes" on line 8, did the organization also follow the rebuttable presumption 
 								</xsl:if>
 								 <xsl:if test="count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt; 1 or ($Print = $Separated)">
 							<!--	<xsl:if test="count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt; 1 or             (($Print = $Separated) and (count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &gt; 16)) ">-->
-									<tr>
 									
-									<td class="styTableCellText" style="font-size:7pt;border-style: solid; border-color: black;border-right:0px;border-top:0px;width:50mm;">
+									
+									<span class="styTableCellText" style="font-size:7pt;border-style: solid; border-color: black;border-right:0px;border-top:0px;width:50mm;">
 											<xsl:call-template name="PopulateAdditionalDataTableMessage">
 												<xsl:with-param name="TargetNode" select="$FormData/RltdOrgOfficerTrstKeyEmplGrp"/>
 											</xsl:call-template>
 										<span style="width:4px"/>
-										 	</td>
+										 	</span>
 								
-                  </tr>
+                  
                 </xsl:if>
 							
 							<xsl:if test="count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &lt; 2 or ((count($FormData/RltdOrgOfficerTrstKeyEmplGrp) &gt; 16) and ($Print = $Separated))">

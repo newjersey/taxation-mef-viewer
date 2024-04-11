@@ -15,6 +15,8 @@
 <!-- 12/16/2019 - Changes made for defect 128868 - Jeremy Nichols -->
 <!-- 01/14/2020 - Changes made for KISAMS IM00887331 - Jeremy Nichols -->
 <!-- 09/02/2020 - Changes made for UWR 239493 - Jeremy Nichols -->
+<!-- 11/10/2020 - Changes made for defect 65828 - Jeremy Nichols -->
+<!-- 06/08/2021 - Changes made for 2020 pdf review under defect ##### - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="PopulateTemplate.xsl"/>
   <xsl:include href="CommonPathRef.xsl"/>
@@ -139,7 +141,7 @@
         <img src="{$ImagePath}/8844_Bullet_Round.gif" title="bullet" alt="bullet"/>    Corporations. Enter the amount from Form 1120, Schedule J, line 2; or the
 applicable line of your return.<br/>
         <img src="{$ImagePath}/8844_Bullet_Round.gif" title="bullet" alt="bullet"/>    Estates and trusts. Enter the sum of the amounts from Form 1041, Schedule G,
-lines 1a and 1b, or the amount from the applicable line of your return.                   
+lines 1a and 1b; or the amount from the applicable line of your return.                   
         </div>
         <div class="styLNDesc" style="width:5mm; height:4mm;padding-top:4.5mm;">
           <img src="{$ImagePath}/8844_Bracket_Lger.gif" title="bracket" alt="bracket" border="0"/>        
@@ -328,7 +330,7 @@ lines 1a and 1b, or the amount from the applicable line of your return.
      <div style="width:187mm; border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px">
             <div class="styGenericDiv" style="width:117mm;font-weight:bold;">For  Paperwork Reduction Act Notice, see instructions.</div>
             <div class="styGenericDiv" style="width:23mm;">Cat. No. 14953G</div>
-            <div class="styGenericDiv" style="float:right;">Form <span class="styBoldText">8834</span> (Rev. 10-2020)</div>
+            <div class="styGenericDiv" style="float:right;">Form <span class="styBoldText">8834</span> (Rev. 11-2020)</div>
           </div><br/><br/>
           
           <!-- BEGIN Left Over Table -->

@@ -55,7 +55,7 @@
 							</xsl:call-template>
 							<br/>
 							<br/>
-							(Rev. December 2021)<br/>
+							(Rev. December 2022)<br/>
 							<br/>
 							<span class="styAgency">
 								Department of the Treasury
@@ -409,8 +409,8 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">5</div>
 						<div class="styLNDesc">
-							GILTI. Subtract line 4 from line 1
-							<span class="sty8992DotLn">.......................</span>
+							GILTI. Subtract line 4 from line 1. If zero or less, enter -0-
+							<span class="sty8992DotLn">...............</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">5</div>
 						<div class="styLNAmountBoxNBB">
@@ -422,7 +422,7 @@
 					<div class="styStdDiv pageEnd" style="border-top:2px solid black;">
 						<span style="font-weight:bold;font-family:Arial;">For Paperwork Reduction Act Notice, see separate instructions.</span>
 						<span style="margin-left:25mm;">Cat. No. 37816Y</span>
-						<span style="float:right;">Form <strong>8992</strong> (Rev. 12-2021)</span>
+						<span style="float:right;">Form <strong>8992</strong> (Rev. 12-2022)</span>
 					</div>
 					
 					<br></br>

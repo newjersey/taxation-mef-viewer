@@ -280,12 +280,12 @@
                                                     Indicate if the remuneration <br/>includes payments to the employee for:</span>
                    </div>
                    	<div class="styIRS499W2PRCell" style="border-bottom-width:0px;padding-bottom:1mm;"> 
-                      <label>
+                        <!--<label>
                             <xsl:call-template name="PopulateLabel">
 								<xsl:with-param name="TargetNode" select="$FormData/QlfyPhysicianServicesPymtInd"/>
 								<xsl:with-param name="BackupName">IRS499W2PRQlfyPhysicianServicesPymtInd</xsl:with-param>
                             </xsl:call-template>A -
-                        </label>
+                        </label>-->A -
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$FormData/QlfyPhysicianServicesPymtInd"/>
 									</xsl:call-template>
@@ -299,12 +299,12 @@
                                                  <br/><span style="padding-left:8.5mm;"/>Qualified physician under Act 14-2017
 							</div>
 				<div class="styIRS499W2PRCell" style="border-bottom-width:0px;padding-bottom:1mm;"> 
-                      <label>
+                      <!--<label>
                             <xsl:call-template name="PopulateLabel">
 								<xsl:with-param name="TargetNode" select="$FormData/DomesticServicesPaymentInd"/>
 								<xsl:with-param name="BackupName">IRS499W2PRDomesticServicesPaymentInd</xsl:with-param>
                             </xsl:call-template>B -
-                        </label>
+                        </label>-->B -
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$FormData/DomesticServicesPaymentInd"/>
 									</xsl:call-template>
@@ -318,12 +318,12 @@
                               <br/><span style="padding-left:8.5mm;"/>Domestic services 
 				</div>
 				<div class="styIRS499W2PRCell" style="border-bottom-width:0px;padding-bottom:1mm;"> 
-                      <label>
+                      <!--<label>
                             <xsl:call-template name="PopulateLabel">
 								<xsl:with-param name="TargetNode" select="$FormData/AgriculturalLaborSrvcPymtInd"/>
 								<xsl:with-param name="BackupName">IRS499W2PRAgriculturalLaborSrvcPymtInd</xsl:with-param>
                             </xsl:call-template>C -
-                        </label>
+                        </label>-->C -
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$FormData/AgriculturalLaborSrvcPymtInd"/>
 									</xsl:call-template>
@@ -337,12 +337,12 @@
 									<br/><span style="padding-left:8.5mm;"/>Agricultural labor
 				</div>
 				<div class="styIRS499W2PRCell" style="border-bottom-width:0px;padding-bottom:1mm;"> 
-                      <label>
+                      <!--<label>
                             <xsl:call-template name="PopulateLabel">
 								<xsl:with-param name="TargetNode" select="$FormData/ChurchReligiousOrdSrvcPymtInd"/>
 								<xsl:with-param name="BackupName">IRS499W2PRChurchReligiousOrdSrvcPymtInd</xsl:with-param>
                             </xsl:call-template>D -
-                        </label>
+                        </label>-->D -
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$FormData/ChurchReligiousOrdSrvcPymtInd"/>
 									</xsl:call-template>
@@ -356,12 +356,12 @@
 												<br/> <span style="padding-left:8.5mm;"/>member of a religious order
 							</div>
 				<div class="styIRS499W2PRCell" style="border-bottom-width:0px;padding-bottom:1mm;"> 
-                      <label>
+                        <!--<label>
                             <xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/ChurchReligiousOrdSrvcPymtInd"/>
-								<xsl:with-param name="BackupName">IRS499W2PRChurchReligiousOrdSrvcPymtInd</xsl:with-param>
+								<xsl:with-param name="TargetNode" select="$FormData/HealthProfessionalsPymtInd"/>
+								<xsl:with-param name="BackupName">IRS499W2PRHealthProfessionalsPymtInd</xsl:with-param>
                             </xsl:call-template>E -
-                        </label>
+                        </label>-->E -
 									<xsl:call-template name="PopulateSpan">
 										<xsl:with-param name="TargetNode" select="$FormData/ChurchReligiousOrdSrvcPymtInd"/>
 									</xsl:call-template>
@@ -376,12 +376,12 @@
 								<br/><span style="padding-left:8.5mm;"/>under CC 20-01 (See instructions)
 							</div>							
 							<div class="styIRS499W2PRCell" style="font-size:6.5pt;font-family:arial narrow;padding-bottom:1mm;"> 
-								  <label>
+								 <!-- <label>
 										<xsl:call-template name="PopulateLabel">
 											<xsl:with-param name="TargetNode" select="$FormData/OtherPaymentsInd"/>
 											<xsl:with-param name="BackupName">IRS499W2PROtherPaymentsInd</xsl:with-param>
 										</xsl:call-template>F -
-									</label>
+									</label>-->F -
 												<xsl:call-template name="PopulateSpan">
 													<xsl:with-param name="TargetNode" select="$FormData/OtherPaymentsInd"/>
 												</xsl:call-template>

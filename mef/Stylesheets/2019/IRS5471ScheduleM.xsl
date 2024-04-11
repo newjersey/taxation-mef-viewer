@@ -59,10 +59,10 @@
             <span class="styFST">
               <div class="styFST" style="height:5mm;padding-top:2mm;font-size:6.5pt;">
               <span style="width:80mm;">
-                  <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="bullet"/><span style="width: 4px"/> Attach to Form 5471.
+                  <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="right arrow graphic"/><span style="width: 4px"/> Attach to Form 5471.
 				</span>
 				<br/>
-                <img src="{$ImagePath}/3800_Bullet.gif" alt="bullet image"/>
+                <img src="{$ImagePath}/3800_Bullet.gif" alt="right arrow graphic"/>
                 Go to
                 <a style="text-decoration:none;color:black;" href="http://www.irs.gov/form5471" title="Link to irs.gov">
                   <i>www.irs.gov/Form5471</i>for instructions and the latest information.
@@ -195,7 +195,7 @@
           </div>
           <div class="styGenericDiv" style="padding-top:.5mm;">
             Enter the relevant functional currency and the exchange rate used throughout this schedule
-            <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="bullet"/>
+            <img src="{$ImagePath}/5471SchM_Bullet.gif" alt="right arrow graphic"/>
             <span class="sty5471ScheduleMNBSP"/>
             <span class="sty5471ScheduleMNBSP"/>
             <xsl:call-template name="PopulateText">
@@ -243,22 +243,22 @@
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InventorySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TangiblePropertySalesAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InventorySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PropertyRightsSalesAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InventorySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PlatformContributionRcvdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InventorySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CostSharingReceivedAmt"/>
             </xsl:call-template>
           </span>
         </div>
@@ -273,27 +273,27 @@
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TangiblePropertySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CompensationRcvdForCrtnSrvcAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TangiblePropertySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CommissionsReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/TangiblePropertySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TangiblePropertySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/HybridDividendsReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TangiblePropertySalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/DividendsReceivedAmt"/>
             </xsl:call-template>
           </span>
         </div>
@@ -308,27 +308,27 @@
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PropertyRightsSalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InterestReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PropertyRightsSalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InsReinsPremRcvdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/PropertyRightsSalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TotalTransactionsReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PropertyRightsSalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InventoryPurchaseAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PropertyRightsSalesAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TangiblePropertyPurchaseAmt"/>
             </xsl:call-template>
           </span>
         </div>
@@ -343,27 +343,27 @@
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PlatformContributionRcvdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PropertyRightsPrchsAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PlatformContributionRcvdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PlatformContributionPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/PlatformContributionRcvdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CostSharingPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PlatformContributionRcvdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CompensationPaidForCrtnSrvcAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PlatformContributionRcvdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CommissionsPaidAmt"/>
             </xsl:call-template>
           </span>
         </div>
@@ -378,27 +378,27 @@
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CostSharingReceivedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CostSharingReceivedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/HybridDividendsPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CostSharingReceivedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/DividendsPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CostSharingReceivedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InterestPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CostSharingReceivedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InsReinsPremPdAmt"/>
             </xsl:call-template>
           </span>
         </div>
@@ -413,27 +413,27 @@
           </span>
           <span class="sty5471ScheduleMColTH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CompensationRcvdForCrtnSrvcAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TotalTransactionsPdAmt"/>
             </xsl:call-template>
           </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CompensationRcvdForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/AccountsPayableAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CompensationRcvdForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/BorrowedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CompensationRcvdForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/AccountsReceivableAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CompensationRcvdForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/LoanAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -448,27 +448,27 @@
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CommissionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InventorySalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol" >
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CommissionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TangiblePropertySalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol" >
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CommissionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PropertyRightsSalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CommissionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PlatformContributionRcvdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CommissionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CostSharingReceivedAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -483,7 +483,12 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CompensationRcvdForCrtnSrvcAmt"/>
+          </xsl:call-template>
+        </span>
+        <span class="sty5471ScheduleMColDH">
+          <xsl:call-template name="PopulateAmount">
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CommissionsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
@@ -493,20 +498,16 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/HybridDividendsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/DividendsReceivedAmt"/>
           </xsl:call-template>
         </span>
-        <span class="sty5471ScheduleMColDH">
-          <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
-          </xsl:call-template>
-        </span>
-      </div>      
+      </div>
+      
        <!--   BEGIN LINE 9   -->
       <div class="sty5471ScheduleMDescLine">
         <span class="sty5471ScheduleMColA">
@@ -517,30 +518,31 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/HybridDividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InterestReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/HybridDividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InsReinsPremRcvdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/HybridDividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TotalTransactionsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/HybridDividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InventoryPurchaseAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/HybridDividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TangiblePropertyPurchaseAmt"/>
           </xsl:call-template>
         </span>
-      </div>      
+      </div>
+      
       <!--   BEGIN LINE 10   -->
       <div class="sty5471ScheduleMDescLine">
         <span class="sty5471ScheduleMColA">
@@ -551,27 +553,27 @@
         </span>
         <span class="sty5471ScheduleMColQH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/DividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PropertyRightsPrchsAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColQH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/DividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PlatformContributionPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColQH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/DividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CostSharingPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColQH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/DividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CompensationPaidForCrtnSrvcAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColQH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/DividendsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CommissionsPaidAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -586,27 +588,27 @@
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InterestReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InterestReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/HybridDividendsPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InterestReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/DividendsPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InterestReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InterestPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InterestReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InsReinsPremPdAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -621,27 +623,27 @@
         </span>
         <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InsReinsPremRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TotalTransactionsPdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InsReinsPremRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/AccountsPayableAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InsReinsPremRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/BorrowedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InsReinsPremRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/AccountsReceivableAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InsReinsPremRcvdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/LoanAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -656,27 +658,27 @@
         </span>
         <span class="sty5471ScheduleMCol"  style="border-bottom:0;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TotalTransactionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InventorySalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol"  style="border-bottom:0;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TotalTransactionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/TangiblePropertySalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol"  style="border-bottom:0;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/TotalTransactionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/PropertyRightsSalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol"  style="border-bottom:0;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TotalTransactionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/PlatformContributionRcvdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol"  style="border-bottom:0;">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TotalTransactionsReceivedAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CostSharingReceivedAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -691,27 +693,27 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InventoryPurchaseAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CompensationRcvdForCrtnSrvcAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InventoryPurchaseAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CommissionsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InventoryPurchaseAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InventoryPurchaseAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/HybridDividendsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InventoryPurchaseAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/DividendsReceivedAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -726,27 +728,27 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TangiblePropertyPurchaseAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InterestReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TangiblePropertyPurchaseAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InsReinsPremRcvdAmt"/>
+          </xsl:call-template>
+        </span>
+        <span class="sty5471ScheduleMColDH">
+          <xsl:call-template name="PopulateAmount">
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/TotalTransactionsReceivedAmt"/>
+          </xsl:call-template>
+        </span>
+        <span class="sty5471ScheduleMColDH">
+          <xsl:call-template name="PopulateAmount">
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InventoryPurchaseAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
             <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/TangiblePropertyPurchaseAmt"/>
-          </xsl:call-template>
-        </span>
-        <span class="sty5471ScheduleMColDH">
-          <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TangiblePropertyPurchaseAmt"/>
-          </xsl:call-template>
-        </span>
-        <span class="sty5471ScheduleMColDH">
-          <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TangiblePropertyPurchaseAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -761,27 +763,27 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PropertyRightsPrchsAmt"/>
-          </xsl:call-template>
-        </span>
-        <span class="sty5471ScheduleMColDH">
-          <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PropertyRightsPrchsAmt"/>
-          </xsl:call-template>
-        </span>
-        <span class="sty5471ScheduleMColDH">
-          <xsl:call-template name="PopulateAmount">
             <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/PropertyRightsPrchsAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PropertyRightsPrchsAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/PlatformContributionPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PropertyRightsPrchsAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CostSharingPaidAmt"/>
+          </xsl:call-template>
+        </span>
+        <span class="sty5471ScheduleMColDH">
+          <xsl:call-template name="PopulateAmount">
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CompensationPaidForCrtnSrvcAmt"/>
+          </xsl:call-template>
+        </span>
+        <span class="sty5471ScheduleMColDH">
+          <xsl:call-template name="PopulateAmount">
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CommissionsPaidAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -796,27 +798,27 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/PlatformContributionPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/PlatformContributionPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/HybridDividendsPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/PlatformContributionPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/DividendsPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PlatformContributionPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InterestPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PlatformContributionPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InsReinsPremPdAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -831,27 +833,27 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CostSharingPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/TotalTransactionsPdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CostSharingPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/AccountsPayableAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH" >
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CostSharingPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/BorrowedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CostSharingPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/AccountsReceivableAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CostSharingPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/LoanAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -867,27 +869,27 @@
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CompensationPaidForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InventorySalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CompensationPaidForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TangiblePropertySalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CompensationPaidForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PropertyRightsSalesAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CompensationPaidForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PlatformContributionRcvdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColTH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CompensationPaidForCrtnSrvcAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CostSharingReceivedAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -902,27 +904,27 @@
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/CommissionsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CompensationRcvdForCrtnSrvcAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol" >
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/CommissionsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CommissionsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol" >
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/CommissionsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CommissionsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/HybridDividendsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMCol">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CommissionsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/DividendsReceivedAmt"/>
           </xsl:call-template>
         </span>
       </div>
@@ -937,30 +939,31 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InterestReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InsReinsPremRcvdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TotalTransactionsReceivedAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InventoryPurchaseAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TangiblePropertyPurchaseAmt"/>
           </xsl:call-template>
         </span>
-      </div>                
+      </div>
+                
         <!--   BEGIN LINE 22   -->
         <div class="sty5471ScheduleMDescLine">
           <span class="sty5471ScheduleMColA">
@@ -972,30 +975,31 @@
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/HybridDividendsPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PropertyRightsPrchsAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/HybridDividendsPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/PlatformContributionPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/HybridDividendsPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CostSharingPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/HybridDividendsPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CompensationPaidForCrtnSrvcAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/HybridDividendsPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/CommissionsPaidAmt"/>
             </xsl:call-template>
           </span>
-        </div>        
+        </div>
+        
          <!--   BEGIN LINE 23 -->
       <div class="sty5471ScheduleMDescLine">
         <span class="sty5471ScheduleMColA">
@@ -1006,27 +1010,27 @@
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/DividendsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH" >
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/DividendsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/HybridDividendsPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH" >
-          <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/DividendsPaidAmt"/>
-          </xsl:call-template>
-        </span>
-        <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
             <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/DividendsPaidAmt"/>
           </xsl:call-template>
         </span>
         <span class="sty5471ScheduleMColDH">
           <xsl:call-template name="PopulateAmount">
-            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/DividendsPaidAmt"/>
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InterestPaidAmt"/>
+          </xsl:call-template>
+        </span>
+        <span class="sty5471ScheduleMColDH">
+          <xsl:call-template name="PopulateAmount">
+            <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InsReinsPremPdAmt"/>
           </xsl:call-template>
         </span>
        </div>        
@@ -1041,30 +1045,31 @@
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InterestPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TotalTransactionsPdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InterestPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/AccountsPayableAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InterestPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/BorrowedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InterestPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/AccountsReceivableAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InterestPaidAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/LoanAmt"/>
             </xsl:call-template>
           </span>
         </div>
+
 		<!--   BEGIN LINE 25   -->
         <div class="sty5471ScheduleMDescLine">
           <span class="sty5471ScheduleMColA">
@@ -1076,30 +1081,31 @@
           </span>
           <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/InsReinsPremPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InventorySalesAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/InsReinsPremPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TangiblePropertySalesAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/InsReinsPremPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PropertyRightsSalesAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/InsReinsPremPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PlatformContributionRcvdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColDH" style="border-bottom-width:2px;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InsReinsPremPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CostSharingReceivedAmt"/>
             </xsl:call-template>
           </span>
-        </div>        
+        </div>
+        
         <!--   BEGIN LINE 26   -->
         <div class="sty5471ScheduleMDescLine" style="border-bottom:1px solid black;">
           <span class="sty5471ScheduleMColA">
@@ -1111,30 +1117,31 @@
           </span>
           <span class="sty5471ScheduleMCol" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/TotalTransactionsPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CompensationRcvdForCrtnSrvcAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/TotalTransactionsPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CommissionsReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/TotalTransactionsPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/RentsRoyaltiesLcnsFeesRcvdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/TotalTransactionsPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/HybridDividendsReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TotalTransactionsPdAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/DividendsReceivedAmt"/>
             </xsl:call-template>
           </span>
-        </div>        
+        </div>
+        
         <!--   BEGIN LINE 27   -->
        <div class="sty5471ScheduleMDescLine">
           <span class="sty5471ScheduleMColA">
@@ -1146,30 +1153,32 @@
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/AccountsPayableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InterestReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/AccountsPayableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InsReinsPremRcvdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/AccountsPayableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TotalTransactionsReceivedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/AccountsPayableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InventoryPurchaseAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/AccountsPayableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TangiblePropertyPurchaseAmt"/>
             </xsl:call-template>
           </span>
-        </div>        
+        </div>
+
+        
         <!--   BEGIN LINE 28   -->
         <div class="sty5471ScheduleMDescLine">
           <span class="sty5471ScheduleMColA">
@@ -1182,30 +1191,31 @@
           </span>
           <span class="sty5471ScheduleMColTH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/BorrowedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PropertyRightsPrchsAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/BorrowedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/PlatformContributionPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/BorrowedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CostSharingPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/BorrowedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CompensationPaidForCrtnSrvcAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/BorrowedAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/CommissionsPaidAmt"/>
             </xsl:call-template>
           </span>
-        </div>        
+        </div>
+        
          <!--   BEGIN LINE 29   -->
        <div class="sty5471ScheduleMDescLine">
           <span class="sty5471ScheduleMColA">
@@ -1217,27 +1227,27 @@
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/AccountsReceivableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/RentsRoyaltiesLicenseFeesPdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/AccountsReceivableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/HybridDividendsPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol" >
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/AccountsReceivableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/DividendsPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/AccountsReceivableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InterestPaidAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMCol">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/AccountsReceivableAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/InsReinsPremPdAmt"/>
             </xsl:call-template>
           </span>
         </div>        
@@ -1254,22 +1264,22 @@
           </span>
           <span class="sty5471ScheduleMColTH" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/USPersonControlFrgnCorpGrp/LoanAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/TotalTransactionsPdAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/DomCorpPrtshpUSPersonFilingGrp/LoanAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/AccountsPayableAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/OthFrgnCorpPrtshpUSPrsnFlngGrp/LoanAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/BorrowedAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH" style="border-bottom:0;">
             <xsl:call-template name="PopulateAmount">
-              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrCtrlFrgnCorpGrp/LoanAmt"/>
+              <xsl:with-param name="TargetNode" select="$IRS5471ScheduleMData/TenPctMoreUSShrAnyCorpCtrlGrp/AccountsReceivableAmt"/>
             </xsl:call-template>
           </span>
           <span class="sty5471ScheduleMColTH" style="border-bottom:0;">

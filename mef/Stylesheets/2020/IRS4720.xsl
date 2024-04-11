@@ -96,7 +96,19 @@
 					<div class="styStdDiv">
 						<div class="styGenericDiv" style="width:135mm;">
 							<div class="sty4720HeaderCell" style="height:10.5mm;width:100%;border-left:none;">
-								Name of organization, entity, or person subject to tax
+								Name of organization, entity, or person subject to tax 
+								<xsl:call-template name="LinkToLeftoverDataTableInline">
+									<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/InCareOfNm"/>
+									<xsl:with-param name="Desc">Header - In Care Of Name</xsl:with-param>
+								</xsl:call-template>
+								<xsl:call-template name="LinkToLeftoverDataTableInline">
+									<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/BusinessNameControlTxt"/>
+									<xsl:with-param name="Desc">Header - Business Name Control</xsl:with-param>
+								</xsl:call-template>
+								<xsl:call-template name="LinkToLeftoverDataTableInline">
+									<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/PrimaryNameControlTxt"/>
+									<xsl:with-param name="Desc">Header - Primary Name Control</xsl:with-param>
+								</xsl:call-template>
 								<br />
 								<xsl:call-template name="PopulateReturnHeaderFiler">
 									<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
@@ -805,6 +817,9 @@
 										<tr style="height:4mm;vertical-align:top;">
 											<td class="styTableCellCtrInherit" style="font-weight:bold;">
 												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="ActNum"/>
+												</xsl:call-template>
+												<xsl:call-template name="SetFormLinkInline">
 													<xsl:with-param name="TargetNode" select="ActNum"/>
 												</xsl:call-template>
 											</td>
@@ -1684,6 +1699,9 @@
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="InvestmentNum"/>
 												</xsl:call-template>
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="InvestmentNum"/>
+												</xsl:call-template>
 											</td>
 											<td class="styTableCellCtrInherit">
 												<xsl:call-template name="PopulateMonthDayYear">
@@ -1722,7 +1740,7 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="styStdDiv">
+					<div class="styStdIBDiv">
 						<div class="sty4720HeaderCell" style="width:126.8mm;height:4mm;border-left:none;">
 							<strong>Total &mdash;</strong> Column (e). Enter here and on Part I, line 3
 							<span class="sty4720DotLn">..............</span>
@@ -1734,7 +1752,7 @@
 						</div>
 						<div class="sty4720HeaderCell" style="width:30mm;height:4mm;background-color:lightgrey;">&nbsp;</div>
 					</div>
-					<div class="styStdDiv">
+					<div class="styStdIBDiv">
 						<div class="sty4720HeaderCell" style="width:156.8mm;height:4mm;border-left:none;">
 							<strong>Total &mdash;</strong> Column (f). Enter total (or prorated amount) here and in Part II, column (c), below
 							<span class="sty4720DotLn">.........</span>
@@ -1910,6 +1928,9 @@
 										<tr style="height:4mm;vertical-align:top;">
 											<td class="styTableCellCtrInherit" style="font-weight:bold;">
 												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="ItemNum"/>
+												</xsl:call-template>
+												<xsl:call-template name="SetFormLinkInline">
 													<xsl:with-param name="TargetNode" select="ItemNum"/>
 												</xsl:call-template>
 											</td>
@@ -2197,6 +2218,9 @@
 												<xsl:call-template name="PopulateText">
 													<xsl:with-param name="TargetNode" select="ItemNum"/>
 												</xsl:call-template>
+												<xsl:call-template name="SetFormLinkInline">
+													<xsl:with-param name="TargetNode" select="ItemNum"/>
+												</xsl:call-template>
 											</td>
 											<td class="styTableCellAmtInherit">
 												<xsl:call-template name="PopulateAmount">
@@ -2265,7 +2289,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName">Part II</div>
 						<div class="styPartDesc">
-							Summary of Tax Liability of Foundation Managers and Proration of Payments
+							Summary of Tax Liability of Organization Managers or Foundation Managers and Proration of Payments
 						</div>
 					</div>
 					<!-- Sch F, Part 2 table -->
@@ -2730,6 +2754,9 @@
 										<tr style="height:4mm;vertical-align:top;">
 											<td class="styTableCellCtrInherit" style="font-weight:bold;">
 												<xsl:call-template name="PopulateText">
+													<xsl:with-param name="TargetNode" select="TransactionNum"/>
+												</xsl:call-template>
+												<xsl:call-template name="SetFormLinkInline">
 													<xsl:with-param name="TargetNode" select="TransactionNum"/>
 												</xsl:call-template>
 											</td>
@@ -3403,6 +3430,7 @@
 										<xsl:with-param name="SepMessage" select="$shouldSeparateSKP1"/>
 										<xsl:with-param name="MaxLine" select="4"/>
 										<xsl:with-param name="TwoLine" select="true()"/>
+										<xsl:with-param name="SepColTwo" select="true()"/>
 									</xsl:call-template>
 								</xsl:if>
 							</tbody>
@@ -3668,6 +3696,7 @@
 										<xsl:with-param name="SepMessage" select="$shouldSeparateSLP1"/>
 										<xsl:with-param name="MaxLine" select="5"/>
 										<xsl:with-param name="TwoLine" select="true()"/>
+										<xsl:with-param name="SepColTwo" select="true()"/>
 									</xsl:call-template>
 								</xsl:if>
 							</tbody>
@@ -4290,7 +4319,11 @@
 									<tr style="height:8mm;vertical-align:top;font-size:6pt;">
 										<td class="styTableCellCtrInherit" style="font-weight:bold;font-size:7pt;">2</td>
 										<td class="styTableCellTextInherit" style="font-size:7pt;">Related Organization</td>
-										<td class="styTableCellTextInherit">&nbsp;</td>
+										<td class="styTableCellTextInherit">
+											<xsl:call-template name="PopulateAdditionalDataTableMessage">
+												<xsl:with-param name="TargetNode" select="$FormData/IRS4720ScheduleO/RelatedOrganizationGrp"/>
+											</xsl:call-template>
+										</td>
 										<td class="styTableCellCtrInherit">&nbsp;</td>
 										<td class="styTableCellAmtInherit">&nbsp;</td>
 										<td class="styTableCellAmtInherit">&nbsp;</td>
@@ -4302,11 +4335,7 @@
 									<tr style="height:8mm;vertical-align:top;font-size:6pt;">
 										<td class="styTableCellCtrInherit" style="font-weight:bold;font-size:7pt;">3</td>
 										<td class="styTableCellTextInherit" style="font-size:7pt;">Related Organization</td>
-										<td class="styTableCellTextInherit">
-											<xsl:call-template name="PopulateAdditionalDataTableMessage">
-												<xsl:with-param name="TargetNode" select="$FormData/IRS4720ScheduleO/RelatedOrganizationGrp"/>
-											</xsl:call-template>
-										</td>
+										<td class="styTableCellTextInherit">&nbsp;</td>
 										<td class="styTableCellCtrInherit">&nbsp;</td>
 										<td class="styTableCellAmtInherit">&nbsp;</td>
 										<td class="styTableCellAmtInherit">&nbsp;</td>
@@ -4437,10 +4466,16 @@
 								<img alt="Right arrow" src="{$ImagePath}/1040_Bullet_Lg.gif" height="30" width="10" style="margin-top:3px;"/>
 							</div>
 							<div class="styGenericDiv" style="width:134mm;">
-								<span style="width:100%;min-height:8mm;border-bottom:1px solid black;border-right:1px solid black;vertical-align:bottom;">
+								<span style="width:100%;height:9.2mm;border-bottom:1px solid black;border-right:1px solid black;vertical-align:bottom;">
 									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$RtnHdrData/BusinessOfficerGrp/MgrSelfDealerDnrRltdPrsnGrp/PersonNm"></xsl:with-param>
+										<xsl:with-param name="TargetNode" select="$RtnHdrData/BusinessOfficerGrp/MgrSelfDealerDnrRltdPrsnGrp/PersonNm"/>
 									</xsl:call-template>
+									<xsl:if test="$RtnHdrData/BusinessOfficerGrp/MgrSelfDealerDnrRltdPrsnGrp/PersonTitleTxt">
+										<span style="height:2mm;width:8mm;"/>
+										( <xsl:call-template name="PopulateText">
+											<xsl:with-param name="TargetNode" select="$RtnHdrData/BusinessOfficerGrp/MgrSelfDealerDnrRltdPrsnGrp/PersonTitleTxt"/>
+										</xsl:call-template> )
+									</xsl:if>
 									<br />
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$RtnHdrData/BusinessOfficerGrp/MgrSelfDealerDnrRltdPrsnGrp/OrganizationOrEntityName/BusinessNameLine1Txt"></xsl:with-param>
@@ -4458,8 +4493,8 @@
 								</span>
 							</div>
 							<div class="styGenericDiv" style="width:26mm;">
-								<span style="width:100%;height:8mm;border-bottom:1px solid black;padding-left:0.5mm;">
-									<br />
+								<span style="width:100%;height:9.2mm;border-bottom:1px solid black;padding-left:0.5mm;vertical-align:bottom;">
+									<br /><br />
 									<xsl:call-template name="PopulateReturnHeaderOfficer">
 										<xsl:with-param name="TargetNode">SignatureDt</xsl:with-param>
 									</xsl:call-template>
@@ -4588,10 +4623,19 @@
 										</xsl:call-template>
                   </div>
                 </div>
-                <div class="styLNDesc" style="width:55mm;padding-left:1mm;height:auto;border-top:1px solid black;"> Phone no. 
-                  <xsl:call-template name="PopulateReturnHeaderPreparer">
-									<xsl:with-param name="TargetNode">Phone</xsl:with-param>
-								</xsl:call-template>
+                <div class="styLNDesc" style="width:55mm;padding-left:1mm;height:auto;border-top:1px solid black;word-break:break-all;"> Phone no. 
+									<xsl:choose>
+										<xsl:when test="$RtnHdrData/PreparerPersonGrp/ForeignPhoneNum">
+											<xsl:call-template name="PopulateReturnHeaderPreparer">
+												<xsl:with-param name="TargetNode">ForeignPhone</xsl:with-param>
+											</xsl:call-template>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:call-template name="PopulateReturnHeaderPreparer">
+												<xsl:with-param name="TargetNode">Phone</xsl:with-param>
+											</xsl:call-template>
+										</xsl:otherwise>
+									</xsl:choose>
                 </div>
               </div>
             </div>
@@ -4620,6 +4664,22 @@
 								<xsl:with-param name="Desc">Top Left Header - Special Condition Description <xsl:value-of select="position()"/></xsl:with-param>
 							</xsl:call-template>
 						</xsl:for-each>
+						<xsl:call-template name="PopulateLeftoverRow">
+							<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/InCareOfNm"/>
+							<xsl:with-param name="Desc">Header - In Care Of Name</xsl:with-param>
+						</xsl:call-template>
+						<xsl:call-template name="PopulateLeftoverRow">
+							<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/BusinessNameControlTxt"/>
+							<xsl:with-param name="Desc">Header - Business Name Control</xsl:with-param>
+						</xsl:call-template>
+						<xsl:call-template name="PopulateLeftoverRow">
+							<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/PrimaryNameControlTxt"/>
+							<xsl:with-param name="Desc">Header - Primary Name Control</xsl:with-param>
+						</xsl:call-template>
+						<xsl:call-template name="PopulateLeftoverRow">
+							<xsl:with-param name="TargetNode" select="$FormData/OtherInd/@otherReturnDesc"/>
+							<xsl:with-param name="Desc">Header - Other Return Type Description</xsl:with-param>
+						</xsl:call-template>
 						<xsl:call-template name="PopulateLeftoverRow">
 							<xsl:with-param name="TargetNode" select="$FormData/ExchangeRateDesc"/>
 							<xsl:with-param name="Desc">Line A - Exchange Rate Description</xsl:with-param>
@@ -4650,6 +4710,9 @@
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellCtrInherit" style="font-weight:bold;">
 											<xsl:call-template name="PopulateText">
+												<xsl:with-param name="TargetNode" select="ActNum"/>
+											</xsl:call-template>
+											<xsl:call-template name="SetFormLinkInline">
 												<xsl:with-param name="TargetNode" select="ActNum"/>
 											</xsl:call-template>
 										</td>
@@ -4963,6 +5026,9 @@
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="InvestmentNum"/>
 											</xsl:call-template>
+											<xsl:call-template name="SetFormLinkInline">
+												<xsl:with-param name="TargetNode" select="InvestmentNum"/>
+											</xsl:call-template>
 										</td>
 										<td class="styTableCellCtrInherit">
 											<xsl:call-template name="PopulateMonthDayYear">
@@ -5132,6 +5198,9 @@
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="ItemNum"/>
 											</xsl:call-template>
+											<xsl:call-template name="SetFormLinkInline">
+												<xsl:with-param name="TargetNode" select="ItemNum"/>
+											</xsl:call-template>
 										</td>
 										<td class="styTableCellAmtInherit">
 											<xsl:call-template name="PopulateAmount">
@@ -5216,7 +5285,7 @@
 					<xsl:if test="$shouldSeparateSEP2">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Schedule E, Part II - Summary of Tax Liability of Organization Managers or Foundation Managers and Proration of Payments</span>
+						<span class="styRepeatingDataTitle">Schedule E, Part II - Summary of Tax Liability of Foundation Managers and Proration of Payments</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">
@@ -5319,7 +5388,7 @@
 					<xsl:if test="$shouldSeparateSFP1">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Schedule F, Part I - Political Expenditures and Computation of Tax</span>
+						<span class="styRepeatingDataTitle">Schedule F, Part I - Expenditures and Computation of Tax</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">
@@ -5352,6 +5421,9 @@
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellCtrInherit" style="font-weight:bold;">
 											<xsl:call-template name="PopulateText">
+												<xsl:with-param name="TargetNode" select="ItemNum"/>
+											</xsl:call-template>
+											<xsl:call-template name="SetFormLinkInline">
 												<xsl:with-param name="TargetNode" select="ItemNum"/>
 											</xsl:call-template>
 										</td>
@@ -5492,7 +5564,7 @@
 					<xsl:if test="$shouldSeparateSHP1">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">Schedule H, Part I - Disqualifying Lobbying Expenditures and Computation of Tax</span>
+						<span class="styRepeatingDataTitle">Schedule H, Part I - Taxes on Disqualifying Lobbying Expenditures</span>
 						<table class="styDepTbl" cellspacing="0" style="font-size:7pt;">
 							<thead class="styTableThead">
 								<tr class="styDepTblHdr">
@@ -5687,6 +5759,9 @@
 										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
 										<td class="styTableCellCtrInherit" style="font-weight:bold;">
 											<xsl:call-template name="PopulateText">
+												<xsl:with-param name="TargetNode" select="TransactionNum"/>
+											</xsl:call-template>
+											<xsl:call-template name="SetFormLinkInline">
 												<xsl:with-param name="TargetNode" select="TransactionNum"/>
 											</xsl:call-template>
 										</td>
@@ -6302,7 +6377,7 @@
 										or prorated amount
 									</th>
 									<th class="styDepTblCell" scope="col" style="width:52mm;font-weight:normal;border-right-width:0px;">
-										<strong>(d)</strong> Fund Manager's total tax liability <br /> 
+										<strong>(d)</strong> Manager's total tax liability <br /> 
 										 (add amounts in col. (c)) <br /> (see instructions)
 									</th>
 								</tr>
@@ -6920,6 +6995,7 @@
 		<xsl:param name="SepMessage" select="false()"/>
 		<xsl:param name="MaxLine" select="5"/>
 		<xsl:param name="TwoLine" select="false()"/>
+		<xsl:param name="SepColTwo" select="false()"/>
 		<tr style="height:4mm;vertical-align:top;">
 			<xsl:if test="$TwoLine">
 				<xsl:attribute name="style">height:8mm;vertical-align:top;</xsl:attribute>
@@ -6930,10 +7006,17 @@
 					<xsl:otherwise><xsl:value-of select="$LineNumber"/></xsl:otherwise>
 				</xsl:choose>
 			</td>
-			<td class="styTableCellTextInherit">&nbsp;</td>
+			<td class="styTableCellTextInherit">
+				<xsl:choose>
+					<xsl:when test="$SepMessage and $SepColTwo">
+						See Additional Data Table
+					</xsl:when>
+					<xsl:otherwise>&nbsp;</xsl:otherwise>
+				</xsl:choose>
+			</td>
 			<td class="styTableCellTextInherit" style="border-right-width:0px;">
 				<xsl:choose>
-					<xsl:when test="$SepMessage">
+					<xsl:when test="$SepMessage and not($SepColTwo)">
 						See Additional Data Table
 					</xsl:when>
 					<xsl:otherwise>&nbsp;</xsl:otherwise>

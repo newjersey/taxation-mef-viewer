@@ -2160,7 +2160,7 @@ Enter expenses for business use of your home
 					<tbody>
 					<!-- print logic -->
 					<xsl:for-each select="$Form1040ScheduleCData/OtherExpenseDetail">					
-							<xsl:if test="($Print != $Separated) or (count($Form1040ScheduleCData/OtherExpenseDetail) &lt;9) ">
+							<xsl:if test="($Print != $Separated) or (count($Form1040ScheduleCData/OtherExpenseDetail) &lt;8) ">
 								<tr>
 									<td class="styTableCellText" style="width:155.3mm;border-bottom:1px dashed black;">
 										<!--Description-->
@@ -2182,7 +2182,30 @@ Enter expenses for business use of your home
 										</xsl:call-template>																								
 									</td>
 								</tr>
-							</xsl:if>
+								</xsl:if>
+								<xsl:if test="($Print != $Separated) and (count($Form1040ScheduleCData/OtherExpenseDetail) =9) and (position()=9)">
+								<tr>
+									<td class="styTableCellText" style="width:155.3mm;border-bottom:0px dashed black;">
+										<!--Description-->
+										<xsl:if test="$Form1040ScheduleCData/OtherExpenseDetail/Desc"> 
+											<xsl:call-template name="PopulateText">
+											<xsl:with-param name="TargetNode" select="Desc"/>
+											</xsl:call-template>
+											<span style="width:9mm;"/>
+											 <xsl:call-template name="SetFormLinkInline">
+										 <xsl:with-param name="TargetNode" select="$Form1040ScheduleCData/OtherExpenseDetail"/>
+											 </xsl:call-template>  
+											</xsl:if>
+										   <span style="width:1mm;"/>
+									</td>
+									<td class="styTableCell" style="border-right-width: 0px;border-bottom:0px solid black;width:31.5mm;">
+									    <!--Expenses-->
+										<xsl:call-template name="PopulateAmount">
+												<xsl:with-param name="TargetNode" select="Amt"/>
+										</xsl:call-template>																								
+									</td>
+								</tr>
+							</xsl:if>							
 						</xsl:for-each>
 						<xsl:if test="count($Form1040ScheduleCData/OtherExpenseDetail)&lt; 1 or ((count($Form1040ScheduleCData/OtherExpenseDetail) &gt; 8) and ($Print = $Separated))">
 							<tr>

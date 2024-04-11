@@ -737,7 +737,7 @@
 					<div class="styBB" style="width:187mm;height:6mm;">
 						<span style="float:left;">
 							<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-								<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 							</div>
 							<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.
@@ -803,7 +803,7 @@
 						<div class="styIRS941RightNumBox">11d </div>
 						<div class="styLNCtrNumBox" style="width:37mm;border-top-width:1px;height:5mm;text-align:right;padding-right:1mm;">
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/TotalNonrefundableCreditsAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/NrfdblCrQlfySLFMLWagesAftrAmt"/>
 							</xsl:call-template>
 						</div>
 					</span>
@@ -1168,32 +1168,35 @@
 								<xsl:with-param name="BackupName">941TotalTaxLessThanLimitAmtInd</xsl:with-param>
 							</xsl:call-template>
 							<span style="width:158mm;padding-top:.5mm;"><b>Line 12 on this return is less than $2,500 or line 
-							12 on the return for the prior quarter was less than $2,500, and you didn't incur a $100,000 next-day deposit obligation during the current quarter.</b>
-							 If line 12 for the prior quarter was less than $2,500 but line 12 on this return is $100,000 
-							or more, you must provide a record of your federal tax liability. If you are a monthly schedule depositor, complete the 
-							deposit schedule below; if you are a semiweekly schedule depositor, attach Schedule B (Form 941). Go to Part 3.
+							12 on the return for the prior quarter was less than $2,500, and you didn't incur a $100,000 next-day deposit 
+							obligation during the current quarter.</b> If line 12 for the prior quarter was less than $2,500 but line 12 on 
+							this return is $100,000 or more, you must provide a record of your federal tax liability. If you are a monthly 
+							schedule depositor, complete the deposit schedule below; if you are a semiweekly schedule depositor, attach 
+							Schedule B (Form 941). Go to Part 3.
 							</span>
 						</label>
 						<br/><br/>
-						<xsl:call-template name="PopulateSpan">
-							<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-						</xsl:call-template>
-						<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
-							<xsl:call-template name="PopulateCheckbox">
+						<span>
+							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
 							</xsl:call-template>
-						</input>
-						<label >
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
-							</xsl:call-template>
-							<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
-								<b>You were a monthly schedule depositor for the entire quarter.</b> Enter your 
-								tax liability for each month and total liability for the quarter, then go to Part 3.
-							</span>
-						</label>
+							<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+							</input>
+							<label >
+								<xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+								<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
+									<b>You were a monthly schedule depositor for the entire quarter.</b> Enter your 
+									tax liability for each month and total liability for the quarter, then go to Part 3.
+								</span>
+							</label>
+						</span>
 					</div>
 					<div style="width:187mm;height:7mm;">
 						<div class="styLNDesc" style="font-weight:bold;width:66mm;padding-top:1mm;padding-left:32mm;text-align:right;padding-right:4mm;">
@@ -1239,35 +1242,37 @@
 					</div>
 				</div>		
 				<div style="width:187mm;padding-left:24mm; padding-bottom:3mm;">
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
-						</xsl:call-template>
-					</input>
-					<label >
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:155mm;vertical-align:top;">
-							<b>You were a semiweekly schedule depositor for any part of this quarter.</b> 
-							Complete Schedule B (Form 941), Report of Tax Liability for Semiweekly Schedule Depositors, attach 
-							it to Form 941. Go to Part 3.
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
 						</xsl:call-template>
-					</label>
+						<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label >
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:155mm;vertical-align:top;">
+								<b>You were a semiweekly schedule depositor for any part of this quarter.</b> 
+								Complete Schedule B (Form 941), Report of Tax Liability for Semiweekly Schedule Depositors, attach 
+								it to Form 941. Go to Part 3.
+							</span>
+							<xsl:call-template name="SetFormLinkInline">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+							</xsl:call-template>
+						</label>
+					</span>
 				</div>
 				<!-- Bullet Message -->
 				<div class="styBB" style="width:187mm;height:6mm;">
 					<span style="float:left;">
 						<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-							<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 						</div>
 						<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.
@@ -2670,7 +2675,7 @@
 					<div class="styBB" style="width:187mm;height:6mm;">
 						<span style="float:left;">
 							<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-								<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+								<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 							</div>
 							<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.
@@ -2736,7 +2741,7 @@
 						<div class="styIRS941RightNumBox">11d </div>
 						<div class="styLNCtrNumBox" style="width:37mm;border-top-width:1px;height:5mm;text-align:right;padding-right:1mm;">
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/TotalNonrefundableCreditsAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/NrfdblCrQlfySLFMLWagesAftrAmt"/>
 							</xsl:call-template>
 						</div>
 					</span>
@@ -3109,25 +3114,27 @@
 							</span>
 						</label>
 						<br/><br/>
-						<xsl:call-template name="PopulateSpan">
-							<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-						</xsl:call-template>
-						<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
-							<xsl:call-template name="PopulateCheckbox">
+						<span>
+							<xsl:call-template name="PopulateSpan">
 								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
 							</xsl:call-template>
-						</input>
-						<label >
-							<xsl:call-template name="PopulateLabel">
-								<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
-								<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
-							</xsl:call-template>
-							<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
-								<b>You were a monthly schedule depositor for the entire quarter.</b> Enter your 
-								tax liability for each month and total liability for the quarter, then go to Part 3.
-							</span>
-						</label>
+							<input type="checkbox" alt="MonthlyScheduleDepositor" class="styCkbox">
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+							</input>
+							<label >
+								<xsl:call-template name="PopulateLabel">
+									<xsl:with-param name="TargetNode" select="$FormData/MonthlyScheduleDepositorGrp/MonthlyScheduleDepositorInd"/>
+									<xsl:with-param name="BackupName">941MonthlyScheduleDepositorInd</xsl:with-param>
+								</xsl:call-template>
+								<span style="width:158mm;vertical-align:top;padding-top:.5mm;">
+									<b>You were a monthly schedule depositor for the entire quarter.</b> Enter your 
+									tax liability for each month and total liability for the quarter, then go to Part 3.
+								</span>
+							</label>
+						</span>
 					</div>
 					<div style="width:187mm;height:7mm;">
 						<div class="styLNDesc" style="font-weight:bold;width:66mm;padding-top:1mm;padding-left:32mm;text-align:right;padding-right:4mm;">
@@ -3173,35 +3180,37 @@
 					</div>
 				</div>		
 				<div style="width:187mm;padding-left:24mm; padding-bottom:3mm;">
-					<xsl:call-template name="PopulateSpan">
-						<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-					</xsl:call-template>
-					<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
-						<xsl:call-template name="PopulateCheckbox">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
-						</xsl:call-template>
-					</input>
-					<label >
-						<xsl:call-template name="PopulateLabel">
-							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
-							<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
-						</xsl:call-template>
-						<span style="width:155mm;vertical-align:top;">
-							<b>You were a semiweekly schedule depositor for any part of this quarter.</b> 
-							Complete Schedule B (Form 941), Report of Tax Liability for Semiweekly Schedule Depositors, attach 
-							it to Form 941. Go to Part 3.
-						</span>
-						<xsl:call-template name="SetFormLinkInline">
+					<span>
+						<xsl:call-template name="PopulateSpan">
 							<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
 						</xsl:call-template>
-					</label>
+						<input type="checkbox" alt="SemiweeklyScheduleDepositor" class="styCkbox">
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+						</input>
+						<label >
+							<xsl:call-template name="PopulateLabel">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+								<xsl:with-param name="BackupName">941SemiweeklyScheduleDepositorInd</xsl:with-param>
+							</xsl:call-template>
+							<span style="width:155mm;vertical-align:top;">
+								<b>You were a semiweekly schedule depositor for any part of this quarter.</b> 
+								Complete Schedule B (Form 941), Report of Tax Liability for Semiweekly Schedule Depositors, attach 
+								it to Form 941. Go to Part 3.
+							</span>
+							<xsl:call-template name="SetFormLinkInline">
+								<xsl:with-param name="TargetNode" select="$FormData/SemiweeklyScheduleDepositorInd"/>
+							</xsl:call-template>
+						</label>
+					</span>
 				</div>
 				<!-- Bullet Message -->
 				<div class="styBB" style="width:187mm;height:6mm;">
 					<span style="float:left;">
 						<div class="styLNLeftNumBox" style="width:4mm;text-align:center;padding-left:2mm;">
-							<img src="{$ImagePath}/941_Bullet.gif" alt="Bullet Image"/>
+							<img src="{$ImagePath}/941_Bullet.gif" alt="Right pointing arrowhead image"/>
 						</div>
 						<div class="styLNDesc" style="width:130mm;padding-left:1mm;font-weight:bold;">
 								You MUST complete all three pages of Form 941 and SIGN it.

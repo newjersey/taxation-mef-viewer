@@ -94,7 +94,7 @@
 								</span>
 								<br/>
 								<br/>
-								<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="MediumBullet"/>
+								<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="right arrow graphic"/>
 								<b>Go to
 					  <a style="text-decoration:none; color:black;" href="http://www.irs.gov/Form1120F" title="Link to IRS.gov">
 										<i>www.irs.gov/Form1120F</i>
@@ -292,20 +292,15 @@
 										</xsl:call-template>
 						Protective return
 					  </label>
-									<!-- end check box for protective return -->
-									<!--<xsl:call-template name="SetFormLinkInline">
-					  <xsl:with-param name="TargetNode" select="$FormData/ScheduleM3AttachedInd"/>
-					  </xsl:call-template>-->
 								</span>
 							</span>
 						</div>
 					</div>
 					<!--  End Header section 2 (return header address box) -->
-					<!-- begin main content area -->
 					<table class="styTable" cellspacing="0" cellpadding="0" style="font-size:7pt; width:187mm;">
 						<tr>
 							<!-- begin left side  -->
-							<td valign="top" class="styGenericDiv" style="width:93mm;">
+							<td valign="top" class="styGenericDiv" style="width:90mm;">
 								<!-- begin line A  -->
 								<div class="styGenericDiv" style="width:93mm; padding-top:1mm;">
 									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;">A</div>
@@ -320,8 +315,8 @@
 								<!-- begin line B  -->
 								<div class="styGenericDiv" style="width:93mm; padding-top:1mm;">
 									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;">B</div>
-					  Foreign country under whose laws the income reported on this return is also subject to tax
-					  <span class="sty1120FItemUnderline" style="width:58mm;">
+					  Foreign country under whose laws the income reported on this<br/> return is also subject to tax
+					  <span class="sty1120FItemUnderline" style="width:49mm;">
 										<xsl:call-template name="PopulateText">
 											<xsl:with-param name="TargetNode" select="$FormData/UndWhoseLawsIncmSubjTxCntryNm"/>
 										</xsl:call-template>
@@ -463,20 +458,16 @@
 										<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>
 										<span class="sty1120FItemUnderlineSM" style="width:84mm; height:4mm; float:left; padding-left:6mm; clear:none;"/>
 									</xsl:if>
-									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>
-									<span class="sty1120FItemUnderlineSM" style="width:84mm; height:4mm; float:left; padding-left:6mm; clear:none;"/>
-									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>
-									<span class="sty1120FItemUnderlineSM" style="width:84mm; height:4mm; float:left; padding-left:6mm; clear:none;"/>
 								</div>
 								<!-- end line D (2) -->
 								<!-- begin line D (3) -->
-								<div class="styGenericDiv" style="width:93mm; padding-top:1mm;">
-									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>
-									<b>(3) </b> If the corporation maintains an office or place of business in the United States, check here											
+								<div class="styGenericDiv" style="width:90mm; padding-top:1mm;border-right-width:1px;float:left; padding-left:6mm">
+									<!--<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>-->
+									<b>(3) </b> If the corporation maintains an office or place of business<br/>in the United States, check here											
 								<!--Dotted Line-->
-									<span class="styDotLn" style="float:none;">..........</span>
+									<span class="styDotLn" style="float:none;">........</span>
 									<span style="padding-left:1mm;">
-										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									</span>
 									<span style="width:8px;"/>
 									<input type="checkbox" alt="Maintain Office In US Indicator" class="styCkbox">
@@ -590,7 +581,7 @@
 								<div class="styGenericDiv" style="width:94mm; padding-top:1mm;">
 									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>
 									<b>(1) </b>Business activity code number<span style="width:2mm;"/>
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="Small Bullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									<span style="width:1mm;"/>
 									<span class="sty1120FItemUnderlineSM" style="width:39mm;">
 										<xsl:if test="$FormData/PrincipalBusinessActivityCd">
@@ -610,7 +601,7 @@
 								<div class="styGenericDiv" style="width:94mm; padding-top:1mm;">
 									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>
 									<b>(2) </b>Business activity<span style="width:2mm;"/>
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="Small Bullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									<span style="width:1mm;"/>
 									<span class="sty1120FItemUnderlineSM" style="width:56mm; height:auto;">
 										<xsl:call-template name="PopulateText">
@@ -623,7 +614,7 @@
 								<div class="styGenericDiv" style="width:94mm; padding-top:1mm;">
 									<div class="styIRS1120FLNLeftNumBox" style="width:6mm;"/>
 									<b>(3) </b>Product or service<span style="width:2mm;"/>
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="Small Bullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									<span style="width:1mm;"/>
 									<span class="sty1120FItemUnderlineSM" style="width:54mm; height:auto;">
 										<xsl:call-template name="PopulateText">
@@ -695,7 +686,7 @@
 										Other (specify)
 									</label>
 									<span style="width:2mm;"/>
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="Small Bullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									<span class="sty1120FItemUnderlineSM" style="width:50mm;">
 										<!-- Form to Form Link -->
 										<xsl:call-template name="PopulateText">
@@ -715,7 +706,7 @@
 						<!-- begin item 1 -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox">1</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left">
 								  Tax from Section I, line 11, page 3
 								</span>
@@ -738,7 +729,7 @@
 						<!-- begin item 2  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox">2</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left">
 								  Tax from Section II, Schedule J, line 9, page 5
 								</span>
@@ -761,7 +752,7 @@
 						<!-- begin item 3  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox">3</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left;">
 								  Tax from Section III (add lines 6 and 10 on page 6)
 								</span>
@@ -784,7 +775,7 @@
 						<!-- begin item 4  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox">4</td>
-							<td colspan="5" class="styIRS1120FItemDesc" style="width:142mm;" scope="row">
+							<td colspan="5" class="styIRS1120FItemDesc" style="width:141mm;" scope="row">
 								<span style="float:left">
 									<b>Total tax.</b> Add lines 1 through 3
 					</span>
@@ -801,7 +792,7 @@
 						<!-- begin item 5a  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox">5a</td>
-							<td class="styIRS1120FItemDesc" style="width:70mm;" scope="row">
+							<td class="styIRS1120FItemDesc" style="width:69mm;" scope="row">
 								<span style="float:left;">
 								  2019 overpayment credited to 2020
 								</span>
@@ -832,7 +823,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm;">b</span>
 							</td>
-							<td class="styIRS1120FItemDesc" style="width:70mm;" scope="row">
+							<td class="styIRS1120FItemDesc" style="width:69mm;" scope="row">
 								<span style="float:left">
 								  2020 estimated tax payments
 								  <xsl:call-template name="LinkToLeftoverDataTableInline">
@@ -871,7 +862,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm;">c</span>
 							</td>
-							<td class="styIRS1120FItemDesc" style="width:70mm;" scope="row">
+							<td class="styIRS1120FItemDesc" style="width:69mm;" scope="row">
 								<span style="float:left;">
 								  Less 2020 refund applied for on Form 4466
 								<span style="padding-left:1mm;">
@@ -909,7 +900,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm;">d</span>
 							</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left;">
 								  Combine lines 5a through 5c
 								</span>
@@ -934,7 +925,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm;">e</span>
 							</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left">
 								  Tax deposited with Form 7004
 								</span>
@@ -959,7 +950,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm;">f</span>
 							</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left;">
 								  Credit for tax paid on undistributed capital gains (attach Form 2439)
 								<span style="padding-left:1mm;">
@@ -991,7 +982,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm">g</span>
 							</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left">
 								  Credit for federal tax paid on fuels (attach Form 4136). See instructions
 								<span style="padding-left:1mm;">
@@ -1027,7 +1018,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm;">h</span>
 							</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm;" scope="row">
 								<span style="float:left">
 									  Reserved for future use	
 <!--								  <xsl:call-template name="SetFormLinkInline">
@@ -1056,7 +1047,7 @@
 							<td class="styIRS1120FLeftNumBox" valign="top">
 								<span style="padding-left:1.5mm;">i</span>
 							</td>
-							<td colspan="3" class="styIRS1120FItemDesc" style="width:106mm; height:8mm;" scope="row">
+							<td colspan="3" class="styIRS1120FItemDesc" style="width:105mm; height:8mm;" scope="row">
 								U.S. income tax paid or withheld at source (add line 12, page 3, and amounts
 								<span style="float:left">from Forms 8288-A and 8805 (attach Forms 8288-A and 8805))
 								  <!-- Form to Form Link -->
@@ -1082,7 +1073,7 @@
 							<td class="styIRS1120FLeftNumBox">
 								<span style="padding-left:1.5mm">j</span>
 							</td>
-							<td colspan="5" class="styIRS1120FItemDesc" style="width:142mm;" scope="row">
+							<td colspan="5" class="styIRS1120FItemDesc" style="width:141mm;" scope="row">
 								<span style="float:left">
 								  Total payments. Add lines 5d through 5i
 								  <span style="padding-left:1mm;">
@@ -1110,7 +1101,7 @@
 						<!-- begin item 6  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox" style="height:4.5mm;">6</td>
-							<td colspan="5" class="styIRS1120FItemDesc" style="width:142mm; height:4.5mm;" scope="row">
+							<td colspan="5" class="styIRS1120FItemDesc" style="width:141mm; height:4.5mm;" scope="row">
 								<span style="float:left">
 								  Estimated tax penalty (see instructions). Check if Form 2220 is attached
 								  <label>
@@ -1129,7 +1120,7 @@
 								<span style="float:right; padding-left:1mm">
 									<span class="styDotLn" style="float:left; padding-right:1mm;">.......</span>
 									<span style="float:right;">
-										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="Small Bullet"/>
+										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 										<span style="width:8px"/>
 										<input type="checkbox" alt="Form 2220 Attached Indicator" class="styCkbox">
 											<xsl:call-template name="PopulateCheckbox">
@@ -1152,7 +1143,7 @@
 						<!-- begin item 7  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox">7</td>
-							<td colspan="5" class="styIRS1120FItemDesc" style="width:142mm;" scope="row">
+							<td colspan="5" class="styIRS1120FItemDesc" style="width:141mm;" scope="row">
 								<span style="float:left">
 									<b>Amount owed. </b>If line 5j is smaller than the total of lines 4 and 6, enter amount owed
 								</span>
@@ -1169,7 +1160,7 @@
 						<!-- begin item 8a  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox">8a</td>
-							<td colspan="5" class="styIRS1120FItemDesc" style="width:142mm;" scope="row">
+							<td colspan="5" class="styIRS1120FItemDesc" style="width:141mm;" scope="row">
 								<span style="float:left">
 									<b>Overpayment. </b>If line 5j is larger than the total of lines 4 and 6, enter amount overpaid
 								</span>
@@ -1186,7 +1177,7 @@
 						<!-- begin item 8b  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox" style="padding-left:3mm;">b</td>
-							<td colspan="5" class="styIRS1120FItemDesc" style="height:8mm; width:142mm;" scope="row">
+							<td colspan="5" class="styIRS1120FItemDesc" style="height:8mm; width:141mm;" scope="row">
 								<b>Amount of overpayment on line 8a resulting from tax deducted and withheld under Chapters 3 and 4</b>
 								(from Schedule W, line 7, page 8)
 								<span class="styDotLn" style="float:right;padding-right:1mm;">.......................</span>
@@ -1202,10 +1193,10 @@
 						<!-- begin item 9  -->
 						<tr>
 							<td class="styIRS1120FLeftNumBox" style="height:4.5mm; border-bottom-width:1px;">9</td>
-							<td colspan="5" class="styIRS1120FItemDesc" style="width:142mm; height:4.5mm; border-bottom-width:1px;" scope="row">									
+							<td colspan="5" class="styIRS1120FItemDesc" style="width:141mm; height:4.5mm; border-bottom-width:1px;" scope="row">									
 					Enter portion of line 8a you want <b>Credited to 2021 estimated tax</b>
 								<span style="padding-left:1mm;">
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="Small Bullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 								</span>
 								<span valign="bottom" style="padding-left:1mm; padding-bottom:0mm;">
 									<xsl:call-template name="PopulateAmount">
@@ -1218,7 +1209,7 @@
 								<span style="padding-left:6mm;">
 									<b>Refunded</b>
 									<span style="width:1px;"/>
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="Small Bullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									<span style="width:1px"/>
 								</span>
 							</td>
@@ -1252,7 +1243,7 @@
 								<span style="width:1px"/>
 							</td>
 							<td style="width:52mm; border-right:1pt solid black; border-bottom:1pt solid black; vertical-align:bottom;">
-								<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="Medium Bullet"/>
+								<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="right arrow graphic"/>
 								<xsl:call-template name="PopulateReturnHeaderOfficer">
 									<xsl:with-param name="TargetNode">TaxpayerPIN</xsl:with-param>
 								</xsl:call-template>
@@ -1267,7 +1258,7 @@
 								<span style="width:1px"/>
 							</td>
 							<td style="width:60mm; border-bottom:1pt solid black; vertical-align:bottom;">
-								<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="Medium Bullet"/>
+								<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="right arrow graphic"/>
 								<span style="width:2mm;"/>
 								<xsl:call-template name="PopulateReturnHeaderOfficer">
 									<xsl:with-param name="TargetNode">Title</xsl:with-param>
@@ -1376,7 +1367,7 @@
 						<tr>
 							<td rowspan="1" colspan="4" style="border-bottom:1pt solid black; border-right:1pt solid black; padding-left:.5mm;">
 					Firm&apos;s name
-					<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="SmallBullet"/>
+					<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="right arrow graphic"/>
 								<span style="padding-left:1mm;">
 									<xsl:call-template name="PopulateReturnHeaderPreparerFirm">
 										<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
@@ -1391,7 +1382,7 @@
 							</td>
 							<td style="border-bottom:1pt solid black; padding-left:1mm;">
 					Firm&apos;s EIN
-					<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="SmallBullet"/>
+					<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="right arrow graphic"/>
 								<span style="padding-left:1mm;">
 									<xsl:call-template name="PopulateReturnHeaderPreparerFirm">
 										<xsl:with-param name="TargetNode">EIN</xsl:with-param>
@@ -1406,7 +1397,7 @@
 						<tr>
 							<td rowspan="1" colspan="4" style="border-bottom:0pt solid black; border-right:1pt solid black; padding-left:.5mm;">
 					Firm&apos;s address
-					<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="SmallBullet"/>
+					<img src="{$ImagePath}/1120_Bullet_Sm.gif" alt="right arrow graphic"/>
 								<span style="padding-left:1mm;">
 									<xsl:call-template name="PopulateReturnHeaderPreparerFirm">
 										<xsl:with-param name="TargetNode">AddressLine1Txt</xsl:with-param>
@@ -1455,7 +1446,6 @@
 							<span style="font-size:7pt"> (2020)</span>
 						</span>
 					</div>
-					<!--<div class="pageEnd"/>-->
 					<!-- ***********************************************************************-->
 					<p style="page-break-before: always"/>
 					<!-- End Page 1 break and footer  -->
@@ -1756,7 +1746,7 @@
 										<div class="styLNDesc" style="width:72mm; height:3.5mm;">
 						  Enter number of Forms 5472 attached
 						  <span style="padding-left:1mm;">
-												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 											</span>
 											<span style="width:1mm;"/>
 											<span class="sty1120FItemUnderlineSM" style="width:18mm;">
@@ -1834,7 +1824,7 @@
 										<div class="styLNLeftNumBox" style="height:4mm;"/>
 										<div class="styLNDesc" style="width:72mm; height:4mm;">the tax year (see instructions)
 						  <span style="padding-left:1mm">
-												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 											</span>
 											<span style="width:1mm"/>$
 						  <span class="sty1120FItemUnderlineSM" style="width:22mm;">
@@ -1944,7 +1934,7 @@
 											check here (see instructions)
 											<span style="float:right;">
 												<span class="styDotLn" style="float:left; padding-left:1mm;">.....</span>
-													<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+													<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 													<span style="width:8px"/>
 													<input type="checkbox" alt="NOL Forego Carryback Indicator" class="styCkbox">
 														<xsl:call-template name="PopulateCheckbox">
@@ -1982,7 +1972,7 @@
 											</span>
 											<span style="padding-left:1mm;"/>
 											<span style="padding-left:2mm;">
-												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 											</span>
 											<span style="width:1mm;"/>
 						  $
@@ -2033,7 +2023,7 @@
 										<div class="styLNDesc" style="width:72mm; height:4mm;">
 										   (1) EIN
 											<span style="padding-left:2mm;">
-												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 											</span>
 											<span class="sty1120FItemUnderlineSM" style="padding-left:2mm; width:55mm;">
 												<xsl:choose>
@@ -2065,7 +2055,7 @@
 												<xsl:with-param name="TargetNode" select="$FormData/PrntCorporationNameControlTxt"/>
 											</xsl:call-template>
 											<span style="padding-left:1mm;">
-												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 											</span>
 											<span class="sty1120FItemUnderlineSM" style="padding-left:2mm; width:60mm; height:6mm;">
 												<xsl:choose>
@@ -2185,7 +2175,7 @@
 <!--											<div style="float:left; clear:left; padding-top:1mm;">-->
 											  Enter percentage owned 
 											  <span style="padding-left:0.5mm;">
-												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+												<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 											  </span>
 											  <span class="sty1120FItemUnderlineSM" style="width:35mm; padding-left:2mm;">
 												<xsl:call-template name="PopulatePercent">
@@ -2202,7 +2192,7 @@
 								<!--  end page 2  left side-->
 								<!--@@@@@@@ RIGHT SIDE @@@@@@@ -->
 								<!--  begin page 2 right side-->
-								<td class="styGenericDiv" style="width:94mm; height:auto; vertical-align:top;">
+								<td class="styGenericDiv" style="width:92mm; height:auto; vertical-align:top;">
 									<!-- begin Additional Information - line W (1) -->
 									<div class="styGenericDiv" style="width:94mm; height:13mm;">
 										<div class="styLNLeftNumBox" style="height:4.5mm;">W</div>
@@ -2622,7 +2612,7 @@
 											<div class="styLNDesc" style="width:73.6mm;">
 												<b>(2) </b>If "Yes" enter the QI-EIN
 							<span style="padding-left:2mm">
-													<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+													<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 												</span>
 												<span class="sty1120FItemUnderlineSM" style="padding-left:2mm; width:22mm;">
 													<xsl:choose>
@@ -2634,9 +2624,6 @@
 															</span>
 														</xsl:when>
 														<xsl:otherwise>
-															<!--<xsl:call-template name="PopulateText">
-									<xsl:with-param name="TargetNode" select="$FormData/MissingEINReasonCd"/>
-								  </xsl:call-template>-->
 														</xsl:otherwise>
 													</xsl:choose>
 												</span>
@@ -2727,7 +2714,7 @@
 													<span style="float:left">deductions </span>
 													<span class="styDotLn" style="padding-right:1mm;">...</span>
 													<span style="width:1mm;"/>
-													<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+													<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 													<span style="width:1mm;"/>$
 													<span class="sty1120FItemUnderlineSM" style="width:22mm;">
 														<xsl:call-template name="PopulateAmount">
@@ -2893,7 +2880,7 @@
 								<!-- @@@@@@@ END Page 3 Left Side @@@@@@@ -->
 								<!-- @@@@@@@ BEGIN Page 3 Right Side @@@@@@@ -->
 								<!--  begin page 3 right side-->
-								<td class="styGenericDiv" style="width:94mm; height:auto; vertical-align:top;">
+								<td class="styGenericDiv" style="width:93mm; height:auto; vertical-align:top;">
 									<!-- begin Additional Information - Yes and No label line -->
 									<div class="styGenericDiv" style="width:94mm;">
 										<div class="styLNLeftNumBox" style="height:4mm;"/>
@@ -2963,7 +2950,7 @@
 										<div class="styLNDesc" style="width:73.6mm;height:6.5mm; border-right-width:0px;">
 										  If "Yes," enter amount from Form 8996, line 15 				  
 										  <br/>
-										  <img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+										  <img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 										  <span style="width:1mm;"/>$
 										  <span class="sty1120FItemUnderlineSM" style="width:18mm;">
 											<xsl:call-template name="PopulateAmount">
@@ -3009,7 +2996,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 					<div class="styBB" style="width:187mm; clear:none; padding-bottom:0.5mm;">
 						<div style="text-align:left; float:left; margin-top:0px; font-size:7pt;">Name of treaty country, if any
 						<span style="padding-left:1mm;">
-								<img src="{$ImagePath}/1120F_Bullet_Md.gif" valign="middle" alt="MediumBullet"/>
+								<img src="{$ImagePath}/1120F_Bullet_Md.gif" valign="middle" alt="right arrow graphic"/>
 							</span>
 							<span class="sty1120FItemUnderline" style="padding-left:1mm;">
 								<xsl:call-template name="PopulateText">
@@ -3411,7 +3398,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 						<div class="styIRS1120FDivTreatyDataTitle" style="width:153mm; height:4.5mm; padding-top:1mm;">
 							<span style="padding-left:0mm; padding-right:1mm; font-weight:bold">12</span>
 							Total. Enter here and include on line 5i, page 1
-							<span class="styDotLn" style="float:none">.......................<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="MediumBullet"/>
+							<span class="styDotLn" style="float:none">.......................<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="right arrow graphic"/>
 							</span>
 						</div>
 						<div class="styIRS1120FDivTreatyDataRG" style="width:33mm; height:4.5mm; padding-top:1mm;">
@@ -3425,7 +3412,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 						<div class="styIRS1120FDivTreatyDataRG" style="width:187mm; height:9mm; text-align:left;">
 							<span style="padding-left:0mm; padding-right:1mm; font-weight:bold;">13</span>
 							Is the corporation fiscally transparent under the laws of the foreign jurisdiction with respect to any item of income listed above?		
-							<span class="styDotLn" style="float:none">..<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="MediumBullet"/>
+							<span class="styDotLn" style="float:none">..<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="right arrow graphic"/>
 							</span>
 							<span style="padding-left:1mm;">
 								<xsl:call-template name="PopulateSpan">
@@ -3568,7 +3555,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 										<span style="width:1mm"/> Bal<span style="width:1mm;"/>
 									</span>
 									<span style="float:right;">
-										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="MidSizeBullet"/>
+										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									</span>
 								</div>
 							</div>
@@ -3769,7 +3756,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 								<span style="float:right;padding-right:2mm;">
 									<span class="styDotLn" style="float:none">...................</span>
 									<span style="width:3mm"/>
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="MidSizeBullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 								</span>
 							</div>
 							<div class="styLNRightNumBox" style="height:4.5mm; border-bottom-width:0px">11</div>
@@ -4099,7 +4086,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 									<b>Total deductions. </b>Add lines 12 through 27
 								</span>
 								<span class="styDotLn" style="float:right;padding-right:2mm;">.................<span style="width:3mm"/>
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="MidSizeBullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 								</span>
 							</div>
 							<div class="styLNRightNumBox" style="height:4.5mm;">28</div>
@@ -4122,7 +4109,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 									</xsl:call-template>
 								</span>
 								<span class="styDotLn" style="float:right;padding-right:2mm;">
-									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="MidSizeBullet"/>
+									<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 								</span>
 							</div>
 							<div class="styLNRightNumBox" style="height:4.5mm;">29</div>
@@ -4584,7 +4571,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 									<div class="sty1120FRightFloat">
 										<span class="sty1120FDotLn ">....</span>
 										<span style="width:3mm"/>
-										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+										<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 									</div>
 								</td>
 								<td class="sty1120FSchCLNRightAmountBox" style="border-bottom-width:0px">
@@ -4615,7 +4602,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 							<div class="sty1120FRightFloat">
 								<span class="sty1120FDotLn"/>
 								<span style="width:1.5mm"/>
-								<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+								<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 								<span style="width:1.5mm"/>
 								<input type="checkbox" alt="Member Of Controlled Group" class="styCkbox">
 									<xsl:call-template name="PopulateCheckbox">
@@ -5287,7 +5274,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 							<span style="float:right;">
 								<span class="sty1120FDotLn">...</span>
 								<span style="width:1mm"/>
-								<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="SmallBullet"/>
+								<img src="{$ImagePath}/1120F_Bullet_Sm.gif" alt="right arrow graphic"/>
 								<span style="width:1mm"/>
 								<input type="checkbox" alt="Section III Assets More 80 US Assets" class="styCkbox">
 									<xsl:call-template name="PopulateCheckbox">
@@ -5547,7 +5534,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 						<div class="styPartDesc" style="width:187mm; font-weight:normal;padding-left:0">
 							<b>Note: </b>
 							<i>Check if completing on </i>
-							<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="1120F Medium Bullet"/>
+							<img src="{$ImagePath}/1120F_Bullet_Md.gif" alt="right arrow graphic"/>
 							<span style="width:8mm"/>
 							<input type="checkbox" alt="US Basis" class="styCkbox">
 								<xsl:call-template name="PopulateCheckbox">
@@ -5974,24 +5961,6 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 										</div>
 									</td>
 								</tr>
-								<!--Line 10a-->
-								<!--Remove excess line <tr>
-									<td class="sty1120FTableCellNumDD" style="padding-right:1mm;"></td>
-									<td class="sty1120FTableCellDesc" scope="row">
-									</td>
-									<td class="sty1120FTableCellAmountShaded" style="border-bottom-width:1px">
-										<span style="width:1px"/>
-									</td>
-									<td class="sty1120FTableCellAmountShaded">
-										<span style="width:1px"/>
-									</td>
-									<td class="sty1120FTableCellAmountShaded" style="border-bottom-width:1px">
-										<span style="width:1px"/>
-									</td>
-									<td class="sty1120FTableCellAmountShadedLastCol">
-										<span style="width:1px"/>
-									</td>
-								</tr>-->
 								<tr>
 									<td class="sty1120FTableCellNumDD" style="padding-right:1mm;">10a</td>
 									<td class="sty1120FTableCellDesc" scope="row"> Buildings and other depreciable assets
@@ -7098,7 +7067,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 							</xsl:call-template>
 						</div>
 					</div>
-					<!-- End Line 8 -->
+					<!-- End Line 8  -->
 					<!-- Begin Page Footer -->
 					<div style="width:187mm;clear:both;padding-top:0.5mm">
 						<div style="float:right;" class="styGenericDiv">Form <span style="font-size:8pt;font-weight:bold">1120-F</span> (2020)</div>
@@ -7108,14 +7077,7 @@ Income From U.S. Sources Not Effectively Connected With the Conduct of a Trade o
 					<p style="page-break-before: always"/>
 					<!-- End Page Footer -->
 					<!-- End Page 8 -->
-					<p/>
-					<br/>
-					<br/>
-					<br/>
-					<br/>
-					<p/>
-					<p/>
-					<p/>
+					<p/><br/><br/><br/><br/><p/><p/><p/>
 					<!-- Begin Left Over Data Table -->
 					<!-- Begin Additonal Data Title Bar and Button -->
 					<div class="styLeftOverTitleLine" id="LeftoverData">

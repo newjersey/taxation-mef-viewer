@@ -111,7 +111,7 @@
             <div style="width:187mm">
               <div class="styLNLeftNumBox">1</div>
               <div class="styLNDesc" style="width:138.75mm;">
-                Minimum tax credit carryforward from 2020.  Enter the amount from line 6 of the 2020 Form 8827    
+                Minimum tax credit carryforward from 2020.  Enter the amount from line 4 of the 2020 Form 8827    
                  <div class="styDotLn" style="float:right;padding-right:1mm;">...</div>     
               </div>
               <div class="styLNRightNumBox">1</div>
@@ -147,17 +147,13 @@
 				    <xsl:with-param name="TargetNode" select="$Form8827Data/CurrentYearMinimumTaxCreditAmt"/>
 				  </xsl:call-template>    
                   <!-- Adding pen image -->
-                  <span style="width:1px;"/> 
-				   <!--Form to Form Link -->
-                  <xsl:call-template name="SetFormLinkInline">
-                    <xsl:with-param name="TargetNode" select="$Form8827Data/RefundableMinimumTaxCreditAmt"/>
-                  </xsl:call-template>
-                  <span style="width:1px;"/>
-                  <xsl:call-template name="LinkToLeftoverDataTableInline">
-                    <xsl:with-param name="Desc">Line 5b - Statement SEC</xsl:with-param>
+                    <span style="width:1px;"/>
+                     <xsl:call-template name="LinkToLeftoverDataTableInline">
+                  <!-- <xsl:with-param name="Desc">Line 5b - Statement SEC</xsl:with-param>-->
+                    <xsl:with-param name="Desc">Line 3 - section 383 Or 384 Indicator Cd</xsl:with-param>
                     <xsl:with-param name="TargetNode" select="$Form8827Data/CurrentYearMinimumTaxCreditAmt/@section383Or384IndicatorCd"/>
                   </xsl:call-template> 
-                  <span style="width:1px;"/>                                
+                  <span style="width:1px;"/>     
                 </span>
                 <!--Dotted Line-->
                 <div class="styDotLn" style="float:right; padding-right:1mm;">................</div>
@@ -211,24 +207,20 @@
             </div>
           </div>
           <!-- Additional Data Table -->
-          <table class="styLeftOverTbl">
-            <xsl:call-template name="PopulateCommonLeftover">
-              <xsl:with-param name="TargetNode" select="$Form8827Data"/>
-              <xsl:with-param name="DescWidth" select="100"/>
-            </xsl:call-template>
-            <xsl:call-template name="PopulateLeftoverRow">
-              <xsl:with-param name="Desc">Line 3 - Section Indicator Cd</xsl:with-param>
-              <xsl:with-param name="TargetNode" select="$Form8827Data/CurrentYearMinimumTaxCreditAmt/@section383Or384IndicatorCd"/>
-              <xsl:with-param name="DescWidth" select="100"/>
-            </xsl:call-template>
-            <!--<xsl:call-template name="PopulateLeftoverRow">
-              <xsl:with-param name="Desc">Line 5b - Statement SEC</xsl:with-param>
-              <xsl:with-param name="TargetNode" select="$Form8827Data/CurrentYearMinimumTaxCreditAmt/@section383Or384IndicatorCd"/>
-              <xsl:with-param name="DescWidth" select="100"/>
-            </xsl:call-template>-->
-          </table>
-          <!-- END Left Over Table -->
-        </form>
+          	<!-- ****************************Additional Data Table **********************************-->
+					<table class="styLeftOverTbl">
+						<xsl:call-template name="PopulateCommonLeftover">
+							<xsl:with-param name="TargetNode" select="  $RtnDoc/IRS8827"/>
+							<xsl:with-param name="DescWidth" select="100"/>
+						</xsl:call-template>
+						<xsl:call-template name="PopulateLeftoverRow">
+							<xsl:with-param name="Desc">Line 3 section 383 Or 384 Indicator Code </xsl:with-param>
+							<xsl:with-param name="TargetNode" select="  $RtnDoc/IRS8827/CurrentYearMinimumTaxCreditAmt /@section383Or384IndicatorCd"/>
+							<xsl:with-param name="DescWidth" select="100"/>
+						</xsl:call-template>
+			</table>
+					<!-- ****************************END Left Over Table *******************************-->
+           </form>
       </body>
     </html>
   </xsl:template> 

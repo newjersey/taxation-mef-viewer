@@ -1048,10 +1048,11 @@ percent or more in the partnership’s capital, profit, or loss, on any day duri
 							<div class="styLNDesc" style="width:147mm;height:4mm">
 								<span class="styBoldText" style="height:4mm">Note: </span>
 								<span style="width:1mm"/>
-								<span style="height:2mm">Part I, line 11, must equal Part II, line 26, column (a) or Schedule M-1, line 1 (see instructions).</span>
+								<span style="height:2mm">Part I, line 11, must equal Part II, line 26, column (a), or Form 1065, Schedule M-1, line 1. See instructions.</span>
 							</div>
 						</div>
 					</div>
+					<p style="page-break-before: always"/>
 					<!-- Line 12 -->
 					<!--<div class="styBB" style="height:10mm;border-bottom-width:1px">-->
 					<div style="width:187mm;">

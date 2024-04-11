@@ -78,7 +78,7 @@
             </div>
             <div class="styTYBox" style="width:30mm;height:19mm;">
               <div class="styOMB" style="height:4mm;font-size:6.5pt;">OMB No. 1545-0074</div>
-              <div class="styTY" style="height:7mm;font-size:22pt;padding-top:0mm;">20<span class="styTYColor">21</span></div>
+              <div class="styTY" style="height:7mm;font-size:22pt;padding-top:0mm;">20<span class="styTYColor">22</span></div>
               <div class="stySequence" style="height:9mm;border-bottom-width:0px;padding-left:1mm;padding-top:.5mm;border-left-width:0px;
                 font-size:6.5pt">
                 Attachment<br/>
@@ -107,21 +107,21 @@
             </div>
           </div>
           <!-- BEGIN PART I TITLE -->
-          <div class="styBB" style="width:187mm;padding:1mm 0mm;">
+          <div class="styBB" style="width:187mm;padding:0mm 0mm;">
             <div class="styPartName" style="font-family:sans-serif;">Part I</div>
             <div class="styPartDesc">General Information</div>
           </div>
           <!-- END PART I TITLE -->
           <!-- Foreign Address Lines 1, 2-->
-          <div class="styBB" style="width:187mm;">
-            <div class="styNameBox" style="width:139mm;height:18.5mm;font-size:7pt;font-weight:normal;padding-left:3.5mm">
+          <div class="styBB" style="width:187mm;height:16mm;">
+            <div class="styNameBox" style="width:139mm;height:16mm;font-size:7pt;font-weight:normal;padding-left:3.5mm;">
 			  <b style="margin-right:2mm;height:100%;float:left;">1</b> Your foreign address (including country)
               <br/>
               <xsl:call-template name="PopulateForeignAddressTemplate">
                 <xsl:with-param name="TargetNode" select="$FormData/ForeignAddress"/>
               </xsl:call-template>
             </div>
-            <div class="styEINBox" style="width:47mm;height:8mm;padding-left:2mm;font-size:7pt;font-weight:normal;">
+            <div class="styEINBox" style="width:47mm;height:16mm;padding-left:2mm;font-size:7pt;font-weight:normal;">
               <b style="margin-right:2mm;height:100%;float:left;">2</b> Your occupation<br/>
               <span style="width: 40mm; text-align:left;">
                 <xsl:call-template name="PopulateText">
@@ -1297,14 +1297,14 @@
 				</div>
 				<div style="float:right;">
 					<span style="width:30px;"/>  
-					  Form <span class="styBoldText" style="font-size:8pt;">2555</span> (2021)
+					  Form <span class="styBoldText" style="font-size:8pt;">2555</span> (2022)
 				</div>
           </div>
-          <p style="page-break-before: always"/>
+          <!--<p style="page-break-before: always"/>-->
           <!-- Page 2 Header -->
           <!--<div class="pageEnd">-->
 				<div class="styTBB" style="width:187mm;padding-top:.5mm;">
-					<div style="float:left;">Form 2555 (2021)</div>
+					<div style="float:left;">Form 2555 (2022)</div>
 					<div style="float:right;">Page <span style="font-weight:bold;font-size:8pt;">2</span>
 					</div>
 				</div>
@@ -1764,18 +1764,18 @@
           <!-- END PART IV TITLE -->
           <div class="styBB" style="width:187mm;">
             <b>Note:</b> Enter on lines 19 through 23 all income, including noncash income, you earned and actually or
-             constructively received during your 2021 tax year for services you performed in a foreign country. If any of the
+             constructively received during your 2022 tax year for services you performed in a foreign country. If any of the
              foreign earned income received this tax year was earned in a prior tax year, or will be earned in a later tax year 
              (such as a bonus), see the instructions. <b>Don't</b> include income from line 14, column <b>(d)</b>,
              or line 18, column <b>(f)</b>. Report amounts in U.S. dollars, using the exchange rates in effect when you 
              actually or constructively received the income.
             <p style="font-weight:bold;padding-left:10mm;font-style:normal;margin-top:2mm;padding-bottom:0.8mm">
-              If you are a cash basis taxpayer, report on Form 1040 or 1040-SR all income you received in 2021, no matter when you
+              If you are a cash basis taxpayer, report on Form 1040 or 1040-SR all income you received in 2022, no matter when you
               performed the service.
             </p>
           </div>
           <div style="width:187mm;height:8mm;font-size:9pt;text-align:center;font-weight:bold;border-bottom:1px solid black;">
-            <div style="width:136mm;float:left;line-height:8mm;">2021 Foreign Earned Income</div>
+            <div style="width:136mm;float:left;line-height:8mm;">2022 Foreign Earned Income</div>
             <div style="width:50mm;float:left;height:8mm;border-left:1px solid black;">Amount<br/>(in U.S. dollars)</div>
           </div>
           <!-- Line 19 -->
@@ -2236,7 +2236,7 @@
             <div style="float:left;width:5mm;font-weight:bold;text-align:right;">26</div>
             <div style="float:left;width:5mm;font-weight:bold;"/>
             <div class="styLNDesc" style="width:131mm;padding-left:5mm">
-              Subtract line 25 from line 24. Enter the result here and on line 27 on page 3. This is your <b>2021
+              Subtract line 25 from line 24. Enter the result here and on line 27 on page 3. This is your <b>2022
               foreign earned income</b>
               <span style="letter-spacing:3mm;font-weight:bold;">......................</span>
               <img src="{$ImagePath}/2555_Bullet.gif" width="9" height="9" alt="Bullet" style="margin:0mm 1mm;"/>
@@ -2253,12 +2253,12 @@
           </div>
           <!-- Page Break and Footer-->
           <div class="pageEnd" style="width:187mm;padding-top:0mm;text-align:right;">
-            Form <span class="styBoldText" style="font-size:8pt;">2555</span> (2021)
+            Form <span class="styBoldText" style="font-size:8pt;">2555</span> (2022)
           </div>
           <p style="page-break-before: always"/>
           <!-- Page 3 Header -->
           <div class="styTBB" style="width:187mm;padding-top:.5mm;">
-            <div style="float:left;">Form 2555 (2021)</div>
+            <div style="float:left;">Form 2555 (2022)</div>
             <div style="float:right;">Page <span style="font-weight:bold;font-size:8pt;">3</span>
             </div>
           </div>
@@ -2433,7 +2433,7 @@
             <div style="float:left;width:5mm;font-weight:bold;text-align:right;padding-top:.5mm">31</div>
             <div style="float:left;width:5mm;font-weight:bold;"/>
             <div class="styLNDesc" style="width:81mm;padding-left:5mm;">
-              Number of days in your qualifying period that fall within your 2021 tax
+              Number of days in your qualifying period that fall within your 2022 tax
               year (see instructions)<span style="width:2mm"/>
 				<span style="letter-spacing:3mm;font-weight:bold;">.......</span>
             </div>
@@ -2457,7 +2457,7 @@
             <div style="float:left;width:5mm;font-weight:bold;text-align:right;">32</div>
             <div style="float:left;width:5mm;font-weight:bold;"/>
             <div class="styLNDesc" style="width:131mm;padding-left:5mm;font-size:6.5pt">
-              Multiply $47.65 by the number of days on line 31. If 365 is entered on line 31, enter $17,392 here
+              Multiply $49.10 by the number of days on line 31. If 365 is entered on line 31, enter $17,920 here
             </div>
             <div style="float:left;">
               <div style="height:4mm;width:8mm;text-align:center;font-weight:bold;border-left:1px solid black;
@@ -2572,7 +2572,7 @@
             <div style="float:left;width:5mm;font-weight:bold;text-align:right;">37</div>
             <div style="float:left;width:5mm;font-weight:bold;"/>
             <div class="styLNDesc" style="width:131mm;padding-left:5mm;">
-              Maximum foreign earned income exclusion. Enter $108,700
+              Maximum foreign earned income exclusion. Enter $112,000
               <span style="letter-spacing:3mm;font-weight:bold;">.............</span>
             </div>
             <div style="float:left;">
@@ -2598,7 +2598,7 @@
                 <span style="width:12px;"/> 31.<br/>
                 <img alt="Bullet Round" src="{$ImagePath}/2441_Bullet_Round.gif"/> <span style="width:8px;"/>
                 All others, enter the number of days in your qualifying<br/>
-                <span style="width:12px;"/> period that fall within your 2021 tax year (see the <br/>
+                <span style="width:12px;"/> period that fall within your 2022 tax year (see the <br/>
                 <span style="width:12px;"/> instructions for line 31).
               </div>
             </div>
@@ -2631,10 +2631,10 @@
               </div>
               <div class="styLNDesc" style="font-size:7pt;width:131mm;height:3mm;padding-right:4mm;padding-left:5mm">
               <img alt="Bullet Round" src="{$ImagePath}/2441_Bullet_Round.gif"/> <span style="width:8px;"/>
-                If line 38 and the number of days in your 2021 tax year (usually 365) are the same, enter <br/>
+                If line 38 and the number of days in your 2022 tax year (usually 365) are the same, enter <br/>
                 <span style="width:12px;"/> "1.000." <br/>
                 <img alt="Bullet Round" src="{$ImagePath}/2441_Bullet_Round.gif"/> <span style="width:8px;"/>
-                Otherwise, divide line 38 by the number of days in your 2021 tax year and enter the result as <br/>
+                Otherwise, divide line 38 by the number of days in your 2022 tax year and enter the result as <br/>
                 <span style="width:12px;"/> a decimal (rounded to at least three places).
               </div>
             </div>
@@ -2761,19 +2761,19 @@
             </div>
           </div>
           <!-- Line 45 -->
-          <div style="width:187mm;height:16mm;">
+          <div style="width:187mm;height:10mm;">
             <div style="float:left;width:5mm;font-weight:bold;text-align:right;">45</div>
             <div style="float:left;width:5mm;font-weight:bold;"/>
             <div class="styLNDesc" style="width:131mm;padding-left:5mm">
-              Subtract line 44 from line 43. Enter the result here and in parentheses on <b>Schedule 1 (Form 1040), line 8d.</b>
+              Subtract line 44 from line 43. Enter the result here and on <b>Schedule 1 (Form 1040), line 8d.</b>
               Complete the Foreign Earned Income Tax Worksheet in the Instructions for Forms 1040 and	1040-SR if you enter an amount on this line
-              <span style="letter-spacing:3mm;font-weight:bold;">..............</span>
+              <span style="letter-spacing:3mm;font-weight:bold;">...................</span>
             </div>
             <div style="float:left;">
-              <div style="height:16mm;width:8mm;text-align:center;font-weight:bold;border-left:1px solid black;padding-top:12.5mm">45</div>
+              <div style="height:10mm;width:8mm;text-align:center;font-weight:bold;border-left:1px solid black;padding-top:7mm">45</div>
             </div>
             <div style="float:left;">
-              <div class="styLNAmountBox" style="height:16mm;width:42mm;border-bottom:none;padding-top:12.5mm">
+              <div class="styLNAmountBox" style="height:10mm;width:42mm;border-bottom:none;padding-top:12.5mm">
                 <xsl:call-template name="LinkToLeftoverDataTableInline">
                   <xsl:with-param name="Desc">Line 45 - Foreign Earned Income PY Exclusion Amount</xsl:with-param>
                   <xsl:with-param name="TargetNode"
@@ -2860,8 +2860,8 @@
           </div>
           <div style="width:136mm;height:10mm;float:left;padding-left:10mm;">
             <b>Note: </b>
-            If line 47 is <b>more than</b> line 48 and you couldn't deduct all of your 2020 housing deduction
-            because of the 2020 limit, use the Housing Deduction Carryover Worksheet in the instructions to figure 
+            If line 47 is <b>more than</b> line 48 and you couldn't deduct all of your 2021 housing deduction
+            because of the 2021 limit, use the Housing Deduction Carryover Worksheet in the instructions to figure 
             the amount to enter on line 49. Otherwise, go to line 50.
           </div>
           <div style="width:8.3mm;height:10mm;background-color:lightgrey;border-left:1px solid black;
@@ -2871,7 +2871,7 @@
             <div style="float:left;width:5mm;font-weight:bold;text-align:right;padding-top:.5mm">49</div>
             <div style="float:left;width:5mm;font-weight:bold;"/>
             <div class="styLNDesc" style="width:131mm;padding-left:5mm;">
-              Housing deduction carryover from 2020 (from the Housing Deduction Carryover Worksheet in the instructions)
+              Housing deduction carryover from 2021 (from the Housing Deduction Carryover Worksheet in the instructions)
               <span style="letter-spacing:3mm;font-weight:bold;"> ...........................</span>
             </div>
             <div style="float:left;">
@@ -2910,7 +2910,7 @@
           </div>
           <!-- Page Break and Footer-->
           <div class="pageEnd" style="width:187mm;padding-top:0mm;text-align:right;">
-            Form <span class="styBoldText" style="font-size:8pt;">2555</span> (2021)
+            Form <span class="styBoldText" style="font-size:8pt;">2555</span> (2022)
           </div>
           <!--END Page Footer-->
           <!-- Additonal Data Title Bar and Button -->

@@ -66,7 +66,7 @@
 								If any line does not apply to you, leave it blank. See separate instructions.
 								<br/>
 								<img alt="Bullet" src="{$ImagePath}/8959_Bullet.gif" height="9" width="9"/>
-								Attach to Form 1040, Form 1040-SR, 1040-NR, 1040-PR, or 1040-SS.
+								Attach to Form 1040, 1040-SR, 1040-NR, 1040-PR, or 1040-SS.
 								<br/>
 								<img alt="Bullet" src="{$ImagePath}/8959_Bullet.gif" height="9" width="9"/>
 								Go to <i><a href="http://www.irs.gov/form8959">www.irs.gov/Form8959 </a></i> for instructions and the latest information.

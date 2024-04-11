@@ -1149,21 +1149,41 @@
     </xsl:call-template>
     <!--   END PART IV TABLE   -->
     <!--   BEGIN LINE 2   -->
-  <div class="styIRS1120SchedulePHLineItem" style="float: none; clear: both;width:187mm">
-    <span class="styIRS1120SchedulePHLN" style="padding-top:6.5mm;padding-left: 1.75mm;">2</span>
+
+
+
+
+
+          <xsl:if test="(($Print = $Separated) and (count($IRS1120SchedulePHData/StockOwnrRqrUndSect542a2Grp) &gt; 5))">
+								<div class="styNBB" style="width:187mm;height:6mm;">
+									<div class="styLNRightBoxNBB" style="height:6mm;float:right;">
+									</div>
+								</div>
+          </xsl:if>
+
+
+
+
+
+
+
+
+
+  <div class="styIRS1120SchedulePHLineItem" style="float: none; clear: both;width:187mm;border-right:0;">
+    <span class="styIRS1120SchedulePHLN" style="padding-top:3mm;padding-left: 1.75mm;">2</span>
     <span class="styIRS1120SchedulePHLNLtMargin"/>
-    <span class="styIRS1120SchedulePHLNDesc" style="width: 139.25mm;padding-top:6.5mm;height:12mm;">
+    <span class="styIRS1120SchedulePHLNDesc" style="width: 130mm;height:8mm;padding-top:3mm;">
       <span style="float:left;padding-left: 2.5mm;height:6mm;">Add the amounts in columns (c) and (d) and enter the totals here </span>
       <!--Dotted Line-->
-      <span style="font-weight:bold;letter-spacing:3.1mm;padding-right:2mm;">............</span> 
+      <span style="font-weight:bold;letter-spacing:3.1mm;padding-right:2mm;">..........</span> 
       <img src="{$ImagePath}/1120SchPH_Bullet.gif" alt="Bullet"/>
     </span>
-    <span class="styIRS1120SchedulePHPreferred" style="border-right-width: 0px;width:23.5mm;height:12mm;padding-top:6.5mm;">
+    <span class="styIRS1120SchedulePHPreferred" style="width:25mm;height:8mm;border-right:0;">
       <xsl:call-template name="PopulatePercent">
         <xsl:with-param name="TargetNode" select="$IRS1120SchedulePHData/CommonStockOwnedPercentRt"/>
       </xsl:call-template>
     </span>
-    <span class="styIRS1120SchedulePHCommon" style="width: 18.75mm;border-left: 1px solid black;height:12mm;padding-top:6.5mm;">
+    <span class="styIRS1120SchedulePHPreferred" style="width:25mm;border-right:0;border-left: 1px solid black;height:8mm;">
       <xsl:call-template name="PopulatePercent">
         <xsl:with-param name="TargetNode" select="$IRS1120SchedulePHData/PreferredStockOwnedPercentRt"/>
       </xsl:call-template>

@@ -94,24 +94,15 @@
 						<!-- Name -->
 						<div class="styNameBox" style="width:136mm;font-size:7pt;font-weight:normal;">Name of estate or trust<br/>
 							<span style="height:6.5mm;">
-								<xsl:choose>
-									<xsl:when test="$RtnHdrData/Filer/NationalMortgageAssocCd">												
-										<xsl:call-template name="PopulateReturnHeaderFiler">
-											<xsl:with-param name="TargetNode">NationalMortgageAssocCd</xsl:with-param>
-										</xsl:call-template>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/EstateOrTrustName/BusinessNameLine1Txt"/>
-										</xsl:call-template><br/>
-										<xsl:call-template name="PopulateText">
-											<xsl:with-param name="TargetNode" select="$RtnHdrData/Filer/EstateOrTrustName/BusinessNameLine2Txt"/>
-										</xsl:call-template>
-									</xsl:otherwise>
-								</xsl:choose>
+								<xsl:call-template name="PopulateReturnHeaderFiler">
+									<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
+								</xsl:call-template><br/>
+								<xsl:call-template name="PopulateReturnHeaderFiler">
+									<xsl:with-param name="TargetNode">BusinessNameLine2Txt</xsl:with-param>
+								</xsl:call-template>
 							</span>
 						</div>
-						<!-- SSN -->
+						<!-- EIN -->
 						<div class="styEINBox" style="width:50mm;height:4mm;padding-left:2mm;font-size:7pt;">
 							<b>Employer identification number</b><br/><br/>
 							<span style="width:34mm;text-align:bottom;font-weight:normal;">

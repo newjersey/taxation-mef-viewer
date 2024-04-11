@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet [  <!ENTITY nbsp "&#160;"> ]>
-<!-- Updated by Iskilu Lawal 10/27/2020 UWR  # 237345  Drop 3 -->
+<!-- Updated by Iskilu Lawal 11/18/2020 UWR  # 237345  Drop 3 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl" />
 	<xsl:include href="AddHeader.xsl" />
@@ -486,11 +486,11 @@
 								General category (enter amount on applicable Schedule J, Part I, Line 3,<br /> column (a))
 								<span class="sty5471SchHDotLn">...................</span>
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:1px;height:8mm;text-align:center;width:14mm;font-weight:bold;">
+							<div class="styLNAmountBox" style="border-top-width:1px;font-size:9px;height:8mm;text-align:center;width:10mm;font-weight:bold;">
 									<br />
 								5c(i)
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:1px;height:8mm;text-align:center;width:25mm;">
+							<div class="styLNAmountBox" style="border-top-width:1px;height:8mm;text-align:center;width:29mm;">
 								<br />
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$FormData/EPDASTMGeneralCatIncmAmt" />
@@ -506,11 +506,11 @@
 								Passive category (enter amount on applicable Schedule J, Part I, line 3, column (a))
 								<span class="sty5471SchHDotLn">...................</span>
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:8mm;text-align:center;width:14mm;font-weight:bold;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:8mm;font-size:9px;text-align:center;width:10mm;font-weight:bold;">
 							<br />
 								5c(ii)
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:8mm;text-align:center;width:25mm;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:8mm;text-align:center;width:29mm;">
 								
 								<br />
 								<xsl:call-template name="PopulateAmount">
@@ -547,11 +547,11 @@
 								</div>
 								</div>
 								</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:18mm;text-align:center;width:14mm;padding-top:11mm;font-weight:bold;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:18mm;text-align:center;font-size:8px;width:10mm;padding-top:9mm;font-weight:bold;">
 									<br />
-								5c(iii)(A)
+								5c(iii)<br />(A)
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:18mm;text-align:center;width:25mm;padding-top:11mm;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:18mm;text-align:center;width:29mm;padding-top:11mm;">
 								<br />
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$FormData/EPDASTMSection901jCatIncmGrp/EPDASTMSection901jCatIncmAmt" />
@@ -586,11 +586,11 @@
 								</div>
 								</div>
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;width:14mm;padding-top:8mm;font-weight:bold;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;font-size:8px;width:10mm;padding-top:6mm;font-weight:bold;">
 								<br />
-								5c(iii)(B)
+								5c(iii)<br/>(B)
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;width:25mm;padding-top:8mm;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;width:29mm;padding-top:8mm;">
 								<br />
 								<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$FormData/EPDASTMSection901jCatIncmGrp/EPDASTMSection901jCatIncmAmt" />
@@ -625,11 +625,11 @@
 								</div>
 								</div>
 								</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;width:14mm;padding-top:8mm;font-weight:bold;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;font-size:8px;width:10mm;padding-top:6mm;font-weight:bold;">
 									<br />
-								5c(iii)(C)
+								5c(iii)<br/>(C)
 							</div>
-							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;width:25mm;padding-top:8mm;">
+							<div class="styLNAmountBox" style="border-top-width:0px;height:15mm;text-align:center;width:29mm;padding-top:8mm;">
 									<br />
 									<xsl:call-template name="PopulateAmount">
 									<xsl:with-param name="TargetNode" select="$FormData/EPDASTMSection901jCatIncmGrp/EPDASTMSection901jCatIncmAmt" />

@@ -12,6 +12,10 @@
 <!-- 06/08/2020 - Changes made per UWR 234103 - Jeremy Nichols -->
 <!-- 08/10/2020 - Changes made per defect 64928 - Jeremy Nichols -->
 <!-- 09/08/2020 - Changes made per UWR 238150 - Jeremy Nichols -->
+<!-- 11/17/2020 - Changes made per defect 65896 - Jeremy Nichols -->
+<!-- 03/22/2021 - Changes made per defect 65824 - Jeremy Nichols -->
+<!-- 07/21/2021 - Additional changes made per defect 65896 - Jeremy Nichols -->
+<!-- 11/04/2021 - Changes made per defect 67776 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="CommonPathRef.xsl"/>
   <xsl:include href="PopulateTemplate.xsl"/>
@@ -70,13 +74,13 @@
               <div class="styMainTitle" style="height:8mm;">Environmental Taxes</div><br/>
               <div class="styFST" style="height:5mm;font-size:7pt;margin-left:2mm;text-align:center;">
                 <span style="text-align:center;font-weight:bold">
-                  <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+                  <img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
                   Attach to Form 720. <span class="styBoldText" > </span> 
                 </span>
               </div><br/>
               <div class="styFST" style="height:5mm;font-size:7pt;margin-left:2mm;text-align:center;">
                 <span style="text-align:center;font-weight:bold">
-                  <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+                  <img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
                   Go to <i>www.irs.gov/Form6627</i> for the latest information.
                 </span>
               </div>
@@ -197,7 +201,7 @@
                     <div class="styLNLeftNumBoxSD" style="padding-top:1mm">5</div>
                     <div style="width:84mm;float:left;clear:none;padding-top:1mm;text-align:justify">Reserved for future use
                     <span style="letter-spacing:3.3mm;font-weight:bold;skiplink:display:none;padding-left:mm">............</span>
-                      <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/>
+                      <img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/>
                     </div>
                   </td>
                   <td class="styTableCell" style="width:38mm;border-left-width:1px;background-color:lightgrey"><span style="width:1px" /></td>
@@ -210,7 +214,7 @@
                     <div class="styLNLeftNumBoxSD" style="padding-top:1mm">6</div>
                     <div style="width:84mm;float:left;clear:none;padding-top:1mm;text-align:justify">Reserved for future use
                     <span style="letter-spacing:3.3mm;font-weight:bold;skiplink:display:none;padding-left:mm">............</span>
-                      <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/>
+                      <img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/>
                     </div>
                   </td>
                   <td class="styTableCell" style="width:38mm;border-left-width:1px;vertical-align:bottom;padding-bottom:2mm;background-color:lightgrey;"><span style="width:1px" />
@@ -241,16 +245,18 @@
               Elections. 
             </span>
             <span style="width:1mm;clear:none"></span>
+				<span class="styText">If you elect to report the tax on post-1989 ODCs at the time you sell or use a mixture containing such chemicals instead of</span><br/>
+				<span class="styText">when you make the mixture, check the box </span>
+            <span style="width:1mm;clear:none"></span>
             <label>
               <xsl:call-template name="PopulateLabel">
                 <xsl:with-param name="TargetNode" select="$FormData/Election1990Ind" />
                 <xsl:with-param name="BackupName">IRS6627Election1990Ind</xsl:with-param>
               </xsl:call-template>
-				<span class="styText">If you elect to report the tax on post-1989 ODCs at the time you sell or use a mixture containing such chemicals instead of</span><br/>
-				<span class="styText">when you make the mixture, check the box (the 1990 election)</span>
             </label>
+              <span class="styText">(the 1990 election)</span>
             <!--Dotted Line-->
-            <span class="styBoldText">.
+            <span class="styBoldText" style="skiplink:display:none;">.
               <span style="width:16px"></span>.
               <span style="width:16px"></span>.
               <span style="width:16px"></span>.
@@ -266,10 +272,10 @@
               <span style="width:16px"></span>.
               <span style="width:16px"></span>.
             </span>
-            <span class="styBoldText" style="padding-left:2.8mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+            <span class="styBoldText" style="padding-left:2.8mm;skiplink:display:none;"><img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
             </span>     
             <span style="width:3mm;clear:none"></span>
-            <input type="checkbox" class="styCkbox" style="padding-left:4mm;" alt="IRS6627Election1990Ind" >
+            <input type="checkbox" class="styCkbox" style="padding-left:4mm;" alt="Report Post 1989 ODC" >
               <xsl:call-template name="PopulateCheckbox">
                 <xsl:with-param name="TargetNode" select="$FormData/Election1990Ind" />
                 <xsl:with-param name="BackupName">IRS6627Election1990Ind</xsl:with-param>
@@ -278,17 +284,18 @@
           </div>
           
           <div class="styLNDesc" style="width:187mm;height:9mm;font-size:7pt">
-           
+				<span class="styText">If you elect to report the tax on post-1990 ODCs at the time you sell or use a mixture containing such chemicals instead of when</span><br/>
+				<span class="styText">you make the mixture, check the box </span>
+            <span style="width:1mm;clear:none"></span>
             <label>
               <xsl:call-template name="PopulateLabel">
                 <xsl:with-param name="TargetNode" select="$FormData/Election1991Ind" />
                 <xsl:with-param name="BackupName">IRS6627Election1991Ind</xsl:with-param>
               </xsl:call-template>
-				<span class="styText">If you elect to report the tax on post-1990 ODCs at the time you sell or use a mixture containing such chemicals instead of when</span><br/>
-				<span class="styText">you make the mixture, check the box (the 1991 election)</span>
             </label>
+              <span class="styText">(the 1991 election)</span>
             <!--Dotted Line-->
-            <span class="styBoldText">
+            <span class="styBoldText" style="skiplink:display:none;">
               <span style="width:6px"></span>.
               <span style="width:16px"></span>.
               <span style="width:16px"></span>.
@@ -306,16 +313,16 @@
               <span style="width:16px"></span>.
               <span style="width:16px"></span>.
             </span>
-            <span class="styBoldText" style="padding-left:2.8mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+            <span class="styBoldText" style="padding-left:2.8mm;skiplink:display:none;"><img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
             </span>     
             <span style="width:3.5mm;clear:none"></span>
-            <input type="checkbox" class="styCkbox" style="padding-left:5.5mm;" alt="IRS6627Election1991Ind">
+            <input type="checkbox" class="styCkbox" style="padding-left:5.5mm;" alt="Report Post 1990 ODC">
               <xsl:call-template name="PopulateCheckbox">
                 <xsl:with-param name="TargetNode" select="$FormData/Election1991Ind" />
                 <xsl:with-param name="BackupName">IRS6627Election1991Ind</xsl:with-param>
               </xsl:call-template>
             </input>
-            <span style="width:1mm;clear:none"></span>
+            <span style="width:6mm;clear:none"></span>
             <!-- button display logic -->
             <xsl:call-template name="SetDynamicTableToggleButton" >
               <xsl:with-param name="TargetNode" select="$FormData/TxOnOzoneDepletingChemicalsGrp"/>
@@ -448,7 +455,7 @@
                       <span style="width:16px"></span>.
                     </span>
                     <span style="width:4px;clear:none"></span>
-                    <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+                    <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
                     </span>     
                   </td>
                   <td style="height:5mm;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
@@ -546,8 +553,34 @@
 				Election. If you elect to report the tax on imported products at the time you import the products instead of when you sell or use<br />
 				the products, check this box 
             </label>
-            <span class="styDotLn" style="float:none;padding-left:2mm;padding-right:0.5mm">.................................</span>
-            <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/>
+            <!--Dotted Line-->
+            <span class="styBoldText" style="skiplink:display:none;">
+              <span style="width:1px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+              <span style="width:16px"></span>.
+            </span>
+            <span class="styBoldText" style="padding-left:2.8mm;skiplink:display:none;"><img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
+            </span> 
             <input type="checkbox" class="styCkbox" alt="IRS6627TaxOnImpProductsElectionInd">
              <xsl:call-template name="PopulateCheckbox">
                <xsl:with-param name="TargetNode" select="$FormData/TaxOnImpProductsElectionInd" />
@@ -678,7 +711,7 @@
                       <b>Total ODC tax on imported products.</b> Add all amounts in column (f), include amounts from any
                       additional sheets. Enter the total here and on Form 720 on the line for <b>IRS No. 19</b>
                       <span class="styDotLn" style="float:none;padding-left:2mm;padding-right:0.5mm">...............</span>
-                      <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/>
+                      <img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/>
                   </td>
                   <td class="styTableCell" style="height:8mm;width:31mm;vertical-align:bottom;padding-bottom:1mm;border-color:black;border-right-width:0;border-top-width:0;border-bottom-width:0;padding-top:3.5mm;">
                     <div style="width:2mm;float:left;clear:none;font-size:7pt;display:inline;">$</div>
@@ -846,7 +879,7 @@
                       <span style="width:16px"></span>.
                     </span>
                     <span style="width:4px;clear:none"></span>
-                    <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+                    <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
                     </span>     
                   </td>
                   <td style="height:8mm;border-left:1px black solid;border-bottom:1px black solid;text-align:right;">
@@ -1003,7 +1036,7 @@
                         <span style="width:16px"></span>.
                       </span>
                       <span style="width:1mm;clear:none"></span>
-                      <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+                      <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
                       </span>     
                       <span style="width:4mm;clear:none"></span>
                     </td>							
@@ -1102,7 +1135,7 @@
                       <b>Total ODC tax on imported products.</b> Add all amounts in column (f), include amounts from any
                         additional sheets. Enter the total here and on Form 720 on the line for <b>IRS No. 19</b>
                         <span class="styDotLn" style="float:none;padding-left:2mm;padding-right:0.5mm">...............</span>
-                        <img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/>
+                        <img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/>
                     </td>
                     <td class="styTableCell" style="width:31mm;border-color:black;border-right-width:0;border-bottom-width:0;vertical-align:bottom;padding-bottom:1mm;">
                       <div style="width:2mm;float:left;clear:none;font-size:7pt">$</div>
@@ -1206,7 +1239,7 @@
                       <span style="width:16px"></span>.
                     </span>
                     <span style="width:4px;clear:none"></span>
-                    <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" alt="MediumBullet"/> 
+                    <span class="styBoldText" style="padding-left:5.5mm;"><img src="{$ImagePath}/6627_Bullet_Md.gif" style="skiplink:display:none;" alt="Arrow"/> 
                     </span>     
                   </td>
                   <td class="styDepTblCell" style="height:8mm;border-left:1px black solid;border-bottom:1px black solid;text-align:right;padding-top:5mm;">

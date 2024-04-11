@@ -78,12 +78,12 @@
 							</div>
 							<br/><br/><br/><br/>
 							<span style="text-align:center;">
-								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="MediumBullet"/>
+								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="medium right arrow graphic"/>
 								<b>Attach to Form 1120. </b>
 							</span>
 							<br/>
 							<span style="text-align:center;">
-								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="MediumBullet"/>
+								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="medium right arrow graphic"/>
 								<b>See instructions on page 2. </b>
 							</span>
 						</div>

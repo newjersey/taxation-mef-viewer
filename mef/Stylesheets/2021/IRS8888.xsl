@@ -44,11 +44,11 @@
 					<xsl:call-template name="DocumentHeader"/>
 					<div class="styBB" style="width:187mm;padding-bottom:0mm;">
 						<div class="styFNBox" style="width:31mm;height:21mm;padding-bottom:0mm;">
-							<div style="padding-top:3mm;padding-bottom:3mm;font-size:8pt;">
+							<div style="padding-top:3mm;padding-bottom:0mm;font-size:8pt;">
             Form <span class="styFormNumber">  8888</span>
 							</div>
-							<div class="styAgency" style="font-size:7.5pt;padding-bottom:0mm;">Department of  the Treasury<br>
-            Internal Revenue Service</br>
+							<div class="styAgency" style="font-size:7.5pt;padding-bottom:0mm;">(Rev. November 2021)<br/>Department of the Treasury<br/>
+            Internal Revenue Service
 							</div>
 						</div>
 						<div class="styFTBox" style="width:120mm;height:14mm;padding-bottom:0mm;">
@@ -64,9 +64,7 @@
 						<div class="styTYBox" style="width:32mm;height:21mm;text-align:left;">
 							<div class="styOMB" style="width:35.5mm;height:5mm;font-size:7pt;padding-left:4.5mm;padding-top:1mm;padding-bottom:0mm;">
 							OMB No. 1545-0074</div>
-							<div class="styTaxYear" style="width:32mm;height:8mm;margin-left:3mm;           padding-left:4.5mm;padding-bottom:0mm;">20<span class="styTYColor">21</span>
-							</div>
-							<div style="width:32mm;height:2mm;margin-left:3mm; text-align:left;font-size:7.5pt;padding-bottom:0mm;border:">
+							<div style="width:32mm;height:2mm;margin-left:3mm; text-align:left;font-size:7.5pt;padding-top:8mm;border:">
           Attachment<br/> Sequence No.  <b>  56</b>
 							</div>
 						</div>

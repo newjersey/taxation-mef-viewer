@@ -69,10 +69,10 @@
 			 </div>
               <div class="styFST" style="height:3mm;">
               <br/>
-              <img src="{$ImagePath}/1120_Bullet_Md.gif" alt="MediumBullet"/>
+              <img src="{$ImagePath}/1120_Bullet_Md.gif" alt="medium right arrow graphic"/>
                 Attach to Form 1120-F.              
 				<br/>              
-				 <img src="{$ImagePath}/1120_Bullet_Md.gif" alt="MediumBullet"/>
+				 <img src="{$ImagePath}/1120_Bullet_Md.gif" alt="medium right arrow graphic"/>
                   Go to
 				  <a style="text-decoration:none;color:black;" href="http://www.irs.gov/Form1120s" title="Link to IRS.gov">
 					<i>www.irs.gov/Form1120F</i>
@@ -551,7 +551,7 @@
 							</label>
 							 List exchange(s) and symbol
 							<span style="width:2mm"/>
-								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="MediumBullet"/>
+								<img src="{$ImagePath}/1120_Bullet_Md.gif" alt="medium right arrow graphic"/>
 							<span style="width:2mm"/>
 							<xsl:call-template name="SetFormLinkInline">
 								<xsl:with-param name="TargetNode" select="$FormData/CorpStkPubliclyTradedInd"/>

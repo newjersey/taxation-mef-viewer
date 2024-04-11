@@ -53,7 +53,7 @@
 						<div class="styFTBox" style="width:128mm;height:auto;">
 							<div class="styMainTitle" style="height:auto;">Agricultural Employer's Record of<br/>Federal Tax Liability</div>
 							<div class="styFBT" style="height:auto;margin-top:2mm;font-size:6.5pt;width:128mm;">
-								<img src="{$ImagePath}/943A_Bullet_Sm.gif" alt="Bullet Image"/> Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/form943a" title="Link to IRS.gov"><i>www.irs.gov/Form943A</i> for instructions and latest information.</a><br/>
+								<img src="{$ImagePath}/943A_Bullet_Sm.gif" alt="Bullet Image"/> Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/form943a" title="Link to IRS.gov"><i>www.irs.gov/Form943A</i> for instructions and the latest information.</a><br/>
 								<img src="{$ImagePath}/943A_Bullet_Sm.gif" alt="Bullet Image"/> File with Form 943 or Form 943-X.
 							</div>
 						</div>

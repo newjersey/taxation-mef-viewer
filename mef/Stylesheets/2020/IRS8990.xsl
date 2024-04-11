@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet [<!ENTITY nbsp "&#160;"> <!ENTITY mdash "&#8212;">]>
-    <!-- Last Modified by Iskilu Lawal on 10/27/2020 UWR # 238414 Drop 3 R10.4 -->
+    <!-- Last Modified by Iskilu Lawal on 11/10/2020 UWR # 238414 Drop 3 R10.4 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl" />
 	<xsl:include href="AddHeader.xsl" />
@@ -173,7 +173,7 @@
 															
 					<div class="sty8990InstructionLn">
 						Part I is completed by all taxpayers subject to section 163(j). Schedule A and Schedule B need to be completed before Part I when the 
-						taxpayer is a partner or shareholder of a pass-through entity subject to 163(j).
+						taxpayer is a partner or shareholder of a pass-through entity subject to section 163(j).
 					</div>
 					<div class="sty8990SectionLn">
 						Section I &mdash; Business Interest Expense
@@ -563,7 +563,7 @@
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBox">24</div>
 						<div class="styLNDesc" style="height:7mm;width:98mm;">
-							Excess business interest income from pass-through entities (total of <br /> Schedule A, line 44, column (g) and Schedule B, line 46, column(d))
+							Excess business interest income from pass-through entities (total of <br /> Schedule A, line 44, column (g); and Schedule B, line 46, column(d))
 							<span class="sty8990DotLn">..</span>
 						</div>
 						<div class="styLNRightNumBox" style="height:7mm;"><br />24</div>

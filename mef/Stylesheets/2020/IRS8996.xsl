@@ -53,7 +53,7 @@
 								<xsl:with-param name="TargetNode" select="$FormData" />
 							</xsl:call-template>
 							<br />
-							(Rev. December 2020)
+							(Rev. January 2021)
 							<br />
 							<span class="styAgency">
 								Department of the Treasury
@@ -100,7 +100,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="styPartName" style="margin-top:1.5mm;margin-bottom:1.5mm;">Part I</div>
 						<div class="styPartDesc" style="margin-top:1.5mm;margin-bottom:1.5mm;">
-							General Information, Certification, and Decertification
+							General Information and Certification
 						</div>
 					</div>
 					<!-- Line 1 -->
@@ -259,22 +259,17 @@
 					<!-- Line 6 -->
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">6</div>
-						<div class="styGenericDiv" style="width:6mm;height:auto;">
-							<input type="checkbox" class="styCkboxNM" style="margin-top:2px;" alt="Elect Decertify Q O F">
+						<div class="styGenericDiv" style="width:5mm;height:auto;">
+							<input type="checkbox" class="styCkboxNM" style="margin-top:2px;" alt="Elect Decertify Q O F" disabled="disabled">
 								<xsl:call-template name="PopulateCheckbox">
 									<xsl:with-param name="TargetNode" select="$FormData/QOFDecertificationGrp/QOFDecertificationElectInd"/>
 									<xsl:with-param name="BackupName">IRS8996QOFDecertificationElectInd</xsl:with-param>
 								</xsl:call-template>
 							</input>
 						</div>
-						<div class="styLNDesc" style="height:auto;width:173mm;">
-							Check this box <strong>only</strong> if the taxpayer is electing to decertify as a QOF. If you check this box, 
-							provide the date the taxpayer <br /> elected to decertify as a QOF, and attach a statement to Form 8996 with additional 
-							information regarding <br /> decertification. See instructions. &#9658; 
-							<xsl:call-template name="PopulateMonthDayYear">
+						<div class="styLNDesc" style="width:173mm;">Do not check this box. Reserved for future use. <xsl:call-template name="PopulateMonthDayYear">
 								<xsl:with-param name="TargetNode" select="$FormData/QOFDecertificationGrp/QOFDecertificationElectDt"/>
-							</xsl:call-template>
-						</div>
+							</xsl:call-template></div>
 					</div>
 					<!-- Part 2 -->
 					<div class="styStdDiv" style="border-bottom:1px solid black;border-top:1px solid black;">
@@ -457,11 +452,11 @@
 					<div class="styStdDiv pageEnd" style="border-top:2px solid black;">
 						<span style="font-weight:bold;">For Paperwork Reduction Act Notice, see your tax return instructions.</span>
 						<span style="margin-left:20mm;">Cat. No. 37820G</span>
-						<span style="float:right;">Form <strong>8996</strong> (Rev. 12-2020)</span>
+						<span style="float:right;">Form <strong>8996</strong> (Rev. 01-2021)</span>
 					</div>
 					<!-- Page 2 -->
 					<div class="styStdDivLS" style="border-bottom:2px solid black;">
-						Form 8996 (Rev. 12-2020)
+						Form 8996 (Rev. 01-2021)
 						<div style="float:right;">Page <strong>2</strong></div>
 					</div>
 					<!-- Part 4 -->
@@ -694,11 +689,11 @@
 						</div>
 					</div>
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;">
-						<span style="float:right;">Form <strong>8996</strong> (Rev. 12-2020)</span>
+						<span style="float:right;">Form <strong>8996</strong> (Rev. 01-2021)</span>
 					</div>
 					<!-- Page 3 -->
 					<div class="styStdDivLS" style="border-bottom:2px solid black;">
-						Form 8996 (Rev. 12-2020)
+						Form 8996 (Rev. 01-2021)
 						<div style="float:right;">Page <strong>3</strong></div>
 					</div>
 					<!-- Part 5 -->
@@ -1003,7 +998,7 @@
 						</div>
 					</div>
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;">
-						<span style="float:right;">Form <strong>8996</strong> (Rev. 12-2020)</span>
+						<span style="float:right;">Form <strong>8996</strong> (Rev. 01-2021)</span>
 					</div>
 					<!-- Additonal Data Title Bar and Button -->
 					<div class="styLeftOverTitleLine" id="LeftoverData">

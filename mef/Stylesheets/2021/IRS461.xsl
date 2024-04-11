@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 05/04/2021 -->
+<!-- Last Modified by Eugenia McDonald on 09/05/2021 -->
 <!DOCTYPE xsl:stylesheet [
   <!ENTITY nbsp "&#160;">
   <!ENTITY mdash "&#8212;">
@@ -80,7 +80,7 @@
 							</div>
 							<div style="margin-left:3mm;text-align:left;font-size:7pt;">
 								Attachment<br/>Sequence No. 
-								<span class="styBoldText" style="font-size:9pt;">461</span>
+								<span class="styBoldText" style="font-size:9pt;">64</span>
 							</div>
 						</div>
 					</div>
@@ -126,8 +126,8 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="sty461LeftBox">2</div>
 						<div class="sty461Desc">
-							Enter amount from Schedule 1 (Form 1040 or 1040-SR), line 3
-							<span class="sty461DotLn">..............</span>
+							Enter amount from Schedule 1 (Form 1040), line 3
+							<span class="sty461DotLn">.................</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">2</div>
 						<div class="styLNAmountBoxNBB">
@@ -140,7 +140,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="sty461LeftBox">3</div>
 						<div class="sty461Desc">
-							Enter amount from Form 1040 or 1040-SR, line 6
+							Enter amount from Form 1040 or 1040-SR, line 7
 							<span class="sty461DotLn">..................</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">3</div>
@@ -154,8 +154,8 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="sty461LeftBox">4</div>
 						<div class="sty461Desc">
-							Enter amount from Schedule 1 (Form 1040 or 1040-SR), line 4
-							<span class="sty461DotLn">..............</span>
+							Enter amount from Schedule 1 (Form 1040), line 4
+							<span class="sty461DotLn">.................</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">4</div>
 						<div class="styLNAmountBoxNBB">
@@ -168,8 +168,8 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="sty461LeftBox">5</div>
 						<div class="sty461Desc">
-							Enter amount from Schedule 1 (Form 1040 or 1040-SR), line 5
-							<span class="sty461DotLn">..............</span>
+							Enter amount from Schedule 1 (Form 1040), line 5
+							<span class="sty461DotLn">.................</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">5</div>
 						<div class="styLNAmountBoxNBB">
@@ -182,8 +182,8 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="sty461LeftBox">6</div>
 						<div class="sty461Desc">
-							Enter amount from Schedule 1 (Form 1040 or 1040-SR), line 6
-							<span class="sty461DotLn">..............</span>
+							Enter amount from Schedule 1 (Form 1040), line 6
+							<span class="sty461DotLn">.................</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">6</div>
 						<div class="styLNAmountBoxNBB">
@@ -196,8 +196,8 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="sty461LeftBox">7</div>
 						<div class="sty461Desc">
-							Enter amount from Schedule 1 (Form 1040 or 1040-SR), line 7
-							<span class="sty461DotLn">..............</span>
+							Enter amount from Schedule 1 (Form 1040), line 7
+							<span class="sty461DotLn">.................</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">7</div>
 						<div class="styLNAmountBoxNBB">
@@ -216,7 +216,7 @@
 						<div class="styLNRightNumBoxNBB">8</div>
 						<div class="styLNAmountBoxNBB">
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/OtherIncomeAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/OtherIncomeGainOrLossAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -280,7 +280,7 @@
 						<div class="styLNRightNumBoxNBB">12</div>
 						<div class="styLNAmountBoxNBB">
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/TotalGainLossAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/TotalGainOrLossAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -302,7 +302,7 @@
 						<div class="styLNRightNumBoxNBB" style="height:7mm;"><br />13</div>
 						<div class="styLNAmountBoxNBB" style="height:7mm;"><br />
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/AdjustedTotalGainLossAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/AdjustedTotalGainOrLossAmt"/>
 							</xsl:call-template>
 						</div>
 					</div>
@@ -324,7 +324,7 @@
 					<div class="styStdDiv" style="border-bottom:1px solid black;">
 						<div class="sty461LeftBox">15</div>
 						<div class="sty461Desc">
-							Enter $255,000 (or $510,000 if married filing jointly)
+							Enter $262,000 (or $524,000 if married filing jointly)
 							<span class="sty461DotLn">.................</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">15</div>
@@ -338,9 +338,9 @@
 					<div class="styStdDiv">
 						<div class="sty461LeftBox">16</div>
 						<div class="sty461Desc">
-							Add lines 14 and 15. If less than zero, enter the amount from line 16 as a positive number on Schedule 1 (Form 1040 or 1040-SR), line 8. 
+							Add lines 14 and 15. If less than zero, enter the amount from line 16 as a positive number on Schedule 1 (Form 1040), line 8o. 
 							See instructions if you are filing a tax return other than a Form 1040 or 1040-SR. If zero or greater, do not attach this form to your tax return
-							<span class="sty461DotLn">............</span>
+							<span class="sty461DotLn">...............</span>
 						</div>
 						<div class="styLNRightNumBoxNBB" style="height:10mm;"><br /><br />16</div>
 						<div class="styLNAmountBoxNBB" style="height:10mm;"><br /><br />

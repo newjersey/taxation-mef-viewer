@@ -1031,6 +1031,22 @@
 								</tr>
 							</tr>
 						</table>
+
+					<!--   BEGIN FORM FOOTER  -->
+               <div style="width:256mm;float:none;clear:both;border-top:solid 0px" class="pageEnd">
+						<div class="styGenericDiv" style="width:140mm;font-weight:bold">For Paperwork Reduction Act Notice, see the Instructions for Form 990. </div>
+						<div class="styGenericDiv" style="width:25mm;">Cat. No. 50193E</div>
+						<div class="styGenericDiv" style="float:right;">
+							<span class="styBoldText">Schedule K (Form 990) 2020</span>
+						</div>
+					</div>
+					<!--     END FORM FOOTER   -->
+				 <p style="page-break-before: always"/>
+					<div class="styBB" style="width:256mm; float: none; clear:none;border-bottom-width:1px">
+						<div style="float:left"> Schedule K (Form 990) 2020</div>
+						<div style="float:right">Page <span style="font-weight:bold;font-size:8pt;padding-right:4mm">2</span>
+						</div>
+					</div>
 					
 					<!--   Begin Part III   -->
 					<div class="styBB" style="width: 256mm;border-bottom-width:0px; border-top-width:0px;float:none;display:table;display:inline; ">
@@ -1064,8 +1080,9 @@
 						<th class="styTableCellHeader " scope="col" style="border-left-width:0px;width:16mm;border-style: solid; border-color: black;border-right-width: 0px;">No</th>
 								
 							</tr>
-					
-												
+						</thead>
+						<tfoot/>
+						<tbody>
 							<tr>
 								<td class="styTableCellText" style="border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width:128mm;padding-top:0mm;">
 									<span class="styLNLeftLtrBox" style="padding-left:1mm;padding-top:0mm;">1</span>
@@ -1118,11 +1135,7 @@
 									</xsl:call-template>
 								</td>
 							
-								</tr>
-									</thead>
-						<tfoot/>
-						<tbody>
-						
+								</tr>						
 							<tr>
 								<td class="styTableCellText" style="border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:0px; width:128mm;padding-top:.5mm">
 									<span class="styLNLeftLtrBox" style="padding-left:1mm;">2</span>
@@ -1172,59 +1185,6 @@
 									</xsl:call-template>
 								</td>
 								</tr>
-						</tbody>
-						
-					</table>
-					</div>
-					<!--   BEGIN FORM FOOTER  -->
-               <div style="width:256mm;float:none;clear:both;border-top:solid 0px" class="pageEnd">
-						<div class="styGenericDiv" style="width:140mm;font-weight:bold">For Paperwork Reduction Act Notice, see the Instructions for Form 990. </div>
-						<div class="styGenericDiv" style="width:25mm;">Cat. No. 50193E</div>
-						<div class="styGenericDiv" style="float:right;">
-							<span class="styBoldText">Schedule K (Form 990) 2020</span>
-						</div>
-					</div>
-					<!--     END FORM FOOTER   -->
-				 <p style="page-break-before: always"/>
-					<div class="styBB" style="width:256mm; float: none; clear:none;border-bottom-width:1px">
-						<div style="float:left"> Schedule K (Form 990) 2020</div>
-						<div style="float:right">Page <span style="font-weight:bold;font-size:8pt;padding-right:4mm">2</span>
-						</div>
-					</div>
-					<!--   Begin Part III   Continued-->
-					<div class="styBB" style="width: 256mm;border-bottom-width:0px;float:none;">
-						<div class="styPartName">Part <span style="font-size: 8.75pt;">&#8546;</span></div>
-						<div class="styPartDesc">Private Business Use  <span style="font:italic;font-weight:normal">(Continued)</span>
-						</div>
-					</div>
-					<!-- end -->
-					<table class="styTableContainerLandscape" cellspacing="0" style="font-size:7pt;width:256mm">
-						<thead>
-							<tr>
-								<th class="styTableCellHeader" rowspan="2" scope="col" style="border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 1px; border-bottom-width:0px; width: 128mm"/>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px;border-top-width:1px;" colspan="2">A</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px;border-top-width:1px;" colspan="2">B</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px;border-top-width:1px;" colspan="2">C</th>
-								<th class="styTableCellHeader" scope="col" style="border-style: solid; border-color: black;border-left-width:0px;border-top-width:1px;border-right-width: 0px;" colspan="2">D</th>
-								<!--<th class="styTableCellHeader" scope="col" colspan="2" style="border-right:0px">E</th>-->
-							</tr>
-							<tr>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm">No</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm">No</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm">No</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px; width:16mm;border-right-width: 0px;">No</th>
-								<!--
-								<th class="styTableCellHeader " scope="col" style="width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="width:16mm;border-right:0px;padding-right:4mm">No</th>
-                 -->
-							</tr>
-						</thead>
-						<tfoot/>
-						<tbody>
 							<tr>
 								<td class="styTableCellText" style=" border-style: solid; border-color: black;border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width:128mm;padding-top:0mm">
 									<span class="styLNLeftLtrBox" style="padding-left:0mm;">3a</span>
@@ -1588,7 +1548,7 @@
 								</td>
                  -->
 							</tr>
-							    <tr>
+							<tr>
 								<td class="styTableCellText" style="border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width:128mm;padding-top:0mm">
 									<span class="styLNLeftLtrBox" style="padding-left:0mm;">7</span>
     Does the bond issue meet the private security or
@@ -1885,6 +1845,7 @@
 							</tr>
 						</tbody>
 					</table>
+					</div>
 					<!--   Begin Part IV  -->
 					<div class="styBB" style="width: 256mm;border-bottom-width:0px;border-top-width:0px;float:none ">
 						<div class="styPartName">Part <span style="font-size: 8.75pt;">&#8547;</span></div>
@@ -2208,7 +2169,7 @@ Penalty in Lieu of Arbitrage Rebate?
 								</td>
                 -->
 							</tr>
-													<tr>
+							<tr>
 							<td class="styTableCellText" style="border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width:96mm;padding-top:0mm">
 							 <span class="styNormalText" style="padding-left:9mm;"/>If "Yes" to line 2c, provide in Part <span style="font-size: 8pt;">&#8549;</span> the date the rebate<br></br>
                              <span class="styNormalText" style="padding-left:9mm;"/>computation was performed   
@@ -2318,7 +2279,63 @@ Penalty in Lieu of Arbitrage Rebate?
 								</td>
                 -->
 							</tr>
+
+							
+						</tbody>
+					</table>
+					
+					<!-- Footer -->
+					<div style="width:256mm;float:none;clear:both;padding-top:.5mm;border-top:solid 0px" class="pageEnd">
+						<div class="styGenericDiv" style="width:95mm;"/>
+						<div class="styGenericDiv" style="width:25mm;"/>
+						<div class="styGenericDiv" style="float:right;padding-right:4mm">
+							<span class="styBoldText">Schedule K (Form 990) 2020</span>
+						</div>
+					</div>
+					<!--     END FORM FOOTER   -->
+		<!-- =========================================================================-->
+		 <p style="page-break-before: always"/>
+					<!--  Page header -->
+					<div style="width:256mm;clear:both;padding-bottom:.5mm;float:none;clear:both;" class="styBB">
+						<div style="width:90mm;" class="styGenericDiv">Schedule K (Form 990) 2020</div>
+						<div style="width:55mm;text-align:center;" class="styGenericDiv"/>
+						<div style="float:right;padding-right:4mm" class="styGenericDiv">Page <span class="styBoldText" style="font-size:8pt;">3</span>
+						</div>
+					</div>
+							
+							<!--   Begin Part IV  continued-->
+					<div class="styBB" style="width: 256mm;border-bottom-width:0px;border-top-width:0px;float:none ">
+						<div class="styPartName">Part <span style="font-size: 8.75pt;">&#8547;</span></div>
+						<div class="styPartDesc">Arbitrage <span style="font:italic;font-weight:normal">(Continued)</span>
+						</div>
+					</div>
+					<!-- end -->
+					<table class="styTableContainerLandscape" cellspacing="0" style="font-size:7pt;width:256mm;float:none;clear:both">
+						<thead>
 							<tr>
+								<th class="styTableCellHeader" rowspan="2" scope="col" style="border-style: solid; border-color: black;border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 1px; border-bottom-width:0px; width:96mm"/>
+								<th class="styTableCellHeader " scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px">A</th>
+								<th class="styTableCellHeader " scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px">B</th>
+								<th class="styTableCellHeader " scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px">C</th>
+								<th class="styTableCellHeader" scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px;border-right-width: 0px;">D</th>
+								<!--<th class="styTableCellHeader" scope="col" colspan="2" style="width:32mm;border-right:0px">E</th>-->
+							</tr>
+							<tr>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px;width:16mm">Yes</th>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">No</th>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">Yes</th>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">No</th>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">Yes</th>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">No</th>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">Yes</th>
+								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm;border-right-width: 0px;">No</th>
+								
+							</tr>
+						</thead>
+						<tfoot/>
+						<tbody>
+						
+			<!--4a-->		<tr>
 								
 								<td class="styTableCellText" style="border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width:88mm;padding-top:0mm;float:none;clear:both">
 									<span class="styLNLeftLtrBox" style="padding-left:0mm;height:4.5mm">4a</span>
@@ -2596,60 +2613,6 @@ Penalty in Lieu of Arbitrage Rebate?
 								</td>
                  -->
 							</tr>
-							
-						</tbody>
-					</table>
-					
-					<!-- Footer -->
-					<div style="width:256mm;float:none;clear:both;padding-top:.5mm;border-top:solid 0px" class="pageEnd">
-						<div class="styGenericDiv" style="width:95mm;"/>
-						<div class="styGenericDiv" style="width:25mm;"/>
-						<div class="styGenericDiv" style="float:right;padding-right:4mm">
-							<span class="styBoldText">Schedule K (Form 990) 2020</span>
-						</div>
-					</div>
-					<!--     END FORM FOOTER   -->
-		<!-- =========================================================================-->
-		 <p style="page-break-before: always"/>
-					<!--  Page header -->
-					<div style="width:256mm;clear:both;padding-bottom:.5mm;float:none;clear:both;" class="styBB">
-						<div style="width:90mm;" class="styGenericDiv">Schedule K (Form 990) 2020</div>
-						<div style="width:55mm;text-align:center;" class="styGenericDiv"/>
-						<div style="float:right;padding-right:4mm" class="styGenericDiv">Page <span class="styBoldText" style="font-size:8pt;">3</span>
-						</div>
-					</div>
-							
-							<!--   Begin Part IV  continued-->
-					<div class="styBB" style="width: 256mm;border-bottom-width:0px;border-top-width:0px;float:none ">
-						<div class="styPartName">Part <span style="font-size: 8.75pt;">&#8547;</span></div>
-						<div class="styPartDesc">Arbitrage <span style="font:italic;font-weight:normal">(Continued)</span>
-						</div>
-					</div>
-					<!-- end -->
-					<table class="styTableContainerLandscape" cellspacing="0" style="font-size:7pt;width:256mm;float:none;clear:both">
-						<thead>
-							<tr>
-								<th class="styTableCellHeader" rowspan="2" scope="col" style="border-style: solid; border-color: black;border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 1px; border-bottom-width:0px; width:96mm"/>
-								<th class="styTableCellHeader " scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px">A</th>
-								<th class="styTableCellHeader " scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px">B</th>
-								<th class="styTableCellHeader " scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px">C</th>
-								<th class="styTableCellHeader" scope="col" colspan="2" style="border-style: solid; border-color: black;width:32mm;border-top-width:1px;border-right-width: 0px;">D</th>
-								<!--<th class="styTableCellHeader" scope="col" colspan="2" style="width:32mm;border-right:0px">E</th>-->
-							</tr>
-							<tr>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;border-left-width:0px;width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">No</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">No</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">No</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm">Yes</th>
-								<th class="styTableCellHeader " scope="col" style="border-style: solid; border-color: black;width:16mm;border-right-width: 0px;">No</th>
-								
-							</tr>
-						</thead>
-						<tfoot/>
-						<tbody>
 							<tr>
 								<td class="styTableCellText" style="border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 1px; border-top-width: 0px; border-bottom-width:1px; width:96mm;padding-top:0mm">
 									<span class="styLNLeftLtrBox" style="padding-left:0mm;">5a</span>

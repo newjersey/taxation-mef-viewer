@@ -1375,13 +1375,21 @@
 					</xsl:call-template>
 				</td>
 				<td class="styTableCellCtrInherit" style="">
-					<input type="checkbox" class="styCkboxNM" style="">
-						<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit <xsl:value-of select="RowId"/> High Tax Election</xsl:attribute>
-						<xsl:call-template name="PopulateCheckbox">
-							<xsl:with-param name="TargetNode" select="HighTaxElectionInd"/>
-							<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/><xsl:value-of select="position()"/></xsl:with-param>
-						</xsl:call-template>
-					</input>
+					<xsl:choose>
+						<xsl:when test="$L4">
+							<xsl:attribute name="style">background-color:lightgrey;</xsl:attribute>
+							&nbsp;
+						</xsl:when>
+						<xsl:otherwise>
+							<input type="checkbox" class="styCkboxNM" style="">
+								<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit <xsl:value-of select="RowId"/> High Tax Election</xsl:attribute>
+								<xsl:call-template name="PopulateCheckbox">
+									<xsl:with-param name="TargetNode" select="HighTaxElectionInd"/>
+									<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/><xsl:value-of select="position()"/></xsl:with-param>
+								</xsl:call-template>
+							</input>
+						</xsl:otherwise>
+					</xsl:choose>
 				</td>
 				<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
 				<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
@@ -1400,13 +1408,21 @@
 			<td class="styTableCellAmtInherit" style=""><xsl:if test="$L4"><xsl:attribute name="style">background-color:lightgrey;</xsl:attribute></xsl:if>&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="">&nbsp;</td>
 			<td class="styTableCellCtrInherit" style="">
-				<input type="checkbox" class="styCkboxNM" style="" alt="Unit 1 High Tax Election">
-					<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 1 High Tax Election</xsl:attribute>
-					<xsl:call-template name="PopulateCheckbox">
-						<xsl:with-param name="TargetNode" select="/.."/>
-						<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-1</xsl:with-param>
-					</xsl:call-template>
-				</input>
+				<xsl:choose>
+					<xsl:when test="$L4">
+						<xsl:attribute name="style">background-color:lightgrey;</xsl:attribute>
+						&nbsp;
+					</xsl:when>
+					<xsl:otherwise>
+						<input type="checkbox" class="styCkboxNM" style="" alt="Unit 1 High Tax Election">
+							<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 1 High Tax Election</xsl:attribute>
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="/.."/>
+								<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-1</xsl:with-param>
+							</xsl:call-template>
+						</input>
+					</xsl:otherwise>
+				</xsl:choose>
 			</td>
 			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>
@@ -1422,13 +1438,21 @@
 			<td class="styTableCellAmtInherit" style=""><xsl:if test="$L4"><xsl:attribute name="style">background-color:lightgrey;</xsl:attribute></xsl:if>&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="">&nbsp;</td>
 			<td class="styTableCellCtrInherit" style="">
-				<input type="checkbox" class="styCkboxNM" style="" alt="Unit 2 High Tax Election">
-					<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 2 High Tax Election</xsl:attribute>
-					<xsl:call-template name="PopulateCheckbox">
-						<xsl:with-param name="TargetNode" select="/.."/>
-						<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-2</xsl:with-param>
-					</xsl:call-template>
-				</input>
+				<xsl:choose>
+					<xsl:when test="$L4">
+						<xsl:attribute name="style">background-color:lightgrey;</xsl:attribute>
+						&nbsp;
+					</xsl:when>
+					<xsl:otherwise>
+						<input type="checkbox" class="styCkboxNM" style="" alt="Unit 2 High Tax Election">
+							<xsl:attribute name="alt">Line <xsl:value-of select="$Line"/> Unit 2 High Tax Election</xsl:attribute>
+							<xsl:call-template name="PopulateCheckbox">
+								<xsl:with-param name="TargetNode" select="/.."/>
+								<xsl:with-param name="BackupName">HighTaxElection<xsl:value-of select="$Line"/>-2</xsl:with-param>
+							</xsl:call-template>
+						</input>
+					</xsl:otherwise>
+				</xsl:choose>
 			</td>
 			<td class="styTableCellAmtInherit" style="background-color:lightgrey;">&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="background-color:lightgrey;border-right-width:0px;">&nbsp;</td>

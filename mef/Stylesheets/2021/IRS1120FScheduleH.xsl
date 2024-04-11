@@ -72,9 +72,9 @@
 				</div>
 				<div class="styFST">
 				<br/>
-				  <img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="Bullet Image"/>Attach to Form 1120-F.
+				  <img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="right pointing arrow"/>Attach to Form 1120-F.
 				  <br/>
-				  <img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="Bullet Image"/>&#160;Go to 
+				  <img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="right pointing arrow"/>&#160;Go to 
 				  <a style="text-decoration:none;color:black;"  href="http://www.irs.gov/form1120f"><i>www.irs.gov/Form1120F</i></a>for instructions and the latest information.
 				</div>
 			</div>
@@ -129,7 +129,7 @@
                 <br/>
                 <span style="font-weight:normal"> Otherwise, specify currency</span>
                 <span style="width:1mm"/>
-                <img src="{$ImagePath}/1120FScheduleH_Bullet_Md.gif" alt="Bullet Image"/>
+                <img src="{$ImagePath}/1120FScheduleH_Bullet_Md.gif" alt="right pointing arrow"/>
                  <span style="width:1mm;"/>
                     <span style="font-weight:normal; font-size:6pt;">
                       <xsl:call-template name="PopulateText">
@@ -244,7 +244,7 @@
 								<xsl:with-param name="BackupName">Line1bOtherAccountingConventionIndicatorLabel</xsl:with-param>
 							</xsl:call-template>
 							<span style="1mm;"> Other (specify)  <!--Start here -->
-								<img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="bulletpoint"/>
+								<img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="right pointing arrow"/>
 								<span style="border-color:black; border-style:solid; border-right-width: 0px;border-left-width: 0px; border-top-width:0px; border-bottom-width: 1px; width: 25mm">
 								<xsl:call-template name="PopulateText"><xsl:with-param name="TargetNode" 	select="$FormData/OtherInd/@specifyAccountingMethodTxt"/>
 								</xsl:call-template>
@@ -311,7 +311,7 @@
 								</xsl:call-template>
 								<span style="1mm;"> Other (specify)   
 								 <!--Start here -->
-                                    <img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="bulletpoint"/>
+                                    <img src="{$ImagePath}/1120FScheduleH_Bullet.gif" alt="right pointing arrow"/>
 									<span style="border-color:black;border-style:solid;border-right-width:0px;border-left-width:0px;border-top-width:0px;border-bottom-width: 1px;width:25mm">
 									<xsl:call-template name="PopulateText"><xsl:with-param name="TargetNode" select="$FormData/OtherAccountingFuncInd/@specifyAccountingMethodTxt"/>
 									</xsl:call-template>

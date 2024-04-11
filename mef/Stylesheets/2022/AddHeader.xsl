@@ -61,23 +61,48 @@
 		<span class="styDoNotProcess" style="overflow:hidden;">
 			<xsl:value-of select="$AppProp/FormHeaderGeneric" />
 			<span style="width:12px;"></span>
-			<span class="styDataStage">
-				<xsl:choose>
-					<xsl:when test="$TaxpayerPrint='true' or $TaxpayerPrint='1'">
-						Taxpayer Copy
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:if test="$Stage='original'">
-							<xsl:value-of select="$AppProp/FormHeaderOriginalData" />
-						</xsl:if>
-						<xsl:if test="$Stage='latest'">
-							<xsl:value-of select="$AppProp/FormHeaderLatestData" />
-						</xsl:if>
-						-
-						<xsl:value-of select="$AppProp/SystemMode" />
-					</xsl:otherwise>
-				</xsl:choose>
-			</span>
+			
+			<xsl:choose>
+				<xsl:when test="$PaperReturnIndicator='true'">
+                    <span class="styDataStagePaper">
+                        <xsl:choose>
+                            <xsl:when test="$TaxpayerPrint='true' or $TaxpayerPrint='1'">
+                                Taxpayer Copy
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:if test="$Stage='original'">
+                                    <xsl:value-of select="$AppProp/FormHeaderOriginalData" />
+                                </xsl:if>
+                                <xsl:if test="$Stage='latest'">
+                                    <xsl:value-of select="$AppProp/FormHeaderLatestData" />
+                                </xsl:if>
+                                -
+                                Converted from Paper
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </span>				
+				</xsl:when>
+				<xsl:otherwise>
+                    <span class="styDataStage">
+                        <xsl:choose>
+                            <xsl:when test="$TaxpayerPrint='true' or $TaxpayerPrint='1'">
+                                Taxpayer Copy
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:if test="$Stage='original'">
+                                    <xsl:value-of select="$AppProp/FormHeaderOriginalData" />
+                                </xsl:if>
+                                <xsl:if test="$Stage='latest'">
+                                    <xsl:value-of select="$AppProp/FormHeaderLatestData" />
+                                </xsl:if>
+                                -
+                                <xsl:value-of select="$AppProp/SystemMode" />
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </span>
+				</xsl:otherwise>
+			</xsl:choose>
+			
 			<xsl:if test="$ReturnStatus='R'">
 				<span class="styRejected">
 					Rejected

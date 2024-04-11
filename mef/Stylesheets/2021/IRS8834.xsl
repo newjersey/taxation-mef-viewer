@@ -1,22 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE xsl:stylesheet [<!ENTITY nbsp "&#160;">]>
-<!-- 05/04/2015 - Changes made for IE11 compatibility - Jeremy Nichols -->
-<!-- 06/23/2015 - Changes made for UWR 151655 - Jeremy Nichols -->
-<!-- 05/09/2017 - Changes made for UWR 194393 - Jeremy Nichols -->
-<!-- 08/10/2017 - Changes made for UWR 200408 - Jeremy Nichols -->
-<!-- 08/25/2017 - Changes made for 2017 pdf review under defect 61535 - Jeremy Nichols -->
-<!-- 03/21/2018 - Changes made for UWR 205661 - Jeremy Nichols -->
-<!-- 07/20/2018 - Changes made for UWR 211897 - Jeremy Nichols -->
-<!-- 08/27/2018 - Changes made for 2018 pdf review under defect ##### - Jeremy Nichols -->
-<!-- 11/20/2018 - Changes made for defect 126841 - Jeremy Nichols -->
-<!-- 11/21/2018 - Changes made for defect 126895 - Jeremy Nichols -->
-<!-- 01/17/2019 - Changes made for defect 126841 - Jeremy Nichols -->
-<!-- 09/30/2019 - Changes made for UWR 225247 - Jeremy Nichols -->
-<!-- 12/16/2019 - Changes made for defect 128868 - Jeremy Nichols -->
-<!-- 01/14/2020 - Changes made for KISAMS IM00887331 - Jeremy Nichols -->
-<!-- 09/02/2020 - Changes made for UWR 239493 - Jeremy Nichols -->
-<!-- 11/10/2020 - Changes made for defect 65828 - Jeremy Nichols -->
-<!-- 06/08/2021 - Changes made for 2020 pdf review under defect ##### - Jeremy Nichols -->
+<!-- 04/23/2021 - Changes made for UWR 244169 - Jeremy Nichols -->
+<!-- 07/14/2021 - Changes made for defect 67411 - Jeremy Nichols -->
+<!-- 04/11/2022 - Changes made for UWR 375730 - Jeremy Nichols -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:include href="PopulateTemplate.xsl"/>
   <xsl:include href="CommonPathRef.xsl"/>
@@ -66,7 +52,7 @@
                   <xsl:with-param name="TargetNode" select="$FormData"/>
                 </xsl:call-template>
                 <br/>            
-				(Rev. November 2020)
+				(Rev. November 2021)
               <br/>
               <span class="styAgency">Department of the Treasury</span>
               <br/>
@@ -139,9 +125,8 @@
           Regular tax before credits:     <br/>    
        <img src="{$ImagePath}/8844_Bullet_Round.gif" title="bullet" alt="bullet"/>    Individuals. Enter the sum of the amounts from Form 1040, 1040-SR, or 1040-NR, line 16, and Schedule 2 (Form 1040), line 2.<br/>
         <img src="{$ImagePath}/8844_Bullet_Round.gif" title="bullet" alt="bullet"/>    Corporations. Enter the amount from Form 1120, Schedule J, line 2; or the
-applicable line of your return.<br/>
-        <img src="{$ImagePath}/8844_Bullet_Round.gif" title="bullet" alt="bullet"/>    Estates and trusts. Enter the sum of the amounts from Form 1041, Schedule G,
-lines 1a and 1b; or the amount from the applicable line of your return.                   
+		applicable line of your return.<br/>
+        <img src="{$ImagePath}/8844_Bullet_Round.gif" title="bullet" alt="bullet"/>    Estates and trusts. Enter the sum of the amounts from Form 1041, Schedule G, lines 1a and 1b, plus any Form 8978 amount included on line 1d; or the amount from the applicable line of your return.                   
         </div>
         <div class="styLNDesc" style="width:5mm; height:4mm;padding-top:4.5mm;">
           <img src="{$ImagePath}/8844_Bracket_Lger.gif" title="bracket" alt="bracket" border="0"/>        
@@ -282,7 +267,7 @@ lines 1a and 1b; or the amount from the applicable line of your return.
         <div class="styLNLeftNumBox" style="padding-top:3mm;">6</div>
         <div class="styLNDesc" style="width:138mm;padding-top:3mm;">
           Subtract line 5 from line 4. If zero or less, enter -0- here and on line 7
-<span style="letter-spacing:4mm; font-weight:bold"> .........
+			<span style="letter-spacing:4mm; font-weight:bold"> .........
             </span>  
         </div>
         <div class="styLNRightNumBox" style="height:6mm;padding-top:3mm;">6
@@ -307,7 +292,7 @@ lines 1a and 1b; or the amount from the applicable line of your return.
         <div class="styLNLeftNumBox" style="height:10mm;">7</div>
         <div class="styLNDesc" style="width:138mm;height:10mm;">
           <span class="styBoldText">Qualified electric vehicle credit.</span> Enter the <span class="styBoldText">smaller</span> of line 1 or line 6. Report this
-				amount on Schedule 3(Form 1040), line 6; Form 1120, Schedule J, line 5b; or the appropriate line of your return.
+				amount on Schedule 3(Form 1040), line 6i; Form 1120, Schedule J, line 5b; or the appropriate line of your return.
 				If line 6 is smaller than line 1, see instructions    
           <!--Dotted Line-->
 
@@ -330,7 +315,7 @@ lines 1a and 1b; or the amount from the applicable line of your return.
      <div style="width:187mm; border-style: solid; border-color: black; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px">
             <div class="styGenericDiv" style="width:117mm;font-weight:bold;">For  Paperwork Reduction Act Notice, see instructions.</div>
             <div class="styGenericDiv" style="width:23mm;">Cat. No. 14953G</div>
-            <div class="styGenericDiv" style="float:right;">Form <span class="styBoldText">8834</span> (Rev. 11-2020)</div>
+            <div class="styGenericDiv" style="float:right;">Form <span class="styBoldText">8834</span> (Rev. 11-2021)</div>
           </div><br/><br/>
           
           <!-- BEGIN Left Over Table -->

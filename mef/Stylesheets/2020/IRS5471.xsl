@@ -1413,31 +1413,18 @@
 							</tbody>
 						</table>
 					</div>
-					<xsl:call-template name="SetInitialDynamicTableHeight">
-						<xsl:with-param name="TargetNode" select="$IRS5471AData/StockOfTheForeignCorporation"/>
-						<xsl:with-param name="containerHeight" select="4"/>
-						<xsl:with-param name="headerHeight" select="2"/>
-						<xsl:with-param name="containerID" select=" 'SCctn' "/>
-					</xsl:call-template>
-					<!--   END A, B, i and ii   -->
-					<xsl:if test="($Print = $Separated)">
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
-						<br/>
+					
+					<xsl:if test="($Print != $Separated)
+						and (count($IRS5471AData/StockOfTheForeignCorporation) &gt;4)">
+						<xsl:call-template name="SetInitialDynamicTableHeight">
+							<xsl:with-param name="TargetNode" select="$IRS5471AData/StockOfTheForeignCorporation"/>
+							<xsl:with-param name="containerHeight" select="4"/>
+							<xsl:with-param name="headerHeight" select="2"/>
+							<xsl:with-param name="containerID" select=" 'SCctn' "/>
+						</xsl:call-template>
 					</xsl:if>
+					
+					<!--   END A, B, i and ii   -->
 					<!--BEGIN FOOTER-->
 					<div style="width:187mm; border-color: black; border-style: solid; border-right-width: 0px;
 					 border-left-width: 0px; border-top-width: 1px; border-bottom-width: 0px;">
@@ -3465,24 +3452,9 @@
 					</div>
 					<!--   END SCHEDULE G HEADER   -->
 					<div class="styGenericDiv" style="font-size:8pt">
-						<span class="styLNDesc" style="font-size:8pt; width:170mm;"/>
-						<span>
-							<label id="ScheduleGYesLabel">
-								<xsl:call-template name="PopulateLabelYes">
-									<xsl:with-param name="TargetNode" select="$IRS5471GData/Owns10PctOrMoreFrgnPrtshpInd"/>
-									<xsl:with-param name="BackupName">Owns10PercenttOrMoreForeignPartnershipYesLabel</xsl:with-param>
-								</xsl:call-template>
-								<b>Yes</b>
-							</label>
-							<span style="width: 1mm"/>
-							<label>
-								<xsl:call-template name="PopulateLabelNo">
-									<xsl:with-param name="TargetNode" select="$IRS5471GData/Owns10PctOrMoreFrgnPrtshpInd"/>
-									<xsl:with-param name="BackupName">Owns10PercenttOrMoreForeignPartnershipNoLabel</xsl:with-param>
-								</xsl:call-template>
-								<b>&#160;No</b>
-							</label>
-						</span>
+					<b>Yes</b>
+					<b>&#160;No</b>
+						<span class="styLNDesc" style="font-size:8pt; width:170mm;"/>						
 					</div>
 					<!--   BEGIN LINE 1 of Schedule G -->
 					<div class="styGenericDiv" style="width:187mm">
@@ -4991,7 +4963,13 @@
 							</div>
 						</div>
 						<!--YES and NO Boxes  -->
-						<div style="width:187mm;">
+						<div class="styGenericDiv" style="font-size:8pt">
+							<b>Yes</b>
+							<b>&#160; &#160;No</b>
+							<span class="styLNDesc" style="font-size:8pt; width:172mm;"/>						
+						</div>
+								
+						<!--<div style="width:187mm;background-color:plum;">
 							<span style="height:4mm;width:10mm; text-align:center; float:right;">
 								<label>
 									<xsl:call-template name="PopulateLabelNo">
@@ -5011,7 +4989,7 @@
 								</label>
 							</span>
 						</div>
-						<!--   Line 7a of Schedule I   -->
+-->						<!--   Line 7a of Schedule I   -->
 						<div class="styGenericDiv" style="width:187mm;">
 							<div class="styLNLeftNumBox">7a</div>
 							<span class="styLNDesc" style="width:159mm; ">
@@ -5524,7 +5502,13 @@
 									</div>
 								</div>
 								<!--YES and NO Boxes-->
-								<div class="styGenericDiv" style="width:187mm;">
+								<div class="styGenericDiv" style="font-size:8pt">
+									<b>Yes</b>
+									<b>&#160; &#160;No</b>
+									<span class="styLNDesc" style="font-size:8pt; width:172mm;"/>						
+								</div>
+								
+								<!--<div class="styGenericDiv" style="width:187mm;background-color:plum;">
 									<span style="height:4mm;width:8mm; text-align:center; float:right;">
 										<label>
 											<xsl:call-template name="PopulateLabelNo">
@@ -5543,7 +5527,7 @@
 											<b>Yes</b>
 										</label>
 									</span>
-								</div>
+								</div>-->
 								<!--   Line 7a of Schedule I   -->
 								<div class="styGenericDiv" style="width:187mm;">
 									<div class="styLNLeftNumBox">7a</div>
@@ -6076,11 +6060,15 @@
 					  &gt; 0)) and ($Print = $Separated)">
 						<br/>
 						<br/>
-						<span class="styRepeatingDataTitle">
-							Form 5471, Schedule B Part I - U.S. Shareholders of Foreign Corporation (see instructions):
-						</span>
+						
 						<table class="styDepTbl" style="font-size:7pt;">
 							<thead class="styTableThead">
+							</thead>
+							<tfoot/>
+							<tbody>
+						<span class="styRepeatingDataTitle">
+							Form 5471, Schedule B Part I - U.S. Shareholders of Foreign Corporation (see instructions):
+						</span>						
 								<tr class="styDepTblHdr">
 									<th scope="col" class="styDepTblCell" style="width:50mm; text-align:center;">
 										<br/>
@@ -6101,22 +6089,25 @@
 										<b>(e)</b> Pro rata share of subpart F income (enter as a percentage)
 									</th>
 								</tr>
-							</thead>
-							<tfoot/>
-							<tbody>
+							
 								<xsl:for-each select="$IRS5471BData/USShareholdersOfForeignCorp">
 									<xsl:variable name="RowCount" select="count(ForeignCorporationStocks)"/>
-									<tr style="height:6mm;">
-										<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
-										<td class="styTableCell" style="width:50mm; text-align:left; font-size:6pt;">
+									<tr style="height:10mm;">
+										<xsl:attribute name="class">
+										<xsl:choose>
+											<xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when>
+											<xsl:otherwise>styDepTblRow2</xsl:otherwise>
+										</xsl:choose></xsl:attribute>
+										<td class="styTableCell" style="height:40mm;width:50mm; text-align:left; font-size:6pt;">
 											<xsl:choose>
 												<xsl:when test="$RowCount&gt;4">
-													<xsl:attribute name="rowspan"><xsl:value-of select="$RowCount"/></xsl:attribute>
-													<!--													<xsl:attribute name="height"><xsl:value-of select="$RowCount*4"/>mm</xsl:attribute>-->
+													<xsl:attribute name="rowspan"><xsl:value-of select="$RowCount"/>
+													</xsl:attribute>
+													<!--	<xsl:attribute name="height"><xsl:value-of select="$RowCount*4"/>mm</xsl:attribute>-->
 												</xsl:when>
 												<xsl:otherwise>
 													<xsl:attribute name="rowspan">4</xsl:attribute>
-													<xsl:attribute name="style">text-align:left;height:88mm;</xsl:attribute>
+													<!--<xsl:attribute name="style">text-align:left;height:88mm;</xsl:attribute>-->
 												</xsl:otherwise>
 											</xsl:choose>
 											<xsl:if test="PersonNm != ''">
@@ -6246,11 +6237,16 @@
 					  &gt; 0)) and ($Print = $Separated)">
 						<br/>
 						<br/>
+						
+						<table class="styDepTbl" style="font-size:7pt;">
+							<thead class="styTableThead">
+							</thead>
+							<tfoot/>
+							<tbody>
 						<span class="styRepeatingDataTitle">
 							Form 5471, Schedule B Part II - Direct Shareholders of Foreign Corporation (see instructions):
 						</span>
-						<table class="styDepTbl" style="font-size:7pt;">
-							<thead class="styTableThead">
+						
 								<tr class="styDepTblHdr">
 									<th scope="col" class="styDepTblCell" style="width:58mm; text-align:center;">
 										<b>(a)</b> Name, address, and identifying number of shareholder.  Also include country of incorporation or formation, if applicable.
@@ -6269,9 +6265,7 @@
 										<b>(e)</b> Pro rata share of subpart F income (enter as a percentage)
 									</th>-->
 								</tr>
-							</thead>
-							<tfoot/>
-							<tbody>
+							
 								<xsl:for-each select="$IRS5471BData/DirectShareholdersForeignCorp">
 									<xsl:variable name="RowCount" select="count(ForeignCorporationStocks)"/>
 									<tr style="height:6mm;">
@@ -6347,19 +6341,19 @@
 											</xsl:choose>
 											<span class="styTableCellPad"/>
 										</td>
-										<td class="styTableCell" style="width:58mm; text-align:left; padding-left:1px; padding-right:0px; padding-top:0px; padding-bottom:0px;">
+										<td class="styTableCell" style="height:10mm;width:58mm; text-align:left; padding-left:1px; padding-right:0px; padding-top:0px; padding-bottom:0px;">
 											<xsl:call-template name="PopulateText">
 												<xsl:with-param name="TargetNode" select="ForeignCorporationStocks[1]/StockClassDesc"/>
 											</xsl:call-template>
 											<span class="styTableCellPad"/>
 										</td>
-										<td class="styTableCell" style="width:32mm; text-align:right; padding-left:1px; padding-right:0px; padding-top:0px; padding-bottom:0px;">
+										<td class="styTableCell" style="height:10mm;width:32mm; text-align:right; padding-left:1px; padding-right:0px; padding-top:0px; padding-bottom:0px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ForeignCorporationStocks[1]/AnnualAcctPeriodBeginShareCnt"/>
 											</xsl:call-template>
 											<span class="styTableCellPad"/>
 										</td>
-										<td class="styTableCell" style="width:32mm; text-align:right; border-right-width:1px; padding-left:1px; padding-right:0px; padding-top:0px; padding-bottom:0px;">
+										<td class="styTableCell" style="height:10mm;width:32mm; text-align:right; border-right-width:1px; padding-left:1px; padding-right:0px; padding-top:0px; padding-bottom:0px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ForeignCorporationStocks[1]/AnnualAcctPeriodEndShareCnt"/>
 											</xsl:call-template>
@@ -6370,19 +6364,19 @@
 										<xsl:if test="not(position() = 1)">
 											<tr style="height:6mm;">
 												<xsl:attribute name="class"><xsl:choose><xsl:when test="position() mod 2 = 1">styDepTblRow1</xsl:when><xsl:otherwise>styDepTblRow2</xsl:otherwise></xsl:choose></xsl:attribute>
-												<td class="styTableCell" style="width:58mm; text-align:left;height:6mm;">
+												<td class="styTableCell" style="width:58mm; text-align:left;height:10mm;">
 													<xsl:call-template name="PopulateText">
 														<xsl:with-param name="TargetNode" select="StockClassDesc"/>
 													</xsl:call-template>
 													<span class="styTableCellPad"/>
 												</td>
-												<td class="styTableCell" style="width:32mm; text-align:right;;">
+												<td class="styTableCell" style="width:32mm; text-align:right;height:10mm;;">
 													<xsl:call-template name="PopulateAmount">
 														<xsl:with-param name="TargetNode" select="AnnualAcctPeriodBeginShareCnt"/>
 													</xsl:call-template>
 													<span class="styTableCellPad"/>
 												</td>
-												<td class="styTableCell" style="width:32mm; text-align:right; border-right-width:1px;;">
+												<td class="styTableCell" style="width:32mm; text-align:right; border-right-width:1px;height:10mm;;">
 													<xsl:call-template name="PopulateAmount">
 														<xsl:with-param name="TargetNode" select="AnnualAcctPeriodEndShareCnt"/>
 													</xsl:call-template>
@@ -6405,6 +6399,7 @@
 					<!-- Additional Data Table for Separated Repeating Data from Schedule I -->
 					<xsl:if test="($Print = $Separated) and (count($IRS5471IData) &gt; 1) ">
 						<xsl:for-each select="$IRS5471IData">
+						<br/>
 							<span class="styRepeatingDataTitle">
 								<br/>Form 5471, Schedule I - Summary of Shareholder’s Income From Foreign Corporation (see instructions):
 							</span>
@@ -6712,7 +6707,7 @@
 												</div>
 											</div>
 											<div style="float:right;">
-												<div class="styDotLn">...................</div>
+												<div class="styDotLn">..................</div>
 											</div>
 										</td>
 										<td class="styDepTblCell" style="text-align:center; font-weight:bold; width:5mm;">5a</td>

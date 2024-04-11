@@ -54,7 +54,7 @@
 								<xsl:with-param name="TargetNode" select="$FormData" />
 							</xsl:call-template>
 							<br /><br />
-							(Rev. January 2020)<br />
+							(Rev. December 2020)<br />
 							<br />
 							<span class="styAgency">
 								Department of the Treasury
@@ -149,37 +149,63 @@
 					<!-- Line 1 -->
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">1</div>
-						<div class="styLNDesc">
-							Sum of Pro Rata Share of Net Tested Income. Enter total from Schedule A, line 1, column (e)
-							<span class="sty8992DotLn">.....</span>
+						<div class="styLNDesc" style="height:auto;width:117mm;">
+							Sum of Pro Rata Share of Net Tested Income <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is not a member of a U.S. consolidated group, 
+							enter the total from Form 8992, Schedule A, line 1, column (e).  <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is a member of a U.S. consolidated group, 
+							enter the amount from Schedule B (Form 8992), Part II, column (c) that pertains to the U.S. shareholder.
 						</div>
-						<div class="styLNRightNumBox">1</div>
-						<div class="styLNAmountBox">
+						<div class="styGenericDiv" style="height:16mm;width:3mm;text-align:left;padding-top:4px;">
+							<img alt="Curly bracket" src="{$ImagePath}/CurlyBrace1.77x18.11mm.png" height="56" width="6"/>
+						</div>
+						<div class="styGenericDiv" style="height:16mm;width:18mm;padding-top:6mm;">
+							<span class="sty8992DotLn">....</span>
+						</div>
+						<div class="styLNRightNumBoxNBB" style="height:6.5mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:6.5mm;">&nbsp;</div>
+						<div class="styLNRightNumBox" style="">1</div>
+						<div class="styLNAmountBox" style="">
 							<xsl:call-template name="PopulateAmount">
-								<xsl:with-param name="TargetNode" select="$FormData/TotProRataShrCFCTestedIncmAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/SumProRataShrNetTestedIncmAmt"/>
 							</xsl:call-template>
 						</div>
+						<div class="styLNRightNumBoxNBB" style="height:7mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:7mm;">&nbsp;</div>
 					</div>
 					<!-- Line 2 -->
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">2</div>
-						<div class="styLNDesc">
-							Sum of Pro Rata Share of Net Tested Loss. Enter total from Schedule A, line 1, column (f)
-							<span class="sty8992DotLn">......</span>
+						<div class="styLNDesc" style="height:auto;width:117mm;">
+							Sum of Pro Rata Share of Net Tested Loss <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is not a member of a U.S. consolidated group, 
+							enter the total from Form 8992, Schedule A, line 1, column (f). <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is a member of a U.S. consolidated group, enter the amount from 
+							Schedule B (Form 8992), Part II, column (f) that pertains to the U.S. shareholder.
 						</div>
-						<div class="styLNRightNumBox">2</div>
-						<div class="styLNAmountBox">
+						<div class="styGenericDiv" style="height:16mm;width:3mm;text-align:left;padding-top:4px;">
+							<img alt="Curly bracket" src="{$ImagePath}/CurlyBrace1.77x18.11mm.png" height="56" width="6"/>
+						</div>
+						<div class="styGenericDiv" style="height:16mm;width:18mm;padding-top:6mm;">
+							<span class="sty8992DotLn">....</span>
+						</div>
+						<div class="styLNRightNumBoxNBB" style="height:6.7mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:6.7mm;">&nbsp;</div>
+						<div class="styLNRightNumBox" style="">2</div>
+						<div class="styLNAmountBox" style="">
 							<xsl:call-template name="PopulateNegativeNumber">
-								<xsl:with-param name="TargetNode" select="$FormData/TotProRataShrNetTestedLossAmt"/>
+								<xsl:with-param name="TargetNode" select="$FormData/SumProRataShrNetTestedLossAmt"/>
 							</xsl:call-template>
 						</div>
+						<div class="styLNRightNumBoxNBB" style="height:7mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:7mm;">&nbsp;</div>
 					</div>
 					<!-- Line 3 -->
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">3</div>
 						<div class="styLNDesc">
-							Net CFC Tested Income. Combine line 1 and line 2. If zero or negative, stop here
-							<span class="sty8992DotLn">........</span>
+							Net CFC Tested Income. Combine line 1 and line 2. If zero or less, stop here
+							<span class="sty8992DotLn">.........</span>
 						</div>
 						<div class="styLNRightNumBoxNBB">3</div>
 						<div class="styLNAmountBoxNBB">
@@ -212,62 +238,112 @@
 					<!-- Line 2 -->
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">2</div>
-						<div class="styLNDesc">
-							Deemed Tangible Income Return (DTIR). Multiply the total from Schedule A, line 1, column (g) by 10% (0.10)
-							<!--<span class="sty8992DotLn">.</span>-->
+						<div class="styLNDesc" style="height:auto;width:117mm;">
+							Deemed Tangible Income Return (DTIR) <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is not a member of a U.S. consolidated group, 
+							multiply the total from Form 8992, Schedule A, line 1, 	column (g), by 10% (0.10). <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is a member of a U.S. consolidated group, 
+							enter the amount from Schedule B (Form 8992), Part II, column (i) that pertains to the U.S. shareholder.
 						</div>
-						<div class="styLNRightNumBox">2</div>
-						<div class="styLNAmountBox">
+						<div class="styGenericDiv" style="height:16mm;width:3mm;text-align:left;padding-top:4px;">
+							<img alt="Curly bracket" src="{$ImagePath}/CurlyBrace1.77x18.11mm.png" height="56" width="6"/>
+						</div>
+						<div class="styGenericDiv" style="height:16mm;width:18mm;padding-top:6mm;">
+							<span class="sty8992DotLn">....</span>
+						</div>
+						<div class="styLNRightNumBoxNBB" style="height:6.7mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:6.7mm;">&nbsp;</div>
+						<div class="styLNRightNumBox" style="">2</div>
+						<div class="styLNAmountBox" style="">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/DeemedTangibleIncomeReturnAmt"/>
 							</xsl:call-template>
 						</div>
+						<div class="styLNRightNumBoxNBB" style="height:7mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:7mm;">&nbsp;</div>
 					</div>
 					<!-- Line 3a -->
 					<div class="styStdDiv">
 						<div class="styLNLeftNumBoxSD">3a</div>
-						<div class="styLNDesc" style="width:98mm;height:7mm;">
-							Sum of Pro Rata Share of Tested Interest Expense. Enter total from <br /> Schedule A, line 1, column (j)
-							<span class="sty8992DotLn">..............</span>
+						<div class="styLNDesc" style="width:83mm;height:auto;">
+							Sum of Pro Rata Share of Tested Interest Expense <br /><div style="height:3px;display:block;"><br /></div>
+							<span style="display:inline;font-family:Arial;">If the U.S. shareholder is not a member of a U.S. consolidated group, 
+							enter the total from Form 8992, Schedule A, line 1, column (j). </span><br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is a member of a U.S. consolidated group, leave line 3a blank.
 						</div>
-						<div class="styLNRightNumBox" style="height:7mm;"><br />3a</div>
-						<div class="styLNAmountBox" style="height:7mm;"><br />
+						<div class="styGenericDiv" style="height:16mm;width:3mm;text-align:left;padding-top:4px;">
+							<img alt="Curly bracket" src="{$ImagePath}/CurlyBrace1.77x18.11mm.png" height="56" width="6"/>
+						</div>
+						<div class="styGenericDiv" style="height:16mm;width:14mm;padding-top:6mm;">
+							<span class="sty8992DotLn">...</span>
+						</div>
+						<div class="styLNRightNumBox" style="height:10mm;"><br/><br/>3a</div>
+						<div class="styLNAmountBox" style="height:10mm;width:30mm;padding-right:2px;"><br/><br/>
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/TotProRataShrTestedIntExpnsAmt"/>
 							</xsl:call-template>
 						</div>
-						<div class="styLNRightNumBoxNBB" style="height:7mm;background-color:lightgrey;"></div>
-						<div class="styLNAmountBoxNBB" style="height:7mm;"></div>
+						<div class="styLNRightNumBoxNBB" style="height:10mm;background-color:lightgrey;"></div>
+						<div class="styLNAmountBoxNBB" style="height:10mm;"></div>
+						<div class="styLNRightNumBoxNBB" style="height:8mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="width:30mm;height:8mm;">&nbsp;</div>
+						<div class="styLNRightNumBoxNBB" style="height:8mm;background-color:lightgrey;"></div>
+						<div class="styLNAmountBoxNBB" style="height:8mm;"></div>
 					</div>
 					<!-- Line 3b -->
 					<div class="styStdDiv">
 						<div class="styLNLeftLtrBox" style="padding-left:4.2mm;">b</div>
-						<div class="styLNDesc" style="width:98mm;height:7mm;">
-							Sum of Pro Rata Share of Tested Interest Income. Enter total from <br /> Schedule A, line 1, column (i)
-							<span class="sty8992DotLn">..............</span>
+						<div class="styLNDesc" style="width:83mm;height:auto;">
+							Sum of Pro Rata Share of Tested Interest Income <br /><div style="height:3px;display:block;"><br /></div>
+							<span style="display:inline;font-family:Arial;">If the U.S. shareholder is not a member of a U.S. consolidated group, 
+							enter the total from Form 8992, Schedule A, line 1, column (i).</span> <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is a member of a U.S. consolidated group, leave line 3b blank.
 						</div>
-						<div class="styLNRightNumBox" style="height:7mm;"><br />3b</div>
-						<div class="styLNAmountBox" style="height:7mm;"><br />
+						<div class="styGenericDiv" style="height:16mm;width:3mm;text-align:left;padding-top:4px;">
+							<img alt="Curly bracket" src="{$ImagePath}/CurlyBrace1.77x18.11mm.png" height="56" width="6"/>
+						</div>
+						<div class="styGenericDiv" style="height:16mm;width:14mm;padding-top:6mm;">
+							<span class="sty8992DotLn">...</span>
+						</div>
+						<div class="styLNRightNumBoxNBB" style="height:6.7mm;background-color:lightgrey;"></div>
+						<div class="styLNAmountBoxNBB" style="width:30mm;height:6.7mm;"></div>
+						<div class="styLNRightNumBoxNBB" style="height:6.7mm;background-color:lightgrey;"></div>
+						<div class="styLNAmountBoxNBB" style="height:6.7mm;"></div>
+						<div class="styLNRightNumBox" style="height:4mm;">3b</div>
+						<div class="styLNAmountBox" style="height:4mm;width:30mm;padding-right:2px;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/TotProRataShrTestedIntIncmAmt"/>
 							</xsl:call-template>
 						</div>
-						<div class="styLNRightNumBoxNBB" style="height:7mm;background-color:lightgrey;"></div>
-						<div class="styLNAmountBoxNBB" style="height:7mm;"></div>
+						<div class="styLNRightNumBoxNBB" style="height:11.6mm;background-color:lightgrey;"></div>
+						<div class="styLNAmountBoxNBB" style="height:11.6mm;"></div>
 					</div>
 					<!-- Line 3c -->
 					<div class="styStdDiv">
 						<div class="styLNLeftLtrBox" style="padding-left:4.2mm;">c</div>
-						<div class="styLNDesc">
-							Specified Interest Expense. Subtract line 3b from line 3a. If zero or less, enter -0- 
-							<span class="sty8992DotLn">........</span>
+						<div class="styLNDesc" style="height:auto;width:117mm;">
+							Specified Interest Expense <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is not a member of a U.S. 
+							consolidated group, subtract line 3b from line 3a. If zero or less, enter -0-. <br /><div style="height:3px;display:block;"><br /></div>
+							If the U.S. shareholder is a member of a U.S. consolidated group, enter the 
+							amount from Schedule B (Form 8992), Part II, column (m) that pertains to the U.S. shareholder.
 						</div>
-						<div class="styLNRightNumBox">3c</div>
-						<div class="styLNAmountBox">
+						<div class="styGenericDiv" style="height:16mm;width:3mm;text-align:left;padding-top:4px;">
+							<img alt="Curly bracket" src="{$ImagePath}/CurlyBrace1.77x18.11mm.png" height="56" width="6"/>
+						</div>
+						<div class="styGenericDiv" style="height:16mm;width:18mm;padding-top:6mm;">
+							<span class="sty8992DotLn">....</span>
+						</div>
+						<div class="styLNRightNumBoxNBB" style="height:6.7mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:6.7mm;">&nbsp;</div>
+						<div class="styLNRightNumBox" style="">3c</div>
+						<div class="styLNAmountBox" style="">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/SpecifiedInterestExpenseAmt"/>
 							</xsl:call-template>
 						</div>
+						<div class="styLNRightNumBoxNBB" style="height:7mm;background-color:lightgrey;">&nbsp;</div>
+						<div class="styLNAmountBoxNBB" style="height:7mm;">&nbsp;</div>
 					</div>
 					<!-- Line 4 -->
 					<div class="styStdDiv">
@@ -300,11 +376,11 @@
 					<div class="styStdDiv pageEnd" style="border-top:2px solid black;">
 						<span style="font-weight:bold;font-family:Arial;">For Paperwork Reduction Act Notice, see separate instructions.</span>
 						<span style="margin-left:25mm;">Cat. No. 37816Y</span>
-						<span style="float:right;">Form <strong>8992</strong> (Rev. 1-2020)</span>
+						<span style="float:right;">Form <strong>8992</strong> (Rev. 12-2020)</span>
 					</div>
 					<!-- Page 2 -->
 					<div class="styStdDivLS" style="border-bottom:2px solid black;">
-						Form 8992 (Rev. 1-2020)
+						Form 8992 (Rev. 12-2020)
 						<div style="float:right;">Page <strong>2</strong></div>
 					</div>
 					<!-- Sch A -->
@@ -373,20 +449,20 @@
 						</div>
 					</div>
 					<div class="styStdDivLS" style="border-bottom:1px solid black;">
-						<div style="width:55mm;float:left;">&nbsp;</div>
-						<div style="width:150mm;border-right:1px solid black;text-align:center;float:left;">
+						<div style="width:44.2mm;float:left;">&nbsp;</div>
+						<div style="width:172.3mm;height:10mm;text-align:center;float:left;border-left:1px solid black;padding-top:1.5mm;">
 							<strong>Calculations for Net Tested Income</strong><br />(see instructions)
 						</div>
-						<div style="width:46mm;text-align:center;font-weight:bold;float:left;">
-							GILTI Allocated to Tested <br /> Income CFCs
-						</div>
-						<div style="width:5mm;float:left;text-align:right;">
+						<div style="width:5mm;height:5mm;float:left;text-align:right;">
 							<xsl:call-template name="SetDynamicTableToggleButton">
 								<xsl:with-param name="TargetNode" select="$FormData/USShrCalcGILTIGrp"/>
 								<xsl:with-param name="containerID" select=" 'SchATable' "/>
 								<xsl:with-param name="headerHeight" select="1"/>
 								<xsl:with-param name="containerHeight" select="10"/>
 							</xsl:call-template>
+						</div>
+						<div style="width:34.5mm;height:10mm;text-align:center;font-weight:bold;float:left;border-left:2px solid black;">
+							GILTI Allocated to <br /> Tested Income CFCs <br /> <span style="font-weight:normal;">(see instructions)</span>
 						</div>
 					</div>
 					<!-- Table 1, cols (a)-(e) -->
@@ -431,7 +507,7 @@
 										<span style="font-weight:bold;">(i) </span> <br />
 										Pro Rata Share <br /> of Tested <br /> Interest <br /> Income
 									</th>
-									<th class="styTableCellHeader" scope="col" style="width:21.5mm;font-weight:normal;">
+									<th class="styTableCellHeader" scope="col" style="width:21.5mm;font-weight:normal;border-right-width:2px;">
 										<span style="font-weight:bold;">(j) </span> <br />
 										Pro Rata Share <br /> of Tested <br /> Interest <br /> Expense
 									</th>
@@ -512,7 +588,7 @@
 													<xsl:with-param name="TargetNode" select="ProRataShrTestedIntIncomeAmt"/>
 												</xsl:call-template>
 											</td>
-											<td class="styTableCellAmtInherit">
+											<td class="styTableCellAmtInherit" style="border-right-width:2px;">
 												<xsl:call-template name="PopulateAmount">
 													<xsl:with-param name="TargetNode" select="ProRataShrTestedIntExpenseAmt"/>
 												</xsl:call-template>
@@ -545,7 +621,7 @@
 										<td class="styTableCellAmtInherit">&nbsp;</td>
 										<td class="styTableCellAmtInherit">(<span style="width:20mm;"/>)</td>
 										<td class="styTableCellAmtInherit">&nbsp;</td>
-										<td class="styTableCellAmtInherit">&nbsp;</td>
+										<td class="styTableCellAmtInherit" style="border-right-width:2px;">&nbsp;</td>
 										<td class="styTableCellAmtInherit">&nbsp;</td>
 										<td class="styTableCellAmtInherit" style="border-right-width:0px;">&nbsp;</td>
 									</tr>
@@ -612,7 +688,7 @@
 								<xsl:with-param name="TargetNode" select="$FormData/TotProRataShrTestedIntExpnsAmt"/>
 							</xsl:call-template>
 						</div>
-						<div class="styLNAmountBoxNBB" style="width:12.6mm;padding-right:1px;">
+						<div class="styLNAmountBoxNBB" style="width:12.6mm;padding-right:1px;border-left-width:2px;">
 							<xsl:call-template name="PopulateAmount">
 								<xsl:with-param name="TargetNode" select="$FormData/TotalGILTIAllocationRt"/>
 							</xsl:call-template>
@@ -627,7 +703,7 @@
 						Totals on line 1 should include the totals from any continuation sheets.
 					</div>
 					<div class="styStdDivLS pageEnd" style="border-top:2px solid black;">
-						<span style="float:right;">Form <strong>8992</strong> (Rev. 1-2020)</span>
+						<span style="float:right;">Form <strong>8992</strong> (Rev. 12-2020)</span>
 					</div>
 					<!-- Additonal Data Title Bar and Button -->
 					<div class="styLeftOverTitleLineLandscape" id="LeftoverData">
@@ -688,7 +764,7 @@
 										<span style="font-weight:bold;">(i) </span> <br />
 										Pro Rata Share <br /> of Tested <br /> Interest <br /> Income
 									</th>
-									<th class="styDepTblCell" scope="col" style="width:21.5mm;font-weight:normal;">
+									<th class="styDepTblCell" scope="col" style="width:21.5mm;font-weight:normal;border-right-width:2px;">
 										<span style="font-weight:bold;">(j) </span> <br />
 										Pro Rata Share <br /> of Tested <br /> Interest <br /> Expense
 									</th>
@@ -769,7 +845,7 @@
 												<xsl:with-param name="TargetNode" select="ProRataShrTestedIntIncomeAmt"/>
 											</xsl:call-template>
 										</td>
-										<td class="styTableCellAmtInherit">
+										<td class="styTableCellAmtInherit" style="border-right-width:2px;">
 											<xsl:call-template name="PopulateAmount">
 												<xsl:with-param name="TargetNode" select="ProRataShrTestedIntExpenseAmt"/>
 											</xsl:call-template>
@@ -828,7 +904,7 @@
 			<td class="styTableCellAmtInherit">&nbsp;</td>
 			<td class="styTableCellAmtInherit">(<span style="width:20mm;"/>)</td>
 			<td class="styTableCellAmtInherit">&nbsp;</td>
-			<td class="styTableCellAmtInherit">&nbsp;</td>
+			<td class="styTableCellAmtInherit" style="border-right-width:2px;">&nbsp;</td>
 			<td class="styTableCellAmtInherit">&nbsp;</td>
 			<td class="styTableCellAmtInherit" style="border-right-width:0px;">&nbsp;</td>
 		</tr>

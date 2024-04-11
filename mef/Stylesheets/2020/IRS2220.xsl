@@ -59,10 +59,10 @@
 						<div class="styFTBox" style="width:128mm;height:16mm;padding-top:1mm;">
 							<div style="height:8mm;" class="styMainTitle">Underpayment of Estimated Tax by Corporations</div>
 							<div class="styFBT" style="height:5mm;padding-top:2mm;">
-								<img src="{$ImagePath}/2220_Bullet.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/2220_Bullet.gif" alt="Right arrow"/>
 Attach to the corporation's tax return.
 <br/>
-								<img src="{$ImagePath}/2220_Bullet.gif" alt="Bullet"/>
+								<img src="{$ImagePath}/2220_Bullet.gif" alt="Right arrow"/>
 								Go to <a style="text-decoration:none;color:black;" href="http://www.irs.gov/FORM2220" title="Link to irs.gov/FORM2220">
 									<i>www.irs.gov/FORM2220</i></a> for instructions and the latest information.
 </div>
@@ -716,8 +716,7 @@ Go to Part IV on page 2 to figure the penalty. Do not go to Part IV if there are
 </div>
 					</div>
 					<!--Begin Page 1 Footer -->
-					<p style="page-break-after: always">
-						<div class="pageEnd" style="width:187mm;">
+						<div class="styStdDiv pageEnd" style="width:187mm;">
 							<div class="stySmallText" style="width:110mm;">
 								<span class="styBoldText">For Paperwork Reduction Act Notice, see separate instructions.</span>
 							</div>
@@ -725,7 +724,6 @@ Go to Part IV on page 2 to figure the penalty. Do not go to Part IV if there are
 							<div class="stySmallText" style="width:36mm;text-align:right;">Form<span class="styBoldText">2220</span>(2020)</div>
 						</div>
 						<!--End Page 1 Footer -->
-					</p>
 						<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 							<!-- Page 2 Header -->
 							<div style="width:187mm;padding-top:.5mm;">
@@ -1883,24 +1881,23 @@ You can also call 1-800-829-4933 to get interest rate information.
 					<!--Begin Page 2 Footer -->
 		<xsl:choose>
 			<xsl:when test="$Print != $Separated and count($Form2220Data/PaymentPenaltyComputationTxt) &gt; 4">
-					<div class="pageEnd" style="width:187mm">
+					<div class="styStdDiv pageEnd" style="width:187mm">
 						<div style="float:right;">
 							<span style="width:80px;"/>Form <span class="styBoldText"> 2220</span> (2020)
 						</div>
 					</div>
 			</xsl:when>
 			<xsl:otherwise>
-					<p class="pageEnd" style="width:187mm">
+					<div class="styStdDiv pageEnd" style="width:187mm">
 						<div style="float:right;">
 							<span style="width:80px;"/>Form <span class="styBoldText"> 2220</span> (2020)
 						</div>
-					</p>
+					</div>
 			</xsl:otherwise>
 		</xsl:choose>
 					<!--End Page 2 Footer -->
 						<!-- Page 3 Header -->
 						<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
-					<p style="page-break-before: always"/>
 							<div style="float:left;">Form 2220 (2020)<span style="width:148mm;"/>
 						</div>
 							<div style="float:right;"> Page <span style="font-weight:bold;font-size:8pt;"> 3 </span>
@@ -2757,7 +2754,7 @@ Total tax after credits. Subtract line 18 from line 17. If zero or less, enter -
 							</div>
 						</div>
 						<!--Page Footer -->
-						<div class="pageEnd" style="width:187mm">
+						<div class="styStdDiv pageEnd" style="width:187mm">
 							<div style="float:right;">
 								<span style="width:80px;"/>
 Form
@@ -2767,7 +2764,6 @@ Form
 						</div>
 
 						<!-- Page 4 Header -->
-					<p style="page-break-before: always">
 						<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 							<div style="width:187mm;padding-top:.5mm;">
 								<div style="float:left;">Form 2220 (2020)<span style="width:148mm;"/></div>
@@ -2775,7 +2771,6 @@ Form
 								</div>
 							</div>
 						</div>
-					</p>
 						<!-- END Page 4 Header -->
 					<!-- Part II -->
 					<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
@@ -3470,7 +3465,7 @@ Subtract line 38 of the preceding column from line 37 of the preceding column
 						</div>
 					</div>
 					<!--Page Footer -->
-					<div class="pageEnd" style="width:187mm">
+					<div class="styStdDiv pageEnd" style="width:187mm">
 						<div style="float:right;">
 							<span style="width:80px;"/>
 Form
@@ -3483,7 +3478,6 @@ Form
 					<!--END Page Footer -->
 					<!-- BEGIN Left Over Table -->
 					<!-- Additonal Data Title Bar and Button -->
-					<p style="page-break-before: always">
 					<div class="styGenericDiv" style="width:187mm;clear:all;height:auto;">
 						<div class="styLeftOverTitleLine" id="LeftoverData">
 							<div class="styLeftOverTitle">
@@ -3516,7 +3510,7 @@ Line 1 - Section 338 Gain Amount
 						</table>
 						<br/>
 					</div>
-</p>
+					<div class="styStdDiv pageEnd" style="width:187mm;"/>
 					<!-- END Left Over Table -->
 					<!-- ********************************************************************************** -->
 					<!-- Begin Separated repeating data for Part IV -->
@@ -4211,8 +4205,8 @@ Add lines 22, 24, 26, 28, 30, 32, 34, and 36
 											</tbody>
 										</table>
 									</div>
-<!--					<p style="page-break-after: always"/>
--->								</xsl:if>
+									<div class="styStdDiv pageEnd" style="width:187mm;"/>
+							</xsl:if>
 							</xsl:for-each>
 							<!-- ****************************************************************************** -->
 						</xsl:if>

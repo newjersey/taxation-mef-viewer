@@ -464,7 +464,7 @@
                 <div class="styIRS8853LNDesc" style="width:auto;height:100%;">
                   <b>Additional 20% tax</b> (see instructions). Enter 20% (0.20) of the distributions included on line 8 that<br/>
                   are subject to the additional 20% tax. Also include this amount in the total on Schedule 2 (Form<br/>
-					1040 or 1040-SR), line 8.  Check box c on Schedule 2 (Form 1040), 
+					1040), line 8.  Check box c on Schedule 2 (Form 1040), 
 					<br/>line 8. Enter “MSA” and the amount on the line next to the box.
                   <!--Dotted Line-->
        			 <span class="styDotLn" style="float:none;clear:none;padding:.5mm 0mm 0mm 1mm;">..............</span>
@@ -541,8 +541,7 @@
               <div class="styIRS8853LNDesc" style="width:144mm;height:100%;padding:0px 0px 0px 0px;">
                 <div class="styIRS8853LNDesc" style="width:auto;height:100%;">
                   <b>Taxable Medicare Advantage MSA distributions.</b> Subtract line 11 from line 10. If zero or less,
-					enter -0-.<br/> Also include this amount in the total on Schedule 1 (Form 1040), line 8, or Form1040-NR,
-					line 21.<br/> On the dotted line next to Schedule 1 (Form 1040), line 8, enter “Med MSA” and the amount
+					enter -0-.<br/> Also include this amount in the total on Schedule 1 (Form 1040), line 8.<br/> On the dotted line next to Schedule 1 (Form 1040), line 8, enter “Med MSA” and the amount
                   <!--Dotted Line-->
           			 <span class="styDotLn" style="float:none;clear:none;padding:.5mm 0mm 0mm 1mm;">......</span>
               </div>
@@ -597,8 +596,8 @@
                   <b>Additional 50% tax</b>. Enter 50% (0.50) of the distributions included on line 12 that are subject to <br/>
                   the additional 50% tax. See instructions for the amount to enter if you had a Medicare Advantage MSA<br/>
                   at the end of 2019. Also include this amount in the total on Schedule 2 (Form 1040), line 8.<br/>
-				  Check box c on Schedule 2 (Form 1040), line 8, 
-				  or box b on Form <br/>1040-NR, line 60. Enter “Med MSA” and the amount on the line next to the box.
+				  Check box c on Schedule 2 (Form 1040), line 8.
+				  Enter “Med MSA” and the amount on the line next to the box.
                   <!--Dotted Line-->
         			 <span class="styDotLn" style="float:none;clear:none;padding:.5mm 0mm 0mm 1mm;">.........</span>
                 </div>
@@ -705,7 +704,7 @@
                       <xsl:with-param name="BackupName">Form8853DataForm8853LTCMultipleCopiesInd</xsl:with-param>
                     </xsl:call-template>
                   </label>
-                  <input class="styCkbox" type="checkbox" alt="More than on Section C attached" style="width:3mm;">
+                  <input class="styCkbox" type="checkbox" alt="More than one Section C attached" style="width:3mm;">
                     <xsl:call-template name="PopulateCheckbox">
                       <xsl:with-param name="TargetNode" select="$Form8853Data/SectCLTCInsuranceCntrctGrp/Form8853LTCMultipleCopiesInd"/>
                       <xsl:with-param name="BackupName">Form8853DataForm8853LTCMultipleCopiesInd</xsl:with-param>

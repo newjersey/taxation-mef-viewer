@@ -212,7 +212,7 @@ function myFunction() {
 											<td class="styIRS1042STableCell" style="width:93mm;float:left;vertical-align:top;">
 												<span class="styIRS1042STableCellContent" style="width:13mm;height:12mm;border-width:1px 0px 0px 1px;">
 													<span class="styIRS1042SBoxNumber">1</span>
-											Income code<br/>
+													Income code<br/>
 													<span style="padding-left:2mm;padding-top:2mm;font-size:8pt;">
 														<xsl:call-template name="PopulateText">
 															<xsl:with-param name="TargetNode" select="$FormData/IncomeTypeCd"/>
@@ -221,21 +221,24 @@ function myFunction() {
 												</span>
 												<span class="styIRS1042STableCellContent" style="width:22mm;height:12mm;border-width:1px 0px 0px 1px;">
 													<span class="styIRS1042SBoxNumber" style="height:8mm;">2</span>
-											Gross income
+														Gross income<br/>
 														<span style="width:22mm;text-align:right;padding-right:2px;">
 														<xsl:call-template name="PopulateAmount">
 															<xsl:with-param name="TargetNode" select="$FormData/GrossIncomeAmt"/>
 														</xsl:call-template>
+														<br/>
 													</span>
 												</span>
 												<span class="styIRS1042STableCellContent" style="padding-top:0;width:58mm;height:4mm;border-width:1px 1px 0px 1px;">
-													<span class="styIRS1042SBoxNumber" style="padding-top:1mm;">3 
-														<span style="font-weight:normal;"> Chapter indicator.  Enter "3" or "4"</span>
-													</span>
-													<span style="float:right;padding-top:1mm;padding-right:10mm;">
-														<xsl:call-template name="PopulateText">
-															<xsl:with-param name="TargetNode" select="$FormData/ChapterTypeCd"/>
-														</xsl:call-template>
+													<span class="styIRS1042SBoxNumber" style="height:8mm;padding-top:0.5mm;">3</span>
+													<span style="padding-top:0.5mm;">
+														Chapter indicator.  Enter "3" or "4"	
+														<span style="padding-left:16mm;">														
+															<xsl:call-template name="PopulateText">
+																<xsl:with-param name="TargetNode" select="$FormData/ChapterTypeCd"/>
+															</xsl:call-template>
+														<br/>
+														</span>
 													</span>
 												</span>
 												<span class="styIRS1042STableCell" style="width:30mm;height:8mm;border-bottom:0;">
@@ -790,9 +793,8 @@ function myFunction() {
 													</span>
 												</span>
 												<span class="styIRS1042STableCellContent" style="width:45mm;padding-top:1mm;height:4mm;border-width:0px 1px 0px 1px;">
-													<span class="styIRS1042SBoxNumber">13g</span>
-											Ch. 4 status code
-														<span style="padding-left:6mm;">
+											<b>&nbsp;13g&#32;</b> Ch. 4 status code
+														<span style="padding-left:7mm;">
 														<xsl:call-template name="PopulateText">
 															<xsl:with-param name="TargetNode" select="$FormData/RecipientGrp/Chapter4StatusCd"/>
 														</xsl:call-template>
@@ -987,6 +989,9 @@ function myFunction() {
 										Check if pro-rata basis reporting
 </span>
 													<span style="float:right;padding-right:3mm;">
+														<xsl:call-template name="PopulateSpan">
+															<xsl:with-param name="TargetNode" select="$FormData/ProRataBasisInd"/>
+														</xsl:call-template>
 														<input alt="Pro rata basis indicator" type="checkbox" class="styCkbox" name="ProRataBasisInd">
 															<xsl:call-template name="PopulateCheckbox">
 																<xsl:with-param name="TargetNode" select="$FormData/ProRataBasisInd"/>
@@ -1293,6 +1298,7 @@ function myFunction() {
 															<xsl:with-param name="TargetNode" select="$FormData/StateTaxWithheldAmt"/>
 														</xsl:call-template>
 													</span>
+                                               <br/>
 												</span>
 												<span class="styIRS1042STableCellContent" style="width:36mm;height:7mm;border-width:0px 0px 0px 1px;">
 													<span class="styIRS1042SBoxNumber">17b</span>

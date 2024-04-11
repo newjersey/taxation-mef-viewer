@@ -245,8 +245,11 @@
 							<div class="styLNLeftNumBoxSD" style="height:8mm;padding-left:2mm;padding-top:2mm;">2</div>
 							<div class="styLNDesc" style="width:139mm;padding-top:2mm;">
                               Add lines 1a, 1b, and 1c. See instructions for the adjustment you must make to your deduction for salaries and wages   
+								<xsl:call-template name="SetFormLinkInline">
+						           <xsl:with-param name="TargetNode" select="$Form5884Data/TotalWagesAmt"/>
+								</xsl:call-template>
                               <!--Dotted Line-->
-								<span class="styDotLn" style="float:right;padding-right:1mm;">................................</span>
+								<span class="styDotLn" style="float:right;padding-right:1mm;">...............................</span>
 							</div>
 						</div>
 						<div style="float:right;clear:none;">

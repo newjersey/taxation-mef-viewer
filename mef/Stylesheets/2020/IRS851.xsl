@@ -1210,7 +1210,6 @@
 					<xsl:with-param name="BackupName">IRS851RetainedShrExceedValAtTsfrTime</xsl:with-param>
 				  </xsl:call-template>
 				</input>
-			  </span>
 			  <label>
 				<xsl:call-template name="PopulateLabelYes">
 				  <xsl:with-param name="TargetNode" select="$Form851Data/ShareExceedVlAtTrnsfrTimeInd"/>
@@ -1219,6 +1218,7 @@
 				<span style="width:2px;"/>
 				<b>Yes</b>
 			  </label>
+			  </span>
 			  <span class="styBoldText" style="width:4mm;"/>
 			  <span>
 				<xsl:call-template name="PopulateSpan">
@@ -1230,7 +1230,6 @@
 					<xsl:with-param name="BackupName">IRS851RetainedShrExceedValAtTsfrTime</xsl:with-param>
 				  </xsl:call-template>
 				</input>
-			  </span>
 			  <label>
 				<xsl:call-template name="PopulateLabelNo">
 				  <xsl:with-param name="TargetNode" select="$Form851Data/ShareExceedVlAtTrnsfrTimeInd"/>
@@ -1239,6 +1238,7 @@
 				<span style="width:2px;"/>
 				<b>No</b>
 			  </label>
+			  </span>
 			</div>
 		  </div>
 		  <!-- End of Part III line (c) row 2-->
@@ -1268,7 +1268,6 @@
 					<xsl:with-param name="BackupName">IRS851ShareValueWorthlessUnderSec165</xsl:with-param>
 				  </xsl:call-template>
 				</input>
-			  </span>
 			  <label>
 				<xsl:call-template name="PopulateLabelYes">
 				  <xsl:with-param name="TargetNode" select="$Form851Data/ShrVlWorthlessUnderSect165Ind"/>
@@ -1277,6 +1276,7 @@
 				<span style="width:2px;"/>
 				<b>Yes</b>
 			  </label>
+			  </span>
 			  <span class="styBoldText" style="width:4mm;"/>
 			  <span>
 				<xsl:call-template name="PopulateSpan">
@@ -1288,7 +1288,6 @@
 					<xsl:with-param name="BackupName">IRS851ShareValueWorthlessUnderSec165</xsl:with-param>
 				  </xsl:call-template>
 				</input>
-			  </span>
 			  <label>
 				<xsl:call-template name="PopulateLabelNo">
 				  <xsl:with-param name="TargetNode" select="$Form851Data/ShrVlWorthlessUnderSect165Ind"/>
@@ -1297,6 +1296,7 @@
 				<span style="width:2px;"/>
 				<b>No</b>
 			  </label>
+			  </span>
 			</div>
 		  </div>
 		  <!-- Part III Line (e) -->

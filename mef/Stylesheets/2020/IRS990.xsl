@@ -221,7 +221,7 @@
             </label>
               </span>
               <!-- APPLICATION PENDING CHECKBOX -->
-              <span style="width:2mm;padding-top:0mm;padding-bottom:0mm;">
+              <span style="width:2mm;padding-top:0mm;border-bottom-style: solid;">
                 <input type="checkbox" class="styIRS990CkBox" alt="ApplicationPendingInd">
                   <xsl:call-template name="PopulateCheckbox">
                     <xsl:with-param name="TargetNode" select="$Form990Data/ApplicationPendingInd"/>
@@ -7831,7 +7831,7 @@ Less: cost or other basis and sales expenses
           <div class="styBB" style="width:187mm;float:none;">
             <div class="styPartName" style="float:left;width:14mm;height:auto;border-color: black; border-bottom-style: solid; border-bottom-width: 1px;"><span style="font-family: Arial, Helvetica, sans-serif; font-weight: 500; font-width: font-stretch: ultra-expanded; font-size:10.0px;">Part IX</span></div>
             <div class="styPartDesc" style="width:173mm;height:auto;border-color: black; border-bottom-style: solid;border-top-width: 1px;border-bottom-width: 1px;">Statement of Functional Expenses</div>
-            <span style="width:187mm;font-size: 7pt; float:left;height:auto;border-color: black; border-bottom-width: 1px;padding-left:17mm;">Section 501(c)(3) and 501(c)(4) organizations must complete all columns. All other organizations must complete column (A).</span>
+            <span style="width:187mm;font-size: 7pt; float:left;height:auto;border-color: black;border-bottom-style: solid; border-bottom-width: 1px; padding-bottom:1mm; padding-left:17mm;">Section 501(c)(3) and 501(c)(4) organizations must complete all columns. All other organizations must complete column (A).</span>
             
             <span style="width:187mm;font-size: 7pt; float:left; padding-left:17mm;padding-top:0mm;height:auto; border-color: black; border-bottom-width: 1px;border-top-width: 1px">Check if Schedule O contains a response or note to any line in this <span style="font-family: Arial, Helvetica, sans-serif; font-weight: 500; font-width: font-stretch: ultra-expanded; font-size:10.0px;">Part IX</span>
                <!-- Dotted Line -->
@@ -9153,7 +9153,7 @@ trustees, and key employees
              <tr>
                 <td class="styLNLeftNumBox" style="height:4.5mm;padding-left:3mm;">5</td>
                 <td class="styLNDesc" style="width:100mm;height:4.5mm;" colspan="3">
-   Loans and other payables to any current or former officer, director, trustee, key employee, creator or founder, substantial contributor, or 35% controlled entity or family member of any of these persons
+   Loans and other receivables from any current or former officer, director, trustee, key employee, creator or founder, substantial contributor, or 35% controlled entity or family member of any of these persons
    <span style="width:2px;"/>
                   <span style="letter-spacing:4mm; font-weight:bold; font-size:7pt; margin-left:2mm">.......</span>
                 </td>

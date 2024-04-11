@@ -83,56 +83,58 @@
 					<div class="styStdDiv" style="border-top:1px solid black;border-bottom:1px solid black;">
 						<div class="styNameBox" style="width:150.2mm;">
 							Name of person filing Form 5471 <br />
-							<xsl:call-template name="PopulateReturnHeaderFiler">
-								<xsl:with-param name="TargetNode">BusinessNameLine1Txt</xsl:with-param>
-							</xsl:call-template><br />
-							<xsl:call-template name="PopulateReturnHeaderFiler">
-								<xsl:with-param name="TargetNode">BusinessNameLine2Txt</xsl:with-param>
-							</xsl:call-template>
-						</div>
-						<div class="styEINBox" style="width:36mm;padding-left:1mm;font-weight:normal;">
-							<strong>Identifying number</strong> <br />
-							<xsl:call-template name="PopulateReturnHeaderFilerTIN"/>
-						</div>
-					</div>
-					<div class="styStdDiv" style="border-bottom:1px solid black;">
-						<div class="styNameBox" style="width:110.2mm;height:9mm;">
-							Name of foreign corporation <br />
 							<xsl:choose>
-								<xsl:when test="$FormData/PersonNm">
-									<xsl:call-template name="PopulateText">
-										<xsl:with-param name="TargetNode" select="$FormData/PersonNm"/>
-									</xsl:call-template>
-								</xsl:when>
-								<xsl:otherwise>
+								<xsl:when test="$FormData/BusinessName">
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$FormData/BusinessName/BusinessNameLine1Txt"/>
 									</xsl:call-template><br />
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$FormData/BusinessName/BusinessNameLine2Txt"/>
 									</xsl:call-template>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:call-template name="PopulateText">
+										<xsl:with-param name="TargetNode" select="$FormData/PersonNm"/>
+									</xsl:call-template>
 								</xsl:otherwise>
 							</xsl:choose>
 						</div>
-						<div class="styNameBox" style="width:30mm;height:9mm;padding-left:2px;">
-							EIN (if any) <br />
+						<div class="styEINBox" style="width:36mm;padding-left:1mm;font-weight:normal;">
+							<strong>Identifying number</strong> <br />
 							<xsl:choose>
+								<xsl:when test="$FormData/EIN">
+									<xsl:call-template name="PopulateEIN">
+										<xsl:with-param name="TargetNode" select="$FormData/EIN"/>
+									</xsl:call-template>
+								</xsl:when>
 								<xsl:when test="$FormData/MissingEINReasonCd">
 									<xsl:call-template name="PopulateText">
 										<xsl:with-param name="TargetNode" select="$FormData/MissingEINReasonCd"/>
 									</xsl:call-template>
 								</xsl:when>
-								<xsl:when test="$FormData/SSN">
+								<xsl:otherwise>
 									<xsl:call-template name="PopulateSSN">
 										<xsl:with-param name="TargetNode" select="$FormData/SSN"/>
 									</xsl:call-template>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:call-template name="PopulateEIN">
-										<xsl:with-param name="TargetNode" select="$FormData/EIN"/>
-									</xsl:call-template>
 								</xsl:otherwise>
 							</xsl:choose>
+						</div>
+					</div>
+					<div class="styStdDiv" style="border-bottom:1px solid black;">
+						<div class="styNameBox" style="width:110.2mm;height:9mm;">
+							Name of foreign corporation <br />
+							<xsl:call-template name="PopulateText">
+								<xsl:with-param name="TargetNode" select="$FormData/ForeignCorporationName/BusinessNameLine1Txt"/>
+							</xsl:call-template><br />
+							<xsl:call-template name="PopulateText">
+								<xsl:with-param name="TargetNode" select="$FormData/ForeignCorporationName/BusinessNameLine2Txt"/>
+							</xsl:call-template>
+						</div>
+						<div class="styNameBox" style="width:30mm;height:9mm;padding-left:2px;">
+							EIN (if any) <br />
+							<xsl:call-template name="PopulateEIN">
+								<xsl:with-param name="TargetNode" select="$FormData/ForeignCorporationEIN"/>
+							</xsl:call-template>
 						</div>
 						<div class="styEINBox" style="width:46mm;height:9mm;padding-left:1mm;font-weight:normal;word-wrap:break-all">
 							<strong>Reference ID number</strong> (see instructions)<br />

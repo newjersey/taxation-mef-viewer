@@ -1,5 +1,3 @@
----
----
 //=========================================================
 // File Name:  FormDisplay.js
 //=========================================================
@@ -14,8 +12,8 @@
 //
 //=========================================================
 
-var IMAGEPATH = "{{ site.github.url }}/mef/rrprd/common/images/";
-var HTMLPATH = "{{ site.github.url }}/mef/rrprd/common/htmls/";
+var IMAGEPATH = "/mef/rrdprd/common/images/";
+var HTMLPATH = "/mef/rrdprd/common/htmls/";
 
 
 //=========================================================

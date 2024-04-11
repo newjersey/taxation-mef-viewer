@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last Modified by Eugenia McDonald on 09/22/2020 -->
+<!-- Last Modified by Eugenia McDonald on 12/17/2020 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:include href="PopulateTemplate.xsl"/>
 	<xsl:include href="AddHeader.xsl"/>
@@ -198,8 +198,7 @@
 							<div class="styLNLeftNumBoxSD">3</div>
 							<div class="sty1040NRScheduleAIndent2Desc" style="height:10mm;">
 								Other than by cash or check. If you made any gift of $250 or <br/> 
-								more, see instructions.  You <strong>must</strong> attach Form 8283 if the <br/> 
-								amount of your deduction is over $500 <span class="sty1040NRScheduleADotLn">.......</span>
+								more, see instructions.  Individuals <strong>must</strong> attach Form 8283 if line 3 is over $500<span class="sty1040NRScheduleADotLn">.............</span>
 							</div>
 							<div class="styLNRightNumBox" style="height:6mm;background-color:lightgrey;border-bottom:none;"/>
 							<div class="styLNAmountBox" style="height:6mm;border-bottom:none;"/>
