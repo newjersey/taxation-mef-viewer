@@ -2,9 +2,6 @@
 ---
 $(function() {
     $('#file-input').change(loadFile);
-    $('#url-form').submit(loadURL);
-    $('#url-form a').click(fillUrlInput);
-    $('#url-input').keyup(checkIfRemoveErrors);
 });
 
 // Respond to a user choosing a file to upload. If successful,
@@ -61,57 +58,6 @@ function readXML(file) {
         }
     });
 }
-
-// Respond to a user choosing a URL to access. If successful,
-// send the user to the transformation page.
-function loadURL(e) {
-    e.preventDefault();
-    resetErrors();
-    var url = $('#url-input').val();
-    getContentType(url).then(function(contentType) {
-        if(contentType.match(/.*xml/)) {
-            location.href = '{{ site.github.url }}/transform.html?f=' + encodeURIComponent(url);
-        } else {
-            throw Error('The URL provided doesn\'t appear to be an IRS XML e-file document.');
-        }
-    }).catch(function(error) {
-        $('#url-error').text(error);
-        $('#url-input').addClass('error');
-        console.log(error);
-    });
-}
-
-// A Promise that checks the Content-Type of a request
-function getContentType(url) {
-    return new Promise (function(resolve, reject) {
-        if(!url) {
-            reject(Error('No file was requested.'));
-            return;
-        }
-
-        var request = new XMLHttpRequest();
-        request.open('HEAD', url);
-        request.onload = function() {
-            if(request.status === 200) {
-                resolve(request.getResponseHeader('Content-Type'));
-            } else {
-                reject(Error('Error Code: ' + request.status + ' (' + request.statusText + ')'));
-            }
-        };
-        request.onerror = function() {
-            reject(Error('There was a network error.'));
-        };
-        request.send();
-    });
-}
-
-// Pre-load the search box with a URL that will work
-function fillUrlInput(e) {
-    e.preventDefault();
-    $('#url-input').val(e.target.href);
-    $('#url-input').focus();
-}
-
 // Remove user errors alerts
 function resetErrors() {
     $('#url-error, #file-error').empty();

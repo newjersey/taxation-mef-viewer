@@ -1,4 +1,5 @@
 ---
+# Front matter comment to ensure Jekyll properly reads file.
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, nofollow">
+    <meta name="robots" content="noindex, nofollow">
 
     <title>IRS e-File Transformation</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,36 +19,29 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400i" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{{ site.github.url }}/css/transform.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ site.github.url }}/favicon.ico">
+    <link href="{{ site.github.url }}/css/index.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.github.url }}/favicon.svg">
 </head>
 
 <body>
-    <h1>View IRS E-File Forms</h1>
-    <form id="url-form" class="url-form">
-        <h2>Select an XML form to visualize. Supported tax years: 2008 - 2021</h2>
-        <label for="url-input" id="url-label" class="screen-reader">Search</label>
-        <input type="text" id="url-input" placeholder="http://example.com/IRS990.xml">
-        <button type="submit" aria-label="Submit URL to process">
-            <!-- Font Awesome arrow-circle-right -->
-            <svg width="3em" height="3em" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                <title>Submit</title>
-                <path
-                    d="M1413 896q0-27-18-45l-91-91-362-362q-18-18-45-18t-45 18l-91 91q-18 18-18 45t18 45l189 189h-502q-26 0-45 19t-19 45v128q0 26 19 45t45 19h502l-189 189q-19 19-19 45t19 45l91 91q18 18 45 18t45-18l362-362 91-91q18-18 18-45zm251 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z" />
-            </svg>
-        </button>
-        <p id="url-error"></p>
-        <p>Demo URL: <a href="{{ site.demo_url }}">{{ site.demo_url }}</a></p>
-    </form>
+    <div class="header">
+        <a href="https://nj.gov/"><img class="nj-banner-header-seal" src="img/nj_state_seal.png" alt="NJ flag"/>Official Site of the State of New Jersey</a>
+        <a>Governor Phil Murphy • Lt. Governor Sheila Oliver</a>
+    </div>
+    <h1>Visualize IRS 1120 XML</h1>
+    <div class="instructions">
+        <h2>Step 1: Download the 1120 XML from DORES MeF Viewer</h2>
+        <h2>Step 2: Open the XML file using the button below</h2>
+    </div>
     <div class="file-upload">
-        <h2>OR</h2>
         <input type="file" name="file-input" id="file-input">
         <label for="file-input">
             <i class="fa fa-upload" aria-hidden="true"></i>Open a File
         </label>
         <p id="file-error"></p>
+        <p>Supported tax years: 2008 - 2021</p>
+    </p>
     </div>
-
     <div class="content-section">
         <h2>Translate Raw Data Back Into a Form</h2>
         <div class="demo-imgs">

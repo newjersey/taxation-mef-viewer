@@ -1,5 +1,4 @@
 github:
-  url: http://localhost:4000
   repository_url: https://github.com/newjersey/taxation-mef-viewer
-
+  url: http://localhost:4000
 demo_url: https://newjersey.github.io/taxation-mef-viewer/Sample1120.xml
