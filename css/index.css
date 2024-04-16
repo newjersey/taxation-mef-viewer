@@ -41,6 +41,98 @@ html {
     }
   }
   
+  .nj-banner {
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #1c1d1f;
+    font-size: 0.88rem;
+    line-height: 1;
+    min-height: 3rem;
+    position: relative;
+  }
+  
+  .nj-banner__header {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  
+  .nj-banner__header,
+  .nj-banner__header a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .icon {
+    display: inline-block;
+    fill: currentColor;
+    height: 1em;
+    position: relative;
+    width: 1em;
+    margin-right: .25rem;
+    bottom: -2px;
+  }
+  .nj-banner__header a:hover {
+    text-decoration: underline;
+  }
+  
+  .nj-banner__header li {
+    display: none;
+    margin-right: 0.5rem;
+    padding-right: 0.5rem;
+    border-right-width: 1px;
+    border-right-style: solid;
+  }
+
+  .grid-col-fill {
+	flex: 1 1 0%;
+	min-width: 1px;
+  }
+
+  .grid-container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 64rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+  [class*="grid-col"] {
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+  }
+
+  .grid-col-auto {
+	flex: 0 1 auto;
+	width: auto;
+	max-width: 100%;
+  }
+
+  @media all and (min-width: 40em) {
+    .nj-banner__header li {
+      display: inline;
+    }
+  }
+  
+  .nj-banner__header li:last-child {
+    display: inline;
+    margin-right: 0;
+    padding-right: 0;
+    border-right-width: 0;
+    border-right-style: solid;
+  }
+  
+  .nj-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 0;
+  }
+  
+  .nj-banner__header-seal {
+    padding-right: 0.5rem;
+  }
+
   .header {
     width: 100%;
     display: flex;

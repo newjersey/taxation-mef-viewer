@@ -24,10 +24,27 @@
 </head>
 
 <body>
-    <div class="header">
-        <a href="https://nj.gov/"><img class="nj-banner-header-seal" src="img/nj_state_seal.png" alt="NJ flag"/>Official Site of the State of New Jersey</a>
-        <p>Governor Phil Murphy • Lt. Governor Sheila Oliver</p>
-    </div>
+    <section class="nj-banner" aria-label="Official government website">
+        <header class="nj-banner__header">
+          <div class="grid-container">
+            <div class="nj-banner__inner">
+              <div class="grid-col-auto">
+                <img class="nj-banner__header-seal" src="img/nj_state_seal.png" alt="NJ flag">
+              </div>
+              <div class="grid-col-fill"><a href="https://nj.gov">Official Site of the State of New Jersey</a></div>
+              <div class="grid-col-auto">
+                <div class="text-white">
+                  <ul>
+                    <li>Governor Phil Murphy • Lt. Governor Sheila Oliver</li><li><a href="https://nj.gov/subscribe/" target="_blank"><svg class="icon" aria-hidden="true" focusable="false" role="img" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"></path>
+                    </svg>Get Updates</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
     <h1>Visualize IRS 1120 XML</h1>
     <div class="instructions">
         <h2>Step 1: Download the 1120 XML from DORES MeF Viewer</h2>
