@@ -56,7 +56,7 @@ html {
       display: inline-block;
       font-size: 1.1em;
     }
-    .header > a:last-child {
+    .header > p:last-child {
       margin-right: 2em;
     }
     .header > a:hover {
@@ -67,7 +67,7 @@ html {
       vertical-align: middle;
     }
   @media screen and (max-width: 600px) {
-    .header > a:last-child {
+    .header > p:last-child {
       display: none;
     }
   }
@@ -213,66 +213,6 @@ html {
         height: auto;
       }
     }
-  
-  .form-results {
-    margin: 1em;
-    margin-bottom: 4em;
-  }
-    .form-results h2 {
-      margin-bottom: 0.2em;
-    }
-    .form-results h3 {
-      margin-top: 0;
-    }
-    .form-results:after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-  
-  #forms-list > li {
-    list-style-type: none;
-    background-color: #DCE4E7;
-    margin: 5px;
-    float: left;
-    width: 31%;
-  }
-  #forms-list > li span:first-child {
-    display: block;
-    background-color: #efefef;
-    width: 100%;
-    height: 8em;
-    line-height: 8em;
-    text-align: center;
-    font-size: 2em;
-    font-family: "Merriweather",serif;
-    color: #303438;
-  }
-  #forms-list > li span + span {
-    padding: 0.7em;
-    display: block;
-  }
-    #forms-list > li > a:hover {
-      text-decoration: none;
-      outline: -webkit-focus-ring-color auto 3px;
-    }
-    #forms-list > li > a:hover > span + span {
-      text-decoration: underline;
-    }
-  #forms-list > li i.fa {
-    font-size: 1.7em;
-  }
-  @media screen and (max-width: 600px) {
-      #forms-list > li {
-          float: none;
-          display: block;
-      margin-bottom: 10px;
-          width: 100%;
-      }
-      #forms-list {
-          margin-right: 2em;
-      }
-  }
   
 #file-error, #form-error {
     color: #C62828;
