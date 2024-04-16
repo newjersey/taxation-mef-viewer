@@ -34,7 +34,7 @@ h1 {
   font-family: "Merriweather",serif;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   h1 {
     font-size: 2.1em;
   }
@@ -109,7 +109,7 @@ h1 {
 #forms-list > li i.fa {
   font-size: 1.7em;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
 	#forms-list > li {
 		float: none;
 		display: block;

@@ -35,7 +35,7 @@ html {
   div + h1 {
     margin-top: 3em;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 640px) {
     h1 {
       font-size: 2.1em;
     }
@@ -66,7 +66,7 @@ html {
       padding-right: 0.8em;
       vertical-align: middle;
     }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 640px) {
     .header > p:last-child {
       display: none;
     }
@@ -91,12 +91,12 @@ html {
       outline: none;
       border: solid 5px #969696;
     }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1024px) {
     .instructions {
       width: 80%;
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 640px) {
     .instructions {
       width: 92%;
     }
@@ -112,8 +112,6 @@ html {
   }
   
   input[type="file"] {
-      width: 0.1px;
-      height: 0.1px;
       opacity: 0;
       overflow: hidden;
       position: absolute;
@@ -170,7 +168,7 @@ html {
       font-size: 1.5em;
       text-align: justify;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 640px) {
       .content-section {
         margin: 1em auto;
         padding: 2em;
@@ -198,7 +196,7 @@ html {
     .demo-imgs > img + img {
       margin-left: 2em;
     }
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1024px) {
       .demo-imgs > img {
         max-width: 100%;
         display: block;
@@ -208,7 +206,7 @@ html {
         margin-left: auto;
       }
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 640px) {
       .demo-imgs > img {
         height: auto;
       }
