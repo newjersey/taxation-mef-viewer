@@ -35,7 +35,6 @@ function loadFile() {
         location.href = '{{ site.github.url }}/transform.html?h=' + newId;
     }).catch(function(err) {
         $('#file-error').text(err);
-        $('#file-input + label').addClass('error');
         console.log(err);
     });
 }
