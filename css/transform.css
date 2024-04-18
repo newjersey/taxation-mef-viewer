@@ -57,7 +57,7 @@ h1 {
     border-radius: 0.5em;;
   }
 
-  .nav-secondary > a > i {
+  .nav-secondary > a > span {
     margin-right: 0.5em;
   }
 
