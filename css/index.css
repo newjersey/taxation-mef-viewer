@@ -304,7 +304,16 @@ html {
     margin-bottom: 2em;
     font-size: 1em;
   }
-  
+
+  .beta-banner {
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 1em;
+    color: white;
+    background-color: green;
+  }
+
   .screen-reader {
       position: absolute !important;
       clip: rect(1px, 1px, 1px, 1px);
