@@ -255,7 +255,7 @@ function generateAndDisplayForm(formId, dest) {
             $('#'+dest).attr('src', 'data:text/html;charset=utf-8,' + encodeURIComponent(formHtml));
         } else {
             destWindow.document.write(formHtml);
-            destWindow.document.write('<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><link href="{{site.github.url}}/css/form-display.css" rel="stylesheet"><footer class="noprint"><button onclick="print()"><span class="fa fa-print"></span>Print Form</button></footer>');
+            destWindow.document.write('<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><link href="{{site.github.url}}/css/form-display.css" rel="stylesheet"><footer class="noprint"><button class="print-button" onclick="print()"><span class="fa fa-print" aria-hidden="true"></span>Print Form</button></footer>');
             destWindow.document.close();
             destWindow.history.replaceState(null, null, location.href.replace(location.hash, '')+'#'+formId);
         }

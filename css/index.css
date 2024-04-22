@@ -214,7 +214,7 @@ html {
     .file-upload > h2 {
       margin: 0 7px;
     }
-    .file-upload i {
+    span.fa {
       padding-right: 0.4em;
     }
   
@@ -311,7 +311,7 @@ html {
     padding-bottom: 0.5em;
     font-size: 1em;
     color: white;
-    background-color: green;
+    background-color: #0050d8;
   }
 
   .screen-reader {

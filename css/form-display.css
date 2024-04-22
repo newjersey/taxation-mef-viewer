@@ -20,7 +20,7 @@ footer {
     height: 5em;
 }
 
-button {
+button.print-button {
     font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
     font-size: 1rem;
     font-weight: 700;
