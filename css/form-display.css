@@ -1,0 +1,46 @@
+@media print {
+    .noprint {
+       visibility: hidden;
+    }
+    @page {
+        size: auto;   /* auto is the initial value */
+        margin: 0;  /* this affects the margin in the printer settings */
+    }
+ }
+
+footer {
+    background-color: #ffffff; 
+    opacity: 100%;
+    width: 189mm; /* Match .styBodyClass width to make this appear on the bottom of the form*/
+    display: flex; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    align-items: center;
+    height: 5em;
+}
+
+button.print-button {
+    font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #1F0C7B;
+    transition: opacity 0.3s ease-out, outline 0.3s ease-out;
+    border: none;
+    border-radius: .5em;
+    cursor: pointer;
+    position: relative;
+    left: 45%;
+}
+
+span.fa {
+    padding-right: 6px;
+}
+
+button:focus {
+    outline: 1px dotted;
+  }
+  button:hover {
+    opacity: 0.7;
+  }
