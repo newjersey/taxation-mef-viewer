@@ -32,7 +32,7 @@ function loadFile() {
             }
         }
 
-        location.href = '{{ site.github.url }}/transform.html?h=' + newId;
+        location.href = '{{ site.amplify_url }}/transform.html?h=' + newId;
     }).catch(function(err) {
         $('#file-error').text(err);
         console.log(err);

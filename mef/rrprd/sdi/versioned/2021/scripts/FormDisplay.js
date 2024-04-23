@@ -14,8 +14,8 @@
 //
 //=========================================================
 
-var IMAGEPATH = "{{ site.github.url }}/mef/rrprd/common/images/";
-var HTMLPATH = "{{ site.github.url }}/mef/rrprd/common/htmls/";
+var IMAGEPATH = "{{ site.amplify_url }}/mef/rrprd/common/images/";
+var HTMLPATH = "{{ site.amplify_url }}/mef/rrprd/common/htmls/";
 
 
 //=========================================================

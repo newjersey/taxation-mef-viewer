@@ -16,7 +16,7 @@ def prep_stylesheets
             contents = File.read(filename)
 
             # replace relative URLs with compatible version for Github Pages
-            contents.gsub!(/(?<!}})\/mef\//, "{{ site.github.url }}/mef/")
+            contents.gsub!(/(?<!}})\/mef\//, "{{ site.amplify_url }}/mef/")
 
             # add Jekyll front matter
             if contents !~ /\A---\n---\n/

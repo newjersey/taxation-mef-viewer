@@ -14,7 +14,7 @@ However, the directories within the IRS package are not comprehensive. They cont
 
 Additionally, any files containing relative links need to be updated to include Jekyll front matter and to support the hosted address of this application. Ex:
 ```
-<xsl:param name="NonVersionedImagePath">{{ site.github.url }}/mef/rrprd/common/images</xsl:param>  
+<xsl:param name="NonVersionedImagePath">{{ site.amplify_url }}/mef/rrprd/common/images</xsl:param>  
 ```
 
 To automate the process of importing a new tax year, the [`import_taxyear` script](/script/import_taxyear.rb) is available.

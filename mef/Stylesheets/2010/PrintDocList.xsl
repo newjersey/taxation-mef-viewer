@@ -554,7 +554,7 @@
         featureList += ",left=" + xPos;
                
         <!--  Open new window to display print documents -->
-        printWindow = window.open("{{ site.github.url }}/mef/rrprd/sdi/pages/templates/print_msg_content", "PrintMsgContentWindow", featureList);
+        printWindow = window.open("{{ site.amplify_url }}/mef/rrprd/sdi/pages/templates/print_msg_content", "PrintMsgContentWindow", featureList);
         
         <!-- Wait for new window to become 'available' before setting target for form and submitting -->
         setTimeout(printDocsHelper, 100);
@@ -692,7 +692,7 @@ function printDocsHelper()
 
     <!-- Checkbox to allow user to set the value for the print parameter for Accepted Returns only -->
     <xsl:call-template name="displayTaxpayerSelectCkbox" />
-    <form action="{{ site.github.url }}/mef/rrprd/sdi/proxy/{$docForm}" name="{$docForm}" id="{$docForm}" method="post" target="_blank">
+    <form action="{{ site.amplify_url }}/mef/rrprd/sdi/proxy/{$docForm}" name="{$docForm}" id="{$docForm}" method="post" target="_blank">
       
     <input type="hidden" name="stage" value="{$Stage}" />
     <input type="hidden" name="dln" value="{$DLN}" />
