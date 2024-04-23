@@ -24,7 +24,7 @@ $(function() {
 
 // Attempt to load the user-provided XML e-file
 function gatherInputXML(inputFile) {
-    var templateFile = '{{ site.github.url}}/form_template.xml';
+    var templateFile = '{{ site.amplify_url}}/form_template.xml';
     var templateStr = sessionStorage.getItem('template');
     var inputStr = sessionStorage.getItem(inputStorageId());
 
@@ -375,7 +375,7 @@ function setNodeValue(dom, nodeName, value) {
 // given the provided e-file form
 function getStylesheetPath(templateDom, formId) {
     var year = templateDom.getElementsByTagName('ReturnVersion')[0].textContent.match(/\d+/)[0];
-    return '{{ site.github.url}}/mef/Stylesheets/'+year+'/'+formId+'.xsl';
+    return '{{ site.amplify_url}}/mef/Stylesheets/'+year+'/'+formId+'.xsl';
 }
 
 //======================================

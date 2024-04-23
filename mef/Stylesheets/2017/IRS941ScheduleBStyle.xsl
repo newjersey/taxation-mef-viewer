@@ -7,13 +7,13 @@
 
   
   .sty1040PREnglishBtn{
-    background: url("{{ site.github.url }}/mef/rrprd/common/images/refreshENGButton.gif");
+    background: url("{{ site.amplify_url }}/mef/rrprd/common/images/refreshENGButton.gif");
     width:50px;
     height:13px;
     border: 0;
   }
   .sty1040PRSpanishBtn{
-    background: url("{{ site.github.url }}/mef/rrprd/common/images/refreshSPButton.gif");
+    background: url("{{ site.amplify_url }}/mef/rrprd/common/images/refreshSPButton.gif");
     width:50px;
     height:13px;
     border: 0;
