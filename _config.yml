@@ -10,5 +10,5 @@ exclude: [
 ]
 
 repository: newjersey/taxation-mef-viewer
-amplify_url: https://aws-amplify.d213b2tcid8n28.amplifyapp.com
+amplify_url: https://main.d213b2tcid8n28.amplifyapp.com
 repository_url: https://github.com/newjersey/taxation-mef-viewer
