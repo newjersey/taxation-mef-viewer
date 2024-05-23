@@ -395,7 +395,7 @@ function setNodeValue(dom, nodeName, value) {
 // given the provided e-file form
 function getStylesheetPath(templateDom, formId) {
     var year = templateDom.getElementsByTagName('ReturnVersion')[0].textContent.match(/\d+/)[0];
-    return '{{ site.amplify_url }}/mef/Stylesheets/'+year+'/'+formId+'.xsl';
+    return `{{ site.amplify_url }}/mef/Stylesheets/${year}/${formId}.xsl`;
 }
 
 //======================================
