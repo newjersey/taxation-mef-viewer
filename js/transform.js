@@ -87,7 +87,7 @@ function addXMLToPage(inputDom) {
     forms.forEach(function(formName) {
         $('#forms-list').append(
             $('<li>').append(
-                $('<a>').attr({href: '#'+formName, id: formName}).append(
+                $('<a>').attr({href: `#${formName}`, id: formName}).append(
                     $('<span>').append(getDisplayName(formName, true)),
                     $('<span>').append(getDisplayName(formName))
                 )
@@ -238,7 +238,7 @@ function generateAndDisplayForm(formId, dest) {
         var formName = match[1]
         var  formIndex= match[2]
     } else {
-        throw Error('Could not parse formId with regex. Expected formId to be of form .*_([0-9]+). Instead formId was ${formId}');
+        throw Error(`Could not parse formId with regex. Expected formId to be of form .*_([0-9]+). Instead formId was ${formId}`);
     }
 
     if(!sessionStorage[inputStorageId()] || !sessionStorage['template']) {
