@@ -24,7 +24,7 @@ $(function() {
 
 // Attempt to load the user-provided XML e-file
 function gatherInputXML(inputFile) {
-    var templateFile = '{{ site.amplify_url}}/form_template.xml';
+    var templateFile = '{{ site.amplify_url }}/form_template.xml';
     var templateStr = sessionStorage.getItem('template');
     var inputStr = sessionStorage.getItem(inputStorageId());
 
@@ -87,7 +87,7 @@ function addXMLToPage(inputDom) {
     forms.forEach(function(formName) {
         $('#forms-list').append(
             $('<li>').append(
-                $('<a>').attr({href: '#'+formName, id: formName}).append(
+                $('<a>').attr({href: `#${formName}`, id: formName}).append(
                     $('<span>').append(getDisplayName(formName, true)),
                     $('<span>').append(getDisplayName(formName))
                 )
@@ -119,8 +119,18 @@ function getNameAndTaxYear(inputDom) {
 function getListOfForms(inputDom) {
     var returnData = inputDom.getElementsByTagName('ReturnData')[0];
     var children = returnData ? Array.prototype.slice.call(returnData.children) : [];
-    return children.map(function(child) {
-        return child.nodeName;
+    const childCounts = {};
+    return children.map(child => { 
+        const { nodeName } = child
+        if (!Object.hasOwn(childCounts, nodeName)) {
+            // If the element has not been counted yet, initialize its count
+            childCounts[nodeName] = 0;
+        } else {
+            // If the element has already been counted, increment its count
+            childCounts[nodeName]++;
+        }
+        // Append the count to the element to make it unique
+        return `${nodeName}_${childCounts[nodeName]}`;
     });
 }
 
@@ -221,7 +231,16 @@ function displayForm(e) {
     generateAndDisplayForm($(this).attr('id'));
 }
 
+const INTEGER_AFTER_UNDERSCORE_REGEX = /(.*)_([0-9]+)/;
 function generateAndDisplayForm(formId, dest) {
+    const match = formId.match(INTEGER_AFTER_UNDERSCORE_REGEX);
+    if (match) {
+        var formName = match[1]
+        var  formIndex= match[2]
+    } else {
+        throw Error(`Could not parse formId with regex. Expected formId to be of form .*_([0-9]+). Instead formId was ${formId}`);
+    }
+
     if(!sessionStorage[inputStorageId()] || !sessionStorage['template']) {
         displayFormError('There was a problem generating ' + getDisplayName(formId) + '.', formId);
         throw Error('Could not load input XML file from sessionStorage');
@@ -234,9 +253,9 @@ function generateAndDisplayForm(formId, dest) {
     var templateDom = parser.parseFromString(sessionStorage.getItem('template'), 'text/xml');
 
     // Configure template file
-    moveHeaderAndMainForm(inputDom, templateDom, formId);
-    setFormProperties(inputDom, templateDom, formId);
-    var stylesheetPath = getStylesheetPath(templateDom, formId);
+    moveHeaderAndMainForm(inputDom, templateDom, formName, formIndex);
+    setFormProperties(inputDom, templateDom, formName);
+    var stylesheetPath = getStylesheetPath(templateDom, formName);
 
     // Display rendered form to the user
     // In order to display the form in a separate window, the action
@@ -257,14 +276,14 @@ function generateAndDisplayForm(formId, dest) {
             destWindow.document.write(formHtml);
             destWindow.document.write('<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><link href="{{site.amplify_url}}/css/form-display.css" rel="stylesheet"><footer class="noprint"><button class="print-button" onclick="print()"><span class="fa fa-print" aria-hidden="true"></span>Print Form</button></footer>');
             destWindow.document.close();
-            destWindow.history.replaceState(null, null, location.href.replace(location.hash, '')+'#'+formId);
+            destWindow.history.replaceState(null, null, `${location.href.replace(location.hash, '')}#${formName}`);
         }
     }).catch(function(error) {
         console.log(error);
         if(destWindow) {
             destWindow.close();
         }
-        displayFormError('There was a problem generating ' + getDisplayName(formId) + '.', formId);
+        displayFormError(`There was a problem generating ${getDisplayName(formName)}.`, formName);
     });
 }
 
@@ -280,10 +299,11 @@ function removeNamespaces(XMLString) {
 }
 
 // Move the main form data into the template
-function moveHeaderAndMainForm(inputDom, templateDom, formId) {
-    var formData = inputDom.getElementsByTagName(formId)[0];
+// formIndex specifies which multiple elements with the same formName should be accessed
+function moveHeaderAndMainForm(inputDom, templateDom, formName, formIndex = 0) {
+    // only the form data changes between elements with matching formNames, formHeader, tHeader, and tData all stay the same
+    var formData = inputDom.getElementsByTagName(formName)[formIndex];
     var formHeader = inputDom.getElementsByTagName('ReturnHeader')[0];
-
     var tHeader = templateDom.getElementsByTagName('ReturnHeader')[0];
     var tData = templateDom.getElementsByTagName('SubmissionDocument')[0];
     tHeader.parentNode.replaceChild(formHeader.cloneNode(true), tHeader);
@@ -375,7 +395,7 @@ function setNodeValue(dom, nodeName, value) {
 // given the provided e-file form
 function getStylesheetPath(templateDom, formId) {
     var year = templateDom.getElementsByTagName('ReturnVersion')[0].textContent.match(/\d+/)[0];
-    return '{{ site.amplify_url}}/mef/Stylesheets/'+year+'/'+formId+'.xsl';
+    return `{{ site.amplify_url }}/mef/Stylesheets/${year}/${formId}.xsl`;
 }
 
 //======================================
