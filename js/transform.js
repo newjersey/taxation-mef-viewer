@@ -119,18 +119,18 @@ function getNameAndTaxYear(inputDom) {
 function getListOfForms(inputDom) {
     var returnData = inputDom.getElementsByTagName('ReturnData')[0];
     var children = returnData ? Array.prototype.slice.call(returnData.children) : [];
-    var childCounts = {};
-    return children.map(function(child) {
-        // If the element has not been counted yet, initialize its count
-        if (!Object.hasOwn(childCounts, child.nodeName)) {
-            childCounts[child.nodeName] = 0;
+    const childCounts = {};
+    return children.map(child => { 
+        const { nodeName } = child
+        if (!Object.hasOwn(childCounts, nodeName)) {
+            // If the element has not been counted yet, initialize its count
+            childCounts[nodeName] = 0;
         } else {
             // If the element has already been counted, increment its count
-            childCounts[child.nodeName]++;
+            childCounts[nodeName]++;
         }
-
         // Append the count to the element to make it unique
-        return `${child.nodeName}_${childCounts[child.nodeName]}`;
+        return `${nodeName}_${childCounts[nodeName]}`;
     });
 }
 
@@ -231,14 +231,14 @@ function displayForm(e) {
     generateAndDisplayForm($(this).attr('id'));
 }
 
+const INTEGER_AFTER_UNDERSCORE_REGEX = /(.*)_([0-9]+)/;
 function generateAndDisplayForm(formId, dest) {
-    const INTEGER_AFTER_UNDERSCORE_REGEX = /(.*)_([0-9]+)/;
     const match = formId.match(INTEGER_AFTER_UNDERSCORE_REGEX);
     if (match) {
         var formName = match[1]
-        var formIterator = match[2]
+        var  formIndex= match[2]
     } else {
-        throw Error('Could not parse formId with regex. Expected formId to be of form .*_([0-9]+). Instead formId was ' + formId);
+        throw Error('Could not parse formId with regex. Expected formId to be of form .*_([0-9]+). Instead formId was ${formId}');
     }
 
     if(!sessionStorage[inputStorageId()] || !sessionStorage['template']) {
@@ -253,7 +253,7 @@ function generateAndDisplayForm(formId, dest) {
     var templateDom = parser.parseFromString(sessionStorage.getItem('template'), 'text/xml');
 
     // Configure template file
-    moveHeaderAndMainForm(inputDom, templateDom, formName, formIterator);
+    moveHeaderAndMainForm(inputDom, templateDom, formName, formIndex);
     setFormProperties(inputDom, templateDom, formName);
     var stylesheetPath = getStylesheetPath(templateDom, formName);
 
@@ -299,10 +299,10 @@ function removeNamespaces(XMLString) {
 }
 
 // Move the main form data into the template
-// formIterator allows the function to access elements when there are multiple elements with the same formName
-function moveHeaderAndMainForm(inputDom, templateDom, formName, formIterator = 0) {
+// formIndex specifies which multiple elements with the same formName should be accessed
+function moveHeaderAndMainForm(inputDom, templateDom, formName, formIndex = 0) {
     // only the form data changes between elements with matching formNames, formHeader, tHeader, and tData all stay the same
-    var formData = inputDom.getElementsByTagName(formName)[formIterator];
+    var formData = inputDom.getElementsByTagName(formName)[formIndex];
     var formHeader = inputDom.getElementsByTagName('ReturnHeader')[0];
     var tHeader = templateDom.getElementsByTagName('ReturnHeader')[0];
     var tData = templateDom.getElementsByTagName('SubmissionDocument')[0];
