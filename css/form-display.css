@@ -8,6 +8,10 @@
     }
  }
 
+body.styBodyClass {
+    margin-bottom: 5em; /* Match footer height attribute so there is no overlap when user scrolls to bottom of page */
+}
+
 footer {
     background-color: #ffffff; 
     opacity: 100%;
